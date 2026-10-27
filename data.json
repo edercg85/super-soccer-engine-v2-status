@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-14",
-  "updatedAt": "2026-10-27T14:11:38Z",
+  "version": "2026.10.27-portal-15",
+  "updatedAt": "2026-10-27T14:18:58Z",
   "cycle": "SS-ORCH-001-W66-CAUSAL-MOVE-SCORE-PAIR",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Aguardar auditoria independente e definir avaliação multiseed pareada; manter BCCM default existente sem recomendação de mudança.",
+  "currentFocus": "Próximo: avaliação pré-registrada OFF/ON em múltiplas seeds; medir primeira divergência, decisões, terminalidade, draws/eventos e medidas de qualidade sem tratar volume como melhora.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -955,11 +955,11 @@
   "diary": [
     {
       "wave": "W66",
-      "publishedAt": "2026-10-27T14:11:38Z",
+      "publishedAt": "2026-10-27T14:18:58Z",
       "macro": "M2",
       "title": "BCCM muda a primeira decisão no replay pareado",
       "summary": "No mesmo pre-state do tick 2, OFF escolhe Move e ON escolhe Pass; o efeito é local à seed e não demonstra melhora global.",
-      "result": "Auditoria computacional passou; revisão independente pendente"
+      "result": "Revisão independente confirmou o efeito local; qualidade global desconhecida"
     },
     {
       "wave": "W42",
@@ -2374,6 +2374,10 @@
     {
       "id": "CP-W66-03",
       "title": "ZIP consolidado W66"
+    },
+    {
+      "id": "CP-W66-04",
+      "title": "Auditoria independente do replay pareado concluída"
     }
   ]
 }
