@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-5",
-  "updatedAt": "2026-10-27T05:04:38Z",
-  "cycle": "W38 — auditoria causal local e fases",
+  "version": "2026.10.27-portal-6",
+  "updatedAt": "2026-10-27T05:17:39Z",
+  "cycle": "W38 — efeitos causais locais e fases",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Próximo teste falsificável: capturar N divergências OFF/ON em estados iguais, auditar direção e decomposição Move/Pass/Shoot, e deixar cada ação prosseguir para observar efeitos imediatos.",
+  "currentFocus": "Selecionar em traces existentes uma divergência OFF/ON em posse de open play fora do kickoff; comparar a consequência do atraso/antecipação do passe, sem alegar causalidade se preStates diferirem.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -955,11 +955,11 @@
   "diary": [
     {
       "wave": "W38",
-      "publishedAt": "2026-10-27T05:03:44Z",
+      "publishedAt": "2026-10-27T05:17:39Z",
       "macro": "M2",
-      "title": "Auditoria confirma mecanismo local Move→Pass",
-      "summary": "Em três seeds ON aumentou intervalos observados ActivePass; no primeiro desvio de seed1729, mesmo estado, a contextualização zera um Move para trás e Pass vence. O efeito posterior e a qualidade global seguem desconhecidos.",
-      "result": "m2/m4 PASS local e multiseed; captura pós-resolução truncada"
+      "title": "Passe antecipado chega a impedimento e tiro livre",
+      "summary": "No mesmo estado inicial em três seeds, BCCM ON escolheu Pass no tick2; o trace registra impedimento do alvo no tick5 e indireto para o mandante no tick6. Isso comprova o efeito local desta rota, não qualidade global.",
+      "result": "m2/m4 PASS em seleção e eventos; gatilho reconstruído do código; MVP segue não aceito"
     },
     {
       "wave": "W37",
@@ -1986,6 +1986,18 @@
     {
       "id": "CP-W38-04",
       "title": "Auditoria causal local da primeira divergência"
+    },
+    {
+      "id": "CP-W38-06",
+      "title": "Probe de divergência causal em seeds 1730 e 1731"
+    },
+    {
+      "id": "CP-W38-07",
+      "title": "Efeito downstream do primeiro Pass: impedimento e indireto"
+    },
+    {
+      "id": "CP-W38-08",
+      "title": "Reinício offside pronto com posse do kicker beneficiário"
     }
   ]
 }
