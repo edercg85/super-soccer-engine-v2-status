@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-23",
-  "updatedAt": "2026-10-27T16:32:47Z",
-  "cycle": "SS-ORCH-001-W74-ACCEPTED-EFFECT-FEASIBILITY",
+  "version": "2026.10.27-portal-25",
+  "updatedAt": "2026-10-27T16:50:43Z",
+  "cycle": "SS-ORCH-001-W75-HARNESS-CAPTURE-NARROW",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W74: o trace expõe efeitos propostos e estado resultante, não o lote de efeitos aceitos após conflitos. FEASIBILITY_PARTIAL; GO condicional apenas para diagnóstico isolado em harness V2. Nenhuma implementação/teste/simulação ou afirmação de qualidade de gameplay.",
+  "currentFocus": "W75_HARNESS_CAPTURE_NARROW_PASS: 2/2 fixtures determinísticas passaram; auditoria independente PASS somente na claim estreita. Resultado global W75_PARTIAL; kickoff preparado antes do hook fica fora da captura. Sem mudança de gameplay/produção. Próximo: fixture isolada de restart offside/goal-kick.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,6 +12,16 @@
     "unknown": 5
   },
   "recentCycles": [
+    {
+      "id": "W75",
+      "wave": "W75",
+      "publishedAt": "2026-10-27T16:50:43Z",
+      "macro": "M2",
+      "title": "Captura estreita do harness passou em duas fixtures determinísticas",
+      "status": "W75_HARNESS_CAPTURE_NARROW_PASS; resultado global W75_PARTIAL; 2/2 testes",
+      "summary": "Duas fixtures determinísticas confirmam, no escopo testado, a captura do lote pós-resolução entregue à transição e o pareamento de cada callback com a transição imediata. O resultado V2 observado permanece equivalente nos dois cenários; KickOffPrepared inicial fica fora do hook, mas os ticks regulares seguintes são capturados.",
+      "result": "Auditoria independente PASS somente nas claims estreitas testadas; PARTIAL para causalidade por efeito e rotas restantes. Sem mudança de gameplay/produção. Próximo teste falsificável: fixture isolada de restart offside/goal-kick."
+    },
     {
       "id": "W74",
       "wave": "W74",
@@ -31,16 +41,6 @@
       "status": "Raw trace audit PASS; vínculo causal de ações PARTIAL",
       "summary": "A auditoria independente revalidou 78 casos em 468 ticks dos traces W68. Nos 73 casos post-gap, o owner atribuído persiste em 1/73 no tick +1 e 0/73 no +5; nos cinco casos terminal-null, 0/5 em ambos. As comparações de ActionResult e atores de eventos são observações delimitadas.",
       "result": "Os traces não ligam resultados a todos os efeitos aceitos nem provam qual ação causou a transição. Vínculo ação/efeito e causalidade permanecem PARTIAL/UNKNOWN; qualidade e efeito geral UNKNOWN. Sem mudança de gameplay."
-    },
-    {
-      "id": "W72",
-      "wave": "W72",
-      "publishedAt": "2026-10-27T16:17:51Z",
-      "macro": "M2",
-      "title": "Estados de posse após o chute acompanhados nos traces W68",
-      "status": "Auditoria independente dos traces brutos PASS; escopo limitado",
-      "summary": "Nos 78 ActiveShoot lançados dos dez traces W68, 73 estados terminais tinham owner; todos depois passaram por owner nulo antes de surgir um owner diferente (2–11 ticks; mediana 4; intervalo nulo mediano 3). Nos outros cinco, o terminal já era owner nulo; um owner apareceu após 7–8 ticks.",
-      "result": "São transições de estado e rótulos registrados, não prova de recuperação física, defesa, causa ou qualidade. Contagens em ticks; só cinco casos OFF. Causalidade geral e qualidade permanecem UNKNOWN; sem mudança de gameplay, BCCM default-off."
     }
   ],
   "macros": [
@@ -986,6 +986,16 @@
   ],
   "diary": [
     {
+      "id": "W75",
+      "wave": "W75",
+      "publishedAt": "2026-10-27T16:50:43Z",
+      "macro": "M2",
+      "title": "Captura estreita do harness passou em duas fixtures determinísticas",
+      "status": "W75_HARNESS_CAPTURE_NARROW_PASS; resultado global W75_PARTIAL; 2/2 testes",
+      "summary": "Duas fixtures determinísticas confirmam, no escopo testado, a captura do lote pós-resolução entregue à transição e o pareamento de cada callback com a transição imediata. O resultado V2 observado permanece equivalente nos dois cenários; KickOffPrepared inicial fica fora do hook, mas os ticks regulares seguintes são capturados.",
+      "result": "Auditoria independente PASS somente nas claims estreitas testadas; PARTIAL para causalidade por efeito e rotas restantes. Sem mudança de gameplay/produção. Próximo teste falsificável: fixture isolada de restart offside/goal-kick."
+    },
+    {
       "id": "W74",
       "wave": "W74",
       "publishedAt": "2026-10-27T16:32:47Z",
@@ -1004,16 +1014,6 @@
       "status": "Raw trace audit PASS; vínculo causal de ações PARTIAL",
       "summary": "A auditoria independente revalidou 78 casos em 468 ticks dos traces W68. Nos 73 casos post-gap, o owner atribuído persiste em 1/73 no tick +1 e 0/73 no +5; nos cinco casos terminal-null, 0/5 em ambos. As comparações de ActionResult e atores de eventos são observações delimitadas.",
       "result": "Os traces não ligam resultados a todos os efeitos aceitos nem provam qual ação causou a transição. Vínculo ação/efeito e causalidade permanecem PARTIAL/UNKNOWN; qualidade e efeito geral UNKNOWN. Sem mudança de gameplay."
-    },
-    {
-      "id": "W72",
-      "wave": "W72",
-      "publishedAt": "2026-10-27T16:17:51Z",
-      "macro": "M2",
-      "title": "Estados de posse após o chute acompanhados nos traces W68",
-      "status": "Auditoria independente dos traces brutos PASS; escopo limitado",
-      "summary": "Nos 78 ActiveShoot lançados dos dez traces W68, 73 estados terminais tinham owner; todos depois passaram por owner nulo antes de surgir um owner diferente (2–11 ticks; mediana 4; intervalo nulo mediano 3). Nos outros cinco, o terminal já era owner nulo; um owner apareceu após 7–8 ticks.",
-      "result": "São transições de estado e rótulos registrados, não prova de recuperação física, defesa, causa ou qualidade. Contagens em ticks; só cinco casos OFF. Causalidade geral e qualidade permanecem UNKNOWN; sem mudança de gameplay, BCCM default-off."
     },
     {
       "wave": "W66",
