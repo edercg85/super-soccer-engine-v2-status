@@ -1,6 +1,6 @@
 {
   "version": "2026.10.27-portal-9",
-  "updatedAt": "2026-10-27T05:54:55Z",
+  "updatedAt": "2026-10-27T05:59:41Z",
   "cycle": "W39 — efeitos locais verificados; causalidade RNG parcial",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Preparar e validar handoff W39; próxima prova falsificável: harness que persista draw bruto e exponha contador/checkpoint interno sem alterar gameplay.",
