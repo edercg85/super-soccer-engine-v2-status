@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-25",
-  "updatedAt": "2026-10-27T16:50:43Z",
-  "cycle": "SS-ORCH-001-W75-HARNESS-CAPTURE-NARROW",
+  "version": "2026.10.27-portal-26",
+  "updatedAt": "2026-10-27T16:59:00Z",
+  "cycle": "SS-ORCH-001-W76-CAPTURE-OVERLOADS-OFFSIDE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W75_HARNESS_CAPTURE_NARROW_PASS: 2/2 fixtures determinísticas passaram; auditoria independente PASS somente na claim estreita. Resultado global W75_PARTIAL; kickoff preparado antes do hook fica fora da captura. Sem mudança de gameplay/produção. Próximo: fixture isolada de restart offside/goal-kick.",
+  "currentFocus": "W76_CAPTURE_OVERLOADS_NARROW_PASS; resultado científico PARTIAL. Uma fixture sintética com OffsidePending inicializado manualmente passou no teste 1/1; auditor independente PASS apenas nesse escopo. Sem mudanças de gameplay/produção. Próximo: W77 testa overloads em goal-kick Pending/Setup/Ready.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,6 +12,16 @@
     "unknown": 5
   },
   "recentCycles": [
+    {
+      "id": "W76",
+      "wave": "W76",
+      "publishedAt": "2026-10-27T16:59:00Z",
+      "macro": "M2",
+      "title": "Captura de overloads passou em fixture sintética de offside",
+      "status": "W76_CAPTURE_OVERLOADS_NARROW_PASS; resultado científico PARTIAL; teste 1/1",
+      "summary": "Uma fixture sintética inicia com InitialState manualmente definido como OffsidePending; o primeiro tick termina em OffsideSetup e a captura pareia uma transição por callback. Baseline e harness tiveram resultado equivalente nesta fixture; teste direcionado 1/1 e auditoria independente PASS no escopo sintético.",
+      "result": "Não demonstra geração natural de offside nem cobertura de outros lifecycles; generalização limitada. Sem mudança de gameplay/produção. Próximo teste falsificável W77: cobertura dos overloads em goal-kick Pending/Setup/Ready."
+    },
     {
       "id": "W75",
       "wave": "W75",
@@ -31,16 +41,6 @@
       "status": "FEASIBILITY_PARTIAL; GO condicional só para diagnóstico isolado em harness V2",
       "summary": "A revisão de interface encontrou ActionResult com efeitos propostos e estado resultante, mas o trace atual não expõe o lote após resolução de conflitos. Assim, ele não prova qual efeito aceito foi aplicado. Identidade de build/revisão não estabelecida nesta frente.",
       "result": "GO condicional apenas para captura diagnóstica isolada no harness V2. W74 não implementou, testou, compilou ou simulou mudança. Sem afirmação sobre qualidade de gameplay ou mudança no motor."
-    },
-    {
-      "id": "W73",
-      "wave": "W73",
-      "publishedAt": "2026-10-27T16:27:05Z",
-      "macro": "M2",
-      "title": "Auditoria de estados e ações após atribuição de owner",
-      "status": "Raw trace audit PASS; vínculo causal de ações PARTIAL",
-      "summary": "A auditoria independente revalidou 78 casos em 468 ticks dos traces W68. Nos 73 casos post-gap, o owner atribuído persiste em 1/73 no tick +1 e 0/73 no +5; nos cinco casos terminal-null, 0/5 em ambos. As comparações de ActionResult e atores de eventos são observações delimitadas.",
-      "result": "Os traces não ligam resultados a todos os efeitos aceitos nem provam qual ação causou a transição. Vínculo ação/efeito e causalidade permanecem PARTIAL/UNKNOWN; qualidade e efeito geral UNKNOWN. Sem mudança de gameplay."
     }
   ],
   "macros": [
@@ -986,6 +986,16 @@
   ],
   "diary": [
     {
+      "id": "W76",
+      "wave": "W76",
+      "publishedAt": "2026-10-27T16:59:00Z",
+      "macro": "M2",
+      "title": "Captura de overloads passou em fixture sintética de offside",
+      "status": "W76_CAPTURE_OVERLOADS_NARROW_PASS; resultado científico PARTIAL; teste 1/1",
+      "summary": "Uma fixture sintética inicia com InitialState manualmente definido como OffsidePending; o primeiro tick termina em OffsideSetup e a captura pareia uma transição por callback. Baseline e harness tiveram resultado equivalente nesta fixture; teste direcionado 1/1 e auditoria independente PASS no escopo sintético.",
+      "result": "Não demonstra geração natural de offside nem cobertura de outros lifecycles; generalização limitada. Sem mudança de gameplay/produção. Próximo teste falsificável W77: cobertura dos overloads em goal-kick Pending/Setup/Ready."
+    },
+    {
       "id": "W75",
       "wave": "W75",
       "publishedAt": "2026-10-27T16:50:43Z",
@@ -1004,16 +1014,6 @@
       "status": "FEASIBILITY_PARTIAL; GO condicional só para diagnóstico isolado em harness V2",
       "summary": "A revisão de interface encontrou ActionResult com efeitos propostos e estado resultante, mas o trace atual não expõe o lote após resolução de conflitos. Assim, ele não prova qual efeito aceito foi aplicado. Identidade de build/revisão não estabelecida nesta frente.",
       "result": "GO condicional apenas para captura diagnóstica isolada no harness V2. W74 não implementou, testou, compilou ou simulou mudança. Sem afirmação sobre qualidade de gameplay ou mudança no motor."
-    },
-    {
-      "id": "W73",
-      "wave": "W73",
-      "publishedAt": "2026-10-27T16:27:05Z",
-      "macro": "M2",
-      "title": "Auditoria de estados e ações após atribuição de owner",
-      "status": "Raw trace audit PASS; vínculo causal de ações PARTIAL",
-      "summary": "A auditoria independente revalidou 78 casos em 468 ticks dos traces W68. Nos 73 casos post-gap, o owner atribuído persiste em 1/73 no tick +1 e 0/73 no +5; nos cinco casos terminal-null, 0/5 em ambos. As comparações de ActionResult e atores de eventos são observações delimitadas.",
-      "result": "Os traces não ligam resultados a todos os efeitos aceitos nem provam qual ação causou a transição. Vínculo ação/efeito e causalidade permanecem PARTIAL/UNKNOWN; qualidade e efeito geral UNKNOWN. Sem mudança de gameplay."
     },
     {
       "wave": "W66",
