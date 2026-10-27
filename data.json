@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-20",
-  "updatedAt": "2026-10-27T16:03:45Z",
-  "cycle": "SS-ORCH-001-W71-LIFECYCLE-REVIEW",
+  "version": "2026.10.27-portal-21",
+  "updatedAt": "2026-10-27T16:17:51Z",
+  "cycle": "SS-ORCH-001-W72-POST-SHOT-POSSESSION-TRACE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W71: verificação delimitada do lifecycle passou em auditoria independente dentro do escopo examinado. Causalidade geral e impacto sobre qualidade permanecem UNKNOWN; o resultado não implica mudança de gameplay.",
+  "currentFocus": "W72: auditoria independente PASS para transições delimitadas de owner nos 78 ActiveShoot lançados dos traces W68. Os estados e rótulos não provam causa física nem qualidade; causalidade geral e qualidade permanecem UNKNOWN. Nenhuma mudança de gameplay; BCCM default-off.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,6 +12,16 @@
     "unknown": 5
   },
   "recentCycles": [
+    {
+      "id": "W72",
+      "wave": "W72",
+      "publishedAt": "2026-10-27T16:17:51Z",
+      "macro": "M2",
+      "title": "Estados de posse após o chute acompanhados nos traces W68",
+      "status": "Auditoria independente dos traces brutos PASS; escopo limitado",
+      "summary": "Nos 78 ActiveShoot lançados dos dez traces W68, 73 estados terminais tinham owner; todos depois passaram por owner nulo antes de surgir um owner diferente (2–11 ticks; mediana 4; intervalo nulo mediano 3). Nos outros cinco, o terminal já era owner nulo; um owner apareceu após 7–8 ticks.",
+      "result": "São transições de estado e rótulos registrados, não prova de recuperação física, defesa, causa ou qualidade. Contagens em ticks; só cinco casos OFF. Causalidade geral e qualidade permanecem UNKNOWN; sem mudança de gameplay, BCCM default-off."
+    },
     {
       "id": "W71",
       "wave": "W71",
@@ -31,16 +41,6 @@
       "status": "Concluído; joins auditados PARTIAL; 78 lançamentos validados",
       "summary": "Nos traces pareados W68, foram ligados 79 eventos de tentativa: 78 lançamentos e um bloqueio no mesmo tick. Mediana da distância tentativa→objetivo: OFF 8,0349 (n=5), ON 44,1204 (n=74). Considerando apenas lançamentos: ON 43,3942 (n=73).",
       "result": "Medidas geométricas da amostra, não qualidade, precisão ou sucesso. Há só cinco tentativas OFF; as trajetórias divergem no tick 2. Não estabelece causalidade geral nem melhora de partida. BallCarrierContextualMoveV2 permanece default-off."
-    },
-    {
-      "id": "W69",
-      "wave": "W69",
-      "publishedAt": "2026-10-27T15:29:43Z",
-      "macro": "M2",
-      "title": "Mais episódios de passe reconstruídos; duração mediana igual",
-      "status": "Concluído; auditoria PASS para reconstrução; causalidade PARTIAL",
-      "summary": "Nos cinco pares B dos traces W68: ON teve 7.272 episódios de passe reconstruídos contra 5.230 OFF (+39,0%); samples sem dono com ActivePass+BallMovement: 18.798 contra 13.603 (+38,2%). A duração mediana observada permaneceu em quatro ticks nos dois modos.",
-      "result": "Associação descritiva: compatível com mais episódios, não intervalos medianos mais longos. Os traces divergem no tick 2; não prova causalidade exclusiva nem melhora de qualidade. Amostras são ticks, não segundos ou posses independentes. BCCM segue default-off."
     }
   ],
   "macros": [
@@ -986,6 +986,16 @@
   ],
   "diary": [
     {
+      "id": "W72",
+      "wave": "W72",
+      "publishedAt": "2026-10-27T16:17:51Z",
+      "macro": "M2",
+      "title": "Estados de posse após o chute acompanhados nos traces W68",
+      "status": "Auditoria independente dos traces brutos PASS; escopo limitado",
+      "summary": "Nos 78 ActiveShoot lançados dos dez traces W68, 73 estados terminais tinham owner; todos depois passaram por owner nulo antes de surgir um owner diferente (2–11 ticks; mediana 4; intervalo nulo mediano 3). Nos outros cinco, o terminal já era owner nulo; um owner apareceu após 7–8 ticks.",
+      "result": "São transições de estado e rótulos registrados, não prova de recuperação física, defesa, causa ou qualidade. Contagens em ticks; só cinco casos OFF. Causalidade geral e qualidade permanecem UNKNOWN; sem mudança de gameplay, BCCM default-off."
+    },
+    {
       "id": "W71",
       "wave": "W71",
       "publishedAt": "2026-10-27T16:03:45Z",
@@ -1004,16 +1014,6 @@
       "status": "Concluído; joins auditados PARTIAL; 78 lançamentos validados",
       "summary": "Nos traces pareados W68, foram ligados 79 eventos de tentativa: 78 lançamentos e um bloqueio no mesmo tick. Mediana da distância tentativa→objetivo: OFF 8,0349 (n=5), ON 44,1204 (n=74). Considerando apenas lançamentos: ON 43,3942 (n=73).",
       "result": "Medidas geométricas da amostra, não qualidade, precisão ou sucesso. Há só cinco tentativas OFF; as trajetórias divergem no tick 2. Não estabelece causalidade geral nem melhora de partida. BallCarrierContextualMoveV2 permanece default-off."
-    },
-    {
-      "id": "W69",
-      "wave": "W69",
-      "publishedAt": "2026-10-27T15:29:43Z",
-      "macro": "M2",
-      "title": "Mais episódios de passe reconstruídos; duração mediana igual",
-      "status": "Concluído; auditoria PASS para reconstrução; causalidade PARTIAL",
-      "summary": "Nos cinco pares B dos traces W68: ON teve 7.272 episódios de passe reconstruídos contra 5.230 OFF (+39,0%); samples sem dono com ActivePass+BallMovement: 18.798 contra 13.603 (+38,2%). A duração mediana observada permaneceu em quatro ticks nos dois modos.",
-      "result": "Associação descritiva: compatível com mais episódios, não intervalos medianos mais longos. Os traces divergem no tick 2; não prova causalidade exclusiva nem melhora de qualidade. Amostras são ticks, não segundos ou posses independentes. BCCM segue default-off."
     },
     {
       "wave": "W66",
