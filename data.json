@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-38",
-  "updatedAt": "2026-10-27T18:12:00Z",
-  "cycle": "SS-ORCH-001-W86-MOVE-PASS-SCORE-INVENTORY",
+  "version": "2026.10.27-portal-39",
+  "updatedAt": "2026-10-27T18:17:00Z",
+  "cycle": "SS-ORCH-001-W87-CONTEXTUAL-MOVE-MULTISTATE-PROBE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W86_MOVE_PASS_SCORE_INVENTORY_AUDITED; no inventário das capturas W81/W84/W14, nenhuma contém scores Move/Pass alinhados em decisões adicionais. Auditoria independente PASS somente para esse inventário; fontes não examinadas permanecem UNKNOWN. Próximo W87: probe read-only por decisão do carrier para testar W85 em mais estados, condicionado a confirmar acesso aos scores sem alterar o motor.",
+  "currentFocus": "W87_MOVE_ZERO_PASS_OVER_CEILING_CAPTURED; probe read-only no runtime W81/W14 e fixture W07 seed 1729 capturou ticks 14/18/22. Nas três linhas, Move=0 <= goalNeed; Pass elegível acima do teto foi selecionado. Validator 19/19 e auditoria independente PASS local, PARTIAL generalização. Sem alteração de gameplay. Próximo W88: definir próximo estado/pergunta falsificável sem extrapolar além das capturas auditadas.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W87",
+      "wave": "W87",
+      "publishedAt": "2026-10-27T18:17:00Z",
+      "macro": "M2",
+      "title": "Três decisões capturadas selecionam Pass quando Move fica abaixo do limiar",
+      "status": "W87_READ_ONLY_MULTISTATE_PROBE_PASS; PASS local, PARTIAL generalização",
+      "summary": "Probe read-only com runtime W81/W14 e fixture W07 seed 1729 capturou ticks 14/18/22. Nas três linhas, Move=0 <= goalNeed e Pass elegível acima do teto foi selecionado. Validator 19/19.",
+      "result": "Auditoria independente PASS para os registros locais; PARTIAL para generalização. Três decisões nestes runtimes/fixture não demonstram qualidade global nem comportamento universal. Sem alteração de gameplay/produção. Próximo W88: definir a próxima pergunta/estado falsificável sem extrapolar além da evidência atual."
+    },
+    {
       "id": "W86",
       "wave": "W86",
       "publishedAt": "2026-10-27T18:12:00Z",
@@ -20,7 +30,7 @@
       "title": "Inventário não encontrou decisões adicionais com scores Move/Pass alinhados",
       "status": "W86_CAPTURE_SCORE_INVENTORY_AUDITED; PASS no inventário, UNKNOWN fora dele",
       "summary": "Nas capturas inventariadas W81/W84/W14, não há scores Move/Pass alinhados em decisões adicionais. Auditoria independente PASS para o inventário; fontes não examinadas permanecem UNKNOWN.",
-      "result": "Conclusão limitada às capturas inspecionadas; não afirma ausência em outras fontes. Próximo W87: probe read-only por decisão do carrier para testar W85 em mais estados, somente se o acesso aos scores puder ser confirmado sem alteração do motor."
+      "result": "No inventário W81/W84/W14 não foram encontrados scores Move/Pass alinhados em decisões adicionais. Auditoria PASS dentro do inventário; fontes não examinadas UNKNOWN. O probe read-only com novas linhas foi executado em W87; consulte W87 para o resultado restrito e W88 para próxima pergunta a definir."
     },
     {
       "id": "W85",
