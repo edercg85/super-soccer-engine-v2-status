@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-10",
-  "updatedAt": "2026-10-27T11:43:00Z",
-  "cycle": "W40 — cursor PRNG e escolha do receptor; generalidade UNKNOWN",
+  "version": "2026.10.27-portal-14",
+  "updatedAt": "2026-10-27T14:11:38Z",
+  "cycle": "SS-ORCH-001-W66-CAUSAL-MOVE-SCORE-PAIR",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Próxima pergunta falsificável: repetir captura/replay de snapshots reais de passe em múltiplas seeds com checkpoint PRNG completo, medindo resolução, receptor/posse e efeitos adversos; não inferir qualidade pelo volume de passes.",
+  "currentFocus": "Aguardar auditoria independente e definir avaliação multiseed pareada; manter BCCM default existente sem recomendação de mudança.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -954,6 +954,30 @@
   ],
   "diary": [
     {
+      "wave": "W66",
+      "publishedAt": "2026-10-27T14:11:38Z",
+      "macro": "M2",
+      "title": "BCCM muda a primeira decisão no replay pareado",
+      "summary": "No mesmo pre-state do tick 2, OFF escolhe Move e ON escolhe Pass; o efeito é local à seed e não demonstra melhora global.",
+      "result": "Auditoria computacional passou; revisão independente pendente"
+    },
+    {
+      "wave": "W42",
+      "publishedAt": "2026-10-27T12:13:32Z",
+      "macro": "M2",
+      "title": "Passo técnico distinguido do efeito de tackle",
+      "summary": "Em três partidas completas BCCM ON, a regra sample/probabilidade coincidiu em 4.356 tentativas. Vinte e sete resultados exibiram interação Pass×Tackle: 16 reduziram trajetória e 11 foram superseded após falha técnica.",
+      "result": "Source W29b ligado pelo PDB; auditoria 13.201/13.201; sem medida de qualidade ou comparação OFF/ON"
+    },
+    {
+      "wave": "W41",
+      "publishedAt": "2026-10-27T11:58:28Z",
+      "macro": "M2",
+      "title": "Replay exato validado em 15 snapshots de passe",
+      "summary": "Em três seeds, o resolver reproduziu resultado e movimento no cursor original em 15/15 casos. Sondagens locais adjacentes mudaram alguns resultados técnicos; não são trajetórias alternativas nem evidência de melhora em partidas.",
+      "result": "Auditoria computacional 111/111; prevalência e qualidade desconhecidas; V2 permanece research-only"
+    },
+    {
       "wave": "W40",
       "publishedAt": "2026-10-27T11:43:00Z",
       "macro": "M2",
@@ -1024,30 +1048,6 @@
       "title": "O resolver lança Shoot como tentativa degradada",
       "summary": "No snapshot do tick 85, o Shoot falhou no teste técnico mas declarou trajetória ativa. Sem defesa ou gol.",
       "result": "Resultado local reproduzido"
-    },
-    {
-      "wave": "W36",
-      "publishedAt": "2026-10-27T03:41:00Z",
-      "macro": "M2",
-      "title": "Projeção explica localmente o score Move zero",
-      "summary": "O melhor destino aumentou distância projetada ao gol e zerou progresso positivo em uma entrada; sem claim de qualidade.",
-      "result": "Auditoria restrita passou"
-    },
-    {
-      "wave": "W35",
-      "publishedAt": "2026-10-27T02:20:08Z",
-      "macro": "M2",
-      "title": "Passe seguinte observado após retomada",
-      "summary": "Em seis traces, o passe seguinte terminou conforme os eventos; lados e ticks diferiram entre braços.",
-      "result": "Auditoria local aprovada"
-    },
-    {
-      "wave": "W34",
-      "publishedAt": "2026-10-27T02:14:33Z",
-      "macro": "M2",
-      "title": "Identidade de quem recupera corrigida",
-      "summary": "A recuperação foi de um companheiro do mesmo lado do passe; texto corrigido com corrigendum.",
-      "result": "Correção auditada"
     }
   ],
   "history": [
@@ -2038,6 +2038,342 @@
     {
       "id": "CP-W40-03",
       "title": "Ranking do segundo passe e checkpoint final W40"
+    },
+    {
+      "id": "CP-W41-00",
+      "title": "Pré-flight de replay do cursor em passes reais"
+    },
+    {
+      "id": "CP-W41-01",
+      "title": "Replays exatos e sondagens locais auditados"
+    },
+    {
+      "id": "CP-W41-02",
+      "title": "ZIP W41 validado e copiado para output_gpt"
+    },
+    {
+      "id": "CP-W42-00",
+      "title": "Pré-flight define amostra temporal de passes técnicos"
+    },
+    {
+      "id": "CP-W42-01",
+      "title": "Três pares de run passaram paridade e replay temporal"
+    },
+    {
+      "id": "CP-W42-02",
+      "title": "Outcomes de passe e ramos Pass×Tackle confirmados em W29b"
+    },
+    {
+      "id": "CP-W42-03",
+      "title": "W42 reportado e ZIP central validado"
+    },
+    {
+      "id": "CP-W43-00",
+      "title": "Pré-flight limita captura downstream a seis interações"
+    },
+    {
+      "id": "CP-W43-01",
+      "title": "Seis efeitos reais capturados; event types indicam conclusão e tackle"
+    },
+    {
+      "id": "CP-W43-02",
+      "title": "Participantes de eventos ligam effects a PassCompleted/PassFailed"
+    },
+    {
+      "id": "CP-W43-03",
+      "title": "ZIP W43 validado e publicado em output_gpt"
+    },
+    {
+      "id": "CP-W44-00",
+      "title": "Pré-flight e recorte de seis casos W43"
+    },
+    {
+      "id": "CP-W44-01",
+      "title": "Reprodução e crosswalk independentes passaram"
+    },
+    {
+      "id": "CP-W44-02",
+      "title": "Claims e gaps W44 fechados"
+    },
+    {
+      "id": "CP-W44-03",
+      "title": "ZIP W44 validado e publicado"
+    },
+    {
+      "id": "CP-W45-00",
+      "title": "Pré-flight fixa projeção e parada da reconstrução"
+    },
+    {
+      "id": "CP-W45-01",
+      "title": "Recuperador e maior BallControl coincidem em seis eventos"
+    },
+    {
+      "id": "CP-W45-02",
+      "title": "R4 separa elegibilidade antes/depois do Move em cinco recuperações"
+    },
+    {
+      "id": "CP-W45-03",
+      "title": "W45 fecha reconstrução de seis recuperações"
+    },
+    {
+      "id": "CP-W45-04",
+      "title": "ZIP W45 validado e publicado"
+    },
+    {
+      "id": "CP-W46-00",
+      "title": "Pré-flight fixa diagnostics e gates de Objective Move"
+    },
+    {
+      "id": "CP-W46-01",
+      "title": "Objective Move identificado com source PDB verificado"
+    },
+    {
+      "id": "CP-W46-02",
+      "title": "Q&A/claims concluídos com UNKNOWN preservado"
+    },
+    {
+      "id": "CP-W46-03",
+      "title": "ZIP W46 validado e publicado"
+    },
+    {
+      "id": "CP-W47-00",
+      "title": "Pré-flight fixa vetores e gates W47"
+    },
+    {
+      "id": "CP-W47-03",
+      "title": "ZIP W47 publicado e validado"
+    },
+    {
+      "id": "CP-W48-00",
+      "title": "Pré-flight de recomputação cinemática"
+    },
+    {
+      "id": "CP-W48-01",
+      "title": "Destino efetivo explica parada do receiver"
+    },
+    {
+      "id": "CP-W48-02",
+      "title": "ZIP W48 publicado e validado"
+    },
+    {
+      "id": "CP-W49-00",
+      "title": "Pré-flight do crosswalk dos três endpoints ativos"
+    },
+    {
+      "id": "CP-W49-01",
+      "title": "Endpoint efetivo validado nos três casos"
+    },
+    {
+      "id": "CP-W49-02",
+      "title": "ZIP W49 publicado e validado"
+    },
+    {
+      "id": "CP-W50-00",
+      "title": "Pré-flight para auditar emissão de PassCompleted"
+    },
+    {
+      "id": "CP-W50-01",
+      "title": "PassCompleted derivado de ActivePass/posse, contato Unknown"
+    },
+    {
+      "id": "CP-W50-02",
+      "title": "ZIP W50 publicado e validado"
+    },
+    {
+      "id": "CP-W51-00",
+      "title": "Pré-flight do ramo PassFailed em trace existente"
+    },
+    {
+      "id": "CP-W51-01",
+      "title": "Ramo negativo PassFailed confirmado em trace prévio"
+    },
+    {
+      "id": "CP-W51-02",
+      "title": "ZIP W51 publicado e validado"
+    },
+    {
+      "id": "CP-W52-00",
+      "title": "Pré-flight para decisão seguinte após recovery"
+    },
+    {
+      "id": "CP-W52-01",
+      "title": "Nova tentativa de passe após recovery identificada"
+    },
+    {
+      "id": "CP-W52-02",
+      "title": "ZIP W52 publicado e validado"
+    },
+    {
+      "id": "CP-W53-00",
+      "title": "Pré-flight para terminal do ActivePass W52"
+    },
+    {
+      "id": "CP-W53-01",
+      "title": "Outcome da tentativa tick909 observado em tick911"
+    },
+    {
+      "id": "CP-W53-02",
+      "title": "ZIP W53 publicado e validado"
+    },
+    {
+      "id": "CP-W54-00",
+      "title": "Pré-flight recovery candidate/winner"
+    },
+    {
+      "id": "CP-W54-01",
+      "title": "Candidatos/winner do recovery medidos"
+    },
+    {
+      "id": "CP-W54-02",
+      "title": "ZIP W54 publicado e validado"
+    },
+    {
+      "id": "CP-W55-00",
+      "title": "Pré-flight Completed × Failed crosswalk"
+    },
+    {
+      "id": "CP-W55-01",
+      "title": "Completed/Failed comparados com crosswalk de snapshot"
+    },
+    {
+      "id": "CP-W55-02",
+      "title": "ZIP W55 publicado e validado"
+    },
+    {
+      "id": "CP-W56-00",
+      "title": "Pré-flight da trajetória do passe até recovery"
+    },
+    {
+      "id": "CP-W56-01",
+      "title": "Recovery ocorre antes do endpoint de trajetória"
+    },
+    {
+      "id": "CP-W56-02",
+      "title": "ZIP W56 publicado e validado"
+    },
+    {
+      "id": "CP-W57-00",
+      "title": "Pré-flight da primeira ação pós-recovery"
+    },
+    {
+      "id": "CP-W57-01",
+      "title": "Primeira ação pós-recovery auditada"
+    },
+    {
+      "id": "CP-W57-02",
+      "title": "ZIP W57 consolidado"
+    },
+    {
+      "id": "CP-W58-00",
+      "title": "Preflight do terminal do novo passe"
+    },
+    {
+      "id": "CP-W57-02",
+      "title": "ZIP W57 consolidado em output_gpt"
+    },
+    {
+      "id": "CP-W58-01",
+      "title": "Terminal do passe auditado"
+    },
+    {
+      "id": "CP-W58-02",
+      "title": "ZIP W58 consolidado"
+    },
+    {
+      "id": "CP-W59-00",
+      "title": "Preflight primeira ação após segunda recuperação"
+    },
+    {
+      "id": "CP-W59-01",
+      "title": "Primeira ação após segunda recovery"
+    },
+    {
+      "id": "CP-W59-02",
+      "title": "ZIP W59 consolidado"
+    },
+    {
+      "id": "CP-W60-00",
+      "title": "Preflight terminal da tentativa tick916"
+    },
+    {
+      "id": "CP-W60-01",
+      "title": "Segunda tentativa completada por recovery"
+    },
+    {
+      "id": "CP-W60-02",
+      "title": "ZIP W60 consolidado"
+    },
+    {
+      "id": "CP-W61-00",
+      "title": "Preflight Move do receptor versus endpoint"
+    },
+    {
+      "id": "CP-W61-01",
+      "title": "Move/endpoint/recovery cruzados offline"
+    },
+    {
+      "id": "CP-W61-02",
+      "title": "ZIP W61 consolidado"
+    },
+    {
+      "id": "CP-W62-00",
+      "title": "Preflight decomposição score tick916"
+    },
+    {
+      "id": "CP-W63-00",
+      "title": "Preflight cross-seed pós-recovery"
+    },
+    {
+      "id": "CP-W63-01",
+      "title": "Crosswalk offline pós-recovery auditado"
+    },
+    {
+      "id": "CP-W63-02",
+      "title": "ZIP W63 publicado em output_gpt"
+    },
+    {
+      "id": "CP-W64-00",
+      "title": "Preflight do contraste Move/posse"
+    },
+    {
+      "id": "CP-W64-01",
+      "title": "Fronteira contextual do Move esclarecida localmente"
+    },
+    {
+      "id": "CP-W64-02",
+      "title": "ZIP W64 publicado"
+    },
+    {
+      "id": "CP-W65-00",
+      "title": "Preflight transição do mesmo carrier"
+    },
+    {
+      "id": "CP-W65-01",
+      "title": "Score Move muda sob contextualização por posse"
+    },
+    {
+      "id": "CP-W65-02",
+      "title": "ZIP W65 publicado"
+    },
+    {
+      "id": "CP-W66-00",
+      "title": "Preflight replay OFF/ON dos ticks342–343"
+    },
+    {
+      "id": "CP-W66-00",
+      "title": "Preflight replay OFF/ON"
+    },
+    {
+      "id": "CP-W66-01",
+      "title": "Pareamento tick2 e primeira divergência"
+    },
+    {
+      "id": "CP-W66-02",
+      "title": "ON reproduz W47 e pacote publicado"
+    },
+    {
+      "id": "CP-W66-03",
+      "title": "ZIP consolidado W66"
     }
   ]
 }
