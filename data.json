@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-43",
-  "updatedAt": "2026-10-27T18:33:00Z",
-  "cycle": "SS-ORCH-001-W91-SHOOT-SCORE-DECOMPOSITION",
+  "version": "2026.10.27-portal-44",
+  "updatedAt": "2026-10-27T18:41:00Z",
+  "cycle": "SS-ORCH-001-W92-SHOOT-LAUNCH-TERMINAL-TRACE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W91_T64_SHOOT_SCORE_RECONSTRUCTED; distance 51.965m > DistanceScale40 dá distanceScore=0; GK é excluído da obstrução; nearest non-GK 3.11354m > LaneClearance3 dá laneScore=100. Atributos 64/67/89/88 contribuem 12.8/6.7/8.9/8.8; fórmula recompõe runtime Shoot .572. Auditor independente PASS para aritmética/elegibilidade, PARTIAL para vínculo helper/fonte à build porque manifest W14 não enumera ShootRules/roles. Explica score, não lançamento/resolução. Sem mudança no motor. Próximo W92: investigar vínculo build/helper e/ou evidência downstream sem presumir execução do chute.",
+  "currentFocus": "W92_SHOOT_LAUNCH_TERMINAL_TRACE_AUDITED; prefixo seed1729 t555: 22 decisões (1 Shoot, 21 Move), zero Tackle; fallback direto ResolveShoot. Arias d=35.566878m, probabilidade técnica 43.3775%; draw 0.7925896881 produz ShootLaunchDegraded. Draw error side 0.5007546071 aplica +15°, segmento 60m/peak25 capturado; ShotEvent e BMS/ActiveShoot confirmam lançamento degradado. Em t558 cruza Right fora da boca; ShotOffTarget para o mesmo shooter, GK adversário recebe em (99.5,34), restart/trajectory state nulos, placar 1-1. Auditor independente PASS local, PARTIAL generalização/source-helper crosswalk. Nenhuma alteração no motor. Próximo W93: comparar outro traço observável e/ou resolver crosswalk, sem generalizar a partir desta tentativa única.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W92",
+      "wave": "W92",
+      "publishedAt": "2026-10-27T18:41:00Z",
+      "macro": "M2",
+      "title": "Lançamento degradado termina em ShotOffTarget e posse do goleiro em uma execução",
+      "status": "W92_SHOOT_LAUNCH_TERMINAL_TRACE_AUDITED; PASS local, PARTIAL generalização/source-helper crosswalk",
+      "summary": "No prefixo seed1729 t555 houve 22 decisões (1 Shoot, 21 Move), zero Tackle; fallback ResolveShoot. Arias: distância 35.566878m, probabilidade técnica 43.3775%; draw 0.7925896881 causou ShootLaunchDegraded. Draw 0.5007546071 aplicou +15°; segmento 60m/peak25 foi capturado, com ShotEvent e BMS/ActiveShoot. Em t558, cruzou Right fora da boca; ShotOffTarget do mesmo shooter, GK adversário recebeu em (99.5,34), restart/trajectory nulos e placar 1-1.",
+      "result": "Auditoria independente PASS para a cadeia observada nesta execução; PARTIAL para generalização e source/helper crosswalk. Demonstra lançamento degradado, desfecho ShotOffTarget e transferência observada ao GK neste prefixo; não estima frequência nem comportamento geral. Sem alteração no motor. W93: comparar outro traço observável e/ou resolver crosswalk sem generalizar desta amostra."
+    },
+    {
       "id": "W91",
       "wave": "W91",
       "publishedAt": "2026-10-27T18:33:00Z",
@@ -20,7 +30,7 @@
       "title": "Componentes locais recompõem o score Shoot .572 em t64",
       "status": "W91_T64_SHOOT_SCORE_RECONSTRUCTED; PASS aritmética/elegibilidade, PARTIAL build linkage",
       "summary": "Em t64, distância 51.965m > DistanceScale40 resulta distanceScore=0. GK é excluído da obstrução; nearest non-GK a 3.11354m > LaneClearance3 resulta laneScore=100. Atributos 64/67/89/88 contribuem 12.8/6.7/8.9/8.8; a fórmula recompõe runtime Shoot .572.",
-      "result": "Auditoria independente PASS para aritmética e elegibilidade. PARTIAL para vínculo helper/fonte à build: manifest W14 não enumera ShootRules/roles. Isso explica o score de seleção, não prova lançamento ou resolução do chute. Sem mudança no motor. W92: investigar linkage e/ou evidência downstream sem pressupor execução ou resultado."
+      "result": "A decomposição recompõe Shoot .572 localmente; vínculo helper/fonte à build segue PARTIAL. W92 seguiu uma tentativa de uma execução: ShootLaunchDegraded, ShotOffTarget e posse observada do GK, sem alegação de frequência ou generalização. Consulte W92."
     },
     {
       "id": "W90",
