@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-37",
-  "updatedAt": "2026-10-27T18:10:00Z",
-  "cycle": "SS-ORCH-001-W85-CONTEXTUAL-MOVE-COUNTERFACTUAL",
+  "version": "2026.10.27-portal-38",
+  "updatedAt": "2026-10-27T18:12:00Z",
+  "cycle": "SS-ORCH-001-W86-MOVE-PASS-SCORE-INVENTORY",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W85_MOVE_CONTEXTUAL_CEILING_AUDITED; no snapshot W81 t2, Move contextual ceiling 0.475683 ficou abaixo de Pass 0.731514. Auditoria independente PASS para o cálculo local e PARTIAL para proveniência; sem generalização para outros estados, qualidade global ou alteração de gameplay/produção. Próximo W86: formular e executar o próximo teste falsificável a partir deste contrafactual isolado.",
+  "currentFocus": "W86_MOVE_PASS_SCORE_INVENTORY_AUDITED; no inventário das capturas W81/W84/W14, nenhuma contém scores Move/Pass alinhados em decisões adicionais. Auditoria independente PASS somente para esse inventário; fontes não examinadas permanecem UNKNOWN. Próximo W87: probe read-only por decisão do carrier para testar W85 em mais estados, condicionado a confirmar acesso aos scores sem alterar o motor.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W86",
+      "wave": "W86",
+      "publishedAt": "2026-10-27T18:12:00Z",
+      "macro": "M2",
+      "title": "Inventário não encontrou decisões adicionais com scores Move/Pass alinhados",
+      "status": "W86_CAPTURE_SCORE_INVENTORY_AUDITED; PASS no inventário, UNKNOWN fora dele",
+      "summary": "Nas capturas inventariadas W81/W84/W14, não há scores Move/Pass alinhados em decisões adicionais. Auditoria independente PASS para o inventário; fontes não examinadas permanecem UNKNOWN.",
+      "result": "Conclusão limitada às capturas inspecionadas; não afirma ausência em outras fontes. Próximo W87: probe read-only por decisão do carrier para testar W85 em mais estados, somente se o acesso aos scores puder ser confirmado sem alteração do motor."
+    },
+    {
       "id": "W85",
       "wave": "W85",
       "publishedAt": "2026-10-27T18:10:00Z",
@@ -20,7 +30,7 @@
       "title": "Teto contextual de Move fica abaixo de Pass no snapshot W81 t2",
       "status": "W85_MOVE_CONTEXTUAL_CEILING_AUDITED; PASS local, PARTIAL proveniência/generalização",
       "summary": "No snapshot W81 t2, o teto calculado para Move contextual foi 0.475683, abaixo do score Pass de 0.731514. Auditoria independente PASS para a comparação/cálculo local; proveniência PARTIAL.",
-      "result": "Resultado restrito a este snapshot e à métrica comparada. Não demonstra qualidade geral nem justifica alteração de gameplay/produção. Próximo W86: formular e executar o próximo teste falsificável com base neste contrafactual."
+      "result": "No snapshot W81 t2, o teto calculado para Move contextual foi 0.475683, abaixo de Pass 0.731514. Auditoria independente PASS para a comparação local; proveniência PARTIAL. Resultado restrito ao snapshot, sem qualidade geral ou mudança de gameplay/produção. W86 inventariou as capturas disponíveis e não encontrou decisões adicionais alinhadas; consulte W86 e o probe read-only W87 planejado."
     },
     {
       "id": "W84",
