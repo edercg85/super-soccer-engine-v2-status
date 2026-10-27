@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-6",
-  "updatedAt": "2026-10-27T05:17:39Z",
+  "version": "2026.10.27-portal-7",
+  "updatedAt": "2026-10-27T05:22:00Z",
   "cycle": "W38 — efeitos causais locais e fases",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Selecionar em traces existentes uma divergência OFF/ON em posse de open play fora do kickoff; comparar a consequência do atraso/antecipação do passe, sem alegar causalidade se preStates diferirem.",
+  "currentFocus": "Próximo alvo: localizar em corpus existente uma divergência pareada durante posse já estabelecida; se inexistente, desenhar fixture sintética estreita para medir uma consequência imediata sem chamar de partida real.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -955,11 +955,11 @@
   "diary": [
     {
       "wave": "W38",
-      "publishedAt": "2026-10-27T05:17:39Z",
+      "publishedAt": "2026-10-27T05:22:00Z",
       "macro": "M2",
-      "title": "Passe antecipado chega a impedimento e tiro livre",
-      "summary": "No mesmo estado inicial em três seeds, BCCM ON escolheu Pass no tick2; o trace registra impedimento do alvo no tick5 e indireto para o mandante no tick6. Isso comprova o efeito local desta rota, não qualidade global.",
-      "result": "m2/m4 PASS em seleção e eventos; gatilho reconstruído do código; MVP segue não aceito"
+      "title": "Comparação pareada mostra passe antecipado e offside",
+      "summary": "No mesmo estado inicial, ON tenta passe no tick2 e OFF no tick3. Nos três traces ON o alvo fica impedido no tick5; em dois OFF o primeiro passe falha, um companheiro recupera e a sequência segue até novo impedimento. São sequências auditadas, sem medida de qualidade global.",
+      "result": "m2/m4 PASS para traces até tick8; MVP continua não aceito"
     },
     {
       "wave": "W37",
@@ -1998,6 +1998,10 @@
     {
       "id": "CP-W38-08",
       "title": "Reinício offside pronto com posse do kicker beneficiário"
+    },
+    {
+      "id": "CP-W38-10",
+      "title": "Reconciliação de auditorias W38-R1/R2/C07/C08/C09"
     }
   ]
 }
