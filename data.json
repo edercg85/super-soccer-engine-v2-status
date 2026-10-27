@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.27-portal-44",
-  "updatedAt": "2026-10-27T18:41:00Z",
+  "version": "2026.10.27-portal-45",
+  "updatedAt": "2026-10-27T18:42:00Z",
   "cycle": "SS-ORCH-001-W92-SHOOT-LAUNCH-TERMINAL-TRACE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "W92_SHOOT_LAUNCH_TERMINAL_TRACE_AUDITED; prefixo seed1729 t555: 22 decisões (1 Shoot, 21 Move), zero Tackle; fallback direto ResolveShoot. Arias d=35.566878m, probabilidade técnica 43.3775%; draw 0.7925896881 produz ShootLaunchDegraded. Draw error side 0.5007546071 aplica +15°, segmento 60m/peak25 capturado; ShotEvent e BMS/ActiveShoot confirmam lançamento degradado. Em t558 cruza Right fora da boca; ShotOffTarget para o mesmo shooter, GK adversário recebe em (99.5,34), restart/trajectory state nulos, placar 1-1. Auditor independente PASS local, PARTIAL generalização/source-helper crosswalk. Nenhuma alteração no motor. Próximo W93: comparar outro traço observável e/ou resolver crosswalk, sem generalizar a partir desta tentativa única.",
