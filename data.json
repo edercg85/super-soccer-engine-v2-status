@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-42",
-  "updatedAt": "2026-10-27T18:29:00Z",
-  "cycle": "SS-ORCH-001-W90-T64-BCCM-ABLATION",
+  "version": "2026.10.27-portal-43",
+  "updatedAt": "2026-10-27T18:33:00Z",
+  "cycle": "SS-ORCH-001-W91-SHOOT-SCORE-DECOMPOSITION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W90_T64_BCCM_ABLATION_AUDITED; ablação diagnóstica local na fixture seed1729, assemblies W81/W14 pinadas; só BCCM difere nas chamadas diretas. OFF seleciona Move .771429; ON tem Move=0 e seleciona Shoot .572 (Pass .544154; demais scores inalterados); ON direto coincide com a decisão da simulação. Auditoria independente PASS para comparação local; PARTIAL para partida completa/RNG checkpoint e lançamento/resolução. Nenhuma mudança no motor. Próximo W91: investigar evidência de emissão/terminal e RNG do Shoot selecionado, sem inferir que ocorreu resolução.",
+  "currentFocus": "W91_T64_SHOOT_SCORE_RECONSTRUCTED; distance 51.965m > DistanceScale40 dá distanceScore=0; GK é excluído da obstrução; nearest non-GK 3.11354m > LaneClearance3 dá laneScore=100. Atributos 64/67/89/88 contribuem 12.8/6.7/8.9/8.8; fórmula recompõe runtime Shoot .572. Auditor independente PASS para aritmética/elegibilidade, PARTIAL para vínculo helper/fonte à build porque manifest W14 não enumera ShootRules/roles. Explica score, não lançamento/resolução. Sem mudança no motor. Próximo W92: investigar vínculo build/helper e/ou evidência downstream sem presumir execução do chute.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W91",
+      "wave": "W91",
+      "publishedAt": "2026-10-27T18:33:00Z",
+      "macro": "M2",
+      "title": "Componentes locais recompõem o score Shoot .572 em t64",
+      "status": "W91_T64_SHOOT_SCORE_RECONSTRUCTED; PASS aritmética/elegibilidade, PARTIAL build linkage",
+      "summary": "Em t64, distância 51.965m > DistanceScale40 resulta distanceScore=0. GK é excluído da obstrução; nearest non-GK a 3.11354m > LaneClearance3 resulta laneScore=100. Atributos 64/67/89/88 contribuem 12.8/6.7/8.9/8.8; a fórmula recompõe runtime Shoot .572.",
+      "result": "Auditoria independente PASS para aritmética e elegibilidade. PARTIAL para vínculo helper/fonte à build: manifest W14 não enumera ShootRules/roles. Isso explica o score de seleção, não prova lançamento ou resolução do chute. Sem mudança no motor. W92: investigar linkage e/ou evidência downstream sem pressupor execução ou resultado."
+    },
+    {
       "id": "W90",
       "wave": "W90",
       "publishedAt": "2026-10-27T18:29:00Z",
@@ -20,7 +30,7 @@
       "title": "Ablação local de BCCM altera Move para Shoot no snapshot t64",
       "status": "W90_T64_BCCM_ABLATION_AUDITED; PASS comparação local, PARTIAL partida/RNG/downstream",
       "summary": "Ablação diagnóstica no estado t64 da fixture seed1729 com assemblies W81/W14 pinadas; somente BCCM difere nas chamadas diretas. OFF seleciona Move .771429. ON tem Move=0 e seleciona Shoot .572 sobre Pass .544154; outros scores permanecem iguais. O resultado ON direto coincide com a decisão da simulação.",
-      "result": "Auditoria independente PASS para a comparação local. PARTIAL para equivalência a partida completa e checkpoint RNG; lançamento/resolução do chute não demonstrados. Nenhuma alteração no motor. Próximo W91: procurar evidência de emissão/terminal e RNG do Shoot selecionado, sem presumir resolução ou gol."
+      "result": "A ablação local OFF/ON em t64 manteve outros scores e alterou seleção para Shoot com BCCM ON; auditoria PASS para comparação local. W91 recompôs o score Shoot .572, mas linkage helper/build permanece PARTIAL e nenhum lançamento/resolução foi demonstrado. Consulte W91."
     },
     {
       "id": "W89",
