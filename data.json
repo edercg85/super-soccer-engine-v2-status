@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-19",
-  "updatedAt": "2026-10-27T15:38:22Z",
-  "cycle": "SS-ORCH-001-W70-SHOT-DISTANCE-OBSERVATION",
+  "version": "2026.10.27-portal-20",
+  "updatedAt": "2026-10-27T16:03:45Z",
+  "cycle": "SS-ORCH-001-W71-LIFECYCLE-REVIEW",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W70 ligou 79 eventos de tentativa de chute nos traces W68: 78 lançados e um bloqueado no mesmo tick. Medianas observadas tentativa→objetivo: OFF 8,0349 (n=5), ON 44,1204 (n=74); lançamentos ON 43,3942 (n=73). Amostra pequena, caminhos divergem no tick 2; sem inferência de causalidade geral ou qualidade. BCCM default-off.",
+  "currentFocus": "W71: verificação delimitada do lifecycle passou em auditoria independente dentro do escopo examinado. Causalidade geral e impacto sobre qualidade permanecem UNKNOWN; o resultado não implica mudança de gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,6 +12,16 @@
     "unknown": 5
   },
   "recentCycles": [
+    {
+      "id": "W71",
+      "wave": "W71",
+      "publishedAt": "2026-10-27T16:03:45Z",
+      "macro": "M2",
+      "title": "Verificação limitada de lifecycle passou na auditoria",
+      "status": "PASS no escopo delimitado; causalidade e qualidade UNKNOWN",
+      "summary": "W71 concluiu uma verificação delimitada do lifecycle com auditoria independente PASS. O resultado vale para as evidências e condições examinadas e não estabelece uma conclusão geral sobre o comportamento do motor.",
+      "result": "Causalidade geral e efeito sobre a qualidade das partidas permanecem UNKNOWN. Nenhuma mudança de gameplay é implicada por este resultado."
+    },
     {
       "id": "W70",
       "wave": "W70",
@@ -31,16 +41,6 @@
       "status": "Concluído; auditoria PASS para reconstrução; causalidade PARTIAL",
       "summary": "Nos cinco pares B dos traces W68: ON teve 7.272 episódios de passe reconstruídos contra 5.230 OFF (+39,0%); samples sem dono com ActivePass+BallMovement: 18.798 contra 13.603 (+38,2%). A duração mediana observada permaneceu em quatro ticks nos dois modos.",
       "result": "Associação descritiva: compatível com mais episódios, não intervalos medianos mais longos. Os traces divergem no tick 2; não prova causalidade exclusiva nem melhora de qualidade. Amostras são ticks, não segundos ou posses independentes. BCCM segue default-off."
-    },
-    {
-      "id": "W68",
-      "wave": "W68",
-      "publishedAt": "2026-10-27T15:05:19Z",
-      "macro": "M2",
-      "title": "Cinco pares mostram aumento de ticks sem portador associado a estados de passe/bola",
-      "status": "Métricas reconciliadas por duas auditorias e recálculo; interpretação PARTIAL",
-      "summary": "Nos cinco pares B, pre.owner sem portador: 14.035→19.461 (+5.426); ActivePass && BallMovement: 13.603→18.798 (+5.195); ActivePass || BallMovement: 13.611→19.006 (+5.395; 99,43% do delta). Primeira leitura usou post.owner; a diferença é fronteira de amostragem pre/post, não duplicação.",
-      "result": "Apenas amostras de tick, não tempo físico nem episódios. AP/BM são predicados sobrepostos; associação descritiva sem causalidade exclusiva. Auditoria PARTIAL; qualidade global UNKNOWN e BCCM default-off."
     }
   ],
   "macros": [
@@ -986,6 +986,16 @@
   ],
   "diary": [
     {
+      "id": "W71",
+      "wave": "W71",
+      "publishedAt": "2026-10-27T16:03:45Z",
+      "macro": "M2",
+      "title": "Verificação limitada de lifecycle passou na auditoria",
+      "status": "PASS no escopo delimitado; causalidade e qualidade UNKNOWN",
+      "summary": "W71 concluiu uma verificação delimitada do lifecycle com auditoria independente PASS. O resultado vale para as evidências e condições examinadas e não estabelece uma conclusão geral sobre o comportamento do motor.",
+      "result": "Causalidade geral e efeito sobre a qualidade das partidas permanecem UNKNOWN. Nenhuma mudança de gameplay é implicada por este resultado."
+    },
+    {
       "id": "W70",
       "wave": "W70",
       "publishedAt": "2026-10-27T15:38:22Z",
@@ -1004,16 +1014,6 @@
       "status": "Concluído; auditoria PASS para reconstrução; causalidade PARTIAL",
       "summary": "Nos cinco pares B dos traces W68: ON teve 7.272 episódios de passe reconstruídos contra 5.230 OFF (+39,0%); samples sem dono com ActivePass+BallMovement: 18.798 contra 13.603 (+38,2%). A duração mediana observada permaneceu em quatro ticks nos dois modos.",
       "result": "Associação descritiva: compatível com mais episódios, não intervalos medianos mais longos. Os traces divergem no tick 2; não prova causalidade exclusiva nem melhora de qualidade. Amostras são ticks, não segundos ou posses independentes. BCCM segue default-off."
-    },
-    {
-      "id": "W68",
-      "wave": "W68",
-      "publishedAt": "2026-10-27T15:05:19Z",
-      "macro": "M2",
-      "title": "Cinco pares mostram aumento de ticks sem portador associado a estados de passe/bola",
-      "status": "Métricas reconciliadas por duas auditorias e recálculo; interpretação PARTIAL",
-      "summary": "Nos cinco pares B, pre.owner sem portador: 14.035→19.461 (+5.426); ActivePass && BallMovement: 13.603→18.798 (+5.195); ActivePass || BallMovement: 13.611→19.006 (+5.395; 99,43% do delta). Primeira leitura usou post.owner; a diferença é fronteira de amostragem pre/post, não duplicação.",
-      "result": "Apenas amostras de tick, não tempo físico nem episódios. AP/BM são predicados sobrepostos; associação descritiva sem causalidade exclusiva. Auditoria PARTIAL; qualidade global UNKNOWN e BCCM default-off."
     },
     {
       "wave": "W66",
