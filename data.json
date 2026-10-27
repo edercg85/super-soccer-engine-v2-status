@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-17",
-  "updatedAt": "2026-10-27T15:05:19Z",
-  "cycle": "SS-ORCH-001-W68-PASS-LIFECYCLE-REVIEW",
+  "version": "2026.10.27-portal-18",
+  "updatedAt": "2026-10-27T15:29:43Z",
+  "cycle": "SS-ORCH-001-W69-PASS-EPISODE-RECONSTRUCTION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W67: efeito local Move→Pass auditado em cinco seeds; qualidade global UNKNOWN e BCCM default-off. W68: métricas pre.owner reconciliadas em cinco pares (no-owner +5.426; AP&&BM +5.195; AP||BM +5.395). Interpretação limitada a amostras de tick e associação descritiva; auditoria PARTIAL, sem causalidade exclusiva.",
+  "currentFocus": "W69 auditou PASS a reconstrução dos episódios: 7.272 ON vs 5.230 OFF, com mediana de quatro ticks em ambos. Associação causal PARTIAL porque os traces divergem no tick 2; qualidade geral UNKNOWN e BallCarrierContextualMoveV2 permanece default-off.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,14 +13,14 @@
   },
   "recentCycles": [
     {
-      "id": "W67",
-      "wave": "W67",
-      "publishedAt": "2026-10-27T14:47:11Z",
+      "id": "W69",
+      "wave": "W69",
+      "publishedAt": "2026-10-27T15:29:43Z",
       "macro": "M2",
-      "title": "Cinco seeds confirmam o efeito local Move→Pass",
-      "status": "Concluído; auditoria local PASS, qualidade global UNKNOWN",
-      "summary": "Em cinco pares B OFF/ON, o mesmo pre-state do tick 2 muda de Move para Pass; três seeds repetidas em R3 reproduzem os resultados. O efeito local é auditado, mas a qualidade global não foi estabelecida.",
-      "result": "Manter BallCarrierContextualMoveV2 default-off; NO-GO para ativação ampla."
+      "title": "Mais episódios de passe reconstruídos; duração mediana igual",
+      "status": "Concluído; auditoria PASS para reconstrução; causalidade PARTIAL",
+      "summary": "Nos cinco pares B dos traces W68: ON teve 7.272 episódios de passe reconstruídos contra 5.230 OFF (+39,0%); samples sem dono com ActivePass+BallMovement: 18.798 contra 13.603 (+38,2%). A duração mediana observada permaneceu em quatro ticks nos dois modos.",
+      "result": "Associação descritiva: compatível com mais episódios, não intervalos medianos mais longos. Os traces divergem no tick 2; não prova causalidade exclusiva nem melhora de qualidade. Amostras são ticks, não segundos ou posses independentes. BCCM segue default-off."
     },
     {
       "id": "W68",
@@ -31,6 +31,16 @@
       "status": "Métricas reconciliadas por duas auditorias e recálculo; interpretação PARTIAL",
       "summary": "Nos cinco pares B, pre.owner sem portador: 14.035→19.461 (+5.426); ActivePass && BallMovement: 13.603→18.798 (+5.195); ActivePass || BallMovement: 13.611→19.006 (+5.395; 99,43% do delta). Primeira leitura usou post.owner; a diferença é fronteira de amostragem pre/post, não duplicação.",
       "result": "Apenas amostras de tick, não tempo físico nem episódios. AP/BM são predicados sobrepostos; associação descritiva sem causalidade exclusiva. Auditoria PARTIAL; qualidade global UNKNOWN e BCCM default-off."
+    },
+    {
+      "id": "W67",
+      "wave": "W67",
+      "publishedAt": "2026-10-27T14:47:11Z",
+      "macro": "M2",
+      "title": "Cinco seeds confirmam o efeito local Move→Pass",
+      "status": "Concluído; auditoria local PASS, qualidade global UNKNOWN",
+      "summary": "Em cinco pares B OFF/ON, o mesmo pre-state do tick 2 muda de Move para Pass; três seeds repetidas em R3 reproduzem os resultados. O efeito local é auditado, mas a qualidade global não foi estabelecida.",
+      "result": "Manter BallCarrierContextualMoveV2 default-off; NO-GO para ativação ampla."
     }
   ],
   "macros": [
@@ -976,14 +986,14 @@
   ],
   "diary": [
     {
-      "id": "W67",
-      "wave": "W67",
-      "publishedAt": "2026-10-27T14:47:11Z",
+      "id": "W69",
+      "wave": "W69",
+      "publishedAt": "2026-10-27T15:29:43Z",
       "macro": "M2",
-      "title": "Cinco seeds confirmam o efeito local Move→Pass",
-      "status": "Concluído; auditoria local PASS, qualidade global UNKNOWN",
-      "summary": "Em cinco pares B OFF/ON, o mesmo pre-state do tick 2 muda de Move para Pass; três seeds repetidas em R3 reproduzem os resultados. O efeito local é auditado, mas a qualidade global não foi estabelecida.",
-      "result": "Manter BallCarrierContextualMoveV2 default-off; NO-GO para ativação ampla."
+      "title": "Mais episódios de passe reconstruídos; duração mediana igual",
+      "status": "Concluído; auditoria PASS para reconstrução; causalidade PARTIAL",
+      "summary": "Nos cinco pares B dos traces W68: ON teve 7.272 episódios de passe reconstruídos contra 5.230 OFF (+39,0%); samples sem dono com ActivePass+BallMovement: 18.798 contra 13.603 (+38,2%). A duração mediana observada permaneceu em quatro ticks nos dois modos.",
+      "result": "Associação descritiva: compatível com mais episódios, não intervalos medianos mais longos. Os traces divergem no tick 2; não prova causalidade exclusiva nem melhora de qualidade. Amostras são ticks, não segundos ou posses independentes. BCCM segue default-off."
     },
     {
       "id": "W68",
@@ -994,6 +1004,16 @@
       "status": "Métricas reconciliadas por duas auditorias e recálculo; interpretação PARTIAL",
       "summary": "Nos cinco pares B, pre.owner sem portador: 14.035→19.461 (+5.426); ActivePass && BallMovement: 13.603→18.798 (+5.195); ActivePass || BallMovement: 13.611→19.006 (+5.395; 99,43% do delta). Primeira leitura usou post.owner; a diferença é fronteira de amostragem pre/post, não duplicação.",
       "result": "Apenas amostras de tick, não tempo físico nem episódios. AP/BM são predicados sobrepostos; associação descritiva sem causalidade exclusiva. Auditoria PARTIAL; qualidade global UNKNOWN e BCCM default-off."
+    },
+    {
+      "id": "W67",
+      "wave": "W67",
+      "publishedAt": "2026-10-27T14:47:11Z",
+      "macro": "M2",
+      "title": "Cinco seeds confirmam o efeito local Move→Pass",
+      "status": "Concluído; auditoria local PASS, qualidade global UNKNOWN",
+      "summary": "Em cinco pares B OFF/ON, o mesmo pre-state do tick 2 muda de Move para Pass; três seeds repetidas em R3 reproduzem os resultados. O efeito local é auditado, mas a qualidade global não foi estabelecida.",
+      "result": "Manter BallCarrierContextualMoveV2 default-off; NO-GO para ativação ampla."
     },
     {
       "wave": "W66",
