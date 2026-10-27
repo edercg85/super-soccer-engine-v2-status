@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-33",
-  "updatedAt": "2026-10-27T17:53:00Z",
-  "cycle": "SS-ORCH-001-W81-FIRST-DIVERGENCE-BCCM",
+  "version": "2026.10.27-portal-34",
+  "updatedAt": "2026-10-27T18:00:00Z",
+  "cycle": "SS-ORCH-001-W82-MOVE-SCORE-MECHANISM",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W81_LOCAL_FIRST_DIVERGENCE_AUDITED; PASS para a comparação interna observada, PARTIAL para interpretação causal/de gameplay. Nos prefixos pareados PALxCOR seed 1729, o pre-state do tick 2 é idêntico: OFF seleciona Move (score 0.7695) e mantém posse; ON seleciona Pass (0.7315), emite tentativa de passe e altera estado/posse localmente. Isto não prova qualidade geral, sucesso do passe ou qual termo contextual muda Move. Sem alteração de gameplay/produção. Próximo W82: verificar hash/comparabilidade do fonte com as assemblies W14 antes de rastrear os componentes e inputs da pontuação contextual Move no tick 2.",
+  "currentFocus": "W82_MOVE_SCORE_RECONSTRUCTION_AUDITED; PASS para a aritmética no snapshot local, PARTIAL para proveniência dos helpers e generalização. No W81 tick 2, o candidato MoveToTeammate para o goleiro aponta para +X, afastando o portador do home-goal; o progresso projetado é zero e a fórmula contextual zera o score Move, enquanto Pass permanece elegível. Isto explica o ranking apenas neste snapshot; não demonstra que o passe é bom nem qualidade global. Sem mudança de gameplay/produção. Próximo W83: investigar por que MoveObjectiveEvaluator escolheu MoveToTeammate para o próprio goleiro neste estado e qual regra de desempate decidiu o alvo.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W82",
+      "wave": "W82",
+      "publishedAt": "2026-10-27T18:00:00Z",
+      "macro": "M2",
+      "title": "Progresso projetado zero explica o score Move local",
+      "status": "W82_MOVE_SCORE_RECONSTRUCTION_AUDITED; PASS aritmética, PARTIAL proveniência/generalização",
+      "summary": "No snapshot W81 t2, o candidato MoveToTeammate para o goleiro projeta movimento +X, afastando o portador do home-goal. Como o progresso positivo é zero, a fórmula contextual zera o score Move; Pass permanece elegível e vence neste estado.",
+      "result": "Auditoria PASS para o cálculo determinístico local; PARTIAL para proveniência dos helpers e generalização. Não prova que o passe é bom, que outro objetivo Move seria melhor ou que há ganho de qualidade. Sem mudança de gameplay/produção. Próximo W83: rastrear por que MoveObjectiveEvaluator selecionou MoveToTeammate para o próprio goleiro no tick 2 e a regra de desempate."
+    },
+    {
       "id": "W81",
       "wave": "W81",
       "publishedAt": "2026-10-27T17:53:00Z",
@@ -20,7 +30,7 @@
       "title": "Mesmo estado no tick 2 escolhe Move OFF e Pass ON",
       "status": "W81_LOCAL_FIRST_DIVERGENCE_AUDITED; PASS local, PARTIAL interpretação",
       "summary": "Prefixos pareados PALxCOR, seed 1729, mesma entrada/assemblies/opções exceto BCCM. No mesmo pre-state do tick 2, OFF seleciona Move e mantém posse; ON seleciona Pass, lança tentativa e altera estado/posse. As pontuações observadas foram Move 0.7695 OFF e Pass 0.7315 ON.",
-      "result": "Auditoria PASS para a comparação interna do estado/decisões/efeitos locais; PARTIAL para causalidade e interpretação de gameplay. Não demonstra conclusão/sucesso do passe, qualidade global ou qual componente contextual muda Move. Sem mudança de gameplay/produção. Próximo W82: verificar se o fonte é comparável às assemblies W14 e, então, rastrear componentes e inputs da pontuação contextual Move no tick 2."
+      "result": "Auditoria PASS para a comparação interna de estado/decisões/efeitos locais; PARTIAL para interpretação causal/de gameplay. Não demonstra conclusão do passe, qualidade global ou o termo contextual que altera Move. Sem mudança de gameplay/produção. O mecanismo aritmético do score foi investigado em W82; consulte o ciclo atual para limites e próximo teste."
     },
     {
       "id": "W80",
