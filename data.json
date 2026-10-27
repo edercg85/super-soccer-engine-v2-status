@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-2",
-  "updatedAt": "2026-10-27T02:42:00Z",
+  "version": "2026.10.27-portal-3",
+  "updatedAt": "2026-10-27T03:49:36Z",
   "cycle": "W36 — continuação pós-reposição",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Estender a captura read-only W35 até o primeiro terminal após a reposição, se confirmado pelo runner isolado; sem alteração de gameplay.",
+  "currentFocus": "Verificar em runner isolado o primeiro movimento físico e o terminal da trajetória Shoot R13, sem decisões defensivas; manter qualidade e comportamento geral UNKNOWN.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -954,6 +954,22 @@
   ],
   "diary": [
     {
+      "wave": "W36",
+      "publishedAt": "2026-10-27T03:46:00Z",
+      "macro": "M2",
+      "title": "O resolver lança o Shoot como tentativa degradada",
+      "summary": "No snapshot do tick 85, o Shoot escolhido falhou no teste técnico, mas ainda declarou uma trajetória ativa. Não houve simulação da bola, defesa nem gol; qualidade permanece desconhecida.",
+      "result": "Resultado local reproduzido; auditoria independente pendente"
+    },
+    {
+      "wave": "W36",
+      "publishedAt": "2026-10-27T03:41:00Z",
+      "macro": "M2",
+      "title": "Projeção explica localmente o score Move zero",
+      "summary": "No mesmo snapshot, o melhor destino Move aumenta a distância projetada ao gol e zera o progresso positivo. A revisão confirmou essa conta apenas para uma entrada; não mede a qualidade da flag.",
+      "result": "Auditoria restrita passou; qualidade desconhecida"
+    },
+    {
       "wave": "W35",
       "publishedAt": "2026-10-27T02:20:08Z",
       "macro": "M2",
@@ -1722,6 +1738,102 @@
     {
       "id": "CP-W36-00",
       "title": "Preflight da continuação pós-reposição concluído"
+    },
+    {
+      "id": "CP-W36-01",
+      "title": "Auditoria W36-R1 reconciliada; W36-R2 preparado"
+    },
+    {
+      "id": "CP-W36-02",
+      "title": "Terminal do passe adicional observado; auditoria independente pendente"
+    },
+    {
+      "id": "CP-W36-03",
+      "title": "Auditoria R2 concluída; R3 preparado"
+    },
+    {
+      "id": "CP-W36-04",
+      "title": "Quarto passe observado; próximo alvo são decision diagnostics"
+    },
+    {
+      "id": "CP-W36-05",
+      "title": "Diagnostics read-only preservam trajetória e mostram seleções Pass"
+    },
+    {
+      "id": "CP-W36-06",
+      "title": "Auditoria R4 confirmou claim OpenPlay; A/B no mesmo snapshot preparado"
+    },
+    {
+      "id": "CP-W36-07",
+      "title": "A/B no mesmo estado revela efeito de seleção; decomposição em andamento"
+    },
+    {
+      "id": "CP-W36-08",
+      "title": "R6 auditado; score contextual recomposto no R8"
+    },
+    {
+      "id": "CP-W36-09",
+      "title": "Auditoria R8 fecha a fórmula contextual de Move"
+    },
+    {
+      "id": "CP-W36-10",
+      "title": "Mesmo estado inicial gera efeitos diferentes no tick 2"
+    },
+    {
+      "id": "CP-W36-11",
+      "title": "Auditoria R9 confirmou somente efeito imediato; W36 permanece parcial"
+    },
+    {
+      "id": "CP-W36-12",
+      "title": "Handoff W36 publicado e validado no diretório central"
+    },
+    {
+      "id": "CP-W36-13",
+      "title": "Preflight R10 confirmou fixture de seed 1729 estruturalmente compatível"
+    },
+    {
+      "id": "CP-W36-14",
+      "title": "R10 capturou seed 1729; abertura permanece igual no fingerprint subset"
+    },
+    {
+      "id": "CP-W36-15",
+      "title": "Auditoria R10 fechou a observação local e corrigiu metadados herdados"
+    },
+    {
+      "id": "CP-W36-16",
+      "title": "Preflight prepara decisão pura no snapshot mid-match do tick 85"
+    },
+    {
+      "id": "CP-W36-17",
+      "title": "R11 encontrou mudança de seleção num snapshot mid-match; auditoria pendente"
+    },
+    {
+      "id": "CP-W36-18",
+      "title": "Auditoria R11 passou e proveniência da fixture foi corrigida"
+    },
+    {
+      "id": "CP-W36-19",
+      "title": "Preflight R12 preparado para decompor score Move no mesmo snapshot"
+    },
+    {
+      "id": "CP-W36-20",
+      "title": "R12 isolou matematicamente o Move sem progresso para o gol"
+    },
+    {
+      "id": "CP-W36-21",
+      "title": "Auditoria independente fecha aritmética R12 no snapshot"
+    },
+    {
+      "id": "CP-W36-22",
+      "title": "Preflight prepara resolver de Shoot sem simulação"
+    },
+    {
+      "id": "CP-W36-23",
+      "title": "Shoot selecionado foi resolvido como lançamento degradado"
+    },
+    {
+      "id": "CP-W36-24",
+      "title": "Dashboard local e portal sanitizado passam QA atualizado"
     }
   ]
 }
