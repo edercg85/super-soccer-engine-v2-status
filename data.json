@@ -1,9 +1,9 @@
 {
   "version": "2026.10.27-portal-3",
-  "updatedAt": "2026-10-27T03:58:05Z",
+  "updatedAt": "2026-10-27T04:00:26Z",
   "cycle": "W36 — continuação pós-reposição",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "R15 controle falsificável troca somente o seed do RNG técnico para verificar o ramo de sucesso e a supressão do draw de erro; se passar, R16 segue a trajetória nominal sem goleiro. Depois procurar harness oficial para consumir com decisões defensivas.",
+  "currentFocus": "R16: traçar a trajetória nominal da saída R15 sob o mesmo perfil Current; depois localizar o menor harness oficial que aceite snapshot e capture decisões do goleiro/defesa, sem simular dados históricos ausentes.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -955,6 +955,14 @@
   "diary": [
     {
       "wave": "W36",
+      "publishedAt": "2026-10-27T04:00:00Z",
+      "macro": "M2",
+      "title": "A guarda técnica separa chute lançado de lançamento degradado",
+      "summary": "No mesmo estado, trocar apenas o seed do resolver acionou sucesso técnico e suprimiu o draw de erro. Isso demonstra o ramo local; não mede conversão ou desempenho em partidas.",
+      "result": "Controle determinístico passou; auditoria independente pendente"
+    },
+    {
+      "wave": "W36",
       "publishedAt": "2026-10-27T03:58:00Z",
       "macro": "M2",
       "title": "Trajetória desassistida termina fora da meta",
@@ -1854,6 +1862,14 @@
     {
       "id": "CP-W36-27",
       "title": "Preflight isola guarda RNG do resolver"
+    },
+    {
+      "id": "CP-W36-28",
+      "title": "R15 passou a guarda técnica com um único draw"
+    },
+    {
+      "id": "CP-W36-29",
+      "title": "Preflight isola a trajetória nominal R15"
     }
   ]
 }
