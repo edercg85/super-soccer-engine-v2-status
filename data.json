@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-3",
-  "updatedAt": "2026-10-27T04:00:26Z",
-  "cycle": "W36 — continuação pós-reposição",
+  "version": "2026.10.27-portal-5",
+  "updatedAt": "2026-10-27T05:04:38Z",
+  "cycle": "W38 — auditoria causal local e fases",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "R16: traçar a trajetória nominal da saída R15 sob o mesmo perfil Current; depois localizar o menor harness oficial que aceite snapshot e capture decisões do goleiro/defesa, sem simular dados históricos ausentes.",
+  "currentFocus": "Próximo teste falsificável: capturar N divergências OFF/ON em estados iguais, auditar direção e decomposição Move/Pass/Shoot, e deixar cada ação prosseguir para observar efeitos imediatos.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -954,43 +954,75 @@
   ],
   "diary": [
     {
+      "wave": "W38",
+      "publishedAt": "2026-10-27T05:03:44Z",
+      "macro": "M2",
+      "title": "Auditoria confirma mecanismo local Move→Pass",
+      "summary": "Em três seeds ON aumentou intervalos observados ActivePass; no primeiro desvio de seed1729, mesmo estado, a contextualização zera um Move para trás e Pass vence. O efeito posterior e a qualidade global seguem desconhecidos.",
+      "result": "m2/m4 PASS local e multiseed; captura pós-resolução truncada"
+    },
+    {
+      "wave": "W37",
+      "publishedAt": "2026-10-27T04:43:00Z",
+      "macro": "M2",
+      "title": "Três seeds mudaram a rota ofensiva sem provar melhora",
+      "summary": "Com BCCM ON houve mais Pass e Shoot nos três pares; o placar mudou em duas seeds e ficou igual em uma. As amostras antigas sem possuidor não identificam duração.",
+      "result": "Auditorias reconciliadas; qualidade desconhecida"
+    },
+    {
+      "wave": "W36",
+      "publishedAt": "2026-10-27T04:21:00Z",
+      "macro": "M2",
+      "title": "Segundo seed local preserva o contraste de rota",
+      "summary": "No mesmo snapshot, ON lançou Shoot e foi interrompido após recovery adversário; OFF completou Pass no trecho. Ambos terminaram 0–0.",
+      "result": "Pareamento e sequência auditados; generalização desconhecida"
+    },
+    {
+      "wave": "W36",
+      "publishedAt": "2026-10-27T04:20:00Z",
+      "macro": "M2",
+      "title": "Auditoria independente concluiu o par OFF/ON",
+      "summary": "Inputs e assemblies coincidem, a flag é a diferença isolada e outputs repetiram. Resultado restrito ao snapshot sintético.",
+      "result": "PASS local; PARTIAL geral"
+    },
+    {
       "wave": "W36",
       "publishedAt": "2026-10-27T04:00:00Z",
       "macro": "M2",
-      "title": "A guarda técnica separa chute lançado de lançamento degradado",
-      "summary": "No mesmo estado, trocar apenas o seed do resolver acionou sucesso técnico e suprimiu o draw de erro. Isso demonstra o ramo local; não mede conversão ou desempenho em partidas.",
-      "result": "Controle determinístico passou; auditoria independente pendente"
+      "title": "Guarda técnica separa chute lançado de degradado",
+      "summary": "Mudar apenas o seed do resolver acionou sucesso técnico e suprimiu o draw de erro. Não mede conversão em partidas.",
+      "result": "Controle determinístico passou"
     },
     {
       "wave": "W36",
       "publishedAt": "2026-10-27T03:58:00Z",
       "macro": "M2",
       "title": "Trajetória desassistida termina fora da meta",
-      "summary": "No perfil físico Current, o lançamento degradado cruzou a linha de fundo fora da abertura do gol. A análise não inclui goleiro, recuperação ou placar; resultado de partida segue desconhecido.",
-      "result": "Classificação local reproduzida; auditoria independente pendente"
+      "summary": "No perfil Current, o chute degradado cruzou a linha de fundo fora da abertura do gol; sem goleiro ou placar.",
+      "result": "Resultado local reproduzido"
     },
     {
       "wave": "W36",
       "publishedAt": "2026-10-27T03:46:00Z",
       "macro": "M2",
-      "title": "O resolver lança o Shoot como tentativa degradada",
-      "summary": "No snapshot do tick 85, o Shoot escolhido falhou no teste técnico, mas ainda declarou uma trajetória ativa. Não houve simulação da bola, defesa nem gol; qualidade permanece desconhecida.",
-      "result": "Resultado local reproduzido; auditoria independente pendente"
+      "title": "O resolver lança Shoot como tentativa degradada",
+      "summary": "No snapshot do tick 85, o Shoot falhou no teste técnico mas declarou trajetória ativa. Sem defesa ou gol.",
+      "result": "Resultado local reproduzido"
     },
     {
       "wave": "W36",
       "publishedAt": "2026-10-27T03:41:00Z",
       "macro": "M2",
       "title": "Projeção explica localmente o score Move zero",
-      "summary": "No mesmo snapshot, o melhor destino Move aumenta a distância projetada ao gol e zera o progresso positivo. A revisão confirmou essa conta apenas para uma entrada; não mede a qualidade da flag.",
-      "result": "Auditoria restrita passou; qualidade desconhecida"
+      "summary": "O melhor destino aumentou distância projetada ao gol e zerou progresso positivo em uma entrada; sem claim de qualidade.",
+      "result": "Auditoria restrita passou"
     },
     {
       "wave": "W35",
       "publishedAt": "2026-10-27T02:20:08Z",
       "macro": "M2",
       "title": "Passe seguinte observado após retomada",
-      "summary": "Em seis traces, o passe seguinte terminou conforme os eventos associados; os lados e ticks diferiram entre braços. Isso não demonstra melhoria de qualidade nem efeito causal.",
+      "summary": "Em seis traces, o passe seguinte terminou conforme os eventos; lados e ticks diferiram entre braços.",
       "result": "Auditoria local aprovada"
     },
     {
@@ -998,7 +1030,7 @@
       "publishedAt": "2026-10-27T02:14:33Z",
       "macro": "M2",
       "title": "Identidade de quem recupera corrigida",
-      "summary": "A recuperação observada foi de um companheiro do mesmo lado do passe; o texto histórico foi corrigido com registro de corrigendum.",
+      "summary": "A recuperação foi de um companheiro do mesmo lado do passe; texto corrigido com corrigendum.",
       "result": "Correção auditada"
     },
     {
@@ -1006,47 +1038,15 @@
       "publishedAt": "2026-10-27T02:03:16Z",
       "macro": "M2",
       "title": "Limite do observador de recuperação",
-      "summary": "O runner preservado não registrava os candidatos e o vencedor do recovery. A causa do diferencial entre variantes continua desconhecida.",
+      "summary": "O runner não registrava candidatos e vencedor do recovery; causa do diferencial permanece desconhecida.",
       "result": "Lacuna delimitada"
-    },
-    {
-      "wave": "W32",
-      "publishedAt": "2026-10-27T02:00:38Z",
-      "macro": "M2",
-      "title": "Persistência dos dados de recuperação",
-      "summary": "O replay padrão não expõe a avaliação do recovery no documento persistido; não se reconstruiu esse dado a partir de eventos incompletos.",
-      "result": "Auditoria de escopo"
-    },
-    {
-      "wave": "W31",
-      "publishedAt": "2026-10-27T01:57:44Z",
-      "macro": "M2",
-      "title": "Contrato do seletor de recuperação",
-      "summary": "A regra atual e o caminho do observer foram inspecionados. A captura histórica não permite afirmar qual candidato venceu.",
-      "result": "Testes focados passaram"
-    },
-    {
-      "wave": "W30",
-      "publishedAt": "2026-10-27T01:54:58Z",
-      "macro": "M2",
-      "title": "Guardas locais de impedimento",
-      "summary": "Geometria e emissão de eventos foram reconciliadas em um recorte restrito. A correção legal e a qualidade permanecem fora do aceite.",
-      "result": "Resultado parcial"
-    },
-    {
-      "wave": "W29",
-      "publishedAt": "2026-10-27T01:44:59Z",
-      "macro": "M2",
-      "title": "Ciclo de vida do primeiro passe",
-      "summary": "Tentativas foram ligadas a terminais observados em seis execuções. A primeira coleta foi preservada como tentativa inválida.",
-      "result": "Auditoria com limites"
     },
     {
       "wave": "W26–W28",
       "publishedAt": "2026-10-27T01:36:36Z",
       "macro": "M2",
       "title": "Divergências iniciais delimitadas em traces pareados",
-      "summary": "A comparação de prefixos localizou diferenças cedo nas trajetórias. A amostra não autoriza extrapolar qualidade geral.",
+      "summary": "A comparação localizou diferenças cedo nas trajetórias; sem extrapolação de qualidade geral.",
       "result": "Auditoria de escopo"
     }
   ],
@@ -1870,6 +1870,122 @@
     {
       "id": "CP-W36-29",
       "title": "Preflight isola a trajetória nominal R15"
+    },
+    {
+      "id": "CP-W36-30",
+      "title": "R16 classifica trajetória nominal sem oposição"
+    },
+    {
+      "id": "CP-W36-31",
+      "title": "Preflight para continuação oficial por snapshot"
+    },
+    {
+      "id": "CP-W36-32",
+      "title": "Simulation integra chute perdido e saída do GK"
+    },
+    {
+      "id": "CP-W36-33",
+      "title": "Preflight pareia BCCM OFF/ON no ciclo oficial"
+    },
+    {
+      "id": "CP-W36-36",
+      "title": "R19 auditado; contraste local persiste sob segunda seed"
+    },
+    {
+      "id": "CP-W36-37",
+      "title": "W36 fechado parcialmente; W37 partida pareada preparada"
+    },
+    {
+      "id": "CP-W37-01",
+      "title": "W37 runner read-only validado; partida completa autorizada pelo preflight"
+    },
+    {
+      "id": "CP-W37-02",
+      "title": "Primeira captura W37 preservada; falha do runner isolada"
+    },
+    {
+      "id": "CP-W37-02A",
+      "title": "OFF run1 completo capturado após correção do writer"
+    },
+    {
+      "id": "CP-W37-03",
+      "title": "OFF repetiu byte a byte a partida completa"
+    },
+    {
+      "id": "CP-W37-04",
+      "title": "ON run1 completo capturado; diferença pareada observada"
+    },
+    {
+      "id": "CP-W37-05",
+      "title": "Par de partidas completas ON/OFF repetido deterministicamente"
+    },
+    {
+      "id": "CP-W37-06",
+      "title": "Preflight abre comparação em duas fixtures de seed adicionais"
+    },
+    {
+      "id": "CP-W37-07",
+      "title": "Fixtures 1730/1731 validadas e runner expandido"
+    },
+    {
+      "id": "CP-W37-08",
+      "title": "Seed1730 OFF run1 completou partida integral"
+    },
+    {
+      "id": "CP-W37-09",
+      "title": "Auditoria independente fecha métricas seed1729; seed1730 OFF repete"
+    },
+    {
+      "id": "CP-W37-10",
+      "title": "Seed1730 ON run1 capturado; placar igual ao OFF neste braço"
+    },
+    {
+      "id": "CP-W37-11",
+      "title": "Seed1730 confirma mudança de rota sem mudança de placar"
+    },
+    {
+      "id": "CP-W37-12",
+      "title": "Seed1731 OFF run1 completou partida"
+    },
+    {
+      "id": "CP-W37-13",
+      "title": "Corrigendum rejeita duração inferida a partir das amostras none"
+    },
+    {
+      "id": "CP-W37-14",
+      "title": "Seed1731 OFF repetiu byte a byte; limitações corrigidas"
+    },
+    {
+      "id": "CP-W37-15",
+      "title": "Seed1731 ON run1 capturado; placar diverge do OFF"
+    },
+    {
+      "id": "CP-W37-16",
+      "title": "Seis trajetórias pareadas completas capturadas em três seeds"
+    },
+    {
+      "id": "CP-W37-17",
+      "title": "Auditorias multiseed reconciliadas com divergência temporal preservada"
+    },
+    {
+      "id": "CP-W38-00",
+      "title": "Pré-flight define captura de fases e distância observável"
+    },
+    {
+      "id": "CP-W38-01",
+      "title": "Captura pré/pós da seed1729 repetiu deterministicamente"
+    },
+    {
+      "id": "CP-W38-02",
+      "title": "Auditoria multiseed confirma intervalos sem owner e distâncias com limites"
+    },
+    {
+      "id": "CP-W38-03",
+      "title": "Preflight restringe captura ao primeiro desvio decisório no tick2"
+    },
+    {
+      "id": "CP-W38-04",
+      "title": "Auditoria causal local da primeira divergência"
     }
   ]
 }
