@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-22",
-  "updatedAt": "2026-10-27T16:27:05Z",
-  "cycle": "SS-ORCH-001-W73-OWNER-ACTION-TRACE",
+  "version": "2026.10.27-portal-23",
+  "updatedAt": "2026-10-27T16:32:47Z",
+  "cycle": "SS-ORCH-001-W74-ACCEPTED-EFFECT-FEASIBILITY",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W73: auditoria raw trace PASS em 78 casos/468 ticks; estados de owner e associações de ações foram revalidados em escopo delimitado. O schema não liga todos os ActionResult aos efeitos aceitos, então causalidade ação/efeito é PARTIAL/UNKNOWN; qualidade e efeito geral UNKNOWN. Sem mudança de gameplay.",
+  "currentFocus": "W74: o trace expõe efeitos propostos e estado resultante, não o lote de efeitos aceitos após conflitos. FEASIBILITY_PARTIAL; GO condicional apenas para diagnóstico isolado em harness V2. Nenhuma implementação/teste/simulação ou afirmação de qualidade de gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,6 +12,16 @@
     "unknown": 5
   },
   "recentCycles": [
+    {
+      "id": "W74",
+      "wave": "W74",
+      "publishedAt": "2026-10-27T16:32:47Z",
+      "macro": "M2",
+      "title": "Trace atual não expõe a lista de efeitos aceitos",
+      "status": "FEASIBILITY_PARTIAL; GO condicional só para diagnóstico isolado em harness V2",
+      "summary": "A revisão de interface encontrou ActionResult com efeitos propostos e estado resultante, mas o trace atual não expõe o lote após resolução de conflitos. Assim, ele não prova qual efeito aceito foi aplicado. Identidade de build/revisão não estabelecida nesta frente.",
+      "result": "GO condicional apenas para captura diagnóstica isolada no harness V2. W74 não implementou, testou, compilou ou simulou mudança. Sem afirmação sobre qualidade de gameplay ou mudança no motor."
+    },
     {
       "id": "W73",
       "wave": "W73",
@@ -31,16 +41,6 @@
       "status": "Auditoria independente dos traces brutos PASS; escopo limitado",
       "summary": "Nos 78 ActiveShoot lançados dos dez traces W68, 73 estados terminais tinham owner; todos depois passaram por owner nulo antes de surgir um owner diferente (2–11 ticks; mediana 4; intervalo nulo mediano 3). Nos outros cinco, o terminal já era owner nulo; um owner apareceu após 7–8 ticks.",
       "result": "São transições de estado e rótulos registrados, não prova de recuperação física, defesa, causa ou qualidade. Contagens em ticks; só cinco casos OFF. Causalidade geral e qualidade permanecem UNKNOWN; sem mudança de gameplay, BCCM default-off."
-    },
-    {
-      "id": "W71",
-      "wave": "W71",
-      "publishedAt": "2026-10-27T16:03:45Z",
-      "macro": "M2",
-      "title": "Verificação limitada de lifecycle passou na auditoria",
-      "status": "PASS no escopo delimitado; causalidade e qualidade UNKNOWN",
-      "summary": "W71 concluiu uma verificação delimitada do lifecycle com auditoria independente PASS. O resultado vale para as evidências e condições examinadas e não estabelece uma conclusão geral sobre o comportamento do motor.",
-      "result": "Causalidade geral e efeito sobre a qualidade das partidas permanecem UNKNOWN. Nenhuma mudança de gameplay é implicada por este resultado."
     }
   ],
   "macros": [
@@ -986,6 +986,16 @@
   ],
   "diary": [
     {
+      "id": "W74",
+      "wave": "W74",
+      "publishedAt": "2026-10-27T16:32:47Z",
+      "macro": "M2",
+      "title": "Trace atual não expõe a lista de efeitos aceitos",
+      "status": "FEASIBILITY_PARTIAL; GO condicional só para diagnóstico isolado em harness V2",
+      "summary": "A revisão de interface encontrou ActionResult com efeitos propostos e estado resultante, mas o trace atual não expõe o lote após resolução de conflitos. Assim, ele não prova qual efeito aceito foi aplicado. Identidade de build/revisão não estabelecida nesta frente.",
+      "result": "GO condicional apenas para captura diagnóstica isolada no harness V2. W74 não implementou, testou, compilou ou simulou mudança. Sem afirmação sobre qualidade de gameplay ou mudança no motor."
+    },
+    {
       "id": "W73",
       "wave": "W73",
       "publishedAt": "2026-10-27T16:27:05Z",
@@ -1004,16 +1014,6 @@
       "status": "Auditoria independente dos traces brutos PASS; escopo limitado",
       "summary": "Nos 78 ActiveShoot lançados dos dez traces W68, 73 estados terminais tinham owner; todos depois passaram por owner nulo antes de surgir um owner diferente (2–11 ticks; mediana 4; intervalo nulo mediano 3). Nos outros cinco, o terminal já era owner nulo; um owner apareceu após 7–8 ticks.",
       "result": "São transições de estado e rótulos registrados, não prova de recuperação física, defesa, causa ou qualidade. Contagens em ticks; só cinco casos OFF. Causalidade geral e qualidade permanecem UNKNOWN; sem mudança de gameplay, BCCM default-off."
-    },
-    {
-      "id": "W71",
-      "wave": "W71",
-      "publishedAt": "2026-10-27T16:03:45Z",
-      "macro": "M2",
-      "title": "Verificação limitada de lifecycle passou na auditoria",
-      "status": "PASS no escopo delimitado; causalidade e qualidade UNKNOWN",
-      "summary": "W71 concluiu uma verificação delimitada do lifecycle com auditoria independente PASS. O resultado vale para as evidências e condições examinadas e não estabelece uma conclusão geral sobre o comportamento do motor.",
-      "result": "Causalidade geral e efeito sobre a qualidade das partidas permanecem UNKNOWN. Nenhuma mudança de gameplay é implicada por este resultado."
     },
     {
       "wave": "W66",
