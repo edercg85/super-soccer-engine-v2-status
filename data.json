@@ -1,6 +1,6 @@
 {
   "version": "2026.10.27-portal-1",
-  "updatedAt": "2026-10-27T02:35:00Z",
+  "updatedAt": "2026-10-27T02:40:20Z",
   "cycle": "W35 — auditoria local de sequência de passes",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Portal estático sanitizado; próxima pergunta funcional: continuação após a retomada em traces preservados, se houver observação suficiente.",
@@ -1714,6 +1714,10 @@
     {
       "id": "CP-PORTAL-02",
       "title": "Sanitização e navegação do portal validadas no browser"
+    },
+    {
+      "id": "CP-PORTAL-03",
+      "title": "Portal público e deploy GitHub Pages validados"
     }
   ]
 }
