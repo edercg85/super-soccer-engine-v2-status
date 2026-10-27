@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-27",
-  "updatedAt": "2026-10-27T17:08:21Z",
-  "cycle": "SS-ORCH-001-W77-GOALKICK-TRANSITION-HARNESS",
+  "version": "2026.10.27-portal-28",
+  "updatedAt": "2026-10-27T17:19:00Z",
+  "cycle": "SS-ORCH-001-W78-NATURAL-SHOOT-GOALKICK-FIXTURE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W77_GOALKICK_TRANSITION_HARNESS_NARROW_PASS; resultado global PARTIAL. Uma fixture com ActiveShoot e trajetória semeados manualmente cobre ShotOffTarget→GoalKickSetup→GoalKickReady→execução/posse do away GK; ProgressiveRestartSetupV1 só estava ativa na fixture. Não existe GoalKickPending de produção. Sem mudanças/claim de qualidade. Próximo: testar ActiveShoot real lançado por ShootAction.",
+  "currentFocus": "W78_GOALKICK_TRANSITION_HARNESS_NARROW_PASS; resultado global PARTIAL para geração natural de chute. Em fixture 2v2 com regras injetadas que forçam falha e ProgressiveRestartSetupV1 ON, decisão natural V2 Shoot sem ActiveShoot prévio segue ShootLaunchDegraded→ShotOffTarget + GoalKickSetup→GoalKickReady→execução/posse away-gk. Teste 1/1; auditoria independente PASS apenas nesta fixture; determinismo PARTIAL para assinatura selecionada, sem inferência para 11v11 ou flag default-off. Sem alteração de produção, V1, V3 ou shared. Próximo teste: mesmas condições geométricas com ShootRules default e flag OFF.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,6 +12,16 @@
     "unknown": 5
   },
   "recentCycles": [
+    {
+      "id": "W78",
+      "wave": "W78",
+      "publishedAt": "2026-10-27T17:19:00Z",
+      "macro": "M2",
+      "title": "Fixture liga decisão natural de chute à transição goal-kick",
+      "status": "W78_GOALKICK_TRANSITION_HARNESS_NARROW_PASS; resultado global PARTIAL",
+      "summary": "Teste dirigido 1/1 em fixture 2v2: uma decisão natural V2 Shoot, sem ActiveShoot prévio, percorre ShootLaunchDegraded→ShotOffTarget + GoalKickSetup→GoalKickReady→execução com posse para away-gk. Regras injetadas forçam a falha e ProgressiveRestartSetupV1 está ligada apenas na fixture.",
+      "result": "Auditoria independente PASS somente para esta fixture; determinismo PARTIAL para a assinatura selecionada. Não demonstra 11v11 nem comportamento com a flag default-off. Sem mudanças de produção, V1, V3 ou shared. Próximo teste falsificável: repetir a geometria com ShootRules default e flag OFF."
+    },
     {
       "id": "W77",
       "wave": "W77",
