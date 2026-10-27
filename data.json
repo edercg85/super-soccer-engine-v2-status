@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-30",
-  "updatedAt": "2026-10-27T17:29:13Z",
-  "cycle": "SS-ORCH-001-W78-NATURAL-SHOOT-GOALKICK-FIXTURE",
+  "version": "2026.10.27-portal-31",
+  "updatedAt": "2026-10-27T17:41:00Z",
+  "cycle": "SS-ORCH-001-W79-NATURAL-SHOOT-PASS-CONTINUATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W78_GOALKICK_TRANSITION_HARNESS_NARROW_PASS; resultado global PARTIAL para geração natural de chute. Na fixture 2v2 principal, decisão natural V2 Shoot sem ActiveShoot prévio segue ShootLaunchDegraded→ShotOffTarget + GoalKickSetup→GoalKickReady→execução/posse away-gk; regras injetadas forçam a falha e ProgressiveRestartSetupV1 está ON apenas na fixture. O teste com ShootRules padrão e progressive restart OFF também foi executado e auditado em fixture sintética, não em partida. Auditoria independente PASS permanece limitada à fixture principal; determinismo PARTIAL para assinatura selecionada. Sem inferência para 11v11 ou qualidade global; sem alterações de produção/V1/V3/shared. Próximo: revisar e reutilizar os inputs PALxCOR de partida 11v11/90 min/seeds 1729–1731 já cobertos por W08 em snapshot isolado para ligar Shoot selecionado→terminal→posse/restart com IDs; teste ainda pendente.",
+  "currentFocus": "W79_LOCAL_MECHANISM_AUDITED; resultado restrito a uma execução PALxCOR, seed 1729, BCCM ON. No prefixo observado, V2 seleciona Shoot em t555; ShotOffTarget em t558 termina com posse do goleiro, que inicia passe e há conclusões de passe até t566. É evidência local da execução, sem atribuição causal isolada ao BCCM e sem inferência de qualidade geral. Sem alteração de gameplay/produção. Próximo W80: executar o prefixo controlado correspondente com BCCM OFF e comparar os efeitos locais.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,6 +12,16 @@
     "unknown": 5
   },
   "recentCycles": [
+    {
+      "id": "W79",
+      "wave": "W79",
+      "publishedAt": "2026-10-27T17:41:00Z",
+      "macro": "M2",
+      "title": "Execução PALxCOR seed 1729 revela mecanismo local após chute",
+      "status": "W79_LOCAL_MECHANISM_AUDITED; generalização e qualidade UNKNOWN",
+      "summary": "Uma execução PALxCOR, seed 1729, com BCCM ON: V2 seleciona Shoot em t555; ShotOffTarget em t558 termina com posse do goleiro; depois há passes iniciados pelo goleiro e conclusões em t562 e t566.",
+      "result": "Mecanismo auditado somente neste prefixo/execução. Não demonstra qualidade geral nem efeito causal isolado do BCCM. Sem mudança de gameplay/produção. Próximo W80: prefixo controlado correspondente com BCCM OFF para comparar decisões e efeitos locais."
+    },
     {
       "id": "W78",
       "wave": "W78",
