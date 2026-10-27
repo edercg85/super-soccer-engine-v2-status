@@ -1,6 +1,6 @@
 {
   "version": "2026.10.27-portal-8",
-  "updatedAt": "2026-10-27T05:23:37Z",
+  "updatedAt": "2026-10-27T05:25:07Z",
   "cycle": "W38 — efeitos causais locais e fases",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Preparar captura pareada de estado integral em fixture diagnóstica de open play; falsificável: mesma entrada e estado, somente flag muda, comparar decisão e efeito imediato. Validar determinismo e contrato do harness antes.",
