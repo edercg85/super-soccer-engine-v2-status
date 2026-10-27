@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-26",
-  "updatedAt": "2026-10-27T16:59:00Z",
-  "cycle": "SS-ORCH-001-W76-CAPTURE-OVERLOADS-OFFSIDE",
+  "version": "2026.10.27-portal-27",
+  "updatedAt": "2026-10-27T17:08:21Z",
+  "cycle": "SS-ORCH-001-W77-GOALKICK-TRANSITION-HARNESS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W76_CAPTURE_OVERLOADS_NARROW_PASS; resultado científico PARTIAL. Uma fixture sintética com OffsidePending inicializado manualmente passou no teste 1/1; auditor independente PASS apenas nesse escopo. Sem mudanças de gameplay/produção. Próximo: W77 testa overloads em goal-kick Pending/Setup/Ready.",
+  "currentFocus": "W77_GOALKICK_TRANSITION_HARNESS_NARROW_PASS; resultado global PARTIAL. Uma fixture com ActiveShoot e trajetória semeados manualmente cobre ShotOffTarget→GoalKickSetup→GoalKickReady→execução/posse do away GK; ProgressiveRestartSetupV1 só estava ativa na fixture. Não existe GoalKickPending de produção. Sem mudanças/claim de qualidade. Próximo: testar ActiveShoot real lançado por ShootAction.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,6 +12,16 @@
     "unknown": 5
   },
   "recentCycles": [
+    {
+      "id": "W77",
+      "wave": "W77",
+      "publishedAt": "2026-10-27T17:08:21Z",
+      "macro": "M2",
+      "title": "Fixture sintética confirmou a rota de transição goal-kick",
+      "status": "W77_GOALKICK_TRANSITION_HARNESS_NARROW_PASS; resultado global PARTIAL",
+      "summary": "Uma fixture manual liga ShotOffTargetEvent e GoalKickSetup no mesmo tick, depois GoalKickSetup→GoalKickReady→execução, com posse para away GK. Todas as transições da fixture foram capturadas pelo overload de quatro argumentos e o harness manteve paridade observável.",
+      "result": "ActiveShoot e trajetória foram semeados; ProgressiveRestartSetupV1 estava ligado apenas na fixture. A V2 não tem GoalKickPending de produção: o builder vai direto a GoalKickSetup. Auditoria PASS somente para a fixture; sem mudança de gameplay/produção ou claim de qualidade. Próximo teste: verificar se ActiveShoot lançado por ShootAction alcança essa rota."
+    },
     {
       "id": "W76",
       "wave": "W76",
@@ -31,16 +41,6 @@
       "status": "W75_HARNESS_CAPTURE_NARROW_PASS; resultado global W75_PARTIAL; 2/2 testes",
       "summary": "Duas fixtures determinísticas confirmam, no escopo testado, a captura do lote pós-resolução entregue à transição e o pareamento de cada callback com a transição imediata. O resultado V2 observado permanece equivalente nos dois cenários; KickOffPrepared inicial fica fora do hook, mas os ticks regulares seguintes são capturados.",
       "result": "Auditoria independente PASS somente nas claims estreitas testadas; PARTIAL para causalidade por efeito e rotas restantes. Sem mudança de gameplay/produção. Próximo teste falsificável: fixture isolada de restart offside/goal-kick."
-    },
-    {
-      "id": "W74",
-      "wave": "W74",
-      "publishedAt": "2026-10-27T16:32:47Z",
-      "macro": "M2",
-      "title": "Trace atual não expõe a lista de efeitos aceitos",
-      "status": "FEASIBILITY_PARTIAL; GO condicional só para diagnóstico isolado em harness V2",
-      "summary": "A revisão de interface encontrou ActionResult com efeitos propostos e estado resultante, mas o trace atual não expõe o lote após resolução de conflitos. Assim, ele não prova qual efeito aceito foi aplicado. Identidade de build/revisão não estabelecida nesta frente.",
-      "result": "GO condicional apenas para captura diagnóstica isolada no harness V2. W74 não implementou, testou, compilou ou simulou mudança. Sem afirmação sobre qualidade de gameplay ou mudança no motor."
     }
   ],
   "macros": [
@@ -986,6 +986,16 @@
   ],
   "diary": [
     {
+      "id": "W77",
+      "wave": "W77",
+      "publishedAt": "2026-10-27T17:08:21Z",
+      "macro": "M2",
+      "title": "Fixture sintética confirmou a rota de transição goal-kick",
+      "status": "W77_GOALKICK_TRANSITION_HARNESS_NARROW_PASS; resultado global PARTIAL",
+      "summary": "Uma fixture manual liga ShotOffTargetEvent e GoalKickSetup no mesmo tick, depois GoalKickSetup→GoalKickReady→execução, com posse para away GK. Todas as transições da fixture foram capturadas pelo overload de quatro argumentos e o harness manteve paridade observável.",
+      "result": "ActiveShoot e trajetória foram semeados; ProgressiveRestartSetupV1 estava ligado apenas na fixture. A V2 não tem GoalKickPending de produção: o builder vai direto a GoalKickSetup. Auditoria PASS somente para a fixture; sem mudança de gameplay/produção ou claim de qualidade. Próximo teste: verificar se ActiveShoot lançado por ShootAction alcança essa rota."
+    },
+    {
       "id": "W76",
       "wave": "W76",
       "publishedAt": "2026-10-27T16:59:00Z",
@@ -1004,16 +1014,6 @@
       "status": "W75_HARNESS_CAPTURE_NARROW_PASS; resultado global W75_PARTIAL; 2/2 testes",
       "summary": "Duas fixtures determinísticas confirmam, no escopo testado, a captura do lote pós-resolução entregue à transição e o pareamento de cada callback com a transição imediata. O resultado V2 observado permanece equivalente nos dois cenários; KickOffPrepared inicial fica fora do hook, mas os ticks regulares seguintes são capturados.",
       "result": "Auditoria independente PASS somente nas claims estreitas testadas; PARTIAL para causalidade por efeito e rotas restantes. Sem mudança de gameplay/produção. Próximo teste falsificável: fixture isolada de restart offside/goal-kick."
-    },
-    {
-      "id": "W74",
-      "wave": "W74",
-      "publishedAt": "2026-10-27T16:32:47Z",
-      "macro": "M2",
-      "title": "Trace atual não expõe a lista de efeitos aceitos",
-      "status": "FEASIBILITY_PARTIAL; GO condicional só para diagnóstico isolado em harness V2",
-      "summary": "A revisão de interface encontrou ActionResult com efeitos propostos e estado resultante, mas o trace atual não expõe o lote após resolução de conflitos. Assim, ele não prova qual efeito aceito foi aplicado. Identidade de build/revisão não estabelecida nesta frente.",
-      "result": "GO condicional apenas para captura diagnóstica isolada no harness V2. W74 não implementou, testou, compilou ou simulou mudança. Sem afirmação sobre qualidade de gameplay ou mudança no motor."
     },
     {
       "wave": "W66",
