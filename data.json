@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-31",
-  "updatedAt": "2026-10-27T17:41:00Z",
-  "cycle": "SS-ORCH-001-W79-NATURAL-SHOOT-PASS-CONTINUATION",
+  "version": "2026.10.27-portal-32",
+  "updatedAt": "2026-10-27T17:45:00Z",
+  "cycle": "SS-ORCH-001-W80-PAIRED-OFF-PREFIX",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W79_LOCAL_MECHANISM_AUDITED; resultado restrito a uma execução PALxCOR, seed 1729, BCCM ON. No prefixo observado, V2 seleciona Shoot em t555; ShotOffTarget em t558 termina com posse do goleiro, que inicia passe e há conclusões de passe até t566. É evidência local da execução, sem atribuição causal isolada ao BCCM e sem inferência de qualidade geral. Sem alteração de gameplay/produção. Próximo W80: executar o prefixo controlado correspondente com BCCM OFF e comparar os efeitos locais.",
+  "currentFocus": "W80_LOCAL_PAIRED_PATH_CONTRAST_AUDITED; PASS para os checks locais, PARTIAL para generalização. No prefixo com BCCM OFF, o mesmo input PALxCOR/seed 1729 e os cinco assemblies runtime usados em W79, t555–566 cobre 12 ticks sem decisão/evento/estado Shoot, com 2 PassAttempted e 2 PassCompleted; asserções passaram. A trajetória difere do W79 ON, mas os estados já divergem no início da janela, então não localiza a primeira divergência nem prova efeito direto do BCCM na seleção de chute. Uma execução/prefixo, sem inferência de qualidade geral; sem mudança de gameplay/produção. Próximo W81: rastrear desde o início até a primeira divergência ou comparar a oportunidade anterior a t555, com estados e IDs.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W80",
+      "wave": "W80",
+      "publishedAt": "2026-10-27T17:45:00Z",
+      "macro": "M2",
+      "title": "Controle BCCM OFF não reproduz o Shoot do prefixo ON",
+      "status": "W80_LOCAL_PAIRED_PATH_CONTRAST_AUDITED; PASS local, PARTIAL generalização",
+      "summary": "Mesmo input PALxCOR, seed 1729 e assemblies runtime de W79; BCCM OFF em t555–566: 12 ticks sem decisão/evento/estado Shoot, 2 PassAttempted e 2 PassCompleted. Asserções passaram. W79 ON tem outra trajetória, mas os estados já diferem no início da janela.",
+      "result": "Auditoria PASS para os checks locais e PARTIAL para generalização. A janela não localiza a primeira divergência, não compara decisões no mesmo estado nem demonstra que BCCM diretamente habilita Shoot ou melhora qualidade. Sem mudança de gameplay/produção. Próximo W81: rastrear do início da seed até a primeira divergência ou comparar a oportunidade anterior a t555."
+    },
+    {
       "id": "W79",
       "wave": "W79",
       "publishedAt": "2026-10-27T17:41:00Z",
@@ -20,7 +30,7 @@
       "title": "Execução PALxCOR seed 1729 revela mecanismo local após chute",
       "status": "W79_LOCAL_MECHANISM_AUDITED; generalização e qualidade UNKNOWN",
       "summary": "Uma execução PALxCOR, seed 1729, com BCCM ON: V2 seleciona Shoot em t555; ShotOffTarget em t558 termina com posse do goleiro; depois há passes iniciados pelo goleiro e conclusões em t562 e t566.",
-      "result": "Mecanismo auditado somente neste prefixo/execução. Não demonstra qualidade geral nem efeito causal isolado do BCCM. Sem mudança de gameplay/produção. Próximo W80: prefixo controlado correspondente com BCCM OFF para comparar decisões e efeitos locais."
+      "result": "Mecanismo auditado somente no prefixo/execução PALxCOR seed 1729 com BCCM ON; não demonstra qualidade geral nem efeito causal isolado. O controle OFF planejado foi executado em W80; consulte o ciclo W80 para o contraste local e seus limites."
     },
     {
       "id": "W78",
