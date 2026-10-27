@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-8",
-  "updatedAt": "2026-10-27T05:25:07Z",
-  "cycle": "W38 — efeitos causais locais e fases",
+  "version": "2026.10.27-portal-9",
+  "updatedAt": "2026-10-27T05:54:55Z",
+  "cycle": "W39 — efeitos locais verificados; causalidade RNG parcial",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Preparar captura pareada de estado integral em fixture diagnóstica de open play; falsificável: mesma entrada e estado, somente flag muda, comparar decisão e efeito imediato. Validar determinismo e contrato do harness antes.",
+  "currentFocus": "Preparar e validar handoff W39; próxima prova falsificável: harness que persista draw bruto e exponha contador/checkpoint interno sem alterar gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -954,6 +954,14 @@
   ],
   "diary": [
     {
+      "wave": "W39",
+      "publishedAt": "2026-10-27T05:54:55Z",
+      "macro": "M2",
+      "title": "Passe local reproduzido; cobertura RNG total segue parcial",
+      "summary": "No mesmo snapshot, OFF manteve posse e ON lançou passe; os traces curtos mostram completions em ambos os braços. O replay reproduz o tick15 OFF, mas a API não expõe contador final e o log bruto do observer não foi persistido.",
+      "result": "m2/m4 auditam efeitos locais e replay; causalidade downstream e cobertura global continuam parciais; sem mudança de gameplay"
+    },
+    {
       "wave": "W38",
       "publishedAt": "2026-10-27T05:23:37Z",
       "macro": "M2",
@@ -1040,14 +1048,6 @@
       "title": "Limite do observador de recuperação",
       "summary": "O runner não registrava candidatos e vencedor do recovery; causa do diferencial permanece desconhecida.",
       "result": "Lacuna delimitada"
-    },
-    {
-      "wave": "W26–W28",
-      "publishedAt": "2026-10-27T01:36:36Z",
-      "macro": "M2",
-      "title": "Divergências iniciais delimitadas em traces pareados",
-      "summary": "A comparação localizou diferenças cedo nas trajetórias; sem extrapolação de qualidade geral.",
-      "result": "Auditoria de escopo"
     }
   ],
   "history": [
@@ -1324,10 +1324,6 @@
       "title": "Auditoria do consumo de assignment history-conditioned"
     },
     {
-      "id": "CP-W18-07",
-      "title": "Auditoria suplementar de consumo da decisão"
-    },
-    {
       "id": "CP-W18-08",
       "title": "Handoff consolidado atualizado W17–W18"
     },
@@ -1556,10 +1552,6 @@
       "title": "W26 compilação sem simulação; tipos corrigidos"
     },
     {
-      "id": "CP-W26-02",
-      "title": "Primeira divergência seed 1729"
-    },
-    {
       "id": "CP-W26-03",
       "title": "Tick-count divergence diagnosed; no data loss"
     },
@@ -1642,10 +1634,6 @@
     {
       "id": "CP-W30-02",
       "title": "Testes de regra de impedimento existentes executados"
-    },
-    {
-      "id": "CP-W30-03",
-      "title": "Auditoria independente e corrigendum de hash concluídos"
     },
     {
       "id": "CP-W30-03",
@@ -2006,6 +1994,34 @@
     {
       "id": "CP-W38-11",
       "title": "Busca por estado comum em open play nos traces existentes"
+    },
+    {
+      "id": "CP-W39-00",
+      "title": "Pré-flight de snapshot pareado em open play"
+    },
+    {
+      "id": "CP-W39-01",
+      "title": "Decisão e efeito imediato em snapshot de open play"
+    },
+    {
+      "id": "CP-W39-02",
+      "title": "Captura de 12 ticks downstream OFF/ON"
+    },
+    {
+      "id": "CP-W39-03",
+      "title": "Checkpoint PRNG reproduziu o tick15 OFF"
+    },
+    {
+      "id": "CP-W39-04",
+      "title": "Cobertura do observer em partida completa"
+    },
+    {
+      "id": "CP-W39-04R",
+      "title": "Resultado e auditoria de cobertura RNG"
+    },
+    {
+      "id": "CP-W39-05",
+      "title": "Checkpoint final W39 e retomada"
     }
   ]
 }
