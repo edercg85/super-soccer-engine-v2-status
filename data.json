@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-1",
-  "updatedAt": "2026-10-27T02:40:20Z",
-  "cycle": "W35 — auditoria local de sequência de passes",
+  "version": "2026.10.27-portal-2",
+  "updatedAt": "2026-10-27T02:42:00Z",
+  "cycle": "W36 — continuação pós-reposição",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Portal estático sanitizado; próxima pergunta funcional: continuação após a retomada em traces preservados, se houver observação suficiente.",
+  "currentFocus": "Estender a captura read-only W35 até o primeiro terminal após a reposição, se confirmado pelo runner isolado; sem alteração de gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -1718,6 +1718,10 @@
     {
       "id": "CP-PORTAL-03",
       "title": "Portal público e deploy GitHub Pages validados"
+    },
+    {
+      "id": "CP-W36-00",
+      "title": "Preflight da continuação pós-reposição concluído"
     }
   ]
 }
