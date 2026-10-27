@@ -1,0 +1,65 @@
+name: Validate and publish status portal
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate allowlist, UTF-8, links, and public-data boundaries
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          import json, re
+          root=Path('.')
+          required={'index.html','history.html','data.json','README.md','.nojekyll','assets/site.css'}
+          files={p.as_posix() for p in root.rglob('*') if p.is_file()}
+          data=json.loads((root/'data.json').read_text(encoding='utf-8'))
+          expected=required|{f'macro/{m["id"]}.html' for m in data['macros']}|{f'activity/{a["id"]}.html' for m in data['macros'] for a in m['items']}|{'.github/workflows/pages.yml'}
+          assert files==expected, f'allowlist mismatch: missing={sorted(expected-files)} extra={sorted(files-expected)}'
+          for p in root.rglob('*'):
+              if p.is_file(): p.read_bytes().decode('utf-8')
+          assert len(data['macros'])==9 and sum(len(m['items']) for m in data['macros'])==66
+          assert len(data['history'])>=172 and data['mvp'].startswith('NÃO ACEITO')
+          class Links(HTMLParser):
+              def __init__(self): super().__init__(); self.refs=[]
+              def handle_starttag(self,tag,attrs): self.refs += [v for k,v in attrs if k in ('href','src') and v]
+          for p in root.rglob('*.html'):
+              parser=Links(); parser.feed(p.read_text(encoding='utf-8'))
+              for ref in parser.refs:
+                  assert not ref.startswith(('http:','https:','file:','//')), (p,ref)
+                  target=ref.split('#')[0].split('?')[0]
+                  if target: assert (p.parent/target).resolve().is_file(), (p,ref)
+          text='
+'.join(p.read_text(encoding='utf-8') for p in root.rglob('*') if p.is_file() and p.suffix in ('.html','.json','.css','.md') and not p.as_posix().startswith('.github/'))
+          for bad in ('c:\\projetos\\','/home/','cm0102.exe','sourcehead','sha256','bearer '): assert bad not in text.lower(), bad
+          assert not re.search(r'\b[0-9a-fA-F]{40,64}\b',text), 'hash-like content found'
+          assert not any(p.suffix.lower() in ('.exe','.dll','.pdb','.zip','.py','.cs','.ndjson') for p in root.rglob('*') if p.is_file())
+          print(f'PASS: {len(files)} allowlisted files; 9 macros; 66 activities; {len(data["history"])} checkpoints')
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
