@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-32",
-  "updatedAt": "2026-10-27T17:45:00Z",
-  "cycle": "SS-ORCH-001-W80-PAIRED-OFF-PREFIX",
+  "version": "2026.10.27-portal-33",
+  "updatedAt": "2026-10-27T17:53:00Z",
+  "cycle": "SS-ORCH-001-W81-FIRST-DIVERGENCE-BCCM",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W80_LOCAL_PAIRED_PATH_CONTRAST_AUDITED; PASS para os checks locais, PARTIAL para generalização. No prefixo com BCCM OFF, o mesmo input PALxCOR/seed 1729 e os cinco assemblies runtime usados em W79, t555–566 cobre 12 ticks sem decisão/evento/estado Shoot, com 2 PassAttempted e 2 PassCompleted; asserções passaram. A trajetória difere do W79 ON, mas os estados já divergem no início da janela, então não localiza a primeira divergência nem prova efeito direto do BCCM na seleção de chute. Uma execução/prefixo, sem inferência de qualidade geral; sem mudança de gameplay/produção. Próximo W81: rastrear desde o início até a primeira divergência ou comparar a oportunidade anterior a t555, com estados e IDs.",
+  "currentFocus": "W81_LOCAL_FIRST_DIVERGENCE_AUDITED; PASS para a comparação interna observada, PARTIAL para interpretação causal/de gameplay. Nos prefixos pareados PALxCOR seed 1729, o pre-state do tick 2 é idêntico: OFF seleciona Move (score 0.7695) e mantém posse; ON seleciona Pass (0.7315), emite tentativa de passe e altera estado/posse localmente. Isto não prova qualidade geral, sucesso do passe ou qual termo contextual muda Move. Sem alteração de gameplay/produção. Próximo W82: verificar hash/comparabilidade do fonte com as assemblies W14 antes de rastrear os componentes e inputs da pontuação contextual Move no tick 2.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W81",
+      "wave": "W81",
+      "publishedAt": "2026-10-27T17:53:00Z",
+      "macro": "M2",
+      "title": "Mesmo estado no tick 2 escolhe Move OFF e Pass ON",
+      "status": "W81_LOCAL_FIRST_DIVERGENCE_AUDITED; PASS local, PARTIAL interpretação",
+      "summary": "Prefixos pareados PALxCOR, seed 1729, mesma entrada/assemblies/opções exceto BCCM. No mesmo pre-state do tick 2, OFF seleciona Move e mantém posse; ON seleciona Pass, lança tentativa e altera estado/posse. As pontuações observadas foram Move 0.7695 OFF e Pass 0.7315 ON.",
+      "result": "Auditoria PASS para a comparação interna do estado/decisões/efeitos locais; PARTIAL para causalidade e interpretação de gameplay. Não demonstra conclusão/sucesso do passe, qualidade global ou qual componente contextual muda Move. Sem mudança de gameplay/produção. Próximo W82: verificar se o fonte é comparável às assemblies W14 e, então, rastrear componentes e inputs da pontuação contextual Move no tick 2."
+    },
+    {
       "id": "W80",
       "wave": "W80",
       "publishedAt": "2026-10-27T17:45:00Z",
@@ -20,7 +30,7 @@
       "title": "Controle BCCM OFF não reproduz o Shoot do prefixo ON",
       "status": "W80_LOCAL_PAIRED_PATH_CONTRAST_AUDITED; PASS local, PARTIAL generalização",
       "summary": "Mesmo input PALxCOR, seed 1729 e assemblies runtime de W79; BCCM OFF em t555–566: 12 ticks sem decisão/evento/estado Shoot, 2 PassAttempted e 2 PassCompleted. Asserções passaram. W79 ON tem outra trajetória, mas os estados já diferem no início da janela.",
-      "result": "Auditoria PASS para os checks locais e PARTIAL para generalização. A janela não localiza a primeira divergência, não compara decisões no mesmo estado nem demonstra que BCCM diretamente habilita Shoot ou melhora qualidade. Sem mudança de gameplay/produção. Próximo W81: rastrear do início da seed até a primeira divergência ou comparar a oportunidade anterior a t555."
+      "result": "Auditoria PASS para os checks locais e PARTIAL para generalização. A janela não localiza a primeira divergência, não compara decisões no mesmo estado nem demonstra que BCCM diretamente habilita Shoot ou melhora qualidade. Sem mudança de gameplay/produção. A investigação da divergência pareada foi concluída em W81; consulte o ciclo atual para o resultado e limites."
     },
     {
       "id": "W79",
