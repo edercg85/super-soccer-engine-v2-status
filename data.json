@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-21",
-  "updatedAt": "2026-10-27T16:17:51Z",
-  "cycle": "SS-ORCH-001-W72-POST-SHOT-POSSESSION-TRACE",
+  "version": "2026.10.27-portal-22",
+  "updatedAt": "2026-10-27T16:27:05Z",
+  "cycle": "SS-ORCH-001-W73-OWNER-ACTION-TRACE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W72: auditoria independente PASS para transições delimitadas de owner nos 78 ActiveShoot lançados dos traces W68. Os estados e rótulos não provam causa física nem qualidade; causalidade geral e qualidade permanecem UNKNOWN. Nenhuma mudança de gameplay; BCCM default-off.",
+  "currentFocus": "W73: auditoria raw trace PASS em 78 casos/468 ticks; estados de owner e associações de ações foram revalidados em escopo delimitado. O schema não liga todos os ActionResult aos efeitos aceitos, então causalidade ação/efeito é PARTIAL/UNKNOWN; qualidade e efeito geral UNKNOWN. Sem mudança de gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,6 +12,16 @@
     "unknown": 5
   },
   "recentCycles": [
+    {
+      "id": "W73",
+      "wave": "W73",
+      "publishedAt": "2026-10-27T16:27:05Z",
+      "macro": "M2",
+      "title": "Auditoria de estados e ações após atribuição de owner",
+      "status": "Raw trace audit PASS; vínculo causal de ações PARTIAL",
+      "summary": "A auditoria independente revalidou 78 casos em 468 ticks dos traces W68. Nos 73 casos post-gap, o owner atribuído persiste em 1/73 no tick +1 e 0/73 no +5; nos cinco casos terminal-null, 0/5 em ambos. As comparações de ActionResult e atores de eventos são observações delimitadas.",
+      "result": "Os traces não ligam resultados a todos os efeitos aceitos nem provam qual ação causou a transição. Vínculo ação/efeito e causalidade permanecem PARTIAL/UNKNOWN; qualidade e efeito geral UNKNOWN. Sem mudança de gameplay."
+    },
     {
       "id": "W72",
       "wave": "W72",
@@ -31,16 +41,6 @@
       "status": "PASS no escopo delimitado; causalidade e qualidade UNKNOWN",
       "summary": "W71 concluiu uma verificação delimitada do lifecycle com auditoria independente PASS. O resultado vale para as evidências e condições examinadas e não estabelece uma conclusão geral sobre o comportamento do motor.",
       "result": "Causalidade geral e efeito sobre a qualidade das partidas permanecem UNKNOWN. Nenhuma mudança de gameplay é implicada por este resultado."
-    },
-    {
-      "id": "W70",
-      "wave": "W70",
-      "publishedAt": "2026-10-27T15:38:22Z",
-      "macro": "M2",
-      "title": "Tentativas de chute ligadas; distâncias de lançamento separadas",
-      "status": "Concluído; joins auditados PARTIAL; 78 lançamentos validados",
-      "summary": "Nos traces pareados W68, foram ligados 79 eventos de tentativa: 78 lançamentos e um bloqueio no mesmo tick. Mediana da distância tentativa→objetivo: OFF 8,0349 (n=5), ON 44,1204 (n=74). Considerando apenas lançamentos: ON 43,3942 (n=73).",
-      "result": "Medidas geométricas da amostra, não qualidade, precisão ou sucesso. Há só cinco tentativas OFF; as trajetórias divergem no tick 2. Não estabelece causalidade geral nem melhora de partida. BallCarrierContextualMoveV2 permanece default-off."
     }
   ],
   "macros": [
@@ -986,6 +986,16 @@
   ],
   "diary": [
     {
+      "id": "W73",
+      "wave": "W73",
+      "publishedAt": "2026-10-27T16:27:05Z",
+      "macro": "M2",
+      "title": "Auditoria de estados e ações após atribuição de owner",
+      "status": "Raw trace audit PASS; vínculo causal de ações PARTIAL",
+      "summary": "A auditoria independente revalidou 78 casos em 468 ticks dos traces W68. Nos 73 casos post-gap, o owner atribuído persiste em 1/73 no tick +1 e 0/73 no +5; nos cinco casos terminal-null, 0/5 em ambos. As comparações de ActionResult e atores de eventos são observações delimitadas.",
+      "result": "Os traces não ligam resultados a todos os efeitos aceitos nem provam qual ação causou a transição. Vínculo ação/efeito e causalidade permanecem PARTIAL/UNKNOWN; qualidade e efeito geral UNKNOWN. Sem mudança de gameplay."
+    },
+    {
       "id": "W72",
       "wave": "W72",
       "publishedAt": "2026-10-27T16:17:51Z",
@@ -1004,16 +1014,6 @@
       "status": "PASS no escopo delimitado; causalidade e qualidade UNKNOWN",
       "summary": "W71 concluiu uma verificação delimitada do lifecycle com auditoria independente PASS. O resultado vale para as evidências e condições examinadas e não estabelece uma conclusão geral sobre o comportamento do motor.",
       "result": "Causalidade geral e efeito sobre a qualidade das partidas permanecem UNKNOWN. Nenhuma mudança de gameplay é implicada por este resultado."
-    },
-    {
-      "id": "W70",
-      "wave": "W70",
-      "publishedAt": "2026-10-27T15:38:22Z",
-      "macro": "M2",
-      "title": "Tentativas de chute ligadas; distâncias de lançamento separadas",
-      "status": "Concluído; joins auditados PARTIAL; 78 lançamentos validados",
-      "summary": "Nos traces pareados W68, foram ligados 79 eventos de tentativa: 78 lançamentos e um bloqueio no mesmo tick. Mediana da distância tentativa→objetivo: OFF 8,0349 (n=5), ON 44,1204 (n=74). Considerando apenas lançamentos: ON 43,3942 (n=73).",
-      "result": "Medidas geométricas da amostra, não qualidade, precisão ou sucesso. Há só cinco tentativas OFF; as trajetórias divergem no tick 2. Não estabelece causalidade geral nem melhora de partida. BallCarrierContextualMoveV2 permanece default-off."
     },
     {
       "wave": "W66",
