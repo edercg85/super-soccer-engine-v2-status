@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-47",
-  "updatedAt": "2026-10-27T18:56:00Z",
-  "cycle": "SS-ORCH-001-W94-PINNED-OFF-ON-SHOOT-REPLAY",
+  "version": "2026.10.27-portal-48",
+  "updatedAt": "2026-10-27T20:53:24-03:00",
+  "cycle": "SS-ORCH-001-W123-OFFSIDE-SNAPSHOT-CONSUMPTION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W94_PINNED_W14_1729_REPRODUCED; W81/W14-compatible assemblies and pinned fixture. OFF: 0 Shoot, score 0-0. ON: 12 Shoot decisions, 7 launched + 5 degraded; 12 linked terminals (4 goals, 4 off-target, 3 blocked, 1 out-of-range), final 2-2. Independent audit PASS binary/config/association; original drawCount=0 corrected by enriched capture to 2131 total draws / 17 Shoot draws. Reproduces existing W14 seed1729 only: not multiseed or quality evidence; flag remains default-off. No gameplay changes. Next W95: reconcile source manifests with older W08 full-match build identity before any further run.",
+  "currentFocus": "Repetir a reconstrução do snapshot em fixture adicional e, se disponível, orientação invertida. Depois disso, somente avaliar experimento multi-seed pareado se baseline reproduzível e métricas de qualidade forem definidos; manter flag default-off.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -11,206 +11,87 @@
     "planned": 14,
     "unknown": 5
   },
+  "latestAction": {
+    "id": "W123",
+    "wave": "W123",
+    "publishedAt": "2026-10-27T23:53:24Z",
+    "macro": "M2",
+    "title": "Ciclo de vida do passe no tick 3 e recuperação no tick 4",
+    "status": "Teste focal 2/2 PASS; auditoria independente PASS para reconstrução integral do snapshot nesta fixture seed1729 endpoint; consumo e reinício também PASS no escopo bounded. Generalidade, contato físico e qualidade UNKNOWN; sem alteração gameplay.",
+    "summary": "Captura pre-tick3 dos 22 jogadores; orientação, segundo último defensor, linha x75.276288 e conjunto {4c69..., bfd1...} recalculados exatamente iguais ao snapshot. Tick6 offside, restart ticks7/10/11. Resultado restrito à fixture/seed."
+  },
   "recentCycles": [
     {
-      "id": "W94",
-      "wave": "W94",
-      "publishedAt": "2026-10-27T18:56:00Z",
+      "id": "W116",
+      "wave": "W116",
+      "publishedAt": "2026-10-27T21:47:40Z",
       "macro": "M2",
-      "title": "Replay pareado reproduz W14 seed 1729; contador de draws corrigido",
-      "status": "W94_PINNED_W14_1729_REPRODUCED; audit PASS binary/config/association",
-      "summary": "Com assemblies compatíveis W81/W14 e fixture pinada, OFF: 0 Shoot e 0-0. ON: 12 decisões Shoot, 7 ShootLaunched e 5 degradadas; 12 terminais ligados (4 gols, 4 off-target, 3 bloqueados, 1 fora de faixa), placar final 2-2. Auditoria independente PASS para binário/configuração/associação. A captura enriquecida corrigiu o drawCount=0 do par original: 2.131 draws totais, 17 draws Shoot.",
-      "result": "Reprodução do W14 seed1729 já existente, não um novo estudo multiseed nem evidência de qualidade. A flag permanece default-off. Nenhuma mudança de gameplay. W95 deve comparar manifests de fonte com a build full-match antiga W08 antes de qualquer nova execução."
+      "title": "Distância temporal linear nos dois overlaps W115",
+      "status": "Concluído; auditoria independente PASS no cálculo/alinhamento discreto; PARTIAL físico",
+      "summary": "Interpolação linear uniforme dá mínimo 5,6112m em t=.787156 nos dois casos, acima do limiar 1m. Mesmos endpoints no mesmo tick de 1s; engine não fornece subtrajetória comum. Geometria duplicada, não amostras independentes."
     },
     {
-      "id": "W93",
-      "wave": "W93",
-      "publishedAt": "2026-10-27T18:47:00Z",
+      "id": "W117",
+      "wave": "W117",
+      "publishedAt": "2026-10-27T22:00:40Z",
       "macro": "M2",
-      "title": "Uma trajetória ON liga Shoot selecionado em t64 a gol em t68",
-      "status": "W93_SINGLE_ON_TRAJECTORY_GOAL_OBSERVED; bounded single-run result",
-      "summary": "Em uma trajetória com BCCM ON, Shoot foi selecionado e lançado em t64; houve gol em t68. É um resultado local de uma trajetória única. W08 e W90 usam contextos distintos de flag/população/build e não são contraditórios.",
-      "result": "Uma trajetória ON selecionou/lançou Shoot em t64 e registrou gol em t68; não é claim geral. W94 reproduziu um par W14 seed1729 existente sob assemblies compatíveis; builds/contextos W08/W90/W93 são distintos. Consulte W94 para escopo e draw correction."
+      "title": "Protótipo ActivePass linear-relative V2 opt-in",
+      "status": "Concluído; fixtures e auditoria independente PASS estreito; interpretação física/produto PARTIAL",
+      "summary": "Novo parâmetro resolver V2 false por padrão. Falso positivo espacial rejeitado a 4,472m; crossing sincronizado aceito; sem ActivePass não aplica. Sem config/integration."
     },
     {
-      "id": "W92",
-      "wave": "W92",
-      "publishedAt": "2026-10-27T18:41:00Z",
+      "id": "W118",
+      "wave": "W118",
+      "publishedAt": "2026-10-27T22:00:40Z",
       "macro": "M2",
-      "title": "Lançamento degradado termina em ShotOffTarget e posse do goleiro em uma execução",
-      "status": "W92_SHOOT_LAUNCH_TERMINAL_TRACE_AUDITED; PASS local, PARTIAL generalização/source-helper crosswalk",
-      "summary": "No prefixo seed1729 t555 houve 22 decisões (1 Shoot, 21 Move), zero Tackle; fallback ResolveShoot. Arias: distância 35.566878m, probabilidade técnica 43.3775%; draw 0.7925896881 causou ShootLaunchDegraded. Draw 0.5007546071 aplicou +15°; segmento 60m/peak25 foi capturado, com ShotEvent e BMS/ActiveShoot. Em t558, cruzou Right fora da boca; ShotOffTarget do mesmo shooter, GK adversário recebeu em (99.5,34), restart/trajectory nulos e placar 1-1.",
-      "result": "A execução seed1729 observada em W92 termina ShotOffTarget e GK possession em t558. W93 registra uma trajetória ON distinta que chega a gol após Shoot t64; os dois resultados não se contradizem porque contextos de flag/população/build diferem e não estimam frequência. Consulte W93 e mantenha escopos separados."
+      "title": "Replay natural endpoint/segment/linear-relative",
+      "status": "Concluído; auditoria PASS mecanismo estreito / PARTIAL equivalência completa",
+      "summary": "Dois snapshots naturais: segment mode seleciona mover; endpoint e linear mode não. Mesma decisão/ActionKey, bola solta e ActivePass/BallMovement mantidos no linear. Sem catch físico/qualidade."
     },
     {
-      "id": "W91",
-      "wave": "W91",
-      "publishedAt": "2026-10-27T18:33:00Z",
+      "id": "W119",
+      "wave": "W119",
+      "publishedAt": "2026-10-27T22:01:57Z",
       "macro": "M2",
-      "title": "Componentes locais recompõem o score Shoot .572 em t64",
-      "status": "W91_T64_SHOOT_SCORE_RECONSTRUCTED; PASS aritmética/elegibilidade, PARTIAL build linkage",
-      "summary": "Em t64, distância 51.965m > DistanceScale40 resulta distanceScore=0. GK é excluído da obstrução; nearest non-GK a 3.11354m > LaneClearance3 resulta laneScore=100. Atributos 64/67/89/88 contribuem 12.8/6.7/8.9/8.8; a fórmula recompõe runtime Shoot .572.",
-      "result": "A decomposição recompõe Shoot .572 localmente; vínculo helper/fonte à build segue PARTIAL. W92 seguiu uma tentativa de uma execução: ShootLaunchDegraded, ShotOffTarget e posse observada do GK, sem alegação de frequência ou generalização. Consulte W92."
+      "title": "Conformance do recovery linear-relative",
+      "status": "Focal 7/7, regressão 35/35 PASS; auditoria independente PASS estreito / PARTIAL integração",
+      "summary": "Limiar 1m inclusivo; 1.000001 excluído; delta relativo zero; maior BallControl e tie ordinal; precedência linear; ActivePass removido desativa. Fixtures de componente."
     },
     {
-      "id": "W90",
-      "wave": "W90",
-      "publishedAt": "2026-10-27T18:29:00Z",
+      "id": "W120",
+      "wave": "W120",
+      "publishedAt": "2026-10-27T22:08:20Z",
       "macro": "M2",
-      "title": "Ablação local de BCCM altera Move para Shoot no snapshot t64",
-      "status": "W90_T64_BCCM_ABLATION_AUDITED; PASS comparação local, PARTIAL partida/RNG/downstream",
-      "summary": "Ablação diagnóstica no estado t64 da fixture seed1729 com assemblies W81/W14 pinadas; somente BCCM difere nas chamadas diretas. OFF seleciona Move .771429. ON tem Move=0 e seleciona Shoot .572 sobre Pass .544154; outros scores permanecem iguais. O resultado ON direto coincide com a decisão da simulação.",
-      "result": "A ablação local OFF/ON em t64 manteve outros scores e alterou seleção para Shoot com BCCM ON; auditoria PASS para comparação local. W91 recompôs o score Shoot .572, mas linkage helper/build permanece PARTIAL e nenhum lançamento/resolução foi demonstrado. Consulte W91."
+      "title": "Integração Simulation com candidatos concorrentes",
+      "status": "Concluído; auditoria PASS estreito / PARTIAL build binding e generalização",
+      "summary": "Fixture sintética de um tick: endpoint escolhe candidato do endpoint; segmento e linear-relative escolhem midpoint de maior BallControl. Decisions/ActionKey iguais; PassFailed e limpeza de ActivePass/BallMovement nos três. Auditoria calcula InterceptBall inelegível no fixture, mas teste não tem assert negativa explícita. Sem prova de contato ou gameplay."
     },
     {
-      "id": "W89",
-      "wave": "W89",
-      "publishedAt": "2026-10-27T18:23:00Z",
+      "id": "W121",
+      "wave": "W121",
+      "publishedAt": "2026-10-27T22:17:14Z",
       "macro": "M2",
-      "title": "Score mais alto explica a seleção Shoot em t64; resolução segue desconhecida",
-      "status": "W89_T64_SHOOT_HIGHEST_SCORE_AUDITED; PASS decisão, PARTIAL gameplay/downstream",
-      "summary": "Na decisão t64, Shoot score 0.572 > Pass score 0.544154; o mecanismo HighestDecisionScore selecionou Shoot. Auditoria independente PASS local.",
-      "result": "Auditoria PASS para a seleção em t64: Shoot 0.572 > Pass 0.544154 e HighestDecisionScore. W90 executou ablação local; o braço ON selecionou a mesma ação observada na simulação, mas partida completa, RNG e resolução seguem parcialmente conhecidos. Consulte W90."
+      "title": "Recovery integrado com marcador móvel natural W115",
+      "status": "Concluído; auditoria independente PASS mecanismo estreito / PARTIAL generalização",
+      "summary": "Replay seed1731/tick30 reproduziu exatamente marcador W115 e cursor PRNG. Rival sintético do time do passador no endpoint: endpoint e linear-relative escolhem rival; segmento escolhe marcador. Decisions/ActionKey iguais, sem InterceptBall, lifecycle PassFailed e estados limpos. Focal 1/1, regressão 37/37. Sem afirmação de contato físico/qualidade."
     },
     {
-      "id": "W88",
-      "wave": "W88",
-      "publishedAt": "2026-10-27T18:21:00Z",
+      "id": "W122",
+      "wave": "W122",
+      "publishedAt": "2026-10-27T22:38:15Z",
       "macro": "M2",
-      "title": "Captura ampliada confirma limite da fórmula Move e exceção em t64",
-      "status": "W88_DECISION_CAPTURE_VALIDATED; validator 84/84 PASS; audit PASS within corrected scope",
-      "summary": "Capturadas 20 decisões até t100, builds W81/W14 pinned. Após correção independente, MoveScore<=goalNeed vale para 18 decisões não-GK; dois goleiros não entram nessa fórmula. Pass elegível acima do teto em 20, escolhido em 19. Shoot escolhido em t64; motivo UNKNOWN porque score Shoot está ausente.",
-      "result": "Auditoria corrigiu a fórmula Move ao escopo de 18 não-GK; duas decisões de goleiro foram excluídas. Pass acima do teto em 20, selecionado em 19; Shoot escolhido em t64, mas score ausente no artefato W88, portanto UNKNOWN naquele escopo. W89 encontrou e auditou os scores da decisão t64 (Shoot 0.572 > Pass 0.544154; HighestDecisionScore); isso não demonstra lançamento/resolução do chute. Consulte W89."
+      "title": "Incidência de recuperação linear-relative em partidas completas pareadas",
+      "status": "Concluído; mecanismo PASS estreito, vínculo source-run PARTIAL, qualidade UNKNOWN",
+      "summary": "Seeds 1729/1730/1731: primeira divergência no tick 4 por candidatos/vencedor; estado anterior, ações e draws coincidem. No seed1729 o passer ganha posse e termina ActivePass como PassFailed. Estatísticas após tick 4 são descritivas. Focal 1/1, regressão direcionada 13/13; linear-relative continua default-off."
     },
     {
-      "id": "W87",
-      "wave": "W87",
-      "publishedAt": "2026-10-27T18:17:00Z",
+      "id": "W123",
+      "wave": "W123",
+      "publishedAt": "2026-10-27T23:53:24Z",
       "macro": "M2",
-      "title": "Três decisões capturadas selecionam Pass quando Move fica abaixo do limiar",
-      "status": "W87_READ_ONLY_MULTISTATE_PROBE_PASS; PASS local, PARTIAL generalização",
-      "summary": "Probe read-only com runtime W81/W14 e fixture W07 seed 1729 capturou ticks 14/18/22. Nas três linhas, Move=0 <= goalNeed e Pass elegível acima do teto foi selecionado. Validator 19/19.",
-      "result": "Probe read-only capturou três decisões nos ticks 14/18/22 e passou validator 19/19; auditoria PASS local, PARTIAL generalização. A captura ampliada W88 adicionou 20 decisões até t100 e refinou a interpretação: a regra Move aplica-se a 18 não-GK; dois goleiros ficam fora da fórmula. Consulte W88 para o caveat completo."
-    },
-    {
-      "id": "W86",
-      "wave": "W86",
-      "publishedAt": "2026-10-27T18:12:00Z",
-      "macro": "M2",
-      "title": "Inventário não encontrou decisões adicionais com scores Move/Pass alinhados",
-      "status": "W86_CAPTURE_SCORE_INVENTORY_AUDITED; PASS no inventário, UNKNOWN fora dele",
-      "summary": "Nas capturas inventariadas W81/W84/W14, não há scores Move/Pass alinhados em decisões adicionais. Auditoria independente PASS para o inventário; fontes não examinadas permanecem UNKNOWN.",
-      "result": "No inventário W81/W84/W14 não foram encontrados scores Move/Pass alinhados em decisões adicionais. Auditoria PASS dentro do inventário; fontes não examinadas UNKNOWN. O probe read-only com novas linhas foi executado em W87; consulte W87 para o resultado restrito e W88 para próxima pergunta a definir."
-    },
-    {
-      "id": "W85",
-      "wave": "W85",
-      "publishedAt": "2026-10-27T18:10:00Z",
-      "macro": "M2",
-      "title": "Teto contextual de Move fica abaixo de Pass no snapshot W81 t2",
-      "status": "W85_MOVE_CONTEXTUAL_CEILING_AUDITED; PASS local, PARTIAL proveniência/generalização",
-      "summary": "No snapshot W81 t2, o teto calculado para Move contextual foi 0.475683, abaixo do score Pass de 0.731514. Auditoria independente PASS para a comparação/cálculo local; proveniência PARTIAL.",
-      "result": "No snapshot W81 t2, o teto calculado para Move contextual foi 0.475683, abaixo de Pass 0.731514. Auditoria independente PASS para a comparação local; proveniência PARTIAL. Resultado restrito ao snapshot, sem qualidade geral ou mudança de gameplay/produção. W86 inventariou as capturas disponíveis e não encontrou decisões adicionais alinhadas; consulte W86 e o probe read-only W87 planejado."
-    },
-    {
-      "id": "W84",
-      "wave": "W84",
-      "publishedAt": "2026-10-27T18:08:00Z",
-      "macro": "M2",
-      "title": "Reprodução W14 confirma o desempate radial em duas capturas",
-      "status": "W84_MOVE_TIEBREAK_REPRODUCED; PASS local, PARTIAL generalização/source-to-build",
-      "summary": "Probe isolado sobre runtime W14 e fixture W07 seed 1729, BCCM OFF, repetido duas vezes: capturas idênticas. No tick 2, MoveToGoal pontua 0.35, cinco MoveToTeammate 0.55, e o goleiro teammate é selecionado por desempate; validador externo 20/20.",
-      "result": "PASS para reprodução/validação no escopo local; PARTIAL para proveniência nominal dos fontes e generalização. Não avalia qualidade de partida nem justifica mudança da regra em produção. Sem alteração de gameplay. O contrafactual de desempate foi concluído em W85; consulte W85 para o limite do resultado e W86 para o próximo teste."
-    },
-    {
-      "id": "W83",
-      "wave": "W83",
-      "publishedAt": "2026-10-27T18:02:00Z",
-      "macro": "M2",
-      "title": "Empate de score local seleciona MoveToTeammate para o goleiro",
-      "status": "W83_MOVE_OBJECTIVE_SELECTION_AUDITED; PASS local, PARTIAL source-to-build",
-      "summary": "No W81 tick 2, MoveToGoal pontua 0.35 e cinco MoveToTeammate pontuam 0.55. A ordenação por score, enum de objetivo e ID ordinal escolhe o goleiro teammate entre os empatados; a direção resultante é +X, afastando-se do home-goal.",
-      "result": "Auditoria PASS para reconstrução local, PARTIAL para proveniência nominal de fonte/runtime. A reprodução W84 validou o candidato e desempate nas capturas existentes; consulte W84 para o escopo e W85 para o contrafactual planejado."
-    },
-    {
-      "id": "W82",
-      "wave": "W82",
-      "publishedAt": "2026-10-27T18:00:00Z",
-      "macro": "M2",
-      "title": "Progresso projetado zero explica o score Move local",
-      "status": "W82_MOVE_SCORE_RECONSTRUCTION_AUDITED; PASS aritmética, PARTIAL proveniência/generalização",
-      "summary": "No snapshot W81 t2, o candidato MoveToTeammate para o goleiro projeta movimento +X, afastando o portador do home-goal. Como o progresso positivo é zero, a fórmula contextual zera o score Move; Pass permanece elegível e vence neste estado.",
-      "result": "Auditoria PASS para a aritmética local e PARTIAL para proveniência dos helpers/generalização. O mecanismo aritmético está documentado; a seleção do objetivo de movimento foi investigada em W83. Consulte W83 para esse resultado e W84 para o probe controlado planejado."
-    },
-    {
-      "id": "W81",
-      "wave": "W81",
-      "publishedAt": "2026-10-27T17:53:00Z",
-      "macro": "M2",
-      "title": "Mesmo estado no tick 2 escolhe Move OFF e Pass ON",
-      "status": "W81_LOCAL_FIRST_DIVERGENCE_AUDITED; PASS local, PARTIAL interpretação",
-      "summary": "Prefixos pareados PALxCOR, seed 1729, mesma entrada/assemblies/opções exceto BCCM. No mesmo pre-state do tick 2, OFF seleciona Move e mantém posse; ON seleciona Pass, lança tentativa e altera estado/posse. As pontuações observadas foram Move 0.7695 OFF e Pass 0.7315 ON.",
-      "result": "Auditoria PASS para a comparação interna de estado/decisões/efeitos locais; PARTIAL para interpretação causal/de gameplay. Não demonstra conclusão do passe, qualidade global ou o termo contextual que altera Move. Sem mudança de gameplay/produção. O mecanismo aritmético do score foi investigado em W82; consulte o ciclo atual para limites e próximo teste."
-    },
-    {
-      "id": "W80",
-      "wave": "W80",
-      "publishedAt": "2026-10-27T17:45:00Z",
-      "macro": "M2",
-      "title": "Controle BCCM OFF não reproduz o Shoot do prefixo ON",
-      "status": "W80_LOCAL_PAIRED_PATH_CONTRAST_AUDITED; PASS local, PARTIAL generalização",
-      "summary": "Mesmo input PALxCOR, seed 1729 e assemblies runtime de W79; BCCM OFF em t555–566: 12 ticks sem decisão/evento/estado Shoot, 2 PassAttempted e 2 PassCompleted. Asserções passaram. W79 ON tem outra trajetória, mas os estados já diferem no início da janela.",
-      "result": "Auditoria PASS para os checks locais e PARTIAL para generalização. A janela não localiza a primeira divergência, não compara decisões no mesmo estado nem demonstra que BCCM diretamente habilita Shoot ou melhora qualidade. Sem mudança de gameplay/produção. A investigação da divergência pareada foi concluída em W81; consulte o ciclo atual para o resultado e limites."
-    },
-    {
-      "id": "W79",
-      "wave": "W79",
-      "publishedAt": "2026-10-27T17:41:00Z",
-      "macro": "M2",
-      "title": "Execução PALxCOR seed 1729 revela mecanismo local após chute",
-      "status": "W79_LOCAL_MECHANISM_AUDITED; generalização e qualidade UNKNOWN",
-      "summary": "Uma execução PALxCOR, seed 1729, com BCCM ON: V2 seleciona Shoot em t555; ShotOffTarget em t558 termina com posse do goleiro; depois há passes iniciados pelo goleiro e conclusões em t562 e t566.",
-      "result": "Mecanismo auditado somente no prefixo/execução PALxCOR seed 1729 com BCCM ON; não demonstra qualidade geral nem efeito causal isolado. O controle OFF planejado foi executado em W80; consulte o ciclo W80 para o contraste local e seus limites."
-    },
-    {
-      "id": "W78",
-      "wave": "W78",
-      "publishedAt": "2026-10-27T17:29:13Z",
-      "macro": "M2",
-      "title": "Fixture liga decisão natural de chute à transição goal-kick",
-      "status": "W78_GOALKICK_TRANSITION_HARNESS_NARROW_PASS; resultado global PARTIAL",
-      "summary": "Teste dirigido 1/1 em fixture 2v2: uma decisão natural V2 Shoot, sem ActiveShoot prévio, percorre ShootLaunchDegraded→ShotOffTarget + GoalKickSetup→GoalKickReady→execução com posse para away-gk. Regras injetadas forçam a falha e ProgressiveRestartSetupV1 está ligada apenas na fixture.",
-      "result": "Auditoria independente PASS somente para a fixture principal; determinismo PARTIAL para a assinatura selecionada. Uma fixture adicional com ShootRules padrão e progressive restart OFF foi executada e auditada, mas não é uma partida. Não demonstra 11v11 nem qualidade global. Sem mudanças de produção, V1, V3 ou shared. Próximo teste falsificável: revisar/reutilizar inputs PALxCOR de partida 11v11/90 min/seeds 1729–1731 já cobertos por W08 em snapshot isolado e rastrear Shoot selecionado→terminal→posse/restart com IDs; ainda não executado."
-    },
-    {
-      "id": "W77",
-      "wave": "W77",
-      "publishedAt": "2026-10-27T17:08:21Z",
-      "macro": "M2",
-      "title": "Fixture sintética confirmou a rota de transição goal-kick",
-      "status": "W77_GOALKICK_TRANSITION_HARNESS_NARROW_PASS; resultado global PARTIAL",
-      "summary": "Uma fixture manual liga ShotOffTargetEvent e GoalKickSetup no mesmo tick, depois GoalKickSetup→GoalKickReady→execução, com posse para away GK. Todas as transições da fixture foram capturadas pelo overload de quatro argumentos e o harness manteve paridade observável.",
-      "result": "ActiveShoot e trajetória foram semeados; ProgressiveRestartSetupV1 estava ligado apenas na fixture. A V2 não tem GoalKickPending de produção: o builder vai direto a GoalKickSetup. Auditoria PASS somente para a fixture; sem mudança de gameplay/produção ou claim de qualidade. Próximo teste: verificar se ActiveShoot lançado por ShootAction alcança essa rota."
-    },
-    {
-      "id": "W76",
-      "wave": "W76",
-      "publishedAt": "2026-10-27T16:59:00Z",
-      "macro": "M2",
-      "title": "Captura de overloads passou em fixture sintética de offside",
-      "status": "W76_CAPTURE_OVERLOADS_NARROW_PASS; resultado científico PARTIAL; teste 1/1",
-      "summary": "Uma fixture sintética inicia com InitialState manualmente definido como OffsidePending; o primeiro tick termina em OffsideSetup e a captura pareia uma transição por callback. Baseline e harness tiveram resultado equivalente nesta fixture; teste direcionado 1/1 e auditoria independente PASS no escopo sintético.",
-      "result": "Não demonstra geração natural de offside nem cobertura de outros lifecycles; generalização limitada. Sem mudança de gameplay/produção. Próximo teste falsificável W77: cobertura dos overloads em goal-kick Pending/Setup/Ready."
-    },
-    {
-      "id": "W75",
-      "wave": "W75",
-      "publishedAt": "2026-10-27T16:50:43Z",
-      "macro": "M2",
-      "title": "Captura estreita do harness passou em duas fixtures determinísticas",
-      "status": "W75_HARNESS_CAPTURE_NARROW_PASS; resultado global W75_PARTIAL; 2/2 testes",
-      "summary": "Duas fixtures determinísticas confirmam, no escopo testado, a captura do lote pós-resolução entregue à transição e o pareamento de cada callback com a transição imediata. O resultado V2 observado permanece equivalente nos dois cenários; KickOffPrepared inicial fica fora do hook, mas os ticks regulares seguintes são capturados.",
-      "result": "Auditoria independente PASS somente nas claims estreitas testadas; PARTIAL para causalidade por efeito e rotas restantes. Sem mudança de gameplay/produção. Próximo teste falsificável: fixture isolada de restart offside/goal-kick."
+      "title": "Ciclo de vida do passe no tick 3 e recuperação no tick 4",
+      "status": "Teste focal 2/2 PASS; auditoria independente PASS para reconstrução integral do snapshot nesta fixture seed1729 endpoint; consumo e reinício também PASS no escopo bounded. Generalidade, contato físico e qualidade UNKNOWN; sem alteração gameplay.",
+      "summary": "Captura pre-tick3 dos 22 jogadores; orientação, segundo último defensor, linha x75.276288 e conjunto {4c69..., bfd1...} recalculados exatamente iguais ao snapshot. Tick6 offside, restart ticks7/10/11. Resultado restrito à fixture/seed."
     }
   ],
   "macros": [
@@ -220,6 +101,7 @@
       "description": "Base histórica para executar uma partida inteira e reconhecer as limitações do futebol apresentado.",
       "importance": "Uma partida precisa terminar de forma reproduzível antes de sustentar comparações de qualidade.",
       "status": "Parcial / em análise",
+      "statusClass": "partial",
       "items": [
         {
           "id": "M0-01",
@@ -333,6 +215,7 @@
       "description": "Explicar com eventos e decisões ligados entre si onde uma jogada ofensiva deixa de avançar.",
       "importance": "Sem uma cadeia verificável, uma calibração pode aumentar chutes e piorar a dinâmica.",
       "status": "Concluído no escopo",
+      "statusClass": "ok",
       "items": [
         {
           "id": "M1-01",
@@ -433,6 +316,7 @@
       "description": "Levar a bola até zonas perigosas e criar chances com decisões contextualizadas.",
       "importance": "Ganhar território com controle e opções é a base de um ataque convincente.",
       "status": "Parcial / em análise",
+      "statusClass": "partial",
       "items": [
         {
           "id": "M2-01",
@@ -520,6 +404,7 @@
       "description": "Coordenar jogadores sem bola para oferecer apoio, ocupar espaço e recompor.",
       "importance": "O portador precisa de opções viáveis e a equipe de equilíbrio após uma perda.",
       "status": "Planejado",
+      "statusClass": "planned",
       "items": [
         {
           "id": "M3-01",
@@ -607,6 +492,7 @@
       "description": "Transformar recepções, disputas e reinícios em sequências contínuas com defesa coerente.",
       "importance": "Uma boa decisão perde valor quando a resolução quebra a posse ou deixa estados presos.",
       "status": "Parcial / em análise",
+      "statusClass": "partial",
       "items": [
         {
           "id": "M4-01",
@@ -707,6 +593,7 @@
       "description": "Entregar futebol plausível com elencos válidos, identidade dos jogadores e avaliação do produto.",
       "importance": "Placar e volume de chutes não bastam para aprovar a experiência de uma partida.",
       "status": "Planejado",
+      "statusClass": "planned",
       "items": [
         {
           "id": "M5-01",
@@ -820,6 +707,7 @@
       "description": "Construir referências observáveis de futebol sem confundir pistas estáticas com comportamento.",
       "importance": "Uma referência pode orientar perguntas; uma rota de código sozinha não prova intenção ou qualidade.",
       "status": "Parcial / em análise",
+      "statusClass": "partial",
       "items": [
         {
           "id": "M6-01",
@@ -933,6 +821,7 @@
       "description": "Preparar elencos autorizados e atributos consistentes para Palmeiras × Corinthians.",
       "importance": "Uma partida técnica 11 × 11 não resolve exigências de relacionados e dados do produto.",
       "status": "Parcial / em análise",
+      "statusClass": "partial",
       "items": [
         {
           "id": "M7-01",
@@ -1046,6 +935,7 @@
       "description": "Preservar confiança nas comparações e decisões sobre a evolução do jogo.",
       "importance": "Fonte, testes e revisão permitem distinguir melhoria, regressão e efeito do instrumento.",
       "status": "Concluído no escopo",
+      "statusClass": "ok",
       "items": [
         {
           "id": "M8-01",
@@ -1156,34 +1046,76 @@
   ],
   "diary": [
     {
-      "id": "W77",
-      "wave": "W77",
-      "publishedAt": "2026-10-27T17:08:21Z",
+      "id": "W116",
+      "wave": "W116",
+      "publishedAt": "2026-10-27T21:47:40Z",
       "macro": "M2",
-      "title": "Fixture sintética confirmou a rota de transição goal-kick",
-      "status": "W77_GOALKICK_TRANSITION_HARNESS_NARROW_PASS; resultado global PARTIAL",
-      "summary": "Uma fixture manual liga ShotOffTargetEvent e GoalKickSetup no mesmo tick, depois GoalKickSetup→GoalKickReady→execução, com posse para away GK. Todas as transições da fixture foram capturadas pelo overload de quatro argumentos e o harness manteve paridade observável.",
-      "result": "ActiveShoot e trajetória foram semeados; ProgressiveRestartSetupV1 estava ligado apenas na fixture. A V2 não tem GoalKickPending de produção: o builder vai direto a GoalKickSetup. Auditoria PASS somente para a fixture; sem mudança de gameplay/produção ou claim de qualidade. Próximo teste: verificar se ActiveShoot lançado por ShootAction alcança essa rota."
+      "title": "Distância temporal linear nos dois overlaps W115",
+      "status": "Concluído; auditoria independente PASS no cálculo/alinhamento discreto; PARTIAL físico",
+      "summary": "Interpolação linear uniforme dá mínimo 5,6112m em t=.787156 nos dois casos, acima do limiar 1m. Mesmos endpoints no mesmo tick de 1s; engine não fornece subtrajetória comum. Geometria duplicada, não amostras independentes."
     },
     {
-      "id": "W76",
-      "wave": "W76",
-      "publishedAt": "2026-10-27T16:59:00Z",
+      "id": "W117",
+      "wave": "W117",
+      "publishedAt": "2026-10-27T22:00:40Z",
       "macro": "M2",
-      "title": "Captura de overloads passou em fixture sintética de offside",
-      "status": "W76_CAPTURE_OVERLOADS_NARROW_PASS; resultado científico PARTIAL; teste 1/1",
-      "summary": "Uma fixture sintética inicia com InitialState manualmente definido como OffsidePending; o primeiro tick termina em OffsideSetup e a captura pareia uma transição por callback. Baseline e harness tiveram resultado equivalente nesta fixture; teste direcionado 1/1 e auditoria independente PASS no escopo sintético.",
-      "result": "Não demonstra geração natural de offside nem cobertura de outros lifecycles; generalização limitada. Sem mudança de gameplay/produção. Próximo teste falsificável W77: cobertura dos overloads em goal-kick Pending/Setup/Ready."
+      "title": "Protótipo ActivePass linear-relative V2 opt-in",
+      "status": "Concluído; fixtures e auditoria independente PASS estreito; interpretação física/produto PARTIAL",
+      "summary": "Novo parâmetro resolver V2 false por padrão. Falso positivo espacial rejeitado a 4,472m; crossing sincronizado aceito; sem ActivePass não aplica. Sem config/integration."
     },
     {
-      "id": "W75",
-      "wave": "W75",
-      "publishedAt": "2026-10-27T16:50:43Z",
+      "id": "W118",
+      "wave": "W118",
+      "publishedAt": "2026-10-27T22:00:40Z",
       "macro": "M2",
-      "title": "Captura estreita do harness passou em duas fixtures determinísticas",
-      "status": "W75_HARNESS_CAPTURE_NARROW_PASS; resultado global W75_PARTIAL; 2/2 testes",
-      "summary": "Duas fixtures determinísticas confirmam, no escopo testado, a captura do lote pós-resolução entregue à transição e o pareamento de cada callback com a transição imediata. O resultado V2 observado permanece equivalente nos dois cenários; KickOffPrepared inicial fica fora do hook, mas os ticks regulares seguintes são capturados.",
-      "result": "Auditoria independente PASS somente nas claims estreitas testadas; PARTIAL para causalidade por efeito e rotas restantes. Sem mudança de gameplay/produção. Próximo teste falsificável: fixture isolada de restart offside/goal-kick."
+      "title": "Replay natural endpoint/segment/linear-relative",
+      "status": "Concluído; auditoria PASS mecanismo estreito / PARTIAL equivalência completa",
+      "summary": "Dois snapshots naturais: segment mode seleciona mover; endpoint e linear mode não. Mesma decisão/ActionKey, bola solta e ActivePass/BallMovement mantidos no linear. Sem catch físico/qualidade."
+    },
+    {
+      "id": "W119",
+      "wave": "W119",
+      "publishedAt": "2026-10-27T22:01:57Z",
+      "macro": "M2",
+      "title": "Conformance do recovery linear-relative",
+      "status": "Focal 7/7, regressão 35/35 PASS; auditoria independente PASS estreito / PARTIAL integração",
+      "summary": "Limiar 1m inclusivo; 1.000001 excluído; delta relativo zero; maior BallControl e tie ordinal; precedência linear; ActivePass removido desativa. Fixtures de componente."
+    },
+    {
+      "id": "W120",
+      "wave": "W120",
+      "publishedAt": "2026-10-27T22:08:20Z",
+      "macro": "M2",
+      "title": "Integração Simulation com candidatos concorrentes",
+      "status": "Concluído; auditoria PASS estreito / PARTIAL build binding e generalização",
+      "summary": "Fixture sintética de um tick: endpoint escolhe candidato do endpoint; segmento e linear-relative escolhem midpoint de maior BallControl. Decisions/ActionKey iguais; PassFailed e limpeza de ActivePass/BallMovement nos três. Auditoria calcula InterceptBall inelegível no fixture, mas teste não tem assert negativa explícita. Sem prova de contato ou gameplay."
+    },
+    {
+      "id": "W121",
+      "wave": "W121",
+      "publishedAt": "2026-10-27T22:17:14Z",
+      "macro": "M2",
+      "title": "Recovery integrado com marcador móvel natural W115",
+      "status": "Concluído; auditoria independente PASS mecanismo estreito / PARTIAL generalização",
+      "summary": "Replay seed1731/tick30 reproduziu exatamente marcador W115 e cursor PRNG. Rival sintético do time do passador no endpoint: endpoint e linear-relative escolhem rival; segmento escolhe marcador. Decisions/ActionKey iguais, sem InterceptBall, lifecycle PassFailed e estados limpos. Focal 1/1, regressão 37/37. Sem afirmação de contato físico/qualidade."
+    },
+    {
+      "id": "W122",
+      "wave": "W122",
+      "publishedAt": "2026-10-27T22:38:15Z",
+      "macro": "M2",
+      "title": "Incidência de recuperação linear-relative em partidas completas pareadas",
+      "status": "Concluído; mecanismo PASS estreito, vínculo source-run PARTIAL, qualidade UNKNOWN",
+      "summary": "Seeds 1729/1730/1731: primeira divergência no tick 4 por candidatos/vencedor; estado anterior, ações e draws coincidem. No seed1729 o passer ganha posse e termina ActivePass como PassFailed. Estatísticas após tick 4 são descritivas. Focal 1/1, regressão direcionada 13/13; linear-relative continua default-off."
+    },
+    {
+      "id": "W123",
+      "wave": "W123",
+      "publishedAt": "2026-10-27T23:53:24Z",
+      "macro": "M2",
+      "title": "Ciclo de vida do passe no tick 3 e recuperação no tick 4",
+      "status": "Teste focal 2/2 PASS; auditoria independente PASS para reconstrução integral do snapshot nesta fixture seed1729 endpoint; consumo e reinício também PASS no escopo bounded. Generalidade, contato físico e qualidade UNKNOWN; sem alteração gameplay.",
+      "summary": "Captura pre-tick3 dos 22 jogadores; orientação, segundo último defensor, linha x75.276288 e conjunto {4c69..., bfd1...} recalculados exatamente iguais ao snapshot. Tick6 offside, restart ticks7/10/11. Resultado restrito à fixture/seed."
     },
     {
       "wave": "W66",
@@ -1216,38 +1148,6 @@
       "title": "Cursor altera um passe local; destinatário seguinte diverge",
       "summary": "No mesmo cenário controlado, a resolução do primeiro passe mudou; com o cursor pareado, ambos alcançaram o mesmo receptor inicial, mas escolheram destinatários diferentes no passe seguinte. O resultado é local e não mede qualidade geral.",
       "result": "Evidência computacional local; flag permanece default-off; sem aceite do MVP"
-    },
-    {
-      "wave": "W39",
-      "publishedAt": "2026-10-27T05:54:55Z",
-      "macro": "M2",
-      "title": "Passe local reproduzido; cobertura RNG total segue parcial",
-      "summary": "No mesmo snapshot, OFF manteve posse e ON lançou passe; os traces curtos mostram completions em ambos os braços. O replay reproduz o tick15 OFF, mas a API não expõe contador final e o log bruto do observer não foi persistido.",
-      "result": "m2/m4 auditam efeitos locais e replay; causalidade downstream e cobertura global continuam parciais; sem mudança de gameplay"
-    },
-    {
-      "wave": "W38",
-      "publishedAt": "2026-10-27T05:23:37Z",
-      "macro": "M2",
-      "title": "Traces delimitam alcance da comparação pareada",
-      "summary": "A comparação auditada mostra o passe ON um tick antes e diferentes desfechos locais; o scan seguinte não encontrou pre-snapshot compacto comum em open play após a divergência. Os resumos omitem posições completas, então isso não prova ausência de estado igual.",
-      "result": "m2/m4 PASS nos traces; próximo teste exige snapshot open-play integral"
-    },
-    {
-      "wave": "W37",
-      "publishedAt": "2026-10-27T04:43:00Z",
-      "macro": "M2",
-      "title": "Três seeds mudaram a rota ofensiva sem provar melhora",
-      "summary": "Com BCCM ON houve mais Pass e Shoot nos três pares; o placar mudou em duas seeds e ficou igual em uma. As amostras antigas sem possuidor não identificam duração.",
-      "result": "Auditorias reconciliadas; qualidade desconhecida"
-    },
-    {
-      "wave": "W36",
-      "publishedAt": "2026-10-27T04:21:00Z",
-      "macro": "M2",
-      "title": "Segundo seed local preserva o contraste de rota",
-      "summary": "No mesmo snapshot, ON lançou Shoot e foi interrompido após recovery adversário; OFF completou Pass no trecho. Ambos terminaram 0–0.",
-      "result": "Pareamento e sequência auditados; generalização desconhecida"
     }
   ],
   "history": [
@@ -2598,6 +2498,134 @@
     {
       "id": "CP-W68-00",
       "title": "Preflight da coleta de lifecycle em cinco pares"
+    },
+    {
+      "id": "CP-W97-FINAL",
+      "title": "Critério de receptor elegível limitado a enumeração observada"
+    },
+    {
+      "id": "CP-W97-01",
+      "title": "ZIP W97 publicado e validado"
+    },
+    {
+      "id": "CP-W98-FINAL",
+      "title": "Seleção Pass e arbitragem distinguida; sem patch"
+    },
+    {
+      "id": "CP-W98-01",
+      "title": "ZIP W98 publicado e validado"
+    },
+    {
+      "id": "CP-W99-00",
+      "title": "Efeito local reproduzido no mesmo snapshot"
+    },
+    {
+      "id": "CP-W101-00",
+      "title": "Pré-flight identidade e escopo W101"
+    },
+    {
+      "id": "CP-W101-01",
+      "title": "Prefixos e lançamento de passe no build atual"
+    },
+    {
+      "id": "CP-W101-02",
+      "title": "Auditoria independente e regressão"
+    },
+    {
+      "id": "CP-W101-03",
+      "title": "ZIP W101 publicado e validado em output_gpt"
+    },
+    {
+      "id": "CP-W102-00",
+      "title": "Pré-flight da intervenção pareada no mesmo prestate"
+    },
+    {
+      "id": "CP-W104-01",
+      "title": "W104 auditoria independente e handoff publicados"
+    },
+    {
+      "id": "CP-W105-00",
+      "title": "Pré-flight W105"
+    },
+    {
+      "id": "CP-W105-01",
+      "title": "Teste focal e regressão W105"
+    },
+    {
+      "id": "CP-W105-02",
+      "title": "Handoff W105 publicado e validado"
+    },
+    {
+      "id": "CP-W106-03",
+      "title": "W106 handoff publicado e validado"
+    },
+    {
+      "id": "CP-W107-01",
+      "title": "W107 conclusão científica e retomada W108"
+    },
+    {
+      "id": "CP-W108-02",
+      "title": "W108 auditado e publicado; W109 iniciado"
+    },
+    {
+      "id": "CP-W109-02",
+      "title": "W109 auditado/publicado; W110 geométrico em andamento"
+    },
+    {
+      "id": "CP-W110-02",
+      "title": "W110 geometria auditada/publicada; W111 integração diagonal"
+    },
+    {
+      "id": "CP-W111-02",
+      "title": "W111 corrigido, addendum auditado e pacote publicado"
+    },
+    {
+      "id": "CP-W112-02",
+      "title": "W112 auditado/publicado; W113 preflight"
+    },
+    {
+      "id": "CP-W113-02",
+      "title": "W113 diagonal sem ActivePass; auditoria pendente"
+    },
+    {
+      "id": "CP-W122-02",
+      "title": "W122 mecanismo pareado auditado; W123 preflight"
+    },
+    {
+      "id": "CP-W122-03",
+      "title": "W122 publicado e validado; W123 iniciado"
+    },
+    {
+      "id": "CP-W123-00",
+      "title": "W123 preflight: recuperação no tick 4"
+    },
+    {
+      "id": "CP-W123-01",
+      "title": "Geometria pré-recovery capturada; revisão parcial"
+    },
+    {
+      "id": "CP-W123-02",
+      "title": "Lifecycle do passe tick3/4 e limite da interpretação geométrica"
+    },
+    {
+      "id": "CP-W123-03",
+      "title": "Asserções do lifecycle e auditoria do tick3"
+    },
+    {
+      "id": "CP-W123-04",
+      "title": "Primeiro terminal bounded até tick12"
+    },
+    {
+      "id": "CP-W123-05",
+      "title": "Snapshot tick3 consumido por impedimento e reinício indireto"
+    },
+    {
+      "id": "CP-W123-06",
+      "title": "Reconstrução independente integral da geometria pré-tick3"
+    },
+    {
+      "id": "CP-PORTAL-04",
+      "title": "Resumo executivo e histórico em cards"
     }
   ]
 }
