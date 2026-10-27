@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-41",
-  "updatedAt": "2026-10-27T18:23:00Z",
-  "cycle": "SS-ORCH-001-W89-SHOOT-HIGHEST-SCORE-REASON",
+  "version": "2026.10.27-portal-42",
+  "updatedAt": "2026-10-27T18:29:00Z",
+  "cycle": "SS-ORCH-001-W90-T64-BCCM-ABLATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W89_SHOOT_T64_HIGHEST_SCORE_AUDITED; na decisão t64 da captura W88, score Shoot=0.572 e Pass=0.544154; HighestDecisionScore selecionou Shoot. Auditoria independente PASS para a decisão; PARTIAL para gameplay, pois não há ActionResults/eventos. Lançamento/resolução downstream UNKNOWN. Sem alteração de gameplay/produção. Próximo W90: rastrear se há evidência acessível do downstream de Shoot (lançamento/terminal/resolução), sem inferir o resultado a partir da seleção.",
+  "currentFocus": "W90_T64_BCCM_ABLATION_AUDITED; ablação diagnóstica local na fixture seed1729, assemblies W81/W14 pinadas; só BCCM difere nas chamadas diretas. OFF seleciona Move .771429; ON tem Move=0 e seleciona Shoot .572 (Pass .544154; demais scores inalterados); ON direto coincide com a decisão da simulação. Auditoria independente PASS para comparação local; PARTIAL para partida completa/RNG checkpoint e lançamento/resolução. Nenhuma mudança no motor. Próximo W91: investigar evidência de emissão/terminal e RNG do Shoot selecionado, sem inferir que ocorreu resolução.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W90",
+      "wave": "W90",
+      "publishedAt": "2026-10-27T18:29:00Z",
+      "macro": "M2",
+      "title": "Ablação local de BCCM altera Move para Shoot no snapshot t64",
+      "status": "W90_T64_BCCM_ABLATION_AUDITED; PASS comparação local, PARTIAL partida/RNG/downstream",
+      "summary": "Ablação diagnóstica no estado t64 da fixture seed1729 com assemblies W81/W14 pinadas; somente BCCM difere nas chamadas diretas. OFF seleciona Move .771429. ON tem Move=0 e seleciona Shoot .572 sobre Pass .544154; outros scores permanecem iguais. O resultado ON direto coincide com a decisão da simulação.",
+      "result": "Auditoria independente PASS para a comparação local. PARTIAL para equivalência a partida completa e checkpoint RNG; lançamento/resolução do chute não demonstrados. Nenhuma alteração no motor. Próximo W91: procurar evidência de emissão/terminal e RNG do Shoot selecionado, sem presumir resolução ou gol."
+    },
+    {
       "id": "W89",
       "wave": "W89",
       "publishedAt": "2026-10-27T18:23:00Z",
@@ -20,7 +30,7 @@
       "title": "Score mais alto explica a seleção Shoot em t64; resolução segue desconhecida",
       "status": "W89_T64_SHOOT_HIGHEST_SCORE_AUDITED; PASS decisão, PARTIAL gameplay/downstream",
       "summary": "Na decisão t64, Shoot score 0.572 > Pass score 0.544154; o mecanismo HighestDecisionScore selecionou Shoot. Auditoria independente PASS local.",
-      "result": "Auditoria independente PASS para os scores e HighestDecisionScore nesta decisão. PARTIAL para gameplay: somente seleção está evidenciada, sem ActionResults/eventos; lançamento/resolução permanecem UNKNOWN. Sem alteração de gameplay/produção. Próximo W90: buscar evidência de downstream sem inferir conclusão."
+      "result": "Auditoria PASS para a seleção em t64: Shoot 0.572 > Pass 0.544154 e HighestDecisionScore. W90 executou ablação local; o braço ON selecionou a mesma ação observada na simulação, mas partida completa, RNG e resolução seguem parcialmente conhecidos. Consulte W90."
     },
     {
       "id": "W88",
