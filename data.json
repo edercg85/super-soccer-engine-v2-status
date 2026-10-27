@@ -1,9 +1,9 @@
 {
   "version": "2026.10.27-portal-3",
-  "updatedAt": "2026-10-27T03:49:36Z",
+  "updatedAt": "2026-10-27T03:52:33Z",
   "cycle": "W36 — continuação pós-reposição",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Verificar em runner isolado o primeiro movimento físico e o terminal da trajetória Shoot R13, sem decisões defensivas; manter qualidade e comportamento geral UNKNOWN.",
+  "currentFocus": "R14: seguir, sem Simulation, o movimento balístico que o resultado R13 declarou e classificar a primeira borda/terminal no perfil Current; sem goleiro, recuperação ou inferência de gol real.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -1834,6 +1834,10 @@
     {
       "id": "CP-W36-24",
       "title": "Dashboard local e portal sanitizado passam QA atualizado"
+    },
+    {
+      "id": "CP-W36-25",
+      "title": "Preflight restringe R14 à trajetória física não contestada"
     }
   ]
 }
