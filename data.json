@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-40",
-  "updatedAt": "2026-10-27T18:21:00Z",
-  "cycle": "SS-ORCH-001-W88-EXTENDED-DECISION-CAPTURE",
+  "version": "2026.10.27-portal-41",
+  "updatedAt": "2026-10-27T18:23:00Z",
+  "cycle": "SS-ORCH-001-W89-SHOOT-HIGHEST-SCORE-REASON",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W88_DECISION_CAPTURE_AUDITED; 20 decisões até t100 em builds W81/W14 pinned. Auditoria restringe MoveScore<=goalNeed a 18 decisões não-GK; dois goleiros estão fora da fórmula. Pass elegível acima do teto nas 20, selecionado em 19; Shoot selecionado em t64, motivo UNKNOWN pois o score Shoot não foi capturado. Validador 84/84 PASS; sem gameplay change. Próximo W89 (em andamento): auditar a pontuação e a proveniência da decisão Shoot em t64 para verificar se o UNKNOWN pode ser resolvido; manter a interpretação de W88 restrita ao que sua captura contém.",
+  "currentFocus": "W89_SHOOT_T64_HIGHEST_SCORE_AUDITED; na decisão t64 da captura W88, score Shoot=0.572 e Pass=0.544154; HighestDecisionScore selecionou Shoot. Auditoria independente PASS para a decisão; PARTIAL para gameplay, pois não há ActionResults/eventos. Lançamento/resolução downstream UNKNOWN. Sem alteração de gameplay/produção. Próximo W90: rastrear se há evidência acessível do downstream de Shoot (lançamento/terminal/resolução), sem inferir o resultado a partir da seleção.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W89",
+      "wave": "W89",
+      "publishedAt": "2026-10-27T18:23:00Z",
+      "macro": "M2",
+      "title": "Score mais alto explica a seleção Shoot em t64; resolução segue desconhecida",
+      "status": "W89_T64_SHOOT_HIGHEST_SCORE_AUDITED; PASS decisão, PARTIAL gameplay/downstream",
+      "summary": "Na decisão t64, Shoot score 0.572 > Pass score 0.544154; o mecanismo HighestDecisionScore selecionou Shoot. Auditoria independente PASS local.",
+      "result": "Auditoria independente PASS para os scores e HighestDecisionScore nesta decisão. PARTIAL para gameplay: somente seleção está evidenciada, sem ActionResults/eventos; lançamento/resolução permanecem UNKNOWN. Sem alteração de gameplay/produção. Próximo W90: buscar evidência de downstream sem inferir conclusão."
+    },
+    {
       "id": "W88",
       "wave": "W88",
       "publishedAt": "2026-10-27T18:21:00Z",
@@ -20,7 +30,7 @@
       "title": "Captura ampliada confirma limite da fórmula Move e exceção em t64",
       "status": "W88_DECISION_CAPTURE_VALIDATED; validator 84/84 PASS; audit PASS within corrected scope",
       "summary": "Capturadas 20 decisões até t100, builds W81/W14 pinned. Após correção independente, MoveScore<=goalNeed vale para 18 decisões não-GK; dois goleiros não entram nessa fórmula. Pass elegível acima do teto em 20, escolhido em 19. Shoot escolhido em t64; motivo UNKNOWN porque score Shoot está ausente.",
-      "result": "Validador 84/84 PASS e auditoria independente PASS no escopo corrigido. A exceção dos goleiros e score Shoot ausente limitam a interpretação; não se atribui motivo à escolha de Shoot. Sem alteração de gameplay/produção. W89 está em andamento para auditar a pontuação/proveniência de Shoot em t64; isso não altera o fato de que o score está ausente na captura W88."
+      "result": "Auditoria corrigiu a fórmula Move ao escopo de 18 não-GK; duas decisões de goleiro foram excluídas. Pass acima do teto em 20, selecionado em 19; Shoot escolhido em t64, mas score ausente no artefato W88, portanto UNKNOWN naquele escopo. W89 encontrou e auditou os scores da decisão t64 (Shoot 0.572 > Pass 0.544154; HighestDecisionScore); isso não demonstra lançamento/resolução do chute. Consulte W89."
     },
     {
       "id": "W87",
