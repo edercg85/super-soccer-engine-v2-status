@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-35",
-  "updatedAt": "2026-10-27T18:02:00Z",
-  "cycle": "SS-ORCH-001-W83-MOVE-OBJECTIVE-TIEBREAK",
+  "version": "2026.10.27-portal-36",
+  "updatedAt": "2026-10-27T18:08:00Z",
+  "cycle": "SS-ORCH-001-W84-MOVE-TIEBREAK-REPRODUCTION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W83_MOVE_OBJECTIVE_SELECTION_AUDITED; PASS para reconstrução local, PARTIAL para proveniência nominal das fontes. No W81 tick 2, MoveToGoal pontua 0.35 e cinco MoveToTeammate pontuam 0.55; o empate entre candidatos remotos é resolvido por ordem do objetivo e depois ID ordinal, selecionando o goleiro teammate neste snapshot. O vetor radial resultante aponta para longe do home-goal. Isso explica o candidato local, não qualidade de partida nem efeito geral. Sem mudança de gameplay/produção. Próximo W84: probe isolado de 2 ticks do MoveObjectiveEvaluator que reproduza MoveToGoal vs MoveToTeammate e o desempate com assemblies W14, asserts explícitos e sem rebuild do motor.",
+  "currentFocus": "W84_MOVE_TIEBREAK_REPRODUCED; PASS para reprodução local no runtime W14 e validador (duas capturas idênticas, 20/20 checks), PARTIAL para proveniência nominal e generalização. Na fixture W07 seed 1729, BCCM OFF, tick 2: MoveToGoal .35; cinco MoveToTeammate .55; empate/ordenação seleciona o goleiro teammate, direção +X. Probe isolado sem rebuild do motor; não avalia qualidade de partida. Sem mudança de gameplay/produção. Próximo W85: contrafactual isolado do desempate por progresso ao objetivo, preservando estado e sem aplicar patch de produção.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W84",
+      "wave": "W84",
+      "publishedAt": "2026-10-27T18:08:00Z",
+      "macro": "M2",
+      "title": "Reprodução W14 confirma o desempate radial em duas capturas",
+      "status": "W84_MOVE_TIEBREAK_REPRODUCED; PASS local, PARTIAL generalização/source-to-build",
+      "summary": "Probe isolado sobre runtime W14 e fixture W07 seed 1729, BCCM OFF, repetido duas vezes: capturas idênticas. No tick 2, MoveToGoal pontua 0.35, cinco MoveToTeammate 0.55, e o goleiro teammate é selecionado por desempate; validador externo 20/20.",
+      "result": "PASS para reprodução/validação no escopo local; PARTIAL para proveniência nominal dos fontes e generalização. Não avalia qualidade de partida nem justifica mudança da regra em produção. Sem alteração de gameplay. Próximo W85: contrafactual isolado de desempate por progresso, preservando estado e sem patch de produção."
+    },
+    {
       "id": "W83",
       "wave": "W83",
       "publishedAt": "2026-10-27T18:02:00Z",
@@ -20,7 +30,7 @@
       "title": "Empate de score local seleciona MoveToTeammate para o goleiro",
       "status": "W83_MOVE_OBJECTIVE_SELECTION_AUDITED; PASS local, PARTIAL source-to-build",
       "summary": "No W81 tick 2, MoveToGoal pontua 0.35 e cinco MoveToTeammate pontuam 0.55. A ordenação por score, enum de objetivo e ID ordinal escolhe o goleiro teammate entre os empatados; a direção resultante é +X, afastando-se do home-goal.",
-      "result": "Auditoria PASS para a reconstrução no snapshot e PARTIAL para proveniência nominal dos fontes/runtime e generalização. Não demonstra qualidade de gameplay nem que esse desempate seja preferível globalmente. Sem mudança de gameplay/produção. Próximo W84: probe isolado de 2 ticks, assemblies W14, para reproduzir ranking/tie-break com asserts e sem rebuild do motor."
+      "result": "Auditoria PASS para reconstrução local, PARTIAL para proveniência nominal de fonte/runtime. A reprodução W84 validou o candidato e desempate nas capturas existentes; consulte W84 para o escopo e W85 para o contrafactual planejado."
     },
     {
       "id": "W82",
