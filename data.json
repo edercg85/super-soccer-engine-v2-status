@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-46",
-  "updatedAt": "2026-10-27T18:47:00Z",
-  "cycle": "SS-ORCH-001-W93-ON-SHOOT-TO-GO",
+  "version": "2026.10.27-portal-47",
+  "updatedAt": "2026-10-27T18:56:00Z",
+  "cycle": "SS-ORCH-001-W94-PINNED-OFF-ON-SHOOT-REPLAY",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W93_SINGLE_ON_TRAJECTORY_GOAL_OBSERVED; one trajectory: Shoot selected/launched at t64 and goal recorded at t68. This is one ON trajectory only, not a quality or causal claim. W08 and W90 refer to distinct flag/population/build contexts and are not contradictory. No gameplay code change. Next W94: attempt a paired OFF comparison from the same reproducible initial state and pinned build; if state/build cannot be matched, record it as non-comparable.",
+  "currentFocus": "W94_PINNED_W14_1729_REPRODUCED; W81/W14-compatible assemblies and pinned fixture. OFF: 0 Shoot, score 0-0. ON: 12 Shoot decisions, 7 launched + 5 degraded; 12 linked terminals (4 goals, 4 off-target, 3 blocked, 1 out-of-range), final 2-2. Independent audit PASS binary/config/association; original drawCount=0 corrected by enriched capture to 2131 total draws / 17 Shoot draws. Reproduces existing W14 seed1729 only: not multiseed or quality evidence; flag remains default-off. No gameplay changes. Next W95: reconcile source manifests with older W08 full-match build identity before any further run.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W94",
+      "wave": "W94",
+      "publishedAt": "2026-10-27T18:56:00Z",
+      "macro": "M2",
+      "title": "Replay pareado reproduz W14 seed 1729; contador de draws corrigido",
+      "status": "W94_PINNED_W14_1729_REPRODUCED; audit PASS binary/config/association",
+      "summary": "Com assemblies compatíveis W81/W14 e fixture pinada, OFF: 0 Shoot e 0-0. ON: 12 decisões Shoot, 7 ShootLaunched e 5 degradadas; 12 terminais ligados (4 gols, 4 off-target, 3 bloqueados, 1 fora de faixa), placar final 2-2. Auditoria independente PASS para binário/configuração/associação. A captura enriquecida corrigiu o drawCount=0 do par original: 2.131 draws totais, 17 draws Shoot.",
+      "result": "Reprodução do W14 seed1729 já existente, não um novo estudo multiseed nem evidência de qualidade. A flag permanece default-off. Nenhuma mudança de gameplay. W95 deve comparar manifests de fonte com a build full-match antiga W08 antes de qualquer nova execução."
+    },
+    {
       "id": "W93",
       "wave": "W93",
       "publishedAt": "2026-10-27T18:47:00Z",
@@ -20,7 +30,7 @@
       "title": "Uma trajetória ON liga Shoot selecionado em t64 a gol em t68",
       "status": "W93_SINGLE_ON_TRAJECTORY_GOAL_OBSERVED; bounded single-run result",
       "summary": "Em uma trajetória com BCCM ON, Shoot foi selecionado e lançado em t64; houve gol em t68. É um resultado local de uma trajetória única. W08 e W90 usam contextos distintos de flag/população/build e não são contraditórios.",
-      "result": "Esta sequência não demonstra qualidade geral, frequência de gols nem efeito causal do BCCM. W08/W90 mantêm seus escopos e contextos próprios; não se transpõe a conclusão por VA/seed/flag. Nenhuma mudança de gameplay. Próximo W94: tentar comparação OFF pareada a partir do mesmo estado inicial reproduzível e build fixada; se não for possível parear, registrar como não comparável."
+      "result": "Uma trajetória ON selecionou/lançou Shoot em t64 e registrou gol em t68; não é claim geral. W94 reproduziu um par W14 seed1729 existente sob assemblies compatíveis; builds/contextos W08/W90/W93 são distintos. Consulte W94 para escopo e draw correction."
     },
     {
       "id": "W92",
