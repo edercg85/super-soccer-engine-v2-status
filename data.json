@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-36",
-  "updatedAt": "2026-10-27T18:08:00Z",
-  "cycle": "SS-ORCH-001-W84-MOVE-TIEBREAK-REPRODUCTION",
+  "version": "2026.10.27-portal-37",
+  "updatedAt": "2026-10-27T18:10:00Z",
+  "cycle": "SS-ORCH-001-W85-CONTEXTUAL-MOVE-COUNTERFACTUAL",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W84_MOVE_TIEBREAK_REPRODUCED; PASS para reprodução local no runtime W14 e validador (duas capturas idênticas, 20/20 checks), PARTIAL para proveniência nominal e generalização. Na fixture W07 seed 1729, BCCM OFF, tick 2: MoveToGoal .35; cinco MoveToTeammate .55; empate/ordenação seleciona o goleiro teammate, direção +X. Probe isolado sem rebuild do motor; não avalia qualidade de partida. Sem mudança de gameplay/produção. Próximo W85: contrafactual isolado do desempate por progresso ao objetivo, preservando estado e sem aplicar patch de produção.",
+  "currentFocus": "W85_MOVE_CONTEXTUAL_CEILING_AUDITED; no snapshot W81 t2, Move contextual ceiling 0.475683 ficou abaixo de Pass 0.731514. Auditoria independente PASS para o cálculo local e PARTIAL para proveniência; sem generalização para outros estados, qualidade global ou alteração de gameplay/produção. Próximo W86: formular e executar o próximo teste falsificável a partir deste contrafactual isolado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W85",
+      "wave": "W85",
+      "publishedAt": "2026-10-27T18:10:00Z",
+      "macro": "M2",
+      "title": "Teto contextual de Move fica abaixo de Pass no snapshot W81 t2",
+      "status": "W85_MOVE_CONTEXTUAL_CEILING_AUDITED; PASS local, PARTIAL proveniência/generalização",
+      "summary": "No snapshot W81 t2, o teto calculado para Move contextual foi 0.475683, abaixo do score Pass de 0.731514. Auditoria independente PASS para a comparação/cálculo local; proveniência PARTIAL.",
+      "result": "Resultado restrito a este snapshot e à métrica comparada. Não demonstra qualidade geral nem justifica alteração de gameplay/produção. Próximo W86: formular e executar o próximo teste falsificável com base neste contrafactual."
+    },
+    {
       "id": "W84",
       "wave": "W84",
       "publishedAt": "2026-10-27T18:08:00Z",
@@ -20,7 +30,7 @@
       "title": "Reprodução W14 confirma o desempate radial em duas capturas",
       "status": "W84_MOVE_TIEBREAK_REPRODUCED; PASS local, PARTIAL generalização/source-to-build",
       "summary": "Probe isolado sobre runtime W14 e fixture W07 seed 1729, BCCM OFF, repetido duas vezes: capturas idênticas. No tick 2, MoveToGoal pontua 0.35, cinco MoveToTeammate 0.55, e o goleiro teammate é selecionado por desempate; validador externo 20/20.",
-      "result": "PASS para reprodução/validação no escopo local; PARTIAL para proveniência nominal dos fontes e generalização. Não avalia qualidade de partida nem justifica mudança da regra em produção. Sem alteração de gameplay. Próximo W85: contrafactual isolado de desempate por progresso, preservando estado e sem patch de produção."
+      "result": "PASS para reprodução/validação no escopo local; PARTIAL para proveniência nominal dos fontes e generalização. Não avalia qualidade de partida nem justifica mudança da regra em produção. Sem alteração de gameplay. O contrafactual de desempate foi concluído em W85; consulte W85 para o limite do resultado e W86 para o próximo teste."
     },
     {
       "id": "W83",
