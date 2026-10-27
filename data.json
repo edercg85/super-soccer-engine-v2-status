@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-45",
-  "updatedAt": "2026-10-27T18:42:00Z",
-  "cycle": "SS-ORCH-001-W92-SHOOT-LAUNCH-TERMINAL-TRACE",
+  "version": "2026.10.27-portal-46",
+  "updatedAt": "2026-10-27T18:47:00Z",
+  "cycle": "SS-ORCH-001-W93-ON-SHOOT-TO-GO",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W92_SHOOT_LAUNCH_TERMINAL_TRACE_AUDITED; prefixo seed1729 t555: 22 decisões (1 Shoot, 21 Move), zero Tackle; fallback direto ResolveShoot. Arias d=35.566878m, probabilidade técnica 43.3775%; draw 0.7925896881 produz ShootLaunchDegraded. Draw error side 0.5007546071 aplica +15°, segmento 60m/peak25 capturado; ShotEvent e BMS/ActiveShoot confirmam lançamento degradado. Em t558 cruza Right fora da boca; ShotOffTarget para o mesmo shooter, GK adversário recebe em (99.5,34), restart/trajectory state nulos, placar 1-1. Auditor independente PASS local, PARTIAL generalização/source-helper crosswalk. Nenhuma alteração no motor. Próximo W93: comparar outro traço observável e/ou resolver crosswalk, sem generalizar a partir desta tentativa única.",
+  "currentFocus": "W93_SINGLE_ON_TRAJECTORY_GOAL_OBSERVED; one trajectory: Shoot selected/launched at t64 and goal recorded at t68. This is one ON trajectory only, not a quality or causal claim. W08 and W90 refer to distinct flag/population/build contexts and are not contradictory. No gameplay code change. Next W94: attempt a paired OFF comparison from the same reproducible initial state and pinned build; if state/build cannot be matched, record it as non-comparable.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -13,6 +13,16 @@
   },
   "recentCycles": [
     {
+      "id": "W93",
+      "wave": "W93",
+      "publishedAt": "2026-10-27T18:47:00Z",
+      "macro": "M2",
+      "title": "Uma trajetória ON liga Shoot selecionado em t64 a gol em t68",
+      "status": "W93_SINGLE_ON_TRAJECTORY_GOAL_OBSERVED; bounded single-run result",
+      "summary": "Em uma trajetória com BCCM ON, Shoot foi selecionado e lançado em t64; houve gol em t68. É um resultado local de uma trajetória única. W08 e W90 usam contextos distintos de flag/população/build e não são contraditórios.",
+      "result": "Esta sequência não demonstra qualidade geral, frequência de gols nem efeito causal do BCCM. W08/W90 mantêm seus escopos e contextos próprios; não se transpõe a conclusão por VA/seed/flag. Nenhuma mudança de gameplay. Próximo W94: tentar comparação OFF pareada a partir do mesmo estado inicial reproduzível e build fixada; se não for possível parear, registrar como não comparável."
+    },
+    {
       "id": "W92",
       "wave": "W92",
       "publishedAt": "2026-10-27T18:41:00Z",
@@ -20,7 +30,7 @@
       "title": "Lançamento degradado termina em ShotOffTarget e posse do goleiro em uma execução",
       "status": "W92_SHOOT_LAUNCH_TERMINAL_TRACE_AUDITED; PASS local, PARTIAL generalização/source-helper crosswalk",
       "summary": "No prefixo seed1729 t555 houve 22 decisões (1 Shoot, 21 Move), zero Tackle; fallback ResolveShoot. Arias: distância 35.566878m, probabilidade técnica 43.3775%; draw 0.7925896881 causou ShootLaunchDegraded. Draw 0.5007546071 aplicou +15°; segmento 60m/peak25 foi capturado, com ShotEvent e BMS/ActiveShoot. Em t558, cruzou Right fora da boca; ShotOffTarget do mesmo shooter, GK adversário recebeu em (99.5,34), restart/trajectory nulos e placar 1-1.",
-      "result": "Auditoria independente PASS para a cadeia observada nesta execução; PARTIAL para generalização e source/helper crosswalk. Demonstra lançamento degradado, desfecho ShotOffTarget e transferência observada ao GK neste prefixo; não estima frequência nem comportamento geral. Sem alteração no motor. W93: comparar outro traço observável e/ou resolver crosswalk sem generalizar desta amostra."
+      "result": "A execução seed1729 observada em W92 termina ShotOffTarget e GK possession em t558. W93 registra uma trajetória ON distinta que chega a gol após Shoot t64; os dois resultados não se contradizem porque contextos de flag/população/build diferem e não estimam frequência. Consulte W93 e mantenha escopos separados."
     },
     {
       "id": "W91",
