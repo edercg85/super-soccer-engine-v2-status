@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-18",
-  "updatedAt": "2026-10-27T15:29:43Z",
-  "cycle": "SS-ORCH-001-W69-PASS-EPISODE-RECONSTRUCTION",
+  "version": "2026.10.27-portal-19",
+  "updatedAt": "2026-10-27T15:38:22Z",
+  "cycle": "SS-ORCH-001-W70-SHOT-DISTANCE-OBSERVATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W69 auditou PASS a reconstrução dos episódios: 7.272 ON vs 5.230 OFF, com mediana de quatro ticks em ambos. Associação causal PARTIAL porque os traces divergem no tick 2; qualidade geral UNKNOWN e BallCarrierContextualMoveV2 permanece default-off.",
+  "currentFocus": "W70 ligou 79 eventos de tentativa de chute nos traces W68: 78 lançados e um bloqueado no mesmo tick. Medianas observadas tentativa→objetivo: OFF 8,0349 (n=5), ON 44,1204 (n=74); lançamentos ON 43,3942 (n=73). Amostra pequena, caminhos divergem no tick 2; sem inferência de causalidade geral ou qualidade. BCCM default-off.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,6 +12,16 @@
     "unknown": 5
   },
   "recentCycles": [
+    {
+      "id": "W70",
+      "wave": "W70",
+      "publishedAt": "2026-10-27T15:38:22Z",
+      "macro": "M2",
+      "title": "Tentativas de chute ligadas; distâncias de lançamento separadas",
+      "status": "Concluído; joins auditados PARTIAL; 78 lançamentos validados",
+      "summary": "Nos traces pareados W68, foram ligados 79 eventos de tentativa: 78 lançamentos e um bloqueio no mesmo tick. Mediana da distância tentativa→objetivo: OFF 8,0349 (n=5), ON 44,1204 (n=74). Considerando apenas lançamentos: ON 43,3942 (n=73).",
+      "result": "Medidas geométricas da amostra, não qualidade, precisão ou sucesso. Há só cinco tentativas OFF; as trajetórias divergem no tick 2. Não estabelece causalidade geral nem melhora de partida. BallCarrierContextualMoveV2 permanece default-off."
+    },
     {
       "id": "W69",
       "wave": "W69",
@@ -31,16 +41,6 @@
       "status": "Métricas reconciliadas por duas auditorias e recálculo; interpretação PARTIAL",
       "summary": "Nos cinco pares B, pre.owner sem portador: 14.035→19.461 (+5.426); ActivePass && BallMovement: 13.603→18.798 (+5.195); ActivePass || BallMovement: 13.611→19.006 (+5.395; 99,43% do delta). Primeira leitura usou post.owner; a diferença é fronteira de amostragem pre/post, não duplicação.",
       "result": "Apenas amostras de tick, não tempo físico nem episódios. AP/BM são predicados sobrepostos; associação descritiva sem causalidade exclusiva. Auditoria PARTIAL; qualidade global UNKNOWN e BCCM default-off."
-    },
-    {
-      "id": "W67",
-      "wave": "W67",
-      "publishedAt": "2026-10-27T14:47:11Z",
-      "macro": "M2",
-      "title": "Cinco seeds confirmam o efeito local Move→Pass",
-      "status": "Concluído; auditoria local PASS, qualidade global UNKNOWN",
-      "summary": "Em cinco pares B OFF/ON, o mesmo pre-state do tick 2 muda de Move para Pass; três seeds repetidas em R3 reproduzem os resultados. O efeito local é auditado, mas a qualidade global não foi estabelecida.",
-      "result": "Manter BallCarrierContextualMoveV2 default-off; NO-GO para ativação ampla."
     }
   ],
   "macros": [
@@ -986,6 +986,16 @@
   ],
   "diary": [
     {
+      "id": "W70",
+      "wave": "W70",
+      "publishedAt": "2026-10-27T15:38:22Z",
+      "macro": "M2",
+      "title": "Tentativas de chute ligadas; distâncias de lançamento separadas",
+      "status": "Concluído; joins auditados PARTIAL; 78 lançamentos validados",
+      "summary": "Nos traces pareados W68, foram ligados 79 eventos de tentativa: 78 lançamentos e um bloqueio no mesmo tick. Mediana da distância tentativa→objetivo: OFF 8,0349 (n=5), ON 44,1204 (n=74). Considerando apenas lançamentos: ON 43,3942 (n=73).",
+      "result": "Medidas geométricas da amostra, não qualidade, precisão ou sucesso. Há só cinco tentativas OFF; as trajetórias divergem no tick 2. Não estabelece causalidade geral nem melhora de partida. BallCarrierContextualMoveV2 permanece default-off."
+    },
+    {
       "id": "W69",
       "wave": "W69",
       "publishedAt": "2026-10-27T15:29:43Z",
@@ -1004,16 +1014,6 @@
       "status": "Métricas reconciliadas por duas auditorias e recálculo; interpretação PARTIAL",
       "summary": "Nos cinco pares B, pre.owner sem portador: 14.035→19.461 (+5.426); ActivePass && BallMovement: 13.603→18.798 (+5.195); ActivePass || BallMovement: 13.611→19.006 (+5.395; 99,43% do delta). Primeira leitura usou post.owner; a diferença é fronteira de amostragem pre/post, não duplicação.",
       "result": "Apenas amostras de tick, não tempo físico nem episódios. AP/BM são predicados sobrepostos; associação descritiva sem causalidade exclusiva. Auditoria PARTIAL; qualidade global UNKNOWN e BCCM default-off."
-    },
-    {
-      "id": "W67",
-      "wave": "W67",
-      "publishedAt": "2026-10-27T14:47:11Z",
-      "macro": "M2",
-      "title": "Cinco seeds confirmam o efeito local Move→Pass",
-      "status": "Concluído; auditoria local PASS, qualidade global UNKNOWN",
-      "summary": "Em cinco pares B OFF/ON, o mesmo pre-state do tick 2 muda de Move para Pass; três seeds repetidas em R3 reproduzem os resultados. O efeito local é auditado, mas a qualidade global não foi estabelecida.",
-      "result": "Manter BallCarrierContextualMoveV2 default-off; NO-GO para ativação ampla."
     },
     {
       "wave": "W66",
@@ -1078,14 +1078,6 @@
       "title": "Segundo seed local preserva o contraste de rota",
       "summary": "No mesmo snapshot, ON lançou Shoot e foi interrompido após recovery adversário; OFF completou Pass no trecho. Ambos terminaram 0–0.",
       "result": "Pareamento e sequência auditados; generalização desconhecida"
-    },
-    {
-      "wave": "W36",
-      "publishedAt": "2026-10-27T04:20:00Z",
-      "macro": "M2",
-      "title": "Auditoria independente concluiu o par OFF/ON",
-      "summary": "Inputs e assemblies coincidem, a flag é a diferença isolada e outputs repetiram. Resultado restrito ao snapshot sintético.",
-      "result": "PASS local; PARTIAL geral"
     }
   ],
   "history": [
