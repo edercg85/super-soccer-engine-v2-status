@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-132",
-  "updatedAt": "2026-10-28T11:36:00Z",
-  "cycle": "SS-ORCH-001-W199-GOALKEEPER-GUARD-DIRECT-EVALUATION",
+  "version": "2026.10.28-portal-133",
+  "updatedAt": "2026-10-28T11:42:00Z",
+  "cycle": "SS-ORCH-001-W200-GOALKEEPER-REACH-BOUNDARY-PROBE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W199: consultar diretamente, em modo read-only, Evaluate da DLL histórica no prestate OFF tick31 e controles ON tick30/34; não inferir guardas se a API não permitir reconstrução fiel.",
+  "currentFocus": "W200: varrer snapshots sintéticos read-only ao redor de4m, alterando somente posição do goleiro, e medir diretamente Evaluate + DecideWithDiagnostics na DLL histórica para confirmar/refutar o limite de elegibilidade.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W198",
-    "wave": "W198",
-    "publishedAt": "2026-10-28T11:36:00Z",
+    "id": "W199",
+    "wave": "W199",
+    "publishedAt": "2026-10-28T11:42:00Z",
     "macro": "M2",
-    "title": "W198: guarda do goleiro e candidato de interceptação",
-    "status": "Runtime diagnostics audited; source-to-binary and OFF tick31 guard PARTIAL.",
-    "summary": "OFF tick31 tem ActiveShoot, InterceptBall inelegível e nenhum candidato; ON ticks30/34 tem candidato threat/last-useful e bloqueia. Hash da DLL e fixture preservados; PE/PDB não associado."
+    "title": "W199: alcance explica a ausência de candidato, com limite de build",
+    "status": "Direct DLL probe PASS; decision cutoff PARTIAL (PE/PDB/source link not verified).",
+    "summary": "OFF tick31: Applies=true; oportunidade 7,8743m, t=0, ameaça=true, LastUseful=false; InterceptBall sem candidato. ON controles 30/34 em 0/0,0783m são elegíveis e escolhidos. W198-C5 refinada."
   },
   "recentCycles": [
-    {
-      "id": "W190",
-      "wave": "W190",
-      "publishedAt": "2026-10-28T09:47:00Z",
-      "macro": "M2",
-      "title": "W190: margens de Shoot validadas cross-seed",
-      "status": "1/1 PASS; seed1733 tick95 matches W181; cross-seed audit PASS.",
-      "summary": "Move > Shoot em5043/5043 decisões elegíveis; gap<.08 em duas linhas de cada seed; 0 chutes nas duas partidas. +.08 é só aritmética de snapshot."
-    },
     {
       "id": "W191",
       "wave": "W191",
@@ -101,6 +92,15 @@
       "title": "W198: guarda do goleiro e candidato de interceptação",
       "status": "Runtime diagnostics audited; source-to-binary and OFF tick31 guard PARTIAL.",
       "summary": "OFF tick31 tem ActiveShoot, InterceptBall inelegível e nenhum candidato; ON ticks30/34 tem candidato threat/last-useful e bloqueia. Hash da DLL e fixture preservados; PE/PDB não associado."
+    },
+    {
+      "id": "W199",
+      "wave": "W199",
+      "publishedAt": "2026-10-28T11:42:00Z",
+      "macro": "M2",
+      "title": "W199: alcance explica a ausência de candidato, com limite de build",
+      "status": "Direct DLL probe PASS; decision cutoff PARTIAL (PE/PDB/source link not verified).",
+      "summary": "OFF tick31: Applies=true; oportunidade 7,8743m, t=0, ameaça=true, LastUseful=false; InterceptBall sem candidato. ON controles 30/34 em 0/0,0783m são elegíveis e escolhidos. W198-C5 refinada."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W190",
-      "wave": "W190",
-      "publishedAt": "2026-10-28T09:47:00Z",
-      "macro": "M2",
-      "title": "W190: margens de Shoot validadas cross-seed",
-      "status": "1/1 PASS; seed1733 tick95 matches W181; cross-seed audit PASS.",
-      "summary": "Move > Shoot em5043/5043 decisões elegíveis; gap<.08 em duas linhas de cada seed; 0 chutes nas duas partidas. +.08 é só aritmética de snapshot."
-    },
-    {
       "id": "W191",
       "wave": "W191",
       "publishedAt": "2026-10-28T10:15:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W198: guarda do goleiro e candidato de interceptação",
       "status": "Runtime diagnostics audited; source-to-binary and OFF tick31 guard PARTIAL.",
       "summary": "OFF tick31 tem ActiveShoot, InterceptBall inelegível e nenhum candidato; ON ticks30/34 tem candidato threat/last-useful e bloqueia. Hash da DLL e fixture preservados; PE/PDB não associado."
+    },
+    {
+      "id": "W199",
+      "wave": "W199",
+      "publishedAt": "2026-10-28T11:42:00Z",
+      "macro": "M2",
+      "title": "W199: alcance explica a ausência de candidato, com limite de build",
+      "status": "Direct DLL probe PASS; decision cutoff PARTIAL (PE/PDB/source link not verified).",
+      "summary": "OFF tick31: Applies=true; oportunidade 7,8743m, t=0, ameaça=true, LastUseful=false; InterceptBall sem candidato. ON controles 30/34 em 0/0,0783m são elegíveis e escolhidos. W198-C5 refinada."
     },
     {
       "wave": "W66",
@@ -3116,6 +3116,10 @@
     {
       "id": "CP-W198-02",
       "title": "Diagnóstico W198 fechado; probe direto W199 iniciado"
+    },
+    {
+      "id": "CP-W199-02",
+      "title": "W199 direto concluído; fronteira runtime W200 iniciada"
     }
   ]
 }
