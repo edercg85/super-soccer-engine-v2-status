@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-141",
-  "updatedAt": "2026-10-28T12:34:00Z",
-  "cycle": "SS-ORCH-001-W215-FIRST-DIVERGENCE",
+  "version": "2026.10.28-portal-143",
+  "updatedAt": "2026-10-28T13:05:00Z",
+  "cycle": "SS-ORCH-001-W218-DERR-MULTISEED",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W215: localizar primeira divergência de estado e primeiros impedimentos extras no par W214; capturar janela compacta e hashes por tick, sem multiseed antes de entender a cadeia.",
+  "currentFocus": "W219: tracing bounded da primeira divergência OFF/ON e primeiro passe impedido nas seeds 1730/1731; testar falsificavelmente se impedimentos mediam diferenças em passes completos. Sem alterar gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,33 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W214",
-    "wave": "W214",
-    "publishedAt": "2026-10-28T12:33:00Z",
+    "id": "W218",
+    "wave": "W218",
+    "publishedAt": "2026-10-28T13:05:00Z",
     "macro": "M3",
-    "title": "W214: DERR isolado muda PAL×COR 90min na seed 1729",
-    "status": "Efeito pareado e repetibilidade ON confirmados; não promovido (uma seed, qualidade ambígua).",
-    "summary": "Só DERR variou. OFF/ON: 22→60 impedimentos, 798→635 passes completos, tackles selecionados 43→340, posse home 1700→1363 e away 944→1493; placar 0–0 ambos. ON repetiu exatamente."
+    "title": "W218: multiseed DERR PAL×COR, placares heterogêneos",
+    "status": "Sinais mecânicos se repetem em duas seeds; placar misto; recomendação default-off. Auditoria independente pendente.",
+    "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
   },
   "recentCycles": [
-    {
-      "id": "W200",
-      "wave": "W200",
-      "publishedAt": "2026-10-28T11:46:00Z",
-      "macro": "M2",
-      "title": "W200: limite de alcance 4m confirmado no runtime local",
-      "status": "Sweep sintético auditado; runtime 3,9/4,0 elegível e4,1 inelegível.",
-      "summary": "No mesmo estado OFF tick31, somente posição do GK varia: 3,9/4,0m => `LastUseful=true`, InterceptBall selecionado;4,1m => false, Move. Explica o candidato vazio local; qualidade/prevalência seguem UNKNOWN."
-    },
-    {
-      "id": "W201",
-      "wave": "W201",
-      "publishedAt": "2026-10-28T11:51:00Z",
-      "macro": "M2",
-      "title": "W201: elegibilidade não garante interceptação técnica",
-      "status": "Resolver e efeitos locais auditados em estados sintéticos; sem qualidade global.",
-      "summary": "Com draw fixo0,01: a3,9m o goleiro obtém p2,8334%, sucesso e posse/ShotBlocked; a3,9999999999999973m p≈7,55e-14%, falha e sem efeitos. Draw0 passa nos dois por ser limite minúsculo não nulo."
-    },
     {
       "id": "W202",
       "wave": "W202",
@@ -101,6 +83,24 @@
       "title": "W214: DERR isolado muda PAL×COR 90min na seed 1729",
       "status": "Efeito pareado e repetibilidade ON confirmados; não promovido (uma seed, qualidade ambígua).",
       "summary": "Só DERR variou. OFF/ON: 22→60 impedimentos, 798→635 passes completos, tackles selecionados 43→340, posse home 1700→1363 e away 944→1493; placar 0–0 ambos. ON repetiu exatamente."
+    },
+    {
+      "id": "W215-W217",
+      "wave": "W215-W217",
+      "publishedAt": "2026-10-28T12:47:00Z",
+      "macro": "M3",
+      "title": "W215–W217: primeira divergência e impedimento explicados localmente",
+      "status": "Par exato e snapshot auditados; fator geométrico de cada componente isolado estaticamente; generalização UNKNOWN.",
+      "summary": "Tick1 states iguais; divergência inicia no tick2. ON lança passe tick55; snapshot marca Gustavo Henrique e evento tick58 aponta SnapshotTick55. Substituir só receptor, defensores ou bola por posições OFF remove o marcado no geometry probe."
+    },
+    {
+      "id": "W218",
+      "wave": "W218",
+      "publishedAt": "2026-10-28T13:05:00Z",
+      "macro": "M3",
+      "title": "W218: multiseed DERR PAL×COR, placares heterogêneos",
+      "status": "Sinais mecânicos se repetem em duas seeds; placar misto; recomendação default-off. Auditoria independente pendente.",
+      "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
     }
   ],
   "macros": [
@@ -1055,24 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W200",
-      "wave": "W200",
-      "publishedAt": "2026-10-28T11:46:00Z",
-      "macro": "M2",
-      "title": "W200: limite de alcance 4m confirmado no runtime local",
-      "status": "Sweep sintético auditado; runtime 3,9/4,0 elegível e4,1 inelegível.",
-      "summary": "No mesmo estado OFF tick31, somente posição do GK varia: 3,9/4,0m => `LastUseful=true`, InterceptBall selecionado;4,1m => false, Move. Explica o candidato vazio local; qualidade/prevalência seguem UNKNOWN."
-    },
-    {
-      "id": "W201",
-      "wave": "W201",
-      "publishedAt": "2026-10-28T11:51:00Z",
-      "macro": "M2",
-      "title": "W201: elegibilidade não garante interceptação técnica",
-      "status": "Resolver e efeitos locais auditados em estados sintéticos; sem qualidade global.",
-      "summary": "Com draw fixo0,01: a3,9m o goleiro obtém p2,8334%, sucesso e posse/ShotBlocked; a3,9999999999999973m p≈7,55e-14%, falha e sem efeitos. Draw0 passa nos dois por ser limite minúsculo não nulo."
-    },
-    {
       "id": "W202",
       "wave": "W202",
       "publishedAt": "2026-10-28T11:54:00Z",
@@ -1134,6 +1116,24 @@
       "title": "W214: DERR isolado muda PAL×COR 90min na seed 1729",
       "status": "Efeito pareado e repetibilidade ON confirmados; não promovido (uma seed, qualidade ambígua).",
       "summary": "Só DERR variou. OFF/ON: 22→60 impedimentos, 798→635 passes completos, tackles selecionados 43→340, posse home 1700→1363 e away 944→1493; placar 0–0 ambos. ON repetiu exatamente."
+    },
+    {
+      "id": "W215-W217",
+      "wave": "W215-W217",
+      "publishedAt": "2026-10-28T12:47:00Z",
+      "macro": "M3",
+      "title": "W215–W217: primeira divergência e impedimento explicados localmente",
+      "status": "Par exato e snapshot auditados; fator geométrico de cada componente isolado estaticamente; generalização UNKNOWN.",
+      "summary": "Tick1 states iguais; divergência inicia no tick2. ON lança passe tick55; snapshot marca Gustavo Henrique e evento tick58 aponta SnapshotTick55. Substituir só receptor, defensores ou bola por posições OFF remove o marcado no geometry probe."
+    },
+    {
+      "id": "W218",
+      "wave": "W218",
+      "publishedAt": "2026-10-28T13:05:00Z",
+      "macro": "M3",
+      "title": "W218: multiseed DERR PAL×COR, placares heterogêneos",
+      "status": "Sinais mecânicos se repetem em duas seeds; placar misto; recomendação default-off. Auditoria independente pendente.",
+      "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
     },
     {
       "wave": "W66",
@@ -3160,6 +3160,14 @@
     {
       "id": "CP-W215-00",
       "title": "Primeira divergência e evento offside adicional em preparação"
+    },
+    {
+      "id": "CP-W215-W217-FINAL",
+      "title": "Divergência e evento de impedimento vinculados ao snapshot"
+    },
+    {
+      "id": "CP-W218-00",
+      "title": "Multiseed pareado DERR preflight"
     }
   ]
 }
