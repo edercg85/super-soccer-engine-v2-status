@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-192",
-  "updatedAt": "2026-10-28T18:51:41Z",
-  "cycle": "W268",
+  "version": "2026.10.28-portal-193",
+  "updatedAt": "2026-10-28T20:47:14Z",
+  "cycle": "W269",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W268 fechou a lacuna do censo somente no seed1750 com replay read-only e auditoria 18/18. Próximo: verificar amostra pequena de outros seeds W214 com paridade e winner-vs-nearest, sem inferir qualidade.",
+  "currentFocus": "Recapturar o funil ofensivo por posse nas partidas W214 W246/W255 com observadores neutros e fingerprints; preparar replay completo de 90 minutos para avaliação humana.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W268",
-    "wave": "W268",
-    "publishedAt": "2026-10-28T18:51:41Z",
+    "id": "W269",
+    "wave": "W269",
+    "publishedAt": "2026-10-28T20:47:14Z",
     "macro": "M3",
-    "title": "Recovery endpoint seed1750 reproduzido e auditado",
-    "status": "Mecanismo local confirmado; qualidade e causa física UNKNOWN; auditoria 18/18 PASS.",
-    "summary": "Pass ON tick691: receptor elegível 0,155m/BC73 perde para adversário 0,794m/BC86; tick696 só passador elegível. Ambos os passes foram lançados e terminaram PassFailed após recovery. Paridade W260 completa."
+    "title": "Métrica de tentativas corrigida; gargalo a montante ainda desconhecido",
+    "status": "Concluído com limites — sem mudança de gameplay; funil ofensivo e avaliação humana pendentes.",
+    "summary": "W255 contava ShotOffTargetEvent como nova finalização. Recontagem comparável: 12 ShotEvent no candidato vs 6 na baseline; IC pareado cruza zero. Nove jogos candidatos sem tentativa; telemetria atual não localiza a falha anterior."
   },
   "recentCycles": [
     {
@@ -27,7 +27,7 @@
       "publishedAt": "2026-10-28T12:20:00Z",
       "macro": "M3",
       "title": "Cohort e causas de impedimentos consolidados",
-      "status": "Síntese histórica; escopo experimental",
+      "status": "SÃ­ntese histÃ³rica; escopo experimental",
       "summary": "Resultados pareados e eventos de impedimento contextualizados; claims restritas aos builds e seeds registrados."
     },
     {
@@ -35,18 +35,18 @@
       "wave": "W214",
       "publishedAt": "2026-10-28T12:37:05Z",
       "macro": "M3",
-      "title": "Assemblies congeladas e baseline reproduzível",
-      "status": "Fingerprint de referência",
-      "summary": "Builds W214 e harness usados nas comparações posteriores foram registrados como referência congelada."
+      "title": "Assemblies congeladas e baseline reproduzÃ­vel",
+      "status": "Fingerprint de referÃªncia",
+      "summary": "Builds W214 e harness usados nas comparaÃ§Ãµes posteriores foram registrados como referÃªncia congelada."
     },
     {
       "id": "W215-W217",
       "wave": "W215-W217",
       "publishedAt": "2026-10-28T12:48:00Z",
       "macro": "M3",
-      "title": "Investigação de rotas ofensivas após baseline",
-      "status": "Conclusões locais com limites explícitos",
-      "summary": "Rotas e decisões examinadas; não houve prova de melhora geral nem promoção de configuração experimental."
+      "title": "InvestigaÃ§Ã£o de rotas ofensivas apÃ³s baseline",
+      "status": "ConclusÃµes locais com limites explÃ­citos",
+      "summary": "Rotas e decisÃµes examinadas; nÃ£o houve prova de melhora geral nem promoÃ§Ã£o de configuraÃ§Ã£o experimental."
     },
     {
       "id": "W218",
@@ -54,35 +54,26 @@
       "publishedAt": "2026-10-28T12:52:00Z",
       "macro": "M3",
       "title": "Trilha causal de passe, posse e contexto",
-      "status": "Parcial; evidências vinculadas por claims",
-      "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
-    },
-    {
-      "id": "W264",
-      "wave": "W264",
-      "publishedAt": "2026-10-28T18:19:38Z",
-      "macro": "M3",
-      "title": "Outcomes do primeiro passe rastreados em três seeds",
-      "status": "Ligação local confirmada; efeito em qualidade UNKNOWN",
-      "summary": "ON passa de completa em 1740/1749 para falha em 1750. OFF pós-restart completa nos três. Traces W214 pareados, mas estados e alvos diferem após divergência."
+      "status": "Parcial; evidÃªncias vinculadas por claims",
+      "summary": "InvestigaÃ§Ã£o continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
       "id": "W265",
       "wave": "W265",
       "publishedAt": "2026-10-28T18:23:00Z",
       "macro": "M3",
-      "title": "Loose-ball recovery ligado ao passe falhado por evento e posição",
+      "title": "Loose-ball recovery ligado ao passe falhado por evento e posiÃ§Ã£o",
       "status": "Efeito local observado; motivo interno e qualidade desconhecidos",
-      "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferência de interception/qualidade."
+      "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferÃªncia de interception/qualidade."
     },
     {
       "id": "W266",
       "wave": "W266",
       "publishedAt": "2026-10-28T18:35:35Z",
       "macro": "M3",
-      "title": "PDB/fonte W214 validado; semântica de PassFailed e recovery explicada",
-      "status": "Mecanismo estático confirmado; causa física do caso W265 e qualidade permanecem UNKNOWN",
-      "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos três assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distância ao endpoint e ordena por BallControl."
+      "title": "PDB/fonte W214 validado; semÃ¢ntica de PassFailed e recovery explicada",
+      "status": "Mecanismo estÃ¡tico confirmado; causa fÃ­sica do caso W265 e qualidade permanecem UNKNOWN",
+      "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos trÃªs assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distÃ¢ncia ao endpoint e ordena por BallControl."
     },
     {
       "id": "W267",
@@ -90,8 +81,8 @@
       "publishedAt": "2026-10-28T18:46:00Z",
       "macro": "M3",
       "title": "Censo de recovery ausente nos traces armazenados",
-      "status": "Concluído — lacuna confirmada; limitada ao formato daquele trace.",
-      "summary": "W260 digest não inclui candidatos, distâncias ou BallControl nos ticks 691/696; justificou recaptura observacional sem alterar o run original."
+      "status": "ConcluÃ­do â€” lacuna confirmada; limitada ao formato daquele trace.",
+      "summary": "W260 digest nÃ£o inclui candidatos, distÃ¢ncias ou BallControl nos ticks 691/696; justificou recaptura observacional sem alterar o run original."
     },
     {
       "id": "W268",
@@ -99,22 +90,31 @@
       "publishedAt": "2026-10-28T18:51:41Z",
       "macro": "M3",
       "title": "Recovery endpoint seed1750 reproduzido e auditado",
-      "status": "Mecanismo local confirmado; qualidade e causa física UNKNOWN; auditoria 18/18 PASS.",
-      "summary": "Pass ON tick691: receptor elegível 0,155m/BC73 perde para adversário 0,794m/BC86; tick696 só passador elegível. Ambos os passes foram lançados e terminaram PassFailed após recovery. Paridade W260 completa."
+      "status": "Mecanismo local confirmado; qualidade e causa fÃ­sica UNKNOWN; auditoria 18/18 PASS.",
+      "summary": "Pass ON tick691: receptor elegÃ­vel 0,155m/BC73 perde para adversÃ¡rio 0,794m/BC86; tick696 sÃ³ passador elegÃ­vel. Ambos os passes foram lanÃ§ados e terminaram PassFailed apÃ³s recovery. Paridade W260 completa."
+    },
+    {
+      "id": "W269",
+      "wave": "W269",
+      "publishedAt": "2026-10-28T20:47:14Z",
+      "macro": "M3",
+      "title": "Métrica de tentativas corrigida; gargalo a montante ainda desconhecido",
+      "status": "Concluído com limites — sem mudança de gameplay; funil ofensivo e avaliação humana pendentes.",
+      "summary": "W255 contava ShotOffTargetEvent como nova finalização. Recontagem comparável: 12 ShotEvent no candidato vs 6 na baseline; IC pareado cruza zero. Nove jogos candidatos sem tentativa; telemetria atual não localiza a falha anterior."
     }
   ],
   "macros": [
     {
       "id": "M0",
-      "name": "Baseline técnica / W03",
-      "description": "Base histórica para executar uma partida inteira e reconhecer as limitações do futebol apresentado.",
-      "importance": "Uma partida precisa terminar de forma reproduzível antes de sustentar comparações de qualidade.",
+      "name": "Baseline tÃ©cnica / W03",
+      "description": "Base histÃ³rica para executar uma partida inteira e reconhecer as limitaÃ§Ãµes do futebol apresentado.",
+      "importance": "Uma partida precisa terminar de forma reproduzÃ­vel antes de sustentar comparaÃ§Ãµes de qualidade.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "items": [
         {
           "id": "M0-01",
-          "name": "Execução de partidas de 90 minutos",
+          "name": "ExecuÃ§Ã£o de partidas de 90 minutos",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -205,7 +205,7 @@
         },
         {
           "id": "M0-08",
-          "name": "Prontidão dos dados do MVP",
+          "name": "ProntidÃ£o dos dados do MVP",
           "status": "Parcial / em análise",
           "statusClass": "partial",
           "criteria": {
@@ -220,9 +220,9 @@
     },
     {
       "id": "M1",
-      "name": "Diagnóstico confiável",
-      "description": "Explicar com eventos e decisões ligados entre si onde uma jogada ofensiva deixa de avançar.",
-      "importance": "Sem uma cadeia verificável, uma calibração pode aumentar chutes e piorar a dinâmica.",
+      "name": "DiagnÃ³stico confiÃ¡vel",
+      "description": "Explicar com eventos e decisÃµes ligados entre si onde uma jogada ofensiva deixa de avanÃ§ar.",
+      "importance": "Sem uma cadeia verificÃ¡vel, uma calibraÃ§Ã£o pode aumentar chutes e piorar a dinÃ¢mica.",
       "status": "Concluído no escopo",
       "statusClass": "ok",
       "items": [
@@ -241,7 +241,7 @@
         },
         {
           "id": "M1-02",
-          "name": "Persistência completa de eventos",
+          "name": "PersistÃªncia completa de eventos",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -254,7 +254,7 @@
         },
         {
           "id": "M1-03",
-          "name": "Identificação inequívoca de passes",
+          "name": "IdentificaÃ§Ã£o inequÃ­voca de passes",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -280,7 +280,7 @@
         },
         {
           "id": "M1-05",
-          "name": "Diagnóstico da seleção de ações",
+          "name": "DiagnÃ³stico da seleÃ§Ã£o de aÃ§Ãµes",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -293,7 +293,7 @@
         },
         {
           "id": "M1-06",
-          "name": "Reconstrução da cadeia ofensiva",
+          "name": "ReconstruÃ§Ã£o da cadeia ofensiva",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -321,15 +321,15 @@
     },
     {
       "id": "M2",
-      "name": "Progressão e criação",
-      "description": "Levar a bola até zonas perigosas e criar chances com decisões contextualizadas.",
-      "importance": "Ganhar território com controle e opções é a base de um ataque convincente.",
+      "name": "ProgressÃ£o e criaÃ§Ã£o",
+      "description": "Levar a bola atÃ© zonas perigosas e criar chances com decisÃµes contextualizadas.",
+      "importance": "Ganhar territÃ³rio com controle e opÃ§Ãµes Ã© a base de um ataque convincente.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "items": [
         {
           "id": "M2-01",
-          "name": "Progressão territorial",
+          "name": "ProgressÃ£o territorial",
           "status": "Parcial / em análise",
           "statusClass": "partial",
           "criteria": {
@@ -368,7 +368,7 @@
         },
         {
           "id": "M2-04",
-          "name": "Avaliação de Move/Pass/Dribble/Shoot",
+          "name": "AvaliaÃ§Ã£o de Move/Pass/Dribble/Shoot",
           "status": "Parcial / em análise",
           "statusClass": "partial",
           "criteria": {
@@ -381,7 +381,7 @@
         },
         {
           "id": "M2-05",
-          "name": "Identificação e correção do gargalo",
+          "name": "IdentificaÃ§Ã£o e correÃ§Ã£o do gargalo",
           "status": "Parcial / em análise",
           "statusClass": "partial",
           "criteria": {
@@ -409,9 +409,9 @@
     },
     {
       "id": "M3",
-      "name": "Movimentação coletiva",
-      "description": "Coordenar jogadores sem bola para oferecer apoio, ocupar espaço e recompor.",
-      "importance": "O portador precisa de opções viáveis e a equipe de equilíbrio após uma perda.",
+      "name": "MovimentaÃ§Ã£o coletiva",
+      "description": "Coordenar jogadores sem bola para oferecer apoio, ocupar espaÃ§o e recompor.",
+      "importance": "O portador precisa de opÃ§Ãµes viÃ¡veis e a equipe de equilÃ­brio apÃ³s uma perda.",
       "status": "Planejado",
       "statusClass": "planned",
       "items": [
@@ -430,7 +430,7 @@
         },
         {
           "id": "M3-02",
-          "name": "Movimentação para recepção",
+          "name": "MovimentaÃ§Ã£o para recepÃ§Ã£o",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -456,7 +456,7 @@
         },
         {
           "id": "M3-04",
-          "name": "Organização tática",
+          "name": "OrganizaÃ§Ã£o tÃ¡tica",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -482,7 +482,7 @@
         },
         {
           "id": "M3-06",
-          "name": "Reorganização após perda",
+          "name": "ReorganizaÃ§Ã£o apÃ³s perda",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -498,14 +498,14 @@
     {
       "id": "M4",
       "name": "Continuidade e defesa",
-      "description": "Transformar recepções, disputas e reinícios em sequências contínuas com defesa coerente.",
-      "importance": "Uma boa decisão perde valor quando a resolução quebra a posse ou deixa estados presos.",
+      "description": "Transformar recepÃ§Ãµes, disputas e reinÃ­cios em sequÃªncias contÃ­nuas com defesa coerente.",
+      "importance": "Uma boa decisÃ£o perde valor quando a resoluÃ§Ã£o quebra a posse ou deixa estados presos.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "items": [
         {
           "id": "M4-01",
-          "name": "Recepção e controle de bola",
+          "name": "RecepÃ§Ã£o e controle de bola",
           "status": "Parcial / em análise",
           "statusClass": "partial",
           "criteria": {
@@ -518,7 +518,7 @@
         },
         {
           "id": "M4-02",
-          "name": "Interceptação e recuperação",
+          "name": "InterceptaÃ§Ã£o e recuperaÃ§Ã£o",
           "status": "Parcial / em análise",
           "statusClass": "partial",
           "criteria": {
@@ -544,7 +544,7 @@
         },
         {
           "id": "M4-04",
-          "name": "Transição defensiva",
+          "name": "TransiÃ§Ã£o defensiva",
           "status": "Parcial / em análise",
           "statusClass": "partial",
           "criteria": {
@@ -557,7 +557,7 @@
         },
         {
           "id": "M4-05",
-          "name": "Reposições e continuidade",
+          "name": "ReposiÃ§Ãµes e continuidade",
           "status": "Parcial / em análise",
           "statusClass": "partial",
           "criteria": {
@@ -570,7 +570,7 @@
         },
         {
           "id": "M4-06",
-          "name": "Resolução de finalizações",
+          "name": "ResoluÃ§Ã£o de finalizaÃ§Ãµes",
           "status": "Parcial / em análise",
           "statusClass": "partial",
           "criteria": {
@@ -599,14 +599,14 @@
     {
       "id": "M5",
       "name": "Identidade e aceite do MVP",
-      "description": "Entregar futebol plausível com elencos válidos, identidade dos jogadores e avaliação do produto.",
-      "importance": "Placar e volume de chutes não bastam para aprovar a experiência de uma partida.",
+      "description": "Entregar futebol plausÃ­vel com elencos vÃ¡lidos, identidade dos jogadores e avaliaÃ§Ã£o do produto.",
+      "importance": "Placar e volume de chutes nÃ£o bastam para aprovar a experiÃªncia de uma partida.",
       "status": "Planejado",
       "statusClass": "planned",
       "items": [
         {
           "id": "M5-01",
-          "name": "Influência de atributos individuais",
+          "name": "InfluÃªncia de atributos individuais",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -619,7 +619,7 @@
         },
         {
           "id": "M5-02",
-          "name": "Influência das configurações táticas existentes",
+          "name": "InfluÃªncia das configuraÃ§Ãµes tÃ¡ticas existentes",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -632,7 +632,7 @@
         },
         {
           "id": "M5-03",
-          "name": "Validação dos elencos",
+          "name": "ValidaÃ§Ã£o dos elencos",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -645,7 +645,7 @@
         },
         {
           "id": "M5-04",
-          "name": "Partidas completas em múltiplas seeds",
+          "name": "Partidas completas em mÃºltiplas seeds",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -658,7 +658,7 @@
         },
         {
           "id": "M5-05",
-          "name": "Replay e avaliação visual",
+          "name": "Replay e avaliaÃ§Ã£o visual",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -671,7 +671,7 @@
         },
         {
           "id": "M5-06",
-          "name": "Auditoria técnica",
+          "name": "Auditoria tÃ©cnica",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -684,7 +684,7 @@
         },
         {
           "id": "M5-07",
-          "name": "Avaliação funcional do produto",
+          "name": "AvaliaÃ§Ã£o funcional do produto",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -697,7 +697,7 @@
         },
         {
           "id": "M5-08",
-          "name": "Aprovação final do MVP",
+          "name": "AprovaÃ§Ã£o final do MVP",
           "status": "Planejado",
           "statusClass": "planned",
           "criteria": {
@@ -713,14 +713,14 @@
     {
       "id": "M6",
       "name": "Pesquisa CM 01/02 / ENGINE-KB",
-      "description": "Construir referências observáveis de futebol sem confundir pistas estáticas com comportamento.",
-      "importance": "Uma referência pode orientar perguntas; uma rota de código sozinha não prova intenção ou qualidade.",
+      "description": "Construir referÃªncias observÃ¡veis de futebol sem confundir pistas estÃ¡ticas com comportamento.",
+      "importance": "Uma referÃªncia pode orientar perguntas; uma rota de cÃ³digo sozinha nÃ£o prova intenÃ§Ã£o ou qualidade.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "items": [
         {
           "id": "M6-01",
-          "name": "Identificação da build de referência",
+          "name": "IdentificaÃ§Ã£o da build de referÃªncia",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -733,7 +733,7 @@
         },
         {
           "id": "M6-02",
-          "name": "Referência de movimentação",
+          "name": "ReferÃªncia de movimentaÃ§Ã£o",
           "status": "Desconhecido",
           "statusClass": "planned",
           "criteria": {
@@ -746,7 +746,7 @@
         },
         {
           "id": "M6-03",
-          "name": "Referência de passes",
+          "name": "ReferÃªncia de passes",
           "status": "Desconhecido",
           "statusClass": "planned",
           "criteria": {
@@ -759,7 +759,7 @@
         },
         {
           "id": "M6-04",
-          "name": "Referência de decisões",
+          "name": "ReferÃªncia de decisÃµes",
           "status": "Parcial / em análise",
           "statusClass": "partial",
           "criteria": {
@@ -772,7 +772,7 @@
         },
         {
           "id": "M6-05",
-          "name": "Referência de finalizações",
+          "name": "ReferÃªncia de finalizaÃ§Ãµes",
           "status": "Desconhecido",
           "statusClass": "planned",
           "criteria": {
@@ -785,7 +785,7 @@
         },
         {
           "id": "M6-06",
-          "name": "Referência de comportamento coletivo",
+          "name": "ReferÃªncia de comportamento coletivo",
           "status": "Desconhecido",
           "statusClass": "planned",
           "criteria": {
@@ -798,7 +798,7 @@
         },
         {
           "id": "M6-07",
-          "name": "Evidências confirmadas",
+          "name": "EvidÃªncias confirmadas",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -827,8 +827,8 @@
     {
       "id": "M7",
       "name": "Dados dos jogadores e equipes",
-      "description": "Preparar elencos autorizados e atributos consistentes para Palmeiras × Corinthians.",
-      "importance": "Uma partida técnica 11 × 11 não resolve exigências de relacionados e dados do produto.",
+      "description": "Preparar elencos autorizados e atributos consistentes para Palmeiras Ã— Corinthians.",
+      "importance": "Uma partida tÃ©cnica 11 Ã— 11 nÃ£o resolve exigÃªncias de relacionados e dados do produto.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "items": [
@@ -847,7 +847,7 @@
         },
         {
           "id": "M7-02",
-          "name": "Elenco elegível do Palmeiras",
+          "name": "Elenco elegÃ­vel do Palmeiras",
           "status": "Bloqueado / reprovado",
           "statusClass": "blocked",
           "criteria": {
@@ -860,7 +860,7 @@
         },
         {
           "id": "M7-03",
-          "name": "Elenco elegível do Corinthians",
+          "name": "Elenco elegÃ­vel do Corinthians",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -873,7 +873,7 @@
         },
         {
           "id": "M7-04",
-          "name": "Seleção dos 26 relacionados de cada equipe",
+          "name": "SeleÃ§Ã£o dos 26 relacionados de cada equipe",
           "status": "Bloqueado / reprovado",
           "statusClass": "blocked",
           "criteria": {
@@ -886,7 +886,7 @@
         },
         {
           "id": "M7-05",
-          "name": "Seleção dos 11 titulares",
+          "name": "SeleÃ§Ã£o dos 11 titulares",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -899,7 +899,7 @@
         },
         {
           "id": "M7-06",
-          "name": "Materialização do input",
+          "name": "MaterializaÃ§Ã£o do input",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -912,7 +912,7 @@
         },
         {
           "id": "M7-07",
-          "name": "Validação dos atributos",
+          "name": "ValidaÃ§Ã£o dos atributos",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -925,7 +925,7 @@
         },
         {
           "id": "M7-08",
-          "name": "Integração com Engine V2",
+          "name": "IntegraÃ§Ã£o com Engine V2",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -940,9 +940,9 @@
     },
     {
       "id": "M8",
-      "name": "Governança e qualidade técnica",
-      "description": "Preservar confiança nas comparações e decisões sobre a evolução do jogo.",
-      "importance": "Fonte, testes e revisão permitem distinguir melhoria, regressão e efeito do instrumento.",
+      "name": "GovernanÃ§a e qualidade tÃ©cnica",
+      "description": "Preservar confianÃ§a nas comparaÃ§Ãµes e decisÃµes sobre a evoluÃ§Ã£o do jogo.",
+      "importance": "Fonte, testes e revisÃ£o permitem distinguir melhoria, regressÃ£o e efeito do instrumento.",
       "status": "Concluído no escopo",
       "statusClass": "ok",
       "items": [
@@ -1013,7 +1013,7 @@
         },
         {
           "id": "M8-06",
-          "name": "Documentação de decisões",
+          "name": "DocumentaÃ§Ã£o de decisÃµes",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -1026,7 +1026,7 @@
         },
         {
           "id": "M8-07",
-          "name": "Evidências e relatórios",
+          "name": "EvidÃªncias e relatÃ³rios",
           "status": "Concluído no escopo",
           "statusClass": "ok",
           "criteria": {
@@ -1054,15 +1054,15 @@
     }
   ],
   "footballQuality": {
-    "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
-    "baseline": "W246: Receive ON / Pass OFF; 18 partidas completas, seeds 1732–1749, assemblies W214.",
-    "candidate": "W255: Receive ON / Pass ON; comparação pareada, mesmas entradas e assemblies, 18 seeds.",
-    "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
-    "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
-    "shotsGoals": "Finalizações 6→13 e gols 5→11; intervalos pareados cruzam zero, sem evidência de ganho consistente.",
-    "lastIntegrated": "W255 continua sendo a última avaliação integrada (18 pares). W268 é diagnóstico causal local num seed divergido, não comparação de qualidade.",
-    "mainBlocker": "Avaliação humana do replay pendente e sem avaliação integrada posterior a W255. W268 explica dois casos de endpoint recovery em seed1750, mas não traz ordem intratick nem qualidade global.",
-    "replay": "Não há replay navegável publicado no portal; viewer offline local de ticks686-696 disponível, revisão humana do futebol segue pendente."
+    "satisfaction": "Nenhuma configuraÃ§Ã£o tem aceite funcional de qualidade atÃ© o momento.",
+    "baseline": "W246: Receive ON / Pass OFF; 18 partidas completas, seeds 1732â€“1749, assemblies W214.",
+    "candidate": "W255: Receive ON / Pass ON; comparaÃ§Ã£o pareada, mesmas entradas e assemblies, 18 seeds.",
+    "improved": "Impedimentos: 202â†’9 (menores nos 18 pares). Ticks sem possuidor: 50.236â†’48.669 (menores em 16/18).",
+    "worsened": "Tentativas de passe: 18.807â†’18.495, menores em 13/18. Passes completos: 15.047â†’14.915; IC pareado cruza zero.",
+    "shotsGoals": "Tentativas (ShotEvent): 6→12 corrigidas; média pareada +0,333, IC 95% aproximado [−0,282;+0,948]. Gols 5→11, IC [−0,232;+0,899]. Sem ganho demonstrado; W255 usava contagem ampla que duplicava ShotOffTargetEvent no seed1744.",
+    "lastIntegrated": "W255 continua sendo a Ãºltima avaliaÃ§Ã£o integrada (18 pares). W268 Ã© diagnÃ³stico causal local num seed divergido, nÃ£o comparaÃ§Ã£o de qualidade.",
+    "mainBlocker": "9/18 partidas candidatas sem ShotEvent. Os traces W255 não medem progressão territorial, apoio, oportunidade nem elegibilidade de Shoot; primeiro gargalo do funil permanece UNKNOWN. Avaliação humana do replay curto pendente.",
+    "replay": "Viewer W262 local cobre ticks686–696 (11 frames); ainda não existe replay navegável de partida completa publicado. Avaliação humana UNKNOWN."
   },
   "diary": [
     {
@@ -1071,7 +1071,7 @@
       "publishedAt": "2026-10-28T12:20:00Z",
       "macro": "M3",
       "title": "Cohort e causas de impedimentos consolidados",
-      "status": "Síntese histórica; escopo experimental",
+      "status": "SÃ­ntese histÃ³rica; escopo experimental",
       "summary": "Resultados pareados e eventos de impedimento contextualizados; claims restritas aos builds e seeds registrados."
     },
     {
@@ -1079,18 +1079,18 @@
       "wave": "W214",
       "publishedAt": "2026-10-28T12:37:05Z",
       "macro": "M3",
-      "title": "Assemblies congeladas e baseline reproduzível",
-      "status": "Fingerprint de referência",
-      "summary": "Builds W214 e harness usados nas comparações posteriores foram registrados como referência congelada."
+      "title": "Assemblies congeladas e baseline reproduzÃ­vel",
+      "status": "Fingerprint de referÃªncia",
+      "summary": "Builds W214 e harness usados nas comparaÃ§Ãµes posteriores foram registrados como referÃªncia congelada."
     },
     {
       "id": "W215-W217",
       "wave": "W215-W217",
       "publishedAt": "2026-10-28T12:48:00Z",
       "macro": "M3",
-      "title": "Investigação de rotas ofensivas após baseline",
-      "status": "Conclusões locais com limites explícitos",
-      "summary": "Rotas e decisões examinadas; não houve prova de melhora geral nem promoção de configuração experimental."
+      "title": "InvestigaÃ§Ã£o de rotas ofensivas apÃ³s baseline",
+      "status": "ConclusÃµes locais com limites explÃ­citos",
+      "summary": "Rotas e decisÃµes examinadas; nÃ£o houve prova de melhora geral nem promoÃ§Ã£o de configuraÃ§Ã£o experimental."
     },
     {
       "id": "W218",
@@ -1098,35 +1098,26 @@
       "publishedAt": "2026-10-28T12:52:00Z",
       "macro": "M3",
       "title": "Trilha causal de passe, posse e contexto",
-      "status": "Parcial; evidências vinculadas por claims",
-      "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
-    },
-    {
-      "id": "W264",
-      "wave": "W264",
-      "publishedAt": "2026-10-28T18:19:38Z",
-      "macro": "M3",
-      "title": "Outcomes do primeiro passe rastreados em três seeds",
-      "status": "Ligação local confirmada; efeito em qualidade UNKNOWN",
-      "summary": "ON passa de completa em 1740/1749 para falha em 1750. OFF pós-restart completa nos três. Traces W214 pareados, mas estados e alvos diferem após divergência."
+      "status": "Parcial; evidÃªncias vinculadas por claims",
+      "summary": "InvestigaÃ§Ã£o continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
       "id": "W265",
       "wave": "W265",
       "publishedAt": "2026-10-28T18:23:00Z",
       "macro": "M3",
-      "title": "Loose-ball recovery ligado ao passe falhado por evento e posição",
+      "title": "Loose-ball recovery ligado ao passe falhado por evento e posiÃ§Ã£o",
       "status": "Efeito local observado; motivo interno e qualidade desconhecidos",
-      "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferência de interception/qualidade."
+      "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferÃªncia de interception/qualidade."
     },
     {
       "id": "W266",
       "wave": "W266",
       "publishedAt": "2026-10-28T18:35:35Z",
       "macro": "M3",
-      "title": "PDB/fonte W214 validado; semântica de PassFailed e recovery explicada",
-      "status": "Mecanismo estático confirmado; causa física do caso W265 e qualidade permanecem UNKNOWN",
-      "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos três assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distância ao endpoint e ordena por BallControl."
+      "title": "PDB/fonte W214 validado; semÃ¢ntica de PassFailed e recovery explicada",
+      "status": "Mecanismo estÃ¡tico confirmado; causa fÃ­sica do caso W265 e qualidade permanecem UNKNOWN",
+      "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos trÃªs assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distÃ¢ncia ao endpoint e ordena por BallControl."
     },
     {
       "id": "W267",
@@ -1134,8 +1125,8 @@
       "publishedAt": "2026-10-28T18:46:00Z",
       "macro": "M3",
       "title": "Censo de recovery ausente nos traces armazenados",
-      "status": "Concluído — lacuna confirmada; limitada ao formato daquele trace.",
-      "summary": "W260 digest não inclui candidatos, distâncias ou BallControl nos ticks 691/696; justificou recaptura observacional sem alterar o run original."
+      "status": "ConcluÃ­do â€” lacuna confirmada; limitada ao formato daquele trace.",
+      "summary": "W260 digest nÃ£o inclui candidatos, distÃ¢ncias ou BallControl nos ticks 691/696; justificou recaptura observacional sem alterar o run original."
     },
     {
       "id": "W268",
@@ -1143,8 +1134,17 @@
       "publishedAt": "2026-10-28T18:51:41Z",
       "macro": "M3",
       "title": "Recovery endpoint seed1750 reproduzido e auditado",
-      "status": "Mecanismo local confirmado; qualidade e causa física UNKNOWN; auditoria 18/18 PASS.",
-      "summary": "Pass ON tick691: receptor elegível 0,155m/BC73 perde para adversário 0,794m/BC86; tick696 só passador elegível. Ambos os passes foram lançados e terminaram PassFailed após recovery. Paridade W260 completa."
+      "status": "Mecanismo local confirmado; qualidade e causa fÃ­sica UNKNOWN; auditoria 18/18 PASS.",
+      "summary": "Pass ON tick691: receptor elegÃ­vel 0,155m/BC73 perde para adversÃ¡rio 0,794m/BC86; tick696 sÃ³ passador elegÃ­vel. Ambos os passes foram lanÃ§ados e terminaram PassFailed apÃ³s recovery. Paridade W260 completa."
+    },
+    {
+      "id": "W269",
+      "wave": "W269",
+      "publishedAt": "2026-10-28T20:47:14Z",
+      "macro": "M3",
+      "title": "Métrica de tentativas corrigida; gargalo a montante ainda desconhecido",
+      "status": "Concluído com limites — sem mudança de gameplay; funil ofensivo e avaliação humana pendentes.",
+      "summary": "W255 contava ShotOffTargetEvent como nova finalização. Recontagem comparável: 12 ShotEvent no candidato vs 6 na baseline; IC pareado cruza zero. Nove jogos candidatos sem tentativa; telemetria atual não localiza a falha anterior."
     },
     {
       "wave": "W66",
@@ -1178,11 +1178,11 @@
     },
     {
       "id": "CP-W05-01",
-      "title": "Snapshots e projeção shadow"
+      "title": "Snapshots e projeÃ§Ã£o shadow"
     },
     {
       "id": "CP-W05-02",
-      "title": "Protótipo V2 isolado"
+      "title": "ProtÃ³tipo V2 isolado"
     },
     {
       "id": "CP-W05-03",
@@ -1194,7 +1194,7 @@
     },
     {
       "id": "CP-W05-05",
-      "title": "Avaliação ON multiseed"
+      "title": "AvaliaÃ§Ã£o ON multiseed"
     },
     {
       "id": "CP-W05-06",
@@ -1210,11 +1210,11 @@
     },
     {
       "id": "CP-W06-02",
-      "title": "Associação com impedimentos"
+      "title": "AssociaÃ§Ã£o com impedimentos"
     },
     {
       "id": "CP-W06-03",
-      "title": "Decisão unitária no snapshot real"
+      "title": "DecisÃ£o unitÃ¡ria no snapshot real"
     },
     {
       "id": "CP-W06-04",
@@ -1226,35 +1226,35 @@
     },
     {
       "id": "CP-W07-01",
-      "title": "Replay multiagente com identidade de build e estado pré-divergência"
+      "title": "Replay multiagente com identidade de build e estado prÃ©-divergÃªncia"
     },
     {
       "id": "CP-W07-02",
-      "title": "Passe real e primeiro evento de impedimento pós-divergência"
+      "title": "Passe real e primeiro evento de impedimento pÃ³s-divergÃªncia"
     },
     {
       "id": "CP-W09-00",
-      "title": "Baseline de interceptação do goleiro"
+      "title": "Baseline de interceptaÃ§Ã£o do goleiro"
     },
     {
       "id": "CP-W10-00",
-      "title": "Ação e movimento do goleiro durante chute"
+      "title": "AÃ§Ã£o e movimento do goleiro durante chute"
     },
     {
       "id": "CP-W11-00",
-      "title": "Referência selecionada do movimento"
+      "title": "ReferÃªncia selecionada do movimento"
     },
     {
       "id": "CP-W12-00",
-      "title": "Reconciliar decisão Move, efeito e reposição do goleiro"
+      "title": "Reconciliar decisÃ£o Move, efeito e reposiÃ§Ã£o do goleiro"
     },
     {
       "id": "CP-W13-00",
-      "title": "Cobertura da trajetória do chute e alternativas do goleiro"
+      "title": "Cobertura da trajetÃ³ria do chute e alternativas do goleiro"
     },
     {
       "id": "CP-W14-01",
-      "title": "Revisão independente da captura temporal"
+      "title": "RevisÃ£o independente da captura temporal"
     },
     {
       "id": "CP-W14-02",
@@ -1262,27 +1262,27 @@
     },
     {
       "id": "CP-W14-03",
-      "title": "Pré-run e revisão final"
+      "title": "PrÃ©-run e revisÃ£o final"
     },
     {
       "id": "CP-W14-04",
-      "title": "Primeira compilação observacional"
+      "title": "Primeira compilaÃ§Ã£o observacional"
     },
     {
       "id": "CP-W14-05",
-      "title": "Auditoria do fix de compilação"
+      "title": "Auditoria do fix de compilaÃ§Ã£o"
     },
     {
       "id": "CP-W14-06",
-      "title": "Captura safe-forward diagnóstica auditada"
+      "title": "Captura safe-forward diagnÃ³stica auditada"
     },
     {
       "id": "CP-W14-07",
-      "title": "Correção de tratamento M4"
+      "title": "CorreÃ§Ã£o de tratamento M4"
     },
     {
       "id": "CP-W14-08",
-      "title": "Propagação e desenho do teste BCCM V2"
+      "title": "PropagaÃ§Ã£o e desenho do teste BCCM V2"
     },
     {
       "id": "CP-W14-09",
@@ -1290,11 +1290,11 @@
     },
     {
       "id": "CP-W14-10",
-      "title": "Execução temporal BCCM V2"
+      "title": "ExecuÃ§Ã£o temporal BCCM V2"
     },
     {
       "id": "CP-W14-11",
-      "title": "Observação de trajetória pendente"
+      "title": "ObservaÃ§Ã£o de trajetÃ³ria pendente"
     },
     {
       "id": "CP-W14-12",
@@ -1302,11 +1302,11 @@
     },
     {
       "id": "CP-W14-13",
-      "title": "Classificação da trajetória pendente"
+      "title": "ClassificaÃ§Ã£o da trajetÃ³ria pendente"
     },
     {
       "id": "CP-W14-14",
-      "title": "Auditoria final e integração M4"
+      "title": "Auditoria final e integraÃ§Ã£o M4"
     },
     {
       "id": "CP-W14-15",
@@ -1314,31 +1314,31 @@
     },
     {
       "id": "CP-W14-16",
-      "title": "Publicação central do pacote W14"
+      "title": "PublicaÃ§Ã£o central do pacote W14"
     },
     {
       "id": "CP-W15-00",
-      "title": "Preflight M4-01 recepção e M4-03 posse"
+      "title": "Preflight M4-01 recepÃ§Ã£o e M4-03 posse"
     },
     {
       "id": "CP-W15-01",
-      "title": "Formato e suficiência inicial dos traces M4-01"
+      "title": "Formato e suficiÃªncia inicial dos traces M4-01"
     },
     {
       "id": "CP-W15-02",
-      "title": "Recepção por recovery e regra de disputa"
+      "title": "RecepÃ§Ã£o por recovery e regra de disputa"
     },
     {
       "id": "CP-W15-03",
-      "title": "Movimento do recebedor e consumidor pós-recepção"
+      "title": "Movimento do recebedor e consumidor pÃ³s-recepÃ§Ã£o"
     },
     {
       "id": "CP-W15-04",
-      "title": "Testes focais M4-01/M4-03 e suíte GameEngine"
+      "title": "Testes focais M4-01/M4-03 e suÃ­te GameEngine"
     },
     {
       "id": "CP-W15-05",
-      "title": "Início de M4-05 e M4-07"
+      "title": "InÃ­cio de M4-05 e M4-07"
     },
     {
       "id": "CP-W15-06",
@@ -1346,7 +1346,7 @@
     },
     {
       "id": "CP-W15-07",
-      "title": "M4-04 transição defensiva"
+      "title": "M4-04 transiÃ§Ã£o defensiva"
     },
     {
       "id": "CP-W15-08",
@@ -1354,19 +1354,19 @@
     },
     {
       "id": "CP-W15-09",
-      "title": "Auditoria independente e correção editorial"
+      "title": "Auditoria independente e correÃ§Ã£o editorial"
     },
     {
       "id": "CP-W15-10",
-      "title": "Publicação central do pacote W15"
+      "title": "PublicaÃ§Ã£o central do pacote W15"
     },
     {
       "id": "CP-W16-00",
-      "title": "W16 retomada após W15"
+      "title": "W16 retomada apÃ³s W15"
     },
     {
       "id": "CP-W16-01",
-      "title": "Atribuição da posse no boundary do segundo período"
+      "title": "AtribuiÃ§Ã£o da posse no boundary do segundo perÃ­odo"
     },
     {
       "id": "CP-W16-02",
@@ -1374,7 +1374,7 @@
     },
     {
       "id": "CP-W16-03",
-      "title": "Reanálise W16 com validação de provenance/joins e sequência de restart"
+      "title": "ReanÃ¡lise W16 com validaÃ§Ã£o de provenance/joins e sequÃªncia de restart"
     },
     {
       "id": "CP-W16-04",
@@ -1382,19 +1382,19 @@
     },
     {
       "id": "CP-W16-05",
-      "title": "Publicação central do W16"
+      "title": "PublicaÃ§Ã£o central do W16"
     },
     {
       "id": "CP-W17-00",
-      "title": "Preflight da fixture pós-tackle"
+      "title": "Preflight da fixture pÃ³s-tackle"
     },
     {
       "id": "CP-W17-01",
-      "title": "Resultado estático W17 e auditoria independente"
+      "title": "Resultado estÃ¡tico W17 e auditoria independente"
     },
     {
       "id": "CP-W18-00",
-      "title": "Extração da fixture same-carrier pós-tackle falho"
+      "title": "ExtraÃ§Ã£o da fixture same-carrier pÃ³s-tackle falho"
     },
     {
       "id": "CP-W18-01",
@@ -1406,15 +1406,15 @@
     },
     {
       "id": "CP-W18-03",
-      "title": "Teste unitário de saída da margem de continuidade"
+      "title": "Teste unitÃ¡rio de saÃ­da da margem de continuidade"
     },
     {
       "id": "CP-W18-04",
-      "title": "Revisão independente do teste de margem"
+      "title": "RevisÃ£o independente do teste de margem"
     },
     {
       "id": "CP-W18-05",
-      "title": "Publicação central do pacote W17–W18"
+      "title": "PublicaÃ§Ã£o central do pacote W17â€“W18"
     },
     {
       "id": "CP-W18-06",
@@ -1426,15 +1426,15 @@
     },
     {
       "id": "CP-W18-08",
-      "title": "Handoff consolidado atualizado W17–W18"
+      "title": "Handoff consolidado atualizado W17â€“W18"
     },
     {
       "id": "CP-W19-00",
-      "title": "Preflight de execução pareada V2-only"
+      "title": "Preflight de execuÃ§Ã£o pareada V2-only"
     },
     {
       "id": "CP-W19-01",
-      "title": "Compilação inicial do harness falhou; sem partidas"
+      "title": "CompilaÃ§Ã£o inicial do harness falhou; sem partidas"
     },
     {
       "id": "CP-W19-02",
@@ -1446,7 +1446,7 @@
     },
     {
       "id": "CP-W19-04",
-      "title": "Streaming run OFF 1 concluído"
+      "title": "Streaming run OFF 1 concluÃ­do"
     },
     {
       "id": "CP-W19-05",
@@ -1454,15 +1454,15 @@
     },
     {
       "id": "CP-W19-06",
-      "title": "Auditoria independente: trace não determinístico"
+      "title": "Auditoria independente: trace nÃ£o determinÃ­stico"
     },
     {
       "id": "CP-W19-07",
-      "title": "Pareamento 4 runs concluído; determinismo canônico PASS"
+      "title": "Pareamento 4 runs concluÃ­do; determinismo canÃ´nico PASS"
     },
     {
       "id": "CP-W19-08",
-      "title": "Reauditoria independente do relatório canônico"
+      "title": "Reauditoria independente do relatÃ³rio canÃ´nico"
     },
     {
       "id": "CP-W20-00",
@@ -1474,15 +1474,15 @@
     },
     {
       "id": "CP-W20-02",
-      "title": "Seed 1730 OFF×2 concluído"
+      "title": "Seed 1730 OFFÃ—2 concluÃ­do"
     },
     {
       "id": "CP-W20-03",
-      "title": "Seed 1730 OFF/ON×2 concluído"
+      "title": "Seed 1730 OFF/ONÃ—2 concluÃ­do"
     },
     {
       "id": "CP-W20-04",
-      "title": "Seeds 1730/1731 pareados; efeitos heterogêneos"
+      "title": "Seeds 1730/1731 pareados; efeitos heterogÃªneos"
     },
     {
       "id": "CP-W20-05",
@@ -1490,31 +1490,31 @@
     },
     {
       "id": "CP-W20-06",
-      "title": "Seed 1729 OFF×2 e ON run1"
+      "title": "Seed 1729 OFFÃ—2 e ON run1"
     },
     {
       "id": "CP-W20-07",
-      "title": "Seed 1729 OFF/ON×2 concluído na coleta uniforme"
+      "title": "Seed 1729 OFF/ONÃ—2 concluÃ­do na coleta uniforme"
     },
     {
       "id": "CP-W20-08",
-      "title": "Coleta uniforme seed 1730 OFF×2"
+      "title": "Coleta uniforme seed 1730 OFFÃ—2"
     },
     {
       "id": "CP-W20-09",
-      "title": "Coleta uniforme seed 1730 OFF/ON×2"
+      "title": "Coleta uniforme seed 1730 OFF/ONÃ—2"
     },
     {
       "id": "CP-W20-10",
-      "title": "Coleta uniforme seed 1731 OFF×2"
+      "title": "Coleta uniforme seed 1731 OFFÃ—2"
     },
     {
       "id": "CP-W20-11",
-      "title": "Auditoria corrigida W20 concluída"
+      "title": "Auditoria corrigida W20 concluÃ­da"
     },
     {
       "id": "CP-W21-00",
-      "title": "Preflight W21 redução de um assignment"
+      "title": "Preflight W21 reduÃ§Ã£o de um assignment"
     },
     {
       "id": "CP-W21-01",
@@ -1522,15 +1522,15 @@
     },
     {
       "id": "CP-W21-02",
-      "title": "Seed 1729 ON_REDUCED×2"
+      "title": "Seed 1729 ON_REDUCEDÃ—2"
     },
     {
       "id": "CP-W21-03",
-      "title": "Seed 1730 ON_REDUCED×2"
+      "title": "Seed 1730 ON_REDUCEDÃ—2"
     },
     {
       "id": "CP-W21-04",
-      "title": "W21 seis runs ON_REDUCED concluídos"
+      "title": "W21 seis runs ON_REDUCED concluÃ­dos"
     },
     {
       "id": "CP-W21-05",
@@ -1538,11 +1538,11 @@
     },
     {
       "id": "CP-W22-00",
-      "title": "Rastreamento do caminho shape â†’ assignment"
+      "title": "Rastreamento do caminho shape Ã¢â€ â€™ assignment"
     },
     {
       "id": "CP-W22-01",
-      "title": "Testes focados e decisão de isolamento"
+      "title": "Testes focados e decisÃ£o de isolamento"
     },
     {
       "id": "CP-W23-00",
@@ -1550,15 +1550,15 @@
     },
     {
       "id": "CP-W22-02",
-      "title": "Auditoria independente e correção W22"
+      "title": "Auditoria independente e correÃ§Ã£o W22"
     },
     {
       "id": "CP-W23-01",
-      "title": "Inventário de snapshots temporais existentes"
+      "title": "InventÃ¡rio de snapshots temporais existentes"
     },
     {
       "id": "CP-W23-02",
-      "title": "Observação temporal W14 reanalisada e auditada"
+      "title": "ObservaÃ§Ã£o temporal W14 reanalisada e auditada"
     },
     {
       "id": "CP-W23-03",
@@ -1566,7 +1566,7 @@
     },
     {
       "id": "CP-W24-00",
-      "title": "Preflight para capturar oportunidade de interceptação"
+      "title": "Preflight para capturar oportunidade de interceptaÃ§Ã£o"
     },
     {
       "id": "CP-W24-01",
@@ -1582,7 +1582,7 @@
     },
     {
       "id": "CP-W24-04",
-      "title": "Três runs W24 completos; manifesto falhou após loop"
+      "title": "TrÃªs runs W24 completos; manifesto falhou apÃ³s loop"
     },
     {
       "id": "CP-W24-05",
@@ -1590,19 +1590,19 @@
     },
     {
       "id": "CP-W24-06",
-      "title": "Correção de codificação do dashboard"
+      "title": "CorreÃ§Ã£o de codificaÃ§Ã£o do dashboard"
     },
     {
       "id": "CP-W24-07",
-      "title": "Auditoria independente e corre├º├úo de proveni├¬ncia"
+      "title": "Auditoria independente e correâ”œÂºâ”œÃºo de proveniâ”œÂ¬ncia"
     },
     {
       "id": "CP-W24-08",
-      "title": "W24 auditoria final das correções"
+      "title": "W24 auditoria final das correÃ§Ãµes"
     },
     {
       "id": "CP-HANDOFF-01",
-      "title": "Montagem consolidada interrompida antes da publicação"
+      "title": "Montagem consolidada interrompida antes da publicaÃ§Ã£o"
     },
     {
       "id": "CP-HANDOFF-02",
@@ -1614,7 +1614,7 @@
     },
     {
       "id": "CP-W25-00",
-      "title": "Pré-flight W25 pareamento causal interceptação"
+      "title": "PrÃ©-flight W25 pareamento causal interceptaÃ§Ã£o"
     },
     {
       "id": "CP-W25-01",
@@ -1622,7 +1622,7 @@
     },
     {
       "id": "CP-W25-02",
-      "title": "Seed 1729 pareada concluída"
+      "title": "Seed 1729 pareada concluÃ­da"
     },
     {
       "id": "CP-W25-03",
@@ -1630,7 +1630,7 @@
     },
     {
       "id": "CP-W25-04",
-      "title": "12 runs W25 concluídos e métricas corrigidas por escopo"
+      "title": "12 runs W25 concluÃ­dos e mÃ©tricas corrigidas por escopo"
     },
     {
       "id": "CP-W25-05",
@@ -1642,7 +1642,7 @@
     },
     {
       "id": "CP-W26-00",
-      "title": "Pré-flight primeira divergência OFF/ON"
+      "title": "PrÃ©-flight primeira divergÃªncia OFF/ON"
     },
     {
       "id": "CP-W26-01",
@@ -1650,7 +1650,7 @@
     },
     {
       "id": "CP-W26-02",
-      "title": "W26 compilação sem simulação; tipos corrigidos"
+      "title": "W26 compilaÃ§Ã£o sem simulaÃ§Ã£o; tipos corrigidos"
     },
     {
       "id": "CP-W26-03",
@@ -1658,11 +1658,11 @@
     },
     {
       "id": "CP-W26-04",
-      "title": "Primeira divergência cruzada e claim ledger"
+      "title": "Primeira divergÃªncia cruzada e claim ledger"
     },
     {
       "id": "CP-W27-00",
-      "title": "W27 recorte mecanístico definido"
+      "title": "W27 recorte mecanÃ­stico definido"
     },
     {
       "id": "CP-W28-00",
@@ -1670,7 +1670,7 @@
     },
     {
       "id": "CP-W27-01",
-      "title": "Auditoria independente W27 concluída"
+      "title": "Auditoria independente W27 concluÃ­da"
     },
     {
       "id": "CP-W28-01",
@@ -1678,11 +1678,11 @@
     },
     {
       "id": "CP-W28-02",
-      "title": "Relatório e manifesto de proveniência W28 registrados"
+      "title": "RelatÃ³rio e manifesto de proveniÃªncia W28 registrados"
     },
     {
       "id": "CP-W28-03",
-      "title": "Auditoria independente W28 concluída e ledger reconciliado"
+      "title": "Auditoria independente W28 concluÃ­da e ledger reconciliado"
     },
     {
       "id": "CP-W28-HANDOFF",
@@ -1690,7 +1690,7 @@
     },
     {
       "id": "CP-W29-00",
-      "title": "Pré-flight W29 lifecycle do primeiro passe"
+      "title": "PrÃ©-flight W29 lifecycle do primeiro passe"
     },
     {
       "id": "CP-W29-01",
@@ -1702,11 +1702,11 @@
     },
     {
       "id": "CP-W29-03",
-      "title": "Gap de instrumentação identificado no classificador de término"
+      "title": "Gap de instrumentaÃ§Ã£o identificado no classificador de tÃ©rmino"
     },
     {
       "id": "CP-W29-04",
-      "title": "Coletor W29B corrige classificação de terminal"
+      "title": "Coletor W29B corrige classificaÃ§Ã£o de terminal"
     },
     {
       "id": "CP-W29-05",
@@ -1726,7 +1726,7 @@
     },
     {
       "id": "CP-W30-00",
-      "title": "Pré-flight W30 guardas do impedimento"
+      "title": "PrÃ©-flight W30 guardas do impedimento"
     },
     {
       "id": "CP-W30-01",
@@ -1738,7 +1738,7 @@
     },
     {
       "id": "CP-W30-03",
-      "title": "Auditoria independente e corrigendum de hash concluídos"
+      "title": "Auditoria independente e corrigendum de hash concluÃ­dos"
     },
     {
       "id": "CP-W30-HANDOFF",
@@ -1746,7 +1746,7 @@
     },
     {
       "id": "CP-W31-00",
-      "title": "Pré-flight W31 — captura dos candidatos de recovery"
+      "title": "PrÃ©-flight W31 â€” captura dos candidatos de recovery"
     },
     {
       "id": "CP-W31-01",
@@ -1758,11 +1758,11 @@
     },
     {
       "id": "CP-W32-01",
-      "title": "Persistência do observer recovery mapeada no exporter/replay"
+      "title": "PersistÃªncia do observer recovery mapeada no exporter/replay"
     },
     {
       "id": "CP-W32-02",
-      "title": "Auditoria W32 e correção de escopo concluídas"
+      "title": "Auditoria W32 e correÃ§Ã£o de escopo concluÃ­das"
     },
     {
       "id": "CP-W32-HANDOFF",
@@ -1770,7 +1770,7 @@
     },
     {
       "id": "CP-W33-00",
-      "title": "Pré-flight W33 — localizar runner e sidecar W29B"
+      "title": "PrÃ©-flight W33 â€” localizar runner e sidecar W29B"
     },
     {
       "id": "CP-W33-01",
@@ -1778,7 +1778,7 @@
     },
     {
       "id": "CP-W33-02",
-      "title": "Auditoria independente da reconciliação W29B concluída"
+      "title": "Auditoria independente da reconciliaÃ§Ã£o W29B concluÃ­da"
     },
     {
       "id": "CP-W33-HANDOFF",
@@ -1786,15 +1786,15 @@
     },
     {
       "id": "CP-W34-00",
-      "title": "Pré-flight W34 — captura read-only dos candidatos"
+      "title": "PrÃ©-flight W34 â€” captura read-only dos candidatos"
     },
     {
       "id": "CP-W34-01",
-      "title": "Assemblies e fixtures W29B disponíveis para runner isolado"
+      "title": "Assemblies e fixtures W29B disponÃ­veis para runner isolado"
     },
     {
       "id": "CP-W34-02",
-      "title": "Build inicial W34 não iniciou execução"
+      "title": "Build inicial W34 nÃ£o iniciou execuÃ§Ã£o"
     },
     {
       "id": "CP-W34-03",
@@ -1806,7 +1806,7 @@
     },
     {
       "id": "CP-W34-05",
-      "title": "Verificação da continuação após recovery"
+      "title": "VerificaÃ§Ã£o da continuaÃ§Ã£o apÃ³s recovery"
     },
     {
       "id": "CP-W34-06",
@@ -1818,31 +1818,31 @@
     },
     {
       "id": "CP-W35-02",
-      "title": "W35-R2 acompanhou o passe seguinte até seu terminal"
+      "title": "W35-R2 acompanhou o passe seguinte atÃ© seu terminal"
     },
     {
       "id": "CP-W35-03",
-      "title": "Auditoria W35 confirmou a associação dos passes seguintes"
+      "title": "Auditoria W35 confirmou a associaÃ§Ã£o dos passes seguintes"
     },
     {
       "id": "CP-W35-04",
-      "title": "Handoff W30-W35 preparado para revisão central"
+      "title": "Handoff W30-W35 preparado para revisÃ£o central"
     },
     {
       "id": "CP-PORTAL-01",
-      "title": "Portal estático multipágina validado localmente"
+      "title": "Portal estÃ¡tico multipÃ¡gina validado localmente"
     },
     {
       "id": "CP-PORTAL-02",
-      "title": "Sanitização e navegação do portal validadas no browser"
+      "title": "SanitizaÃ§Ã£o e navegaÃ§Ã£o do portal validadas no browser"
     },
     {
       "id": "CP-PORTAL-03",
-      "title": "Portal público e deploy GitHub Pages validados"
+      "title": "Portal pÃºblico e deploy GitHub Pages validados"
     },
     {
       "id": "CP-W36-00",
-      "title": "Preflight da continuação pós-reposição concluído"
+      "title": "Preflight da continuaÃ§Ã£o pÃ³s-reposiÃ§Ã£o concluÃ­do"
     },
     {
       "id": "CP-W36-01",
@@ -1854,15 +1854,15 @@
     },
     {
       "id": "CP-W36-03",
-      "title": "Auditoria R2 concluída; R3 preparado"
+      "title": "Auditoria R2 concluÃ­da; R3 preparado"
     },
     {
       "id": "CP-W36-04",
-      "title": "Quarto passe observado; próximo alvo são decision diagnostics"
+      "title": "Quarto passe observado; prÃ³ximo alvo sÃ£o decision diagnostics"
     },
     {
       "id": "CP-W36-05",
-      "title": "Diagnostics read-only preservam trajetória e mostram seleções Pass"
+      "title": "Diagnostics read-only preservam trajetÃ³ria e mostram seleÃ§Ãµes Pass"
     },
     {
       "id": "CP-W36-06",
@@ -1870,7 +1870,7 @@
     },
     {
       "id": "CP-W36-07",
-      "title": "A/B no mesmo estado revela efeito de seleção; decomposição em andamento"
+      "title": "A/B no mesmo estado revela efeito de seleÃ§Ã£o; decomposiÃ§Ã£o em andamento"
     },
     {
       "id": "CP-W36-08",
@@ -1878,7 +1878,7 @@
     },
     {
       "id": "CP-W36-09",
-      "title": "Auditoria R8 fecha a fórmula contextual de Move"
+      "title": "Auditoria R8 fecha a fÃ³rmula contextual de Move"
     },
     {
       "id": "CP-W36-10",
@@ -1890,11 +1890,11 @@
     },
     {
       "id": "CP-W36-12",
-      "title": "Handoff W36 publicado e validado no diretório central"
+      "title": "Handoff W36 publicado e validado no diretÃ³rio central"
     },
     {
       "id": "CP-W36-13",
-      "title": "Preflight R10 confirmou fixture de seed 1729 estruturalmente compatível"
+      "title": "Preflight R10 confirmou fixture de seed 1729 estruturalmente compatÃ­vel"
     },
     {
       "id": "CP-W36-14",
@@ -1902,19 +1902,19 @@
     },
     {
       "id": "CP-W36-15",
-      "title": "Auditoria R10 fechou a observação local e corrigiu metadados herdados"
+      "title": "Auditoria R10 fechou a observaÃ§Ã£o local e corrigiu metadados herdados"
     },
     {
       "id": "CP-W36-16",
-      "title": "Preflight prepara decisão pura no snapshot mid-match do tick 85"
+      "title": "Preflight prepara decisÃ£o pura no snapshot mid-match do tick 85"
     },
     {
       "id": "CP-W36-17",
-      "title": "R11 encontrou mudança de seleção num snapshot mid-match; auditoria pendente"
+      "title": "R11 encontrou mudanÃ§a de seleÃ§Ã£o num snapshot mid-match; auditoria pendente"
     },
     {
       "id": "CP-W36-18",
-      "title": "Auditoria R11 passou e proveniência da fixture foi corrigida"
+      "title": "Auditoria R11 passou e proveniÃªncia da fixture foi corrigida"
     },
     {
       "id": "CP-W36-19",
@@ -1926,15 +1926,15 @@
     },
     {
       "id": "CP-W36-21",
-      "title": "Auditoria independente fecha aritmética R12 no snapshot"
+      "title": "Auditoria independente fecha aritmÃ©tica R12 no snapshot"
     },
     {
       "id": "CP-W36-22",
-      "title": "Preflight prepara resolver de Shoot sem simulação"
+      "title": "Preflight prepara resolver de Shoot sem simulaÃ§Ã£o"
     },
     {
       "id": "CP-W36-23",
-      "title": "Shoot selecionado foi resolvido como lançamento degradado"
+      "title": "Shoot selecionado foi resolvido como lanÃ§amento degradado"
     },
     {
       "id": "CP-W36-24",
@@ -1942,11 +1942,11 @@
     },
     {
       "id": "CP-W36-25",
-      "title": "Preflight restringe R14 à trajetória física não contestada"
+      "title": "Preflight restringe R14 Ã  trajetÃ³ria fÃ­sica nÃ£o contestada"
     },
     {
       "id": "CP-W36-26",
-      "title": "R14 classifica trajetória desassistida fora da meta"
+      "title": "R14 classifica trajetÃ³ria desassistida fora da meta"
     },
     {
       "id": "CP-W36-27",
@@ -1954,23 +1954,23 @@
     },
     {
       "id": "CP-W36-28",
-      "title": "R15 passou a guarda técnica com um único draw"
+      "title": "R15 passou a guarda tÃ©cnica com um Ãºnico draw"
     },
     {
       "id": "CP-W36-29",
-      "title": "Preflight isola a trajetória nominal R15"
+      "title": "Preflight isola a trajetÃ³ria nominal R15"
     },
     {
       "id": "CP-W36-30",
-      "title": "R16 classifica trajetória nominal sem oposição"
+      "title": "R16 classifica trajetÃ³ria nominal sem oposiÃ§Ã£o"
     },
     {
       "id": "CP-W36-31",
-      "title": "Preflight para continuação oficial por snapshot"
+      "title": "Preflight para continuaÃ§Ã£o oficial por snapshot"
     },
     {
       "id": "CP-W36-32",
-      "title": "Simulation integra chute perdido e saída do GK"
+      "title": "Simulation integra chute perdido e saÃ­da do GK"
     },
     {
       "id": "CP-W36-33",
@@ -1994,7 +1994,7 @@
     },
     {
       "id": "CP-W37-02A",
-      "title": "OFF run1 completo capturado após correção do writer"
+      "title": "OFF run1 completo capturado apÃ³s correÃ§Ã£o do writer"
     },
     {
       "id": "CP-W37-03",
@@ -2002,7 +2002,7 @@
     },
     {
       "id": "CP-W37-04",
-      "title": "ON run1 completo capturado; diferença pareada observada"
+      "title": "ON run1 completo capturado; diferenÃ§a pareada observada"
     },
     {
       "id": "CP-W37-05",
@@ -2010,7 +2010,7 @@
     },
     {
       "id": "CP-W37-06",
-      "title": "Preflight abre comparação em duas fixtures de seed adicionais"
+      "title": "Preflight abre comparaÃ§Ã£o em duas fixtures de seed adicionais"
     },
     {
       "id": "CP-W37-07",
@@ -2022,15 +2022,15 @@
     },
     {
       "id": "CP-W37-09",
-      "title": "Auditoria independente fecha métricas seed1729; seed1730 OFF repete"
+      "title": "Auditoria independente fecha mÃ©tricas seed1729; seed1730 OFF repete"
     },
     {
       "id": "CP-W37-10",
-      "title": "Seed1730 ON run1 capturado; placar igual ao OFF neste braço"
+      "title": "Seed1730 ON run1 capturado; placar igual ao OFF neste braÃ§o"
     },
     {
       "id": "CP-W37-11",
-      "title": "Seed1730 confirma mudança de rota sem mudança de placar"
+      "title": "Seed1730 confirma mudanÃ§a de rota sem mudanÃ§a de placar"
     },
     {
       "id": "CP-W37-12",
@@ -2038,11 +2038,11 @@
     },
     {
       "id": "CP-W37-13",
-      "title": "Corrigendum rejeita duração inferida a partir das amostras none"
+      "title": "Corrigendum rejeita duraÃ§Ã£o inferida a partir das amostras none"
     },
     {
       "id": "CP-W37-14",
-      "title": "Seed1731 OFF repetiu byte a byte; limitações corrigidas"
+      "title": "Seed1731 OFF repetiu byte a byte; limitaÃ§Ãµes corrigidas"
     },
     {
       "id": "CP-W37-15",
@@ -2050,35 +2050,35 @@
     },
     {
       "id": "CP-W37-16",
-      "title": "Seis trajetórias pareadas completas capturadas em três seeds"
+      "title": "Seis trajetÃ³rias pareadas completas capturadas em trÃªs seeds"
     },
     {
       "id": "CP-W37-17",
-      "title": "Auditorias multiseed reconciliadas com divergência temporal preservada"
+      "title": "Auditorias multiseed reconciliadas com divergÃªncia temporal preservada"
     },
     {
       "id": "CP-W38-00",
-      "title": "Pré-flight define captura de fases e distância observável"
+      "title": "PrÃ©-flight define captura de fases e distÃ¢ncia observÃ¡vel"
     },
     {
       "id": "CP-W38-01",
-      "title": "Captura pré/pós da seed1729 repetiu deterministicamente"
+      "title": "Captura prÃ©/pÃ³s da seed1729 repetiu deterministicamente"
     },
     {
       "id": "CP-W38-02",
-      "title": "Auditoria multiseed confirma intervalos sem owner e distâncias com limites"
+      "title": "Auditoria multiseed confirma intervalos sem owner e distÃ¢ncias com limites"
     },
     {
       "id": "CP-W38-03",
-      "title": "Preflight restringe captura ao primeiro desvio decisório no tick2"
+      "title": "Preflight restringe captura ao primeiro desvio decisÃ³rio no tick2"
     },
     {
       "id": "CP-W38-04",
-      "title": "Auditoria causal local da primeira divergência"
+      "title": "Auditoria causal local da primeira divergÃªncia"
     },
     {
       "id": "CP-W38-06",
-      "title": "Probe de divergência causal em seeds 1730 e 1731"
+      "title": "Probe de divergÃªncia causal em seeds 1730 e 1731"
     },
     {
       "id": "CP-W38-07",
@@ -2086,11 +2086,11 @@
     },
     {
       "id": "CP-W38-08",
-      "title": "Reinício offside pronto com posse do kicker beneficiário"
+      "title": "ReinÃ­cio offside pronto com posse do kicker beneficiÃ¡rio"
     },
     {
       "id": "CP-W38-10",
-      "title": "Reconciliação de auditorias W38-R1/R2/C07/C08/C09"
+      "title": "ReconciliaÃ§Ã£o de auditorias W38-R1/R2/C07/C08/C09"
     },
     {
       "id": "CP-W38-11",
@@ -2098,11 +2098,11 @@
     },
     {
       "id": "CP-W39-00",
-      "title": "Pré-flight de snapshot pareado em open play"
+      "title": "PrÃ©-flight de snapshot pareado em open play"
     },
     {
       "id": "CP-W39-01",
-      "title": "Decisão e efeito imediato em snapshot de open play"
+      "title": "DecisÃ£o e efeito imediato em snapshot de open play"
     },
     {
       "id": "CP-W39-02",
@@ -2126,7 +2126,7 @@
     },
     {
       "id": "CP-W40-00",
-      "title": "Pré-flight: cursor PRNG e resolução do passe"
+      "title": "PrÃ©-flight: cursor PRNG e resoluÃ§Ã£o do passe"
     },
     {
       "id": "CP-W40-01",
@@ -2134,7 +2134,7 @@
     },
     {
       "id": "CP-W40-02",
-      "title": "Continuação downstream com cursor pareado"
+      "title": "ContinuaÃ§Ã£o downstream com cursor pareado"
     },
     {
       "id": "CP-W40-03",
@@ -2142,7 +2142,7 @@
     },
     {
       "id": "CP-W41-00",
-      "title": "Pré-flight de replay do cursor em passes reais"
+      "title": "PrÃ©-flight de replay do cursor em passes reais"
     },
     {
       "id": "CP-W41-01",
@@ -2154,15 +2154,15 @@
     },
     {
       "id": "CP-W42-00",
-      "title": "Pré-flight define amostra temporal de passes técnicos"
+      "title": "PrÃ©-flight define amostra temporal de passes tÃ©cnicos"
     },
     {
       "id": "CP-W42-01",
-      "title": "Três pares de run passaram paridade e replay temporal"
+      "title": "TrÃªs pares de run passaram paridade e replay temporal"
     },
     {
       "id": "CP-W42-02",
-      "title": "Outcomes de passe e ramos Pass×Tackle confirmados em W29b"
+      "title": "Outcomes de passe e ramos PassÃ—Tackle confirmados em W29b"
     },
     {
       "id": "CP-W42-03",
@@ -2170,11 +2170,11 @@
     },
     {
       "id": "CP-W43-00",
-      "title": "Pré-flight limita captura downstream a seis interações"
+      "title": "PrÃ©-flight limita captura downstream a seis interaÃ§Ãµes"
     },
     {
       "id": "CP-W43-01",
-      "title": "Seis efeitos reais capturados; event types indicam conclusão e tackle"
+      "title": "Seis efeitos reais capturados; event types indicam conclusÃ£o e tackle"
     },
     {
       "id": "CP-W43-02",
@@ -2186,11 +2186,11 @@
     },
     {
       "id": "CP-W44-00",
-      "title": "Pré-flight e recorte de seis casos W43"
+      "title": "PrÃ©-flight e recorte de seis casos W43"
     },
     {
       "id": "CP-W44-01",
-      "title": "Reprodução e crosswalk independentes passaram"
+      "title": "ReproduÃ§Ã£o e crosswalk independentes passaram"
     },
     {
       "id": "CP-W44-02",
@@ -2202,7 +2202,7 @@
     },
     {
       "id": "CP-W45-00",
-      "title": "Pré-flight fixa projeção e parada da reconstrução"
+      "title": "PrÃ©-flight fixa projeÃ§Ã£o e parada da reconstruÃ§Ã£o"
     },
     {
       "id": "CP-W45-01",
@@ -2210,11 +2210,11 @@
     },
     {
       "id": "CP-W45-02",
-      "title": "R4 separa elegibilidade antes/depois do Move em cinco recuperações"
+      "title": "R4 separa elegibilidade antes/depois do Move em cinco recuperaÃ§Ãµes"
     },
     {
       "id": "CP-W45-03",
-      "title": "W45 fecha reconstrução de seis recuperações"
+      "title": "W45 fecha reconstruÃ§Ã£o de seis recuperaÃ§Ãµes"
     },
     {
       "id": "CP-W45-04",
@@ -2222,7 +2222,7 @@
     },
     {
       "id": "CP-W46-00",
-      "title": "Pré-flight fixa diagnostics e gates de Objective Move"
+      "title": "PrÃ©-flight fixa diagnostics e gates de Objective Move"
     },
     {
       "id": "CP-W46-01",
@@ -2230,7 +2230,7 @@
     },
     {
       "id": "CP-W46-02",
-      "title": "Q&A/claims concluídos com UNKNOWN preservado"
+      "title": "Q&A/claims concluÃ­dos com UNKNOWN preservado"
     },
     {
       "id": "CP-W46-03",
@@ -2238,7 +2238,7 @@
     },
     {
       "id": "CP-W47-00",
-      "title": "Pré-flight fixa vetores e gates W47"
+      "title": "PrÃ©-flight fixa vetores e gates W47"
     },
     {
       "id": "CP-W47-03",
@@ -2246,7 +2246,7 @@
     },
     {
       "id": "CP-W48-00",
-      "title": "Pré-flight de recomputação cinemática"
+      "title": "PrÃ©-flight de recomputaÃ§Ã£o cinemÃ¡tica"
     },
     {
       "id": "CP-W48-01",
@@ -2258,11 +2258,11 @@
     },
     {
       "id": "CP-W49-00",
-      "title": "Pré-flight do crosswalk dos três endpoints ativos"
+      "title": "PrÃ©-flight do crosswalk dos trÃªs endpoints ativos"
     },
     {
       "id": "CP-W49-01",
-      "title": "Endpoint efetivo validado nos três casos"
+      "title": "Endpoint efetivo validado nos trÃªs casos"
     },
     {
       "id": "CP-W49-02",
@@ -2270,7 +2270,7 @@
     },
     {
       "id": "CP-W50-00",
-      "title": "Pré-flight para auditar emissão de PassCompleted"
+      "title": "PrÃ©-flight para auditar emissÃ£o de PassCompleted"
     },
     {
       "id": "CP-W50-01",
@@ -2282,11 +2282,11 @@
     },
     {
       "id": "CP-W51-00",
-      "title": "Pré-flight do ramo PassFailed em trace existente"
+      "title": "PrÃ©-flight do ramo PassFailed em trace existente"
     },
     {
       "id": "CP-W51-01",
-      "title": "Ramo negativo PassFailed confirmado em trace prévio"
+      "title": "Ramo negativo PassFailed confirmado em trace prÃ©vio"
     },
     {
       "id": "CP-W51-02",
@@ -2294,11 +2294,11 @@
     },
     {
       "id": "CP-W52-00",
-      "title": "Pré-flight para decisão seguinte após recovery"
+      "title": "PrÃ©-flight para decisÃ£o seguinte apÃ³s recovery"
     },
     {
       "id": "CP-W52-01",
-      "title": "Nova tentativa de passe após recovery identificada"
+      "title": "Nova tentativa de passe apÃ³s recovery identificada"
     },
     {
       "id": "CP-W52-02",
@@ -2306,7 +2306,7 @@
     },
     {
       "id": "CP-W53-00",
-      "title": "Pré-flight para terminal do ActivePass W52"
+      "title": "PrÃ©-flight para terminal do ActivePass W52"
     },
     {
       "id": "CP-W53-01",
@@ -2318,7 +2318,7 @@
     },
     {
       "id": "CP-W54-00",
-      "title": "Pré-flight recovery candidate/winner"
+      "title": "PrÃ©-flight recovery candidate/winner"
     },
     {
       "id": "CP-W54-01",
@@ -2330,7 +2330,7 @@
     },
     {
       "id": "CP-W55-00",
-      "title": "Pré-flight Completed × Failed crosswalk"
+      "title": "PrÃ©-flight Completed Ã— Failed crosswalk"
     },
     {
       "id": "CP-W55-01",
@@ -2342,11 +2342,11 @@
     },
     {
       "id": "CP-W56-00",
-      "title": "Pré-flight da trajetória do passe até recovery"
+      "title": "PrÃ©-flight da trajetÃ³ria do passe atÃ© recovery"
     },
     {
       "id": "CP-W56-01",
-      "title": "Recovery ocorre antes do endpoint de trajetória"
+      "title": "Recovery ocorre antes do endpoint de trajetÃ³ria"
     },
     {
       "id": "CP-W56-02",
@@ -2354,11 +2354,11 @@
     },
     {
       "id": "CP-W57-00",
-      "title": "Pré-flight da primeira ação pós-recovery"
+      "title": "PrÃ©-flight da primeira aÃ§Ã£o pÃ³s-recovery"
     },
     {
       "id": "CP-W57-01",
-      "title": "Primeira ação pós-recovery auditada"
+      "title": "Primeira aÃ§Ã£o pÃ³s-recovery auditada"
     },
     {
       "id": "CP-W57-02",
@@ -2378,11 +2378,11 @@
     },
     {
       "id": "CP-W59-00",
-      "title": "Preflight primeira ação após segunda recuperação"
+      "title": "Preflight primeira aÃ§Ã£o apÃ³s segunda recuperaÃ§Ã£o"
     },
     {
       "id": "CP-W59-01",
-      "title": "Primeira ação após segunda recovery"
+      "title": "Primeira aÃ§Ã£o apÃ³s segunda recovery"
     },
     {
       "id": "CP-W59-02",
@@ -2414,15 +2414,15 @@
     },
     {
       "id": "CP-W62-00",
-      "title": "Preflight decomposição score tick916"
+      "title": "Preflight decomposiÃ§Ã£o score tick916"
     },
     {
       "id": "CP-W63-00",
-      "title": "Preflight cross-seed pós-recovery"
+      "title": "Preflight cross-seed pÃ³s-recovery"
     },
     {
       "id": "CP-W63-01",
-      "title": "Crosswalk offline pós-recovery auditado"
+      "title": "Crosswalk offline pÃ³s-recovery auditado"
     },
     {
       "id": "CP-W63-02",
@@ -2442,11 +2442,11 @@
     },
     {
       "id": "CP-W65-00",
-      "title": "Preflight transição do mesmo carrier"
+      "title": "Preflight transiÃ§Ã£o do mesmo carrier"
     },
     {
       "id": "CP-W65-01",
-      "title": "Score Move muda sob contextualização por posse"
+      "title": "Score Move muda sob contextualizaÃ§Ã£o por posse"
     },
     {
       "id": "CP-W65-02",
@@ -2458,7 +2458,7 @@
     },
     {
       "id": "CP-W66-01",
-      "title": "Pareamento tick2 e primeira divergência"
+      "title": "Pareamento tick2 e primeira divergÃªncia"
     },
     {
       "id": "CP-W66-02",
@@ -2470,7 +2470,7 @@
     },
     {
       "id": "CP-W66-04",
-      "title": "Auditoria independente do replay pareado concluída"
+      "title": "Auditoria independente do replay pareado concluÃ­da"
     },
     {
       "id": "CP-W67-00",
@@ -2478,7 +2478,7 @@
     },
     {
       "id": "CP-W67-02",
-      "title": "Cinco pares confirmam Move→Pass no tick2"
+      "title": "Cinco pares confirmam Moveâ†’Pass no tick2"
     },
     {
       "id": "CP-W67-04",
@@ -2486,7 +2486,7 @@
     },
     {
       "id": "CP-W67-05",
-      "title": "Repetição determinística em três seeds"
+      "title": "RepetiÃ§Ã£o determinÃ­stica em trÃªs seeds"
     },
     {
       "id": "CP-W68-00",
@@ -2494,7 +2494,7 @@
     },
     {
       "id": "CP-W97-FINAL",
-      "title": "Critério de receptor elegível limitado a enumeração observada"
+      "title": "CritÃ©rio de receptor elegÃ­vel limitado a enumeraÃ§Ã£o observada"
     },
     {
       "id": "CP-W97-01",
@@ -2502,7 +2502,7 @@
     },
     {
       "id": "CP-W98-FINAL",
-      "title": "Seleção Pass e arbitragem distinguida; sem patch"
+      "title": "SeleÃ§Ã£o Pass e arbitragem distinguida; sem patch"
     },
     {
       "id": "CP-W98-01",
@@ -2514,15 +2514,15 @@
     },
     {
       "id": "CP-W101-00",
-      "title": "Pré-flight identidade e escopo W101"
+      "title": "PrÃ©-flight identidade e escopo W101"
     },
     {
       "id": "CP-W101-01",
-      "title": "Prefixos e lançamento de passe no build atual"
+      "title": "Prefixos e lanÃ§amento de passe no build atual"
     },
     {
       "id": "CP-W101-02",
-      "title": "Auditoria independente e regressão"
+      "title": "Auditoria independente e regressÃ£o"
     },
     {
       "id": "CP-W101-03",
@@ -2530,7 +2530,7 @@
     },
     {
       "id": "CP-W102-00",
-      "title": "Pré-flight da intervenção pareada no mesmo prestate"
+      "title": "PrÃ©-flight da intervenÃ§Ã£o pareada no mesmo prestate"
     },
     {
       "id": "CP-W104-01",
@@ -2538,11 +2538,11 @@
     },
     {
       "id": "CP-W105-00",
-      "title": "Pré-flight W105"
+      "title": "PrÃ©-flight W105"
     },
     {
       "id": "CP-W105-01",
-      "title": "Teste focal e regressão W105"
+      "title": "Teste focal e regressÃ£o W105"
     },
     {
       "id": "CP-W105-02",
@@ -2554,7 +2554,7 @@
     },
     {
       "id": "CP-W107-01",
-      "title": "W107 conclusão científica e retomada W108"
+      "title": "W107 conclusÃ£o cientÃ­fica e retomada W108"
     },
     {
       "id": "CP-W108-02",
@@ -2562,11 +2562,11 @@
     },
     {
       "id": "CP-W109-02",
-      "title": "W109 auditado/publicado; W110 geométrico em andamento"
+      "title": "W109 auditado/publicado; W110 geomÃ©trico em andamento"
     },
     {
       "id": "CP-W110-02",
-      "title": "W110 geometria auditada/publicada; W111 integração diagonal"
+      "title": "W110 geometria auditada/publicada; W111 integraÃ§Ã£o diagonal"
     },
     {
       "id": "CP-W111-02",
@@ -2590,31 +2590,31 @@
     },
     {
       "id": "CP-W123-00",
-      "title": "W123 preflight: recuperação no tick 4"
+      "title": "W123 preflight: recuperaÃ§Ã£o no tick 4"
     },
     {
       "id": "CP-W123-01",
-      "title": "Geometria pré-recovery capturada; revisão parcial"
+      "title": "Geometria prÃ©-recovery capturada; revisÃ£o parcial"
     },
     {
       "id": "CP-W123-02",
-      "title": "Lifecycle do passe tick3/4 e limite da interpretação geométrica"
+      "title": "Lifecycle do passe tick3/4 e limite da interpretaÃ§Ã£o geomÃ©trica"
     },
     {
       "id": "CP-W123-03",
-      "title": "Asserções do lifecycle e auditoria do tick3"
+      "title": "AsserÃ§Ãµes do lifecycle e auditoria do tick3"
     },
     {
       "id": "CP-W123-04",
-      "title": "Primeiro terminal bounded até tick12"
+      "title": "Primeiro terminal bounded atÃ© tick12"
     },
     {
       "id": "CP-W123-05",
-      "title": "Snapshot tick3 consumido por impedimento e reinício indireto"
+      "title": "Snapshot tick3 consumido por impedimento e reinÃ­cio indireto"
     },
     {
       "id": "CP-W123-06",
-      "title": "Reconstrução independente integral da geometria pré-tick3"
+      "title": "ReconstruÃ§Ã£o independente integral da geometria prÃ©-tick3"
     },
     {
       "id": "CP-W123-07",
@@ -2622,19 +2622,19 @@
     },
     {
       "id": "CP-W123-08",
-      "title": "Snapshots integralmente recalculados em três seeds × dois modos"
+      "title": "Snapshots integralmente recalculados em trÃªs seeds Ã— dois modos"
     },
     {
       "id": "CP-W123-09",
-      "title": "Geometria completa em fixture sintética SidesInverted=true"
+      "title": "Geometria completa em fixture sintÃ©tica SidesInverted=true"
     },
     {
       "id": "CP-PORTAL-04",
-      "title": "Resumo executivo e histórico em cards"
+      "title": "Resumo executivo e histÃ³rico em cards"
     },
     {
       "id": "CP-W123-10",
-      "title": "Preflight e reprodução pareada de agregados de partida"
+      "title": "Preflight e reproduÃ§Ã£o pareada de agregados de partida"
     },
     {
       "id": "CP-W123-11",
@@ -2642,19 +2642,19 @@
     },
     {
       "id": "CP-W123-12",
-      "title": "Amostra de 12 eventos: elegibilidade e ação do recebedor"
+      "title": "Amostra de 12 eventos: elegibilidade e aÃ§Ã£o do recebedor"
     },
     {
       "id": "CP-W123-13",
-      "title": "Comparação causal do recovery no tick5 da seed1729"
+      "title": "ComparaÃ§Ã£o causal do recovery no tick5 da seed1729"
     },
     {
       "id": "CP-W123-14",
-      "title": "Quatro rotas sintéticas e disputa simultânea"
+      "title": "Quatro rotas sintÃ©ticas e disputa simultÃ¢nea"
     },
     {
       "id": "CP-W123-15",
-      "title": "Tempo de aproximação versus prioridade BallControl"
+      "title": "Tempo de aproximaÃ§Ã£o versus prioridade BallControl"
     },
     {
       "id": "CP-W123-16",
@@ -2662,7 +2662,7 @@
     },
     {
       "id": "CP-W123-17",
-      "title": "Contrafactual offline: tempo de aproximação versus BallControl"
+      "title": "Contrafactual offline: tempo de aproximaÃ§Ã£o versus BallControl"
     },
     {
       "id": "CP-W123-18",
@@ -2670,7 +2670,7 @@
     },
     {
       "id": "CP-W123-19",
-      "title": "Cross-build: janelas de bytes e correção de file offsets"
+      "title": "Cross-build: janelas de bytes e correÃ§Ã£o de file offsets"
     },
     {
       "id": "CP-W123-20",
@@ -2678,11 +2678,11 @@
     },
     {
       "id": "CP-W123-21",
-      "title": "Auditoria exaustiva dos offsets explícitos B1/C1"
+      "title": "Auditoria exaustiva dos offsets explÃ­citos B1/C1"
     },
     {
       "id": "CP-W124-00",
-      "title": "Preflight e snapshot do código"
+      "title": "Preflight e snapshot do cÃ³digo"
     },
     {
       "id": "CP-W124-01",
@@ -2694,35 +2694,35 @@
     },
     {
       "id": "CP-W125-01",
-      "title": "Candidatos de passe após o movimento em t84"
+      "title": "Candidatos de passe apÃ³s o movimento em t84"
     },
     {
       "id": "CP-W126-00",
-      "title": "Preflight e correção da hipótese multiseed"
+      "title": "Preflight e correÃ§Ã£o da hipÃ³tese multiseed"
     },
     {
       "id": "CP-W126-01",
-      "title": "Seleção de Pass e OffsideSnapshot em fixtures congeladas"
+      "title": "SeleÃ§Ã£o de Pass e OffsideSnapshot em fixtures congeladas"
     },
     {
       "id": "CP-W127-00",
-      "title": "Preflight e seleção de snapshots para decomposição"
+      "title": "Preflight e seleÃ§Ã£o de snapshots para decomposiÃ§Ã£o"
     },
     {
       "id": "CP-W127-01",
-      "title": "Recomposição dos componentes Pass"
+      "title": "RecomposiÃ§Ã£o dos componentes Pass"
     },
     {
       "id": "CP-W128-00",
-      "title": "Pré-flight e preservação dos artefatos históricos"
+      "title": "PrÃ©-flight e preservaÃ§Ã£o dos artefatos histÃ³ricos"
     },
     {
       "id": "CP-W128-01",
-      "title": "Tick de resolução corrigido e assertions explícitas"
+      "title": "Tick de resoluÃ§Ã£o corrigido e assertions explÃ­citas"
     },
     {
       "id": "CP-W129-00",
-      "title": "Preflight de ligação no Simulation trace"
+      "title": "Preflight de ligaÃ§Ã£o no Simulation trace"
     },
     {
       "id": "CP-W129-01",
@@ -2734,11 +2734,11 @@
     },
     {
       "id": "CP-W130-01",
-      "title": "PassCompleted, recovery e posse pós-terminal"
+      "title": "PassCompleted, recovery e posse pÃ³s-terminal"
     },
     {
       "id": "CP-W131-00",
-      "title": "Preflight do OffsideOffence e preservação da primeira hipótese"
+      "title": "Preflight do OffsideOffence e preservaÃ§Ã£o da primeira hipÃ³tese"
     },
     {
       "id": "CP-W131-01",
@@ -2754,11 +2754,11 @@
     },
     {
       "id": "CP-W133-00",
-      "title": "Preflight da cobrança indireta"
+      "title": "Preflight da cobranÃ§a indireta"
     },
     {
       "id": "CP-W133-01",
-      "title": "Ready → ação → ActivePass"
+      "title": "Ready â†’ aÃ§Ã£o â†’ ActivePass"
     },
     {
       "id": "CP-W134-00",
@@ -2770,11 +2770,11 @@
     },
     {
       "id": "CP-W135-00",
-      "title": "Preflight da decisão após recepção"
+      "title": "Preflight da decisÃ£o apÃ³s recepÃ§Ã£o"
     },
     {
       "id": "CP-W135-01",
-      "title": "Ação pós-recepção e estado imediato"
+      "title": "AÃ§Ã£o pÃ³s-recepÃ§Ã£o e estado imediato"
     },
     {
       "id": "CP-W136-00",
@@ -2782,15 +2782,15 @@
     },
     {
       "id": "CP-W136-01",
-      "title": "Terminal e posse das continuações"
+      "title": "Terminal e posse das continuaÃ§Ãµes"
     },
     {
       "id": "CP-W137-00",
-      "title": "Preflight da decisão pós-terminal"
+      "title": "Preflight da decisÃ£o pÃ³s-terminal"
     },
     {
       "id": "CP-W137-01",
-      "title": "Carrier escolhe ação seguinte"
+      "title": "Carrier escolhe aÃ§Ã£o seguinte"
     },
     {
       "id": "CP-W138-00",
@@ -2798,7 +2798,7 @@
     },
     {
       "id": "CP-W138-01",
-      "title": "Terminal/posse e exceção de falha"
+      "title": "Terminal/posse e exceÃ§Ã£o de falha"
     },
     {
       "id": "CP-W139-00",
@@ -2810,19 +2810,19 @@
     },
     {
       "id": "CP-W140-00",
-      "title": "Preflight da decisão do recuperador"
+      "title": "Preflight da decisÃ£o do recuperador"
     },
     {
       "id": "CP-W140-01",
-      "title": "Move e posse pós-recovery"
+      "title": "Move e posse pÃ³s-recovery"
     },
     {
       "id": "CP-W141-00",
-      "title": "Preflight da continuação do recovery"
+      "title": "Preflight da continuaÃ§Ã£o do recovery"
     },
     {
       "id": "CP-W141-01",
-      "title": "Segunda ação após recovery em t136"
+      "title": "Segunda aÃ§Ã£o apÃ³s recovery em t136"
     },
     {
       "id": "CP-W142-00",
@@ -2834,11 +2834,11 @@
     },
     {
       "id": "CP-W143-00",
-      "title": "Preflight dos diagnósticos de decisão"
+      "title": "Preflight dos diagnÃ³sticos de decisÃ£o"
     },
     {
       "id": "CP-W143-01",
-      "title": "Scores e objetivos nos t135–137"
+      "title": "Scores e objetivos nos t135â€“137"
     },
     {
       "id": "CP-W144-00",
@@ -2854,7 +2854,7 @@
     },
     {
       "id": "CP-W145-01",
-      "title": "Rejeição por aproximação ao defensor"
+      "title": "RejeiÃ§Ã£o por aproximaÃ§Ã£o ao defensor"
     },
     {
       "id": "CP-W146-00",
@@ -2866,7 +2866,7 @@
     },
     {
       "id": "CP-W147-00",
-      "title": "Preflight seed1730 pós-offside"
+      "title": "Preflight seed1730 pÃ³s-offside"
     },
     {
       "id": "CP-W147-01",
@@ -2930,7 +2930,7 @@
     },
     {
       "id": "CP-W162-01",
-      "title": "Censo e partição 100 gols"
+      "title": "Censo e partiÃ§Ã£o 100 gols"
     },
     {
       "id": "CP-W163-00",
@@ -2942,7 +2942,7 @@
     },
     {
       "id": "CP-W164-01",
-      "title": "Primeira divergência 4m×5m e cadeia GK"
+      "title": "Primeira divergÃªncia 4mÃ—5m e cadeia GK"
     },
     {
       "id": "CP-W165-01",
@@ -2970,11 +2970,11 @@
     },
     {
       "id": "CP-W171-02",
-      "title": "Pass terminal, impedimento e posse de reinício"
+      "title": "Pass terminal, impedimento e posse de reinÃ­cio"
     },
     {
       "id": "CP-W172-02",
-      "title": "Guarda de offside e associação ao snapshot"
+      "title": "Guarda de offside e associaÃ§Ã£o ao snapshot"
     },
     {
       "id": "CP-W173-02",
@@ -2990,7 +2990,7 @@
     },
     {
       "id": "CP-W175-01",
-      "title": "Janela pós-recepção de passe onside"
+      "title": "Janela pÃ³s-recepÃ§Ã£o de passe onside"
     },
     {
       "id": "CP-W175-02",
@@ -2998,7 +2998,7 @@
     },
     {
       "id": "CP-W176-01",
-      "title": "Passe retorno e posse até tick40"
+      "title": "Passe retorno e posse atÃ© tick40"
     },
     {
       "id": "CP-W176-02",
@@ -3006,7 +3006,7 @@
     },
     {
       "id": "CP-W177-01",
-      "title": "Tackle threshold em prestate idêntico"
+      "title": "Tackle threshold em prestate idÃªntico"
     },
     {
       "id": "CP-W177-02",
@@ -3014,7 +3014,7 @@
     },
     {
       "id": "CP-W178-01",
-      "title": "Diagnósticos de tackle e comparação de score"
+      "title": "DiagnÃ³sticos de tackle e comparaÃ§Ã£o de score"
     },
     {
       "id": "CP-W178-02",
@@ -3022,7 +3022,7 @@
     },
     {
       "id": "CP-W179-01",
-      "title": "Pass outcomes após tackle successful"
+      "title": "Pass outcomes apÃ³s tackle successful"
     },
     {
       "id": "CP-W179-02",
@@ -3030,7 +3030,7 @@
     },
     {
       "id": "CP-W180-01",
-      "title": "Continuação de passe pós-recuperação"
+      "title": "ContinuaÃ§Ã£o de passe pÃ³s-recuperaÃ§Ã£o"
     },
     {
       "id": "CP-W180-02",
@@ -3038,7 +3038,7 @@
     },
     {
       "id": "CP-W181-01",
-      "title": "Recuperação de passe e tackle imediato"
+      "title": "RecuperaÃ§Ã£o de passe e tackle imediato"
     },
     {
       "id": "CP-W181-02",
@@ -3046,7 +3046,7 @@
     },
     {
       "id": "CP-W182-01",
-      "title": "Competição local de scores"
+      "title": "CompetiÃ§Ã£o local de scores"
     },
     {
       "id": "CP-W182-02",
@@ -3070,15 +3070,15 @@
     },
     {
       "id": "CP-W187-02",
-      "title": "W187 por distância concluído; W188 iniciado"
+      "title": "W187 por distÃ¢ncia concluÃ­do; W188 iniciado"
     },
     {
       "id": "CP-W188-02",
-      "title": "W188 fórmula auditada; W189 iniciado"
+      "title": "W188 fÃ³rmula auditada; W189 iniciado"
     },
     {
       "id": "CP-W189-02",
-      "title": "W189 distribuído e validado; W190 iniciado"
+      "title": "W189 distribuÃ­do e validado; W190 iniciado"
     },
     {
       "id": "CP-W190-02",
@@ -3086,7 +3086,7 @@
     },
     {
       "id": "CP-W195-02",
-      "title": "W195 concluído; W196 causal replay iniciado"
+      "title": "W195 concluÃ­do; W196 causal replay iniciado"
     },
     {
       "id": "CP-W196-02",
@@ -3098,23 +3098,23 @@
     },
     {
       "id": "CP-W198-02",
-      "title": "Diagnóstico W198 fechado; probe direto W199 iniciado"
+      "title": "DiagnÃ³stico W198 fechado; probe direto W199 iniciado"
     },
     {
       "id": "CP-W199-02",
-      "title": "W199 direto concluído; fronteira runtime W200 iniciada"
+      "title": "W199 direto concluÃ­do; fronteira runtime W200 iniciada"
     },
     {
       "id": "CP-W200-02",
-      "title": "Fronteira local confirmada; resolução W201 iniciada"
+      "title": "Fronteira local confirmada; resoluÃ§Ã£o W201 iniciada"
     },
     {
       "id": "CP-W201-02",
-      "title": "Resolver técnico local fechado; análise numérica W202 iniciada"
+      "title": "Resolver tÃ©cnico local fechado; anÃ¡lise numÃ©rica W202 iniciada"
     },
     {
       "id": "CP-W202-02",
-      "title": "Audit numérica concluída; censo de traces W203 iniciado"
+      "title": "Audit numÃ©rica concluÃ­da; censo de traces W203 iniciado"
     },
     {
       "id": "CP-W203-02",
@@ -3122,7 +3122,7 @@
     },
     {
       "id": "CP-W207-01",
-      "title": "W204–W207 corrigendum e censo de treatment concluídos; M4-05 inicia W208"
+      "title": "W204â€“W207 corrigendum e censo de treatment concluÃ­dos; M4-05 inicia W208"
     },
     {
       "id": "CP-W208-01",
@@ -3130,23 +3130,23 @@
     },
     {
       "id": "CP-W209-01",
-      "title": "M3 source mapping concluído; teste da interação Off/DERR iniciado"
+      "title": "M3 source mapping concluÃ­do; teste da interaÃ§Ã£o Off/DERR iniciado"
     },
     {
       "id": "CP-W214-00",
-      "title": "Par PAL×COR 90min DERR isolado iniciado"
+      "title": "Par PALÃ—COR 90min DERR isolado iniciado"
     },
     {
       "id": "CP-W214-FINAL",
-      "title": "Par 90min PAL×COR DERR isolado completo e repetido"
+      "title": "Par 90min PALÃ—COR DERR isolado completo e repetido"
     },
     {
       "id": "CP-W215-00",
-      "title": "Primeira divergência e evento offside adicional em preparação"
+      "title": "Primeira divergÃªncia e evento offside adicional em preparaÃ§Ã£o"
     },
     {
       "id": "CP-W215-W217-FINAL",
-      "title": "Divergência e evento de impedimento vinculados ao snapshot"
+      "title": "DivergÃªncia e evento de impedimento vinculados ao snapshot"
     },
     {
       "id": "CP-W218-00",
@@ -3154,31 +3154,31 @@
     },
     {
       "id": "CP-W219-FINAL",
-      "title": "Terminais de passe reconciliados em quatro execuções; mediação descritiva fechada"
+      "title": "Terminais de passe reconciliados em quatro execuÃ§Ãµes; mediaÃ§Ã£o descritiva fechada"
     },
     {
       "id": "CP-W220-FINAL",
-      "title": "Primeira divergência tick2 ligada a MoveAction alvo/direção e consumidor"
+      "title": "Primeira divergÃªncia tick2 ligada a MoveAction alvo/direÃ§Ã£o e consumidor"
     },
     {
       "id": "CP-W221-FINAL",
-      "title": "Geometria snapshots 86/32 confirma offside; mecanismos híbridos diferem"
+      "title": "Geometria snapshots 86/32 confirma offside; mecanismos hÃ­bridos diferem"
     },
     {
       "id": "CP-W222-00",
-      "title": "Trajetória entre tick2 e snapshots preparada; causalidade por tick aberta"
+      "title": "TrajetÃ³ria entre tick2 e snapshots preparada; causalidade por tick aberta"
     },
     {
       "id": "CP-W224-FINAL",
-      "title": "Fork pré-tick25/seed1731 confirmou transferência de posse local DERR ON; OFF não transfere no passo"
+      "title": "Fork prÃ©-tick25/seed1731 confirmou transferÃªncia de posse local DERR ON; OFF nÃ£o transfere no passo"
     },
     {
       "id": "CP-W225-FINAL",
-      "title": "Fork pré-tick62/seed1730 mostra recepção e passe subsequente iguais ON/OFF"
+      "title": "Fork prÃ©-tick62/seed1730 mostra recepÃ§Ã£o e passe subsequente iguais ON/OFF"
     },
     {
       "id": "CP-W226-FINAL",
-      "title": "Primeiras diferenças de posse W222 localizadas; replay completo ainda não é reproduzível"
+      "title": "Primeiras diferenÃ§as de posse W222 localizadas; replay completo ainda nÃ£o Ã© reproduzÃ­vel"
     },
     {
       "id": "CP-W227-FINAL",
@@ -3186,27 +3186,27 @@
     },
     {
       "id": "CP-W228-FINAL",
-      "title": "Pós-offside, posições DERR ON selecionam kicker mais distante; só guarda kicker atrasa restart um tick"
+      "title": "PÃ³s-offside, posiÃ§Ãµes DERR ON selecionam kicker mais distante; sÃ³ guarda kicker atrasa restart um tick"
     },
     {
       "id": "CP-W229-FINAL",
-      "title": "W229: não há segunda amostra pareada suficiente para replicar o atraso do kicker"
+      "title": "W229: nÃ£o hÃ¡ segunda amostra pareada suficiente para replicar o atraso do kicker"
     },
     {
       "id": "CP-W230-FINAL",
-      "title": "W230: os quatro recuperadores são os únicos candidatos dentro do limiar do endpoint"
+      "title": "W230: os quatro recuperadores sÃ£o os Ãºnicos candidatos dentro do limiar do endpoint"
     },
     {
       "id": "CP-W231-FINAL",
-      "title": "Recuperador lança passe no tick seguinte; o lançamento zera posse em quatro braços"
+      "title": "Recuperador lanÃ§a passe no tick seguinte; o lanÃ§amento zera posse em quatro braÃ§os"
     },
     {
       "id": "CP-W232-FINAL",
-      "title": "Mesmo estado: Pass-aware muda a ação para Move em três alvos offside"
+      "title": "Mesmo estado: Pass-aware muda a aÃ§Ã£o para Move em trÃªs alvos offside"
     },
     {
       "id": "CP-W233-FINAL",
-      "title": "Três seeds pareadas: menos offsides/ticks sem posse; seed1730 perde gol"
+      "title": "TrÃªs seeds pareadas: menos offsides/ticks sem posse; seed1730 perde gol"
     },
     {
       "id": "CP-W234-FINAL",
@@ -3214,7 +3214,7 @@
     },
     {
       "id": "CP-W235-FINAL",
-      "title": "Dez pares confirmam redução de impedimentos, sem melhora agregada do placar"
+      "title": "Dez pares confirmam reduÃ§Ã£o de impedimentos, sem melhora agregada do placar"
     },
     {
       "id": "CP-W236-00",
@@ -3222,7 +3222,7 @@
     },
     {
       "id": "CP-W236-FINAL",
-      "title": "Geometria dos chutes explica parte do recorte, decisão geradora ainda desconhecida"
+      "title": "Geometria dos chutes explica parte do recorte, decisÃ£o geradora ainda desconhecida"
     },
     {
       "id": "CP-W237-FINAL",
@@ -3230,19 +3230,19 @@
     },
     {
       "id": "CP-W238-FINAL",
-      "title": "Efeito direto de Pass-aware na seleção de Shoot refutado em dois mesmos estados"
+      "title": "Efeito direto de Pass-aware na seleÃ§Ã£o de Shoot refutado em dois mesmos estados"
     },
     {
       "id": "CP-W239-FINAL",
-      "title": "Primeiro state split ocorre após alteração do destinatário Pass no tick3"
+      "title": "Primeiro state split ocorre apÃ³s alteraÃ§Ã£o do destinatÃ¡rio Pass no tick3"
     },
     {
       "id": "CP-W240-FINAL",
-      "title": "Pass-aware evita infração no primeiro encadeamento, mas a posse ON se perde após passe de volta"
+      "title": "Pass-aware evita infraÃ§Ã£o no primeiro encadeamento, mas a posse ON se perde apÃ³s passe de volta"
     },
     {
       "id": "CP-W241-FINAL",
-      "title": "Retorno e repetição vencem Move nos dois snapshots, com recuperação adversária na segunda tentativa"
+      "title": "Retorno e repetiÃ§Ã£o vencem Move nos dois snapshots, com recuperaÃ§Ã£o adversÃ¡ria na segunda tentativa"
     },
     {
       "id": "CP-W242-FINAL",
@@ -3258,127 +3258,127 @@
     },
     {
       "id": "CP-W245-PREFLIGHT",
-      "title": "W245 preflight — medir resultados terminais de passe OFF/ON pareados"
+      "title": "W245 preflight â€” medir resultados terminais de passe OFF/ON pareados"
     },
     {
       "id": "CP-W245-FINAL",
-      "title": "W245 final — recovery adversária em terminais de passe não aumentou"
+      "title": "W245 final â€” recovery adversÃ¡ria em terminais de passe nÃ£o aumentou"
     },
     {
       "id": "CP-W246-TRIAGE",
-      "title": "W246 triagem — Receive altera resultados em 3/3 seeds"
+      "title": "W246 triagem â€” Receive altera resultados em 3/3 seeds"
     },
     {
       "id": "CP-W247-PREFLIGHT",
-      "title": "W247 preflight — same-state counterfactual on receive movement"
+      "title": "W247 preflight â€” same-state counterfactual on receive movement"
     },
     {
       "id": "CP-W247-FINAL",
-      "title": "W247 final — um objetivo de Move muda em 1.020 forks"
+      "title": "W247 final â€” um objetivo de Move muda em 1.020 forks"
     },
     {
       "id": "CP-W248-PREFLIGHT",
-      "title": "W248 preflight — capturar o ramo downstream do objetivo de Move"
+      "title": "W248 preflight â€” capturar o ramo downstream do objetivo de Move"
     },
     {
       "id": "CP-W248-FINAL",
-      "title": "W248 final — receiver candidate/direction switch precedes W247 objective switch"
+      "title": "W248 final â€” receiver candidate/direction switch precedes W247 objective switch"
     },
     {
       "id": "CP-W249-PREFLIGHT",
-      "title": "W249 preflight — 18-seed first-movement candidate census"
+      "title": "W249 preflight â€” 18-seed first-movement candidate census"
     },
     {
       "id": "CP-W249-FINAL",
-      "title": "W249 final — candidato receptor/direção muda em 18/18 pares"
+      "title": "W249 final â€” candidato receptor/direÃ§Ã£o muda em 18/18 pares"
     },
     {
       "id": "CP-W250-PREFLIGHT",
-      "title": "W250 preflight — janela de eventos após o primeiro movimento"
+      "title": "W250 preflight â€” janela de eventos apÃ³s o primeiro movimento"
     },
     {
       "id": "CP-W250-FINAL",
-      "title": "W250 final — alvo de passe e terminais divergem na abertura"
+      "title": "W250 final â€” alvo de passe e terminais divergem na abertura"
     },
     {
       "id": "CP-W251-PREFLIGHT",
-      "title": "W251 preflight — Pass ranking in actual branch states"
+      "title": "W251 preflight â€” Pass ranking in actual branch states"
     },
     {
       "id": "CP-W251-FINAL",
-      "title": "W251 final — rank de passe segue a geometria branch-local"
+      "title": "W251 final â€” rank de passe segue a geometria branch-local"
     },
     {
       "id": "CP-W252-PREFLIGHT",
-      "title": "W252 preflight — posição e flag versus ranking de passe"
+      "title": "W252 preflight â€” posiÃ§Ã£o e flag versus ranking de passe"
     },
     {
       "id": "CP-W252-FINAL",
-      "title": "W252 final — posições de Kaio/Yuri bastam para ranking OFF"
+      "title": "W252 final â€” posiÃ§Ãµes de Kaio/Yuri bastam para ranking OFF"
     },
     {
       "id": "CP-W253-PREFLIGHT",
-      "title": "W253 preflight — Pass-aware penalty on fixed snapshot"
+      "title": "W253 preflight â€” Pass-aware penalty on fixed snapshot"
     },
     {
       "id": "CP-W253-FINAL",
-      "title": "W253 final — Pass-aware penaliza Yuri e muda alvo no mesmo estado"
+      "title": "W253 final â€” Pass-aware penaliza Yuri e muda alvo no mesmo estado"
     },
     {
       "id": "CP-W254-PREFLIGHT",
-      "title": "W254 preflight — single-seed live validation of target redirection"
+      "title": "W254 preflight â€” single-seed live validation of target redirection"
     },
     {
       "id": "CP-W254-FINAL",
-      "title": "W254 final — live pass target avoids offside in seed1732"
+      "title": "W254 final â€” live pass target avoids offside in seed1732"
     },
     {
       "id": "CP-W255-PREFLIGHT",
-      "title": "W255 preflight — 18 paired Receive+Pass runs"
+      "title": "W255 preflight â€” 18 paired Receive+Pass runs"
     },
     {
       "id": "CP-W258-FINAL",
-      "title": "W258 final — COR×PAL rank penalty without first-pass target change"
+      "title": "W258 final â€” CORÃ—PAL rank penalty without first-pass target change"
     },
     {
       "id": "CP-W259-PREFLIGHT",
-      "title": "W259 preflight — locate divergence and downstream terminal"
+      "title": "W259 preflight â€” locate divergence and downstream terminal"
     },
     {
       "id": "CP-W259-FINAL",
-      "title": "W259 final — mesmo alvo: OFF impedimento, ON conclusão posterior"
+      "title": "W259 final â€” mesmo alvo: OFF impedimento, ON conclusÃ£o posterior"
     },
     {
       "id": "CP-W260-PREFLIGHT",
-      "title": "W260 preflight — terceiro seed W214 CORxPAL"
+      "title": "W260 preflight â€” terceiro seed W214 CORxPAL"
     },
     {
       "id": "CP-W260-FINAL",
-      "title": "W260 final — target switch reproduced; alternative fails"
+      "title": "W260 final â€” target switch reproduced; alternative fails"
     },
     {
       "id": "CP-W261-FINAL",
-      "title": "W261 final — clips visuais com identidade W260 confirmada"
+      "title": "W261 final â€” clips visuais com identidade W260 confirmada"
     },
     {
       "id": "CP-W262-FINAL",
-      "title": "W262 final — viewer offline renderizado e controles validados"
+      "title": "W262 final â€” viewer offline renderizado e controles validados"
     },
     {
       "id": "CP-W263-FINAL",
-      "title": "W263 final — continuação de posse e terminal local ligados"
+      "title": "W263 final â€” continuaÃ§Ã£o de posse e terminal local ligados"
     },
     {
       "id": "CP-W264-FINAL",
-      "title": "W264 final — linkage de passe pós-divergência em três seeds"
+      "title": "W264 final â€” linkage de passe pÃ³s-divergÃªncia em trÃªs seeds"
     },
     {
       "id": "CP-W265-FINAL",
-      "title": "W265 final — recovery e geometria observável de PassFailed"
+      "title": "W265 final â€” recovery e geometria observÃ¡vel de PassFailed"
     },
     {
       "id": "CP-W266-FINAL",
-      "title": "W266 final — source mapping e terminal/recovery estáticos"
+      "title": "W266 final â€” source mapping e terminal/recovery estÃ¡ticos"
     }
   ]
 }
