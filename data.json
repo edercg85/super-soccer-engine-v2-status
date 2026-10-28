@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-191",
-  "updatedAt": "2026-10-28T18:35:35Z",
-  "cycle": "W266",
+  "version": "2026.10.28-portal-192",
+  "updatedAt": "2026-10-28T18:51:41Z",
+  "cycle": "W268",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W266 concluiu o crosswalk dos assemblies W214: checksums PDB normalizados, GUIDs CodeView e documentos-fonte conferem. Próximo: tentar reconstruir candidatos do recovery nos dados existentes; se os campos não existirem, priorizar revisão humana do replay W262. W255 segue a última avaliação integrada.",
+  "currentFocus": "W268 fechou a lacuna do censo somente no seed1750 com replay read-only e auditoria 18/18. Próximo: verificar amostra pequena de outros seeds W214 com paridade e winner-vs-nearest, sem inferir qualidade.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W266",
-    "wave": "W266",
-    "publishedAt": "2026-10-28T18:35:35Z",
+    "id": "W268",
+    "wave": "W268",
+    "publishedAt": "2026-10-28T18:51:41Z",
     "macro": "M3",
-    "title": "PDB/fonte W214 validado; semântica de PassFailed e recovery explicada",
-    "status": "Mecanismo estático confirmado; causa física do caso W265 e qualidade permanecem UNKNOWN",
-    "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos três assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distância ao endpoint e ordena por BallControl."
+    "title": "Recovery endpoint seed1750 reproduzido e auditado",
+    "status": "Mecanismo local confirmado; qualidade e causa física UNKNOWN; auditoria 18/18 PASS.",
+    "summary": "Pass ON tick691: receptor elegível 0,155m/BC73 perde para adversário 0,794m/BC86; tick696 só passador elegível. Ambos os passes foram lançados e terminaram PassFailed após recovery. Paridade W260 completa."
   },
   "recentCycles": [
     {
@@ -58,24 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W262",
-      "wave": "W262",
-      "publishedAt": "2026-10-28T18:10:14Z",
-      "macro": "M3",
-      "title": "Viewer offline renderizado e controles dos clips validados",
-      "status": "Ferramenta de inspeção pronta; review humano de gameplay pendente",
-      "summary": "HTML autocontido para ticks686-696. Edge encontrou e validou correção de contraste; harness de DOM/canvas passou 10 checks. Não houve julgamento de qualidade da jogada."
-    },
-    {
-      "id": "W263",
-      "wave": "W263",
-      "publishedAt": "2026-10-28T18:15:04Z",
-      "macro": "M3",
-      "title": "Primeiro passe após offside/recovery rastreado",
-      "status": "Ligação local confirmada; causalidade funcional desconhecida",
-      "summary": "Seed1750 OFF restart holder passes and completes at tick697. ON recovered holder passes and fails at tick696, then regains possession. IDs link decisions/events; branches differ since tick689."
-    },
-    {
       "id": "W264",
       "wave": "W264",
       "publishedAt": "2026-10-28T18:19:38Z",
@@ -101,6 +83,24 @@
       "title": "PDB/fonte W214 validado; semântica de PassFailed e recovery explicada",
       "status": "Mecanismo estático confirmado; causa física do caso W265 e qualidade permanecem UNKNOWN",
       "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos três assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distância ao endpoint e ordena por BallControl."
+    },
+    {
+      "id": "W267",
+      "wave": "W267",
+      "publishedAt": "2026-10-28T18:46:00Z",
+      "macro": "M3",
+      "title": "Censo de recovery ausente nos traces armazenados",
+      "status": "Concluído — lacuna confirmada; limitada ao formato daquele trace.",
+      "summary": "W260 digest não inclui candidatos, distâncias ou BallControl nos ticks 691/696; justificou recaptura observacional sem alterar o run original."
+    },
+    {
+      "id": "W268",
+      "wave": "W268",
+      "publishedAt": "2026-10-28T18:51:41Z",
+      "macro": "M3",
+      "title": "Recovery endpoint seed1750 reproduzido e auditado",
+      "status": "Mecanismo local confirmado; qualidade e causa física UNKNOWN; auditoria 18/18 PASS.",
+      "summary": "Pass ON tick691: receptor elegível 0,155m/BC73 perde para adversário 0,794m/BC86; tick696 só passador elegível. Ambos os passes foram lançados e terminaram PassFailed após recovery. Paridade W260 completa."
     }
   ],
   "macros": [
@@ -1060,9 +1060,9 @@
     "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
     "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
     "shotsGoals": "Finalizações 6→13 e gols 5→11; intervalos pareados cruzam zero, sem evidência de ganho consistente.",
-    "lastIntegrated": "W255 continua sendo a última avaliação integrada (18 pares). W266 é análise estática de mecanismo, não uma nova avaliação de partida; nenhum julgamento humano do replay foi registrado.",
-    "mainBlocker": "Ainda falta avaliação humana do replay e uma avaliação integrada posterior a W255. Para a causa específica de W265, faltam todos os candidatos elegíveis e dados de ordem intratick.",
-    "replay": "Não há replay navegável publicado no portal; viewer offline local de ticks686-696 passou renderização técnica, mas revisão humana do futebol segue pendente."
+    "lastIntegrated": "W255 continua sendo a última avaliação integrada (18 pares). W268 é diagnóstico causal local num seed divergido, não comparação de qualidade.",
+    "mainBlocker": "Avaliação humana do replay pendente e sem avaliação integrada posterior a W255. W268 explica dois casos de endpoint recovery em seed1750, mas não traz ordem intratick nem qualidade global.",
+    "replay": "Não há replay navegável publicado no portal; viewer offline local de ticks686-696 disponível, revisão humana do futebol segue pendente."
   },
   "diary": [
     {
@@ -1102,24 +1102,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W262",
-      "wave": "W262",
-      "publishedAt": "2026-10-28T18:10:14Z",
-      "macro": "M3",
-      "title": "Viewer offline renderizado e controles dos clips validados",
-      "status": "Ferramenta de inspeção pronta; review humano de gameplay pendente",
-      "summary": "HTML autocontido para ticks686-696. Edge encontrou e validou correção de contraste; harness de DOM/canvas passou 10 checks. Não houve julgamento de qualidade da jogada."
-    },
-    {
-      "id": "W263",
-      "wave": "W263",
-      "publishedAt": "2026-10-28T18:15:04Z",
-      "macro": "M3",
-      "title": "Primeiro passe após offside/recovery rastreado",
-      "status": "Ligação local confirmada; causalidade funcional desconhecida",
-      "summary": "Seed1750 OFF restart holder passes and completes at tick697. ON recovered holder passes and fails at tick696, then regains possession. IDs link decisions/events; branches differ since tick689."
-    },
-    {
       "id": "W264",
       "wave": "W264",
       "publishedAt": "2026-10-28T18:19:38Z",
@@ -1145,6 +1127,24 @@
       "title": "PDB/fonte W214 validado; semântica de PassFailed e recovery explicada",
       "status": "Mecanismo estático confirmado; causa física do caso W265 e qualidade permanecem UNKNOWN",
       "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos três assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distância ao endpoint e ordena por BallControl."
+    },
+    {
+      "id": "W267",
+      "wave": "W267",
+      "publishedAt": "2026-10-28T18:46:00Z",
+      "macro": "M3",
+      "title": "Censo de recovery ausente nos traces armazenados",
+      "status": "Concluído — lacuna confirmada; limitada ao formato daquele trace.",
+      "summary": "W260 digest não inclui candidatos, distâncias ou BallControl nos ticks 691/696; justificou recaptura observacional sem alterar o run original."
+    },
+    {
+      "id": "W268",
+      "wave": "W268",
+      "publishedAt": "2026-10-28T18:51:41Z",
+      "macro": "M3",
+      "title": "Recovery endpoint seed1750 reproduzido e auditado",
+      "status": "Mecanismo local confirmado; qualidade e causa física UNKNOWN; auditoria 18/18 PASS.",
+      "summary": "Pass ON tick691: receptor elegível 0,155m/BC73 perde para adversário 0,794m/BC86; tick696 só passador elegível. Ambos os passes foram lançados e terminaram PassFailed após recovery. Paridade W260 completa."
     },
     {
       "wave": "W66",
