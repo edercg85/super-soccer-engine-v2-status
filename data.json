@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-108",
-  "updatedAt": "2026-10-28T08:37:51Z",
-  "cycle": "SS-ORCH-001-W174-OPENPLAY-ONSIDE-PASS",
+  "version": "2026.10.28-portal-109",
+  "updatedAt": "2026-10-28T08:40:46Z",
+  "cycle": "SS-ORCH-001-W175-ONSIDE-RECEIVER-CONTINUATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W175: seguir a janela após a recepção do passe onside até +12 ticks; identificar primeira decisão do recebedor, mudanças de posse/estado e eventos subsequentes. Se as seeds reproduzirem o mesmo estado, contar uma unidade e avançar para dependência seguinte.",
+  "currentFocus": "W176: seguir o passe de retorno lançado no tick26 até sua resolução e a próxima decisão do recebedor, limitado a +24 ticks do lançamento inicial. Verificar se a sequência retorna novamente entre os mesmos jogadores ou se muda a posse/rota; tratar hashes repetidos como uma unidade.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W174",
-    "wave": "W174",
-    "publishedAt": "2026-10-28T08:40:00Z",
+    "id": "W175",
+    "wave": "W175",
+    "publishedAt": "2026-10-28T08:45:00Z",
     "macro": "M2",
-    "title": "W174: passe onside concluído em jogo corrido",
-    "status": "2/2 PASS; auditoria JSON PASS; uma instância reproduzida duas vezes.",
-    "summary": "No tick 16, jogo corrido com RestartState nulo e target fora do snapshot; passe completo tick 19 e alvo recebe posse; sem OffsideOffence. Estado exato repete nas duas seeds."
+    "title": "W175: continuação após recepção onside",
+    "status": "2/2 PASS; auditoria automatizada PASS; uma sequência exata repetida em duas seeds.",
+    "summary": "Após recepção tick19, MoveCompleted tick20; recebedor passa tick21; passe conclui tick24; novo portador lança retorno tick26, ainda em voo tick28. Sem conclusão de qualidade ou prevalência."
   },
   "recentCycles": [
-    {
-      "id": "W167",
-      "wave": "W167",
-      "publishedAt": "2026-10-28T07:43:35Z",
-      "macro": "M2",
-      "title": "W167: segundo contrafactual causal do draw de passe",
-      "status": "1/1 PASS em seed1733; mesmo estado/decisões; somente PassTechnical substituído.",
-      "summary": "O sample baseline 0,2171809 lança o passe e o candidate 0,8711274 o degrada no mesmo snapshot; outras 21 ações/efeitos ficam iguais. Junto a W166, 2/2 seeds focais, prevalência na partida UNKNOWN."
-    },
     {
       "id": "W168",
       "wave": "W168",
@@ -92,6 +83,15 @@
       "title": "W174: passe onside concluído em jogo corrido",
       "status": "2/2 PASS; auditoria JSON PASS; uma instância reproduzida duas vezes.",
       "summary": "No tick 16, jogo corrido com RestartState nulo e target fora do snapshot; passe completo tick 19 e alvo recebe posse; sem OffsideOffence. Estado exato repete nas duas seeds."
+    },
+    {
+      "id": "W175",
+      "wave": "W175",
+      "publishedAt": "2026-10-28T08:45:00Z",
+      "macro": "M2",
+      "title": "W175: continuação após recepção onside",
+      "status": "2/2 PASS; auditoria automatizada PASS; uma sequência exata repetida em duas seeds.",
+      "summary": "Após recepção tick19, MoveCompleted tick20; recebedor passa tick21; passe conclui tick24; novo portador lança retorno tick26, ainda em voo tick28. Sem conclusão de qualidade ou prevalência."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W167",
-      "wave": "W167",
-      "publishedAt": "2026-10-28T07:43:35Z",
-      "macro": "M2",
-      "title": "W167: segundo contrafactual causal do draw de passe",
-      "status": "1/1 PASS em seed1733; mesmo estado/decisões; somente PassTechnical substituído.",
-      "summary": "O sample baseline 0,2171809 lança o passe e o candidate 0,8711274 o degrada no mesmo snapshot; outras 21 ações/efeitos ficam iguais. Junto a W166, 2/2 seeds focais, prevalência na partida UNKNOWN."
-    },
-    {
       "id": "W168",
       "wave": "W168",
       "publishedAt": "2026-10-28T07:52:36Z",
@@ -1116,6 +1107,15 @@
       "title": "W174: passe onside concluído em jogo corrido",
       "status": "2/2 PASS; auditoria JSON PASS; uma instância reproduzida duas vezes.",
       "summary": "No tick 16, jogo corrido com RestartState nulo e target fora do snapshot; passe completo tick 19 e alvo recebe posse; sem OffsideOffence. Estado exato repete nas duas seeds."
+    },
+    {
+      "id": "W175",
+      "wave": "W175",
+      "publishedAt": "2026-10-28T08:45:00Z",
+      "macro": "M2",
+      "title": "W175: continuação após recepção onside",
+      "status": "2/2 PASS; auditoria automatizada PASS; uma sequência exata repetida em duas seeds.",
+      "summary": "Após recepção tick19, MoveCompleted tick20; recebedor passa tick21; passe conclui tick24; novo portador lança retorno tick26, ainda em voo tick28. Sem conclusão de qualidade ou prevalência."
     },
     {
       "wave": "W66",
@@ -2994,6 +2994,14 @@
     {
       "id": "CP-W174-02",
       "title": "Handoff W174 publicado e validado"
+    },
+    {
+      "id": "CP-W175-01",
+      "title": "Janela pós-recepção de passe onside"
+    },
+    {
+      "id": "CP-W175-02",
+      "title": "Handoff W175 publicado e validado"
     }
   ]
 }
