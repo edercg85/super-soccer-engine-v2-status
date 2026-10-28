@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-111",
-  "updatedAt": "2026-10-28T08:47:51Z",
-  "cycle": "SS-ORCH-001-W177-CAUSAL-TACKLE-THRESHOLD",
+  "version": "2026.10.28-portal-112",
+  "updatedAt": "2026-10-28T08:52:10Z",
+  "cycle": "SS-ORCH-001-W178-TACKLE-ELIGIBILITY-SELECTION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W178: no prestate do tick51, rastrear elegibilidade e seleção do tackle — jogadores considerados, guardas, score e por que este actor/target aparece. Confirmar corpos de decisão e resolução sem assumir intenção tática.",
+  "currentFocus": "W179: seguir seed1733 após tackle bem-sucedido e analisar o passe do tick55 — decisão, target, draw, efeitos, terminal e posse. Separar lançamento de conclusão/recepção; limitar a janela a +12 ticks do passe.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W177",
-    "wave": "W177",
-    "publishedAt": "2026-10-28T08:55:00Z",
+    "id": "W178",
+    "wave": "W178",
+    "publishedAt": "2026-10-28T08:51:39Z",
     "macro": "M2",
-    "title": "W177: bifurcação por draw de tackle",
-    "status": "2/2 PASS; mesmo prestate/decisões; threshold de 49.2901% auditado; outcomes diferentes.",
-    "summary": "Tick51 tackle técnico: .9402 supera o limiar e falha, mantendo posse; .3883 fica abaixo e sucede, transferindo posse ao tackler. Fórmula e fonte/fixture conferidas; sem claim de qualidade global."
+    "title": "W178: elegibilidade e escolha do tackle",
+    "status": "2/2 PASS; 11 candidates, 2 elegíveis; 1 seleciona tackle; paridade de instrumentação PASS.",
+    "summary": "No prestate tick51, 2 defensores estavam ao alcance. O mais próximo escolhe Tackle por score .843; outro elegível escolhe Move. Nove rejeitados por alcance. Sem inferência de ranking coletivo."
   },
   "recentCycles": [
-    {
-      "id": "W170",
-      "wave": "W170",
-      "publishedAt": "2026-10-28T08:06:31Z",
-      "macro": "M2",
-      "title": "W170: efeito do draw no estado do passe",
-      "status": "2/2 transições controladas PASS; claims locais sobre posse, ActivePass, trajetória e eventos. Recepção ainda UNKNOWN.",
-      "summary": "Em dois snapshots, PassLaunchDegraded ainda limpa a posse e cria ActivePass/trajectory; distância planejada e pico de velocidade caem pela metade. Tipos de eventos imediatos iguais. Evidência local, não replay integral nem efeito global."
-    },
     {
       "id": "W171",
       "wave": "W171",
@@ -92,6 +83,15 @@
       "title": "W177: bifurcação por draw de tackle",
       "status": "2/2 PASS; mesmo prestate/decisões; threshold de 49.2901% auditado; outcomes diferentes.",
       "summary": "Tick51 tackle técnico: .9402 supera o limiar e falha, mantendo posse; .3883 fica abaixo e sucede, transferindo posse ao tackler. Fórmula e fonte/fixture conferidas; sem claim de qualidade global."
+    },
+    {
+      "id": "W178",
+      "wave": "W178",
+      "publishedAt": "2026-10-28T08:51:39Z",
+      "macro": "M2",
+      "title": "W178: elegibilidade e escolha do tackle",
+      "status": "2/2 PASS; 11 candidates, 2 elegíveis; 1 seleciona tackle; paridade de instrumentação PASS.",
+      "summary": "No prestate tick51, 2 defensores estavam ao alcance. O mais próximo escolhe Tackle por score .843; outro elegível escolhe Move. Nove rejeitados por alcance. Sem inferência de ranking coletivo."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W170",
-      "wave": "W170",
-      "publishedAt": "2026-10-28T08:06:31Z",
-      "macro": "M2",
-      "title": "W170: efeito do draw no estado do passe",
-      "status": "2/2 transições controladas PASS; claims locais sobre posse, ActivePass, trajetória e eventos. Recepção ainda UNKNOWN.",
-      "summary": "Em dois snapshots, PassLaunchDegraded ainda limpa a posse e cria ActivePass/trajectory; distância planejada e pico de velocidade caem pela metade. Tipos de eventos imediatos iguais. Evidência local, não replay integral nem efeito global."
-    },
-    {
       "id": "W171",
       "wave": "W171",
       "publishedAt": "2026-10-28T08:18:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W177: bifurcação por draw de tackle",
       "status": "2/2 PASS; mesmo prestate/decisões; threshold de 49.2901% auditado; outcomes diferentes.",
       "summary": "Tick51 tackle técnico: .9402 supera o limiar e falha, mantendo posse; .3883 fica abaixo e sucede, transferindo posse ao tackler. Fórmula e fonte/fixture conferidas; sem claim de qualidade global."
+    },
+    {
+      "id": "W178",
+      "wave": "W178",
+      "publishedAt": "2026-10-28T08:51:39Z",
+      "macro": "M2",
+      "title": "W178: elegibilidade e escolha do tackle",
+      "status": "2/2 PASS; 11 candidates, 2 elegíveis; 1 seleciona tackle; paridade de instrumentação PASS.",
+      "summary": "No prestate tick51, 2 defensores estavam ao alcance. O mais próximo escolhe Tackle por score .843; outro elegível escolhe Move. Nove rejeitados por alcance. Sem inferência de ranking coletivo."
     },
     {
       "wave": "W66",
@@ -3018,6 +3018,14 @@
     {
       "id": "CP-W177-02",
       "title": "Handoff W177 publicado"
+    },
+    {
+      "id": "CP-W178-01",
+      "title": "Diagnósticos de tackle e comparação de score"
+    },
+    {
+      "id": "CP-W178-02",
+      "title": "Handoff W178 publicado"
     }
   ]
 }
