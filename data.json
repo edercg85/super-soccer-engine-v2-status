@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-110",
-  "updatedAt": "2026-10-28T08:43:01Z",
-  "cycle": "SS-ORCH-001-W176-RETURN-PASS-RESOLUTION",
+  "version": "2026.10.28-portal-111",
+  "updatedAt": "2026-10-28T08:47:51Z",
+  "cycle": "SS-ORCH-001-W177-CAUSAL-TACKLE-THRESHOLD",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W177: estender a mesma trajetória até o primeiro novo evento terminal ou tick56 (+40 do lançamento inicial), observando próxima decisão, passe/chute, recuperação ou reinício. Se nada ocorrer antes do limite, encerrar a janela e trocar para outra dependência.",
+  "currentFocus": "W178: no prestate do tick51, rastrear elegibilidade e seleção do tackle — jogadores considerados, guardas, score e por que este actor/target aparece. Confirmar corpos de decisão e resolução sem assumir intenção tática.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W176",
-    "wave": "W176",
-    "publishedAt": "2026-10-28T08:48:00Z",
+    "id": "W177",
+    "wave": "W177",
+    "publishedAt": "2026-10-28T08:55:00Z",
     "macro": "M2",
-    "title": "W176: resolução do passe de retorno",
-    "status": "2/2 PASS; retorno completado tick29; 12 MoveCompleted; auditoria PASS, estado exato repetido.",
-    "summary": "Passe de volta completa ao primeiro alvo no tick29. Ele mantém posse e executa MoveCompleted nos ticks29–40 sem novo passe. Uma sequência determinística repetida, sem alegação de qualidade."
+    "title": "W177: bifurcação por draw de tackle",
+    "status": "2/2 PASS; mesmo prestate/decisões; threshold de 49.2901% auditado; outcomes diferentes.",
+    "summary": "Tick51 tackle técnico: .9402 supera o limiar e falha, mantendo posse; .3883 fica abaixo e sucede, transferindo posse ao tackler. Fórmula e fonte/fixture conferidas; sem claim de qualidade global."
   },
   "recentCycles": [
-    {
-      "id": "W169",
-      "wave": "W169",
-      "publishedAt": "2026-10-28T07:58:28Z",
-      "macro": "M2",
-      "title": "W169: full-state crosswalk em quatro seeds",
-      "status": "4/4 estados e 22 decisões pareados; 3/4 outcomes técnicos mudam com draw isolado; 1/4 não muda.",
-      "summary": "States JSON completos idênticos em todos os quatro ticks pós-reset; samples PassTechnical different. Resolver reproduz 3 flips e um não-flip; evidência local, sem medir qualidade ou incidência geral."
-    },
     {
       "id": "W170",
       "wave": "W170",
@@ -92,6 +83,15 @@
       "title": "W176: resolução do passe de retorno",
       "status": "2/2 PASS; retorno completado tick29; 12 MoveCompleted; auditoria PASS, estado exato repetido.",
       "summary": "Passe de volta completa ao primeiro alvo no tick29. Ele mantém posse e executa MoveCompleted nos ticks29–40 sem novo passe. Uma sequência determinística repetida, sem alegação de qualidade."
+    },
+    {
+      "id": "W177",
+      "wave": "W177",
+      "publishedAt": "2026-10-28T08:55:00Z",
+      "macro": "M2",
+      "title": "W177: bifurcação por draw de tackle",
+      "status": "2/2 PASS; mesmo prestate/decisões; threshold de 49.2901% auditado; outcomes diferentes.",
+      "summary": "Tick51 tackle técnico: .9402 supera o limiar e falha, mantendo posse; .3883 fica abaixo e sucede, transferindo posse ao tackler. Fórmula e fonte/fixture conferidas; sem claim de qualidade global."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W169",
-      "wave": "W169",
-      "publishedAt": "2026-10-28T07:58:28Z",
-      "macro": "M2",
-      "title": "W169: full-state crosswalk em quatro seeds",
-      "status": "4/4 estados e 22 decisões pareados; 3/4 outcomes técnicos mudam com draw isolado; 1/4 não muda.",
-      "summary": "States JSON completos idênticos em todos os quatro ticks pós-reset; samples PassTechnical different. Resolver reproduz 3 flips e um não-flip; evidência local, sem medir qualidade ou incidência geral."
-    },
-    {
       "id": "W170",
       "wave": "W170",
       "publishedAt": "2026-10-28T08:06:31Z",
@@ -1116,6 +1107,15 @@
       "title": "W176: resolução do passe de retorno",
       "status": "2/2 PASS; retorno completado tick29; 12 MoveCompleted; auditoria PASS, estado exato repetido.",
       "summary": "Passe de volta completa ao primeiro alvo no tick29. Ele mantém posse e executa MoveCompleted nos ticks29–40 sem novo passe. Uma sequência determinística repetida, sem alegação de qualidade."
+    },
+    {
+      "id": "W177",
+      "wave": "W177",
+      "publishedAt": "2026-10-28T08:55:00Z",
+      "macro": "M2",
+      "title": "W177: bifurcação por draw de tackle",
+      "status": "2/2 PASS; mesmo prestate/decisões; threshold de 49.2901% auditado; outcomes diferentes.",
+      "summary": "Tick51 tackle técnico: .9402 supera o limiar e falha, mantendo posse; .3883 fica abaixo e sucede, transferindo posse ao tackler. Fórmula e fonte/fixture conferidas; sem claim de qualidade global."
     },
     {
       "wave": "W66",
@@ -3010,6 +3010,14 @@
     {
       "id": "CP-W176-02",
       "title": "Handoff W176 validado"
+    },
+    {
+      "id": "CP-W177-01",
+      "title": "Tackle threshold em prestate idêntico"
+    },
+    {
+      "id": "CP-W177-02",
+      "title": "Handoff W177 publicado"
     }
   ]
 }
