@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-100",
-  "updatedAt": "2026-10-28T07:39:54Z",
-  "cycle": "SS-ORCH-001-W166-RNG-DRAW-COUNTERFACTUAL",
+  "version": "2026.10.28-portal-101",
+  "updatedAt": "2026-10-28T07:43:35Z",
+  "cycle": "SS-ORCH-001-W167-SECOND-PASS-DRAW-COUNTERFACTUAL",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W167: replicar o contrafactual de resolução na seed1733/tick1134; se confirmar, contar a incidência da classe nos quatro pares já executados antes de novas partidas.",
+  "currentFocus": "W168: censar cobertura dos traces existentes por seed e resultado técnico pós-intercept; instrumentar TEMP apenas 1734/1735 se as informações faltarem.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W166",
-    "wave": "W166",
-    "publishedAt": "2026-10-28T07:39:54Z",
+    "id": "W167",
+    "wave": "W167",
+    "publishedAt": "2026-10-28T07:43:35Z",
     "macro": "M2",
-    "title": "W166: draw de passe isolado no mesmo snapshot completo",
-    "status": "1/1 contrafactual focal PASS; mesma instância de estado e decisões; só PassTechnical muda. Sem promoção de gameplay.",
-    "summary": "Na seed1732/tick1839, sample 0,2875997 dá PassLaunched e 0,8172683 dá PassLaunchDegraded; outras 21 ActionResults/efeitos ficam iguais. A prova fecha o elo local, não a qualidade nem o agregado W163."
+    "title": "W167: segundo contrafactual causal do draw de passe",
+    "status": "1/1 PASS em seed1733; mesmo estado/decisões; somente PassTechnical substituído.",
+    "summary": "O sample baseline 0,2171809 lança o passe e o candidate 0,8711274 o degrada no mesmo snapshot; outras 21 ações/efeitos ficam iguais. Junto a W166, 2/2 seeds focais, prevalência na partida UNKNOWN."
   },
   "recentCycles": [
-    {
-      "id": "W159",
-      "wave": "W159",
-      "publishedAt": "2026-10-28T06:17:48Z",
-      "macro": "M2",
-      "title": "W159: composição Shoot×Tackle e draws por tick",
-      "status": "1/1 PASS; duas reproduções completas seed1733 idênticas; dois ShotBlocked:Tackled explicados por draw order/limiares.",
-      "summary": "Ticks 652/1192: ShootTechnical→TackleTechnical; Shoot falha (p 62,35%), Tackle vence (p 46,34%), sem lançamento, posse transferida. Resultado local; auditoria independente distinta indisponível."
-    },
     {
       "id": "W160",
       "wave": "W160",
@@ -92,6 +83,15 @@
       "title": "W166: draw de passe isolado no mesmo snapshot completo",
       "status": "1/1 contrafactual focal PASS; mesma instância de estado e decisões; só PassTechnical muda. Sem promoção de gameplay.",
       "summary": "Na seed1732/tick1839, sample 0,2875997 dá PassLaunched e 0,8172683 dá PassLaunchDegraded; outras 21 ActionResults/efeitos ficam iguais. A prova fecha o elo local, não a qualidade nem o agregado W163."
+    },
+    {
+      "id": "W167",
+      "wave": "W167",
+      "publishedAt": "2026-10-28T07:43:35Z",
+      "macro": "M2",
+      "title": "W167: segundo contrafactual causal do draw de passe",
+      "status": "1/1 PASS em seed1733; mesmo estado/decisões; somente PassTechnical substituído.",
+      "summary": "O sample baseline 0,2171809 lança o passe e o candidate 0,8711274 o degrada no mesmo snapshot; outras 21 ações/efeitos ficam iguais. Junto a W166, 2/2 seeds focais, prevalência na partida UNKNOWN."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W159",
-      "wave": "W159",
-      "publishedAt": "2026-10-28T06:17:48Z",
-      "macro": "M2",
-      "title": "W159: composição Shoot×Tackle e draws por tick",
-      "status": "1/1 PASS; duas reproduções completas seed1733 idênticas; dois ShotBlocked:Tackled explicados por draw order/limiares.",
-      "summary": "Ticks 652/1192: ShootTechnical→TackleTechnical; Shoot falha (p 62,35%), Tackle vence (p 46,34%), sem lançamento, posse transferida. Resultado local; auditoria independente distinta indisponível."
-    },
-    {
       "id": "W160",
       "wave": "W160",
       "publishedAt": "2026-10-28T06:23:33Z",
@@ -1116,6 +1107,15 @@
       "title": "W166: draw de passe isolado no mesmo snapshot completo",
       "status": "1/1 contrafactual focal PASS; mesma instância de estado e decisões; só PassTechnical muda. Sem promoção de gameplay.",
       "summary": "Na seed1732/tick1839, sample 0,2875997 dá PassLaunched e 0,8172683 dá PassLaunchDegraded; outras 21 ActionResults/efeitos ficam iguais. A prova fecha o elo local, não a qualidade nem o agregado W163."
+    },
+    {
+      "id": "W167",
+      "wave": "W167",
+      "publishedAt": "2026-10-28T07:43:35Z",
+      "macro": "M2",
+      "title": "W167: segundo contrafactual causal do draw de passe",
+      "status": "1/1 PASS em seed1733; mesmo estado/decisões; somente PassTechnical substituído.",
+      "summary": "O sample baseline 0,2171809 lança o passe e o candidate 0,8711274 o degrada no mesmo snapshot; outras 21 ações/efeitos ficam iguais. Junto a W166, 2/2 seeds focais, prevalência na partida UNKNOWN."
     },
     {
       "wave": "W66",
@@ -2958,6 +2958,10 @@
     {
       "id": "CP-W166-02",
       "title": "W166 same-state PassTechnical counterfactual"
+    },
+    {
+      "id": "CP-W167-01",
+      "title": "Second same-state PassTechnical counterfactual"
     }
   ]
 }
