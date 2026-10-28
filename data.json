@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-124",
-  "updatedAt": "2026-10-28T09:47:00Z",
-  "cycle": "SS-ORCH-001-W191-VERTICAL-SHOOT-OPTIONAL-EXPERIMENT",
+  "version": "2026.10.28-portal-125",
+  "updatedAt": "2026-10-28T10:15:00Z",
+  "cycle": "SS-ORCH-001-W192-VERTICAL-SHOOT-CROSS-SEED-REPLICATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W191: habilitar somente VerticalAttacking.Shoot em configuração temporária; comparar mesma fixture/seed1733 reach4 contra W190 baseline. Capture quando a flag cria threat value, muda vencedor, tentativa/resolução e placar; repetir ON para determinismo. Flag permanece default-off e nenhum fonte de produção é editado.",
+  "currentFocus": "W192: fixture W07, seed1732, reach4; comparar OFF W189 e ON isolado VerticalAttacking.Shoot, repetir ON para determinismo. Medir posse, tentativas, eventos e score; flag default-off, nenhum patch de produção.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W190",
-    "wave": "W190",
-    "publishedAt": "2026-10-28T09:47:00Z",
+    "id": "W191",
+    "wave": "W191",
+    "publishedAt": "2026-10-28T10:15:00Z",
     "macro": "M2",
-    "title": "W190: margens de Shoot validadas cross-seed",
-    "status": "1/1 PASS; seed1733 tick95 matches W181; cross-seed audit PASS.",
-    "summary": "Move > Shoot em5043/5043 decisões elegíveis; gap<.08 em duas linhas de cada seed; 0 chutes nas duas partidas. +.08 é só aritmética de snapshot."
+    "title": "W191: contexto Shoot gerou um chute e gol em seed1733",
+    "status": "Config-only: repetição ON determinística; uma fixture/seed, sem promoção.",
+    "summary": "OFF 0–0 sem chute; ON elevou Shoot 0,769→0,943 em tick2096, ShotEvent e gol tick2098, 1–0. Efeito positivo pontual; generalidade UNKNOWN."
   },
   "recentCycles": [
     {
@@ -92,6 +92,15 @@
       "title": "W190: margens de Shoot validadas cross-seed",
       "status": "1/1 PASS; seed1733 tick95 matches W181; cross-seed audit PASS.",
       "summary": "Move > Shoot em5043/5043 decisões elegíveis; gap<.08 em duas linhas de cada seed; 0 chutes nas duas partidas. +.08 é só aritmética de snapshot."
+    },
+    {
+      "id": "W191",
+      "wave": "W191",
+      "publishedAt": "2026-10-28T10:15:00Z",
+      "macro": "M2",
+      "title": "W191: contexto Shoot gerou um chute e gol em seed1733",
+      "status": "Config-only: repetição ON determinística; uma fixture/seed, sem promoção.",
+      "summary": "OFF 0–0 sem chute; ON elevou Shoot 0,769→0,943 em tick2096, ShotEvent e gol tick2098, 1–0. Efeito positivo pontual; generalidade UNKNOWN."
     }
   ],
   "macros": [
@@ -1118,6 +1127,15 @@
       "summary": "Move > Shoot em5043/5043 decisões elegíveis; gap<.08 em duas linhas de cada seed; 0 chutes nas duas partidas. +.08 é só aritmética de snapshot."
     },
     {
+      "id": "W191",
+      "wave": "W191",
+      "publishedAt": "2026-10-28T10:15:00Z",
+      "macro": "M2",
+      "title": "W191: contexto Shoot gerou um chute e gol em seed1733",
+      "status": "Config-only: repetição ON determinística; uma fixture/seed, sem promoção.",
+      "summary": "OFF 0–0 sem chute; ON elevou Shoot 0,769→0,943 em tick2096, ShotEvent e gol tick2098, 1–0. Efeito positivo pontual; generalidade UNKNOWN."
+    },
+    {
       "wave": "W66",
       "publishedAt": "2026-10-27T14:35:00Z",
       "macro": "M2",
@@ -1140,14 +1158,6 @@
       "title": "Replay exato validado em 15 snapshots de passe",
       "summary": "Em três seeds, o resolver reproduziu resultado e movimento no cursor original em 15/15 casos. Sondagens locais adjacentes mudaram alguns resultados técnicos; não são trajetórias alternativas nem evidência de melhora em partidas.",
       "result": "Auditoria computacional 111/111; prevalência e qualidade desconhecidas; V2 permanece research-only"
-    },
-    {
-      "wave": "W40",
-      "publishedAt": "2026-10-27T11:43:00Z",
-      "macro": "M2",
-      "title": "Cursor altera um passe local; destinatário seguinte diverge",
-      "summary": "No mesmo cenário controlado, a resolução do primeiro passe mudou; com o cursor pareado, ambos alcançaram o mesmo receptor inicial, mas escolheram destinatários diferentes no passe seguinte. O resultado é local e não mede qualidade geral.",
-      "result": "Evidência computacional local; flag permanece default-off; sem aceite do MVP"
     }
   ],
   "history": [
