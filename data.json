@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-136",
-  "updatedAt": "2026-10-28T11:54:00Z",
-  "cycle": "SS-ORCH-001-W203-EXISTING-TRACE-BOUNDARY-CENSUS",
+  "version": "2026.10.28-portal-137",
+  "updatedAt": "2026-10-28T12:01:00Z",
+  "cycle": "SS-ORCH-001-W204-W158-TREATMENT-IDENTITY-AUDIT",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W203: inventariar os traces já existentes para diagnósticos de interceptação/distâncias/draws próximos a4m. Determinar cobertura disponível antes de afirmar frequência; não rerodar partidas.",
+  "currentFocus": "W204: resolver a divergência entre o rótulo de tratamento do relatório W158 (BallCarrierContextualMoveV2) e a construção explícita `new DecisionEngine(enabled)` no teste armazenado. Auditar assinatura-fonte e SimulationOptions; publicar corrigendum aditivo se confirmado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W202",
-    "wave": "W202",
-    "publishedAt": "2026-10-28T11:54:00Z",
+    "id": "W203",
+    "wave": "W203",
+    "publishedAt": "2026-10-28T12:01:00Z",
     "macro": "M2",
-    "title": "W202: resíduo de chance vem do arredondamento da geometria",
-    "status": "Auditoria numérica da DLL PASS; frequência natural UNKNOWN; sem patch.",
-    "summary": "Probability=0 exatamente em4m; BitDecrement(4) dá1,258e-14%. Construções diagonais transladadas nominalmente a4 arredondam 1–2 ULP abaixo; ponto W200,6 ULP abaixo."
+    "title": "W203: nenhum caso no último centímetro do alcance entre os traces",
+    "status": "Auditoria dos corpora PASS; incidência natural UNKNOWN.",
+    "summary": "W156 61 distâncias, W157 20 draws, W158 162 amostras/48 draws: 2 episódios near-4 distintos (3,9085 e3,9237m), zero em3,99–4m e zero draw0. Fonte produtora sem SHA DLL."
   },
   "recentCycles": [
-    {
-      "id": "W194",
-      "wave": "W194",
-      "publishedAt": "2026-10-28T11:08:00Z",
-      "macro": "M2",
-      "title": "W194: chute “interferido” ainda pode resultar em gol",
-      "status": "Auditoria PASS; estado pre-decisão igual; cadeia local Shoot→30m→gol confirmada.",
-      "summary": "No tick2118, OFF Move vs ON Shoot no mesmo pre-state. ON combina Shoot e Tackle bem-sucedidos, gera `ShootLaunchInterfered`, trajetória ativa30m e gol away no tick2120. OFF sem chute."
-    },
     {
       "id": "W195",
       "wave": "W195",
@@ -101,6 +92,15 @@
       "title": "W202: resíduo de chance vem do arredondamento da geometria",
       "status": "Auditoria numérica da DLL PASS; frequência natural UNKNOWN; sem patch.",
       "summary": "Probability=0 exatamente em4m; BitDecrement(4) dá1,258e-14%. Construções diagonais transladadas nominalmente a4 arredondam 1–2 ULP abaixo; ponto W200,6 ULP abaixo."
+    },
+    {
+      "id": "W203",
+      "wave": "W203",
+      "publishedAt": "2026-10-28T12:01:00Z",
+      "macro": "M2",
+      "title": "W203: nenhum caso no último centímetro do alcance entre os traces",
+      "status": "Auditoria dos corpora PASS; incidência natural UNKNOWN.",
+      "summary": "W156 61 distâncias, W157 20 draws, W158 162 amostras/48 draws: 2 episódios near-4 distintos (3,9085 e3,9237m), zero em3,99–4m e zero draw0. Fonte produtora sem SHA DLL."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W194",
-      "wave": "W194",
-      "publishedAt": "2026-10-28T11:08:00Z",
-      "macro": "M2",
-      "title": "W194: chute “interferido” ainda pode resultar em gol",
-      "status": "Auditoria PASS; estado pre-decisão igual; cadeia local Shoot→30m→gol confirmada.",
-      "summary": "No tick2118, OFF Move vs ON Shoot no mesmo pre-state. ON combina Shoot e Tackle bem-sucedidos, gera `ShootLaunchInterfered`, trajetória ativa30m e gol away no tick2120. OFF sem chute."
-    },
-    {
       "id": "W195",
       "wave": "W195",
       "publishedAt": "2026-10-28T11:14:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W202: resíduo de chance vem do arredondamento da geometria",
       "status": "Auditoria numérica da DLL PASS; frequência natural UNKNOWN; sem patch.",
       "summary": "Probability=0 exatamente em4m; BitDecrement(4) dá1,258e-14%. Construções diagonais transladadas nominalmente a4 arredondam 1–2 ULP abaixo; ponto W200,6 ULP abaixo."
+    },
+    {
+      "id": "W203",
+      "wave": "W203",
+      "publishedAt": "2026-10-28T12:01:00Z",
+      "macro": "M2",
+      "title": "W203: nenhum caso no último centímetro do alcance entre os traces",
+      "status": "Auditoria dos corpora PASS; incidência natural UNKNOWN.",
+      "summary": "W156 61 distâncias, W157 20 draws, W158 162 amostras/48 draws: 2 episódios near-4 distintos (3,9085 e3,9237m), zero em3,99–4m e zero draw0. Fonte produtora sem SHA DLL."
     },
     {
       "wave": "W66",
@@ -3132,6 +3132,10 @@
     {
       "id": "CP-W202-02",
       "title": "Audit numérica concluída; censo de traces W203 iniciado"
+    },
+    {
+      "id": "CP-W203-02",
+      "title": "Censo de traces fechado; auditoria de tratamento W158 iniciada"
     }
   ]
 }
