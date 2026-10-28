@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-71",
-  "updatedAt": "2026-10-28T00:17:23-03:00",
-  "cycle": "SS-ORCH-001-W136-POST-RECEIPT-PASS-TERMINAL",
+  "version": "2026.10.28-portal-72",
+  "updatedAt": "2026-10-28T00:21:25-03:00",
+  "cycle": "SS-ORCH-001-W137-POST-TERMINAL-DECISIONS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W137: observar a primeira decisão após os três terminais e a decisão seguinte da rota Move, ligando posse/ação/ActivePass; sem inferir qualidade global.",
+  "currentFocus": "W138: seguir os três ActivePass recém-criados até terminal e observar somente a próxima decisão após Move t659 no quarto ramo.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W136",
-    "wave": "W136",
-    "publishedAt": "2026-10-28T03:17:23Z",
+    "id": "W137",
+    "wave": "W137",
+    "publishedAt": "2026-10-28T03:21:25Z",
     "macro": "M2",
-    "title": "W136: terminais das continuações",
-    "status": "4/4 PASS; três passes completam (incluindo o degradado), Move conserva posse.",
-    "summary": "PassCompleted e posse no alvo ligados por ActivePass nos três ramos. No quarto, MoveCompleted mantém posse e não há novo ActivePass naquele tick."
+    "title": "W137: decisão do carrier após terminal",
+    "status": "4/4 PASS; três Pass criam ActivePass; Move branch mantém posse e no tick seguinte escolhe Pass.",
+    "summary": "Após três PassCompleted, o alvo escolhe Pass no próximo tick; o alvo do outro terminal escolhe Move. Na rota Move t333, t334 escolhe Pass."
   },
   "recentCycles": [
-    {
-      "id": "W129",
-      "wave": "W129",
-      "publishedAt": "2026-10-28T03:31:00Z",
-      "macro": "M2",
-      "title": "W129: vínculo do passe natural ao OffsideSnapshot",
-      "status": "2/2 testes PASS (quatro branches); tick/PassAttempted/ActionResult/ActivePass ligados; pós-lançamento UNKNOWN.",
-      "summary": "W07 seeds 1730/1731: snapshot tick bate com o tick do trace e o target real não está marcado no lançamento. Target OFF natural 5c25708f…, diferente do candidato 24bac7be… do snapshot congelado W126."
-    },
     {
       "id": "W130",
       "wave": "W130",
@@ -92,6 +83,15 @@
       "title": "W136: terminais das continuações",
       "status": "4/4 PASS; três passes completam (incluindo o degradado), Move conserva posse.",
       "summary": "PassCompleted e posse no alvo ligados por ActivePass nos três ramos. No quarto, MoveCompleted mantém posse e não há novo ActivePass naquele tick."
+    },
+    {
+      "id": "W137",
+      "wave": "W137",
+      "publishedAt": "2026-10-28T03:21:25Z",
+      "macro": "M2",
+      "title": "W137: decisão do carrier após terminal",
+      "status": "4/4 PASS; três Pass criam ActivePass; Move branch mantém posse e no tick seguinte escolhe Pass.",
+      "summary": "Após três PassCompleted, o alvo escolhe Pass no próximo tick; o alvo do outro terminal escolhe Move. Na rota Move t333, t334 escolhe Pass."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W129",
-      "wave": "W129",
-      "publishedAt": "2026-10-28T03:31:00Z",
-      "macro": "M2",
-      "title": "W129: vínculo do passe natural ao OffsideSnapshot",
-      "status": "2/2 testes PASS (quatro branches); tick/PassAttempted/ActionResult/ActivePass ligados; pós-lançamento UNKNOWN.",
-      "summary": "W07 seeds 1730/1731: snapshot tick bate com o tick do trace e o target real não está marcado no lançamento. Target OFF natural 5c25708f…, diferente do candidato 24bac7be… do snapshot congelado W126."
-    },
-    {
       "id": "W130",
       "wave": "W130",
       "publishedAt": "2026-10-28T03:53:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W136: terminais das continuações",
       "status": "4/4 PASS; três passes completam (incluindo o degradado), Move conserva posse.",
       "summary": "PassCompleted e posse no alvo ligados por ActivePass nos três ramos. No quarto, MoveCompleted mantém posse e não há novo ActivePass naquele tick."
+    },
+    {
+      "id": "W137",
+      "wave": "W137",
+      "publishedAt": "2026-10-28T03:21:25Z",
+      "macro": "M2",
+      "title": "W137: decisão do carrier após terminal",
+      "status": "4/4 PASS; três Pass criam ActivePass; Move branch mantém posse e no tick seguinte escolhe Pass.",
+      "summary": "Após três PassCompleted, o alvo escolhe Pass no próximo tick; o alvo do outro terminal escolhe Move. Na rota Move t333, t334 escolhe Pass."
     },
     {
       "wave": "W66",
@@ -2790,6 +2790,14 @@
     {
       "id": "CP-W136-01",
       "title": "Terminal e posse das continuações"
+    },
+    {
+      "id": "CP-W137-00",
+      "title": "Preflight da decisão pós-terminal"
+    },
+    {
+      "id": "CP-W137-01",
+      "title": "Carrier escolhe ação seguinte"
     }
   ]
 }
