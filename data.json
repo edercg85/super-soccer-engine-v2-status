@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-122",
-  "updatedAt": "2026-10-28T09:39:10Z",
-  "cycle": "SS-ORCH-001-W189-SHOOT-MARGIN-DISTRIBUTION",
+  "version": "2026.10.28-portal-123",
+  "updatedAt": "2026-10-28T09:42:00Z",
+  "cycle": "SS-ORCH-001-W190-CROSS-SEED-MARGIN-CHECK",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W189: registrar scores/rank/distance por decisão elegível em seed1732; calcular distribuição do gap entre vencedor atual e Shoot em vez de médias por faixa. Apenas offline replay data; sem intervenção de gameplay. Usar como threshold characterization, não como estimativa de chute de gol.",
+  "currentFocus": "W190: recolher mesma tabela per-decision para seed1733 e comparar distribuições por distância; comprovar hash de estado W181 ao tick95 e validar os 2.526 elegíveis. Não agregar se denominadores/inputs divergirem.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W188",
-    "wave": "W188",
-    "publishedAt": "2026-10-28T09:39:10Z",
+    "id": "W189",
+    "wave": "W189",
+    "publishedAt": "2026-10-28T09:42:00Z",
     "macro": "M2",
-    "title": "W188: fórmula e escala dos scores de ação",
-    "status": "Auditoria estática de seis arquivos fonte PASS; sem mudança no motor.",
-    "summary": "Move default é weighted attributes sem contexto espacial; Shoot=.30 distância+.20 lane+.50 atributos; Pass=.40 progressão+.30 espaço+.30 lane. Correção funcional do score permanece UNKNOWN."
+    "title": "W189: distribuição da margem Shoot vs vencedor",
+    "status": "1/1 PASS; 2517 per-decision rows, margens e bins auditados.",
+    "summary": "Gap vencedor−Shoot positivo em todos os pontos; mediana .224 (20–40m), .339 (40–60m), .392 (60–80m), .467 (≥80m). Offset snapshot-only .20/.30/.40 mudaria 113/689/1532 rankings."
   },
   "recentCycles": [
-    {
-      "id": "W181",
-      "wave": "W181",
-      "publishedAt": "2026-10-28T09:03:00Z",
-      "macro": "M2",
-      "title": "W181: turnover após recuperação e nova posse",
-      "status": "1/1 PASS; audit PASS; sequência local verificada.",
-      "summary": "PassFailed tick79 deixa target away recuperar no80; tackle home successful muda posse no81. Home passa/conclui no90; outro passe falha95 e home teammate recupera. Sem chute80–95."
-    },
     {
       "id": "W182",
       "wave": "W182",
@@ -92,6 +83,15 @@
       "title": "W188: fórmula e escala dos scores de ação",
       "status": "Auditoria estática de seis arquivos fonte PASS; sem mudança no motor.",
       "summary": "Move default é weighted attributes sem contexto espacial; Shoot=.30 distância+.20 lane+.50 atributos; Pass=.40 progressão+.30 espaço+.30 lane. Correção funcional do score permanece UNKNOWN."
+    },
+    {
+      "id": "W189",
+      "wave": "W189",
+      "publishedAt": "2026-10-28T09:42:00Z",
+      "macro": "M2",
+      "title": "W189: distribuição da margem Shoot vs vencedor",
+      "status": "1/1 PASS; 2517 per-decision rows, margens e bins auditados.",
+      "summary": "Gap vencedor−Shoot positivo em todos os pontos; mediana .224 (20–40m), .339 (40–60m), .392 (60–80m), .467 (≥80m). Offset snapshot-only .20/.30/.40 mudaria 113/689/1532 rankings."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W181",
-      "wave": "W181",
-      "publishedAt": "2026-10-28T09:03:00Z",
-      "macro": "M2",
-      "title": "W181: turnover após recuperação e nova posse",
-      "status": "1/1 PASS; audit PASS; sequência local verificada.",
-      "summary": "PassFailed tick79 deixa target away recuperar no80; tackle home successful muda posse no81. Home passa/conclui no90; outro passe falha95 e home teammate recupera. Sem chute80–95."
-    },
-    {
       "id": "W182",
       "wave": "W182",
       "publishedAt": "2026-10-28T09:06:44Z",
@@ -1116,6 +1107,15 @@
       "title": "W188: fórmula e escala dos scores de ação",
       "status": "Auditoria estática de seis arquivos fonte PASS; sem mudança no motor.",
       "summary": "Move default é weighted attributes sem contexto espacial; Shoot=.30 distância+.20 lane+.50 atributos; Pass=.40 progressão+.30 espaço+.30 lane. Correção funcional do score permanece UNKNOWN."
+    },
+    {
+      "id": "W189",
+      "wave": "W189",
+      "publishedAt": "2026-10-28T09:42:00Z",
+      "macro": "M2",
+      "title": "W189: distribuição da margem Shoot vs vencedor",
+      "status": "1/1 PASS; 2517 per-decision rows, margens e bins auditados.",
+      "summary": "Gap vencedor−Shoot positivo em todos os pontos; mediana .224 (20–40m), .339 (40–60m), .392 (60–80m), .467 (≥80m). Offset snapshot-only .20/.30/.40 mudaria 113/689/1532 rankings."
     },
     {
       "wave": "W66",
@@ -3082,6 +3082,10 @@
     {
       "id": "CP-W188-02",
       "title": "W188 fórmula auditada; W189 iniciado"
+    },
+    {
+      "id": "CP-W189-02",
+      "title": "W189 distribuído e validado; W190 iniciado"
     }
   ]
 }
