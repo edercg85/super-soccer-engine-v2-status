@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-186",
-  "updatedAt": "2026-10-28T18:03:15Z",
-  "cycle": "W261",
+  "version": "2026.10.28-portal-187",
+  "updatedAt": "2026-10-28T18:10:14Z",
+  "cycle": "W262",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W261 concluiu a ligação dos clips visuais ao W260 por fingerprints completos. W262 prioriza revisão humana dos clips; se indisponível, seguir com rastreio compacto de posse/progressão sem promover conclusões de qualidade.",
+  "currentFocus": "Próximo: W263 está planejada para comparar a continuação imediata da posse após tick691 usando os dados já capturados; ainda não iniciada. A revisão humana do viewer também segue pendente.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W261",
-    "wave": "W261",
-    "publishedAt": "2026-10-28T18:03:15Z",
+    "id": "W262",
+    "wave": "W262",
+    "publishedAt": "2026-10-28T18:10:14Z",
     "macro": "M3",
-    "title": "Clips W260 ligados ao run por fingerprints completos",
-    "status": "Artefato visual verificável; review humano pendente",
-    "summary": "Clips de 11 frames nos dois braços; input, state final, eventos, draws RNG, ticks e scores coincidem exatamente com W260; manifests/chunks ReadVerified PASS. Human review UNKNOWN."
+    "title": "Viewer offline renderizado e controles dos clips validados",
+    "status": "Ferramenta de inspeção pronta; review humano de gameplay pendente",
+    "summary": "HTML autocontido para ticks686-696. Edge encontrou e validou correção de contraste; harness de DOM/canvas passou 10 checks. Não houve julgamento de qualidade da jogada."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W257",
-      "wave": "W257",
-      "publishedAt": "2026-10-28T17:14:29Z",
-      "macro": "M3",
-      "title": "Redirecionamento Pass-aware replicado em 2 seeds",
-      "status": "Mecanismo local confirmado; qualidade global UNKNOWN",
-      "summary": "Pass ON redireciona o alvo no mesmo prestate; alvo do PassAttempted tipado confirma os dois braços; fingerprints reproduzem runs prévios."
-    },
-    {
       "id": "W258",
       "wave": "W258",
       "publishedAt": "2026-10-28T17:31:44Z",
@@ -101,6 +92,15 @@
       "title": "Clips W260 ligados ao run por fingerprints completos",
       "status": "Artefato visual verificável; review humano pendente",
       "summary": "Clips de 11 frames nos dois braços; input, state final, eventos, draws RNG, ticks e scores coincidem exatamente com W260; manifests/chunks ReadVerified PASS. Human review UNKNOWN."
+    },
+    {
+      "id": "W262",
+      "wave": "W262",
+      "publishedAt": "2026-10-28T18:10:14Z",
+      "macro": "M3",
+      "title": "Viewer offline renderizado e controles dos clips validados",
+      "status": "Ferramenta de inspeção pronta; review humano de gameplay pendente",
+      "summary": "HTML autocontido para ticks686-696. Edge encontrou e validou correção de contraste; harness de DOM/canvas passou 10 checks. Não houve julgamento de qualidade da jogada."
     }
   ],
   "macros": [
@@ -1060,9 +1060,9 @@
     "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
     "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
     "shotsGoals": "Finalizações 6→13 e gols 5→11; intervalos pareados cruzam zero, sem evidência de ganho consistente.",
-    "lastIntegrated": "W255 continua a última avaliação integrada. W259/W260 replicam efeitos locais em três seeds. W261 torna o mecanismo visualmente inspecionável por clips, mas ainda sem julgamento humano.",
-    "mainBlocker": "Revisão humana dos clips pendente; faltam também avaliação integrada de progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência. Os efeitos locais não atribuem scores.",
-    "replay": "Não há replay navegável publicado no portal; clips W260 OFF/ON ticks686-696 foram preparados e verificados por fingerprint, mas revisão humana segue pendente."
+    "lastIntegrated": "W255 continua a última avaliação integrada. W259/W260 mostram efeitos locais; W261/W262 ligam esses dados a clips e viewer, sem avaliação humana do futebol.",
+    "mainBlocker": "Revisão humana da sequência permanece pendente; também faltam avaliações integradas recentes de progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência.",
+    "replay": "Não há replay navegável publicado no portal; viewer offline local de ticks686-696 passou renderização técnica, mas revisão humana do futebol segue pendente."
   },
   "diary": [
     {
@@ -1102,15 +1102,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W257",
-      "wave": "W257",
-      "publishedAt": "2026-10-28T17:14:29Z",
-      "macro": "M3",
-      "title": "Redirecionamento Pass-aware replicado em 2 seeds",
-      "status": "Mecanismo local confirmado; qualidade global UNKNOWN",
-      "summary": "Pass ON redireciona o alvo no mesmo prestate; alvo do PassAttempted tipado confirma os dois braços; fingerprints reproduzem runs prévios."
-    },
-    {
       "id": "W258",
       "wave": "W258",
       "publishedAt": "2026-10-28T17:31:44Z",
@@ -1145,6 +1136,15 @@
       "title": "Clips W260 ligados ao run por fingerprints completos",
       "status": "Artefato visual verificável; review humano pendente",
       "summary": "Clips de 11 frames nos dois braços; input, state final, eventos, draws RNG, ticks e scores coincidem exatamente com W260; manifests/chunks ReadVerified PASS. Human review UNKNOWN."
+    },
+    {
+      "id": "W262",
+      "wave": "W262",
+      "publishedAt": "2026-10-28T18:10:14Z",
+      "macro": "M3",
+      "title": "Viewer offline renderizado e controles dos clips validados",
+      "status": "Ferramenta de inspeção pronta; review humano de gameplay pendente",
+      "summary": "HTML autocontido para ticks686-696. Edge encontrou e validou correção de contraste; harness de DOM/canvas passou 10 checks. Não houve julgamento de qualidade da jogada."
     },
     {
       "wave": "W66",
@@ -3359,6 +3359,10 @@
     {
       "id": "CP-W261-FINAL",
       "title": "W261 final — clips visuais com identidade W260 confirmada"
+    },
+    {
+      "id": "CP-W262-FINAL",
+      "title": "W262 final — viewer offline renderizado e controles validados"
     }
   ]
 }
