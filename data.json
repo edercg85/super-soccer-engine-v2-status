@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-183",
-  "updatedAt": "2026-10-28T17:31:44Z",
-  "cycle": "W258",
+  "version": "2026.10.28-portal-184",
+  "updatedAt": "2026-10-28T17:42:19Z",
+  "cycle": "W259",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W258 concluiu a replicação alternativa. W259 localizará a primeira divergência depois do tick35 na seed1740 e seguirá eventos/posse até o primeiro terminal relevante; sem editar gameplay.",
+  "currentFocus": "W259 concluiu a localização da primeira divergência e do terminal de passe em seeds1740/1749. Próxima etapa: terceiro seed na mesma preparação e revisão humana/replay do mecanismo, antes de propor mudanças de gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W258",
-    "wave": "W258",
-    "publishedAt": "2026-10-28T17:31:44Z",
+    "id": "W259",
+    "wave": "W259",
+    "publishedAt": "2026-10-28T17:42:19Z",
     "macro": "M3",
-    "title": "Pass-aware penaliza candidato, mas o primeiro alvo não muda",
-    "status": "Mecanismo local confirmado; efeito no placar não atribuído",
-    "summary": "Em COR×PAL, o tick2 same-state rebaixou candidato offside rank1→6 nos dois seeds, mas Move venceu. O primeiro passe no tick4 teve mesmo estado e alvo nos braços. Ambos os ON terminaram 0–1 contra 0–0 OFF; divergência tardia não localizada."
+    "title": "Efeito local Pass-aware: decisão→impedimento/conclusão em dois seeds",
+    "status": "Mecanismo causal local replicado; qualidade global UNKNOWN",
+    "summary": "Com mesmo prestate, OFF tenta passe a alvo offside e gera impedimento; ON seleciona Move e o mesmo passe é tentado depois e completado (seed1749). Seed1740 também liga a tentativa OFF ao impedimento; sem atribuição ao placar."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W249",
-      "wave": "W249",
-      "publishedAt": "2026-10-28T16:49:00Z",
-      "macro": "M3",
-      "title": "W249: 18-seed escolha inicial do receptor",
-      "status": "Concluído — mecanismo inicial replicado; qualidade desconhecida.",
-      "summary": "18/18 estados de entrada tick2 iguais; Receive troca candidato 4c69→827d e direção 91,8°; todos os estados pós-Move divergem, mantendo Move/PositionToReceiveBall."
-    },
-    {
       "id": "W250",
       "wave": "W250",
       "publishedAt": "2026-10-28T17:01:00Z",
@@ -101,6 +92,15 @@
       "title": "Pass-aware penaliza candidato, mas o primeiro alvo não muda",
       "status": "Mecanismo local confirmado; efeito no placar não atribuído",
       "summary": "Em COR×PAL, o tick2 same-state rebaixou candidato offside rank1→6 nos dois seeds, mas Move venceu. O primeiro passe no tick4 teve mesmo estado e alvo nos braços. Ambos os ON terminaram 0–1 contra 0–0 OFF; divergência tardia não localizada."
+    },
+    {
+      "id": "W259",
+      "wave": "W259",
+      "publishedAt": "2026-10-28T17:42:19Z",
+      "macro": "M3",
+      "title": "Efeito local Pass-aware: decisão→impedimento/conclusão em dois seeds",
+      "status": "Mecanismo causal local replicado; qualidade global UNKNOWN",
+      "summary": "Com mesmo prestate, OFF tenta passe a alvo offside e gera impedimento; ON seleciona Move e o mesmo passe é tentado depois e completado (seed1749). Seed1740 também liga a tentativa OFF ao impedimento; sem atribuição ao placar."
     }
   ],
   "macros": [
@@ -1060,9 +1060,9 @@
     "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
     "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
     "shotsGoals": "Finalizações 6→13 e gols 5→11; intervalos pareados cruzam zero, sem evidência de ganho consistente.",
-    "lastIntegrated": "W255 é a última avaliação integrada de qualidade. W258 trouxe quatro jogos em outra preparação para avaliar mecanismo; não é aprovação de qualidade.",
-    "mainBlocker": "Progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência geral ainda precisam ser avaliados em conjunto; falta revisão humana de replay.",
-    "replay": "Não há replay navegável referenciado para revisão humana da comparação W255."
+    "lastIntegrated": "W255 continua a última comparação integrada de qualidade. W259 é evidência causal local em dois seeds, não um teste de qualidade ou promoção de flag.",
+    "mainBlocker": "Progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência geral ainda precisam de avaliação integrada e revisão humana de replay. W259 não liga o mecanismo local ao placar final.",
+    "replay": "Não há replay navegável referenciado; revisão humana dos recortes W259 pendente."
   },
   "diary": [
     {
@@ -1102,15 +1102,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W249",
-      "wave": "W249",
-      "publishedAt": "2026-10-28T16:49:00Z",
-      "macro": "M3",
-      "title": "W249: 18-seed escolha inicial do receptor",
-      "status": "Concluído — mecanismo inicial replicado; qualidade desconhecida.",
-      "summary": "18/18 estados de entrada tick2 iguais; Receive troca candidato 4c69→827d e direção 91,8°; todos os estados pós-Move divergem, mantendo Move/PositionToReceiveBall."
-    },
-    {
       "id": "W250",
       "wave": "W250",
       "publishedAt": "2026-10-28T17:01:00Z",
@@ -1145,6 +1136,15 @@
       "title": "Pass-aware penaliza candidato, mas o primeiro alvo não muda",
       "status": "Mecanismo local confirmado; efeito no placar não atribuído",
       "summary": "Em COR×PAL, o tick2 same-state rebaixou candidato offside rank1→6 nos dois seeds, mas Move venceu. O primeiro passe no tick4 teve mesmo estado e alvo nos braços. Ambos os ON terminaram 0–1 contra 0–0 OFF; divergência tardia não localizada."
+    },
+    {
+      "id": "W259",
+      "wave": "W259",
+      "publishedAt": "2026-10-28T17:42:19Z",
+      "macro": "M3",
+      "title": "Efeito local Pass-aware: decisão→impedimento/conclusão em dois seeds",
+      "status": "Mecanismo causal local replicado; qualidade global UNKNOWN",
+      "summary": "Com mesmo prestate, OFF tenta passe a alvo offside e gera impedimento; ON seleciona Move e o mesmo passe é tentado depois e completado (seed1749). Seed1740 também liga a tentativa OFF ao impedimento; sem atribuição ao placar."
     },
     {
       "wave": "W66",
@@ -3343,6 +3343,10 @@
     {
       "id": "CP-W259-PREFLIGHT",
       "title": "W259 preflight — locate divergence and downstream terminal"
+    },
+    {
+      "id": "CP-W259-FINAL",
+      "title": "W259 final — mesmo alvo: OFF impedimento, ON conclusão posterior"
     }
   ]
 }
