@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-197",
-  "updatedAt": "2026-10-28T23:20:34Z",
-  "cycle": "W273",
+  "version": "2026.10.28-portal-198",
+  "updatedAt": "2026-10-28T23:51:55Z",
+  "cycle": "W274",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — progressão e criação. W272 encontrou grande ganho de acesso ao terço/área e menos ticks sem posse com VerticalAttacking.Move ON, mas também menor apoio próximo e 6 gols por jogo. W273 isola Pass OFF/ON com Move ON para testar conexão e suporte sem perder progressão. Replays aguardam julgamento humano.",
+  "currentFocus": "Frente ativa M2 — progressão e criação. W274 compara Move+Pass ON contra ambos OFF na preparação independente COR×PAL de 90 minutos, 18 pares W214. W272/W273 encontraram acesso territorial maior e impedimentos/ticks sem posse menores, com proxies de apoio ainda menores e taxa de gols alta. Revisão humana dos replays segue pendente.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W273",
-    "wave": "W273",
-    "publishedAt": "2026-10-28T23:20:34Z",
+    "id": "W274",
+    "wave": "W274",
+    "publishedAt": "2026-10-28T23:51:55Z",
     "macro": "M2",
-    "title": "Passes com progressão vertical ativa",
-    "status": "EM EXECUÇÃO — default permanece OFF.",
-    "summary": "18 pares W214; Move ON fixo; Pass OFF/ON como única diferença; Receive ON e BCCM V2 OFF. Hipótese: recuperar conexão de apoio mantendo acesso territorial."
+    "title": "Validação cruzada Move+Pass em COR×PAL",
+    "status": "EM EXECUÇÃO — validação de transferência, sem mudança de defaults.",
+    "summary": "18 pares W214 na preparação independente COR×PAL. Pacote Move+Pass ON contra OFF; mesma seed/input por par."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "InvestigaÃ§Ã£o continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W269",
-      "wave": "W269",
-      "publishedAt": "2026-10-28T20:47:14Z",
-      "macro": "M3",
-      "title": "Métrica de tentativas corrigida; gargalo a montante ainda desconhecido",
-      "status": "Concluído com limites — sem mudança de gameplay; funil ofensivo e avaliação humana pendentes.",
-      "summary": "W255 contava ShotOffTargetEvent como nova finalização. Recontagem comparável: 12 ShotEvent no candidato vs 6 na baseline; IC pareado cruza zero. Nove jogos candidatos sem tentativa; telemetria atual não localiza a falha anterior."
-    },
-    {
       "id": "W270",
       "wave": "W270",
       "publishedAt": "2026-10-28T22:18:38Z",
@@ -99,8 +90,17 @@
       "publishedAt": "2026-10-28T23:20:34Z",
       "macro": "M2",
       "title": "Passes com progressão vertical ativa",
-      "status": "EM EXECUÇÃO — default permanece OFF.",
-      "summary": "18 pares W214; Move ON fixo; Pass OFF/ON como única diferença; Receive ON e BCCM V2 OFF. Hipótese: recuperar conexão de apoio mantendo acesso territorial."
+      "status": "CONCLUÍDO TECNICAMENTE — offside e posse melhoram; apoio e entrada na área ainda precisam de avaliação.",
+      "summary": "Pass ON com Move ON em 18 pares: episódios no terço 1.479→1.765, na área 408→470 (IC inclui zero), ticks sem possuidor 32.084→28.045, offsides 750→23. Proxies de suporte ligeiramente menores; gols 108→129 inconclusivos."
+    },
+    {
+      "id": "W274",
+      "wave": "W274",
+      "publishedAt": "2026-10-28T23:51:55Z",
+      "macro": "M2",
+      "title": "Validação cruzada Move+Pass em COR×PAL",
+      "status": "EM EXECUÇÃO — validação de transferência, sem mudança de defaults.",
+      "summary": "18 pares W214 na preparação independente COR×PAL. Pacote Move+Pass ON contra OFF; mesma seed/input por par."
     }
   ],
   "macros": [
@@ -1070,8 +1070,8 @@
     "worsened": "Tentativas de passe: 18.807â†’18.495, menores em 13/18. Passes completos: 15.047â†’14.915; IC pareado cruza zero.",
     "shotsGoals": "Tentativas (ShotEvent): 6→12 corrigidas; média pareada +0,333, IC 95% aproximado [−0,282;+0,948]. Gols 5→11, IC [−0,232;+0,899]. Sem ganho demonstrado; W255 usava contagem ampla que duplicava ShotOffTargetEvent no seed1744.",
     "lastIntegrated": "W255 continua sendo a Ãºltima avaliaÃ§Ã£o integrada (18 pares). W268 Ã© diagnÃ³stico causal local num seed divergido, nÃ£o comparaÃ§Ã£o de qualidade.",
-    "mainBlocker": "W272 identificou uma via forte de progressão com Move ON (terço 289→1.479, área 21→408, ticks sem posse 50.236→32.084), mas apoio local/a frente caiu em todos os pares e o volume chegou a 108 gols em 18 jogos. W273 testa se Pass ON melhora conexão e plausibilidade sem retirar o avanço. A aceitação humana do replay continua pendente.",
-    "replay": "Replays completos W270/W271 seed1744 e W272 seed1732 estão tecnicamente disponíveis; viewer W272 auditado e renderizado. Julgamento humano pendente."
+    "mainBlocker": "W272/W273 demonstraram progresso no PAL×COR e redução de impedimentos/ausência de posse com Move+Pass; ainda não há validade em outra preparação, proxies de apoio caem ligeiramente e a taxa de gols no Move ON é alta (6–7,17 por partida). W274 testa transferência em COR×PAL. Aceite humano de replay continua pendente.",
+    "replay": "W270/W271 replay seed1744; W272 e W273 replay comparativo seed1732 estão tecnicamente prontos para avaliação humana. Os arquivos permanecem no pacote local, fora do Pages."
   },
   "diary": [
     {
@@ -1111,15 +1111,6 @@
       "summary": "InvestigaÃ§Ã£o continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W269",
-      "wave": "W269",
-      "publishedAt": "2026-10-28T20:47:14Z",
-      "macro": "M3",
-      "title": "Métrica de tentativas corrigida; gargalo a montante ainda desconhecido",
-      "status": "Concluído com limites — sem mudança de gameplay; funil ofensivo e avaliação humana pendentes.",
-      "summary": "W255 contava ShotOffTargetEvent como nova finalização. Recontagem comparável: 12 ShotEvent no candidato vs 6 na baseline; IC pareado cruza zero. Nove jogos candidatos sem tentativa; telemetria atual não localiza a falha anterior."
-    },
-    {
       "id": "W270",
       "wave": "W270",
       "publishedAt": "2026-10-28T22:18:38Z",
@@ -1152,8 +1143,17 @@
       "publishedAt": "2026-10-28T23:20:34Z",
       "macro": "M2",
       "title": "Passes com progressão vertical ativa",
-      "status": "EM EXECUÇÃO — default permanece OFF.",
-      "summary": "18 pares W214; Move ON fixo; Pass OFF/ON como única diferença; Receive ON e BCCM V2 OFF. Hipótese: recuperar conexão de apoio mantendo acesso territorial."
+      "status": "CONCLUÍDO TECNICAMENTE — offside e posse melhoram; apoio e entrada na área ainda precisam de avaliação.",
+      "summary": "Pass ON com Move ON em 18 pares: episódios no terço 1.479→1.765, na área 408→470 (IC inclui zero), ticks sem possuidor 32.084→28.045, offsides 750→23. Proxies de suporte ligeiramente menores; gols 108→129 inconclusivos."
+    },
+    {
+      "id": "W274",
+      "wave": "W274",
+      "publishedAt": "2026-10-28T23:51:55Z",
+      "macro": "M2",
+      "title": "Validação cruzada Move+Pass em COR×PAL",
+      "status": "EM EXECUÇÃO — validação de transferência, sem mudança de defaults.",
+      "summary": "18 pares W214 na preparação independente COR×PAL. Pacote Move+Pass ON contra OFF; mesma seed/input por par."
     },
     {
       "wave": "W66",
