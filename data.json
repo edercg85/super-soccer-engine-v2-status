@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-64",
-  "updatedAt": "2026-10-28T00:47:00-03:00",
-  "cycle": "SS-ORCH-001-W129-NATURAL-PASS-SNAPSHOT-TICK-LINK",
+  "version": "2026.10.28-portal-65",
+  "updatedAt": "2026-10-28T00:49:00-03:00",
+  "cycle": "SS-ORCH-001-W130-FIRST-ACTIVEPASS-TERMINAL",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W130: acompanhar somente a ActivePass selecionada até seu primeiro terminal em cada seed/ramo, mantendo identidade por passer/target/tick; distinguir recepção, interceptação, falha e infração; sem inferir qualidade global.",
+  "currentFocus": "W131: reconstruir um caminho distinto com OffsideOffence em trace W07, linkando snapshot no launch, player punido, target e posse/restart resultante; comparar com os passes W130 sem extrapolar para match score.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W129",
-    "wave": "W129",
-    "publishedAt": "2026-10-28T03:31:00Z",
+    "id": "W130",
+    "wave": "W130",
+    "publishedAt": "2026-10-28T03:53:00Z",
     "macro": "M2",
-    "title": "W129: vínculo do passe natural ao OffsideSnapshot",
-    "status": "2/2 testes PASS (quatro branches); tick/PassAttempted/ActionResult/ActivePass ligados; pós-lançamento UNKNOWN.",
-    "summary": "W07 seeds 1730/1731: snapshot tick bate com o tick do trace e o target real não está marcado no lançamento. Target OFF natural 5c25708f…, diferente do candidato 24bac7be… do snapshot congelado W126."
+    "title": "W130: primeiro terminal de quatro passes naturais",
+    "status": "4/4 PASS; PassCompleted 3 ticks após launch; recovery e posse no target; sem conclusão causal.",
+    "summary": "Seeds 1730/1731 OFF/ON: os quatro ActivePass específicos terminam PassCompleted, intended target vence recovery e recebe posse. Nenhum terminal de impedimento/falha nesses quatro. OFF/ON já divergiram antes."
   },
   "recentCycles": [
-    {
-      "id": "W122",
-      "wave": "W122",
-      "publishedAt": "2026-10-27T22:38:15Z",
-      "macro": "M2",
-      "title": "Incidência de recuperação linear-relative em partidas completas pareadas",
-      "status": "Concluído; mecanismo PASS estreito, vínculo source-run PARTIAL, qualidade UNKNOWN",
-      "summary": "Seeds 1729/1730/1731: primeira divergência no tick 4 por candidatos/vencedor; estado anterior, ações e draws coincidem. No seed1729 o passer ganha posse e termina ActivePass como PassFailed. Estatísticas após tick 4 são descritivas. Focal 1/1, regressão direcionada 13/13; linear-relative continua default-off."
-    },
     {
       "id": "W123",
       "wave": "W123",
@@ -92,6 +83,15 @@
       "title": "W129: vínculo do passe natural ao OffsideSnapshot",
       "status": "2/2 testes PASS (quatro branches); tick/PassAttempted/ActionResult/ActivePass ligados; pós-lançamento UNKNOWN.",
       "summary": "W07 seeds 1730/1731: snapshot tick bate com o tick do trace e o target real não está marcado no lançamento. Target OFF natural 5c25708f…, diferente do candidato 24bac7be… do snapshot congelado W126."
+    },
+    {
+      "id": "W130",
+      "wave": "W130",
+      "publishedAt": "2026-10-28T03:53:00Z",
+      "macro": "M2",
+      "title": "W130: primeiro terminal de quatro passes naturais",
+      "status": "4/4 PASS; PassCompleted 3 ticks após launch; recovery e posse no target; sem conclusão causal.",
+      "summary": "Seeds 1730/1731 OFF/ON: os quatro ActivePass específicos terminam PassCompleted, intended target vence recovery e recebe posse. Nenhum terminal de impedimento/falha nesses quatro. OFF/ON já divergiram antes."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W122",
-      "wave": "W122",
-      "publishedAt": "2026-10-27T22:38:15Z",
-      "macro": "M2",
-      "title": "Incidência de recuperação linear-relative em partidas completas pareadas",
-      "status": "Concluído; mecanismo PASS estreito, vínculo source-run PARTIAL, qualidade UNKNOWN",
-      "summary": "Seeds 1729/1730/1731: primeira divergência no tick 4 por candidatos/vencedor; estado anterior, ações e draws coincidem. No seed1729 o passer ganha posse e termina ActivePass como PassFailed. Estatísticas após tick 4 são descritivas. Focal 1/1, regressão direcionada 13/13; linear-relative continua default-off."
-    },
-    {
       "id": "W123",
       "wave": "W123",
       "publishedAt": "2026-10-28T02:08:55Z",
@@ -1116,6 +1107,15 @@
       "title": "W129: vínculo do passe natural ao OffsideSnapshot",
       "status": "2/2 testes PASS (quatro branches); tick/PassAttempted/ActionResult/ActivePass ligados; pós-lançamento UNKNOWN.",
       "summary": "W07 seeds 1730/1731: snapshot tick bate com o tick do trace e o target real não está marcado no lançamento. Target OFF natural 5c25708f…, diferente do candidato 24bac7be… do snapshot congelado W126."
+    },
+    {
+      "id": "W130",
+      "wave": "W130",
+      "publishedAt": "2026-10-28T03:53:00Z",
+      "macro": "M2",
+      "title": "W130: primeiro terminal de quatro passes naturais",
+      "status": "4/4 PASS; PassCompleted 3 ticks após launch; recovery e posse no target; sem conclusão causal.",
+      "summary": "Seeds 1730/1731 OFF/ON: os quatro ActivePass específicos terminam PassCompleted, intended target vence recovery e recebe posse. Nenhum terminal de impedimento/falha nesses quatro. OFF/ON já divergiram antes."
     },
     {
       "wave": "W66",
@@ -2734,6 +2734,14 @@
     {
       "id": "CP-W129-01",
       "title": "PassAttempted/PassLaunched/ActivePass/OffsideSnapshot"
+    },
+    {
+      "id": "CP-W130-00",
+      "title": "Preflight de identidade e stop condition da ActivePass"
+    },
+    {
+      "id": "CP-W130-01",
+      "title": "PassCompleted, recovery e posse pós-terminal"
     }
   ]
 }
