@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-49",
-  "updatedAt": "2026-10-27T21:27:30-03:00",
-  "cycle": "SS-ORCH-001-W123-RECOVERY-QUALITY-PREFLIGHT",
+  "version": "2026.10.28-portal-50",
+  "updatedAt": "2026-10-27T22:30:06-03:00",
+  "cycle": "SS-ORCH-001-W123-LAUNCH-ORIGIN-AND-PASS-FAILURE-OWNERSHIP",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Auditar os terminais/eventos de PassFailed no modo linear-relative e validar denominador/semântica antes de definir qualidade; os agregados atuais são pós-divergência e não autorizam adoção.",
+  "currentFocus": "Executar quatro fixtures sintéticas para alvo, companheiro, adversário ou ninguém cruzar a trajetória; validar elegibilidade, terminal e posse sem alterar a fórmula nem ligar a flag.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -16,9 +16,9 @@
     "wave": "W123",
     "publishedAt": "2026-10-28T00:25:41Z",
     "macro": "M2",
-    "title": "W123: snapshots, orientação invertida e preflight pareado de qualidade",
-    "status": "CP08/09 auditorias independentes PASS; CP10 6 partidas reproduzidas, qualidade UNKNOWN, auditoria de agregados pendente; sem alteração gameplay.",
-    "summary": "Geometria: 3 seeds × 2 modos e fixture invertida 5v3 confirmadas nos escopos locais. CP10 diverge no tick4 em todos os pares; contagens finais são pós-divergência. Passes completos 627–650 endpoint vs 1–3 linear-relative; default-off."
+    "title": "W123: snapshots, orientação invertida e diagnóstico de falhas de passe",
+    "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN e sem auditor externo novo.",
+    "summary": "CP12: 9/12 alvos amostrados fora do limiar, 3 elegíveis vencidos por maior BallControl; receptor moveu ao destino ActivePass em 12/12. CP13 tick5: estado/ações iguais; endpoint sem candidato, linear-relative escolhe companheiro no percurso, emite PassFailed mas preserva posse do mesmo time. Flag default-off; sem alegação de qualidade."
   },
   "recentCycles": [
     {
@@ -89,9 +89,9 @@
       "wave": "W123",
       "publishedAt": "2026-10-28T00:25:41Z",
       "macro": "M2",
-      "title": "W123: snapshots, orientação invertida e preflight pareado de qualidade",
-      "status": "CP08/09 auditorias independentes PASS; CP10 6 partidas reproduzidas, qualidade UNKNOWN, auditoria de agregados pendente; sem alteração gameplay.",
-      "summary": "Geometria: 3 seeds × 2 modos e fixture invertida 5v3 confirmadas nos escopos locais. CP10 diverge no tick4 em todos os pares; contagens finais são pós-divergência. Passes completos 627–650 endpoint vs 1–3 linear-relative; default-off."
+      "title": "W123: snapshots, orientação invertida e diagnóstico de falhas de passe",
+      "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN e sem auditor externo novo.",
+      "summary": "CP12: 9/12 alvos amostrados fora do limiar, 3 elegíveis vencidos por maior BallControl; receptor moveu ao destino ActivePass em 12/12. CP13 tick5: estado/ações iguais; endpoint sem candidato, linear-relative escolhe companheiro no percurso, emite PassFailed mas preserva posse do mesmo time. Flag default-off; sem alegação de qualidade."
     }
   ],
   "macros": [
@@ -1113,9 +1113,9 @@
       "wave": "W123",
       "publishedAt": "2026-10-28T00:25:41Z",
       "macro": "M2",
-      "title": "W123: snapshots, orientação invertida e preflight pareado de qualidade",
-      "status": "CP08/09 auditorias independentes PASS; CP10 6 partidas reproduzidas, qualidade UNKNOWN, auditoria de agregados pendente; sem alteração gameplay.",
-      "summary": "Geometria: 3 seeds × 2 modos e fixture invertida 5v3 confirmadas nos escopos locais. CP10 diverge no tick4 em todos os pares; contagens finais são pós-divergência. Passes completos 627–650 endpoint vs 1–3 linear-relative; default-off."
+      "title": "W123: snapshots, orientação invertida e diagnóstico de falhas de passe",
+      "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN e sem auditor externo novo.",
+      "summary": "CP12: 9/12 alvos amostrados fora do limiar, 3 elegíveis vencidos por maior BallControl; receptor moveu ao destino ActivePass em 12/12. CP13 tick5: estado/ações iguais; endpoint sem candidato, linear-relative escolhe companheiro no percurso, emite PassFailed mas preserva posse do mesmo time. Flag default-off; sem alegação de qualidade."
     },
     {
       "wave": "W66",
@@ -2642,6 +2642,18 @@
     {
       "id": "CP-W123-10",
       "title": "Preflight e reprodução pareada de agregados de partida"
+    },
+    {
+      "id": "CP-W123-11",
+      "title": "Guarda t=0 e ownership de falhas de passe no linear-relative"
+    },
+    {
+      "id": "CP-W123-12",
+      "title": "Amostra de 12 eventos: elegibilidade e ação do recebedor"
+    },
+    {
+      "id": "CP-W123-13",
+      "title": "Comparação causal do recovery no tick5 da seed1729"
     }
   ]
 }
