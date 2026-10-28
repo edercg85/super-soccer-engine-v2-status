@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-128",
-  "updatedAt": "2026-10-28T11:08:00Z",
-  "cycle": "SS-ORCH-001-W195-SEED1730-SHOOT-CONTEXT-REPLICATION",
+  "version": "2026.10.28-portal-129",
+  "updatedAt": "2026-10-28T11:15:00Z",
+  "cycle": "SS-ORCH-001-W196-TICK29-CONTEXT-STATE-REPLAY",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W195: comparar OFF e VerticalAttacking.Shoot ON, repetir ON, seed1730, fixture W07, mesma DLL histórica e reach4. Medir gatilho, primeira divergência, posse, interação tackle, percurso, eventos e placar; sem alteração de produção.",
+  "currentFocus": "W196: instrumentar a fixture seed1730 perto do tick29 com hash do pre-state, inputs espaciais e scores em OFF/ON; separar alteração de escolha da resolução dos chutes.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W194",
-    "wave": "W194",
-    "publishedAt": "2026-10-28T11:08:00Z",
+    "id": "W195",
+    "wave": "W195",
+    "publishedAt": "2026-10-28T11:14:00Z",
     "macro": "M2",
-    "title": "W194: chute “interferido” ainda pode resultar em gol",
-    "status": "Auditoria PASS; estado pre-decisão igual; cadeia local Shoot→30m→gol confirmada.",
-    "summary": "No tick2118, OFF Move vs ON Shoot no mesmo pre-state. ON combina Shoot e Tackle bem-sucedidos, gera `ShootLaunchInterfered`, trajetória ativa30m e gol away no tick2120. OFF sem chute."
+    "title": "W195: Shoot contextual reproduzido com efeito adverso nesta seed",
+    "status": "Auditoria automática PASS; ON determinístico; OFF marcou e ON não marcou nesta fixture.",
+    "summary": "Seed1730: OFF 1–0 com 1 chute; ON 0–0 com 2. Primeira divergência tick29 (Move→Shoot); distance 14,49m igual, insideBox 0→1, threat 0→0,1935. Sem pre-state hash tick29; qualidade geral segue UNKNOWN."
   },
   "recentCycles": [
-    {
-      "id": "W186",
-      "wave": "W186",
-      "publishedAt": "2026-10-28T09:33:00Z",
-      "macro": "M2",
-      "title": "W186: controle cross-seed do ranking Shoot",
-      "status": "1/1 PASS; resultado semelhante em seed1732, auditoria dos denominadores PASS.",
-      "summary": "2519 carrier ticks; Shoot elegível2517, escolhido0 e menor que melhor concorrente em2517; gap médio0,36015, distância média63,76m. Match0–0 sem chutes."
-    },
     {
       "id": "W187",
       "wave": "W187",
@@ -101,6 +92,15 @@
       "title": "W194: chute “interferido” ainda pode resultar em gol",
       "status": "Auditoria PASS; estado pre-decisão igual; cadeia local Shoot→30m→gol confirmada.",
       "summary": "No tick2118, OFF Move vs ON Shoot no mesmo pre-state. ON combina Shoot e Tackle bem-sucedidos, gera `ShootLaunchInterfered`, trajetória ativa30m e gol away no tick2120. OFF sem chute."
+    },
+    {
+      "id": "W195",
+      "wave": "W195",
+      "publishedAt": "2026-10-28T11:14:00Z",
+      "macro": "M2",
+      "title": "W195: Shoot contextual reproduzido com efeito adverso nesta seed",
+      "status": "Auditoria automática PASS; ON determinístico; OFF marcou e ON não marcou nesta fixture.",
+      "summary": "Seed1730: OFF 1–0 com 1 chute; ON 0–0 com 2. Primeira divergência tick29 (Move→Shoot); distance 14,49m igual, insideBox 0→1, threat 0→0,1935. Sem pre-state hash tick29; qualidade geral segue UNKNOWN."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W186",
-      "wave": "W186",
-      "publishedAt": "2026-10-28T09:33:00Z",
-      "macro": "M2",
-      "title": "W186: controle cross-seed do ranking Shoot",
-      "status": "1/1 PASS; resultado semelhante em seed1732, auditoria dos denominadores PASS.",
-      "summary": "2519 carrier ticks; Shoot elegível2517, escolhido0 e menor que melhor concorrente em2517; gap médio0,36015, distância média63,76m. Match0–0 sem chutes."
-    },
-    {
       "id": "W187",
       "wave": "W187",
       "publishedAt": "2026-10-28T09:36:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W194: chute “interferido” ainda pode resultar em gol",
       "status": "Auditoria PASS; estado pre-decisão igual; cadeia local Shoot→30m→gol confirmada.",
       "summary": "No tick2118, OFF Move vs ON Shoot no mesmo pre-state. ON combina Shoot e Tackle bem-sucedidos, gera `ShootLaunchInterfered`, trajetória ativa30m e gol away no tick2120. OFF sem chute."
+    },
+    {
+      "id": "W195",
+      "wave": "W195",
+      "publishedAt": "2026-10-28T11:14:00Z",
+      "macro": "M2",
+      "title": "W195: Shoot contextual reproduzido com efeito adverso nesta seed",
+      "status": "Auditoria automática PASS; ON determinístico; OFF marcou e ON não marcou nesta fixture.",
+      "summary": "Seed1730: OFF 1–0 com 1 chute; ON 0–0 com 2. Primeira divergência tick29 (Move→Shoot); distance 14,49m igual, insideBox 0→1, threat 0→0,1935. Sem pre-state hash tick29; qualidade geral segue UNKNOWN."
     },
     {
       "wave": "W66",
@@ -3100,6 +3100,10 @@
     {
       "id": "CP-W190-02",
       "title": "W190 cross-seed encerrado; W191 flag experimental iniciada"
+    },
+    {
+      "id": "CP-W195-02",
+      "title": "W195 concluído; W196 causal replay iniciado"
     }
   ]
 }
