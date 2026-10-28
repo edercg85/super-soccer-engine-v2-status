@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-51",
-  "updatedAt": "2026-10-27T22:32:14-03:00",
+  "version": "2026.10.28-portal-53",
+  "updatedAt": "2026-10-27T22:45:04-03:00",
   "cycle": "SS-ORCH-001-W123-LAUNCH-ORIGIN-AND-PASS-FAILURE-OWNERSHIP",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Executar quatro fixtures sintéticas para alvo, companheiro, adversário ou ninguém cruzar a trajetória; validar elegibilidade, terminal e posse sem alterar a fórmula nem ligar a flag.",
+  "currentFocus": "Manter a flag desligada. Para avançar a analogia CM, obter trace da build limpa nos três readers com identidade/versão do arg2 e última escrita; refutar ou confirmar consumo do produtor por ocorrência.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -14,11 +14,11 @@
   "latestAction": {
     "id": "W123",
     "wave": "W123",
-    "publishedAt": "2026-10-28T00:25:41Z",
+    "publishedAt": "2026-10-28T01:45:04Z",
     "macro": "M2",
-    "title": "W123: snapshots, orientação invertida e diagnóstico de falhas de passe",
-    "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN; ZIP validado e portal50 publicado.",
-    "summary": "CP12: 9/12 alvos amostrados fora do limiar, 3 elegíveis vencidos por maior BallControl; receptor moveu ao destino ActivePass em 12/12. CP13 tick5: estado/ações iguais; endpoint sem candidato, linear-relative escolhe companheiro no percurso, emite PassFailed mas preserva posse do mesmo time. Flag default-off; sem alegação de qualidade."
+    "title": "W123: semântica de recovery e crosswalk CM–V2",
+    "status": "CP14/15: testes sintéticos 2/2 PASS; CP16: 003J static paths confirmados, producer consumption/CM↔V2 UNKNOWN; flag default-off; portal e ZIP em validação. Qualidade UNKNOWN.",
+    "summary": "Quatro rotas: target conclui, teammate falha preservando posse, opponent falha transferindo, ninguém mantém estado em aberto. Em disputa, BallControl e depois ID ordenam elegíveis; tempo não prioriza. A KB CM não liga os valores do produtor aos readers; não há fundamento para copiar a ordem à V2."
   },
   "recentCycles": [
     {
@@ -87,11 +87,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-28T00:25:41Z",
+      "publishedAt": "2026-10-28T01:45:04Z",
       "macro": "M2",
-      "title": "W123: snapshots, orientação invertida e diagnóstico de falhas de passe",
-      "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN; ZIP validado e portal50 publicado.",
-      "summary": "CP12: 9/12 alvos amostrados fora do limiar, 3 elegíveis vencidos por maior BallControl; receptor moveu ao destino ActivePass em 12/12. CP13 tick5: estado/ações iguais; endpoint sem candidato, linear-relative escolhe companheiro no percurso, emite PassFailed mas preserva posse do mesmo time. Flag default-off; sem alegação de qualidade."
+      "title": "W123: semântica de recovery e crosswalk CM–V2",
+      "status": "CP14/15: testes sintéticos 2/2 PASS; CP16: 003J static paths confirmados, producer consumption/CM↔V2 UNKNOWN; flag default-off; portal e ZIP em validação. Qualidade UNKNOWN.",
+      "summary": "Quatro rotas: target conclui, teammate falha preservando posse, opponent falha transferindo, ninguém mantém estado em aberto. Em disputa, BallControl e depois ID ordenam elegíveis; tempo não prioriza. A KB CM não liga os valores do produtor aos readers; não há fundamento para copiar a ordem à V2."
     }
   ],
   "macros": [
@@ -1111,11 +1111,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-28T00:25:41Z",
+      "publishedAt": "2026-10-28T01:45:04Z",
       "macro": "M2",
-      "title": "W123: snapshots, orientação invertida e diagnóstico de falhas de passe",
-      "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN; ZIP validado e portal50 publicado.",
-      "summary": "CP12: 9/12 alvos amostrados fora do limiar, 3 elegíveis vencidos por maior BallControl; receptor moveu ao destino ActivePass em 12/12. CP13 tick5: estado/ações iguais; endpoint sem candidato, linear-relative escolhe companheiro no percurso, emite PassFailed mas preserva posse do mesmo time. Flag default-off; sem alegação de qualidade."
+      "title": "W123: semântica de recovery e crosswalk CM–V2",
+      "status": "CP14/15: testes sintéticos 2/2 PASS; CP16: 003J static paths confirmados, producer consumption/CM↔V2 UNKNOWN; flag default-off; portal e ZIP em validação. Qualidade UNKNOWN.",
+      "summary": "Quatro rotas: target conclui, teammate falha preservando posse, opponent falha transferindo, ninguém mantém estado em aberto. Em disputa, BallControl e depois ID ordenam elegíveis; tempo não prioriza. A KB CM não liga os valores do produtor aos readers; não há fundamento para copiar a ordem à V2."
     },
     {
       "wave": "W66",
@@ -2654,6 +2654,18 @@
     {
       "id": "CP-W123-13",
       "title": "Comparação causal do recovery no tick5 da seed1729"
+    },
+    {
+      "id": "CP-W123-14",
+      "title": "Quatro rotas sintéticas e disputa simultânea"
+    },
+    {
+      "id": "CP-W123-15",
+      "title": "Tempo de aproximação versus prioridade BallControl"
+    },
+    {
+      "id": "CP-W123-16",
+      "title": "Cruzamento com readers CM e limite da analogia V2"
     }
   ]
 }
