@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-94",
-  "updatedAt": "2026-10-28T03:17:48-03:00",
-  "cycle": "SS-ORCH-001-W159-SHOOT-TACKLE-TERMINAL-AUDIT",
+  "version": "2026.10.28-portal-95",
+  "updatedAt": "2026-10-28T03:23:33-03:00",
+  "cycle": "SS-ORCH-001-W160-SHOOT-TACKLE-BRANCH-MATRIX",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W160: auditar os outros ramos da composição Shoot×Tackle com a matriz de interaction tests existente: sucesso/sucesso (lançamento interferido 30m), sucesso/falha (lançamento normal) e falha/falha (ShootErrorSide), cotejando draw order, efeitos e eventos; procurar cobertura em partida completa antes de alegar prevalência.",
+  "currentFocus": "W161: cruzar os 30 ShotBlocked terminais W158 ON com interceptações efetivas do goleiro por seed/shooter/tick, e procurar sucessos sem bloqueio ou bloqueios sem intercept; validar fluxo em Simulation, ActionResolutionEngine e EventDetector.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W159",
-    "wave": "W159",
-    "publishedAt": "2026-10-28T06:17:48Z",
+    "id": "W160",
+    "wave": "W160",
+    "publishedAt": "2026-10-28T06:23:33Z",
     "macro": "M2",
-    "title": "W159: composição Shoot×Tackle e draws por tick",
-    "status": "1/1 PASS; duas reproduções completas seed1733 idênticas; dois ShotBlocked:Tackled explicados por draw order/limiares.",
-    "summary": "Ticks 652/1192: ShootTechnical→TackleTechnical; Shoot falha (p 62,35%), Tackle vence (p 46,34%), sem lançamento, posse transferida. Resultado local; auditoria independente distinta indisponível."
+    "title": "W160: matriz completa Shoot×Tackle em 1.151 testes",
+    "status": "1.151/1.151 PASS; quatro branches em fixture confirmados; sem prevalência em partida.",
+    "summary": "Sucesso duplo → ShootLaunchInterfered 30m; sucesso/falha → lançamento normal; falha/sucesso → ShotBlocked; falha dupla → ShootErrorSide. Zero ShootLaunchInterfered em 136 shots W158 ON, limitado a quatro seeds."
   },
   "recentCycles": [
-    {
-      "id": "W152",
-      "wave": "W152",
-      "publishedAt": "2026-10-28T05:02:00Z",
-      "macro": "M2",
-      "title": "W152: pareamento integral SafeForward seed1730",
-      "status": "1/1 PASS; divergência de decisão/estado t56 e evento t57; grande sensibilidade em uma única seed.",
-      "summary": "ON 21–6/5400 ticks; OFF 1–0/5401; decisões Move diferem primeiro em t56. Há divergência tardia extensa, mas uma seed não confirma qualidade. ShotEvent não equivale a ShootLaunched."
-    },
     {
       "id": "W153",
       "wave": "W153",
@@ -92,6 +83,15 @@
       "title": "W159: composição Shoot×Tackle e draws por tick",
       "status": "1/1 PASS; duas reproduções completas seed1733 idênticas; dois ShotBlocked:Tackled explicados por draw order/limiares.",
       "summary": "Ticks 652/1192: ShootTechnical→TackleTechnical; Shoot falha (p 62,35%), Tackle vence (p 46,34%), sem lançamento, posse transferida. Resultado local; auditoria independente distinta indisponível."
+    },
+    {
+      "id": "W160",
+      "wave": "W160",
+      "publishedAt": "2026-10-28T06:23:33Z",
+      "macro": "M2",
+      "title": "W160: matriz completa Shoot×Tackle em 1.151 testes",
+      "status": "1.151/1.151 PASS; quatro branches em fixture confirmados; sem prevalência em partida.",
+      "summary": "Sucesso duplo → ShootLaunchInterfered 30m; sucesso/falha → lançamento normal; falha/sucesso → ShotBlocked; falha dupla → ShootErrorSide. Zero ShootLaunchInterfered em 136 shots W158 ON, limitado a quatro seeds."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W152",
-      "wave": "W152",
-      "publishedAt": "2026-10-28T05:02:00Z",
-      "macro": "M2",
-      "title": "W152: pareamento integral SafeForward seed1730",
-      "status": "1/1 PASS; divergência de decisão/estado t56 e evento t57; grande sensibilidade em uma única seed.",
-      "summary": "ON 21–6/5400 ticks; OFF 1–0/5401; decisões Move diferem primeiro em t56. Há divergência tardia extensa, mas uma seed não confirma qualidade. ShotEvent não equivale a ShootLaunched."
-    },
-    {
       "id": "W153",
       "wave": "W153",
       "publishedAt": "2026-10-28T05:06:58Z",
@@ -1116,6 +1107,15 @@
       "title": "W159: composição Shoot×Tackle e draws por tick",
       "status": "1/1 PASS; duas reproduções completas seed1733 idênticas; dois ShotBlocked:Tackled explicados por draw order/limiares.",
       "summary": "Ticks 652/1192: ShootTechnical→TackleTechnical; Shoot falha (p 62,35%), Tackle vence (p 46,34%), sem lançamento, posse transferida. Resultado local; auditoria independente distinta indisponível."
+    },
+    {
+      "id": "W160",
+      "wave": "W160",
+      "publishedAt": "2026-10-28T06:23:33Z",
+      "macro": "M2",
+      "title": "W160: matriz completa Shoot×Tackle em 1.151 testes",
+      "status": "1.151/1.151 PASS; quatro branches em fixture confirmados; sem prevalência em partida.",
+      "summary": "Sucesso duplo → ShootLaunchInterfered 30m; sucesso/falha → lançamento normal; falha/sucesso → ShotBlocked; falha dupla → ShootErrorSide. Zero ShootLaunchInterfered em 136 shots W158 ON, limitado a quatro seeds."
     },
     {
       "wave": "W66",
@@ -2930,6 +2930,10 @@
     {
       "id": "CP-W159-01",
       "title": "W159 draw-order audit and exact replay"
+    },
+    {
+      "id": "CP-W160-01",
+      "title": "Shoot tackle branches and existing comparison suite rerun"
     }
   ]
 }
