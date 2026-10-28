@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-98",
-  "updatedAt": "2026-10-28T07:04:00Z",
-  "cycle": "SS-ORCH-001-W164-FIRST-DIVERGENCE-GK",
+  "version": "2026.10.28-portal-99",
+  "updatedAt": "2026-10-28T07:28:41Z",
+  "cycle": "SS-ORCH-001-W165-RNG-CAUSAL-PATH",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W165: seguir os quatro primeiros intercepts falhos após T+1, começando nas seeds1732 e1733; medir posição/velocidade do GK, bola/posse e próximo lifecycle até a primeira consequência funcional posterior. Manter escopo curto e fonte/hash de cada snapshot.",
+  "currentFocus": "W166: auditoria do fluxo de RNG concluída; próximo validar checkpoint/restore e um contrafactual focal que iguale somente o draw PassTechnical, antes de qualquer rodada multiseed maior.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W164",
-    "wave": "W164",
-    "publishedAt": "2026-10-28T07:04:00Z",
+    "id": "W165",
+    "wave": "W165",
+    "publishedAt": "2026-10-28T07:28:41Z",
     "macro": "M2",
-    "title": "W164: primeira divergência causada por intercept GK",
-    "status": "4/4 ON com pre-state igual; intercept novo falha e GK não se move nesse tick; gol imediato idêntico. 4/4 OFF traces exatos.",
-    "summary": "A faixa 4–5m muda LastUseful e força InterceptBall a 5m (draws 0,21–0,29 vs p 5,46–16,10%). Todas falham; cada chute termina no mesmo gol/crossing. Efeito local é a posição parada do GK; impactos posteriores ainda UNKNOWN."
+    "title": "W165: do intercept GK falho ao passe degradado",
+    "status": "2 seeds; auditoria automatizada PASS; mecanismo causal local confirmado, sem promoção de gameplay.",
+    "summary": "Draw extra da interceptação falha desloca PassTechnical do mesmo actor/target e troca PassLaunched por PassLaunchDegraded em 1732/1733. Corrigendum W164 limita StateHash à projeção; impacto agregado segue UNKNOWN."
   },
   "recentCycles": [
-    {
-      "id": "W157",
-      "wave": "W157",
-      "publishedAt": "2026-10-28T05:51:14Z",
-      "macro": "M2",
-      "title": "W157: probabilidade técnica e resultado do intercept GK",
-      "status": "1/1 PASS; 20/20 resultados reconciliados com p/draw; 7 sucessos e 13 falhas.",
-      "summary": "Hashes W152/W153 preservados. A fórmula e os draws explicam os 20 resultados. Soma de probabilidades=11,677 e sucessos=7, mas amostra dependente de dois seeds e uma fixture: não é evidência de descalibração. W158 ampliará seeds pareados, curva inalterada."
-    },
     {
       "id": "W158",
       "wave": "W158",
@@ -92,6 +83,15 @@
       "title": "W164: primeira divergência causada por intercept GK",
       "status": "4/4 ON com pre-state igual; intercept novo falha e GK não se move nesse tick; gol imediato idêntico. 4/4 OFF traces exatos.",
       "summary": "A faixa 4–5m muda LastUseful e força InterceptBall a 5m (draws 0,21–0,29 vs p 5,46–16,10%). Todas falham; cada chute termina no mesmo gol/crossing. Efeito local é a posição parada do GK; impactos posteriores ainda UNKNOWN."
+    },
+    {
+      "id": "W165",
+      "wave": "W165",
+      "publishedAt": "2026-10-28T07:28:41Z",
+      "macro": "M2",
+      "title": "W165: do intercept GK falho ao passe degradado",
+      "status": "2 seeds; auditoria automatizada PASS; mecanismo causal local confirmado, sem promoção de gameplay.",
+      "summary": "Draw extra da interceptação falha desloca PassTechnical do mesmo actor/target e troca PassLaunched por PassLaunchDegraded em 1732/1733. Corrigendum W164 limita StateHash à projeção; impacto agregado segue UNKNOWN."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W157",
-      "wave": "W157",
-      "publishedAt": "2026-10-28T05:51:14Z",
-      "macro": "M2",
-      "title": "W157: probabilidade técnica e resultado do intercept GK",
-      "status": "1/1 PASS; 20/20 resultados reconciliados com p/draw; 7 sucessos e 13 falhas.",
-      "summary": "Hashes W152/W153 preservados. A fórmula e os draws explicam os 20 resultados. Soma de probabilidades=11,677 e sucessos=7, mas amostra dependente de dois seeds e uma fixture: não é evidência de descalibração. W158 ampliará seeds pareados, curva inalterada."
-    },
-    {
       "id": "W158",
       "wave": "W158",
       "publishedAt": "2026-10-28T06:06:57Z",
@@ -1116,6 +1107,15 @@
       "title": "W164: primeira divergência causada por intercept GK",
       "status": "4/4 ON com pre-state igual; intercept novo falha e GK não se move nesse tick; gol imediato idêntico. 4/4 OFF traces exatos.",
       "summary": "A faixa 4–5m muda LastUseful e força InterceptBall a 5m (draws 0,21–0,29 vs p 5,46–16,10%). Todas falham; cada chute termina no mesmo gol/crossing. Efeito local é a posição parada do GK; impactos posteriores ainda UNKNOWN."
+    },
+    {
+      "id": "W165",
+      "wave": "W165",
+      "publishedAt": "2026-10-28T07:28:41Z",
+      "macro": "M2",
+      "title": "W165: do intercept GK falho ao passe degradado",
+      "status": "2 seeds; auditoria automatizada PASS; mecanismo causal local confirmado, sem promoção de gameplay.",
+      "summary": "Draw extra da interceptação falha desloca PassTechnical do mesmo actor/target e troca PassLaunched por PassLaunchDegraded em 1732/1733. Corrigendum W164 limita StateHash à projeção; impacto agregado segue UNKNOWN."
     },
     {
       "wave": "W66",
