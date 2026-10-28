@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-135",
-  "updatedAt": "2026-10-28T11:51:00Z",
-  "cycle": "SS-ORCH-001-W202-INTERCEPT-BOUNDARY-NUMERICAL-ROBUSTNESS",
+  "version": "2026.10.28-portal-136",
+  "updatedAt": "2026-10-28T11:54:00Z",
+  "cycle": "SS-ORCH-001-W203-EXISTING-TRACE-BOUNDARY-CENSUS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W202: reproduzir a precisão da geometria e da curva de alcance em BitDecrement(4),4 e BitIncrement(4), incluindo a transformação de coordenadas do snapshot W201. Não editar gameplay.",
+  "currentFocus": "W203: inventariar os traces já existentes para diagnósticos de interceptação/distâncias/draws próximos a4m. Determinar cobertura disponível antes de afirmar frequência; não rerodar partidas.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W201",
-    "wave": "W201",
-    "publishedAt": "2026-10-28T11:51:00Z",
+    "id": "W202",
+    "wave": "W202",
+    "publishedAt": "2026-10-28T11:54:00Z",
     "macro": "M2",
-    "title": "W201: elegibilidade não garante interceptação técnica",
-    "status": "Resolver e efeitos locais auditados em estados sintéticos; sem qualidade global.",
-    "summary": "Com draw fixo0,01: a3,9m o goleiro obtém p2,8334%, sucesso e posse/ShotBlocked; a3,9999999999999973m p≈7,55e-14%, falha e sem efeitos. Draw0 passa nos dois por ser limite minúsculo não nulo."
+    "title": "W202: resíduo de chance vem do arredondamento da geometria",
+    "status": "Auditoria numérica da DLL PASS; frequência natural UNKNOWN; sem patch.",
+    "summary": "Probability=0 exatamente em4m; BitDecrement(4) dá1,258e-14%. Construções diagonais transladadas nominalmente a4 arredondam 1–2 ULP abaixo; ponto W200,6 ULP abaixo."
   },
   "recentCycles": [
-    {
-      "id": "W193",
-      "wave": "W193",
-      "publishedAt": "2026-10-28T11:03:00Z",
-      "macro": "M2",
-      "title": "W193: Shoot contextual desviou para tentativa e gol nesta seed",
-      "status": "Auditoria PASS; efeito local confirmado; duas repetições ON idênticas.",
-      "summary": "Primeiro score mudou tick770 sem trocar vencedor; Move→Shoot tick2118 (.7458→.9021), insideBox/threat ativos. ON marcou aos2120 e terminou1–1; OFF0–0 sem chute. Não generalizável."
-    },
     {
       "id": "W194",
       "wave": "W194",
@@ -101,6 +92,15 @@
       "title": "W201: elegibilidade não garante interceptação técnica",
       "status": "Resolver e efeitos locais auditados em estados sintéticos; sem qualidade global.",
       "summary": "Com draw fixo0,01: a3,9m o goleiro obtém p2,8334%, sucesso e posse/ShotBlocked; a3,9999999999999973m p≈7,55e-14%, falha e sem efeitos. Draw0 passa nos dois por ser limite minúsculo não nulo."
+    },
+    {
+      "id": "W202",
+      "wave": "W202",
+      "publishedAt": "2026-10-28T11:54:00Z",
+      "macro": "M2",
+      "title": "W202: resíduo de chance vem do arredondamento da geometria",
+      "status": "Auditoria numérica da DLL PASS; frequência natural UNKNOWN; sem patch.",
+      "summary": "Probability=0 exatamente em4m; BitDecrement(4) dá1,258e-14%. Construções diagonais transladadas nominalmente a4 arredondam 1–2 ULP abaixo; ponto W200,6 ULP abaixo."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W193",
-      "wave": "W193",
-      "publishedAt": "2026-10-28T11:03:00Z",
-      "macro": "M2",
-      "title": "W193: Shoot contextual desviou para tentativa e gol nesta seed",
-      "status": "Auditoria PASS; efeito local confirmado; duas repetições ON idênticas.",
-      "summary": "Primeiro score mudou tick770 sem trocar vencedor; Move→Shoot tick2118 (.7458→.9021), insideBox/threat ativos. ON marcou aos2120 e terminou1–1; OFF0–0 sem chute. Não generalizável."
-    },
-    {
       "id": "W194",
       "wave": "W194",
       "publishedAt": "2026-10-28T11:08:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W201: elegibilidade não garante interceptação técnica",
       "status": "Resolver e efeitos locais auditados em estados sintéticos; sem qualidade global.",
       "summary": "Com draw fixo0,01: a3,9m o goleiro obtém p2,8334%, sucesso e posse/ShotBlocked; a3,9999999999999973m p≈7,55e-14%, falha e sem efeitos. Draw0 passa nos dois por ser limite minúsculo não nulo."
+    },
+    {
+      "id": "W202",
+      "wave": "W202",
+      "publishedAt": "2026-10-28T11:54:00Z",
+      "macro": "M2",
+      "title": "W202: resíduo de chance vem do arredondamento da geometria",
+      "status": "Auditoria numérica da DLL PASS; frequência natural UNKNOWN; sem patch.",
+      "summary": "Probability=0 exatamente em4m; BitDecrement(4) dá1,258e-14%. Construções diagonais transladadas nominalmente a4 arredondam 1–2 ULP abaixo; ponto W200,6 ULP abaixo."
     },
     {
       "wave": "W66",
@@ -3128,6 +3128,10 @@
     {
       "id": "CP-W201-02",
       "title": "Resolver técnico local fechado; análise numérica W202 iniciada"
+    },
+    {
+      "id": "CP-W202-02",
+      "title": "Audit numérica concluída; censo de traces W203 iniciado"
     }
   ]
 }
