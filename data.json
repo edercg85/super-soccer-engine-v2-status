@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-134",
-  "updatedAt": "2026-10-28T11:46:00Z",
-  "cycle": "SS-ORCH-001-W201-GOALKEEPER-INTERCEPT-RESOLUTION-PROBES",
+  "version": "2026.10.28-portal-135",
+  "updatedAt": "2026-10-28T11:51:00Z",
+  "cycle": "SS-ORCH-001-W202-INTERCEPT-BOUNDARY-NUMERICAL-ROBUSTNESS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W201: testar resolver InterceptBall em snapshots de 3,9m e4,0m com draws determinísticos fixos, separando elegibilidade da resolução; registrar efeitos e posse sem rodar partidas adicionais.",
+  "currentFocus": "W202: reproduzir a precisão da geometria e da curva de alcance em BitDecrement(4),4 e BitIncrement(4), incluindo a transformação de coordenadas do snapshot W201. Não editar gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W200",
-    "wave": "W200",
-    "publishedAt": "2026-10-28T11:46:00Z",
+    "id": "W201",
+    "wave": "W201",
+    "publishedAt": "2026-10-28T11:51:00Z",
     "macro": "M2",
-    "title": "W200: limite de alcance 4m confirmado no runtime local",
-    "status": "Sweep sintético auditado; runtime 3,9/4,0 elegível e4,1 inelegível.",
-    "summary": "No mesmo estado OFF tick31, somente posição do GK varia: 3,9/4,0m => `LastUseful=true`, InterceptBall selecionado;4,1m => false, Move. Explica o candidato vazio local; qualidade/prevalência seguem UNKNOWN."
+    "title": "W201: elegibilidade não garante interceptação técnica",
+    "status": "Resolver e efeitos locais auditados em estados sintéticos; sem qualidade global.",
+    "summary": "Com draw fixo0,01: a3,9m o goleiro obtém p2,8334%, sucesso e posse/ShotBlocked; a3,9999999999999973m p≈7,55e-14%, falha e sem efeitos. Draw0 passa nos dois por ser limite minúsculo não nulo."
   },
   "recentCycles": [
-    {
-      "id": "W192",
-      "wave": "W192",
-      "publishedAt": "2026-10-28T10:58:00Z",
-      "macro": "M2",
-      "title": "W192: Shoot contextual sem oportunidade na área",
-      "status": "1/1 auditoria PASS; duas repetições ON determinísticas; sem efeito nesta seed.",
-      "summary": "Na seed1732, 2517 avaliações elegíveis; nenhuma insideBox/ameaça. Ações, score Shoot, estado e eventos iguais OFF/ON. Tick95 e agregados reproduzem W186."
-    },
     {
       "id": "W193",
       "wave": "W193",
@@ -101,6 +92,15 @@
       "title": "W200: limite de alcance 4m confirmado no runtime local",
       "status": "Sweep sintético auditado; runtime 3,9/4,0 elegível e4,1 inelegível.",
       "summary": "No mesmo estado OFF tick31, somente posição do GK varia: 3,9/4,0m => `LastUseful=true`, InterceptBall selecionado;4,1m => false, Move. Explica o candidato vazio local; qualidade/prevalência seguem UNKNOWN."
+    },
+    {
+      "id": "W201",
+      "wave": "W201",
+      "publishedAt": "2026-10-28T11:51:00Z",
+      "macro": "M2",
+      "title": "W201: elegibilidade não garante interceptação técnica",
+      "status": "Resolver e efeitos locais auditados em estados sintéticos; sem qualidade global.",
+      "summary": "Com draw fixo0,01: a3,9m o goleiro obtém p2,8334%, sucesso e posse/ShotBlocked; a3,9999999999999973m p≈7,55e-14%, falha e sem efeitos. Draw0 passa nos dois por ser limite minúsculo não nulo."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W192",
-      "wave": "W192",
-      "publishedAt": "2026-10-28T10:58:00Z",
-      "macro": "M2",
-      "title": "W192: Shoot contextual sem oportunidade na área",
-      "status": "1/1 auditoria PASS; duas repetições ON determinísticas; sem efeito nesta seed.",
-      "summary": "Na seed1732, 2517 avaliações elegíveis; nenhuma insideBox/ameaça. Ações, score Shoot, estado e eventos iguais OFF/ON. Tick95 e agregados reproduzem W186."
-    },
-    {
       "id": "W193",
       "wave": "W193",
       "publishedAt": "2026-10-28T11:03:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W200: limite de alcance 4m confirmado no runtime local",
       "status": "Sweep sintético auditado; runtime 3,9/4,0 elegível e4,1 inelegível.",
       "summary": "No mesmo estado OFF tick31, somente posição do GK varia: 3,9/4,0m => `LastUseful=true`, InterceptBall selecionado;4,1m => false, Move. Explica o candidato vazio local; qualidade/prevalência seguem UNKNOWN."
+    },
+    {
+      "id": "W201",
+      "wave": "W201",
+      "publishedAt": "2026-10-28T11:51:00Z",
+      "macro": "M2",
+      "title": "W201: elegibilidade não garante interceptação técnica",
+      "status": "Resolver e efeitos locais auditados em estados sintéticos; sem qualidade global.",
+      "summary": "Com draw fixo0,01: a3,9m o goleiro obtém p2,8334%, sucesso e posse/ShotBlocked; a3,9999999999999973m p≈7,55e-14%, falha e sem efeitos. Draw0 passa nos dois por ser limite minúsculo não nulo."
     },
     {
       "wave": "W66",
@@ -3124,6 +3124,10 @@
     {
       "id": "CP-W200-02",
       "title": "Fronteira local confirmada; resolução W201 iniciada"
+    },
+    {
+      "id": "CP-W201-02",
+      "title": "Resolver técnico local fechado; análise numérica W202 iniciada"
     }
   ]
 }
