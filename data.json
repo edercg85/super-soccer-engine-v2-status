@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-131",
-  "updatedAt": "2026-10-28T11:29:00Z",
-  "cycle": "SS-ORCH-001-W198-GOALKEEPER-INTERCEPT-GUARD-AUDIT",
+  "version": "2026.10.28-portal-132",
+  "updatedAt": "2026-10-28T11:36:00Z",
+  "cycle": "SS-ORCH-001-W199-GOALKEEPER-GUARD-DIRECT-EVALUATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W198: investigar as decisões/guardas do goleiro na janela tick29–34 e a geometria de interceptação; preservar a diferença entre fonte, snapshot e outcome observado.",
+  "currentFocus": "W199: consultar diretamente, em modo read-only, Evaluate da DLL histórica no prestate OFF tick31 e controles ON tick30/34; não inferir guardas se a API não permitir reconstrução fiel.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W197",
-    "wave": "W197",
-    "publishedAt": "2026-10-28T11:29:00Z",
+    "id": "W198",
+    "wave": "W198",
+    "publishedAt": "2026-10-28T11:36:00Z",
     "macro": "M2",
-    "title": "W197: dois chutes ON interceptados após avanço do goleiro",
-    "status": "Auditoria secundária PASS; terminais e destino comum do goleiro no tick29 confirmados.",
-    "summary": "Nos dois braços Hugo Souza move no tick29 para a bola em (90,886;30,736). ON lança dali e sofre ShotBlocked em ticks30/34; OFF Move desloca bola a x99,455 e chuta no30, gol no31. Efeito local, não política geral."
+    "title": "W198: guarda do goleiro e candidato de interceptação",
+    "status": "Runtime diagnostics audited; source-to-binary and OFF tick31 guard PARTIAL.",
+    "summary": "OFF tick31 tem ActiveShoot, InterceptBall inelegível e nenhum candidato; ON ticks30/34 tem candidato threat/last-useful e bloqueia. Hash da DLL e fixture preservados; PE/PDB não associado."
   },
   "recentCycles": [
-    {
-      "id": "W189",
-      "wave": "W189",
-      "publishedAt": "2026-10-28T09:42:00Z",
-      "macro": "M2",
-      "title": "W189: distribuição da margem Shoot vs vencedor",
-      "status": "1/1 PASS; 2517 per-decision rows, margens e bins auditados.",
-      "summary": "Gap vencedor−Shoot positivo em todos os pontos; mediana .224 (20–40m), .339 (40–60m), .392 (60–80m), .467 (≥80m). Offset snapshot-only .20/.30/.40 mudaria 113/689/1532 rankings."
-    },
     {
       "id": "W190",
       "wave": "W190",
@@ -101,6 +92,15 @@
       "title": "W197: dois chutes ON interceptados após avanço do goleiro",
       "status": "Auditoria secundária PASS; terminais e destino comum do goleiro no tick29 confirmados.",
       "summary": "Nos dois braços Hugo Souza move no tick29 para a bola em (90,886;30,736). ON lança dali e sofre ShotBlocked em ticks30/34; OFF Move desloca bola a x99,455 e chuta no30, gol no31. Efeito local, não política geral."
+    },
+    {
+      "id": "W198",
+      "wave": "W198",
+      "publishedAt": "2026-10-28T11:36:00Z",
+      "macro": "M2",
+      "title": "W198: guarda do goleiro e candidato de interceptação",
+      "status": "Runtime diagnostics audited; source-to-binary and OFF tick31 guard PARTIAL.",
+      "summary": "OFF tick31 tem ActiveShoot, InterceptBall inelegível e nenhum candidato; ON ticks30/34 tem candidato threat/last-useful e bloqueia. Hash da DLL e fixture preservados; PE/PDB não associado."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W189",
-      "wave": "W189",
-      "publishedAt": "2026-10-28T09:42:00Z",
-      "macro": "M2",
-      "title": "W189: distribuição da margem Shoot vs vencedor",
-      "status": "1/1 PASS; 2517 per-decision rows, margens e bins auditados.",
-      "summary": "Gap vencedor−Shoot positivo em todos os pontos; mediana .224 (20–40m), .339 (40–60m), .392 (60–80m), .467 (≥80m). Offset snapshot-only .20/.30/.40 mudaria 113/689/1532 rankings."
-    },
-    {
       "id": "W190",
       "wave": "W190",
       "publishedAt": "2026-10-28T09:47:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W197: dois chutes ON interceptados após avanço do goleiro",
       "status": "Auditoria secundária PASS; terminais e destino comum do goleiro no tick29 confirmados.",
       "summary": "Nos dois braços Hugo Souza move no tick29 para a bola em (90,886;30,736). ON lança dali e sofre ShotBlocked em ticks30/34; OFF Move desloca bola a x99,455 e chuta no30, gol no31. Efeito local, não política geral."
+    },
+    {
+      "id": "W198",
+      "wave": "W198",
+      "publishedAt": "2026-10-28T11:36:00Z",
+      "macro": "M2",
+      "title": "W198: guarda do goleiro e candidato de interceptação",
+      "status": "Runtime diagnostics audited; source-to-binary and OFF tick31 guard PARTIAL.",
+      "summary": "OFF tick31 tem ActiveShoot, InterceptBall inelegível e nenhum candidato; ON ticks30/34 tem candidato threat/last-useful e bloqueia. Hash da DLL e fixture preservados; PE/PDB não associado."
     },
     {
       "wave": "W66",
@@ -3112,6 +3112,10 @@
     {
       "id": "CP-W197-02",
       "title": "W197 terminais reconciliados; W198 auditoria do goleiro iniciada"
+    },
+    {
+      "id": "CP-W198-02",
+      "title": "Diagnóstico W198 fechado; probe direto W199 iniciado"
     }
   ]
 }
