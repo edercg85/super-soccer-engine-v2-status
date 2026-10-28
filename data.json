@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-92",
-  "updatedAt": "2026-10-28T02:51:14-03:00",
-  "cycle": "SS-ORCH-001-W157-KEEPER-INTERCEPT-PROBABILITY",
+  "version": "2026.10.28-portal-93",
+  "updatedAt": "2026-10-28T03:06:57-03:00",
+  "cycle": "SS-ORCH-001-W158-KEEPER-MULTISEED",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W158: ampliar a amostra para seeds 1732–1735 em pares ON/OFF sobre a mesma fixture PAL×COR; capturar intercepts, draws, gols e hashes, sem alteração do gameplay.",
+  "currentFocus": "W159: validar em seed1733 ticks 652/1192 a composição Shoot×Tackle, IDs, draws técnicos, ShotBlocked:Tackled e ausência de efeitos de lançamento; comparar fingerprints W158.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W157",
-    "wave": "W157",
-    "publishedAt": "2026-10-28T05:51:14Z",
+    "id": "W158",
+    "wave": "W158",
+    "publishedAt": "2026-10-28T06:06:57Z",
     "macro": "M2",
-    "title": "W157: probabilidade técnica e resultado do intercept GK",
-    "status": "1/1 PASS; 20/20 resultados reconciliados com p/draw; 7 sucessos e 13 falhas.",
-    "summary": "Hashes W152/W153 preservados. A fórmula e os draws explicam os 20 resultados. Soma de probabilidades=11,677 e sucessos=7, mas amostra dependente de dois seeds e uma fixture: não é evidência de descalibração. W158 ampliará seeds pareados, curva inalterada."
+    "title": "W158: pares multiseed e defesa do goleiro",
+    "status": "1/1 PASS; seeds 1732–1735; repeat hash-exact. ON 100 gols/136 tiros vs OFF 0/1.",
+    "summary": "O pareamento em uma fixture family mostra grande divergência ON/OFF; qualidade não aceita. Em 47 intercepts GK ON, 30/17 sucederam/falharam e a soma p=30,038. Dois ShootBlocked:Tackled sem ActiveShoot são terminais prévios ao lançamento. W159 verifica tackle e draws nos ticks."
   },
   "recentCycles": [
-    {
-      "id": "W150",
-      "wave": "W150",
-      "publishedAt": "2026-10-28T04:39:44Z",
-      "macro": "M2",
-      "title": "W150: efeitos imediatos dos overrides",
-      "status": "1/1 PASS; cinemática projetada bateu runtime nos cinco casos.",
-      "summary": "Cinco MoveToGoal: quatro mantêm posse no tick e nos dois seguintes; t4719 sofre TackleSucceeded por adversário, com contato UNKNOWN. OFF é só projeção pelo mesmo resolver, não simulação pareada."
-    },
     {
       "id": "W151",
       "wave": "W151",
@@ -92,6 +83,15 @@
       "title": "W157: probabilidade técnica e resultado do intercept GK",
       "status": "1/1 PASS; 20/20 resultados reconciliados com p/draw; 7 sucessos e 13 falhas.",
       "summary": "Hashes W152/W153 preservados. A fórmula e os draws explicam os 20 resultados. Soma de probabilidades=11,677 e sucessos=7, mas amostra dependente de dois seeds e uma fixture: não é evidência de descalibração. W158 ampliará seeds pareados, curva inalterada."
+    },
+    {
+      "id": "W158",
+      "wave": "W158",
+      "publishedAt": "2026-10-28T06:06:57Z",
+      "macro": "M2",
+      "title": "W158: pares multiseed e defesa do goleiro",
+      "status": "1/1 PASS; seeds 1732–1735; repeat hash-exact. ON 100 gols/136 tiros vs OFF 0/1.",
+      "summary": "O pareamento em uma fixture family mostra grande divergência ON/OFF; qualidade não aceita. Em 47 intercepts GK ON, 30/17 sucederam/falharam e a soma p=30,038. Dois ShootBlocked:Tackled sem ActiveShoot são terminais prévios ao lançamento. W159 verifica tackle e draws nos ticks."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W150",
-      "wave": "W150",
-      "publishedAt": "2026-10-28T04:39:44Z",
-      "macro": "M2",
-      "title": "W150: efeitos imediatos dos overrides",
-      "status": "1/1 PASS; cinemática projetada bateu runtime nos cinco casos.",
-      "summary": "Cinco MoveToGoal: quatro mantêm posse no tick e nos dois seguintes; t4719 sofre TackleSucceeded por adversário, com contato UNKNOWN. OFF é só projeção pelo mesmo resolver, não simulação pareada."
-    },
-    {
       "id": "W151",
       "wave": "W151",
       "publishedAt": "2026-10-28T04:48:09Z",
@@ -1116,6 +1107,15 @@
       "title": "W157: probabilidade técnica e resultado do intercept GK",
       "status": "1/1 PASS; 20/20 resultados reconciliados com p/draw; 7 sucessos e 13 falhas.",
       "summary": "Hashes W152/W153 preservados. A fórmula e os draws explicam os 20 resultados. Soma de probabilidades=11,677 e sucessos=7, mas amostra dependente de dois seeds e uma fixture: não é evidência de descalibração. W158 ampliará seeds pareados, curva inalterada."
+    },
+    {
+      "id": "W158",
+      "wave": "W158",
+      "publishedAt": "2026-10-28T06:06:57Z",
+      "macro": "M2",
+      "title": "W158: pares multiseed e defesa do goleiro",
+      "status": "1/1 PASS; seeds 1732–1735; repeat hash-exact. ON 100 gols/136 tiros vs OFF 0/1.",
+      "summary": "O pareamento em uma fixture family mostra grande divergência ON/OFF; qualidade não aceita. Em 47 intercepts GK ON, 30/17 sucederam/falharam e a soma p=30,038. Dois ShootBlocked:Tackled sem ActiveShoot são terminais prévios ao lançamento. W159 verifica tackle e draws nos ticks."
     },
     {
       "wave": "W66",
@@ -2922,6 +2922,10 @@
     {
       "id": "CP-W157-01",
       "title": "W157 goalkeeper interception probability and draw reconciliation"
+    },
+    {
+      "id": "CP-W158-01",
+      "title": "W158 paired keeper multiseed and shot-terminal reconciliation"
     }
   ]
 }
