@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-96",
-  "updatedAt": "2026-10-28T06:35:00Z",
-  "cycle": "SS-ORCH-001-W162-GK-NONSELECTION-CENSUS",
+  "version": "2026.10.28-portal-97",
+  "updatedAt": "2026-10-28T06:51:00Z",
+  "cycle": "SS-ORCH-001-W163-GK-REACH5-PAIRED-EXPERIMENT",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W163: inspecionar diffs preexistentes do DecisionEngine e harness, definir método isolado para comparar reach 4m versus 5m com fixture/seeds W158; preservar código disputado. Se não houver isolamento seguro, fechar protocolo e diagnóstico sem editar gameplay.",
+  "currentFocus": "W164: exportar hashes de decisão/estado/eventos por tick em harness temporário 4m e 5m; localizar primeira divergência por seed e verificar se um intercept GK adicional ocorreu no estado imediatamente anterior idêntico. Se não, rastrear a primeira causa real sem atribuição antecipada.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W162",
-    "wave": "W162",
-    "publishedAt": "2026-10-28T06:35:00Z",
+    "id": "W163",
+    "wave": "W163",
+    "publishedAt": "2026-10-28T06:51:00Z",
     "macro": "M2",
-    "title": "W162: censo de não seleção do goleiro em gols",
-    "status": "100/100 lifecycles particionados; CRC/manifesto/hash ZIP PASS; sem mudança de gameplay.",
-    "summary": "Dos 100 gols W158, 85 não tinham intercept candidato por alcance especializado (>4m), 4 não alcançavam o limite genérico (2m), e 11 tentativas selecionadas falharam tecnicamente. A sensibilidade de 5m é geométrica; defesas e qualidade continuam UNKNOWN."
+    "title": "W163: alcance GK 4m×5m em quatro seeds",
+    "status": "Baseline 1/1 PASS byte-exact; candidato 1/1 PASS, repetição determinística; resultado misto, NO-GO.",
+    "summary": "SafeForward ON: gols/chutes 100/136→90/129; intercepts selecionados 47→72, sucessos/falhas 30/17→37/35. Uma seed melhora, uma iguala e duas caem em gols. Alteração só em TEMP; default 4m preservado."
   },
   "recentCycles": [
-    {
-      "id": "W155",
-      "wave": "W155",
-      "publishedAt": "2026-10-28T05:25:27Z",
-      "macro": "M2",
-      "title": "W155: distância e crossing dos chutes SafeForward",
-      "status": "1/1 PASS; W152/W153 hash-exact; origens de gol ON em média 5,63m/5,38m do centro.",
-      "summary": "Seed1730 ON 27/29 gols; seed1731 ON 17/24. Lifecycles e crossings reconciliados; muitas finalizações começam perto do gol, mas defesa/goleiro não foram capturados. Sem aceite de qualidade."
-    },
     {
       "id": "W156",
       "wave": "W156",
@@ -92,6 +83,15 @@
       "title": "W162: censo de não seleção do goleiro em gols",
       "status": "100/100 lifecycles particionados; CRC/manifesto/hash ZIP PASS; sem mudança de gameplay.",
       "summary": "Dos 100 gols W158, 85 não tinham intercept candidato por alcance especializado (>4m), 4 não alcançavam o limite genérico (2m), e 11 tentativas selecionadas falharam tecnicamente. A sensibilidade de 5m é geométrica; defesas e qualidade continuam UNKNOWN."
+    },
+    {
+      "id": "W163",
+      "wave": "W163",
+      "publishedAt": "2026-10-28T06:51:00Z",
+      "macro": "M2",
+      "title": "W163: alcance GK 4m×5m em quatro seeds",
+      "status": "Baseline 1/1 PASS byte-exact; candidato 1/1 PASS, repetição determinística; resultado misto, NO-GO.",
+      "summary": "SafeForward ON: gols/chutes 100/136→90/129; intercepts selecionados 47→72, sucessos/falhas 30/17→37/35. Uma seed melhora, uma iguala e duas caem em gols. Alteração só em TEMP; default 4m preservado."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W155",
-      "wave": "W155",
-      "publishedAt": "2026-10-28T05:25:27Z",
-      "macro": "M2",
-      "title": "W155: distância e crossing dos chutes SafeForward",
-      "status": "1/1 PASS; W152/W153 hash-exact; origens de gol ON em média 5,63m/5,38m do centro.",
-      "summary": "Seed1730 ON 27/29 gols; seed1731 ON 17/24. Lifecycles e crossings reconciliados; muitas finalizações começam perto do gol, mas defesa/goleiro não foram capturados. Sem aceite de qualidade."
-    },
-    {
       "id": "W156",
       "wave": "W156",
       "publishedAt": "2026-10-28T05:45:12Z",
@@ -1116,6 +1107,15 @@
       "title": "W162: censo de não seleção do goleiro em gols",
       "status": "100/100 lifecycles particionados; CRC/manifesto/hash ZIP PASS; sem mudança de gameplay.",
       "summary": "Dos 100 gols W158, 85 não tinham intercept candidato por alcance especializado (>4m), 4 não alcançavam o limite genérico (2m), e 11 tentativas selecionadas falharam tecnicamente. A sensibilidade de 5m é geométrica; defesas e qualidade continuam UNKNOWN."
+    },
+    {
+      "id": "W163",
+      "wave": "W163",
+      "publishedAt": "2026-10-28T06:51:00Z",
+      "macro": "M2",
+      "title": "W163: alcance GK 4m×5m em quatro seeds",
+      "status": "Baseline 1/1 PASS byte-exact; candidato 1/1 PASS, repetição determinística; resultado misto, NO-GO.",
+      "summary": "SafeForward ON: gols/chutes 100/136→90/129; intercepts selecionados 47→72, sucessos/falhas 30/17→37/35. Uma seed melhora, uma iguala e duas caem em gols. Alteração só em TEMP; default 4m preservado."
     },
     {
       "wave": "W66",
@@ -2942,6 +2942,10 @@
     {
       "id": "CP-W163-00",
       "title": "Preflight experimental de reach GK 5m"
+    },
+    {
+      "id": "CP-W163-01",
+      "title": "Reach GK 5m pareado e auditoria"
     }
   ]
 }
