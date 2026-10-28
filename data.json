@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-140",
-  "updatedAt": "2026-10-28T12:15:00Z",
-  "cycle": "SS-ORCH-001-W210-SHAPE-DERR-INTERACTION",
+  "version": "2026.10.28-portal-141",
+  "updatedAt": "2026-10-28T12:34:00Z",
+  "cycle": "SS-ORCH-001-W215-FIRST-DIVERGENCE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W210: medir se DefensiveEngagement consome slots de DynamicTeamShape com modo Off, em estado fixo e artefatos isolados; sem alteração de gameplay.",
+  "currentFocus": "W215: localizar primeira divergência de estado e primeiros impedimentos extras no par W214; capturar janela compacta e hashes por tick, sem multiseed antes de entender a cadeia.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,33 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W209",
-    "wave": "W209",
-    "publishedAt": "2026-10-28T12:15:00Z",
+    "id": "W214",
+    "wave": "W214",
+    "publishedAt": "2026-10-28T12:33:00Z",
     "macro": "M3",
-    "title": "W209: slots do DynamicTeamShape têm consumidores em Move e pressão",
-    "status": "Source mechanism confirmado; efeitos coletivos em partida UNKNOWN.",
-    "summary": "Fonte atual: formação+bola→slots→destino Move e custo estrutural de assignment. DynamicTeamShapeMode=Off não neutraliza o consumo com DefensiveEngagement ativo. TRX W15 é de outro hash."
+    "title": "W214: DERR isolado muda PAL×COR 90min na seed 1729",
+    "status": "Efeito pareado e repetibilidade ON confirmados; não promovido (uma seed, qualidade ambígua).",
+    "summary": "Só DERR variou. OFF/ON: 22→60 impedimentos, 798→635 passes completos, tackles selecionados 43→340, posse home 1700→1363 e away 944→1493; placar 0–0 ambos. ON repetiu exatamente."
   },
   "recentCycles": [
-    {
-      "id": "W198",
-      "wave": "W198",
-      "publishedAt": "2026-10-28T11:36:00Z",
-      "macro": "M2",
-      "title": "W198: guarda do goleiro e candidato de interceptação",
-      "status": "Runtime diagnostics audited; source-to-binary and OFF tick31 guard PARTIAL.",
-      "summary": "OFF tick31 tem ActiveShoot, InterceptBall inelegível e nenhum candidato; ON ticks30/34 tem candidato threat/last-useful e bloqueia. Hash da DLL e fixture preservados; PE/PDB não associado."
-    },
-    {
-      "id": "W199",
-      "wave": "W199",
-      "publishedAt": "2026-10-28T11:42:00Z",
-      "macro": "M2",
-      "title": "W199: alcance explica a ausência de candidato, com limite de build",
-      "status": "Direct DLL probe PASS; decision cutoff PARTIAL (PE/PDB/source link not verified).",
-      "summary": "OFF tick31: Applies=true; oportunidade 7,8743m, t=0, ameaça=true, LastUseful=false; InterceptBall sem candidato. ON controles 30/34 em 0/0,0783m são elegíveis e escolhidos. W198-C5 refinada."
-    },
     {
       "id": "W200",
       "wave": "W200",
@@ -101,6 +83,24 @@
       "title": "W209: slots do DynamicTeamShape têm consumidores em Move e pressão",
       "status": "Source mechanism confirmado; efeitos coletivos em partida UNKNOWN.",
       "summary": "Fonte atual: formação+bola→slots→destino Move e custo estrutural de assignment. DynamicTeamShapeMode=Off não neutraliza o consumo com DefensiveEngagement ativo. TRX W15 é de outro hash."
+    },
+    {
+      "id": "W210-W213",
+      "wave": "W210-W213",
+      "publishedAt": "2026-10-28T12:31:00Z",
+      "macro": "M3",
+      "title": "W210–W213: efeito do shape em DERR, escopo e configuração de produto",
+      "status": "Mecanismo e integração 1-tick confirmados; default-off de produto confirmado; qualidade em partida pendente.",
+      "summary": "DERR ON com DynamicTeamShapeMode Off atribui papéis via slots, altera Move de NotAssigned para PreserveShape; foco de restart retorna sem contextos. Config do produto não ativa DERR; fontes locais e testes focalizados."
+    },
+    {
+      "id": "W214",
+      "wave": "W214",
+      "publishedAt": "2026-10-28T12:33:00Z",
+      "macro": "M3",
+      "title": "W214: DERR isolado muda PAL×COR 90min na seed 1729",
+      "status": "Efeito pareado e repetibilidade ON confirmados; não promovido (uma seed, qualidade ambígua).",
+      "summary": "Só DERR variou. OFF/ON: 22→60 impedimentos, 798→635 passes completos, tackles selecionados 43→340, posse home 1700→1363 e away 944→1493; placar 0–0 ambos. ON repetiu exatamente."
     }
   ],
   "macros": [
@@ -1055,24 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W198",
-      "wave": "W198",
-      "publishedAt": "2026-10-28T11:36:00Z",
-      "macro": "M2",
-      "title": "W198: guarda do goleiro e candidato de interceptação",
-      "status": "Runtime diagnostics audited; source-to-binary and OFF tick31 guard PARTIAL.",
-      "summary": "OFF tick31 tem ActiveShoot, InterceptBall inelegível e nenhum candidato; ON ticks30/34 tem candidato threat/last-useful e bloqueia. Hash da DLL e fixture preservados; PE/PDB não associado."
-    },
-    {
-      "id": "W199",
-      "wave": "W199",
-      "publishedAt": "2026-10-28T11:42:00Z",
-      "macro": "M2",
-      "title": "W199: alcance explica a ausência de candidato, com limite de build",
-      "status": "Direct DLL probe PASS; decision cutoff PARTIAL (PE/PDB/source link not verified).",
-      "summary": "OFF tick31: Applies=true; oportunidade 7,8743m, t=0, ameaça=true, LastUseful=false; InterceptBall sem candidato. ON controles 30/34 em 0/0,0783m são elegíveis e escolhidos. W198-C5 refinada."
-    },
-    {
       "id": "W200",
       "wave": "W200",
       "publishedAt": "2026-10-28T11:46:00Z",
@@ -1134,6 +1116,24 @@
       "title": "W209: slots do DynamicTeamShape têm consumidores em Move e pressão",
       "status": "Source mechanism confirmado; efeitos coletivos em partida UNKNOWN.",
       "summary": "Fonte atual: formação+bola→slots→destino Move e custo estrutural de assignment. DynamicTeamShapeMode=Off não neutraliza o consumo com DefensiveEngagement ativo. TRX W15 é de outro hash."
+    },
+    {
+      "id": "W210-W213",
+      "wave": "W210-W213",
+      "publishedAt": "2026-10-28T12:31:00Z",
+      "macro": "M3",
+      "title": "W210–W213: efeito do shape em DERR, escopo e configuração de produto",
+      "status": "Mecanismo e integração 1-tick confirmados; default-off de produto confirmado; qualidade em partida pendente.",
+      "summary": "DERR ON com DynamicTeamShapeMode Off atribui papéis via slots, altera Move de NotAssigned para PreserveShape; foco de restart retorna sem contextos. Config do produto não ativa DERR; fontes locais e testes focalizados."
+    },
+    {
+      "id": "W214",
+      "wave": "W214",
+      "publishedAt": "2026-10-28T12:33:00Z",
+      "macro": "M3",
+      "title": "W214: DERR isolado muda PAL×COR 90min na seed 1729",
+      "status": "Efeito pareado e repetibilidade ON confirmados; não promovido (uma seed, qualidade ambígua).",
+      "summary": "Só DERR variou. OFF/ON: 22→60 impedimentos, 798→635 passes completos, tackles selecionados 43→340, posse home 1700→1363 e away 944→1493; placar 0–0 ambos. ON repetiu exatamente."
     },
     {
       "wave": "W66",
@@ -3148,6 +3148,18 @@
     {
       "id": "CP-W209-01",
       "title": "M3 source mapping concluído; teste da interação Off/DERR iniciado"
+    },
+    {
+      "id": "CP-W214-00",
+      "title": "Par PAL×COR 90min DERR isolado iniciado"
+    },
+    {
+      "id": "CP-W214-FINAL",
+      "title": "Par 90min PAL×COR DERR isolado completo e repetido"
+    },
+    {
+      "id": "CP-W215-00",
+      "title": "Primeira divergência e evento offside adicional em preparação"
     }
   ]
 }
