@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-72",
-  "updatedAt": "2026-10-28T00:21:25-03:00",
-  "cycle": "SS-ORCH-001-W137-POST-TERMINAL-DECISIONS",
+  "version": "2026.10.28-portal-73",
+  "updatedAt": "2026-10-28T00:24:33-03:00",
+  "cycle": "SS-ORCH-001-W138-NEXT-PASS-TERMINALS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W138: seguir os três ActivePass recém-criados até terminal e observar somente a próxima decisão após Move t659 no quarto ramo.",
+  "currentFocus": "W139: investigar seed1731 ON pass t132→t134 com ActivePassRecoveryObserver, evento de posse e resultados do terminal. Confirmar candidatos/vencedor sem supor identidade ou causa.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W137",
-    "wave": "W137",
-    "publishedAt": "2026-10-28T03:21:25Z",
+    "id": "W138",
+    "wave": "W138",
+    "publishedAt": "2026-10-28T03:24:33Z",
     "macro": "M2",
-    "title": "W137: decisão do carrier após terminal",
-    "status": "4/4 PASS; três Pass criam ActivePass; Move branch mantém posse e no tick seguinte escolhe Pass.",
-    "summary": "Após três PassCompleted, o alvo escolhe Pass no próximo tick; o alvo do outro terminal escolhe Move. Na rota Move t333, t334 escolhe Pass."
+    "title": "W138: novos terminais e posse",
+    "status": "4/4 PASS; dois PassCompleted, um PassFailed, um Move control.",
+    "summary": "Dois passes entregam posse ao alvo. Um falha em t134; posse fica com 4c69… ainda sem identidade atribuída. Um Move t660 foi concluído."
   },
   "recentCycles": [
-    {
-      "id": "W130",
-      "wave": "W130",
-      "publishedAt": "2026-10-28T03:53:00Z",
-      "macro": "M2",
-      "title": "W130: primeiro terminal de quatro passes naturais",
-      "status": "4/4 PASS; PassCompleted 3 ticks após launch; recovery e posse no target; sem conclusão causal.",
-      "summary": "Seeds 1730/1731 OFF/ON: os quatro ActivePass específicos terminam PassCompleted, intended target vence recovery e recebe posse. Nenhum terminal de impedimento/falha nesses quatro. OFF/ON já divergiram antes."
-    },
     {
       "id": "W131",
       "wave": "W131",
@@ -92,6 +83,15 @@
       "title": "W137: decisão do carrier após terminal",
       "status": "4/4 PASS; três Pass criam ActivePass; Move branch mantém posse e no tick seguinte escolhe Pass.",
       "summary": "Após três PassCompleted, o alvo escolhe Pass no próximo tick; o alvo do outro terminal escolhe Move. Na rota Move t333, t334 escolhe Pass."
+    },
+    {
+      "id": "W138",
+      "wave": "W138",
+      "publishedAt": "2026-10-28T03:24:33Z",
+      "macro": "M2",
+      "title": "W138: novos terminais e posse",
+      "status": "4/4 PASS; dois PassCompleted, um PassFailed, um Move control.",
+      "summary": "Dois passes entregam posse ao alvo. Um falha em t134; posse fica com 4c69… ainda sem identidade atribuída. Um Move t660 foi concluído."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W130",
-      "wave": "W130",
-      "publishedAt": "2026-10-28T03:53:00Z",
-      "macro": "M2",
-      "title": "W130: primeiro terminal de quatro passes naturais",
-      "status": "4/4 PASS; PassCompleted 3 ticks após launch; recovery e posse no target; sem conclusão causal.",
-      "summary": "Seeds 1730/1731 OFF/ON: os quatro ActivePass específicos terminam PassCompleted, intended target vence recovery e recebe posse. Nenhum terminal de impedimento/falha nesses quatro. OFF/ON já divergiram antes."
-    },
-    {
       "id": "W131",
       "wave": "W131",
       "publishedAt": "2026-10-28T04:15:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W137: decisão do carrier após terminal",
       "status": "4/4 PASS; três Pass criam ActivePass; Move branch mantém posse e no tick seguinte escolhe Pass.",
       "summary": "Após três PassCompleted, o alvo escolhe Pass no próximo tick; o alvo do outro terminal escolhe Move. Na rota Move t333, t334 escolhe Pass."
+    },
+    {
+      "id": "W138",
+      "wave": "W138",
+      "publishedAt": "2026-10-28T03:24:33Z",
+      "macro": "M2",
+      "title": "W138: novos terminais e posse",
+      "status": "4/4 PASS; dois PassCompleted, um PassFailed, um Move control.",
+      "summary": "Dois passes entregam posse ao alvo. Um falha em t134; posse fica com 4c69… ainda sem identidade atribuída. Um Move t660 foi concluído."
     },
     {
       "wave": "W66",
@@ -2798,6 +2798,14 @@
     {
       "id": "CP-W137-01",
       "title": "Carrier escolhe ação seguinte"
+    },
+    {
+      "id": "CP-W138-00",
+      "title": "Preflight dos terminais subsequentes"
+    },
+    {
+      "id": "CP-W138-01",
+      "title": "Terminal/posse e exceção de falha"
     }
   ]
 }
