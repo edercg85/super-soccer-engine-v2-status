@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-81",
-  "updatedAt": "2026-10-28T00:58:18-03:00",
-  "cycle": "SS-ORCH-001-W146-SAFEFORWARD-GUARD-T137",
+  "version": "2026.10.28-portal-82",
+  "updatedAt": "2026-10-28T01:04:04-03:00",
+  "cycle": "SS-ORCH-001-W147-SAFEFORWARD-SEED1730",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W147: procurar snapshot de recuperação/carrier em seed1730, testar ON/OFF no mesmo estado e recalcular as guardas. Se não existir caso elegível, registrar ausência sem generalizar.",
+  "currentFocus": "W148: percorrer os recoveries same-team restantes após offside t152 na seed1730; contar guardas verdadeiras apenas nessa janela e registrar cada comparação do mesmo estado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W146",
-    "wave": "W146",
-    "publishedAt": "2026-10-28T03:58:18Z",
+    "id": "W147",
+    "wave": "W147",
+    "publishedAt": "2026-10-28T04:04:04Z",
     "macro": "M2",
-    "title": "W146: SafeForward no snapshot t137",
-    "status": "1/1 PASS; distância do adversário reduzida pelo candidato ao gol; override não ocorre.",
-    "summary": "No t137, o MoveToGoal avançaria 3,894, mas aproximaria o adversário de 13,725 para 10,278. ON/OFF preservam o mesmo MoveToTeammate."
+    "title": "W147: primeiro recovery SafeForward na seed1730",
+    "status": "1/1 PASS; ON/OFF iguais no t173.",
+    "summary": "Após offside t152, recovery t172 leva a Move no t173. Baseline já avança; MoveToGoal aproximaria o defensor de 7,744 para 2,110, então o selector não troca."
   },
   "recentCycles": [
-    {
-      "id": "W139",
-      "wave": "W139",
-      "publishedAt": "2026-10-28T03:29:08Z",
-      "macro": "M2",
-      "title": "W139: recuperação após PassFailed",
-      "status": "1/1 PASS; único recovery candidate foi companheiro away do passer; posse ficou away.",
-      "summary": "PassFailed ocorreu porque a posse não foi do intended target. RecoveryObserver ligou único candidato 4c69… a PossessionChanged e ao estado; não houve turnover de equipe."
-    },
     {
       "id": "W140",
       "wave": "W140",
@@ -92,6 +83,15 @@
       "title": "W146: SafeForward no snapshot t137",
       "status": "1/1 PASS; distância do adversário reduzida pelo candidato ao gol; override não ocorre.",
       "summary": "No t137, o MoveToGoal avançaria 3,894, mas aproximaria o adversário de 13,725 para 10,278. ON/OFF preservam o mesmo MoveToTeammate."
+    },
+    {
+      "id": "W147",
+      "wave": "W147",
+      "publishedAt": "2026-10-28T04:04:04Z",
+      "macro": "M2",
+      "title": "W147: primeiro recovery SafeForward na seed1730",
+      "status": "1/1 PASS; ON/OFF iguais no t173.",
+      "summary": "Após offside t152, recovery t172 leva a Move no t173. Baseline já avança; MoveToGoal aproximaria o defensor de 7,744 para 2,110, então o selector não troca."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W139",
-      "wave": "W139",
-      "publishedAt": "2026-10-28T03:29:08Z",
-      "macro": "M2",
-      "title": "W139: recuperação após PassFailed",
-      "status": "1/1 PASS; único recovery candidate foi companheiro away do passer; posse ficou away.",
-      "summary": "PassFailed ocorreu porque a posse não foi do intended target. RecoveryObserver ligou único candidato 4c69… a PossessionChanged e ao estado; não houve turnover de equipe."
-    },
-    {
       "id": "W140",
       "wave": "W140",
       "publishedAt": "2026-10-28T03:32:17Z",
@@ -1116,6 +1107,15 @@
       "title": "W146: SafeForward no snapshot t137",
       "status": "1/1 PASS; distância do adversário reduzida pelo candidato ao gol; override não ocorre.",
       "summary": "No t137, o MoveToGoal avançaria 3,894, mas aproximaria o adversário de 13,725 para 10,278. ON/OFF preservam o mesmo MoveToTeammate."
+    },
+    {
+      "id": "W147",
+      "wave": "W147",
+      "publishedAt": "2026-10-28T04:04:04Z",
+      "macro": "M2",
+      "title": "W147: primeiro recovery SafeForward na seed1730",
+      "status": "1/1 PASS; ON/OFF iguais no t173.",
+      "summary": "Após offside t152, recovery t172 leva a Move no t173. Baseline já avança; MoveToGoal aproximaria o defensor de 7,744 para 2,110, então o selector não troca."
     },
     {
       "wave": "W66",
@@ -2870,6 +2870,14 @@
     {
       "id": "CP-W146-01",
       "title": "Guarda de proximidade em t137"
+    },
+    {
+      "id": "CP-W147-00",
+      "title": "Preflight seed1730 pós-offside"
+    },
+    {
+      "id": "CP-W147-01",
+      "title": "Contrafactual ON/OFF no recovery seed1730"
     }
   ]
 }
