@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-97",
-  "updatedAt": "2026-10-28T06:51:00Z",
-  "cycle": "SS-ORCH-001-W163-GK-REACH5-PAIRED-EXPERIMENT",
+  "version": "2026.10.28-portal-98",
+  "updatedAt": "2026-10-28T07:04:00Z",
+  "cycle": "SS-ORCH-001-W164-FIRST-DIVERGENCE-GK",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W164: exportar hashes de decisão/estado/eventos por tick em harness temporário 4m e 5m; localizar primeira divergência por seed e verificar se um intercept GK adicional ocorreu no estado imediatamente anterior idêntico. Se não, rastrear a primeira causa real sem atribuição antecipada.",
+  "currentFocus": "W165: seguir os quatro primeiros intercepts falhos após T+1, começando nas seeds1732 e1733; medir posição/velocidade do GK, bola/posse e próximo lifecycle até a primeira consequência funcional posterior. Manter escopo curto e fonte/hash de cada snapshot.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W163",
-    "wave": "W163",
-    "publishedAt": "2026-10-28T06:51:00Z",
+    "id": "W164",
+    "wave": "W164",
+    "publishedAt": "2026-10-28T07:04:00Z",
     "macro": "M2",
-    "title": "W163: alcance GK 4m×5m em quatro seeds",
-    "status": "Baseline 1/1 PASS byte-exact; candidato 1/1 PASS, repetição determinística; resultado misto, NO-GO.",
-    "summary": "SafeForward ON: gols/chutes 100/136→90/129; intercepts selecionados 47→72, sucessos/falhas 30/17→37/35. Uma seed melhora, uma iguala e duas caem em gols. Alteração só em TEMP; default 4m preservado."
+    "title": "W164: primeira divergência causada por intercept GK",
+    "status": "4/4 ON com pre-state igual; intercept novo falha e GK não se move nesse tick; gol imediato idêntico. 4/4 OFF traces exatos.",
+    "summary": "A faixa 4–5m muda LastUseful e força InterceptBall a 5m (draws 0,21–0,29 vs p 5,46–16,10%). Todas falham; cada chute termina no mesmo gol/crossing. Efeito local é a posição parada do GK; impactos posteriores ainda UNKNOWN."
   },
   "recentCycles": [
-    {
-      "id": "W156",
-      "wave": "W156",
-      "publishedAt": "2026-10-28T05:45:12Z",
-      "macro": "M2",
-      "title": "W156: guarda de interceptação do goleiro durante ActiveShoot",
-      "status": "1/1 PASS; W152/W153 hash-exact; 20 intercepts GK ON, 7 bloqueios e 13 falhas.",
-      "summary": "A associação do defensor foi corrigida para respeitar a inversão de lados. Em 60 ticks especializados, os 19 LastUsefulOpportunity coincidem com elegibilidade/seleção; um bloqueio ocorreu pelo alcance genérico a 0 m. OFF seed1730: 1 chute/gol, sem intercept elegível. Amostra estreita; qualidade global desconhecida."
-    },
     {
       "id": "W157",
       "wave": "W157",
@@ -92,6 +83,15 @@
       "title": "W163: alcance GK 4m×5m em quatro seeds",
       "status": "Baseline 1/1 PASS byte-exact; candidato 1/1 PASS, repetição determinística; resultado misto, NO-GO.",
       "summary": "SafeForward ON: gols/chutes 100/136→90/129; intercepts selecionados 47→72, sucessos/falhas 30/17→37/35. Uma seed melhora, uma iguala e duas caem em gols. Alteração só em TEMP; default 4m preservado."
+    },
+    {
+      "id": "W164",
+      "wave": "W164",
+      "publishedAt": "2026-10-28T07:04:00Z",
+      "macro": "M2",
+      "title": "W164: primeira divergência causada por intercept GK",
+      "status": "4/4 ON com pre-state igual; intercept novo falha e GK não se move nesse tick; gol imediato idêntico. 4/4 OFF traces exatos.",
+      "summary": "A faixa 4–5m muda LastUseful e força InterceptBall a 5m (draws 0,21–0,29 vs p 5,46–16,10%). Todas falham; cada chute termina no mesmo gol/crossing. Efeito local é a posição parada do GK; impactos posteriores ainda UNKNOWN."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W156",
-      "wave": "W156",
-      "publishedAt": "2026-10-28T05:45:12Z",
-      "macro": "M2",
-      "title": "W156: guarda de interceptação do goleiro durante ActiveShoot",
-      "status": "1/1 PASS; W152/W153 hash-exact; 20 intercepts GK ON, 7 bloqueios e 13 falhas.",
-      "summary": "A associação do defensor foi corrigida para respeitar a inversão de lados. Em 60 ticks especializados, os 19 LastUsefulOpportunity coincidem com elegibilidade/seleção; um bloqueio ocorreu pelo alcance genérico a 0 m. OFF seed1730: 1 chute/gol, sem intercept elegível. Amostra estreita; qualidade global desconhecida."
-    },
-    {
       "id": "W157",
       "wave": "W157",
       "publishedAt": "2026-10-28T05:51:14Z",
@@ -1116,6 +1107,15 @@
       "title": "W163: alcance GK 4m×5m em quatro seeds",
       "status": "Baseline 1/1 PASS byte-exact; candidato 1/1 PASS, repetição determinística; resultado misto, NO-GO.",
       "summary": "SafeForward ON: gols/chutes 100/136→90/129; intercepts selecionados 47→72, sucessos/falhas 30/17→37/35. Uma seed melhora, uma iguala e duas caem em gols. Alteração só em TEMP; default 4m preservado."
+    },
+    {
+      "id": "W164",
+      "wave": "W164",
+      "publishedAt": "2026-10-28T07:04:00Z",
+      "macro": "M2",
+      "title": "W164: primeira divergência causada por intercept GK",
+      "status": "4/4 ON com pre-state igual; intercept novo falha e GK não se move nesse tick; gol imediato idêntico. 4/4 OFF traces exatos.",
+      "summary": "A faixa 4–5m muda LastUseful e força InterceptBall a 5m (draws 0,21–0,29 vs p 5,46–16,10%). Todas falham; cada chute termina no mesmo gol/crossing. Efeito local é a posição parada do GK; impactos posteriores ainda UNKNOWN."
     },
     {
       "wave": "W66",
@@ -2946,6 +2946,10 @@
     {
       "id": "CP-W163-01",
       "title": "Reach GK 5m pareado e auditoria"
+    },
+    {
+      "id": "CP-W164-01",
+      "title": "Primeira divergência 4m×5m e cadeia GK"
     }
   ]
 }
