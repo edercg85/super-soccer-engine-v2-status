@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-79",
-  "updatedAt": "2026-10-28T00:52:23-03:00",
-  "cycle": "SS-ORCH-001-W144-SAME-STATE-SAFEFORWARD-CAUSALITY",
+  "version": "2026.10.28-portal-80",
+  "updatedAt": "2026-10-28T00:56:06-03:00",
+  "cycle": "SS-ORCH-001-W145-SAFEFORWARD-GUARD-T136",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W145: repetir ON/OFF no estado pré-decisão t136. Determinar se o selector também dispara ou mantém o candidato baseline; não estender para outra seed até fechar esse teste.",
+  "currentFocus": "W146: executar o contrafactual no snapshot t137 e verificar se o filtro de aproximação ao adversário também evita a troca de objetivo nesse estado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W144",
-    "wave": "W144",
-    "publishedAt": "2026-10-28T03:52:23Z",
+    "id": "W145",
+    "wave": "W145",
+    "publishedAt": "2026-10-28T03:56:06Z",
     "macro": "M2",
-    "title": "W144: contrafactual SafeForward no mesmo estado",
-    "status": "1/1 PASS; MoveToGoal ON vs MoveToTeammate OFF no snapshot t135.",
-    "summary": "Com as quatro guardas verdadeiras, SafeForward altera direção/objetivo do Move. A ação e o score ficam iguais; o candidato ON progride rumo ao objetivo sem aproximar o adversário mais próximo."
+    "title": "W145: guarda SafeForward no tick t136",
+    "status": "1/1 PASS; candidato progressivo rejeitado porque aproxima o adversário.",
+    "summary": "No mesmo estado, ON/OFF mantêm MoveToTeammate: alternativa ao gol avançaria 9 unidades, mas reduziria distância do adversário de 4,900 para 1,182."
   },
   "recentCycles": [
-    {
-      "id": "W137",
-      "wave": "W137",
-      "publishedAt": "2026-10-28T03:21:25Z",
-      "macro": "M2",
-      "title": "W137: decisão do carrier após terminal",
-      "status": "4/4 PASS; três Pass criam ActivePass; Move branch mantém posse e no tick seguinte escolhe Pass.",
-      "summary": "Após três PassCompleted, o alvo escolhe Pass no próximo tick; o alvo do outro terminal escolhe Move. Na rota Move t333, t334 escolhe Pass."
-    },
     {
       "id": "W138",
       "wave": "W138",
@@ -92,6 +83,15 @@
       "title": "W144: contrafactual SafeForward no mesmo estado",
       "status": "1/1 PASS; MoveToGoal ON vs MoveToTeammate OFF no snapshot t135.",
       "summary": "Com as quatro guardas verdadeiras, SafeForward altera direção/objetivo do Move. A ação e o score ficam iguais; o candidato ON progride rumo ao objetivo sem aproximar o adversário mais próximo."
+    },
+    {
+      "id": "W145",
+      "wave": "W145",
+      "publishedAt": "2026-10-28T03:56:06Z",
+      "macro": "M2",
+      "title": "W145: guarda SafeForward no tick t136",
+      "status": "1/1 PASS; candidato progressivo rejeitado porque aproxima o adversário.",
+      "summary": "No mesmo estado, ON/OFF mantêm MoveToTeammate: alternativa ao gol avançaria 9 unidades, mas reduziria distância do adversário de 4,900 para 1,182."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W137",
-      "wave": "W137",
-      "publishedAt": "2026-10-28T03:21:25Z",
-      "macro": "M2",
-      "title": "W137: decisão do carrier após terminal",
-      "status": "4/4 PASS; três Pass criam ActivePass; Move branch mantém posse e no tick seguinte escolhe Pass.",
-      "summary": "Após três PassCompleted, o alvo escolhe Pass no próximo tick; o alvo do outro terminal escolhe Move. Na rota Move t333, t334 escolhe Pass."
-    },
-    {
       "id": "W138",
       "wave": "W138",
       "publishedAt": "2026-10-28T03:24:33Z",
@@ -1116,6 +1107,15 @@
       "title": "W144: contrafactual SafeForward no mesmo estado",
       "status": "1/1 PASS; MoveToGoal ON vs MoveToTeammate OFF no snapshot t135.",
       "summary": "Com as quatro guardas verdadeiras, SafeForward altera direção/objetivo do Move. A ação e o score ficam iguais; o candidato ON progride rumo ao objetivo sem aproximar o adversário mais próximo."
+    },
+    {
+      "id": "W145",
+      "wave": "W145",
+      "publishedAt": "2026-10-28T03:56:06Z",
+      "macro": "M2",
+      "title": "W145: guarda SafeForward no tick t136",
+      "status": "1/1 PASS; candidato progressivo rejeitado porque aproxima o adversário.",
+      "summary": "No mesmo estado, ON/OFF mantêm MoveToTeammate: alternativa ao gol avançaria 9 unidades, mas reduziria distância do adversário de 4,900 para 1,182."
     },
     {
       "wave": "W66",
@@ -2854,6 +2854,14 @@
     {
       "id": "CP-W144-01",
       "title": "Efeito causal espacial SafeForward"
+    },
+    {
+      "id": "CP-W145-00",
+      "title": "Preflight contrafactual t136"
+    },
+    {
+      "id": "CP-W145-01",
+      "title": "Rejeição por aproximação ao defensor"
     }
   ]
 }
