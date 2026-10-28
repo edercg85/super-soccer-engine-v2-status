@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-73",
-  "updatedAt": "2026-10-28T00:24:33-03:00",
-  "cycle": "SS-ORCH-001-W138-NEXT-PASS-TERMINALS",
+  "version": "2026.10.28-portal-74",
+  "updatedAt": "2026-10-28T00:29:08-03:00",
+  "cycle": "SS-ORCH-001-W139-PASSFAILED-RECOVERY-CAUSE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W139: investigar seed1731 ON pass t132→t134 com ActivePassRecoveryObserver, evento de posse e resultados do terminal. Confirmar candidatos/vencedor sem supor identidade ou causa.",
+  "currentFocus": "W140: observar a decisão do carrier 4c69… no tick seguinte e verificar estado/posse/ação imediata, sem extrapolar do caso único.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W138",
-    "wave": "W138",
-    "publishedAt": "2026-10-28T03:24:33Z",
+    "id": "W139",
+    "wave": "W139",
+    "publishedAt": "2026-10-28T03:29:08Z",
     "macro": "M2",
-    "title": "W138: novos terminais e posse",
-    "status": "4/4 PASS; dois PassCompleted, um PassFailed, um Move control.",
-    "summary": "Dois passes entregam posse ao alvo. Um falha em t134; posse fica com 4c69… ainda sem identidade atribuída. Um Move t660 foi concluído."
+    "title": "W139: recuperação após PassFailed",
+    "status": "1/1 PASS; único recovery candidate foi companheiro away do passer; posse ficou away.",
+    "summary": "PassFailed ocorreu porque a posse não foi do intended target. RecoveryObserver ligou único candidato 4c69… a PossessionChanged e ao estado; não houve turnover de equipe."
   },
   "recentCycles": [
-    {
-      "id": "W131",
-      "wave": "W131",
-      "publishedAt": "2026-10-28T04:15:00Z",
-      "macro": "M2",
-      "title": "W131: caminho de impedimento ligado ao snapshot de passe",
-      "status": "2/2 PASS (4 branches); evento/tick/source/target e OffsidePending ligados; reinício seguinte UNKNOWN.",
-      "summary": "Quatro traces W07: offender é intended target marcado no snapshot; infração em 2 ticks, posse nula e ActivePass limpa. Seed1730 OFF teve PassLaunchDegraded/Success=false e ainda carregou snapshot até a infração."
-    },
     {
       "id": "W132",
       "wave": "W132",
@@ -92,6 +83,15 @@
       "title": "W138: novos terminais e posse",
       "status": "4/4 PASS; dois PassCompleted, um PassFailed, um Move control.",
       "summary": "Dois passes entregam posse ao alvo. Um falha em t134; posse fica com 4c69… ainda sem identidade atribuída. Um Move t660 foi concluído."
+    },
+    {
+      "id": "W139",
+      "wave": "W139",
+      "publishedAt": "2026-10-28T03:29:08Z",
+      "macro": "M2",
+      "title": "W139: recuperação após PassFailed",
+      "status": "1/1 PASS; único recovery candidate foi companheiro away do passer; posse ficou away.",
+      "summary": "PassFailed ocorreu porque a posse não foi do intended target. RecoveryObserver ligou único candidato 4c69… a PossessionChanged e ao estado; não houve turnover de equipe."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W131",
-      "wave": "W131",
-      "publishedAt": "2026-10-28T04:15:00Z",
-      "macro": "M2",
-      "title": "W131: caminho de impedimento ligado ao snapshot de passe",
-      "status": "2/2 PASS (4 branches); evento/tick/source/target e OffsidePending ligados; reinício seguinte UNKNOWN.",
-      "summary": "Quatro traces W07: offender é intended target marcado no snapshot; infração em 2 ticks, posse nula e ActivePass limpa. Seed1730 OFF teve PassLaunchDegraded/Success=false e ainda carregou snapshot até a infração."
-    },
-    {
       "id": "W132",
       "wave": "W132",
       "publishedAt": "2026-10-28T04:51:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W138: novos terminais e posse",
       "status": "4/4 PASS; dois PassCompleted, um PassFailed, um Move control.",
       "summary": "Dois passes entregam posse ao alvo. Um falha em t134; posse fica com 4c69… ainda sem identidade atribuída. Um Move t660 foi concluído."
+    },
+    {
+      "id": "W139",
+      "wave": "W139",
+      "publishedAt": "2026-10-28T03:29:08Z",
+      "macro": "M2",
+      "title": "W139: recuperação após PassFailed",
+      "status": "1/1 PASS; único recovery candidate foi companheiro away do passer; posse ficou away.",
+      "summary": "PassFailed ocorreu porque a posse não foi do intended target. RecoveryObserver ligou único candidato 4c69… a PossessionChanged e ao estado; não houve turnover de equipe."
     },
     {
       "wave": "W66",
@@ -2806,6 +2806,14 @@
     {
       "id": "CP-W138-01",
       "title": "Terminal/posse e exceção de falha"
+    },
+    {
+      "id": "CP-W139-00",
+      "title": "Preflight de terminal PassFailed"
+    },
+    {
+      "id": "CP-W139-01",
+      "title": "Recovery winner e posse unidos"
     }
   ]
 }
