@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-107",
-  "updatedAt": "2026-10-28T08:32:29Z",
-  "cycle": "SS-ORCH-001-W173-ONSIDE-TARGET-CONTROL",
+  "version": "2026.10.28-portal-108",
+  "updatedAt": "2026-10-28T08:37:51Z",
+  "cycle": "SS-ORCH-001-W174-OPENPLAY-ONSIDE-PASS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W174: localizar o primeiro passe natural para target não marcado em jogo corrido, sem RestartState e fora de eventos de reinício; seguir até o terminal. Se duas seeds completas não produzirem caso, registrar a busca e mudar para outra dependência ofensiva observável.",
+  "currentFocus": "W175: seguir a janela após a recepção do passe onside até +12 ticks; identificar primeira decisão do recebedor, mudanças de posse/estado e eventos subsequentes. Se as seeds reproduzirem o mesmo estado, contar uma unidade e avançar para dependência seguinte.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W173",
-    "wave": "W173",
-    "publishedAt": "2026-10-28T08:32:28Z",
+    "id": "W174",
+    "wave": "W174",
+    "publishedAt": "2026-10-28T08:40:00Z",
     "macro": "M2",
-    "title": "W173: contraponto onside em bola parada",
-    "status": "Caso natural 2/2 repetições determinísticas; target onside recebe o passe; ocorrência em indirect free kick, não open play.",
-    "summary": "Passe lançado no tick 12 após indirect free kick; snapshot sem players marcados; target recupera posse no tick 15; nenhum OffsideOffence. Seeds 1732/1733 reproduzem o mesmo hash de estado, logo um único estado repetido."
+    "title": "W174: passe onside concluído em jogo corrido",
+    "status": "2/2 PASS; auditoria JSON PASS; uma instância reproduzida duas vezes.",
+    "summary": "No tick 16, jogo corrido com RestartState nulo e target fora do snapshot; passe completo tick 19 e alvo recebe posse; sem OffsideOffence. Estado exato repete nas duas seeds."
   },
   "recentCycles": [
-    {
-      "id": "W166",
-      "wave": "W166",
-      "publishedAt": "2026-10-28T07:39:54Z",
-      "macro": "M2",
-      "title": "W166: draw de passe isolado no mesmo snapshot completo",
-      "status": "1/1 contrafactual focal PASS; mesma instância de estado e decisões; só PassTechnical muda. Sem promoção de gameplay.",
-      "summary": "Na seed1732/tick1839, sample 0,2875997 dá PassLaunched e 0,8172683 dá PassLaunchDegraded; outras 21 ActionResults/efeitos ficam iguais. A prova fecha o elo local, não a qualidade nem o agregado W163."
-    },
     {
       "id": "W167",
       "wave": "W167",
@@ -92,6 +83,15 @@
       "title": "W173: contraponto onside em bola parada",
       "status": "Caso natural 2/2 repetições determinísticas; target onside recebe o passe; ocorrência em indirect free kick, não open play.",
       "summary": "Passe lançado no tick 12 após indirect free kick; snapshot sem players marcados; target recupera posse no tick 15; nenhum OffsideOffence. Seeds 1732/1733 reproduzem o mesmo hash de estado, logo um único estado repetido."
+    },
+    {
+      "id": "W174",
+      "wave": "W174",
+      "publishedAt": "2026-10-28T08:40:00Z",
+      "macro": "M2",
+      "title": "W174: passe onside concluído em jogo corrido",
+      "status": "2/2 PASS; auditoria JSON PASS; uma instância reproduzida duas vezes.",
+      "summary": "No tick 16, jogo corrido com RestartState nulo e target fora do snapshot; passe completo tick 19 e alvo recebe posse; sem OffsideOffence. Estado exato repete nas duas seeds."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W166",
-      "wave": "W166",
-      "publishedAt": "2026-10-28T07:39:54Z",
-      "macro": "M2",
-      "title": "W166: draw de passe isolado no mesmo snapshot completo",
-      "status": "1/1 contrafactual focal PASS; mesma instância de estado e decisões; só PassTechnical muda. Sem promoção de gameplay.",
-      "summary": "Na seed1732/tick1839, sample 0,2875997 dá PassLaunched e 0,8172683 dá PassLaunchDegraded; outras 21 ActionResults/efeitos ficam iguais. A prova fecha o elo local, não a qualidade nem o agregado W163."
-    },
-    {
       "id": "W167",
       "wave": "W167",
       "publishedAt": "2026-10-28T07:43:35Z",
@@ -1116,6 +1107,15 @@
       "title": "W173: contraponto onside em bola parada",
       "status": "Caso natural 2/2 repetições determinísticas; target onside recebe o passe; ocorrência em indirect free kick, não open play.",
       "summary": "Passe lançado no tick 12 após indirect free kick; snapshot sem players marcados; target recupera posse no tick 15; nenhum OffsideOffence. Seeds 1732/1733 reproduzem o mesmo hash de estado, logo um único estado repetido."
+    },
+    {
+      "id": "W174",
+      "wave": "W174",
+      "publishedAt": "2026-10-28T08:40:00Z",
+      "macro": "M2",
+      "title": "W174: passe onside concluído em jogo corrido",
+      "status": "2/2 PASS; auditoria JSON PASS; uma instância reproduzida duas vezes.",
+      "summary": "No tick 16, jogo corrido com RestartState nulo e target fora do snapshot; passe completo tick 19 e alvo recebe posse; sem OffsideOffence. Estado exato repete nas duas seeds."
     },
     {
       "wave": "W66",
@@ -2986,6 +2986,14 @@
     {
       "id": "CP-W173-02",
       "title": "Contraponto onside e handoff W173"
+    },
+    {
+      "id": "CP-W174-01",
+      "title": "Passe onside em jogo corrido"
+    },
+    {
+      "id": "CP-W174-02",
+      "title": "Handoff W174 publicado e validado"
     }
   ]
 }
