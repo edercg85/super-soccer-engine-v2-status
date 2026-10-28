@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-119",
-  "updatedAt": "2026-10-28T09:29:10Z",
-  "cycle": "SS-ORCH-001-W186-CROSS-SEED-SHOOT-CENSUS",
+  "version": "2026.10.28-portal-120",
+  "updatedAt": "2026-10-28T09:33:00Z",
+  "cycle": "SS-ORCH-001-W187-ACTION-SCORE-BY-DISTANCE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W186: executar censo correspondente em seed1732, mesma fixture/reach4/opções. Comparar elegibilidade, score/rank, distância e tentativa de chute; registrar limite de amostra de duas seeds.",
+  "currentFocus": "W187: por faixa de distância do gol, agregar scores e vencedores de Shoot/Move/Pass nos carrier ticks. Distinguir se gap adversário vem de Move, Pass ou ambos; não alterar fórmula sem teste falsificável.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W185",
-    "wave": "W185",
-    "publishedAt": "2026-10-28T09:29:10Z",
+    "id": "W186",
+    "wave": "W186",
+    "publishedAt": "2026-10-28T09:33:00Z",
     "macro": "M2",
-    "title": "W185: censo completo do score Shoot",
-    "status": "PARTIAL: captura terminou; auditoria agregada PASS; harness tinha assertion de denominador incorreta.",
-    "summary": "2529 carrier ticks; Shoot elegível2526, escolhido0, abaixo do melhor concorrente em2526; gap médio0,35953; distância média63,44m, 2481 acima de40m. Seed1733 apenas."
+    "title": "W186: controle cross-seed do ranking Shoot",
+    "status": "1/1 PASS; resultado semelhante em seed1732, auditoria dos denominadores PASS.",
+    "summary": "2519 carrier ticks; Shoot elegível2517, escolhido0 e menor que melhor concorrente em2517; gap médio0,36015, distância média63,76m. Match0–0 sem chutes."
   },
   "recentCycles": [
-    {
-      "id": "W178",
-      "wave": "W178",
-      "publishedAt": "2026-10-28T08:51:39Z",
-      "macro": "M2",
-      "title": "W178: elegibilidade e escolha do tackle",
-      "status": "2/2 PASS; 11 candidates, 2 elegíveis; 1 seleciona tackle; paridade de instrumentação PASS.",
-      "summary": "No prestate tick51, 2 defensores estavam ao alcance. O mais próximo escolhe Tackle por score .843; outro elegível escolhe Move. Nove rejeitados por alcance. Sem inferência de ranking coletivo."
-    },
     {
       "id": "W179",
       "wave": "W179",
@@ -92,6 +83,15 @@
       "title": "W185: censo completo do score Shoot",
       "status": "PARTIAL: captura terminou; auditoria agregada PASS; harness tinha assertion de denominador incorreta.",
       "summary": "2529 carrier ticks; Shoot elegível2526, escolhido0, abaixo do melhor concorrente em2526; gap médio0,35953; distância média63,44m, 2481 acima de40m. Seed1733 apenas."
+    },
+    {
+      "id": "W186",
+      "wave": "W186",
+      "publishedAt": "2026-10-28T09:33:00Z",
+      "macro": "M2",
+      "title": "W186: controle cross-seed do ranking Shoot",
+      "status": "1/1 PASS; resultado semelhante em seed1732, auditoria dos denominadores PASS.",
+      "summary": "2519 carrier ticks; Shoot elegível2517, escolhido0 e menor que melhor concorrente em2517; gap médio0,36015, distância média63,76m. Match0–0 sem chutes."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W178",
-      "wave": "W178",
-      "publishedAt": "2026-10-28T08:51:39Z",
-      "macro": "M2",
-      "title": "W178: elegibilidade e escolha do tackle",
-      "status": "2/2 PASS; 11 candidates, 2 elegíveis; 1 seleciona tackle; paridade de instrumentação PASS.",
-      "summary": "No prestate tick51, 2 defensores estavam ao alcance. O mais próximo escolhe Tackle por score .843; outro elegível escolhe Move. Nove rejeitados por alcance. Sem inferência de ranking coletivo."
-    },
-    {
       "id": "W179",
       "wave": "W179",
       "publishedAt": "2026-10-28T08:55:29Z",
@@ -1116,6 +1107,15 @@
       "title": "W185: censo completo do score Shoot",
       "status": "PARTIAL: captura terminou; auditoria agregada PASS; harness tinha assertion de denominador incorreta.",
       "summary": "2529 carrier ticks; Shoot elegível2526, escolhido0, abaixo do melhor concorrente em2526; gap médio0,35953; distância média63,44m, 2481 acima de40m. Seed1733 apenas."
+    },
+    {
+      "id": "W186",
+      "wave": "W186",
+      "publishedAt": "2026-10-28T09:33:00Z",
+      "macro": "M2",
+      "title": "W186: controle cross-seed do ranking Shoot",
+      "status": "1/1 PASS; resultado semelhante em seed1732, auditoria dos denominadores PASS.",
+      "summary": "2519 carrier ticks; Shoot elegível2517, escolhido0 e menor que melhor concorrente em2517; gap médio0,36015, distância média63,76m. Match0–0 sem chutes."
     },
     {
       "wave": "W66",
@@ -3070,6 +3070,10 @@
     {
       "id": "CP-W185-02",
       "title": "W185 censo auditado; W186 iniciado"
+    },
+    {
+      "id": "CP-W186-02",
+      "title": "W186 cross-seed fechado; W187 iniciado"
     }
   ]
 }
