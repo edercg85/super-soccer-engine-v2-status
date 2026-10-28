@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-65",
-  "updatedAt": "2026-10-28T00:49:00-03:00",
-  "cycle": "SS-ORCH-001-W130-FIRST-ACTIVEPASS-TERMINAL",
+  "version": "2026.10.28-portal-66",
+  "updatedAt": "2026-10-28T01:55:00-03:00",
+  "cycle": "SS-ORCH-001-W131-OFFSIDE-LAUNCH-TERMINAL-LINK",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W131: reconstruir um caminho distinto com OffsideOffence em trace W07, linkando snapshot no launch, player punido, target e posse/restart resultante; comparar com os passes W130 sem extrapolar para match score.",
+  "currentFocus": "W132: seguir somente até o próximo evento de restart e verificar beneficiário, tiro livre indireto, posição e posse; relacionar ao OffsideOffence anterior e limitar a conclusão ao estado executado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W130",
-    "wave": "W130",
-    "publishedAt": "2026-10-28T03:53:00Z",
+    "id": "W131",
+    "wave": "W131",
+    "publishedAt": "2026-10-28T04:15:00Z",
     "macro": "M2",
-    "title": "W130: primeiro terminal de quatro passes naturais",
-    "status": "4/4 PASS; PassCompleted 3 ticks após launch; recovery e posse no target; sem conclusão causal.",
-    "summary": "Seeds 1730/1731 OFF/ON: os quatro ActivePass específicos terminam PassCompleted, intended target vence recovery e recebe posse. Nenhum terminal de impedimento/falha nesses quatro. OFF/ON já divergiram antes."
+    "title": "W131: caminho de impedimento ligado ao snapshot de passe",
+    "status": "2/2 PASS (4 branches); evento/tick/source/target e OffsidePending ligados; reinício seguinte UNKNOWN.",
+    "summary": "Quatro traces W07: offender é intended target marcado no snapshot; infração em 2 ticks, posse nula e ActivePass limpa. Seed1730 OFF teve PassLaunchDegraded/Success=false e ainda carregou snapshot até a infração."
   },
   "recentCycles": [
-    {
-      "id": "W123",
-      "wave": "W123",
-      "publishedAt": "2026-10-28T02:08:55Z",
-      "macro": "M2",
-      "title": "W123: corrigendum PE e auditoria B1/C1",
-      "status": "CP19 dez janelas locais iguais; CP20 corrigendum 003J validado; CP21 conferiu todos os offsets explícitos B1/C1. Reaching definition e consumo runtime UNKNOWN.",
-      "summary": "O corrigendum 003J corrigiu seis file offsets e preservou os registros originais. CP21 conferiu dez ocorrências em B1/C1: seis pares únicos incorretos já corrigidos e dois corretos; nenhum erro adicional nessas fichas. A imagem 3181 e a build limpa 0c78 só têm correspondência demonstrada nas dez janelas; reaching definition segue UNKNOWN."
-    },
     {
       "id": "W124",
       "wave": "W124",
@@ -92,6 +83,15 @@
       "title": "W130: primeiro terminal de quatro passes naturais",
       "status": "4/4 PASS; PassCompleted 3 ticks após launch; recovery e posse no target; sem conclusão causal.",
       "summary": "Seeds 1730/1731 OFF/ON: os quatro ActivePass específicos terminam PassCompleted, intended target vence recovery e recebe posse. Nenhum terminal de impedimento/falha nesses quatro. OFF/ON já divergiram antes."
+    },
+    {
+      "id": "W131",
+      "wave": "W131",
+      "publishedAt": "2026-10-28T04:15:00Z",
+      "macro": "M2",
+      "title": "W131: caminho de impedimento ligado ao snapshot de passe",
+      "status": "2/2 PASS (4 branches); evento/tick/source/target e OffsidePending ligados; reinício seguinte UNKNOWN.",
+      "summary": "Quatro traces W07: offender é intended target marcado no snapshot; infração em 2 ticks, posse nula e ActivePass limpa. Seed1730 OFF teve PassLaunchDegraded/Success=false e ainda carregou snapshot até a infração."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W123",
-      "wave": "W123",
-      "publishedAt": "2026-10-28T02:08:55Z",
-      "macro": "M2",
-      "title": "W123: corrigendum PE e auditoria B1/C1",
-      "status": "CP19 dez janelas locais iguais; CP20 corrigendum 003J validado; CP21 conferiu todos os offsets explícitos B1/C1. Reaching definition e consumo runtime UNKNOWN.",
-      "summary": "O corrigendum 003J corrigiu seis file offsets e preservou os registros originais. CP21 conferiu dez ocorrências em B1/C1: seis pares únicos incorretos já corrigidos e dois corretos; nenhum erro adicional nessas fichas. A imagem 3181 e a build limpa 0c78 só têm correspondência demonstrada nas dez janelas; reaching definition segue UNKNOWN."
-    },
-    {
       "id": "W124",
       "wave": "W124",
       "publishedAt": "2026-10-28T02:14:35Z",
@@ -1116,6 +1107,15 @@
       "title": "W130: primeiro terminal de quatro passes naturais",
       "status": "4/4 PASS; PassCompleted 3 ticks após launch; recovery e posse no target; sem conclusão causal.",
       "summary": "Seeds 1730/1731 OFF/ON: os quatro ActivePass específicos terminam PassCompleted, intended target vence recovery e recebe posse. Nenhum terminal de impedimento/falha nesses quatro. OFF/ON já divergiram antes."
+    },
+    {
+      "id": "W131",
+      "wave": "W131",
+      "publishedAt": "2026-10-28T04:15:00Z",
+      "macro": "M2",
+      "title": "W131: caminho de impedimento ligado ao snapshot de passe",
+      "status": "2/2 PASS (4 branches); evento/tick/source/target e OffsidePending ligados; reinício seguinte UNKNOWN.",
+      "summary": "Quatro traces W07: offender é intended target marcado no snapshot; infração em 2 ticks, posse nula e ActivePass limpa. Seed1730 OFF teve PassLaunchDegraded/Success=false e ainda carregou snapshot até a infração."
     },
     {
       "wave": "W66",
@@ -2742,6 +2742,14 @@
     {
       "id": "CP-W130-01",
       "title": "PassCompleted, recovery e posse pós-terminal"
+    },
+    {
+      "id": "CP-W131-00",
+      "title": "Preflight do OffsideOffence e preservação da primeira hipótese"
+    },
+    {
+      "id": "CP-W131-01",
+      "title": "Launch snapshot e OffsidePending em quatro branches"
     }
   ]
 }
