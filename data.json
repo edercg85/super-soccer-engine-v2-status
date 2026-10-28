@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-149",
-  "updatedAt": "2026-10-28T13:55:11Z",
-  "cycle": "SS-ORCH-001-W228-OFFSIDE-RESTART-KICKER",
+  "version": "2026.10.28-portal-151",
+  "updatedAt": "2026-10-28T13:59:55Z",
+  "cycle": "SS-ORCH-001-W229-RESTART-REPLICATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W229: verificar se o mecanismo de escolha de kicker/guarda de proximidade aparece nos demais offside/restarts já capturados nas seeds W218 (1730 e 1731). Se só houver evidência de um caso, registrar UNKNOWN agregado e migrar para outra causa de tempo sem posse.",
+  "currentFocus": "Mapear no código e nos registros disponíveis quais jogadores são candidatos a recuperar a bola solta, como distância/estado e ordenação escolhem o vencedor nos ticks4 de 1730/1731, e se isso explica a diferença de IDs após o passe. Não inferir qualidade global.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W218",
-    "wave": "W218",
-    "publishedAt": "2026-10-28T13:05:00Z",
+    "id": "W229",
+    "wave": "W229",
+    "publishedAt": "2026-10-28T13:59:55Z",
     "macro": "M3",
-    "title": "W218: multiseed DERR PAL×COR, placares heterogêneos",
-    "status": "Sinais mecânicos se repetem em duas seeds; placar misto; recomendação default-off. Auditoria independente pendente.",
-    "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
+    "title": "W229: W228 não replicado nos prefixes restantes",
+    "status": "Busca em 1730/1731 sem segunda amostra pareada; casos ON censurados.",
+    "summary": "W229 limitou a conclusão: o restart de W228 segue como efeito de um único caso; seed1730 OFF repete o mesmo restart, sem contraste DERR. Atraso agregado continua UNKNOWN."
   },
   "recentCycles": [
-    {
-      "id": "W228",
-      "wave": "W228",
-      "publishedAt": "2026-10-28T13:52:51Z",
-      "macro": "M3",
-      "title": "W228: kicker do restart alonga um tick sem posse",
-      "status": "Kicker escolhido pelas posições; ON falha apenas guarda de proximidade no tick11.",
-      "summary": "OFF ready tick11; ON kicker a2.978m do ponto, demais guardas satisfeitas, ready tick12. Híbridas mostram posições (não spot) trocam kicker."
-    },
     {
       "id": "W227",
       "wave": "W227",
@@ -101,6 +92,15 @@
       "title": "W218: multiseed DERR PAL×COR, placares heterogêneos",
       "status": "Sinais mecânicos se repetem em duas seeds; placar misto; recomendação default-off. Auditoria independente pendente.",
       "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
+    },
+    {
+      "id": "W229",
+      "wave": "W229",
+      "publishedAt": "2026-10-28T13:59:55Z",
+      "macro": "M3",
+      "title": "W229: W228 não replicado nos prefixes restantes",
+      "status": "Busca em 1730/1731 sem segunda amostra pareada; casos ON censurados.",
+      "summary": "W229 limitou a conclusão: o restart de W228 segue como efeito de um único caso; seed1730 OFF repete o mesmo restart, sem contraste DERR. Atraso agregado continua UNKNOWN."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W228",
-      "wave": "W228",
-      "publishedAt": "2026-10-28T13:52:51Z",
-      "macro": "M3",
-      "title": "W228: kicker do restart alonga um tick sem posse",
-      "status": "Kicker escolhido pelas posições; ON falha apenas guarda de proximidade no tick11.",
-      "summary": "OFF ready tick11; ON kicker a2.978m do ponto, demais guardas satisfeitas, ready tick12. Híbridas mostram posições (não spot) trocam kicker."
-    },
-    {
       "id": "W227",
       "wave": "W227",
       "publishedAt": "2026-10-28T13:43:37Z",
@@ -1134,6 +1125,15 @@
       "title": "W218: multiseed DERR PAL×COR, placares heterogêneos",
       "status": "Sinais mecânicos se repetem em duas seeds; placar misto; recomendação default-off. Auditoria independente pendente.",
       "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
+    },
+    {
+      "id": "W229",
+      "wave": "W229",
+      "publishedAt": "2026-10-28T13:59:55Z",
+      "macro": "M3",
+      "title": "W229: W228 não replicado nos prefixes restantes",
+      "status": "Busca em 1730/1731 sem segunda amostra pareada; casos ON censurados.",
+      "summary": "W229 limitou a conclusão: o restart de W228 segue como efeito de um único caso; seed1730 OFF repete o mesmo restart, sem contraste DERR. Atraso agregado continua UNKNOWN."
     },
     {
       "wave": "W66",
@@ -3184,6 +3184,10 @@
     {
       "id": "CP-W228-FINAL",
       "title": "Pós-offside, posições DERR ON selecionam kicker mais distante; só guarda kicker atrasa restart um tick"
+    },
+    {
+      "id": "CP-W229-FINAL",
+      "title": "W229: não há segunda amostra pareada suficiente para replicar o atraso do kicker"
     }
   ]
 }
