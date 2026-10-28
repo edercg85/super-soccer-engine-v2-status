@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-77",
-  "updatedAt": "2026-10-28T00:35:26-03:00",
-  "cycle": "SS-ORCH-001-W142-RECOVERY-CARRIER-T137",
+  "version": "2026.10.28-portal-78",
+  "updatedAt": "2026-10-28T00:40:06-03:00",
+  "cycle": "SS-ORCH-001-W143-RECOVERY-MOVE-DIAGNOSTICS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W143: capturar DecisionDiagnostics já disponível para o carrier nos ticks t135–137; verificar objetivo Move, candidatos e avaliação concorrente Pass/Shoot/Dribble sem inferir intenção.",
+  "currentFocus": "W144: rodar a mesma fixture com SafeForward OFF e procurar estado comparável após recovery; se divergir antes, registrar primeira divergência e não fingir pareamento.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W142",
-    "wave": "W142",
-    "publishedAt": "2026-10-28T03:35:26Z",
+    "id": "W143",
+    "wave": "W143",
+    "publishedAt": "2026-10-28T03:40:06Z",
     "macro": "M2",
-    "title": "W142: terceiro tick após recovery",
-    "status": "1/1 PASS; terceiro MoveCompleted e posse retida em t137.",
-    "summary": "No mesmo caso seed1731 ON, o carrier executa Move em t135–137 consecutivamente, sem perda de posse nem ActivePass. A causa/objetivo do Move não está identificada."
+    "title": "W143: diagnósticos da escolha Move",
+    "status": "1/1 PASS; scores e objetivos de Move capturados em três ticks.",
+    "summary": "Move (0,8371) vence Pass (0,7727–0,8075) e Shoot (0,3842–0,4296); objetivo passa de MoveToGoal a MoveToTeammate. Flag ON sem contrafactual."
   },
   "recentCycles": [
-    {
-      "id": "W135",
-      "wave": "W135",
-      "publishedAt": "2026-10-28T03:10:37Z",
-      "macro": "M2",
-      "title": "W135: primeira decisão após a recepção",
-      "status": "4/4 PASS; três Pass, um Move; um PassLaunchDegraded/false com ActivePass presente.",
-      "summary": "O receiver começa o tick com posse. Três passes removem a posse e criam ActivePass; um Move completa e mantém a posse. O passe degradado ainda não tem terminal observado."
-    },
     {
       "id": "W136",
       "wave": "W136",
@@ -92,6 +83,15 @@
       "title": "W142: terceiro tick após recovery",
       "status": "1/1 PASS; terceiro MoveCompleted e posse retida em t137.",
       "summary": "No mesmo caso seed1731 ON, o carrier executa Move em t135–137 consecutivamente, sem perda de posse nem ActivePass. A causa/objetivo do Move não está identificada."
+    },
+    {
+      "id": "W143",
+      "wave": "W143",
+      "publishedAt": "2026-10-28T03:40:06Z",
+      "macro": "M2",
+      "title": "W143: diagnósticos da escolha Move",
+      "status": "1/1 PASS; scores e objetivos de Move capturados em três ticks.",
+      "summary": "Move (0,8371) vence Pass (0,7727–0,8075) e Shoot (0,3842–0,4296); objetivo passa de MoveToGoal a MoveToTeammate. Flag ON sem contrafactual."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W135",
-      "wave": "W135",
-      "publishedAt": "2026-10-28T03:10:37Z",
-      "macro": "M2",
-      "title": "W135: primeira decisão após a recepção",
-      "status": "4/4 PASS; três Pass, um Move; um PassLaunchDegraded/false com ActivePass presente.",
-      "summary": "O receiver começa o tick com posse. Três passes removem a posse e criam ActivePass; um Move completa e mantém a posse. O passe degradado ainda não tem terminal observado."
-    },
-    {
       "id": "W136",
       "wave": "W136",
       "publishedAt": "2026-10-28T03:17:23Z",
@@ -1116,6 +1107,15 @@
       "title": "W142: terceiro tick após recovery",
       "status": "1/1 PASS; terceiro MoveCompleted e posse retida em t137.",
       "summary": "No mesmo caso seed1731 ON, o carrier executa Move em t135–137 consecutivamente, sem perda de posse nem ActivePass. A causa/objetivo do Move não está identificada."
+    },
+    {
+      "id": "W143",
+      "wave": "W143",
+      "publishedAt": "2026-10-28T03:40:06Z",
+      "macro": "M2",
+      "title": "W143: diagnósticos da escolha Move",
+      "status": "1/1 PASS; scores e objetivos de Move capturados em três ticks.",
+      "summary": "Move (0,8371) vence Pass (0,7727–0,8075) e Shoot (0,3842–0,4296); objetivo passa de MoveToGoal a MoveToTeammate. Flag ON sem contrafactual."
     },
     {
       "wave": "W66",
@@ -2838,6 +2838,14 @@
     {
       "id": "CP-W142-01",
       "title": "MoveCompleted em t137"
+    },
+    {
+      "id": "CP-W143-00",
+      "title": "Preflight dos diagnósticos de decisão"
+    },
+    {
+      "id": "CP-W143-01",
+      "title": "Scores e objetivos nos t135–137"
     }
   ]
 }
