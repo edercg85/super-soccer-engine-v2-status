@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-90",
-  "updatedAt": "2026-10-28T02:25:27-03:00",
-  "cycle": "SS-ORCH-001-W155-SHOT-ORIGIN-GEOMETRY",
+  "version": "2026.10.28-portal-91",
+  "updatedAt": "2026-10-28T02:45:12-03:00",
+  "cycle": "SS-ORCH-001-W156-KEEPER-SHOT-CHALLENGE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W156: telemetria de goleiro defensor e bloqueadores durante ActiveShoot nas duas seeds ON, comparando hashes contra W152/W153; verificar distância ao ball/crossing, ações e fatos de bloqueio sem alterar regras.",
+  "currentFocus": "W157: nos 20 intercepts GK ON hash-matched, cruzar distância de aproximação, BallControl do goleiro, curva de probabilidade técnica e RNG outcome; quantificar sucessos/falhas sem alterar gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W155",
-    "wave": "W155",
-    "publishedAt": "2026-10-28T05:25:27Z",
+    "id": "W156",
+    "wave": "W156",
+    "publishedAt": "2026-10-28T05:45:12Z",
     "macro": "M2",
-    "title": "W155: distância e crossing dos chutes SafeForward",
-    "status": "1/1 PASS; W152/W153 hash-exact; origens de gol ON em média 5,63m/5,38m do centro.",
-    "summary": "Seed1730 ON 27/29 gols; seed1731 ON 17/24. Lifecycles e crossings reconciliados; muitas finalizações começam perto do gol, mas defesa/goleiro não foram capturados. Sem aceite de qualidade."
+    "title": "W156: guarda de interceptação do goleiro durante ActiveShoot",
+    "status": "1/1 PASS; W152/W153 hash-exact; 20 intercepts GK ON, 7 bloqueios e 13 falhas.",
+    "summary": "A associação do defensor foi corrigida para respeitar a inversão de lados. Em 60 ticks especializados, os 19 LastUsefulOpportunity coincidem com elegibilidade/seleção; um bloqueio ocorreu pelo alcance genérico a 0 m. OFF seed1730: 1 chute/gol, sem intercept elegível. Amostra estreita; qualidade global desconhecida."
   },
   "recentCycles": [
-    {
-      "id": "W148",
-      "wave": "W148",
-      "publishedAt": "2026-10-28T04:17:23Z",
-      "macro": "M2",
-      "title": "W148: SafeForward post-offside guard census",
-      "status": "1/1 PASS; 102 same-state ON replay matches; causal guard evidence partial due divergences.",
-      "summary": "Seed1730 after offside t152: 102 carrier decisions after recovery (69 Pass, 33 Move); five final MoveToGoal choices differ ON/OFF, three align with recomputed guards. t1423/t3533/t4501 diverge across decision, diagnostics and reconstructed selector; retained as UNKNOWN."
-    },
     {
       "id": "W149",
       "wave": "W149",
@@ -92,6 +83,15 @@
       "title": "W155: distância e crossing dos chutes SafeForward",
       "status": "1/1 PASS; W152/W153 hash-exact; origens de gol ON em média 5,63m/5,38m do centro.",
       "summary": "Seed1730 ON 27/29 gols; seed1731 ON 17/24. Lifecycles e crossings reconciliados; muitas finalizações começam perto do gol, mas defesa/goleiro não foram capturados. Sem aceite de qualidade."
+    },
+    {
+      "id": "W156",
+      "wave": "W156",
+      "publishedAt": "2026-10-28T05:45:12Z",
+      "macro": "M2",
+      "title": "W156: guarda de interceptação do goleiro durante ActiveShoot",
+      "status": "1/1 PASS; W152/W153 hash-exact; 20 intercepts GK ON, 7 bloqueios e 13 falhas.",
+      "summary": "A associação do defensor foi corrigida para respeitar a inversão de lados. Em 60 ticks especializados, os 19 LastUsefulOpportunity coincidem com elegibilidade/seleção; um bloqueio ocorreu pelo alcance genérico a 0 m. OFF seed1730: 1 chute/gol, sem intercept elegível. Amostra estreita; qualidade global desconhecida."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W148",
-      "wave": "W148",
-      "publishedAt": "2026-10-28T04:17:23Z",
-      "macro": "M2",
-      "title": "W148: SafeForward post-offside guard census",
-      "status": "1/1 PASS; 102 same-state ON replay matches; causal guard evidence partial due divergences.",
-      "summary": "Seed1730 after offside t152: 102 carrier decisions after recovery (69 Pass, 33 Move); five final MoveToGoal choices differ ON/OFF, three align with recomputed guards. t1423/t3533/t4501 diverge across decision, diagnostics and reconstructed selector; retained as UNKNOWN."
-    },
-    {
       "id": "W149",
       "wave": "W149",
       "publishedAt": "2026-10-28T04:32:49Z",
@@ -1116,6 +1107,15 @@
       "title": "W155: distância e crossing dos chutes SafeForward",
       "status": "1/1 PASS; W152/W153 hash-exact; origens de gol ON em média 5,63m/5,38m do centro.",
       "summary": "Seed1730 ON 27/29 gols; seed1731 ON 17/24. Lifecycles e crossings reconciliados; muitas finalizações começam perto do gol, mas defesa/goleiro não foram capturados. Sem aceite de qualidade."
+    },
+    {
+      "id": "W156",
+      "wave": "W156",
+      "publishedAt": "2026-10-28T05:45:12Z",
+      "macro": "M2",
+      "title": "W156: guarda de interceptação do goleiro durante ActiveShoot",
+      "status": "1/1 PASS; W152/W153 hash-exact; 20 intercepts GK ON, 7 bloqueios e 13 falhas.",
+      "summary": "A associação do defensor foi corrigida para respeitar a inversão de lados. Em 60 ticks especializados, os 19 LastUsefulOpportunity coincidem com elegibilidade/seleção; um bloqueio ocorreu pelo alcance genérico a 0 m. OFF seed1730: 1 chute/gol, sem intercept elegível. Amostra estreita; qualidade global desconhecida."
     },
     {
       "wave": "W66",
@@ -2914,6 +2914,10 @@
     {
       "id": "CP-W155-01",
       "title": "W155 shot origin and terminal geometry"
+    },
+    {
+      "id": "CP-W156-01",
+      "title": "W156 keeper challenge result and specialized guard reconciliation"
     }
   ]
 }
