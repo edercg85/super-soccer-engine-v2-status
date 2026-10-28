@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-106",
-  "updatedAt": "2026-10-28T08:26:52Z",
-  "cycle": "SS-ORCH-001-W172-OFFSIDE-CONTROLLING-PARTICIPATION",
+  "version": "2026.10.28-portal-107",
+  "updatedAt": "2026-10-28T08:32:29Z",
+  "cycle": "SS-ORCH-001-W173-ONSIDE-TARGET-CONTROL",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W173: procurar um contraponto real com target onside ou controlador alternativo para testar a guarda no fluxo natural; interromper a inferência se não houver pareamento reproduzível.",
+  "currentFocus": "W174: localizar o primeiro passe natural para target não marcado em jogo corrido, sem RestartState e fora de eventos de reinício; seguir até o terminal. Se duas seeds completas não produzirem caso, registrar a busca e mudar para outra dependência ofensiva observável.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W172",
-    "wave": "W172",
-    "publishedAt": "2026-10-28T08:26:52Z",
+    "id": "W173",
+    "wave": "W173",
+    "publishedAt": "2026-10-28T08:32:28Z",
     "macro": "M2",
-    "title": "W172: guarda de participação do impedimento",
-    "status": "Runs 2/2 PASS e testes diretos marked/unmarked/null 2/2 PASS; payload/evento corresponde ao target/snapshot.",
-    "summary": "Em duas seeds, OffsideEvent aponta para target marcado, source e SnapshotTick do passe; a posição atual coincide com endpoint; restart home. Resolver bloqueia ausência de controlador e jogador não marcado. Nenhum caso real onside equivalente ainda."
+    "title": "W173: contraponto onside em bola parada",
+    "status": "Caso natural 2/2 repetições determinísticas; target onside recebe o passe; ocorrência em indirect free kick, não open play.",
+    "summary": "Passe lançado no tick 12 após indirect free kick; snapshot sem players marcados; target recupera posse no tick 15; nenhum OffsideOffence. Seeds 1732/1733 reproduzem o mesmo hash de estado, logo um único estado repetido."
   },
   "recentCycles": [
-    {
-      "id": "W165",
-      "wave": "W165",
-      "publishedAt": "2026-10-28T07:28:41Z",
-      "macro": "M2",
-      "title": "W165: do intercept GK falho ao passe degradado",
-      "status": "2 seeds; auditoria automatizada PASS; mecanismo causal local confirmado, sem promoção de gameplay.",
-      "summary": "Draw extra da interceptação falha desloca PassTechnical do mesmo actor/target e troca PassLaunched por PassLaunchDegraded em 1732/1733. Corrigendum W164 limita StateHash à projeção; impacto agregado segue UNKNOWN."
-    },
     {
       "id": "W166",
       "wave": "W166",
@@ -92,6 +83,15 @@
       "title": "W172: guarda de participação do impedimento",
       "status": "Runs 2/2 PASS e testes diretos marked/unmarked/null 2/2 PASS; payload/evento corresponde ao target/snapshot.",
       "summary": "Em duas seeds, OffsideEvent aponta para target marcado, source e SnapshotTick do passe; a posição atual coincide com endpoint; restart home. Resolver bloqueia ausência de controlador e jogador não marcado. Nenhum caso real onside equivalente ainda."
+    },
+    {
+      "id": "W173",
+      "wave": "W173",
+      "publishedAt": "2026-10-28T08:32:28Z",
+      "macro": "M2",
+      "title": "W173: contraponto onside em bola parada",
+      "status": "Caso natural 2/2 repetições determinísticas; target onside recebe o passe; ocorrência em indirect free kick, não open play.",
+      "summary": "Passe lançado no tick 12 após indirect free kick; snapshot sem players marcados; target recupera posse no tick 15; nenhum OffsideOffence. Seeds 1732/1733 reproduzem o mesmo hash de estado, logo um único estado repetido."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W165",
-      "wave": "W165",
-      "publishedAt": "2026-10-28T07:28:41Z",
-      "macro": "M2",
-      "title": "W165: do intercept GK falho ao passe degradado",
-      "status": "2 seeds; auditoria automatizada PASS; mecanismo causal local confirmado, sem promoção de gameplay.",
-      "summary": "Draw extra da interceptação falha desloca PassTechnical do mesmo actor/target e troca PassLaunched por PassLaunchDegraded em 1732/1733. Corrigendum W164 limita StateHash à projeção; impacto agregado segue UNKNOWN."
-    },
-    {
       "id": "W166",
       "wave": "W166",
       "publishedAt": "2026-10-28T07:39:54Z",
@@ -1116,6 +1107,15 @@
       "title": "W172: guarda de participação do impedimento",
       "status": "Runs 2/2 PASS e testes diretos marked/unmarked/null 2/2 PASS; payload/evento corresponde ao target/snapshot.",
       "summary": "Em duas seeds, OffsideEvent aponta para target marcado, source e SnapshotTick do passe; a posição atual coincide com endpoint; restart home. Resolver bloqueia ausência de controlador e jogador não marcado. Nenhum caso real onside equivalente ainda."
+    },
+    {
+      "id": "W173",
+      "wave": "W173",
+      "publishedAt": "2026-10-28T08:32:28Z",
+      "macro": "M2",
+      "title": "W173: contraponto onside em bola parada",
+      "status": "Caso natural 2/2 repetições determinísticas; target onside recebe o passe; ocorrência em indirect free kick, não open play.",
+      "summary": "Passe lançado no tick 12 após indirect free kick; snapshot sem players marcados; target recupera posse no tick 15; nenhum OffsideOffence. Seeds 1732/1733 reproduzem o mesmo hash de estado, logo um único estado repetido."
     },
     {
       "wave": "W66",
@@ -2982,6 +2982,10 @@
     {
       "id": "CP-W172-02",
       "title": "Guarda de offside e associação ao snapshot"
+    },
+    {
+      "id": "CP-W173-02",
+      "title": "Contraponto onside e handoff W173"
     }
   ]
 }
