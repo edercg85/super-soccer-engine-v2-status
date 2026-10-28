@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.27-portal-48",
-  "updatedAt": "2026-10-27T20:53:24-03:00",
-  "cycle": "SS-ORCH-001-W123-OFFSIDE-SNAPSHOT-CONSUMPTION",
+  "version": "2026.10.28-portal-49",
+  "updatedAt": "2026-10-27T21:27:30-03:00",
+  "cycle": "SS-ORCH-001-W123-RECOVERY-QUALITY-PREFLIGHT",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Repetir a reconstrução do snapshot em fixture adicional e, se disponível, orientação invertida. Depois disso, somente avaliar experimento multi-seed pareado se baseline reproduzível e métricas de qualidade forem definidos; manter flag default-off.",
+  "currentFocus": "Auditar os terminais/eventos de PassFailed no modo linear-relative e validar denominador/semântica antes de definir qualidade; os agregados atuais são pós-divergência e não autorizam adoção.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -14,11 +14,11 @@
   "latestAction": {
     "id": "W123",
     "wave": "W123",
-    "publishedAt": "2026-10-27T23:53:24Z",
+    "publishedAt": "2026-10-28T00:25:41Z",
     "macro": "M2",
-    "title": "Ciclo de vida do passe no tick 3 e recuperação no tick 4",
-    "status": "Teste focal 2/2 PASS; auditoria independente PASS para reconstrução integral do snapshot nesta fixture seed1729 endpoint; consumo e reinício também PASS no escopo bounded. Generalidade, contato físico e qualidade UNKNOWN; sem alteração gameplay.",
-    "summary": "Captura pre-tick3 dos 22 jogadores; orientação, segundo último defensor, linha x75.276288 e conjunto {4c69..., bfd1...} recalculados exatamente iguais ao snapshot. Tick6 offside, restart ticks7/10/11. Resultado restrito à fixture/seed."
+    "title": "W123: snapshots, orientação invertida e preflight pareado de qualidade",
+    "status": "CP08/09 auditorias independentes PASS; CP10 6 partidas reproduzidas, qualidade UNKNOWN, auditoria de agregados pendente; sem alteração gameplay.",
+    "summary": "Geometria: 3 seeds × 2 modos e fixture invertida 5v3 confirmadas nos escopos locais. CP10 diverge no tick4 em todos os pares; contagens finais são pós-divergência. Passes completos 627–650 endpoint vs 1–3 linear-relative; default-off."
   },
   "recentCycles": [
     {
@@ -87,11 +87,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-27T23:53:24Z",
+      "publishedAt": "2026-10-28T00:25:41Z",
       "macro": "M2",
-      "title": "Ciclo de vida do passe no tick 3 e recuperação no tick 4",
-      "status": "Teste focal 2/2 PASS; auditoria independente PASS para reconstrução integral do snapshot nesta fixture seed1729 endpoint; consumo e reinício também PASS no escopo bounded. Generalidade, contato físico e qualidade UNKNOWN; sem alteração gameplay.",
-      "summary": "Captura pre-tick3 dos 22 jogadores; orientação, segundo último defensor, linha x75.276288 e conjunto {4c69..., bfd1...} recalculados exatamente iguais ao snapshot. Tick6 offside, restart ticks7/10/11. Resultado restrito à fixture/seed."
+      "title": "W123: snapshots, orientação invertida e preflight pareado de qualidade",
+      "status": "CP08/09 auditorias independentes PASS; CP10 6 partidas reproduzidas, qualidade UNKNOWN, auditoria de agregados pendente; sem alteração gameplay.",
+      "summary": "Geometria: 3 seeds × 2 modos e fixture invertida 5v3 confirmadas nos escopos locais. CP10 diverge no tick4 em todos os pares; contagens finais são pós-divergência. Passes completos 627–650 endpoint vs 1–3 linear-relative; default-off."
     }
   ],
   "macros": [
@@ -1111,11 +1111,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-27T23:53:24Z",
+      "publishedAt": "2026-10-28T00:25:41Z",
       "macro": "M2",
-      "title": "Ciclo de vida do passe no tick 3 e recuperação no tick 4",
-      "status": "Teste focal 2/2 PASS; auditoria independente PASS para reconstrução integral do snapshot nesta fixture seed1729 endpoint; consumo e reinício também PASS no escopo bounded. Generalidade, contato físico e qualidade UNKNOWN; sem alteração gameplay.",
-      "summary": "Captura pre-tick3 dos 22 jogadores; orientação, segundo último defensor, linha x75.276288 e conjunto {4c69..., bfd1...} recalculados exatamente iguais ao snapshot. Tick6 offside, restart ticks7/10/11. Resultado restrito à fixture/seed."
+      "title": "W123: snapshots, orientação invertida e preflight pareado de qualidade",
+      "status": "CP08/09 auditorias independentes PASS; CP10 6 partidas reproduzidas, qualidade UNKNOWN, auditoria de agregados pendente; sem alteração gameplay.",
+      "summary": "Geometria: 3 seeds × 2 modos e fixture invertida 5v3 confirmadas nos escopos locais. CP10 diverge no tick4 em todos os pares; contagens finais são pós-divergência. Passes completos 627–650 endpoint vs 1–3 linear-relative; default-off."
     },
     {
       "wave": "W66",
@@ -2624,8 +2624,24 @@
       "title": "Reconstrução independente integral da geometria pré-tick3"
     },
     {
+      "id": "CP-W123-07",
+      "title": "Auditoria final e handoff W123 inicial"
+    },
+    {
+      "id": "CP-W123-08",
+      "title": "Snapshots integralmente recalculados em três seeds × dois modos"
+    },
+    {
+      "id": "CP-W123-09",
+      "title": "Geometria completa em fixture sintética SidesInverted=true"
+    },
+    {
       "id": "CP-PORTAL-04",
       "title": "Resumo executivo e histórico em cards"
+    },
+    {
+      "id": "CP-W123-10",
+      "title": "Preflight e reprodução pareada de agregados de partida"
     }
   ]
 }
