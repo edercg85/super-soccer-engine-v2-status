@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-152",
-  "updatedAt": "2026-10-28T14:05:50Z",
-  "cycle": "SS-ORCH-001-W230-LOOSE-BALL-RECOVERY",
+  "version": "2026.10.28-portal-153",
+  "updatedAt": "2026-10-28T14:10:24Z",
+  "cycle": "SS-ORCH-001-W231-RECOVERY-CONSUMER",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Determinar se existe checkpoint íntegro que permita isolar a transição tick3→tick4 nas seeds1730/1731: validar histórico de runtime e vetores completos antes de qualquer híbrida. Se ausente, manter causa temporal UNKNOWN e pivotar para outra diferença com estado completo.",
+  "currentFocus": "Verificar se artefatos preservam decisões, avaliações e guardas do recuperador no tick5. Se houver, ligar alvo observado a corpo/consumidor; caso contrário manter alvo UNKNOWN e pivotar.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W230",
-    "wave": "W230",
-    "publishedAt": "2026-10-28T14:05:50Z",
+    "id": "W231",
+    "wave": "W231",
+    "publishedAt": "2026-10-28T14:10:24Z",
     "macro": "M3",
-    "title": "W230: recuperador de bola solta explicado por elegibilidade local",
-    "status": "Regra confirmada em quatro braços/sementes observadas; causa global UNKNOWN.",
-    "summary": "Todos os quatro recuperadores coincidem com o único jogador até 1m do endpoint. Híbridos de seed1730 requerem endpoint e posições ON juntos; seed1731 mantém o mesmo ID apesar do passe bem-sucedido."
+    "title": "W231: recuperador passa no tick seguinte e fica sem posse ao lançar",
+    "status": "Sequência local confirmada; escolha do alvo e causalidade parcial.",
+    "summary": "Nos quatro braços, o recuperador passa no tick seguinte e posse zera no lançamento. Seed1730 ON segue outra rota e recupera novamente; OFF/seed1731 entram em offside. Em 1731 alvo é igual ON/OFF."
   },
   "recentCycles": [
-    {
-      "id": "W226",
-      "wave": "W226",
-      "publishedAt": "2026-10-28T13:43:37Z",
-      "macro": "M3",
-      "title": "W226: primeiras divergências de posse têm mecanismos distintos",
-      "status": "Pass degradado/bola solta em 1730; reinício indireto em 1731.",
-      "summary": "Os prefixes mostram diferenças iniciais de posse após resultado distinto do primeiro passe na seed1730; seed1731 diverge durante restart após offside, com kicker distinto."
-    },
     {
       "id": "W225",
       "wave": "W225",
@@ -101,6 +92,15 @@
       "title": "W230: recuperador de bola solta explicado por elegibilidade local",
       "status": "Regra confirmada em quatro braços/sementes observadas; causa global UNKNOWN.",
       "summary": "Todos os quatro recuperadores coincidem com o único jogador até 1m do endpoint. Híbridos de seed1730 requerem endpoint e posições ON juntos; seed1731 mantém o mesmo ID apesar do passe bem-sucedido."
+    },
+    {
+      "id": "W231",
+      "wave": "W231",
+      "publishedAt": "2026-10-28T14:10:24Z",
+      "macro": "M3",
+      "title": "W231: recuperador passa no tick seguinte e fica sem posse ao lançar",
+      "status": "Sequência local confirmada; escolha do alvo e causalidade parcial.",
+      "summary": "Nos quatro braços, o recuperador passa no tick seguinte e posse zera no lançamento. Seed1730 ON segue outra rota e recupera novamente; OFF/seed1731 entram em offside. Em 1731 alvo é igual ON/OFF."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W226",
-      "wave": "W226",
-      "publishedAt": "2026-10-28T13:43:37Z",
-      "macro": "M3",
-      "title": "W226: primeiras divergências de posse têm mecanismos distintos",
-      "status": "Pass degradado/bola solta em 1730; reinício indireto em 1731.",
-      "summary": "Os prefixes mostram diferenças iniciais de posse após resultado distinto do primeiro passe na seed1730; seed1731 diverge durante restart após offside, com kicker distinto."
-    },
-    {
       "id": "W225",
       "wave": "W225",
       "publishedAt": "2026-10-28T13:33:55Z",
@@ -1134,6 +1125,15 @@
       "title": "W230: recuperador de bola solta explicado por elegibilidade local",
       "status": "Regra confirmada em quatro braços/sementes observadas; causa global UNKNOWN.",
       "summary": "Todos os quatro recuperadores coincidem com o único jogador até 1m do endpoint. Híbridos de seed1730 requerem endpoint e posições ON juntos; seed1731 mantém o mesmo ID apesar do passe bem-sucedido."
+    },
+    {
+      "id": "W231",
+      "wave": "W231",
+      "publishedAt": "2026-10-28T14:10:24Z",
+      "macro": "M3",
+      "title": "W231: recuperador passa no tick seguinte e fica sem posse ao lançar",
+      "status": "Sequência local confirmada; escolha do alvo e causalidade parcial.",
+      "summary": "Nos quatro braços, o recuperador passa no tick seguinte e posse zera no lançamento. Seed1730 ON segue outra rota e recupera novamente; OFF/seed1731 entram em offside. Em 1731 alvo é igual ON/OFF."
     },
     {
       "wave": "W66",
@@ -3192,6 +3192,10 @@
     {
       "id": "CP-W230-FINAL",
       "title": "W230: os quatro recuperadores são os únicos candidatos dentro do limiar do endpoint"
+    },
+    {
+      "id": "CP-W231-FINAL",
+      "title": "Recuperador lança passe no tick seguinte; o lançamento zera posse em quatro braços"
     }
   ]
 }
