@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-143",
-  "updatedAt": "2026-10-28T13:05:00Z",
-  "cycle": "SS-ORCH-001-W218-DERR-MULTISEED",
+  "version": "2026.10.28-portal-146",
+  "updatedAt": "2026-10-28T13:47:56Z",
+  "cycle": "SS-ORCH-001-W227-PASS-LANE-CAUSE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W219: tracing bounded da primeira divergência OFF/ON e primeiro passe impedido nas seeds 1730/1731; testar falsificavelmente se impedimentos mediam diferenças em passes completos. Sem alterar gameplay.",
+  "currentFocus": "W228: reconstruir a sequência do reinício indireto após o offside (seeds1730/1731), identificar a seleção do kicker e separar efeito das regras de restart do posicionamento DERR. Manter a origem causal UNKNOWN até um contrafactual mínimo.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -22,49 +22,49 @@
   },
   "recentCycles": [
     {
-      "id": "W202",
-      "wave": "W202",
-      "publishedAt": "2026-10-28T11:54:00Z",
-      "macro": "M2",
-      "title": "W202: resíduo de chance vem do arredondamento da geometria",
-      "status": "Auditoria numérica da DLL PASS; frequência natural UNKNOWN; sem patch.",
-      "summary": "Probability=0 exatamente em4m; BitDecrement(4) dá1,258e-14%. Construções diagonais transladadas nominalmente a4 arredondam 1–2 ULP abaixo; ponto W200,6 ULP abaixo."
-    },
-    {
-      "id": "W203",
-      "wave": "W203",
-      "publishedAt": "2026-10-28T12:01:00Z",
-      "macro": "M2",
-      "title": "W203: nenhum caso no último centímetro do alcance entre os traces",
-      "status": "Auditoria dos corpora PASS; incidência natural UNKNOWN.",
-      "summary": "W156 61 distâncias, W157 20 draws, W158 162 amostras/48 draws: 2 episódios near-4 distintos (3,9085 e3,9237m), zero em3,99–4m e zero draw0. Fonte produtora sem SHA DLL."
-    },
-    {
-      "id": "W204-W207",
-      "wave": "W204-W207",
-      "publishedAt": "2026-10-28T12:07:00Z",
-      "macro": "M2",
-      "title": "W204–W207: correção do treatment W158 e censo homogêneo SafeForward",
-      "status": "Fonte/teste CONFIRMED; DLL histórica PARTIAL; sem auditor independente novo.",
-      "summary": "W159/W160 já corrigiam o metadado; W203 recebeu adendo. W156–W158 usam o seam SafeForward ON/OFF, não BCCM V2. Sem TRX/DLL históricos."
-    },
-    {
-      "id": "W208",
-      "wave": "W208",
-      "publishedAt": "2026-10-28T12:11:00Z",
-      "macro": "M4",
-      "title": "W208: traces existentes só cobrem offside e kickoff",
-      "status": "Corpus read-only confirmado; coverage de outros restarts UNKNOWN.",
-      "summary": "W15 seis braços: offside/setup/ready/indirect kick e kickoff; W16 examina só KickOffPrepared no período 2. Sem dados de goal kick/corner/throw-in."
-    },
-    {
-      "id": "W209",
-      "wave": "W209",
-      "publishedAt": "2026-10-28T12:15:00Z",
+      "id": "W227",
+      "wave": "W227",
+      "publishedAt": "2026-10-28T13:43:37Z",
       "macro": "M3",
-      "title": "W209: slots do DynamicTeamShape têm consumidores em Move e pressão",
-      "status": "Source mechanism confirmado; efeitos coletivos em partida UNKNOWN.",
-      "summary": "Fonte atual: formação+bola→slots→destino Move e custo estrutural de assignment. DynamicTeamShapeMode=Off não neutraliza o consumo com DefensiveEngagement ativo. TRX W15 é de outro hash."
+      "title": "W227: movimento DERR bloqueia passe da seed1730",
+      "status": "Mesmo sample e endpoints; a linha defensiva muda a execução técnica.",
+      "summary": "Clearance 4.689→1.671m; lane 100→57.47; chance76.466→43.945%; PassLaunched vira PassLaunchDegraded. A posição Primary 50b9 sozinha reproduz a métrica ON em híbrida estática."
+    },
+    {
+      "id": "W226",
+      "wave": "W226",
+      "publishedAt": "2026-10-28T13:43:37Z",
+      "macro": "M3",
+      "title": "W226: primeiras divergências de posse têm mecanismos distintos",
+      "status": "Pass degradado/bola solta em 1730; reinício indireto em 1731.",
+      "summary": "Os prefixes mostram diferenças iniciais de posse após resultado distinto do primeiro passe na seed1730; seed1731 diverge durante restart após offside, com kicker distinto."
+    },
+    {
+      "id": "W225",
+      "wave": "W225",
+      "publishedAt": "2026-10-28T13:33:55Z",
+      "macro": "M3",
+      "title": "W225: fork confirma recepção/pass sem efeito DERR local",
+      "status": "Fork pareado seed1730; recepção e passe seguinte iguais ON/OFF.",
+      "summary": "No estado pré-tick62 ambos recebem a bola por PassCompleted; tick seguinte ambos escolhem/lançam mesmo passe. Contrasta com tackle seed1731; causalidade global não concluída."
+    },
+    {
+      "id": "W224",
+      "wave": "W224",
+      "publishedAt": "2026-10-28T13:33:55Z",
+      "macro": "M3",
+      "title": "W224: tackle DERR transfere posse no estado da seed1731",
+      "status": "Fork/checkpoint exato confirma efeito imediato de um tick.",
+      "summary": "ON repete tackle bem-sucedido/draw e transfere posse; OFF escolhe Move e não transfere posse no passo. Continuação global tem diferenças de tick/atores."
+    },
+    {
+      "id": "W223",
+      "wave": "W223",
+      "publishedAt": "2026-10-28T13:33:55Z",
+      "macro": "M3",
+      "title": "W223: DERR muda seleção por ineligibilidade de Move",
+      "status": "Mesmo estado: tackle elegível/score igual; OFF torna Move elegível.",
+      "summary": "O DERR bloqueia objetivos de Move sob DefensiveResponsibilityAssigned, mudando ação escolhida."
     },
     {
       "id": "W210-W213",
@@ -1055,49 +1055,49 @@
   ],
   "diary": [
     {
-      "id": "W202",
-      "wave": "W202",
-      "publishedAt": "2026-10-28T11:54:00Z",
-      "macro": "M2",
-      "title": "W202: resíduo de chance vem do arredondamento da geometria",
-      "status": "Auditoria numérica da DLL PASS; frequência natural UNKNOWN; sem patch.",
-      "summary": "Probability=0 exatamente em4m; BitDecrement(4) dá1,258e-14%. Construções diagonais transladadas nominalmente a4 arredondam 1–2 ULP abaixo; ponto W200,6 ULP abaixo."
-    },
-    {
-      "id": "W203",
-      "wave": "W203",
-      "publishedAt": "2026-10-28T12:01:00Z",
-      "macro": "M2",
-      "title": "W203: nenhum caso no último centímetro do alcance entre os traces",
-      "status": "Auditoria dos corpora PASS; incidência natural UNKNOWN.",
-      "summary": "W156 61 distâncias, W157 20 draws, W158 162 amostras/48 draws: 2 episódios near-4 distintos (3,9085 e3,9237m), zero em3,99–4m e zero draw0. Fonte produtora sem SHA DLL."
-    },
-    {
-      "id": "W204-W207",
-      "wave": "W204-W207",
-      "publishedAt": "2026-10-28T12:07:00Z",
-      "macro": "M2",
-      "title": "W204–W207: correção do treatment W158 e censo homogêneo SafeForward",
-      "status": "Fonte/teste CONFIRMED; DLL histórica PARTIAL; sem auditor independente novo.",
-      "summary": "W159/W160 já corrigiam o metadado; W203 recebeu adendo. W156–W158 usam o seam SafeForward ON/OFF, não BCCM V2. Sem TRX/DLL históricos."
-    },
-    {
-      "id": "W208",
-      "wave": "W208",
-      "publishedAt": "2026-10-28T12:11:00Z",
-      "macro": "M4",
-      "title": "W208: traces existentes só cobrem offside e kickoff",
-      "status": "Corpus read-only confirmado; coverage de outros restarts UNKNOWN.",
-      "summary": "W15 seis braços: offside/setup/ready/indirect kick e kickoff; W16 examina só KickOffPrepared no período 2. Sem dados de goal kick/corner/throw-in."
-    },
-    {
-      "id": "W209",
-      "wave": "W209",
-      "publishedAt": "2026-10-28T12:15:00Z",
+      "id": "W227",
+      "wave": "W227",
+      "publishedAt": "2026-10-28T13:43:37Z",
       "macro": "M3",
-      "title": "W209: slots do DynamicTeamShape têm consumidores em Move e pressão",
-      "status": "Source mechanism confirmado; efeitos coletivos em partida UNKNOWN.",
-      "summary": "Fonte atual: formação+bola→slots→destino Move e custo estrutural de assignment. DynamicTeamShapeMode=Off não neutraliza o consumo com DefensiveEngagement ativo. TRX W15 é de outro hash."
+      "title": "W227: movimento DERR bloqueia passe da seed1730",
+      "status": "Mesmo sample e endpoints; a linha defensiva muda a execução técnica.",
+      "summary": "Clearance 4.689→1.671m; lane 100→57.47; chance76.466→43.945%; PassLaunched vira PassLaunchDegraded. A posição Primary 50b9 sozinha reproduz a métrica ON em híbrida estática."
+    },
+    {
+      "id": "W226",
+      "wave": "W226",
+      "publishedAt": "2026-10-28T13:43:37Z",
+      "macro": "M3",
+      "title": "W226: primeiras divergências de posse têm mecanismos distintos",
+      "status": "Pass degradado/bola solta em 1730; reinício indireto em 1731.",
+      "summary": "Os prefixes mostram diferenças iniciais de posse após resultado distinto do primeiro passe na seed1730; seed1731 diverge durante restart após offside, com kicker distinto."
+    },
+    {
+      "id": "W225",
+      "wave": "W225",
+      "publishedAt": "2026-10-28T13:33:55Z",
+      "macro": "M3",
+      "title": "W225: fork confirma recepção/pass sem efeito DERR local",
+      "status": "Fork pareado seed1730; recepção e passe seguinte iguais ON/OFF.",
+      "summary": "No estado pré-tick62 ambos recebem a bola por PassCompleted; tick seguinte ambos escolhem/lançam mesmo passe. Contrasta com tackle seed1731; causalidade global não concluída."
+    },
+    {
+      "id": "W224",
+      "wave": "W224",
+      "publishedAt": "2026-10-28T13:33:55Z",
+      "macro": "M3",
+      "title": "W224: tackle DERR transfere posse no estado da seed1731",
+      "status": "Fork/checkpoint exato confirma efeito imediato de um tick.",
+      "summary": "ON repete tackle bem-sucedido/draw e transfere posse; OFF escolhe Move e não transfere posse no passo. Continuação global tem diferenças de tick/atores."
+    },
+    {
+      "id": "W223",
+      "wave": "W223",
+      "publishedAt": "2026-10-28T13:33:55Z",
+      "macro": "M3",
+      "title": "W223: DERR muda seleção por ineligibilidade de Move",
+      "status": "Mesmo estado: tackle elegível/score igual; OFF torna Move elegível.",
+      "summary": "O DERR bloqueia objetivos de Move sob DefensiveResponsibilityAssigned, mudando ação escolhida."
     },
     {
       "id": "W210-W213",
@@ -1161,22 +1161,6 @@
     }
   ],
   "history": [
-    {
-      "id": "CP-W04-01",
-      "title": "Git e baseline"
-    },
-    {
-      "id": "CP-W04-02",
-      "title": "Painel HTML"
-    },
-    {
-      "id": "CP-W04-03",
-      "title": "Instrumentação"
-    },
-    {
-      "id": "CP-W04-04",
-      "title": "Reconstrução causal"
-    },
     {
       "id": "CP-W04-05",
       "title": "Auditoria e hipótese"
@@ -3168,6 +3152,38 @@
     {
       "id": "CP-W218-00",
       "title": "Multiseed pareado DERR preflight"
+    },
+    {
+      "id": "CP-W219-FINAL",
+      "title": "Terminais de passe reconciliados em quatro execuções; mediação descritiva fechada"
+    },
+    {
+      "id": "CP-W220-FINAL",
+      "title": "Primeira divergência tick2 ligada a MoveAction alvo/direção e consumidor"
+    },
+    {
+      "id": "CP-W221-FINAL",
+      "title": "Geometria snapshots 86/32 confirma offside; mecanismos híbridos diferem"
+    },
+    {
+      "id": "CP-W222-00",
+      "title": "Trajetória entre tick2 e snapshots preparada; causalidade por tick aberta"
+    },
+    {
+      "id": "CP-W224-FINAL",
+      "title": "Fork pré-tick25/seed1731 confirmou transferência de posse local DERR ON; OFF não transfere no passo"
+    },
+    {
+      "id": "CP-W225-FINAL",
+      "title": "Fork pré-tick62/seed1730 mostra recepção e passe subsequente iguais ON/OFF"
+    },
+    {
+      "id": "CP-W226-FINAL",
+      "title": "Primeiras diferenças de posse W222 localizadas; replay completo ainda não é reproduzível"
+    },
+    {
+      "id": "CP-W227-FINAL",
+      "title": "Mesmo draw/opponent line demonstram terminal de passe diferente no tick3 seed1730"
     }
   ]
 }
