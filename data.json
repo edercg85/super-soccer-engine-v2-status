@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-74",
-  "updatedAt": "2026-10-28T00:29:08-03:00",
-  "cycle": "SS-ORCH-001-W139-PASSFAILED-RECOVERY-CAUSE",
+  "version": "2026.10.28-portal-75",
+  "updatedAt": "2026-10-28T00:32:17-03:00",
+  "cycle": "SS-ORCH-001-W140-RECOVERY-CARRIER-ACTION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W140: observar a decisão do carrier 4c69… no tick seguinte e verificar estado/posse/ação imediata, sem extrapolar do caso único.",
+  "currentFocus": "W141: capturar t136 para 4c69… no mesmo replay, validando decisão e posse sem extrapolar além da janela.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W139",
-    "wave": "W139",
-    "publishedAt": "2026-10-28T03:29:08Z",
+    "id": "W140",
+    "wave": "W140",
+    "publishedAt": "2026-10-28T03:32:17Z",
     "macro": "M2",
-    "title": "W139: recuperação após PassFailed",
-    "status": "1/1 PASS; único recovery candidate foi companheiro away do passer; posse ficou away.",
-    "summary": "PassFailed ocorreu porque a posse não foi do intended target. RecoveryObserver ligou único candidato 4c69… a PossessionChanged e ao estado; não houve turnover de equipe."
+    "title": "W140: ação após recovery",
+    "status": "1/1 PASS; carrier away executa MoveCompleted e mantém a posse em t135.",
+    "summary": "O mesmo 4c69… que recuperou após PassFailed recebe Move em t135, continua com a bola e não cria ActivePass."
   },
   "recentCycles": [
-    {
-      "id": "W132",
-      "wave": "W132",
-      "publishedAt": "2026-10-28T04:51:00Z",
-      "macro": "M2",
-      "title": "W132: o estado de impedimento inicia tiro livre indireto",
-      "status": "2/2 PASS (quatro branches); restart setup confirmado; cobrança e posse ainda UNKNOWN.",
-      "summary": "Em todos os quatro branches W07, um tick após OffsidePending há RestartSetupStarted/IndirectFreeKick e OffsideSetup com beneficiary/posição correspondentes; posse continua nula."
-    },
     {
       "id": "W133",
       "wave": "W133",
@@ -92,6 +83,15 @@
       "title": "W139: recuperação após PassFailed",
       "status": "1/1 PASS; único recovery candidate foi companheiro away do passer; posse ficou away.",
       "summary": "PassFailed ocorreu porque a posse não foi do intended target. RecoveryObserver ligou único candidato 4c69… a PossessionChanged e ao estado; não houve turnover de equipe."
+    },
+    {
+      "id": "W140",
+      "wave": "W140",
+      "publishedAt": "2026-10-28T03:32:17Z",
+      "macro": "M2",
+      "title": "W140: ação após recovery",
+      "status": "1/1 PASS; carrier away executa MoveCompleted e mantém a posse em t135.",
+      "summary": "O mesmo 4c69… que recuperou após PassFailed recebe Move em t135, continua com a bola e não cria ActivePass."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W132",
-      "wave": "W132",
-      "publishedAt": "2026-10-28T04:51:00Z",
-      "macro": "M2",
-      "title": "W132: o estado de impedimento inicia tiro livre indireto",
-      "status": "2/2 PASS (quatro branches); restart setup confirmado; cobrança e posse ainda UNKNOWN.",
-      "summary": "Em todos os quatro branches W07, um tick após OffsidePending há RestartSetupStarted/IndirectFreeKick e OffsideSetup com beneficiary/posição correspondentes; posse continua nula."
-    },
-    {
       "id": "W133",
       "wave": "W133",
       "publishedAt": "2026-10-28T03:03:37Z",
@@ -1116,6 +1107,15 @@
       "title": "W139: recuperação após PassFailed",
       "status": "1/1 PASS; único recovery candidate foi companheiro away do passer; posse ficou away.",
       "summary": "PassFailed ocorreu porque a posse não foi do intended target. RecoveryObserver ligou único candidato 4c69… a PossessionChanged e ao estado; não houve turnover de equipe."
+    },
+    {
+      "id": "W140",
+      "wave": "W140",
+      "publishedAt": "2026-10-28T03:32:17Z",
+      "macro": "M2",
+      "title": "W140: ação após recovery",
+      "status": "1/1 PASS; carrier away executa MoveCompleted e mantém a posse em t135.",
+      "summary": "O mesmo 4c69… que recuperou após PassFailed recebe Move em t135, continua com a bola e não cria ActivePass."
     },
     {
       "wave": "W66",
@@ -2814,6 +2814,14 @@
     {
       "id": "CP-W139-01",
       "title": "Recovery winner e posse unidos"
+    },
+    {
+      "id": "CP-W140-00",
+      "title": "Preflight da decisão do recuperador"
+    },
+    {
+      "id": "CP-W140-01",
+      "title": "Move e posse pós-recovery"
     }
   ]
 }
