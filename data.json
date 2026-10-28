@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-125",
-  "updatedAt": "2026-10-28T10:15:00Z",
-  "cycle": "SS-ORCH-001-W192-VERTICAL-SHOOT-CROSS-SEED-REPLICATION",
+  "version": "2026.10.28-portal-126",
+  "updatedAt": "2026-10-28T10:58:00Z",
+  "cycle": "SS-ORCH-001-W193-CONTEXTUAL-SHOOT-SEED-REPLICATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W192: fixture W07, seed1732, reach4; comparar OFF W189 e ON isolado VerticalAttacking.Shoot, repetir ON para determinismo. Medir posse, tentativas, eventos e score; flag default-off, nenhum patch de produção.",
+  "currentFocus": "W193: OFF/ON pareado na seed1731 com fixture W07, DLL histórica 061c e reach4; procurar oportunidade insideBox, primeira divergência, posse, eventos, chute e placar. Se não disparar, usar snapshot elegível de W191 como teste local sem alegar efeito em partida completa.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W191",
-    "wave": "W191",
-    "publishedAt": "2026-10-28T10:15:00Z",
+    "id": "W192",
+    "wave": "W192",
+    "publishedAt": "2026-10-28T10:58:00Z",
     "macro": "M2",
-    "title": "W191: contexto Shoot gerou um chute e gol em seed1733",
-    "status": "Config-only: repetição ON determinística; uma fixture/seed, sem promoção.",
-    "summary": "OFF 0–0 sem chute; ON elevou Shoot 0,769→0,943 em tick2096, ShotEvent e gol tick2098, 1–0. Efeito positivo pontual; generalidade UNKNOWN."
+    "title": "W192: Shoot contextual sem oportunidade na área",
+    "status": "1/1 auditoria PASS; duas repetições ON determinísticas; sem efeito nesta seed.",
+    "summary": "Na seed1732, 2517 avaliações elegíveis; nenhuma insideBox/ameaça. Ações, score Shoot, estado e eventos iguais OFF/ON. Tick95 e agregados reproduzem W186."
   },
   "recentCycles": [
-    {
-      "id": "W183",
-      "wave": "W183",
-      "publishedAt": "2026-10-28T09:14:11Z",
-      "macro": "M2",
-      "title": "W183: decomposição do score Shoot",
-      "status": "Auditoria automática 10/10 PASS; sem rerun; nenhum ajuste de gameplay.",
-      "summary": "Recalculados distanceScore, laneScore e pesos de atributos. Shoot permaneceu elegível em long range por ausência de gate de distância; perdeu para Move/Pass nos dez estados W181. Zeros de insideBox/ângulo/threat eram defaults do harness."
-    },
     {
       "id": "W184",
       "wave": "W184",
@@ -101,6 +92,15 @@
       "title": "W191: contexto Shoot gerou um chute e gol em seed1733",
       "status": "Config-only: repetição ON determinística; uma fixture/seed, sem promoção.",
       "summary": "OFF 0–0 sem chute; ON elevou Shoot 0,769→0,943 em tick2096, ShotEvent e gol tick2098, 1–0. Efeito positivo pontual; generalidade UNKNOWN."
+    },
+    {
+      "id": "W192",
+      "wave": "W192",
+      "publishedAt": "2026-10-28T10:58:00Z",
+      "macro": "M2",
+      "title": "W192: Shoot contextual sem oportunidade na área",
+      "status": "1/1 auditoria PASS; duas repetições ON determinísticas; sem efeito nesta seed.",
+      "summary": "Na seed1732, 2517 avaliações elegíveis; nenhuma insideBox/ameaça. Ações, score Shoot, estado e eventos iguais OFF/ON. Tick95 e agregados reproduzem W186."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W183",
-      "wave": "W183",
-      "publishedAt": "2026-10-28T09:14:11Z",
-      "macro": "M2",
-      "title": "W183: decomposição do score Shoot",
-      "status": "Auditoria automática 10/10 PASS; sem rerun; nenhum ajuste de gameplay.",
-      "summary": "Recalculados distanceScore, laneScore e pesos de atributos. Shoot permaneceu elegível em long range por ausência de gate de distância; perdeu para Move/Pass nos dez estados W181. Zeros de insideBox/ângulo/threat eram defaults do harness."
-    },
-    {
       "id": "W184",
       "wave": "W184",
       "publishedAt": "2026-10-28T09:24:30Z",
@@ -1134,6 +1125,15 @@
       "title": "W191: contexto Shoot gerou um chute e gol em seed1733",
       "status": "Config-only: repetição ON determinística; uma fixture/seed, sem promoção.",
       "summary": "OFF 0–0 sem chute; ON elevou Shoot 0,769→0,943 em tick2096, ShotEvent e gol tick2098, 1–0. Efeito positivo pontual; generalidade UNKNOWN."
+    },
+    {
+      "id": "W192",
+      "wave": "W192",
+      "publishedAt": "2026-10-28T10:58:00Z",
+      "macro": "M2",
+      "title": "W192: Shoot contextual sem oportunidade na área",
+      "status": "1/1 auditoria PASS; duas repetições ON determinísticas; sem efeito nesta seed.",
+      "summary": "Na seed1732, 2517 avaliações elegíveis; nenhuma insideBox/ameaça. Ações, score Shoot, estado e eventos iguais OFF/ON. Tick95 e agregados reproduzem W186."
     },
     {
       "wave": "W66",
