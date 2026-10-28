@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-56",
-  "updatedAt": "2026-10-27T22:50:47-03:00",
+  "version": "2026.10.28-portal-57",
+  "updatedAt": "2026-10-27T23:02:26-03:00",
   "cycle": "SS-ORCH-001-W123-LAUNCH-ORIGIN-AND-PASS-FAILURE-OWNERSHIP",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Não usar o Ghidra atualmente carregado para claims da build limpa. Prosseguir com evidência C1 existente e explorar uma alternativa de instrumentação isolada que valide o SHA 0c78… antes de consultar os três readers.",
+  "currentFocus": "Próximo teste: obter sessão isolada ou instrumentação que carregue exatamente o EXE limpo SHA 0c78…; validar hash antes de consultar e traçar um reader com return address, code, arg2, +0x8d4c/+0x8d4e/+0x8ed0 e última escrita. Enquanto isso, auditar estaticamente os demais VA/raw-offsets citados no 003J usando o mapa PE corrigido.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -14,11 +14,11 @@
   "latestAction": {
     "id": "W123",
     "wave": "W123",
-    "publishedAt": "2026-10-28T01:50:47Z",
+    "publishedAt": "2026-10-28T02:02:26Z",
     "macro": "M2",
-    "title": "W123: investigação de recovery e preflight do trace CM limpo",
-    "status": "CP14–15 fixtures sintéticas PASS; CP16 producer CM↔V2 UNKNOWN; CP17 muda o winner em 1/12 sem trocar equipe; CP18 Ghidra carregado não corresponde ao EXE limpo. Qualidade UNKNOWN, flag default-off.",
-    "summary": "CP14–15: target conclui; teammate falha mantendo posse; opponent falha transferindo; sem candidato a bola/ActivePass continuam. Maior BallControl/ID ordena elegíveis; o contrafactual por tempo muda o jogador em 1/12 sem mudar equipe. A KB CM não provou que o producer alcança os readers. Ghidra está carregado com SHA 3181…, não o clean 0c78…; a origem da imagem 3181 é UNKNOWN. Nenhuma alteração de gameplay."
+    "title": "W123: cross-build byte windows e corrigendum 003J",
+    "status": "CP19 confirmou dez janelas locais iguais e corrigiu seis offsets PE; CP20 publicou corrigendum append-only. Sem equivalência global ou reaching definition.",
+    "summary": "CP19 comparou 320 bytes em dez VAs, idênticos entre 3181… e o EXE limpo 0c78…. A correção PE mostrou seis offsets B1/C1 deslocados em +0x1000. CP20 atualizou a KB preservando B1/C1 e o manifesto original; ZIP 003J validado. Versão da imagem 3181 e consumo dinâmico continuam UNKNOWN."
   },
   "recentCycles": [
     {
@@ -87,11 +87,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-28T01:50:47Z",
+      "publishedAt": "2026-10-28T02:02:26Z",
       "macro": "M2",
-      "title": "W123: investigação de recovery e preflight do trace CM limpo",
-      "status": "CP14–15 fixtures sintéticas PASS; CP16 producer CM↔V2 UNKNOWN; CP17 muda o winner em 1/12 sem trocar equipe; CP18 Ghidra carregado não corresponde ao EXE limpo. Qualidade UNKNOWN, flag default-off.",
-      "summary": "CP14–15: target conclui; teammate falha mantendo posse; opponent falha transferindo; sem candidato a bola/ActivePass continuam. Maior BallControl/ID ordena elegíveis; o contrafactual por tempo muda o jogador em 1/12 sem mudar equipe. A KB CM não provou que o producer alcança os readers. Ghidra está carregado com SHA 3181…, não o clean 0c78…; a origem da imagem 3181 é UNKNOWN. Nenhuma alteração de gameplay."
+      "title": "W123: cross-build byte windows e corrigendum 003J",
+      "status": "CP19 confirmou dez janelas locais iguais e corrigiu seis offsets PE; CP20 publicou corrigendum append-only. Sem equivalência global ou reaching definition.",
+      "summary": "CP19 comparou 320 bytes em dez VAs, idênticos entre 3181… e o EXE limpo 0c78…. A correção PE mostrou seis offsets B1/C1 deslocados em +0x1000. CP20 atualizou a KB preservando B1/C1 e o manifesto original; ZIP 003J validado. Versão da imagem 3181 e consumo dinâmico continuam UNKNOWN."
     }
   ],
   "macros": [
@@ -1111,11 +1111,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-28T01:50:47Z",
+      "publishedAt": "2026-10-28T02:02:26Z",
       "macro": "M2",
-      "title": "W123: investigação de recovery e preflight do trace CM limpo",
-      "status": "CP14–15 fixtures sintéticas PASS; CP16 producer CM↔V2 UNKNOWN; CP17 muda o winner em 1/12 sem trocar equipe; CP18 Ghidra carregado não corresponde ao EXE limpo. Qualidade UNKNOWN, flag default-off.",
-      "summary": "CP14–15: target conclui; teammate falha mantendo posse; opponent falha transferindo; sem candidato a bola/ActivePass continuam. Maior BallControl/ID ordena elegíveis; o contrafactual por tempo muda o jogador em 1/12 sem mudar equipe. A KB CM não provou que o producer alcança os readers. Ghidra está carregado com SHA 3181…, não o clean 0c78…; a origem da imagem 3181 é UNKNOWN. Nenhuma alteração de gameplay."
+      "title": "W123: cross-build byte windows e corrigendum 003J",
+      "status": "CP19 confirmou dez janelas locais iguais e corrigiu seis offsets PE; CP20 publicou corrigendum append-only. Sem equivalência global ou reaching definition.",
+      "summary": "CP19 comparou 320 bytes em dez VAs, idênticos entre 3181… e o EXE limpo 0c78…. A correção PE mostrou seis offsets B1/C1 deslocados em +0x1000. CP20 atualizou a KB preservando B1/C1 e o manifesto original; ZIP 003J validado. Versão da imagem 3181 e consumo dinâmico continuam UNKNOWN."
     },
     {
       "wave": "W66",
@@ -2674,6 +2674,14 @@
     {
       "id": "CP-W123-18",
       "title": "Identidade Ghidra e viabilidade de prova na build limpa"
+    },
+    {
+      "id": "CP-W123-19",
+      "title": "Cross-build: janelas de bytes e correção de file offsets"
+    },
+    {
+      "id": "CP-W123-20",
+      "title": "Corrigendum 003J e handoff validado"
     }
   ]
 }
