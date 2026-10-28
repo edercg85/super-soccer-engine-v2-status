@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-112",
-  "updatedAt": "2026-10-28T08:52:10Z",
-  "cycle": "SS-ORCH-001-W178-TACKLE-ELIGIBILITY-SELECTION",
+  "version": "2026.10.28-portal-113",
+  "updatedAt": "2026-10-28T08:56:38Z",
+  "cycle": "SS-ORCH-001-W179-TACKLE-PASS-CONTINUATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W179: seguir seed1733 após tackle bem-sucedido e analisar o passe do tick55 — decisão, target, draw, efeitos, terminal e posse. Separar lançamento de conclusão/recepção; limitar a janela a +12 ticks do passe.",
+  "currentFocus": "W180: seguir a posse recebida no tick65 por seed1733, com decisões e eventos até tick80. Identificar primeiro passe/chute/falta/turnover/reinício e separar resultado de ação do efeito observado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W178",
-    "wave": "W178",
-    "publishedAt": "2026-10-28T08:51:39Z",
+    "id": "W179",
+    "wave": "W179",
+    "publishedAt": "2026-10-28T08:55:29Z",
     "macro": "M2",
-    "title": "W178: elegibilidade e escolha do tackle",
-    "status": "2/2 PASS; 11 candidates, 2 elegíveis; 1 seleciona tackle; paridade de instrumentação PASS.",
-    "summary": "No prestate tick51, 2 defensores estavam ao alcance. O mais próximo escolhe Tackle por score .843; outro elegível escolhe Move. Nove rejeitados por alcance. Sem inferência de ranking coletivo."
+    "title": "W179: passe pós-tackle e continuação",
+    "status": "2/2 PASS; auditoria PASS; outcomes locais confirmados.",
+    "summary": "Passe tick55 `PassLaunchDegraded` completa tick58. Passe tick61 falha tick62, mas companheiro do mesmo time recupera; novo passe completa tick65. Sem chute no horizonte."
   },
   "recentCycles": [
-    {
-      "id": "W171",
-      "wave": "W171",
-      "publishedAt": "2026-10-28T08:18:00Z",
-      "macro": "M2",
-      "title": "W171: consequência natural do passe degradado",
-      "status": "4/4 runs pareados PASS; PassFailed com posse própria em 4m e impedimento/reinício adversário em 5m, repetido em duas seeds.",
-      "summary": "Em seeds 1732/1733, estados completos e 22 decisões iguais no foco. `PassLaunched` resulta em PassFailed com posse away; `PassLaunchDegraded` leva a offside do target e reinício home pronto em +7 ticks. Evidência local, sem estimar incidência/qualidade."
-    },
     {
       "id": "W172",
       "wave": "W172",
@@ -92,6 +83,15 @@
       "title": "W178: elegibilidade e escolha do tackle",
       "status": "2/2 PASS; 11 candidates, 2 elegíveis; 1 seleciona tackle; paridade de instrumentação PASS.",
       "summary": "No prestate tick51, 2 defensores estavam ao alcance. O mais próximo escolhe Tackle por score .843; outro elegível escolhe Move. Nove rejeitados por alcance. Sem inferência de ranking coletivo."
+    },
+    {
+      "id": "W179",
+      "wave": "W179",
+      "publishedAt": "2026-10-28T08:55:29Z",
+      "macro": "M2",
+      "title": "W179: passe pós-tackle e continuação",
+      "status": "2/2 PASS; auditoria PASS; outcomes locais confirmados.",
+      "summary": "Passe tick55 `PassLaunchDegraded` completa tick58. Passe tick61 falha tick62, mas companheiro do mesmo time recupera; novo passe completa tick65. Sem chute no horizonte."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W171",
-      "wave": "W171",
-      "publishedAt": "2026-10-28T08:18:00Z",
-      "macro": "M2",
-      "title": "W171: consequência natural do passe degradado",
-      "status": "4/4 runs pareados PASS; PassFailed com posse própria em 4m e impedimento/reinício adversário em 5m, repetido em duas seeds.",
-      "summary": "Em seeds 1732/1733, estados completos e 22 decisões iguais no foco. `PassLaunched` resulta em PassFailed com posse away; `PassLaunchDegraded` leva a offside do target e reinício home pronto em +7 ticks. Evidência local, sem estimar incidência/qualidade."
-    },
-    {
       "id": "W172",
       "wave": "W172",
       "publishedAt": "2026-10-28T08:26:52Z",
@@ -1116,6 +1107,15 @@
       "title": "W178: elegibilidade e escolha do tackle",
       "status": "2/2 PASS; 11 candidates, 2 elegíveis; 1 seleciona tackle; paridade de instrumentação PASS.",
       "summary": "No prestate tick51, 2 defensores estavam ao alcance. O mais próximo escolhe Tackle por score .843; outro elegível escolhe Move. Nove rejeitados por alcance. Sem inferência de ranking coletivo."
+    },
+    {
+      "id": "W179",
+      "wave": "W179",
+      "publishedAt": "2026-10-28T08:55:29Z",
+      "macro": "M2",
+      "title": "W179: passe pós-tackle e continuação",
+      "status": "2/2 PASS; auditoria PASS; outcomes locais confirmados.",
+      "summary": "Passe tick55 `PassLaunchDegraded` completa tick58. Passe tick61 falha tick62, mas companheiro do mesmo time recupera; novo passe completa tick65. Sem chute no horizonte."
     },
     {
       "wave": "W66",
@@ -3026,6 +3026,14 @@
     {
       "id": "CP-W178-02",
       "title": "Handoff W178 publicado"
+    },
+    {
+      "id": "CP-W179-01",
+      "title": "Pass outcomes após tackle successful"
+    },
+    {
+      "id": "CP-W179-02",
+      "title": "Handoff W179 validado"
     }
   ]
 }
