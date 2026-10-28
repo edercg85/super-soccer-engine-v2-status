@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-118",
-  "updatedAt": "2026-10-28T09:24:30Z",
-  "cycle": "SS-ORCH-001-W185-FULL-MATCH-SHOOT-DECISION-CENSUS",
+  "version": "2026.10.28-portal-119",
+  "updatedAt": "2026-10-28T09:29:10Z",
+  "cycle": "SS-ORCH-001-W186-CROSS-SEED-SHOOT-CENSUS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W185: executar novamente seed1733 em reach4 e agregar diagnostics de todas as decisões do portador (Shoot elegível, scores concorrentes, vencedor, distância e fase) para explicar a partida sem chute. Não alterar pesos; verificar hash do tick95 antes de interpretar.",
+  "currentFocus": "W186: executar censo correspondente em seed1732, mesma fixture/reach4/opções. Comparar elegibilidade, score/rank, distância e tentativa de chute; registrar limite de amostra de duas seeds.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W184",
-    "wave": "W184",
-    "publishedAt": "2026-10-28T09:24:30Z",
+    "id": "W185",
+    "wave": "W185",
+    "publishedAt": "2026-10-28T09:29:10Z",
     "macro": "M2",
-    "title": "W184: partida completa sem tentativa de chute",
-    "status": "1/1 PASS; replay compatível no tick95; resultado restrito à seed1733.",
-    "summary": "PALxCOR seed1733 reach4 completou 5401 ticks, 0–0, sem ShootAction/ShotEvent/terminal de chute. Hash do estado tick95 reproduz W181."
+    "title": "W185: censo completo do score Shoot",
+    "status": "PARTIAL: captura terminou; auditoria agregada PASS; harness tinha assertion de denominador incorreta.",
+    "summary": "2529 carrier ticks; Shoot elegível2526, escolhido0, abaixo do melhor concorrente em2526; gap médio0,35953; distância média63,44m, 2481 acima de40m. Seed1733 apenas."
   },
   "recentCycles": [
-    {
-      "id": "W177",
-      "wave": "W177",
-      "publishedAt": "2026-10-28T08:55:00Z",
-      "macro": "M2",
-      "title": "W177: bifurcação por draw de tackle",
-      "status": "2/2 PASS; mesmo prestate/decisões; threshold de 49.2901% auditado; outcomes diferentes.",
-      "summary": "Tick51 tackle técnico: .9402 supera o limiar e falha, mantendo posse; .3883 fica abaixo e sucede, transferindo posse ao tackler. Fórmula e fonte/fixture conferidas; sem claim de qualidade global."
-    },
     {
       "id": "W178",
       "wave": "W178",
@@ -92,6 +83,15 @@
       "title": "W184: partida completa sem tentativa de chute",
       "status": "1/1 PASS; replay compatível no tick95; resultado restrito à seed1733.",
       "summary": "PALxCOR seed1733 reach4 completou 5401 ticks, 0–0, sem ShootAction/ShotEvent/terminal de chute. Hash do estado tick95 reproduz W181."
+    },
+    {
+      "id": "W185",
+      "wave": "W185",
+      "publishedAt": "2026-10-28T09:29:10Z",
+      "macro": "M2",
+      "title": "W185: censo completo do score Shoot",
+      "status": "PARTIAL: captura terminou; auditoria agregada PASS; harness tinha assertion de denominador incorreta.",
+      "summary": "2529 carrier ticks; Shoot elegível2526, escolhido0, abaixo do melhor concorrente em2526; gap médio0,35953; distância média63,44m, 2481 acima de40m. Seed1733 apenas."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W177",
-      "wave": "W177",
-      "publishedAt": "2026-10-28T08:55:00Z",
-      "macro": "M2",
-      "title": "W177: bifurcação por draw de tackle",
-      "status": "2/2 PASS; mesmo prestate/decisões; threshold de 49.2901% auditado; outcomes diferentes.",
-      "summary": "Tick51 tackle técnico: .9402 supera o limiar e falha, mantendo posse; .3883 fica abaixo e sucede, transferindo posse ao tackler. Fórmula e fonte/fixture conferidas; sem claim de qualidade global."
-    },
-    {
       "id": "W178",
       "wave": "W178",
       "publishedAt": "2026-10-28T08:51:39Z",
@@ -1116,6 +1107,15 @@
       "title": "W184: partida completa sem tentativa de chute",
       "status": "1/1 PASS; replay compatível no tick95; resultado restrito à seed1733.",
       "summary": "PALxCOR seed1733 reach4 completou 5401 ticks, 0–0, sem ShootAction/ShotEvent/terminal de chute. Hash do estado tick95 reproduz W181."
+    },
+    {
+      "id": "W185",
+      "wave": "W185",
+      "publishedAt": "2026-10-28T09:29:10Z",
+      "macro": "M2",
+      "title": "W185: censo completo do score Shoot",
+      "status": "PARTIAL: captura terminou; auditoria agregada PASS; harness tinha assertion de denominador incorreta.",
+      "summary": "2529 carrier ticks; Shoot elegível2526, escolhido0, abaixo do melhor concorrente em2526; gap médio0,35953; distância média63,44m, 2481 acima de40m. Seed1733 apenas."
     },
     {
       "wave": "W66",
@@ -3066,6 +3066,10 @@
     {
       "id": "CP-W184-02",
       "title": "W184 fechado; handoff validado; W185 iniciado"
+    },
+    {
+      "id": "CP-W185-02",
+      "title": "W185 censo auditado; W186 iniciado"
     }
   ]
 }
