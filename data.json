@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-50",
-  "updatedAt": "2026-10-27T22:30:06-03:00",
+  "version": "2026.10.28-portal-51",
+  "updatedAt": "2026-10-27T22:32:14-03:00",
   "cycle": "SS-ORCH-001-W123-LAUNCH-ORIGIN-AND-PASS-FAILURE-OWNERSHIP",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Executar quatro fixtures sintéticas para alvo, companheiro, adversário ou ninguém cruzar a trajetória; validar elegibilidade, terminal e posse sem alterar a fórmula nem ligar a flag.",
@@ -17,7 +17,7 @@
     "publishedAt": "2026-10-28T00:25:41Z",
     "macro": "M2",
     "title": "W123: snapshots, orientação invertida e diagnóstico de falhas de passe",
-    "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN e sem auditor externo novo.",
+    "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN; ZIP validado e portal50 publicado.",
     "summary": "CP12: 9/12 alvos amostrados fora do limiar, 3 elegíveis vencidos por maior BallControl; receptor moveu ao destino ActivePass em 12/12. CP13 tick5: estado/ações iguais; endpoint sem candidato, linear-relative escolhe companheiro no percurso, emite PassFailed mas preserva posse do mesmo time. Flag default-off; sem alegação de qualidade."
   },
   "recentCycles": [
@@ -90,7 +90,7 @@
       "publishedAt": "2026-10-28T00:25:41Z",
       "macro": "M2",
       "title": "W123: snapshots, orientação invertida e diagnóstico de falhas de passe",
-      "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN e sem auditor externo novo.",
+      "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN; ZIP validado e portal50 publicado.",
       "summary": "CP12: 9/12 alvos amostrados fora do limiar, 3 elegíveis vencidos por maior BallControl; receptor moveu ao destino ActivePass em 12/12. CP13 tick5: estado/ações iguais; endpoint sem candidato, linear-relative escolhe companheiro no percurso, emite PassFailed mas preserva posse do mesmo time. Flag default-off; sem alegação de qualidade."
     }
   ],
@@ -1114,7 +1114,7 @@
       "publishedAt": "2026-10-28T00:25:41Z",
       "macro": "M2",
       "title": "W123: snapshots, orientação invertida e diagnóstico de falhas de passe",
-      "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN e sem auditor externo novo.",
+      "status": "CP08/09 auditados; CP10–13 reproduzidos; mecanismo local de recovery causal identificado; qualidade UNKNOWN; ZIP validado e portal50 publicado.",
       "summary": "CP12: 9/12 alvos amostrados fora do limiar, 3 elegíveis vencidos por maior BallControl; receptor moveu ao destino ActivePass em 12/12. CP13 tick5: estado/ações iguais; endpoint sem candidato, linear-relative escolhe companheiro no percurso, emite PassFailed mas preserva posse do mesmo time. Flag default-off; sem alegação de qualidade."
     },
     {
