@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-68",
-  "updatedAt": "2026-10-28T00:03:37-03:00",
-  "cycle": "SS-ORCH-001-W133-OFFSIDE-INDIRECT-KICK-TAKEN",
+  "version": "2026.10.28-portal-69",
+  "updatedAt": "2026-10-28T00:07:32-03:00",
+  "cycle": "SS-ORCH-001-W134-INDIRECT-PASS-TERMINAL",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W134: seguir os quatro ActivePass de tiro livre até o primeiro terminal e ligar terminal/posse ao receiver; parar antes de inferir qualidade estratégica.",
+  "currentFocus": "W135: observar o primeiro tick após conclusão e ligar a posse do receiver à ação escolhida; sem inferir qualidade global.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W133",
-    "wave": "W133",
-    "publishedAt": "2026-10-28T03:03:37Z",
+    "id": "W134",
+    "wave": "W134",
+    "publishedAt": "2026-10-28T03:07:32Z",
     "macro": "M2",
-    "title": "W133: cobrador e lançamento do indireto",
-    "status": "2/2 PASS (quatro traces); receiver e ActivePass ligados; recepção ainda UNKNOWN.",
-    "summary": "Nos quatro traces W07, OffsideSetup chega a Ready em dois ticks; no seguinte o kicker executa PassAction. Beneficiário, kicker, receiver, ActionResult e ActivePass foram unidos."
+    "title": "W134: terminal do passe do indireto",
+    "status": "4/4 PASS; os quatro passes completaram para o receiver em 2–3 ticks.",
+    "summary": "PassCompleted, IDs, posse do receiver e limpeza do ActivePass foram ligados por referência de objeto; nas quatro avaliações observadas só o receiver constava como candidato."
   },
   "recentCycles": [
-    {
-      "id": "W126",
-      "wave": "W126",
-      "publishedAt": "2026-10-28T02:32:00Z",
-      "macro": "M2",
-      "title": "W126: escolha local de passe e snapshot de impedimento",
-      "status": "3/3 testes focais PASS; claim local confirmada; auditoria independente pendente; próximo tick UNKNOWN.",
-      "summary": "Nos snapshots W07 1730/1731, após movimentos OFF/ON pareados, OFF escolhe Pass e ON Move; candidato OFF corresponde ao PassAction e não aparece marcado em OffsideSnapshot. W06 1729 mantém Move nos dois braços. Os snapshots W07 compartilham geometria; não são réplicas independentes."
-    },
     {
       "id": "W127",
       "wave": "W127",
@@ -92,6 +83,15 @@
       "title": "W133: cobrador e lançamento do indireto",
       "status": "2/2 PASS (quatro traces); receiver e ActivePass ligados; recepção ainda UNKNOWN.",
       "summary": "Nos quatro traces W07, OffsideSetup chega a Ready em dois ticks; no seguinte o kicker executa PassAction. Beneficiário, kicker, receiver, ActionResult e ActivePass foram unidos."
+    },
+    {
+      "id": "W134",
+      "wave": "W134",
+      "publishedAt": "2026-10-28T03:07:32Z",
+      "macro": "M2",
+      "title": "W134: terminal do passe do indireto",
+      "status": "4/4 PASS; os quatro passes completaram para o receiver em 2–3 ticks.",
+      "summary": "PassCompleted, IDs, posse do receiver e limpeza do ActivePass foram ligados por referência de objeto; nas quatro avaliações observadas só o receiver constava como candidato."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W126",
-      "wave": "W126",
-      "publishedAt": "2026-10-28T02:32:00Z",
-      "macro": "M2",
-      "title": "W126: escolha local de passe e snapshot de impedimento",
-      "status": "3/3 testes focais PASS; claim local confirmada; auditoria independente pendente; próximo tick UNKNOWN.",
-      "summary": "Nos snapshots W07 1730/1731, após movimentos OFF/ON pareados, OFF escolhe Pass e ON Move; candidato OFF corresponde ao PassAction e não aparece marcado em OffsideSnapshot. W06 1729 mantém Move nos dois braços. Os snapshots W07 compartilham geometria; não são réplicas independentes."
-    },
-    {
       "id": "W127",
       "wave": "W127",
       "publishedAt": "2026-10-28T02:47:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W133: cobrador e lançamento do indireto",
       "status": "2/2 PASS (quatro traces); receiver e ActivePass ligados; recepção ainda UNKNOWN.",
       "summary": "Nos quatro traces W07, OffsideSetup chega a Ready em dois ticks; no seguinte o kicker executa PassAction. Beneficiário, kicker, receiver, ActionResult e ActivePass foram unidos."
+    },
+    {
+      "id": "W134",
+      "wave": "W134",
+      "publishedAt": "2026-10-28T03:07:32Z",
+      "macro": "M2",
+      "title": "W134: terminal do passe do indireto",
+      "status": "4/4 PASS; os quatro passes completaram para o receiver em 2–3 ticks.",
+      "summary": "PassCompleted, IDs, posse do receiver e limpeza do ActivePass foram ligados por referência de objeto; nas quatro avaliações observadas só o receiver constava como candidato."
     },
     {
       "wave": "W66",
@@ -2766,6 +2766,14 @@
     {
       "id": "CP-W133-01",
       "title": "Ready → ação → ActivePass"
+    },
+    {
+      "id": "CP-W134-00",
+      "title": "Preflight do primeiro terminal"
+    },
+    {
+      "id": "CP-W134-01",
+      "title": "Passe completo e posse do receiver"
     }
   ]
 }
