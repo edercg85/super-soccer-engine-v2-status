@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-137",
-  "updatedAt": "2026-10-28T12:01:00Z",
-  "cycle": "SS-ORCH-001-W204-W158-TREATMENT-IDENTITY-AUDIT",
+  "version": "2026.10.28-portal-138",
+  "updatedAt": "2026-10-28T12:07:00Z",
+  "cycle": "SS-ORCH-001-W208-M4-RESTART-COVERAGE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W204: resolver a divergência entre o rótulo de tratamento do relatório W158 (BallCarrierContextualMoveV2) e a construção explícita `new DecisionEngine(enabled)` no teste armazenado. Auditar assinatura-fonte e SimulationOptions; publicar corrigendum aditivo se confirmado.",
+  "currentFocus": "W208 M4-05: inventário read-only de evidências W15/W16 para produtores/eventos/retomada em goal kick, corner e throw-in; sem nova simulação ou mudança de gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W203",
-    "wave": "W203",
-    "publishedAt": "2026-10-28T12:01:00Z",
+    "id": "W204-W207",
+    "wave": "W204-W207",
+    "publishedAt": "2026-10-28T12:07:00Z",
     "macro": "M2",
-    "title": "W203: nenhum caso no último centímetro do alcance entre os traces",
-    "status": "Auditoria dos corpora PASS; incidência natural UNKNOWN.",
-    "summary": "W156 61 distâncias, W157 20 draws, W158 162 amostras/48 draws: 2 episódios near-4 distintos (3,9085 e3,9237m), zero em3,99–4m e zero draw0. Fonte produtora sem SHA DLL."
+    "title": "W204–W207: correção do treatment W158 e censo homogêneo SafeForward",
+    "status": "Fonte/teste CONFIRMED; DLL histórica PARTIAL; sem auditor independente novo.",
+    "summary": "W159/W160 já corrigiam o metadado; W203 recebeu adendo. W156–W158 usam o seam SafeForward ON/OFF, não BCCM V2. Sem TRX/DLL históricos."
   },
   "recentCycles": [
-    {
-      "id": "W195",
-      "wave": "W195",
-      "publishedAt": "2026-10-28T11:14:00Z",
-      "macro": "M2",
-      "title": "W195: Shoot contextual reproduzido com efeito adverso nesta seed",
-      "status": "Auditoria automática PASS; ON determinístico; OFF marcou e ON não marcou nesta fixture.",
-      "summary": "Seed1730: OFF 1–0 com 1 chute; ON 0–0 com 2. Primeira divergência tick29 (Move→Shoot); distance 14,49m igual, insideBox 0→1, threat 0→0,1935. Sem pre-state hash tick29; qualidade geral segue UNKNOWN."
-    },
     {
       "id": "W196",
       "wave": "W196",
@@ -101,6 +92,15 @@
       "title": "W203: nenhum caso no último centímetro do alcance entre os traces",
       "status": "Auditoria dos corpora PASS; incidência natural UNKNOWN.",
       "summary": "W156 61 distâncias, W157 20 draws, W158 162 amostras/48 draws: 2 episódios near-4 distintos (3,9085 e3,9237m), zero em3,99–4m e zero draw0. Fonte produtora sem SHA DLL."
+    },
+    {
+      "id": "W204-W207",
+      "wave": "W204-W207",
+      "publishedAt": "2026-10-28T12:07:00Z",
+      "macro": "M2",
+      "title": "W204–W207: correção do treatment W158 e censo homogêneo SafeForward",
+      "status": "Fonte/teste CONFIRMED; DLL histórica PARTIAL; sem auditor independente novo.",
+      "summary": "W159/W160 já corrigiam o metadado; W203 recebeu adendo. W156–W158 usam o seam SafeForward ON/OFF, não BCCM V2. Sem TRX/DLL históricos."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W195",
-      "wave": "W195",
-      "publishedAt": "2026-10-28T11:14:00Z",
-      "macro": "M2",
-      "title": "W195: Shoot contextual reproduzido com efeito adverso nesta seed",
-      "status": "Auditoria automática PASS; ON determinístico; OFF marcou e ON não marcou nesta fixture.",
-      "summary": "Seed1730: OFF 1–0 com 1 chute; ON 0–0 com 2. Primeira divergência tick29 (Move→Shoot); distance 14,49m igual, insideBox 0→1, threat 0→0,1935. Sem pre-state hash tick29; qualidade geral segue UNKNOWN."
-    },
-    {
       "id": "W196",
       "wave": "W196",
       "publishedAt": "2026-10-28T11:22:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W203: nenhum caso no último centímetro do alcance entre os traces",
       "status": "Auditoria dos corpora PASS; incidência natural UNKNOWN.",
       "summary": "W156 61 distâncias, W157 20 draws, W158 162 amostras/48 draws: 2 episódios near-4 distintos (3,9085 e3,9237m), zero em3,99–4m e zero draw0. Fonte produtora sem SHA DLL."
+    },
+    {
+      "id": "W204-W207",
+      "wave": "W204-W207",
+      "publishedAt": "2026-10-28T12:07:00Z",
+      "macro": "M2",
+      "title": "W204–W207: correção do treatment W158 e censo homogêneo SafeForward",
+      "status": "Fonte/teste CONFIRMED; DLL histórica PARTIAL; sem auditor independente novo.",
+      "summary": "W159/W160 já corrigiam o metadado; W203 recebeu adendo. W156–W158 usam o seam SafeForward ON/OFF, não BCCM V2. Sem TRX/DLL históricos."
     },
     {
       "wave": "W66",
@@ -3136,6 +3136,10 @@
     {
       "id": "CP-W203-02",
       "title": "Censo de traces fechado; auditoria de tratamento W158 iniciada"
+    },
+    {
+      "id": "CP-W207-01",
+      "title": "W204–W207 corrigendum e censo de treatment concluídos; M4-05 inicia W208"
     }
   ]
 }
