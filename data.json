@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-54",
-  "updatedAt": "2026-10-27T22:47:46-03:00",
+  "version": "2026.10.28-portal-55",
+  "updatedAt": "2026-10-27T22:50:47-03:00",
   "cycle": "SS-ORCH-001-W123-LAUNCH-ORIGIN-AND-PASS-FAILURE-OWNERSHIP",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Não alterar gameplay com base em um contrafactual de 12 casos. Preservar a flag default-off; próximo valor é teste pareado isolado da ordenação apenas se a hipótese de produto for aprovada, com estados posteriores e geometria revisados.",
+  "currentFocus": "Não usar o Ghidra atualmente carregado para claims da build limpa. Prosseguir com evidência C1 existente e explorar uma alternativa de instrumentação isolada que valide o SHA 0c78… antes de consultar os três readers.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -14,11 +14,11 @@
   "latestAction": {
     "id": "W123",
     "wave": "W123",
-    "publishedAt": "2026-10-28T01:47:46Z",
+    "publishedAt": "2026-10-28T01:50:47Z",
     "macro": "M2",
-    "title": "W123: recovery CM/V2 e contrafactual de primeiro tempo",
-    "status": "CP14–15 sintéticos PASS; CP16 CM↔V2 UNKNOWN; CP17 troca o jogador winner em 1/12, zero troca de equipe. Sem auditor externo/qualidade; default-off.",
-    "summary": "CP14–15: quatro rotas e disputa usam BallControl/ID para ordenar elegíveis; CP16: a KB CM não liga produtor aos readers; CP17: ordem hipotética por tempo muda o jogador em 1/12, mas mantém a equipe. Hipótese linear; sem efeito de qualidade."
+    "title": "W123: investigação de recovery e preflight do trace CM limpo",
+    "status": "CP14–17 investigados; CP18 Ghidra hash diferente do clean; sem query no binário discrepante. Trace clean bloqueado por capacidade não demonstrada. ZIP anterior validado; consolidação CP18 em andamento.",
+    "summary": "Ghidra MCP está apontado para SHA 3181…, enquanto 003J afirma apenas o EXE limpo SHA 0c78…. Hash do clean foi revalidado; a origem do arquivo carregado é desconhecida. Para preservar identidade, não consultamos código do binário divergente. É necessário projeto isolado/disassembler ou debugger da build cujo hash seja 0c78…."
   },
   "recentCycles": [
     {
@@ -87,11 +87,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-28T01:47:46Z",
+      "publishedAt": "2026-10-28T01:50:47Z",
       "macro": "M2",
-      "title": "W123: recovery CM/V2 e contrafactual de primeiro tempo",
-      "status": "CP14–15 sintéticos PASS; CP16 CM↔V2 UNKNOWN; CP17 troca o jogador winner em 1/12, zero troca de equipe. Sem auditor externo/qualidade; default-off.",
-      "summary": "CP14–15: quatro rotas e disputa usam BallControl/ID para ordenar elegíveis; CP16: a KB CM não liga produtor aos readers; CP17: ordem hipotética por tempo muda o jogador em 1/12, mas mantém a equipe. Hipótese linear; sem efeito de qualidade."
+      "title": "W123: investigação de recovery e preflight do trace CM limpo",
+      "status": "CP14–17 investigados; CP18 Ghidra hash diferente do clean; sem query no binário discrepante. Trace clean bloqueado por capacidade não demonstrada. ZIP anterior validado; consolidação CP18 em andamento.",
+      "summary": "Ghidra MCP está apontado para SHA 3181…, enquanto 003J afirma apenas o EXE limpo SHA 0c78…. Hash do clean foi revalidado; a origem do arquivo carregado é desconhecida. Para preservar identidade, não consultamos código do binário divergente. É necessário projeto isolado/disassembler ou debugger da build cujo hash seja 0c78…."
     }
   ],
   "macros": [
@@ -1111,11 +1111,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-28T01:47:46Z",
+      "publishedAt": "2026-10-28T01:50:47Z",
       "macro": "M2",
-      "title": "W123: recovery CM/V2 e contrafactual de primeiro tempo",
-      "status": "CP14–15 sintéticos PASS; CP16 CM↔V2 UNKNOWN; CP17 troca o jogador winner em 1/12, zero troca de equipe. Sem auditor externo/qualidade; default-off.",
-      "summary": "CP14–15: quatro rotas e disputa usam BallControl/ID para ordenar elegíveis; CP16: a KB CM não liga produtor aos readers; CP17: ordem hipotética por tempo muda o jogador em 1/12, mas mantém a equipe. Hipótese linear; sem efeito de qualidade."
+      "title": "W123: investigação de recovery e preflight do trace CM limpo",
+      "status": "CP14–17 investigados; CP18 Ghidra hash diferente do clean; sem query no binário discrepante. Trace clean bloqueado por capacidade não demonstrada. ZIP anterior validado; consolidação CP18 em andamento.",
+      "summary": "Ghidra MCP está apontado para SHA 3181…, enquanto 003J afirma apenas o EXE limpo SHA 0c78…. Hash do clean foi revalidado; a origem do arquivo carregado é desconhecida. Para preservar identidade, não consultamos código do binário divergente. É necessário projeto isolado/disassembler ou debugger da build cujo hash seja 0c78…."
     },
     {
       "wave": "W66",
@@ -2670,6 +2670,10 @@
     {
       "id": "CP-W123-17",
       "title": "Contrafactual offline: tempo de aproximação versus BallControl"
+    },
+    {
+      "id": "CP-W123-18",
+      "title": "Identidade Ghidra e viabilidade de prova na build limpa"
     }
   ]
 }
