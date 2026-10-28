@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-99",
-  "updatedAt": "2026-10-28T07:28:41Z",
-  "cycle": "SS-ORCH-001-W165-RNG-CAUSAL-PATH",
+  "version": "2026.10.28-portal-100",
+  "updatedAt": "2026-10-28T07:39:54Z",
+  "cycle": "SS-ORCH-001-W166-RNG-DRAW-COUNTERFACTUAL",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W166: auditoria do fluxo de RNG concluída; próximo validar checkpoint/restore e um contrafactual focal que iguale somente o draw PassTechnical, antes de qualquer rodada multiseed maior.",
+  "currentFocus": "W167: replicar o contrafactual de resolução na seed1733/tick1134; se confirmar, contar a incidência da classe nos quatro pares já executados antes de novas partidas.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W165",
-    "wave": "W165",
-    "publishedAt": "2026-10-28T07:28:41Z",
+    "id": "W166",
+    "wave": "W166",
+    "publishedAt": "2026-10-28T07:39:54Z",
     "macro": "M2",
-    "title": "W165: do intercept GK falho ao passe degradado",
-    "status": "2 seeds; auditoria automatizada PASS; mecanismo causal local confirmado, sem promoção de gameplay.",
-    "summary": "Draw extra da interceptação falha desloca PassTechnical do mesmo actor/target e troca PassLaunched por PassLaunchDegraded em 1732/1733. Corrigendum W164 limita StateHash à projeção; impacto agregado segue UNKNOWN."
+    "title": "W166: draw de passe isolado no mesmo snapshot completo",
+    "status": "1/1 contrafactual focal PASS; mesma instância de estado e decisões; só PassTechnical muda. Sem promoção de gameplay.",
+    "summary": "Na seed1732/tick1839, sample 0,2875997 dá PassLaunched e 0,8172683 dá PassLaunchDegraded; outras 21 ActionResults/efeitos ficam iguais. A prova fecha o elo local, não a qualidade nem o agregado W163."
   },
   "recentCycles": [
-    {
-      "id": "W158",
-      "wave": "W158",
-      "publishedAt": "2026-10-28T06:06:57Z",
-      "macro": "M2",
-      "title": "W158: pares multiseed e defesa do goleiro",
-      "status": "1/1 PASS; seeds 1732–1735; repeat hash-exact. ON 100 gols/136 tiros vs OFF 0/1.",
-      "summary": "O pareamento em uma fixture family mostra grande divergência ON/OFF; qualidade não aceita. Em 47 intercepts GK ON, 30/17 sucederam/falharam e a soma p=30,038. Dois ShootBlocked:Tackled sem ActiveShoot são terminais prévios ao lançamento. W159 verifica tackle e draws nos ticks."
-    },
     {
       "id": "W159",
       "wave": "W159",
@@ -92,6 +83,15 @@
       "title": "W165: do intercept GK falho ao passe degradado",
       "status": "2 seeds; auditoria automatizada PASS; mecanismo causal local confirmado, sem promoção de gameplay.",
       "summary": "Draw extra da interceptação falha desloca PassTechnical do mesmo actor/target e troca PassLaunched por PassLaunchDegraded em 1732/1733. Corrigendum W164 limita StateHash à projeção; impacto agregado segue UNKNOWN."
+    },
+    {
+      "id": "W166",
+      "wave": "W166",
+      "publishedAt": "2026-10-28T07:39:54Z",
+      "macro": "M2",
+      "title": "W166: draw de passe isolado no mesmo snapshot completo",
+      "status": "1/1 contrafactual focal PASS; mesma instância de estado e decisões; só PassTechnical muda. Sem promoção de gameplay.",
+      "summary": "Na seed1732/tick1839, sample 0,2875997 dá PassLaunched e 0,8172683 dá PassLaunchDegraded; outras 21 ActionResults/efeitos ficam iguais. A prova fecha o elo local, não a qualidade nem o agregado W163."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W158",
-      "wave": "W158",
-      "publishedAt": "2026-10-28T06:06:57Z",
-      "macro": "M2",
-      "title": "W158: pares multiseed e defesa do goleiro",
-      "status": "1/1 PASS; seeds 1732–1735; repeat hash-exact. ON 100 gols/136 tiros vs OFF 0/1.",
-      "summary": "O pareamento em uma fixture family mostra grande divergência ON/OFF; qualidade não aceita. Em 47 intercepts GK ON, 30/17 sucederam/falharam e a soma p=30,038. Dois ShootBlocked:Tackled sem ActiveShoot são terminais prévios ao lançamento. W159 verifica tackle e draws nos ticks."
-    },
-    {
       "id": "W159",
       "wave": "W159",
       "publishedAt": "2026-10-28T06:17:48Z",
@@ -1116,6 +1107,15 @@
       "title": "W165: do intercept GK falho ao passe degradado",
       "status": "2 seeds; auditoria automatizada PASS; mecanismo causal local confirmado, sem promoção de gameplay.",
       "summary": "Draw extra da interceptação falha desloca PassTechnical do mesmo actor/target e troca PassLaunched por PassLaunchDegraded em 1732/1733. Corrigendum W164 limita StateHash à projeção; impacto agregado segue UNKNOWN."
+    },
+    {
+      "id": "W166",
+      "wave": "W166",
+      "publishedAt": "2026-10-28T07:39:54Z",
+      "macro": "M2",
+      "title": "W166: draw de passe isolado no mesmo snapshot completo",
+      "status": "1/1 contrafactual focal PASS; mesma instância de estado e decisões; só PassTechnical muda. Sem promoção de gameplay.",
+      "summary": "Na seed1732/tick1839, sample 0,2875997 dá PassLaunched e 0,8172683 dá PassLaunchDegraded; outras 21 ActionResults/efeitos ficam iguais. A prova fecha o elo local, não a qualidade nem o agregado W163."
     },
     {
       "wave": "W66",
@@ -2950,6 +2950,14 @@
     {
       "id": "CP-W164-01",
       "title": "Primeira divergência 4m×5m e cadeia GK"
+    },
+    {
+      "id": "CP-W165-01",
+      "title": "W165 draw-shift causal result"
+    },
+    {
+      "id": "CP-W166-02",
+      "title": "W166 same-state PassTechnical counterfactual"
     }
   ]
 }
