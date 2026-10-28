@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-116",
-  "updatedAt": "2026-10-28T09:07:46Z",
-  "cycle": "SS-ORCH-001-W182-SHOOT-SCORE-COMPETITION",
+  "version": "2026.10.28-portal-117",
+  "updatedAt": "2026-10-28T09:14:11Z",
+  "cycle": "SS-ORCH-001-W184-FIRST-NATURAL-SHOOT",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W183: decompor ShootEvaluation nos mesmos dez estados, registrar distancia, lane/ângulo/área e outros componentes efetivamente usados; relacionar inputs aos scores, sem ajuste de pesos. Identificar features desconhecidas explicitamente.",
+  "currentFocus": "W184: continuar seed1733 a partir do estado W181 tick95, configuração reach4 e mesma fixture; capturar janela mínima da primeira ShootAction/ShotAttempted com decisão, resolução e efeito imediato. Se não houver tentativa até o fim, registrar ausência no escopo e encerrar o ramo com UNKNOWN.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W182",
-    "wave": "W182",
-    "publishedAt": "2026-10-28T09:06:44Z",
+    "id": "W183",
+    "wave": "W183",
+    "publishedAt": "2026-10-28T09:14:11Z",
     "macro": "M2",
-    "title": "W182: ranking de Shoot vs Move/Pass",
-    "status": "Auditoria 10/10 PASS; Shoot elegível sempre, score nunca vencedor.",
-    "summary": "Nos ticks82–94, Shoot elegível 10/10 e selecionado 0; Move vence8, Pass2. Explica ausência local por comparação de scores, não calibragem global."
+    "title": "W183: decomposição do score Shoot",
+    "status": "Auditoria automática 10/10 PASS; sem rerun; nenhum ajuste de gameplay.",
+    "summary": "Recalculados distanceScore, laneScore e pesos de atributos. Shoot permaneceu elegível em long range por ausência de gate de distância; perdeu para Move/Pass nos dez estados W181. Zeros de insideBox/ângulo/threat eram defaults do harness."
   },
   "recentCycles": [
-    {
-      "id": "W175",
-      "wave": "W175",
-      "publishedAt": "2026-10-28T08:45:00Z",
-      "macro": "M2",
-      "title": "W175: continuação após recepção onside",
-      "status": "2/2 PASS; auditoria automatizada PASS; uma sequência exata repetida em duas seeds.",
-      "summary": "Após recepção tick19, MoveCompleted tick20; recebedor passa tick21; passe conclui tick24; novo portador lança retorno tick26, ainda em voo tick28. Sem conclusão de qualidade ou prevalência."
-    },
     {
       "id": "W176",
       "wave": "W176",
@@ -92,6 +83,15 @@
       "title": "W182: ranking de Shoot vs Move/Pass",
       "status": "Auditoria 10/10 PASS; Shoot elegível sempre, score nunca vencedor.",
       "summary": "Nos ticks82–94, Shoot elegível 10/10 e selecionado 0; Move vence8, Pass2. Explica ausência local por comparação de scores, não calibragem global."
+    },
+    {
+      "id": "W183",
+      "wave": "W183",
+      "publishedAt": "2026-10-28T09:14:11Z",
+      "macro": "M2",
+      "title": "W183: decomposição do score Shoot",
+      "status": "Auditoria automática 10/10 PASS; sem rerun; nenhum ajuste de gameplay.",
+      "summary": "Recalculados distanceScore, laneScore e pesos de atributos. Shoot permaneceu elegível em long range por ausência de gate de distância; perdeu para Move/Pass nos dez estados W181. Zeros de insideBox/ângulo/threat eram defaults do harness."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W175",
-      "wave": "W175",
-      "publishedAt": "2026-10-28T08:45:00Z",
-      "macro": "M2",
-      "title": "W175: continuação após recepção onside",
-      "status": "2/2 PASS; auditoria automatizada PASS; uma sequência exata repetida em duas seeds.",
-      "summary": "Após recepção tick19, MoveCompleted tick20; recebedor passa tick21; passe conclui tick24; novo portador lança retorno tick26, ainda em voo tick28. Sem conclusão de qualidade ou prevalência."
-    },
-    {
       "id": "W176",
       "wave": "W176",
       "publishedAt": "2026-10-28T08:48:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W182: ranking de Shoot vs Move/Pass",
       "status": "Auditoria 10/10 PASS; Shoot elegível sempre, score nunca vencedor.",
       "summary": "Nos ticks82–94, Shoot elegível 10/10 e selecionado 0; Move vence8, Pass2. Explica ausência local por comparação de scores, não calibragem global."
+    },
+    {
+      "id": "W183",
+      "wave": "W183",
+      "publishedAt": "2026-10-28T09:14:11Z",
+      "macro": "M2",
+      "title": "W183: decomposição do score Shoot",
+      "status": "Auditoria automática 10/10 PASS; sem rerun; nenhum ajuste de gameplay.",
+      "summary": "Recalculados distanceScore, laneScore e pesos de atributos. Shoot permaneceu elegível em long range por ausência de gate de distância; perdeu para Move/Pass nos dez estados W181. Zeros de insideBox/ângulo/threat eram defaults do harness."
     },
     {
       "wave": "W66",
@@ -3058,6 +3058,10 @@
     {
       "id": "CP-W182-02",
       "title": "Handoff W182 compacto publicado"
+    },
+    {
+      "id": "CP-W183-02",
+      "title": "W183 fechado; ZIP validado e W184 iniciado"
     }
   ]
 }
