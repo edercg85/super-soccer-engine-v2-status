@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-156",
-  "updatedAt": "2026-10-28T14:30:33Z",
-  "cycle": "SS-ORCH-001-W234-PASS-AWARE-MULTISEED",
+  "version": "2026.10.28-portal-183",
+  "updatedAt": "2026-10-28T17:31:44Z",
+  "cycle": "W258",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Executar 10 novos pares OFF/ON, seeds1740–1749, preservando exatamente a única variável OffsideAttacking.Pass. Conferir determinismo em repetição e agregar cumulativamente W233/W234/W235 antes de qualquer decisão sobre default.",
+  "currentFocus": "W258 concluiu a replicação alternativa. W259 localizará a primeira divergência depois do tick35 na seed1740 e seguirá eventos/posse até o primeiro terminal relevante; sem editar gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,95 +12,95 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W234",
-    "wave": "W234",
-    "publishedAt": "2026-10-28T14:29:49Z",
+    "id": "W258",
+    "wave": "W258",
+    "publishedAt": "2026-10-28T17:31:44Z",
     "macro": "M3",
-    "title": "W234: efeito de Pass-aware replicado em mais cinco seeds",
-    "status": "Offside e ticks sem posse caem nas cinco; qualidade ainda ambígua.",
-    "summary": "Nas seeds1732–1736, offside 86→8 e ticks sem posse 14220→13645. Houve três gols ON contra zero OFF, mas uma derrota 0–1; continuar default-off."
+    "title": "Pass-aware penaliza candidato, mas o primeiro alvo não muda",
+    "status": "Mecanismo local confirmado; efeito no placar não atribuído",
+    "summary": "Em COR×PAL, o tick2 same-state rebaixou candidato offside rank1→6 nos dois seeds, mas Move venceu. O primeiro passe no tick4 teve mesmo estado e alvo nos braços. Ambos os ON terminaram 0–1 contra 0–0 OFF; divergência tardia não localizada."
   },
   "recentCycles": [
     {
       "id": "W210-W213",
       "wave": "W210-W213",
-      "publishedAt": "2026-10-28T12:31:00Z",
+      "publishedAt": "2026-10-28T12:20:00Z",
       "macro": "M3",
-      "title": "W210–W213: efeito do shape em DERR, escopo e configuração de produto",
-      "status": "Mecanismo e integração 1-tick confirmados; default-off de produto confirmado; qualidade em partida pendente.",
-      "summary": "DERR ON com DynamicTeamShapeMode Off atribui papéis via slots, altera Move de NotAssigned para PreserveShape; foco de restart retorna sem contextos. Config do produto não ativa DERR; fontes locais e testes focalizados."
+      "title": "Cohort e causas de impedimentos consolidados",
+      "status": "Síntese histórica; escopo experimental",
+      "summary": "Resultados pareados e eventos de impedimento contextualizados; claims restritas aos builds e seeds registrados."
     },
     {
       "id": "W214",
       "wave": "W214",
-      "publishedAt": "2026-10-28T12:33:00Z",
+      "publishedAt": "2026-10-28T12:37:05Z",
       "macro": "M3",
-      "title": "W214: DERR isolado muda PAL×COR 90min na seed 1729",
-      "status": "Efeito pareado e repetibilidade ON confirmados; não promovido (uma seed, qualidade ambígua).",
-      "summary": "Só DERR variou. OFF/ON: 22→60 impedimentos, 798→635 passes completos, tackles selecionados 43→340, posse home 1700→1363 e away 944→1493; placar 0–0 ambos. ON repetiu exatamente."
+      "title": "Assemblies congeladas e baseline reproduzível",
+      "status": "Fingerprint de referência",
+      "summary": "Builds W214 e harness usados nas comparações posteriores foram registrados como referência congelada."
     },
     {
       "id": "W215-W217",
       "wave": "W215-W217",
-      "publishedAt": "2026-10-28T12:47:00Z",
+      "publishedAt": "2026-10-28T12:48:00Z",
       "macro": "M3",
-      "title": "W215–W217: primeira divergência e impedimento explicados localmente",
-      "status": "Par exato e snapshot auditados; fator geométrico de cada componente isolado estaticamente; generalização UNKNOWN.",
-      "summary": "Tick1 states iguais; divergência inicia no tick2. ON lança passe tick55; snapshot marca Gustavo Henrique e evento tick58 aponta SnapshotTick55. Substituir só receptor, defensores ou bola por posições OFF remove o marcado no geometry probe."
+      "title": "Investigação de rotas ofensivas após baseline",
+      "status": "Conclusões locais com limites explícitos",
+      "summary": "Rotas e decisões examinadas; não houve prova de melhora geral nem promoção de configuração experimental."
     },
     {
       "id": "W218",
       "wave": "W218",
-      "publishedAt": "2026-10-28T13:05:00Z",
+      "publishedAt": "2026-10-28T12:52:00Z",
       "macro": "M3",
-      "title": "W218: multiseed DERR PAL×COR, placares heterogêneos",
-      "status": "Sinais mecânicos se repetem em duas seeds; placar misto; recomendação default-off. Auditoria independente pendente.",
-      "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
+      "title": "Trilha causal de passe, posse e contexto",
+      "status": "Parcial; evidências vinculadas por claims",
+      "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W230",
-      "wave": "W230",
-      "publishedAt": "2026-10-28T14:05:50Z",
+      "id": "W249",
+      "wave": "W249",
+      "publishedAt": "2026-10-28T16:49:00Z",
       "macro": "M3",
-      "title": "W230: recuperador de bola solta explicado por elegibilidade local",
-      "status": "Regra confirmada em quatro braços/sementes observadas; causa global UNKNOWN.",
-      "summary": "Todos os quatro recuperadores coincidem com o único jogador até 1m do endpoint. Híbridos de seed1730 requerem endpoint e posições ON juntos; seed1731 mantém o mesmo ID apesar do passe bem-sucedido."
+      "title": "W249: 18-seed escolha inicial do receptor",
+      "status": "Concluído — mecanismo inicial replicado; qualidade desconhecida.",
+      "summary": "18/18 estados de entrada tick2 iguais; Receive troca candidato 4c69→827d e direção 91,8°; todos os estados pós-Move divergem, mantendo Move/PositionToReceiveBall."
     },
     {
-      "id": "W231",
-      "wave": "W231",
-      "publishedAt": "2026-10-28T14:10:24Z",
+      "id": "W250",
+      "wave": "W250",
+      "publishedAt": "2026-10-28T17:01:00Z",
       "macro": "M3",
-      "title": "W231: recuperador passa no tick seguinte e fica sem posse ao lançar",
-      "status": "Sequência local confirmada; escolha do alvo e causalidade parcial.",
-      "summary": "Nos quatro braços, o recuperador passa no tick seguinte e posse zera no lançamento. Seed1730 ON segue outra rota e recupera novamente; OFF/seed1731 entram em offside. Em 1731 alvo é igual ON/OFF."
+      "title": "W250: eventos iniciais depois do Receive split",
+      "status": "Concluído — efeito local por toggle confirmado; mediação de partida completa UNKNOWN.",
+      "summary": "Em 18 pares de ticks1–10, OFF passa a Kaio; ON a 4c69. ON gera impedimento no tick6 ligado ao snapshot do tick3 em 18/18; OFF tem 16 falhas de passe e 16 impedimentos. Aberturas variam em 3 grupos OFF/2 ON; quality/full-match não inferida."
     },
     {
-      "id": "W232",
-      "wave": "W232",
-      "publishedAt": "2026-10-28T14:21:56Z",
+      "id": "W256",
+      "wave": "W256",
+      "publishedAt": "2026-10-28T17:10:00Z",
       "macro": "M3",
-      "title": "W232: penalidade de impedimento muda alvo no mesmo estado",
-      "status": "Efeito local confirmado; continuação desconhecida.",
-      "summary": "Pass-aware substitui o alvo offside por candidato onside e muda Pass→Move em 3/4 estados; 1730 ON permanece onside."
+      "title": "Auditoria independente dos 18 pares W255",
+      "status": "Concluído; recontagem independente e mecanismo local seed1744",
+      "summary": "Auditoria reproduziu os 18 pares; same-state seed1744 confirma penalidade Pass-aware e redirecionamento rank1 antes do state split."
     },
     {
-      "id": "W233",
-      "wave": "W233",
-      "publishedAt": "2026-10-28T14:21:56Z",
+      "id": "W257",
+      "wave": "W257",
+      "publishedAt": "2026-10-28T17:14:29Z",
       "macro": "M3",
-      "title": "W233: experimento config-only reduz offsides e ticks sem posse",
-      "status": "Promissor, qualidade não aceita; permanece default-off.",
-      "summary": "3 pares: offside cai 22→0, 15→0, 22→1; ticks sem posse caem. Chute +1 por seed, mas seed1730 perde o gol baseline."
+      "title": "Redirecionamento Pass-aware replicado em 2 seeds",
+      "status": "Mecanismo local confirmado; qualidade global UNKNOWN",
+      "summary": "Pass ON redireciona o alvo no mesmo prestate; alvo do PassAttempted tipado confirma os dois braços; fingerprints reproduzem runs prévios."
     },
     {
-      "id": "W234",
-      "wave": "W234",
-      "publishedAt": "2026-10-28T14:29:49Z",
+      "id": "W258",
+      "wave": "W258",
+      "publishedAt": "2026-10-28T17:31:44Z",
       "macro": "M3",
-      "title": "W234: efeito de Pass-aware replicado em mais cinco seeds",
-      "status": "Offside e ticks sem posse caem nas cinco; qualidade ainda ambígua.",
-      "summary": "Nas seeds1732–1736, offside 86→8 e ticks sem posse 14220→13645. Houve três gols ON contra zero OFF, mas uma derrota 0–1; continuar default-off."
+      "title": "Pass-aware penaliza candidato, mas o primeiro alvo não muda",
+      "status": "Mecanismo local confirmado; efeito no placar não atribuído",
+      "summary": "Em COR×PAL, o tick2 same-state rebaixou candidato offside rank1→6 nos dois seeds, mas Move venceu. O primeiro passe no tick4 teve mesmo estado e alvo nos braços. Ambos os ON terminaram 0–1 contra 0–0 OFF; divergência tardia não localizada."
     }
   ],
   "macros": [
@@ -1053,87 +1053,98 @@
       ]
     }
   ],
+  "footballQuality": {
+    "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
+    "baseline": "W246: Receive ON / Pass OFF; 18 partidas completas, seeds 1732–1749, assemblies W214.",
+    "candidate": "W255: Receive ON / Pass ON; comparação pareada, mesmas entradas e assemblies, 18 seeds.",
+    "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
+    "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
+    "shotsGoals": "Finalizações 6→13 e gols 5→11; intervalos pareados cruzam zero, sem evidência de ganho consistente.",
+    "lastIntegrated": "W255 é a última avaliação integrada de qualidade. W258 trouxe quatro jogos em outra preparação para avaliar mecanismo; não é aprovação de qualidade.",
+    "mainBlocker": "Progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência geral ainda precisam ser avaliados em conjunto; falta revisão humana de replay.",
+    "replay": "Não há replay navegável referenciado para revisão humana da comparação W255."
+  },
   "diary": [
     {
       "id": "W210-W213",
       "wave": "W210-W213",
-      "publishedAt": "2026-10-28T12:31:00Z",
+      "publishedAt": "2026-10-28T12:20:00Z",
       "macro": "M3",
-      "title": "W210–W213: efeito do shape em DERR, escopo e configuração de produto",
-      "status": "Mecanismo e integração 1-tick confirmados; default-off de produto confirmado; qualidade em partida pendente.",
-      "summary": "DERR ON com DynamicTeamShapeMode Off atribui papéis via slots, altera Move de NotAssigned para PreserveShape; foco de restart retorna sem contextos. Config do produto não ativa DERR; fontes locais e testes focalizados."
+      "title": "Cohort e causas de impedimentos consolidados",
+      "status": "Síntese histórica; escopo experimental",
+      "summary": "Resultados pareados e eventos de impedimento contextualizados; claims restritas aos builds e seeds registrados."
     },
     {
       "id": "W214",
       "wave": "W214",
-      "publishedAt": "2026-10-28T12:33:00Z",
+      "publishedAt": "2026-10-28T12:37:05Z",
       "macro": "M3",
-      "title": "W214: DERR isolado muda PAL×COR 90min na seed 1729",
-      "status": "Efeito pareado e repetibilidade ON confirmados; não promovido (uma seed, qualidade ambígua).",
-      "summary": "Só DERR variou. OFF/ON: 22→60 impedimentos, 798→635 passes completos, tackles selecionados 43→340, posse home 1700→1363 e away 944→1493; placar 0–0 ambos. ON repetiu exatamente."
+      "title": "Assemblies congeladas e baseline reproduzível",
+      "status": "Fingerprint de referência",
+      "summary": "Builds W214 e harness usados nas comparações posteriores foram registrados como referência congelada."
     },
     {
       "id": "W215-W217",
       "wave": "W215-W217",
-      "publishedAt": "2026-10-28T12:47:00Z",
+      "publishedAt": "2026-10-28T12:48:00Z",
       "macro": "M3",
-      "title": "W215–W217: primeira divergência e impedimento explicados localmente",
-      "status": "Par exato e snapshot auditados; fator geométrico de cada componente isolado estaticamente; generalização UNKNOWN.",
-      "summary": "Tick1 states iguais; divergência inicia no tick2. ON lança passe tick55; snapshot marca Gustavo Henrique e evento tick58 aponta SnapshotTick55. Substituir só receptor, defensores ou bola por posições OFF remove o marcado no geometry probe."
+      "title": "Investigação de rotas ofensivas após baseline",
+      "status": "Conclusões locais com limites explícitos",
+      "summary": "Rotas e decisões examinadas; não houve prova de melhora geral nem promoção de configuração experimental."
     },
     {
       "id": "W218",
       "wave": "W218",
-      "publishedAt": "2026-10-28T13:05:00Z",
+      "publishedAt": "2026-10-28T12:52:00Z",
       "macro": "M3",
-      "title": "W218: multiseed DERR PAL×COR, placares heterogêneos",
-      "status": "Sinais mecânicos se repetem em duas seeds; placar misto; recomendação default-off. Auditoria independente pendente.",
-      "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
+      "title": "Trilha causal de passe, posse e contexto",
+      "status": "Parcial; evidências vinculadas por claims",
+      "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W230",
-      "wave": "W230",
-      "publishedAt": "2026-10-28T14:05:50Z",
+      "id": "W249",
+      "wave": "W249",
+      "publishedAt": "2026-10-28T16:49:00Z",
       "macro": "M3",
-      "title": "W230: recuperador de bola solta explicado por elegibilidade local",
-      "status": "Regra confirmada em quatro braços/sementes observadas; causa global UNKNOWN.",
-      "summary": "Todos os quatro recuperadores coincidem com o único jogador até 1m do endpoint. Híbridos de seed1730 requerem endpoint e posições ON juntos; seed1731 mantém o mesmo ID apesar do passe bem-sucedido."
+      "title": "W249: 18-seed escolha inicial do receptor",
+      "status": "Concluído — mecanismo inicial replicado; qualidade desconhecida.",
+      "summary": "18/18 estados de entrada tick2 iguais; Receive troca candidato 4c69→827d e direção 91,8°; todos os estados pós-Move divergem, mantendo Move/PositionToReceiveBall."
     },
     {
-      "id": "W231",
-      "wave": "W231",
-      "publishedAt": "2026-10-28T14:10:24Z",
+      "id": "W250",
+      "wave": "W250",
+      "publishedAt": "2026-10-28T17:01:00Z",
       "macro": "M3",
-      "title": "W231: recuperador passa no tick seguinte e fica sem posse ao lançar",
-      "status": "Sequência local confirmada; escolha do alvo e causalidade parcial.",
-      "summary": "Nos quatro braços, o recuperador passa no tick seguinte e posse zera no lançamento. Seed1730 ON segue outra rota e recupera novamente; OFF/seed1731 entram em offside. Em 1731 alvo é igual ON/OFF."
+      "title": "W250: eventos iniciais depois do Receive split",
+      "status": "Concluído — efeito local por toggle confirmado; mediação de partida completa UNKNOWN.",
+      "summary": "Em 18 pares de ticks1–10, OFF passa a Kaio; ON a 4c69. ON gera impedimento no tick6 ligado ao snapshot do tick3 em 18/18; OFF tem 16 falhas de passe e 16 impedimentos. Aberturas variam em 3 grupos OFF/2 ON; quality/full-match não inferida."
     },
     {
-      "id": "W232",
-      "wave": "W232",
-      "publishedAt": "2026-10-28T14:21:56Z",
+      "id": "W256",
+      "wave": "W256",
+      "publishedAt": "2026-10-28T17:10:00Z",
       "macro": "M3",
-      "title": "W232: penalidade de impedimento muda alvo no mesmo estado",
-      "status": "Efeito local confirmado; continuação desconhecida.",
-      "summary": "Pass-aware substitui o alvo offside por candidato onside e muda Pass→Move em 3/4 estados; 1730 ON permanece onside."
+      "title": "Auditoria independente dos 18 pares W255",
+      "status": "Concluído; recontagem independente e mecanismo local seed1744",
+      "summary": "Auditoria reproduziu os 18 pares; same-state seed1744 confirma penalidade Pass-aware e redirecionamento rank1 antes do state split."
     },
     {
-      "id": "W233",
-      "wave": "W233",
-      "publishedAt": "2026-10-28T14:21:56Z",
+      "id": "W257",
+      "wave": "W257",
+      "publishedAt": "2026-10-28T17:14:29Z",
       "macro": "M3",
-      "title": "W233: experimento config-only reduz offsides e ticks sem posse",
-      "status": "Promissor, qualidade não aceita; permanece default-off.",
-      "summary": "3 pares: offside cai 22→0, 15→0, 22→1; ticks sem posse caem. Chute +1 por seed, mas seed1730 perde o gol baseline."
+      "title": "Redirecionamento Pass-aware replicado em 2 seeds",
+      "status": "Mecanismo local confirmado; qualidade global UNKNOWN",
+      "summary": "Pass ON redireciona o alvo no mesmo prestate; alvo do PassAttempted tipado confirma os dois braços; fingerprints reproduzem runs prévios."
     },
     {
-      "id": "W234",
-      "wave": "W234",
-      "publishedAt": "2026-10-28T14:29:49Z",
+      "id": "W258",
+      "wave": "W258",
+      "publishedAt": "2026-10-28T17:31:44Z",
       "macro": "M3",
-      "title": "W234: efeito de Pass-aware replicado em mais cinco seeds",
-      "status": "Offside e ticks sem posse caem nas cinco; qualidade ainda ambígua.",
-      "summary": "Nas seeds1732–1736, offside 86→8 e ticks sem posse 14220→13645. Houve três gols ON contra zero OFF, mas uma derrota 0–1; continuar default-off."
+      "title": "Pass-aware penaliza candidato, mas o primeiro alvo não muda",
+      "status": "Mecanismo local confirmado; efeito no placar não atribuído",
+      "summary": "Em COR×PAL, o tick2 same-state rebaixou candidato offside rank1→6 nos dois seeds, mas Move venceu. O primeiro passe no tick4 teve mesmo estado e alvo nos braços. Ambos os ON terminaram 0–1 contra 0–0 OFF; divergência tardia não localizada."
     },
     {
       "wave": "W66",
@@ -2351,15 +2362,11 @@
     },
     {
       "id": "CP-W57-02",
-      "title": "ZIP W57 consolidado"
+      "title": "ZIP W57 consolidado em output_gpt"
     },
     {
       "id": "CP-W58-00",
       "title": "Preflight do terminal do novo passe"
-    },
-    {
-      "id": "CP-W57-02",
-      "title": "ZIP W57 consolidado em output_gpt"
     },
     {
       "id": "CP-W58-01",
@@ -2444,10 +2451,6 @@
     {
       "id": "CP-W65-02",
       "title": "ZIP W65 publicado"
-    },
-    {
-      "id": "CP-W66-00",
-      "title": "Preflight replay OFF/ON dos ticks342–343"
     },
     {
       "id": "CP-W66-00",
@@ -3208,6 +3211,138 @@
     {
       "id": "CP-W234-FINAL",
       "title": "Cinco pares repetem queda de offside e ticks sem posse; qualidade ainda sem aceite"
+    },
+    {
+      "id": "CP-W235-FINAL",
+      "title": "Dez pares confirmam redução de impedimentos, sem melhora agregada do placar"
+    },
+    {
+      "id": "CP-W236-00",
+      "title": "Probe espacial observacional em quatro pares discrepantes"
+    },
+    {
+      "id": "CP-W236-FINAL",
+      "title": "Geometria dos chutes explica parte do recorte, decisão geradora ainda desconhecida"
+    },
+    {
+      "id": "CP-W237-FINAL",
+      "title": "No mesmo estado ON observado, Move superou Shoot nos dois casos investigados"
+    },
+    {
+      "id": "CP-W238-FINAL",
+      "title": "Efeito direto de Pass-aware na seleção de Shoot refutado em dois mesmos estados"
+    },
+    {
+      "id": "CP-W239-FINAL",
+      "title": "Primeiro state split ocorre após alteração do destinatário Pass no tick3"
+    },
+    {
+      "id": "CP-W240-FINAL",
+      "title": "Pass-aware evita infração no primeiro encadeamento, mas a posse ON se perde após passe de volta"
+    },
+    {
+      "id": "CP-W241-FINAL",
+      "title": "Retorno e repetição vencem Move nos dois snapshots, com recuperação adversária na segunda tentativa"
+    },
+    {
+      "id": "CP-W242-FINAL",
+      "title": "W242-FINAL"
+    },
+    {
+      "id": "CP-W243-FINAL",
+      "title": "W243-FINAL"
+    },
+    {
+      "id": "CP-W244-FINAL",
+      "title": "W244-FINAL"
+    },
+    {
+      "id": "CP-W245-PREFLIGHT",
+      "title": "W245 preflight — medir resultados terminais de passe OFF/ON pareados"
+    },
+    {
+      "id": "CP-W245-FINAL",
+      "title": "W245 final — recovery adversária em terminais de passe não aumentou"
+    },
+    {
+      "id": "CP-W246-TRIAGE",
+      "title": "W246 triagem — Receive altera resultados em 3/3 seeds"
+    },
+    {
+      "id": "CP-W247-PREFLIGHT",
+      "title": "W247 preflight — same-state counterfactual on receive movement"
+    },
+    {
+      "id": "CP-W247-FINAL",
+      "title": "W247 final — um objetivo de Move muda em 1.020 forks"
+    },
+    {
+      "id": "CP-W248-PREFLIGHT",
+      "title": "W248 preflight — capturar o ramo downstream do objetivo de Move"
+    },
+    {
+      "id": "CP-W248-FINAL",
+      "title": "W248 final — receiver candidate/direction switch precedes W247 objective switch"
+    },
+    {
+      "id": "CP-W249-PREFLIGHT",
+      "title": "W249 preflight — 18-seed first-movement candidate census"
+    },
+    {
+      "id": "CP-W249-FINAL",
+      "title": "W249 final — candidato receptor/direção muda em 18/18 pares"
+    },
+    {
+      "id": "CP-W250-PREFLIGHT",
+      "title": "W250 preflight — janela de eventos após o primeiro movimento"
+    },
+    {
+      "id": "CP-W250-FINAL",
+      "title": "W250 final — alvo de passe e terminais divergem na abertura"
+    },
+    {
+      "id": "CP-W251-PREFLIGHT",
+      "title": "W251 preflight — Pass ranking in actual branch states"
+    },
+    {
+      "id": "CP-W251-FINAL",
+      "title": "W251 final — rank de passe segue a geometria branch-local"
+    },
+    {
+      "id": "CP-W252-PREFLIGHT",
+      "title": "W252 preflight — posição e flag versus ranking de passe"
+    },
+    {
+      "id": "CP-W252-FINAL",
+      "title": "W252 final — posições de Kaio/Yuri bastam para ranking OFF"
+    },
+    {
+      "id": "CP-W253-PREFLIGHT",
+      "title": "W253 preflight — Pass-aware penalty on fixed snapshot"
+    },
+    {
+      "id": "CP-W253-FINAL",
+      "title": "W253 final — Pass-aware penaliza Yuri e muda alvo no mesmo estado"
+    },
+    {
+      "id": "CP-W254-PREFLIGHT",
+      "title": "W254 preflight — single-seed live validation of target redirection"
+    },
+    {
+      "id": "CP-W254-FINAL",
+      "title": "W254 final — live pass target avoids offside in seed1732"
+    },
+    {
+      "id": "CP-W255-PREFLIGHT",
+      "title": "W255 preflight — 18 paired Receive+Pass runs"
+    },
+    {
+      "id": "CP-W258-FINAL",
+      "title": "W258 final — COR×PAL rank penalty without first-pass target change"
+    },
+    {
+      "id": "CP-W259-PREFLIGHT",
+      "title": "W259 preflight — locate divergence and downstream terminal"
     }
   ]
 }
