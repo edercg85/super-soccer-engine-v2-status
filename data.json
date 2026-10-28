@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-66",
-  "updatedAt": "2026-10-28T01:55:00-03:00",
-  "cycle": "SS-ORCH-001-W131-OFFSIDE-LAUNCH-TERMINAL-LINK",
+  "version": "2026.10.28-portal-68",
+  "updatedAt": "2026-10-28T00:03:37-03:00",
+  "cycle": "SS-ORCH-001-W133-OFFSIDE-INDIRECT-KICK-TAKEN",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W132: seguir somente até o próximo evento de restart e verificar beneficiário, tiro livre indireto, posição e posse; relacionar ao OffsideOffence anterior e limitar a conclusão ao estado executado.",
+  "currentFocus": "W134: seguir os quatro ActivePass de tiro livre até o primeiro terminal e ligar terminal/posse ao receiver; parar antes de inferir qualidade estratégica.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,33 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W131",
-    "wave": "W131",
-    "publishedAt": "2026-10-28T04:15:00Z",
+    "id": "W133",
+    "wave": "W133",
+    "publishedAt": "2026-10-28T03:03:37Z",
     "macro": "M2",
-    "title": "W131: caminho de impedimento ligado ao snapshot de passe",
-    "status": "2/2 PASS (4 branches); evento/tick/source/target e OffsidePending ligados; reinício seguinte UNKNOWN.",
-    "summary": "Quatro traces W07: offender é intended target marcado no snapshot; infração em 2 ticks, posse nula e ActivePass limpa. Seed1730 OFF teve PassLaunchDegraded/Success=false e ainda carregou snapshot até a infração."
+    "title": "W133: cobrador e lançamento do indireto",
+    "status": "2/2 PASS (quatro traces); receiver e ActivePass ligados; recepção ainda UNKNOWN.",
+    "summary": "Nos quatro traces W07, OffsideSetup chega a Ready em dois ticks; no seguinte o kicker executa PassAction. Beneficiário, kicker, receiver, ActionResult e ActivePass foram unidos."
   },
   "recentCycles": [
-    {
-      "id": "W124",
-      "wave": "W124",
-      "publishedAt": "2026-10-28T02:14:35Z",
-      "macro": "M2",
-      "title": "W124: destinos e guardas do Move do carrier",
-      "status": "42 testes focais PASS; mecanismos de source caracterizados; qualidade em partida UNKNOWN.",
-      "summary": "MoveToGoal tem score proporcional à distância atual da meta; MoveToTeammate usa necessidade radial quadrática com ideal de 12m. SafeForward é default-off e troca um destino apenas sob guards de progresso e distância do adversário. Source está sujo e nenhum gameplay foi alterado."
-    },
-    {
-      "id": "W125",
-      "wave": "W125",
-      "publishedAt": "2026-10-28T02:20:20Z",
-      "macro": "M2",
-      "title": "W125: score dos passes após mudança de Move",
-      "status": "Um snapshot pareado altera o candidate ranking; Move vence e nenhum passe é disparado. Claim local parcial, sem qualidade de jogo.",
-      "summary": "No estado W05 seed1729 pré-divergência, os mesmos dez receptores seguem elegíveis. O maior score muda de um jogador para outro depois dos movimentos OFF/ON, mas a próxima ação global continua Move nos dois braços; os tops são apenas candidatos potenciais."
-    },
     {
       "id": "W126",
       "wave": "W126",
@@ -92,6 +74,24 @@
       "title": "W131: caminho de impedimento ligado ao snapshot de passe",
       "status": "2/2 PASS (4 branches); evento/tick/source/target e OffsidePending ligados; reinício seguinte UNKNOWN.",
       "summary": "Quatro traces W07: offender é intended target marcado no snapshot; infração em 2 ticks, posse nula e ActivePass limpa. Seed1730 OFF teve PassLaunchDegraded/Success=false e ainda carregou snapshot até a infração."
+    },
+    {
+      "id": "W132",
+      "wave": "W132",
+      "publishedAt": "2026-10-28T04:51:00Z",
+      "macro": "M2",
+      "title": "W132: o estado de impedimento inicia tiro livre indireto",
+      "status": "2/2 PASS (quatro branches); restart setup confirmado; cobrança e posse ainda UNKNOWN.",
+      "summary": "Em todos os quatro branches W07, um tick após OffsidePending há RestartSetupStarted/IndirectFreeKick e OffsideSetup com beneficiary/posição correspondentes; posse continua nula."
+    },
+    {
+      "id": "W133",
+      "wave": "W133",
+      "publishedAt": "2026-10-28T03:03:37Z",
+      "macro": "M2",
+      "title": "W133: cobrador e lançamento do indireto",
+      "status": "2/2 PASS (quatro traces); receiver e ActivePass ligados; recepção ainda UNKNOWN.",
+      "summary": "Nos quatro traces W07, OffsideSetup chega a Ready em dois ticks; no seguinte o kicker executa PassAction. Beneficiário, kicker, receiver, ActionResult e ActivePass foram unidos."
     }
   ],
   "macros": [
@@ -1046,24 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W124",
-      "wave": "W124",
-      "publishedAt": "2026-10-28T02:14:35Z",
-      "macro": "M2",
-      "title": "W124: destinos e guardas do Move do carrier",
-      "status": "42 testes focais PASS; mecanismos de source caracterizados; qualidade em partida UNKNOWN.",
-      "summary": "MoveToGoal tem score proporcional à distância atual da meta; MoveToTeammate usa necessidade radial quadrática com ideal de 12m. SafeForward é default-off e troca um destino apenas sob guards de progresso e distância do adversário. Source está sujo e nenhum gameplay foi alterado."
-    },
-    {
-      "id": "W125",
-      "wave": "W125",
-      "publishedAt": "2026-10-28T02:20:20Z",
-      "macro": "M2",
-      "title": "W125: score dos passes após mudança de Move",
-      "status": "Um snapshot pareado altera o candidate ranking; Move vence e nenhum passe é disparado. Claim local parcial, sem qualidade de jogo.",
-      "summary": "No estado W05 seed1729 pré-divergência, os mesmos dez receptores seguem elegíveis. O maior score muda de um jogador para outro depois dos movimentos OFF/ON, mas a próxima ação global continua Move nos dois braços; os tops são apenas candidatos potenciais."
-    },
-    {
       "id": "W126",
       "wave": "W126",
       "publishedAt": "2026-10-28T02:32:00Z",
@@ -1116,6 +1098,24 @@
       "title": "W131: caminho de impedimento ligado ao snapshot de passe",
       "status": "2/2 PASS (4 branches); evento/tick/source/target e OffsidePending ligados; reinício seguinte UNKNOWN.",
       "summary": "Quatro traces W07: offender é intended target marcado no snapshot; infração em 2 ticks, posse nula e ActivePass limpa. Seed1730 OFF teve PassLaunchDegraded/Success=false e ainda carregou snapshot até a infração."
+    },
+    {
+      "id": "W132",
+      "wave": "W132",
+      "publishedAt": "2026-10-28T04:51:00Z",
+      "macro": "M2",
+      "title": "W132: o estado de impedimento inicia tiro livre indireto",
+      "status": "2/2 PASS (quatro branches); restart setup confirmado; cobrança e posse ainda UNKNOWN.",
+      "summary": "Em todos os quatro branches W07, um tick após OffsidePending há RestartSetupStarted/IndirectFreeKick e OffsideSetup com beneficiary/posição correspondentes; posse continua nula."
+    },
+    {
+      "id": "W133",
+      "wave": "W133",
+      "publishedAt": "2026-10-28T03:03:37Z",
+      "macro": "M2",
+      "title": "W133: cobrador e lançamento do indireto",
+      "status": "2/2 PASS (quatro traces); receiver e ActivePass ligados; recepção ainda UNKNOWN.",
+      "summary": "Nos quatro traces W07, OffsideSetup chega a Ready em dois ticks; no seguinte o kicker executa PassAction. Beneficiário, kicker, receiver, ActionResult e ActivePass foram unidos."
     },
     {
       "wave": "W66",
@@ -2750,6 +2750,22 @@
     {
       "id": "CP-W131-01",
       "title": "Launch snapshot e OffsidePending em quatro branches"
+    },
+    {
+      "id": "CP-W132-00",
+      "title": "Preflight da fase posterior a OffsidePending"
+    },
+    {
+      "id": "CP-W132-01",
+      "title": "Setup de tiro livre indireto"
+    },
+    {
+      "id": "CP-W133-00",
+      "title": "Preflight da cobrança indireta"
+    },
+    {
+      "id": "CP-W133-01",
+      "title": "Ready → ação → ActivePass"
     }
   ]
 }
