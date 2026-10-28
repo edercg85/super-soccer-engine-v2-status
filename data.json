@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-63",
-  "updatedAt": "2026-10-28T00:24:00-03:00",
-  "cycle": "SS-ORCH-001-W128-OFFSIDE-SNAPSHOT-TICK-CORRIGENDUM",
+  "version": "2026.10.28-portal-64",
+  "updatedAt": "2026-10-28T00:47:00-03:00",
+  "cycle": "SS-ORCH-001-W129-NATURAL-PASS-SNAPSHOT-TICK-LINK",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W129: vincular em execução via TickObserver o prestate, tick, decisão Pass, ActionResult/PassAttempted e ActivePass snapshot; exigir trace tick = snapshot tick e source/target correspondentes.",
+  "currentFocus": "W130: acompanhar somente a ActivePass selecionada até seu primeiro terminal em cada seed/ramo, mantendo identidade por passer/target/tick; distinguir recepção, interceptação, falha e infração; sem inferir qualidade global.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W128",
-    "wave": "W128",
-    "publishedAt": "2026-10-28T03:05:00Z",
+    "id": "W129",
+    "wave": "W129",
+    "publishedAt": "2026-10-28T03:31:00Z",
     "macro": "M2",
-    "title": "W128: correção da numeração do OffsideSnapshot",
-    "status": "Corrigendum confirmado; 3/3 PASS; seleção, score e mapa espacial inalterados; conclusão sobre próximo tick permanece UNKNOWN.",
-    "summary": "W126 calculava o tick do resolver pelo prestate anterior. Valores corrigidos: W06=86, W07/1730=57, W07/1731=26. ZIPs originais preservados; W128 publica a correção append-only."
+    "title": "W129: vínculo do passe natural ao OffsideSnapshot",
+    "status": "2/2 testes PASS (quatro branches); tick/PassAttempted/ActionResult/ActivePass ligados; pós-lançamento UNKNOWN.",
+    "summary": "W07 seeds 1730/1731: snapshot tick bate com o tick do trace e o target real não está marcado no lançamento. Target OFF natural 5c25708f…, diferente do candidato 24bac7be… do snapshot congelado W126."
   },
   "recentCycles": [
-    {
-      "id": "W121",
-      "wave": "W121",
-      "publishedAt": "2026-10-27T22:17:14Z",
-      "macro": "M2",
-      "title": "Recovery integrado com marcador móvel natural W115",
-      "status": "Concluído; auditoria independente PASS mecanismo estreito / PARTIAL generalização",
-      "summary": "Replay seed1731/tick30 reproduziu exatamente marcador W115 e cursor PRNG. Rival sintético do time do passador no endpoint: endpoint e linear-relative escolhem rival; segmento escolhe marcador. Decisions/ActionKey iguais, sem InterceptBall, lifecycle PassFailed e estados limpos. Focal 1/1, regressão 37/37. Sem afirmação de contato físico/qualidade."
-    },
     {
       "id": "W122",
       "wave": "W122",
@@ -92,6 +83,15 @@
       "title": "W128: correção da numeração do OffsideSnapshot",
       "status": "Corrigendum confirmado; 3/3 PASS; seleção, score e mapa espacial inalterados; conclusão sobre próximo tick permanece UNKNOWN.",
       "summary": "W126 calculava o tick do resolver pelo prestate anterior. Valores corrigidos: W06=86, W07/1730=57, W07/1731=26. ZIPs originais preservados; W128 publica a correção append-only."
+    },
+    {
+      "id": "W129",
+      "wave": "W129",
+      "publishedAt": "2026-10-28T03:31:00Z",
+      "macro": "M2",
+      "title": "W129: vínculo do passe natural ao OffsideSnapshot",
+      "status": "2/2 testes PASS (quatro branches); tick/PassAttempted/ActionResult/ActivePass ligados; pós-lançamento UNKNOWN.",
+      "summary": "W07 seeds 1730/1731: snapshot tick bate com o tick do trace e o target real não está marcado no lançamento. Target OFF natural 5c25708f…, diferente do candidato 24bac7be… do snapshot congelado W126."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W121",
-      "wave": "W121",
-      "publishedAt": "2026-10-27T22:17:14Z",
-      "macro": "M2",
-      "title": "Recovery integrado com marcador móvel natural W115",
-      "status": "Concluído; auditoria independente PASS mecanismo estreito / PARTIAL generalização",
-      "summary": "Replay seed1731/tick30 reproduziu exatamente marcador W115 e cursor PRNG. Rival sintético do time do passador no endpoint: endpoint e linear-relative escolhem rival; segmento escolhe marcador. Decisions/ActionKey iguais, sem InterceptBall, lifecycle PassFailed e estados limpos. Focal 1/1, regressão 37/37. Sem afirmação de contato físico/qualidade."
-    },
-    {
       "id": "W122",
       "wave": "W122",
       "publishedAt": "2026-10-27T22:38:15Z",
@@ -1116,6 +1107,15 @@
       "title": "W128: correção da numeração do OffsideSnapshot",
       "status": "Corrigendum confirmado; 3/3 PASS; seleção, score e mapa espacial inalterados; conclusão sobre próximo tick permanece UNKNOWN.",
       "summary": "W126 calculava o tick do resolver pelo prestate anterior. Valores corrigidos: W06=86, W07/1730=57, W07/1731=26. ZIPs originais preservados; W128 publica a correção append-only."
+    },
+    {
+      "id": "W129",
+      "wave": "W129",
+      "publishedAt": "2026-10-28T03:31:00Z",
+      "macro": "M2",
+      "title": "W129: vínculo do passe natural ao OffsideSnapshot",
+      "status": "2/2 testes PASS (quatro branches); tick/PassAttempted/ActionResult/ActivePass ligados; pós-lançamento UNKNOWN.",
+      "summary": "W07 seeds 1730/1731: snapshot tick bate com o tick do trace e o target real não está marcado no lançamento. Target OFF natural 5c25708f…, diferente do candidato 24bac7be… do snapshot congelado W126."
     },
     {
       "wave": "W66",
@@ -2726,6 +2726,14 @@
     {
       "id": "CP-W128-01",
       "title": "Tick de resolução corrigido e assertions explícitas"
+    },
+    {
+      "id": "CP-W129-00",
+      "title": "Preflight de ligação no Simulation trace"
+    },
+    {
+      "id": "CP-W129-01",
+      "title": "PassAttempted/PassLaunched/ActivePass/OffsideSnapshot"
     }
   ]
 }
