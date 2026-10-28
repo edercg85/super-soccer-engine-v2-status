@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-146",
-  "updatedAt": "2026-10-28T13:47:56Z",
-  "cycle": "SS-ORCH-001-W227-PASS-LANE-CAUSE",
+  "version": "2026.10.28-portal-149",
+  "updatedAt": "2026-10-28T13:55:11Z",
+  "cycle": "SS-ORCH-001-W228-OFFSIDE-RESTART-KICKER",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W228: reconstruir a sequência do reinício indireto após o offside (seeds1730/1731), identificar a seleção do kicker e separar efeito das regras de restart do posicionamento DERR. Manter a origem causal UNKNOWN até um contrafactual mínimo.",
+  "currentFocus": "W229: verificar se o mecanismo de escolha de kicker/guarda de proximidade aparece nos demais offside/restarts já capturados nas seeds W218 (1730 e 1731). Se só houver evidência de um caso, registrar UNKNOWN agregado e migrar para outra causa de tempo sem posse.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -21,6 +21,15 @@
     "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
   },
   "recentCycles": [
+    {
+      "id": "W228",
+      "wave": "W228",
+      "publishedAt": "2026-10-28T13:52:51Z",
+      "macro": "M3",
+      "title": "W228: kicker do restart alonga um tick sem posse",
+      "status": "Kicker escolhido pelas posições; ON falha apenas guarda de proximidade no tick11.",
+      "summary": "OFF ready tick11; ON kicker a2.978m do ponto, demais guardas satisfeitas, ready tick12. Híbridas mostram posições (não spot) trocam kicker."
+    },
     {
       "id": "W227",
       "wave": "W227",
@@ -56,15 +65,6 @@
       "title": "W224: tackle DERR transfere posse no estado da seed1731",
       "status": "Fork/checkpoint exato confirma efeito imediato de um tick.",
       "summary": "ON repete tackle bem-sucedido/draw e transfere posse; OFF escolhe Move e não transfere posse no passo. Continuação global tem diferenças de tick/atores."
-    },
-    {
-      "id": "W223",
-      "wave": "W223",
-      "publishedAt": "2026-10-28T13:33:55Z",
-      "macro": "M3",
-      "title": "W223: DERR muda seleção por ineligibilidade de Move",
-      "status": "Mesmo estado: tackle elegível/score igual; OFF torna Move elegível.",
-      "summary": "O DERR bloqueia objetivos de Move sob DefensiveResponsibilityAssigned, mudando ação escolhida."
     },
     {
       "id": "W210-W213",
@@ -1055,6 +1055,15 @@
   ],
   "diary": [
     {
+      "id": "W228",
+      "wave": "W228",
+      "publishedAt": "2026-10-28T13:52:51Z",
+      "macro": "M3",
+      "title": "W228: kicker do restart alonga um tick sem posse",
+      "status": "Kicker escolhido pelas posições; ON falha apenas guarda de proximidade no tick11.",
+      "summary": "OFF ready tick11; ON kicker a2.978m do ponto, demais guardas satisfeitas, ready tick12. Híbridas mostram posições (não spot) trocam kicker."
+    },
+    {
       "id": "W227",
       "wave": "W227",
       "publishedAt": "2026-10-28T13:43:37Z",
@@ -1089,15 +1098,6 @@
       "title": "W224: tackle DERR transfere posse no estado da seed1731",
       "status": "Fork/checkpoint exato confirma efeito imediato de um tick.",
       "summary": "ON repete tackle bem-sucedido/draw e transfere posse; OFF escolhe Move e não transfere posse no passo. Continuação global tem diferenças de tick/atores."
-    },
-    {
-      "id": "W223",
-      "wave": "W223",
-      "publishedAt": "2026-10-28T13:33:55Z",
-      "macro": "M3",
-      "title": "W223: DERR muda seleção por ineligibilidade de Move",
-      "status": "Mesmo estado: tackle elegível/score igual; OFF torna Move elegível.",
-      "summary": "O DERR bloqueia objetivos de Move sob DefensiveResponsibilityAssigned, mudando ação escolhida."
     },
     {
       "id": "W210-W213",
@@ -1161,10 +1161,6 @@
     }
   ],
   "history": [
-    {
-      "id": "CP-W04-05",
-      "title": "Auditoria e hipótese"
-    },
     {
       "id": "CP-W04-06",
       "title": "Handoff e Git"
@@ -3184,6 +3180,10 @@
     {
       "id": "CP-W227-FINAL",
       "title": "Mesmo draw/opponent line demonstram terminal de passe diferente no tick3 seed1730"
+    },
+    {
+      "id": "CP-W228-FINAL",
+      "title": "Pós-offside, posições DERR ON selecionam kicker mais distante; só guarda kicker atrasa restart um tick"
     }
   ]
 }
