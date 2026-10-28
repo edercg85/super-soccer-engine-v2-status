@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-133",
-  "updatedAt": "2026-10-28T11:42:00Z",
-  "cycle": "SS-ORCH-001-W200-GOALKEEPER-REACH-BOUNDARY-PROBE",
+  "version": "2026.10.28-portal-134",
+  "updatedAt": "2026-10-28T11:46:00Z",
+  "cycle": "SS-ORCH-001-W201-GOALKEEPER-INTERCEPT-RESOLUTION-PROBES",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W200: varrer snapshots sintéticos read-only ao redor de4m, alterando somente posição do goleiro, e medir diretamente Evaluate + DecideWithDiagnostics na DLL histórica para confirmar/refutar o limite de elegibilidade.",
+  "currentFocus": "W201: testar resolver InterceptBall em snapshots de 3,9m e4,0m com draws determinísticos fixos, separando elegibilidade da resolução; registrar efeitos e posse sem rodar partidas adicionais.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W199",
-    "wave": "W199",
-    "publishedAt": "2026-10-28T11:42:00Z",
+    "id": "W200",
+    "wave": "W200",
+    "publishedAt": "2026-10-28T11:46:00Z",
     "macro": "M2",
-    "title": "W199: alcance explica a ausência de candidato, com limite de build",
-    "status": "Direct DLL probe PASS; decision cutoff PARTIAL (PE/PDB/source link not verified).",
-    "summary": "OFF tick31: Applies=true; oportunidade 7,8743m, t=0, ameaça=true, LastUseful=false; InterceptBall sem candidato. ON controles 30/34 em 0/0,0783m são elegíveis e escolhidos. W198-C5 refinada."
+    "title": "W200: limite de alcance 4m confirmado no runtime local",
+    "status": "Sweep sintético auditado; runtime 3,9/4,0 elegível e4,1 inelegível.",
+    "summary": "No mesmo estado OFF tick31, somente posição do GK varia: 3,9/4,0m => `LastUseful=true`, InterceptBall selecionado;4,1m => false, Move. Explica o candidato vazio local; qualidade/prevalência seguem UNKNOWN."
   },
   "recentCycles": [
-    {
-      "id": "W191",
-      "wave": "W191",
-      "publishedAt": "2026-10-28T10:15:00Z",
-      "macro": "M2",
-      "title": "W191: contexto Shoot gerou um chute e gol em seed1733",
-      "status": "Config-only: repetição ON determinística; uma fixture/seed, sem promoção.",
-      "summary": "OFF 0–0 sem chute; ON elevou Shoot 0,769→0,943 em tick2096, ShotEvent e gol tick2098, 1–0. Efeito positivo pontual; generalidade UNKNOWN."
-    },
     {
       "id": "W192",
       "wave": "W192",
@@ -101,6 +92,15 @@
       "title": "W199: alcance explica a ausência de candidato, com limite de build",
       "status": "Direct DLL probe PASS; decision cutoff PARTIAL (PE/PDB/source link not verified).",
       "summary": "OFF tick31: Applies=true; oportunidade 7,8743m, t=0, ameaça=true, LastUseful=false; InterceptBall sem candidato. ON controles 30/34 em 0/0,0783m são elegíveis e escolhidos. W198-C5 refinada."
+    },
+    {
+      "id": "W200",
+      "wave": "W200",
+      "publishedAt": "2026-10-28T11:46:00Z",
+      "macro": "M2",
+      "title": "W200: limite de alcance 4m confirmado no runtime local",
+      "status": "Sweep sintético auditado; runtime 3,9/4,0 elegível e4,1 inelegível.",
+      "summary": "No mesmo estado OFF tick31, somente posição do GK varia: 3,9/4,0m => `LastUseful=true`, InterceptBall selecionado;4,1m => false, Move. Explica o candidato vazio local; qualidade/prevalência seguem UNKNOWN."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W191",
-      "wave": "W191",
-      "publishedAt": "2026-10-28T10:15:00Z",
-      "macro": "M2",
-      "title": "W191: contexto Shoot gerou um chute e gol em seed1733",
-      "status": "Config-only: repetição ON determinística; uma fixture/seed, sem promoção.",
-      "summary": "OFF 0–0 sem chute; ON elevou Shoot 0,769→0,943 em tick2096, ShotEvent e gol tick2098, 1–0. Efeito positivo pontual; generalidade UNKNOWN."
-    },
-    {
       "id": "W192",
       "wave": "W192",
       "publishedAt": "2026-10-28T10:58:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W199: alcance explica a ausência de candidato, com limite de build",
       "status": "Direct DLL probe PASS; decision cutoff PARTIAL (PE/PDB/source link not verified).",
       "summary": "OFF tick31: Applies=true; oportunidade 7,8743m, t=0, ameaça=true, LastUseful=false; InterceptBall sem candidato. ON controles 30/34 em 0/0,0783m são elegíveis e escolhidos. W198-C5 refinada."
+    },
+    {
+      "id": "W200",
+      "wave": "W200",
+      "publishedAt": "2026-10-28T11:46:00Z",
+      "macro": "M2",
+      "title": "W200: limite de alcance 4m confirmado no runtime local",
+      "status": "Sweep sintético auditado; runtime 3,9/4,0 elegível e4,1 inelegível.",
+      "summary": "No mesmo estado OFF tick31, somente posição do GK varia: 3,9/4,0m => `LastUseful=true`, InterceptBall selecionado;4,1m => false, Move. Explica o candidato vazio local; qualidade/prevalência seguem UNKNOWN."
     },
     {
       "wave": "W66",
@@ -3120,6 +3120,10 @@
     {
       "id": "CP-W199-02",
       "title": "W199 direto concluído; fronteira runtime W200 iniciada"
+    },
+    {
+      "id": "CP-W200-02",
+      "title": "Fronteira local confirmada; resolução W201 iniciada"
     }
   ]
 }
