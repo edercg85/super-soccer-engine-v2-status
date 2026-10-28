@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-80",
-  "updatedAt": "2026-10-28T00:56:06-03:00",
-  "cycle": "SS-ORCH-001-W145-SAFEFORWARD-GUARD-T136",
+  "version": "2026.10.28-portal-81",
+  "updatedAt": "2026-10-28T00:58:18-03:00",
+  "cycle": "SS-ORCH-001-W146-SAFEFORWARD-GUARD-T137",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W146: executar o contrafactual no snapshot t137 e verificar se o filtro de aproximação ao adversário também evita a troca de objetivo nesse estado.",
+  "currentFocus": "W147: procurar snapshot de recuperação/carrier em seed1730, testar ON/OFF no mesmo estado e recalcular as guardas. Se não existir caso elegível, registrar ausência sem generalizar.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W145",
-    "wave": "W145",
-    "publishedAt": "2026-10-28T03:56:06Z",
+    "id": "W146",
+    "wave": "W146",
+    "publishedAt": "2026-10-28T03:58:18Z",
     "macro": "M2",
-    "title": "W145: guarda SafeForward no tick t136",
-    "status": "1/1 PASS; candidato progressivo rejeitado porque aproxima o adversário.",
-    "summary": "No mesmo estado, ON/OFF mantêm MoveToTeammate: alternativa ao gol avançaria 9 unidades, mas reduziria distância do adversário de 4,900 para 1,182."
+    "title": "W146: SafeForward no snapshot t137",
+    "status": "1/1 PASS; distância do adversário reduzida pelo candidato ao gol; override não ocorre.",
+    "summary": "No t137, o MoveToGoal avançaria 3,894, mas aproximaria o adversário de 13,725 para 10,278. ON/OFF preservam o mesmo MoveToTeammate."
   },
   "recentCycles": [
-    {
-      "id": "W138",
-      "wave": "W138",
-      "publishedAt": "2026-10-28T03:24:33Z",
-      "macro": "M2",
-      "title": "W138: novos terminais e posse",
-      "status": "4/4 PASS; dois PassCompleted, um PassFailed, um Move control.",
-      "summary": "Dois passes entregam posse ao alvo. Um falha em t134; posse fica com 4c69… ainda sem identidade atribuída. Um Move t660 foi concluído."
-    },
     {
       "id": "W139",
       "wave": "W139",
@@ -92,6 +83,15 @@
       "title": "W145: guarda SafeForward no tick t136",
       "status": "1/1 PASS; candidato progressivo rejeitado porque aproxima o adversário.",
       "summary": "No mesmo estado, ON/OFF mantêm MoveToTeammate: alternativa ao gol avançaria 9 unidades, mas reduziria distância do adversário de 4,900 para 1,182."
+    },
+    {
+      "id": "W146",
+      "wave": "W146",
+      "publishedAt": "2026-10-28T03:58:18Z",
+      "macro": "M2",
+      "title": "W146: SafeForward no snapshot t137",
+      "status": "1/1 PASS; distância do adversário reduzida pelo candidato ao gol; override não ocorre.",
+      "summary": "No t137, o MoveToGoal avançaria 3,894, mas aproximaria o adversário de 13,725 para 10,278. ON/OFF preservam o mesmo MoveToTeammate."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W138",
-      "wave": "W138",
-      "publishedAt": "2026-10-28T03:24:33Z",
-      "macro": "M2",
-      "title": "W138: novos terminais e posse",
-      "status": "4/4 PASS; dois PassCompleted, um PassFailed, um Move control.",
-      "summary": "Dois passes entregam posse ao alvo. Um falha em t134; posse fica com 4c69… ainda sem identidade atribuída. Um Move t660 foi concluído."
-    },
-    {
       "id": "W139",
       "wave": "W139",
       "publishedAt": "2026-10-28T03:29:08Z",
@@ -1116,6 +1107,15 @@
       "title": "W145: guarda SafeForward no tick t136",
       "status": "1/1 PASS; candidato progressivo rejeitado porque aproxima o adversário.",
       "summary": "No mesmo estado, ON/OFF mantêm MoveToTeammate: alternativa ao gol avançaria 9 unidades, mas reduziria distância do adversário de 4,900 para 1,182."
+    },
+    {
+      "id": "W146",
+      "wave": "W146",
+      "publishedAt": "2026-10-28T03:58:18Z",
+      "macro": "M2",
+      "title": "W146: SafeForward no snapshot t137",
+      "status": "1/1 PASS; distância do adversário reduzida pelo candidato ao gol; override não ocorre.",
+      "summary": "No t137, o MoveToGoal avançaria 3,894, mas aproximaria o adversário de 13,725 para 10,278. ON/OFF preservam o mesmo MoveToTeammate."
     },
     {
       "wave": "W66",
@@ -2862,6 +2862,14 @@
     {
       "id": "CP-W145-01",
       "title": "Rejeição por aproximação ao defensor"
+    },
+    {
+      "id": "CP-W146-00",
+      "title": "Preflight contrafactual t137"
+    },
+    {
+      "id": "CP-W146-01",
+      "title": "Guarda de proximidade em t137"
     }
   ]
 }
