@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-103",
-  "updatedAt": "2026-10-28T07:58:28Z",
-  "cycle": "SS-ORCH-001-W169-FULL-STATE-DRAW-CROSSWALK",
+  "version": "2026.10.28-portal-104",
+  "updatedAt": "2026-10-28T08:06:31Z",
+  "cycle": "SS-ORCH-001-W170-PASS-STATE-EFFECT-CONSUMPTION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W170: passar os ActionResults contrafactuais pelos efeitos/transição/eventos e seguir ActivePass, ball movement, posse e próxima recepção nos mesmos quatro snapshots.",
+  "currentFocus": "W171: retomar os estados após o passe no loop real por um tick e provar ActivePass/recovery/recepção; parar como PARTIAL se reinjeção fiel não for possível.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W169",
-    "wave": "W169",
-    "publishedAt": "2026-10-28T07:58:28Z",
+    "id": "W170",
+    "wave": "W170",
+    "publishedAt": "2026-10-28T08:06:31Z",
     "macro": "M2",
-    "title": "W169: full-state crosswalk em quatro seeds",
-    "status": "4/4 estados e 22 decisões pareados; 3/4 outcomes técnicos mudam com draw isolado; 1/4 não muda.",
-    "summary": "States JSON completos idênticos em todos os quatro ticks pós-reset; samples PassTechnical different. Resolver reproduz 3 flips e um não-flip; evidência local, sem medir qualidade ou incidência geral."
+    "title": "W170: efeito do draw no estado do passe",
+    "status": "2/2 transições controladas PASS; claims locais sobre posse, ActivePass, trajetória e eventos. Recepção ainda UNKNOWN.",
+    "summary": "Em dois snapshots, PassLaunchDegraded ainda limpa a posse e cria ActivePass/trajectory; distância planejada e pico de velocidade caem pela metade. Tipos de eventos imediatos iguais. Evidência local, não replay integral nem efeito global."
   },
   "recentCycles": [
-    {
-      "id": "W162",
-      "wave": "W162",
-      "publishedAt": "2026-10-28T06:35:00Z",
-      "macro": "M2",
-      "title": "W162: censo de não seleção do goleiro em gols",
-      "status": "100/100 lifecycles particionados; CRC/manifesto/hash ZIP PASS; sem mudança de gameplay.",
-      "summary": "Dos 100 gols W158, 85 não tinham intercept candidato por alcance especializado (>4m), 4 não alcançavam o limite genérico (2m), e 11 tentativas selecionadas falharam tecnicamente. A sensibilidade de 5m é geométrica; defesas e qualidade continuam UNKNOWN."
-    },
     {
       "id": "W163",
       "wave": "W163",
@@ -92,6 +83,15 @@
       "title": "W169: full-state crosswalk em quatro seeds",
       "status": "4/4 estados e 22 decisões pareados; 3/4 outcomes técnicos mudam com draw isolado; 1/4 não muda.",
       "summary": "States JSON completos idênticos em todos os quatro ticks pós-reset; samples PassTechnical different. Resolver reproduz 3 flips e um não-flip; evidência local, sem medir qualidade ou incidência geral."
+    },
+    {
+      "id": "W170",
+      "wave": "W170",
+      "publishedAt": "2026-10-28T08:06:31Z",
+      "macro": "M2",
+      "title": "W170: efeito do draw no estado do passe",
+      "status": "2/2 transições controladas PASS; claims locais sobre posse, ActivePass, trajetória e eventos. Recepção ainda UNKNOWN.",
+      "summary": "Em dois snapshots, PassLaunchDegraded ainda limpa a posse e cria ActivePass/trajectory; distância planejada e pico de velocidade caem pela metade. Tipos de eventos imediatos iguais. Evidência local, não replay integral nem efeito global."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W162",
-      "wave": "W162",
-      "publishedAt": "2026-10-28T06:35:00Z",
-      "macro": "M2",
-      "title": "W162: censo de não seleção do goleiro em gols",
-      "status": "100/100 lifecycles particionados; CRC/manifesto/hash ZIP PASS; sem mudança de gameplay.",
-      "summary": "Dos 100 gols W158, 85 não tinham intercept candidato por alcance especializado (>4m), 4 não alcançavam o limite genérico (2m), e 11 tentativas selecionadas falharam tecnicamente. A sensibilidade de 5m é geométrica; defesas e qualidade continuam UNKNOWN."
-    },
-    {
       "id": "W163",
       "wave": "W163",
       "publishedAt": "2026-10-28T06:51:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W169: full-state crosswalk em quatro seeds",
       "status": "4/4 estados e 22 decisões pareados; 3/4 outcomes técnicos mudam com draw isolado; 1/4 não muda.",
       "summary": "States JSON completos idênticos em todos os quatro ticks pós-reset; samples PassTechnical different. Resolver reproduz 3 flips e um não-flip; evidência local, sem medir qualidade ou incidência geral."
+    },
+    {
+      "id": "W170",
+      "wave": "W170",
+      "publishedAt": "2026-10-28T08:06:31Z",
+      "macro": "M2",
+      "title": "W170: efeito do draw no estado do passe",
+      "status": "2/2 transições controladas PASS; claims locais sobre posse, ActivePass, trajetória e eventos. Recepção ainda UNKNOWN.",
+      "summary": "Em dois snapshots, PassLaunchDegraded ainda limpa a posse e cria ActivePass/trajectory; distância planejada e pico de velocidade caem pela metade. Tipos de eventos imediatos iguais. Evidência local, não replay integral nem efeito global."
     },
     {
       "wave": "W66",
@@ -2970,6 +2970,10 @@
     {
       "id": "CP-W169-01",
       "title": "Four-seed full-state causal crosswalk"
+    },
+    {
+      "id": "CP-W170-02",
+      "title": "Efeito imediato do draw e checkpoint final"
     }
   ]
 }
