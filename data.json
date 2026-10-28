@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-87",
-  "updatedAt": "2026-10-28T02:02:55-03:00",
-  "cycle": "SS-ORCH-001-W152-SAFEFORWARD-FULL-MATCH-PAIR",
+  "version": "2026.10.28-portal-88",
+  "updatedAt": "2026-10-28T02:07:01-03:00",
+  "cycle": "SS-ORCH-001-W153-SAFEFORWARD-SEED1731-REPLICATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W153: repetir par ON/OFF integral na fixture PALxCOR seed1731, mesma revisão e configurações congeladas; avaliar se a sensibilidade de SafeForward se repete e comparar primeiro ponto de divergência. Manter qualidade global UNKNOWN.",
+  "currentFocus": "W154: reconciliar por tick/atleta ShootAction, resultados (incluindo degradado/interferido), ActiveShoot, ShotTerminal e GoalScored nas evidências W152/W153; adicionar teste de integridade e repetir seed1731 para fingerprints antes de ampliar seeds.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W152",
-    "wave": "W152",
-    "publishedAt": "2026-10-28T05:02:00Z",
+    "id": "W153",
+    "wave": "W153",
+    "publishedAt": "2026-10-28T05:06:58Z",
     "macro": "M2",
-    "title": "W152: pareamento integral SafeForward seed1730",
-    "status": "1/1 PASS; divergência de decisão/estado t56 e evento t57; grande sensibilidade em uma única seed.",
-    "summary": "ON 21–6/5400 ticks; OFF 1–0/5401; decisões Move diferem primeiro em t56. Há divergência tardia extensa, mas uma seed não confirma qualidade. ShotEvent não equivale a ShootLaunched."
+    "title": "W153: replicação SafeForward na seed1731",
+    "status": "1/1 PASS; primeiro diff t25/t26; ON 10–7 e OFF 0–0. Sensibilidade replicada em duas seeds, qualidade não aprovada.",
+    "summary": "Na segunda seed, primeiro Move/estado diverge em t25 e evento em t26. A flag ON tem 24 Shoot events e 17 gols contra zero OFF; contagens não validam qualidade nem conversão técnica. Investigar lifecycle Shoot/Goal antes de ampliar seeds."
   },
   "recentCycles": [
-    {
-      "id": "W145",
-      "wave": "W145",
-      "publishedAt": "2026-10-28T03:56:06Z",
-      "macro": "M2",
-      "title": "W145: guarda SafeForward no tick t136",
-      "status": "1/1 PASS; candidato progressivo rejeitado porque aproxima o adversário.",
-      "summary": "No mesmo estado, ON/OFF mantêm MoveToTeammate: alternativa ao gol avançaria 9 unidades, mas reduziria distância do adversário de 4,900 para 1,182."
-    },
     {
       "id": "W146",
       "wave": "W146",
@@ -92,6 +83,15 @@
       "title": "W152: pareamento integral SafeForward seed1730",
       "status": "1/1 PASS; divergência de decisão/estado t56 e evento t57; grande sensibilidade em uma única seed.",
       "summary": "ON 21–6/5400 ticks; OFF 1–0/5401; decisões Move diferem primeiro em t56. Há divergência tardia extensa, mas uma seed não confirma qualidade. ShotEvent não equivale a ShootLaunched."
+    },
+    {
+      "id": "W153",
+      "wave": "W153",
+      "publishedAt": "2026-10-28T05:06:58Z",
+      "macro": "M2",
+      "title": "W153: replicação SafeForward na seed1731",
+      "status": "1/1 PASS; primeiro diff t25/t26; ON 10–7 e OFF 0–0. Sensibilidade replicada em duas seeds, qualidade não aprovada.",
+      "summary": "Na segunda seed, primeiro Move/estado diverge em t25 e evento em t26. A flag ON tem 24 Shoot events e 17 gols contra zero OFF; contagens não validam qualidade nem conversão técnica. Investigar lifecycle Shoot/Goal antes de ampliar seeds."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W145",
-      "wave": "W145",
-      "publishedAt": "2026-10-28T03:56:06Z",
-      "macro": "M2",
-      "title": "W145: guarda SafeForward no tick t136",
-      "status": "1/1 PASS; candidato progressivo rejeitado porque aproxima o adversário.",
-      "summary": "No mesmo estado, ON/OFF mantêm MoveToTeammate: alternativa ao gol avançaria 9 unidades, mas reduziria distância do adversário de 4,900 para 1,182."
-    },
-    {
       "id": "W146",
       "wave": "W146",
       "publishedAt": "2026-10-28T03:58:18Z",
@@ -1116,6 +1107,15 @@
       "title": "W152: pareamento integral SafeForward seed1730",
       "status": "1/1 PASS; divergência de decisão/estado t56 e evento t57; grande sensibilidade em uma única seed.",
       "summary": "ON 21–6/5400 ticks; OFF 1–0/5401; decisões Move diferem primeiro em t56. Há divergência tardia extensa, mas uma seed não confirma qualidade. ShotEvent não equivale a ShootLaunched."
+    },
+    {
+      "id": "W153",
+      "wave": "W153",
+      "publishedAt": "2026-10-28T05:06:58Z",
+      "macro": "M2",
+      "title": "W153: replicação SafeForward na seed1731",
+      "status": "1/1 PASS; primeiro diff t25/t26; ON 10–7 e OFF 0–0. Sensibilidade replicada em duas seeds, qualidade não aprovada.",
+      "summary": "Na segunda seed, primeiro Move/estado diverge em t25 e evento em t26. A flag ON tem 24 Shoot events e 17 gols contra zero OFF; contagens não validam qualidade nem conversão técnica. Investigar lifecycle Shoot/Goal antes de ampliar seeds."
     },
     {
       "wave": "W66",
@@ -2902,6 +2902,10 @@
     {
       "id": "CP-W152-00",
       "title": "W152 paired full-match seed1730"
+    },
+    {
+      "id": "CP-W153-01",
+      "title": "W153 seed1731 paired replication result"
     }
   ]
 }
