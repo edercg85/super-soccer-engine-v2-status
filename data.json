@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-154",
-  "updatedAt": "2026-10-28T14:21:56Z",
-  "cycle": "SS-ORCH-001-W233-OFFSIDE-PASS-CONFIG-EXPERIMENT",
+  "version": "2026.10.28-portal-156",
+  "updatedAt": "2026-10-28T14:30:33Z",
+  "cycle": "SS-ORCH-001-W234-PASS-AWARE-MULTISEED",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Executar cinco novos pares de 90 minutos (OFF versus OffsideAttacking.Pass=true), seeds 1732–1736, assemblies W214 e demais opções idênticas. Revalidar determinismo e medir offsides, passes/completions, chutes/gols, placar e ticks sem posse; manter o default-off.",
+  "currentFocus": "Executar 10 novos pares OFF/ON, seeds1740–1749, preservando exatamente a única variável OffsideAttacking.Pass. Conferir determinismo em repetição e agregar cumulativamente W233/W234/W235 antes de qualquer decisão sobre default.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W233",
-    "wave": "W233",
-    "publishedAt": "2026-10-28T14:21:56Z",
+    "id": "W234",
+    "wave": "W234",
+    "publishedAt": "2026-10-28T14:29:49Z",
     "macro": "M3",
-    "title": "W233: experimento config-only reduz offsides e ticks sem posse",
-    "status": "Promissor, qualidade não aceita; permanece default-off.",
-    "summary": "3 pares: offside cai 22→0, 15→0, 22→1; ticks sem posse caem. Chute +1 por seed, mas seed1730 perde o gol baseline."
+    "title": "W234: efeito de Pass-aware replicado em mais cinco seeds",
+    "status": "Offside e ticks sem posse caem nas cinco; qualidade ainda ambígua.",
+    "summary": "Nas seeds1732–1736, offside 86→8 e ticks sem posse 14220→13645. Houve três gols ON contra zero OFF, mas uma derrota 0–1; continuar default-off."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
     },
     {
-      "id": "W229",
-      "wave": "W229",
-      "publishedAt": "2026-10-28T13:59:55Z",
-      "macro": "M3",
-      "title": "W229: W228 não replicado nos prefixes restantes",
-      "status": "Busca em 1730/1731 sem segunda amostra pareada; casos ON censurados.",
-      "summary": "W229 limitou a conclusão: o restart de W228 segue como efeito de um único caso; seed1730 OFF repete o mesmo restart, sem contraste DERR. Atraso agregado continua UNKNOWN."
-    },
-    {
       "id": "W230",
       "wave": "W230",
       "publishedAt": "2026-10-28T14:05:50Z",
@@ -101,6 +92,15 @@
       "title": "W233: experimento config-only reduz offsides e ticks sem posse",
       "status": "Promissor, qualidade não aceita; permanece default-off.",
       "summary": "3 pares: offside cai 22→0, 15→0, 22→1; ticks sem posse caem. Chute +1 por seed, mas seed1730 perde o gol baseline."
+    },
+    {
+      "id": "W234",
+      "wave": "W234",
+      "publishedAt": "2026-10-28T14:29:49Z",
+      "macro": "M3",
+      "title": "W234: efeito de Pass-aware replicado em mais cinco seeds",
+      "status": "Offside e ticks sem posse caem nas cinco; qualidade ainda ambígua.",
+      "summary": "Nas seeds1732–1736, offside 86→8 e ticks sem posse 14220→13645. Houve três gols ON contra zero OFF, mas uma derrota 0–1; continuar default-off."
     }
   ],
   "macros": [
@@ -1091,15 +1091,6 @@
       "summary": "OFF→ON nas seeds 1730/1731: impedimentos 15→67 e 22→66; completos 857→602 e 831→565; tackles selecionados 30→350 e 28→380. ON teve um resultado pior e outro melhor."
     },
     {
-      "id": "W229",
-      "wave": "W229",
-      "publishedAt": "2026-10-28T13:59:55Z",
-      "macro": "M3",
-      "title": "W229: W228 não replicado nos prefixes restantes",
-      "status": "Busca em 1730/1731 sem segunda amostra pareada; casos ON censurados.",
-      "summary": "W229 limitou a conclusão: o restart de W228 segue como efeito de um único caso; seed1730 OFF repete o mesmo restart, sem contraste DERR. Atraso agregado continua UNKNOWN."
-    },
-    {
       "id": "W230",
       "wave": "W230",
       "publishedAt": "2026-10-28T14:05:50Z",
@@ -1134,6 +1125,15 @@
       "title": "W233: experimento config-only reduz offsides e ticks sem posse",
       "status": "Promissor, qualidade não aceita; permanece default-off.",
       "summary": "3 pares: offside cai 22→0, 15→0, 22→1; ticks sem posse caem. Chute +1 por seed, mas seed1730 perde o gol baseline."
+    },
+    {
+      "id": "W234",
+      "wave": "W234",
+      "publishedAt": "2026-10-28T14:29:49Z",
+      "macro": "M3",
+      "title": "W234: efeito de Pass-aware replicado em mais cinco seeds",
+      "status": "Offside e ticks sem posse caem nas cinco; qualidade ainda ambígua.",
+      "summary": "Nas seeds1732–1736, offside 86→8 e ticks sem posse 14220→13645. Houve três gols ON contra zero OFF, mas uma derrota 0–1; continuar default-off."
     },
     {
       "wave": "W66",
@@ -3204,6 +3204,10 @@
     {
       "id": "CP-W233-FINAL",
       "title": "Três seeds pareadas: menos offsides/ticks sem posse; seed1730 perde gol"
+    },
+    {
+      "id": "CP-W234-FINAL",
+      "title": "Cinco pares repetem queda de offside e ticks sem posse; qualidade ainda sem aceite"
     }
   ]
 }
