@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-109",
-  "updatedAt": "2026-10-28T08:40:46Z",
-  "cycle": "SS-ORCH-001-W175-ONSIDE-RECEIVER-CONTINUATION",
+  "version": "2026.10.28-portal-110",
+  "updatedAt": "2026-10-28T08:43:01Z",
+  "cycle": "SS-ORCH-001-W176-RETURN-PASS-RESOLUTION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W176: seguir o passe de retorno lançado no tick26 até sua resolução e a próxima decisão do recebedor, limitado a +24 ticks do lançamento inicial. Verificar se a sequência retorna novamente entre os mesmos jogadores ou se muda a posse/rota; tratar hashes repetidos como uma unidade.",
+  "currentFocus": "W177: estender a mesma trajetória até o primeiro novo evento terminal ou tick56 (+40 do lançamento inicial), observando próxima decisão, passe/chute, recuperação ou reinício. Se nada ocorrer antes do limite, encerrar a janela e trocar para outra dependência.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W175",
-    "wave": "W175",
-    "publishedAt": "2026-10-28T08:45:00Z",
+    "id": "W176",
+    "wave": "W176",
+    "publishedAt": "2026-10-28T08:48:00Z",
     "macro": "M2",
-    "title": "W175: continuação após recepção onside",
-    "status": "2/2 PASS; auditoria automatizada PASS; uma sequência exata repetida em duas seeds.",
-    "summary": "Após recepção tick19, MoveCompleted tick20; recebedor passa tick21; passe conclui tick24; novo portador lança retorno tick26, ainda em voo tick28. Sem conclusão de qualidade ou prevalência."
+    "title": "W176: resolução do passe de retorno",
+    "status": "2/2 PASS; retorno completado tick29; 12 MoveCompleted; auditoria PASS, estado exato repetido.",
+    "summary": "Passe de volta completa ao primeiro alvo no tick29. Ele mantém posse e executa MoveCompleted nos ticks29–40 sem novo passe. Uma sequência determinística repetida, sem alegação de qualidade."
   },
   "recentCycles": [
-    {
-      "id": "W168",
-      "wave": "W168",
-      "publishedAt": "2026-10-28T07:52:36Z",
-      "macro": "M2",
-      "title": "W168: censo dos outcomes técnicos após o intercept GK",
-      "status": "4 seeds focais; 3/4 outcomes mudam; 2/2 novos pares têm estado/22 decisões completos iguais.",
-      "summary": "No primeiro passe após o gol, amostras 4m/5m diferem em 4/4 seeds; 1734 lança em ambos, 1735 degrada em 5m; 1732/33 também degradam com prova cross-arm baseada em projeção. Não é taxa geral ou qualidade."
-    },
     {
       "id": "W169",
       "wave": "W169",
@@ -92,6 +83,15 @@
       "title": "W175: continuação após recepção onside",
       "status": "2/2 PASS; auditoria automatizada PASS; uma sequência exata repetida em duas seeds.",
       "summary": "Após recepção tick19, MoveCompleted tick20; recebedor passa tick21; passe conclui tick24; novo portador lança retorno tick26, ainda em voo tick28. Sem conclusão de qualidade ou prevalência."
+    },
+    {
+      "id": "W176",
+      "wave": "W176",
+      "publishedAt": "2026-10-28T08:48:00Z",
+      "macro": "M2",
+      "title": "W176: resolução do passe de retorno",
+      "status": "2/2 PASS; retorno completado tick29; 12 MoveCompleted; auditoria PASS, estado exato repetido.",
+      "summary": "Passe de volta completa ao primeiro alvo no tick29. Ele mantém posse e executa MoveCompleted nos ticks29–40 sem novo passe. Uma sequência determinística repetida, sem alegação de qualidade."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W168",
-      "wave": "W168",
-      "publishedAt": "2026-10-28T07:52:36Z",
-      "macro": "M2",
-      "title": "W168: censo dos outcomes técnicos após o intercept GK",
-      "status": "4 seeds focais; 3/4 outcomes mudam; 2/2 novos pares têm estado/22 decisões completos iguais.",
-      "summary": "No primeiro passe após o gol, amostras 4m/5m diferem em 4/4 seeds; 1734 lança em ambos, 1735 degrada em 5m; 1732/33 também degradam com prova cross-arm baseada em projeção. Não é taxa geral ou qualidade."
-    },
-    {
       "id": "W169",
       "wave": "W169",
       "publishedAt": "2026-10-28T07:58:28Z",
@@ -1116,6 +1107,15 @@
       "title": "W175: continuação após recepção onside",
       "status": "2/2 PASS; auditoria automatizada PASS; uma sequência exata repetida em duas seeds.",
       "summary": "Após recepção tick19, MoveCompleted tick20; recebedor passa tick21; passe conclui tick24; novo portador lança retorno tick26, ainda em voo tick28. Sem conclusão de qualidade ou prevalência."
+    },
+    {
+      "id": "W176",
+      "wave": "W176",
+      "publishedAt": "2026-10-28T08:48:00Z",
+      "macro": "M2",
+      "title": "W176: resolução do passe de retorno",
+      "status": "2/2 PASS; retorno completado tick29; 12 MoveCompleted; auditoria PASS, estado exato repetido.",
+      "summary": "Passe de volta completa ao primeiro alvo no tick29. Ele mantém posse e executa MoveCompleted nos ticks29–40 sem novo passe. Uma sequência determinística repetida, sem alegação de qualidade."
     },
     {
       "wave": "W66",
@@ -3002,6 +3002,14 @@
     {
       "id": "CP-W175-02",
       "title": "Handoff W175 publicado e validado"
+    },
+    {
+      "id": "CP-W176-01",
+      "title": "Passe retorno e posse até tick40"
+    },
+    {
+      "id": "CP-W176-02",
+      "title": "Handoff W176 validado"
     }
   ]
 }
