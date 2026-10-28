@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-193",
-  "updatedAt": "2026-10-28T20:47:14Z",
-  "cycle": "W269",
+  "version": "2026.10.28-portal-194",
+  "updatedAt": "2026-10-28T21:35:00Z",
+  "cycle": "W270",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Recapturar o funil ofensivo por posse nas partidas W214 W246/W255 com observadores neutros e fingerprints; preparar replay completo de 90 minutos para avaliação humana.",
+  "currentFocus": "Frente ativa M2 — progressão e criação: recaptura observacional pareada W214 (W246/W255), começando por seed-pair piloto; mapear progressão, apoio, zonas ofensivas, elegibilidade/seleção de Shoot, eventos e terminais com fingerprints; produzir replay completo de estados reais para revisão humana.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W269",
-    "wave": "W269",
-    "publishedAt": "2026-10-28T20:47:14Z",
-    "macro": "M3",
-    "title": "Métrica de tentativas corrigida; gargalo a montante ainda desconhecido",
-    "status": "Concluído com limites — sem mudança de gameplay; funil ofensivo e avaliação humana pendentes.",
-    "summary": "W255 contava ShotOffTargetEvent como nova finalização. Recontagem comparável: 12 ShotEvent no candidato vs 6 na baseline; IC pareado cruza zero. Nove jogos candidatos sem tentativa; telemetria atual não localiza a falha anterior."
+    "id": "W270",
+    "wave": "W270",
+    "publishedAt": "2026-10-28T21:35:00Z",
+    "macro": "M2",
+    "title": "Funil ofensivo W214 e replay completo",
+    "status": "EM EXECUÇÃO — piloto de instrumentação; sem alteração de gameplay.",
+    "summary": "Frente ativa M2: recaptura observacional pareada W246/W255 para localizar o primeiro gargalo ofensivo, validar neutralidade por fingerprints e gerar replay integral de 90 minutos."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "InvestigaÃ§Ã£o continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W265",
-      "wave": "W265",
-      "publishedAt": "2026-10-28T18:23:00Z",
-      "macro": "M3",
-      "title": "Loose-ball recovery ligado ao passe falhado por evento e posiÃ§Ã£o",
-      "status": "Efeito local observado; motivo interno e qualidade desconhecidos",
-      "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferÃªncia de interception/qualidade."
-    },
-    {
       "id": "W266",
       "wave": "W266",
       "publishedAt": "2026-10-28T18:35:35Z",
@@ -101,6 +92,15 @@
       "title": "Métrica de tentativas corrigida; gargalo a montante ainda desconhecido",
       "status": "Concluído com limites — sem mudança de gameplay; funil ofensivo e avaliação humana pendentes.",
       "summary": "W255 contava ShotOffTargetEvent como nova finalização. Recontagem comparável: 12 ShotEvent no candidato vs 6 na baseline; IC pareado cruza zero. Nove jogos candidatos sem tentativa; telemetria atual não localiza a falha anterior."
+    },
+    {
+      "id": "W270",
+      "wave": "W270",
+      "publishedAt": "2026-10-28T21:35:00Z",
+      "macro": "M2",
+      "title": "Funil ofensivo W214 e replay completo",
+      "status": "EM EXECUÇÃO — piloto de instrumentação; sem alteração de gameplay.",
+      "summary": "Frente ativa M2: recaptura observacional pareada W246/W255 para localizar o primeiro gargalo ofensivo, validar neutralidade por fingerprints e gerar replay integral de 90 minutos."
     }
   ],
   "macros": [
@@ -111,6 +111,7 @@
       "importance": "Uma partida precisa terminar de forma reproduzÃ­vel antes de sustentar comparaÃ§Ãµes de qualidade.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
+      "active": false,
       "items": [
         {
           "id": "M0-01",
@@ -225,6 +226,7 @@
       "importance": "Sem uma cadeia verificÃ¡vel, uma calibraÃ§Ã£o pode aumentar chutes e piorar a dinÃ¢mica.",
       "status": "Concluído no escopo",
       "statusClass": "ok",
+      "active": false,
       "items": [
         {
           "id": "M1-01",
@@ -326,6 +328,7 @@
       "importance": "Ganhar territÃ³rio com controle e opÃ§Ãµes Ã© a base de um ataque convincente.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
+      "active": true,
       "items": [
         {
           "id": "M2-01",
@@ -414,6 +417,7 @@
       "importance": "O portador precisa de opÃ§Ãµes viÃ¡veis e a equipe de equilÃ­brio apÃ³s uma perda.",
       "status": "Planejado",
       "statusClass": "planned",
+      "active": false,
       "items": [
         {
           "id": "M3-01",
@@ -502,6 +506,7 @@
       "importance": "Uma boa decisÃ£o perde valor quando a resoluÃ§Ã£o quebra a posse ou deixa estados presos.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
+      "active": false,
       "items": [
         {
           "id": "M4-01",
@@ -603,6 +608,7 @@
       "importance": "Placar e volume de chutes nÃ£o bastam para aprovar a experiÃªncia de uma partida.",
       "status": "Planejado",
       "statusClass": "planned",
+      "active": false,
       "items": [
         {
           "id": "M5-01",
@@ -717,6 +723,7 @@
       "importance": "Uma referÃªncia pode orientar perguntas; uma rota de cÃ³digo sozinha nÃ£o prova intenÃ§Ã£o ou qualidade.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
+      "active": false,
       "items": [
         {
           "id": "M6-01",
@@ -831,6 +838,7 @@
       "importance": "Uma partida tÃ©cnica 11 Ã— 11 nÃ£o resolve exigÃªncias de relacionados e dados do produto.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
+      "active": false,
       "items": [
         {
           "id": "M7-01",
@@ -945,6 +953,7 @@
       "importance": "Fonte, testes e revisÃ£o permitem distinguir melhoria, regressÃ£o e efeito do instrumento.",
       "status": "Concluído no escopo",
       "statusClass": "ok",
+      "active": false,
       "items": [
         {
           "id": "M8-01",
@@ -1102,15 +1111,6 @@
       "summary": "InvestigaÃ§Ã£o continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W265",
-      "wave": "W265",
-      "publishedAt": "2026-10-28T18:23:00Z",
-      "macro": "M3",
-      "title": "Loose-ball recovery ligado ao passe falhado por evento e posiÃ§Ã£o",
-      "status": "Efeito local observado; motivo interno e qualidade desconhecidos",
-      "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferÃªncia de interception/qualidade."
-    },
-    {
       "id": "W266",
       "wave": "W266",
       "publishedAt": "2026-10-28T18:35:35Z",
@@ -1145,6 +1145,15 @@
       "title": "Métrica de tentativas corrigida; gargalo a montante ainda desconhecido",
       "status": "Concluído com limites — sem mudança de gameplay; funil ofensivo e avaliação humana pendentes.",
       "summary": "W255 contava ShotOffTargetEvent como nova finalização. Recontagem comparável: 12 ShotEvent no candidato vs 6 na baseline; IC pareado cruza zero. Nove jogos candidatos sem tentativa; telemetria atual não localiza a falha anterior."
+    },
+    {
+      "id": "W270",
+      "wave": "W270",
+      "publishedAt": "2026-10-28T21:35:00Z",
+      "macro": "M2",
+      "title": "Funil ofensivo W214 e replay completo",
+      "status": "EM EXECUÇÃO — piloto de instrumentação; sem alteração de gameplay.",
+      "summary": "Frente ativa M2: recaptura observacional pareada W246/W255 para localizar o primeiro gargalo ofensivo, validar neutralidade por fingerprints e gerar replay integral de 90 minutos."
     },
     {
       "wave": "W66",
