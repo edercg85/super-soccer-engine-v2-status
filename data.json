@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-104",
-  "updatedAt": "2026-10-28T08:06:31Z",
-  "cycle": "SS-ORCH-001-W170-PASS-STATE-EFFECT-CONSUMPTION",
+  "version": "2026.10.28-portal-105",
+  "updatedAt": "2026-10-28T08:18:00Z",
+  "cycle": "SS-ORCH-001-W171-NATURAL-PASS-EPISODE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W171: retomar os estados após o passe no loop real por um tick e provar ActivePass/recovery/recepção; parar como PARTIAL se reinjeção fiel não for possível.",
+  "currentFocus": "W172: separar a guarda de impedimento e participação do target, repetindo a comparação com snapshot onside sob troca única do PassTechnical sample.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W170",
-    "wave": "W170",
-    "publishedAt": "2026-10-28T08:06:31Z",
+    "id": "W171",
+    "wave": "W171",
+    "publishedAt": "2026-10-28T08:18:00Z",
     "macro": "M2",
-    "title": "W170: efeito do draw no estado do passe",
-    "status": "2/2 transições controladas PASS; claims locais sobre posse, ActivePass, trajetória e eventos. Recepção ainda UNKNOWN.",
-    "summary": "Em dois snapshots, PassLaunchDegraded ainda limpa a posse e cria ActivePass/trajectory; distância planejada e pico de velocidade caem pela metade. Tipos de eventos imediatos iguais. Evidência local, não replay integral nem efeito global."
+    "title": "W171: consequência natural do passe degradado",
+    "status": "4/4 runs pareados PASS; PassFailed com posse própria em 4m e impedimento/reinício adversário em 5m, repetido em duas seeds.",
+    "summary": "Em seeds 1732/1733, estados completos e 22 decisões iguais no foco. `PassLaunched` resulta em PassFailed com posse away; `PassLaunchDegraded` leva a offside do target e reinício home pronto em +7 ticks. Evidência local, sem estimar incidência/qualidade."
   },
   "recentCycles": [
-    {
-      "id": "W163",
-      "wave": "W163",
-      "publishedAt": "2026-10-28T06:51:00Z",
-      "macro": "M2",
-      "title": "W163: alcance GK 4m×5m em quatro seeds",
-      "status": "Baseline 1/1 PASS byte-exact; candidato 1/1 PASS, repetição determinística; resultado misto, NO-GO.",
-      "summary": "SafeForward ON: gols/chutes 100/136→90/129; intercepts selecionados 47→72, sucessos/falhas 30/17→37/35. Uma seed melhora, uma iguala e duas caem em gols. Alteração só em TEMP; default 4m preservado."
-    },
     {
       "id": "W164",
       "wave": "W164",
@@ -92,6 +83,15 @@
       "title": "W170: efeito do draw no estado do passe",
       "status": "2/2 transições controladas PASS; claims locais sobre posse, ActivePass, trajetória e eventos. Recepção ainda UNKNOWN.",
       "summary": "Em dois snapshots, PassLaunchDegraded ainda limpa a posse e cria ActivePass/trajectory; distância planejada e pico de velocidade caem pela metade. Tipos de eventos imediatos iguais. Evidência local, não replay integral nem efeito global."
+    },
+    {
+      "id": "W171",
+      "wave": "W171",
+      "publishedAt": "2026-10-28T08:18:00Z",
+      "macro": "M2",
+      "title": "W171: consequência natural do passe degradado",
+      "status": "4/4 runs pareados PASS; PassFailed com posse própria em 4m e impedimento/reinício adversário em 5m, repetido em duas seeds.",
+      "summary": "Em seeds 1732/1733, estados completos e 22 decisões iguais no foco. `PassLaunched` resulta em PassFailed com posse away; `PassLaunchDegraded` leva a offside do target e reinício home pronto em +7 ticks. Evidência local, sem estimar incidência/qualidade."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W163",
-      "wave": "W163",
-      "publishedAt": "2026-10-28T06:51:00Z",
-      "macro": "M2",
-      "title": "W163: alcance GK 4m×5m em quatro seeds",
-      "status": "Baseline 1/1 PASS byte-exact; candidato 1/1 PASS, repetição determinística; resultado misto, NO-GO.",
-      "summary": "SafeForward ON: gols/chutes 100/136→90/129; intercepts selecionados 47→72, sucessos/falhas 30/17→37/35. Uma seed melhora, uma iguala e duas caem em gols. Alteração só em TEMP; default 4m preservado."
-    },
-    {
       "id": "W164",
       "wave": "W164",
       "publishedAt": "2026-10-28T07:04:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W170: efeito do draw no estado do passe",
       "status": "2/2 transições controladas PASS; claims locais sobre posse, ActivePass, trajetória e eventos. Recepção ainda UNKNOWN.",
       "summary": "Em dois snapshots, PassLaunchDegraded ainda limpa a posse e cria ActivePass/trajectory; distância planejada e pico de velocidade caem pela metade. Tipos de eventos imediatos iguais. Evidência local, não replay integral nem efeito global."
+    },
+    {
+      "id": "W171",
+      "wave": "W171",
+      "publishedAt": "2026-10-28T08:18:00Z",
+      "macro": "M2",
+      "title": "W171: consequência natural do passe degradado",
+      "status": "4/4 runs pareados PASS; PassFailed com posse própria em 4m e impedimento/reinício adversário em 5m, repetido em duas seeds.",
+      "summary": "Em seeds 1732/1733, estados completos e 22 decisões iguais no foco. `PassLaunched` resulta em PassFailed com posse away; `PassLaunchDegraded` leva a offside do target e reinício home pronto em +7 ticks. Evidência local, sem estimar incidência/qualidade."
     },
     {
       "wave": "W66",
@@ -2974,6 +2974,10 @@
     {
       "id": "CP-W170-02",
       "title": "Efeito imediato do draw e checkpoint final"
+    },
+    {
+      "id": "CP-W171-02",
+      "title": "Pass terminal, impedimento e posse de reinício"
     }
   ]
 }
