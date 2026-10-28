@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-102",
-  "updatedAt": "2026-10-28T07:52:36Z",
-  "cycle": "SS-ORCH-001-W168-POST-INTERCEPT-DRAW-CENSUS",
+  "version": "2026.10.28-portal-103",
+  "updatedAt": "2026-10-28T07:58:28Z",
+  "cycle": "SS-ORCH-001-W169-FULL-STATE-DRAW-CROSSWALK",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W169: capturar e comparar estado completo/22 decisões entre 4m/5m nos ticks 1839 e 1134 de 1732/1733, depois repetir o contrafactual draw-only.",
+  "currentFocus": "W170: passar os ActionResults contrafactuais pelos efeitos/transição/eventos e seguir ActivePass, ball movement, posse e próxima recepção nos mesmos quatro snapshots.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W168",
-    "wave": "W168",
-    "publishedAt": "2026-10-28T07:52:36Z",
+    "id": "W169",
+    "wave": "W169",
+    "publishedAt": "2026-10-28T07:58:28Z",
     "macro": "M2",
-    "title": "W168: censo dos outcomes técnicos após o intercept GK",
-    "status": "4 seeds focais; 3/4 outcomes mudam; 2/2 novos pares têm estado/22 decisões completos iguais.",
-    "summary": "No primeiro passe após o gol, amostras 4m/5m diferem em 4/4 seeds; 1734 lança em ambos, 1735 degrada em 5m; 1732/33 também degradam com prova cross-arm baseada em projeção. Não é taxa geral ou qualidade."
+    "title": "W169: full-state crosswalk em quatro seeds",
+    "status": "4/4 estados e 22 decisões pareados; 3/4 outcomes técnicos mudam com draw isolado; 1/4 não muda.",
+    "summary": "States JSON completos idênticos em todos os quatro ticks pós-reset; samples PassTechnical different. Resolver reproduz 3 flips e um não-flip; evidência local, sem medir qualidade ou incidência geral."
   },
   "recentCycles": [
-    {
-      "id": "W161",
-      "wave": "W161",
-      "publishedAt": "2026-10-28T06:29:04Z",
-      "macro": "M2",
-      "title": "W161: crosswalk GK interception → ShotBlocked",
-      "status": "Scripts Python e PowerShell PASS; 30/30 bloqueios ligados a intercepts GK bem-sucedidos; limitações de proveniência registradas.",
-      "summary": "Trinta ShotBlocked ActiveShoot coincidem com InterceptSucceededAtClosestApproach no mesmo seed/lifecycle/tick; 17 falhas tiveram terminais variados. Fluxo fonte compatível, mas hash Simulation/assembly histórico ausente; linkage PARTIAL."
-    },
     {
       "id": "W162",
       "wave": "W162",
@@ -92,6 +83,15 @@
       "title": "W168: censo dos outcomes técnicos após o intercept GK",
       "status": "4 seeds focais; 3/4 outcomes mudam; 2/2 novos pares têm estado/22 decisões completos iguais.",
       "summary": "No primeiro passe após o gol, amostras 4m/5m diferem em 4/4 seeds; 1734 lança em ambos, 1735 degrada em 5m; 1732/33 também degradam com prova cross-arm baseada em projeção. Não é taxa geral ou qualidade."
+    },
+    {
+      "id": "W169",
+      "wave": "W169",
+      "publishedAt": "2026-10-28T07:58:28Z",
+      "macro": "M2",
+      "title": "W169: full-state crosswalk em quatro seeds",
+      "status": "4/4 estados e 22 decisões pareados; 3/4 outcomes técnicos mudam com draw isolado; 1/4 não muda.",
+      "summary": "States JSON completos idênticos em todos os quatro ticks pós-reset; samples PassTechnical different. Resolver reproduz 3 flips e um não-flip; evidência local, sem medir qualidade ou incidência geral."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W161",
-      "wave": "W161",
-      "publishedAt": "2026-10-28T06:29:04Z",
-      "macro": "M2",
-      "title": "W161: crosswalk GK interception → ShotBlocked",
-      "status": "Scripts Python e PowerShell PASS; 30/30 bloqueios ligados a intercepts GK bem-sucedidos; limitações de proveniência registradas.",
-      "summary": "Trinta ShotBlocked ActiveShoot coincidem com InterceptSucceededAtClosestApproach no mesmo seed/lifecycle/tick; 17 falhas tiveram terminais variados. Fluxo fonte compatível, mas hash Simulation/assembly histórico ausente; linkage PARTIAL."
-    },
-    {
       "id": "W162",
       "wave": "W162",
       "publishedAt": "2026-10-28T06:35:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W168: censo dos outcomes técnicos após o intercept GK",
       "status": "4 seeds focais; 3/4 outcomes mudam; 2/2 novos pares têm estado/22 decisões completos iguais.",
       "summary": "No primeiro passe após o gol, amostras 4m/5m diferem em 4/4 seeds; 1734 lança em ambos, 1735 degrada em 5m; 1732/33 também degradam com prova cross-arm baseada em projeção. Não é taxa geral ou qualidade."
+    },
+    {
+      "id": "W169",
+      "wave": "W169",
+      "publishedAt": "2026-10-28T07:58:28Z",
+      "macro": "M2",
+      "title": "W169: full-state crosswalk em quatro seeds",
+      "status": "4/4 estados e 22 decisões pareados; 3/4 outcomes técnicos mudam com draw isolado; 1/4 não muda.",
+      "summary": "States JSON completos idênticos em todos os quatro ticks pós-reset; samples PassTechnical different. Resolver reproduz 3 flips e um não-flip; evidência local, sem medir qualidade ou incidência geral."
     },
     {
       "wave": "W66",
@@ -2966,6 +2966,10 @@
     {
       "id": "CP-W168-01",
       "title": "Four-seed post-intercept pass census"
+    },
+    {
+      "id": "CP-W169-01",
+      "title": "Four-seed full-state causal crosswalk"
     }
   ]
 }
