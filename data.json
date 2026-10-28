@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-115",
-  "updatedAt": "2026-10-28T09:04:50Z",
-  "cycle": "SS-ORCH-001-W181-POST-RECOVERY-TURNOVER",
+  "version": "2026.10.28-portal-116",
+  "updatedAt": "2026-10-28T09:07:46Z",
+  "cycle": "SS-ORCH-001-W182-SHOOT-SCORE-COMPETITION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W182: nos ticks81–95, auditar por que as ações Move/Pass foram escolhidas: eligibility, scores concorrentes de Move/Pass/Shoot para os portadores. Limitar conclusão ao estado local, sem batizar intenção coletiva.",
+  "currentFocus": "W183: decompor ShootEvaluation nos mesmos dez estados, registrar distancia, lane/ângulo/área e outros componentes efetivamente usados; relacionar inputs aos scores, sem ajuste de pesos. Identificar features desconhecidas explicitamente.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W181",
-    "wave": "W181",
-    "publishedAt": "2026-10-28T09:03:00Z",
+    "id": "W182",
+    "wave": "W182",
+    "publishedAt": "2026-10-28T09:06:44Z",
     "macro": "M2",
-    "title": "W181: turnover após recuperação e nova posse",
-    "status": "1/1 PASS; audit PASS; sequência local verificada.",
-    "summary": "PassFailed tick79 deixa target away recuperar no80; tackle home successful muda posse no81. Home passa/conclui no90; outro passe falha95 e home teammate recupera. Sem chute80–95."
+    "title": "W182: ranking de Shoot vs Move/Pass",
+    "status": "Auditoria 10/10 PASS; Shoot elegível sempre, score nunca vencedor.",
+    "summary": "Nos ticks82–94, Shoot elegível 10/10 e selecionado 0; Move vence8, Pass2. Explica ausência local por comparação de scores, não calibragem global."
   },
   "recentCycles": [
-    {
-      "id": "W174",
-      "wave": "W174",
-      "publishedAt": "2026-10-28T08:40:00Z",
-      "macro": "M2",
-      "title": "W174: passe onside concluído em jogo corrido",
-      "status": "2/2 PASS; auditoria JSON PASS; uma instância reproduzida duas vezes.",
-      "summary": "No tick 16, jogo corrido com RestartState nulo e target fora do snapshot; passe completo tick 19 e alvo recebe posse; sem OffsideOffence. Estado exato repete nas duas seeds."
-    },
     {
       "id": "W175",
       "wave": "W175",
@@ -92,6 +83,15 @@
       "title": "W181: turnover após recuperação e nova posse",
       "status": "1/1 PASS; audit PASS; sequência local verificada.",
       "summary": "PassFailed tick79 deixa target away recuperar no80; tackle home successful muda posse no81. Home passa/conclui no90; outro passe falha95 e home teammate recupera. Sem chute80–95."
+    },
+    {
+      "id": "W182",
+      "wave": "W182",
+      "publishedAt": "2026-10-28T09:06:44Z",
+      "macro": "M2",
+      "title": "W182: ranking de Shoot vs Move/Pass",
+      "status": "Auditoria 10/10 PASS; Shoot elegível sempre, score nunca vencedor.",
+      "summary": "Nos ticks82–94, Shoot elegível 10/10 e selecionado 0; Move vence8, Pass2. Explica ausência local por comparação de scores, não calibragem global."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W174",
-      "wave": "W174",
-      "publishedAt": "2026-10-28T08:40:00Z",
-      "macro": "M2",
-      "title": "W174: passe onside concluído em jogo corrido",
-      "status": "2/2 PASS; auditoria JSON PASS; uma instância reproduzida duas vezes.",
-      "summary": "No tick 16, jogo corrido com RestartState nulo e target fora do snapshot; passe completo tick 19 e alvo recebe posse; sem OffsideOffence. Estado exato repete nas duas seeds."
-    },
-    {
       "id": "W175",
       "wave": "W175",
       "publishedAt": "2026-10-28T08:45:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W181: turnover após recuperação e nova posse",
       "status": "1/1 PASS; audit PASS; sequência local verificada.",
       "summary": "PassFailed tick79 deixa target away recuperar no80; tackle home successful muda posse no81. Home passa/conclui no90; outro passe falha95 e home teammate recupera. Sem chute80–95."
+    },
+    {
+      "id": "W182",
+      "wave": "W182",
+      "publishedAt": "2026-10-28T09:06:44Z",
+      "macro": "M2",
+      "title": "W182: ranking de Shoot vs Move/Pass",
+      "status": "Auditoria 10/10 PASS; Shoot elegível sempre, score nunca vencedor.",
+      "summary": "Nos ticks82–94, Shoot elegível 10/10 e selecionado 0; Move vence8, Pass2. Explica ausência local por comparação de scores, não calibragem global."
     },
     {
       "wave": "W66",
@@ -3050,6 +3050,14 @@
     {
       "id": "CP-W181-02",
       "title": "Handoff W181 compacto publicado"
+    },
+    {
+      "id": "CP-W182-01",
+      "title": "Competição local de scores"
+    },
+    {
+      "id": "CP-W182-02",
+      "title": "Handoff W182 compacto publicado"
     }
   ]
 }
