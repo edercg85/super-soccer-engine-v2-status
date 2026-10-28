@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-60",
-  "updatedAt": "2026-10-27T23:16:40-03:00",
-  "cycle": "SS-ORCH-001-W125-NEXT-PASS-CANDIDATE-SCORE-TRACE",
+  "version": "2026.10.28-portal-61",
+  "updatedAt": "2026-10-27T23:33:00-03:00",
+  "cycle": "SS-ORCH-001-W126-READER-CONSUMER-SNAPSHOT",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W126 teste falsificável: forçar, como contrafactual explicitamente rotulado, o candidato Pass de maior score de cada um dos dois estados pós-movimento ao ActionResolutionEngine e comparar snapshots de impedimento/ActivePass, mantendo os outros jogadores fixos. Não chamar esses tops de alvo real, pois Pass não venceu.",
+  "currentFocus": "W127: replay pareado controlado de um passe OFF naturalmente selecionado até o primeiro efeito terminal, com prestate/RNG compartilhados; abortar se cursor RNG não puder ser reconstruído.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W125",
-    "wave": "W125",
-    "publishedAt": "2026-10-28T02:16:40Z",
+    "id": "W126",
+    "wave": "W126",
+    "publishedAt": "2026-10-28T02:32:00Z",
     "macro": "M2",
-    "title": "W125: score dos passes após mudança de Move",
-    "status": "Um snapshot pareado altera o candidate ranking; Move vence e nenhum passe é disparado. Claim local parcial, sem qualidade de jogo.",
-    "summary": "No estado W05 seed1729 pré-divergência, os mesmos dez receptores seguem elegíveis. O maior score muda de um jogador para outro depois dos movimentos OFF/ON, mas a próxima ação global continua Move nos dois braços; os tops são apenas candidatos potenciais."
+    "title": "W126: escolha local de passe e snapshot de impedimento",
+    "status": "3/3 testes focais PASS; claim local confirmada; auditoria independente pendente; próximo tick UNKNOWN.",
+    "summary": "Nos snapshots W07 1730/1731, após movimentos OFF/ON pareados, OFF escolhe Pass e ON Move; candidato OFF corresponde ao PassAction e não aparece marcado em OffsideSnapshot. W06 1729 mantém Move nos dois braços. Os snapshots W07 compartilham geometria; não são réplicas independentes."
   },
   "recentCycles": [
-    {
-      "id": "W118",
-      "wave": "W118",
-      "publishedAt": "2026-10-27T22:00:40Z",
-      "macro": "M2",
-      "title": "Replay natural endpoint/segment/linear-relative",
-      "status": "Concluído; auditoria PASS mecanismo estreito / PARTIAL equivalência completa",
-      "summary": "Dois snapshots naturais: segment mode seleciona mover; endpoint e linear mode não. Mesma decisão/ActionKey, bola solta e ActivePass/BallMovement mantidos no linear. Sem catch físico/qualidade."
-    },
     {
       "id": "W119",
       "wave": "W119",
@@ -87,11 +78,20 @@
     {
       "id": "W125",
       "wave": "W125",
-      "publishedAt": "2026-10-28T02:16:40Z",
+      "publishedAt": "2026-10-28T02:20:20Z",
       "macro": "M2",
       "title": "W125: score dos passes após mudança de Move",
       "status": "Um snapshot pareado altera o candidate ranking; Move vence e nenhum passe é disparado. Claim local parcial, sem qualidade de jogo.",
       "summary": "No estado W05 seed1729 pré-divergência, os mesmos dez receptores seguem elegíveis. O maior score muda de um jogador para outro depois dos movimentos OFF/ON, mas a próxima ação global continua Move nos dois braços; os tops são apenas candidatos potenciais."
+    },
+    {
+      "id": "W126",
+      "wave": "W126",
+      "publishedAt": "2026-10-28T02:32:00Z",
+      "macro": "M2",
+      "title": "W126: escolha local de passe e snapshot de impedimento",
+      "status": "3/3 testes focais PASS; claim local confirmada; auditoria independente pendente; próximo tick UNKNOWN.",
+      "summary": "Nos snapshots W07 1730/1731, após movimentos OFF/ON pareados, OFF escolhe Pass e ON Move; candidato OFF corresponde ao PassAction e não aparece marcado em OffsideSnapshot. W06 1729 mantém Move nos dois braços. Os snapshots W07 compartilham geometria; não são réplicas independentes."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W118",
-      "wave": "W118",
-      "publishedAt": "2026-10-27T22:00:40Z",
-      "macro": "M2",
-      "title": "Replay natural endpoint/segment/linear-relative",
-      "status": "Concluído; auditoria PASS mecanismo estreito / PARTIAL equivalência completa",
-      "summary": "Dois snapshots naturais: segment mode seleciona mover; endpoint e linear mode não. Mesma decisão/ActionKey, bola solta e ActivePass/BallMovement mantidos no linear. Sem catch físico/qualidade."
-    },
-    {
       "id": "W119",
       "wave": "W119",
       "publishedAt": "2026-10-27T22:01:57Z",
@@ -1111,11 +1102,20 @@
     {
       "id": "W125",
       "wave": "W125",
-      "publishedAt": "2026-10-28T02:16:40Z",
+      "publishedAt": "2026-10-28T02:20:20Z",
       "macro": "M2",
       "title": "W125: score dos passes após mudança de Move",
       "status": "Um snapshot pareado altera o candidate ranking; Move vence e nenhum passe é disparado. Claim local parcial, sem qualidade de jogo.",
       "summary": "No estado W05 seed1729 pré-divergência, os mesmos dez receptores seguem elegíveis. O maior score muda de um jogador para outro depois dos movimentos OFF/ON, mas a próxima ação global continua Move nos dois braços; os tops são apenas candidatos potenciais."
+    },
+    {
+      "id": "W126",
+      "wave": "W126",
+      "publishedAt": "2026-10-28T02:32:00Z",
+      "macro": "M2",
+      "title": "W126: escolha local de passe e snapshot de impedimento",
+      "status": "3/3 testes focais PASS; claim local confirmada; auditoria independente pendente; próximo tick UNKNOWN.",
+      "summary": "Nos snapshots W07 1730/1731, após movimentos OFF/ON pareados, OFF escolhe Pass e ON Move; candidato OFF corresponde ao PassAction e não aparece marcado em OffsideSnapshot. W06 1729 mantém Move nos dois braços. Os snapshots W07 compartilham geometria; não são réplicas independentes."
     },
     {
       "wave": "W66",
@@ -2702,6 +2702,14 @@
     {
       "id": "CP-W125-01",
       "title": "Candidatos de passe após o movimento em t84"
+    },
+    {
+      "id": "CP-W126-00",
+      "title": "Preflight e correção da hipótese multiseed"
+    },
+    {
+      "id": "CP-W126-01",
+      "title": "Seleção de Pass e OffsideSnapshot em fixtures congeladas"
     }
   ]
 }
