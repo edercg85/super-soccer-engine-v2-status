@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-89",
-  "updatedAt": "2026-10-28T02:16:53-03:00",
-  "cycle": "SS-ORCH-001-W154-SHOOT-LIFECYCLE-RECONCILIATION",
+  "version": "2026.10.28-portal-90",
+  "updatedAt": "2026-10-28T02:25:27-03:00",
+  "cycle": "SS-ORCH-001-W155-SHOT-ORIGIN-GEOMETRY",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W155: recapturar lifecycles ON da fixture seed1730, comparar hashes W152 e medir distância de origem e geometria de cada crossing; investigar se o excesso de gols se concentra em finalizações curtas sem assumir causalidade.",
+  "currentFocus": "W156: telemetria de goleiro defensor e bloqueadores durante ActiveShoot nas duas seeds ON, comparando hashes contra W152/W153; verificar distância ao ball/crossing, ações e fatos de bloqueio sem alterar regras.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W154",
-    "wave": "W154",
-    "publishedAt": "2026-10-28T05:16:53Z",
+    "id": "W155",
+    "wave": "W155",
+    "publishedAt": "2026-10-28T05:25:27Z",
     "macro": "M2",
-    "title": "W154: ciclo de chute reconciliado e replay determinístico",
-    "status": "1/1 PASS; W153 reproduzido tick a tick; 24 lifecycles terminados em 17 gols, 5 bloqueios e 2 fora.",
-    "summary": "Não havia erro de contagem: ShootLaunchDegraded ainda cria ActiveShoot; cinco casos terminam em gol. Repetição seed1731 idêntica nos dois braços. Taxa de gols e efeito de qualidade permanecem desconhecidos."
+    "title": "W155: distância e crossing dos chutes SafeForward",
+    "status": "1/1 PASS; W152/W153 hash-exact; origens de gol ON em média 5,63m/5,38m do centro.",
+    "summary": "Seed1730 ON 27/29 gols; seed1731 ON 17/24. Lifecycles e crossings reconciliados; muitas finalizações começam perto do gol, mas defesa/goleiro não foram capturados. Sem aceite de qualidade."
   },
   "recentCycles": [
-    {
-      "id": "W147",
-      "wave": "W147",
-      "publishedAt": "2026-10-28T04:04:04Z",
-      "macro": "M2",
-      "title": "W147: primeiro recovery SafeForward na seed1730",
-      "status": "1/1 PASS; ON/OFF iguais no t173.",
-      "summary": "Após offside t152, recovery t172 leva a Move no t173. Baseline já avança; MoveToGoal aproximaria o defensor de 7,744 para 2,110, então o selector não troca."
-    },
     {
       "id": "W148",
       "wave": "W148",
@@ -92,6 +83,15 @@
       "title": "W154: ciclo de chute reconciliado e replay determinístico",
       "status": "1/1 PASS; W153 reproduzido tick a tick; 24 lifecycles terminados em 17 gols, 5 bloqueios e 2 fora.",
       "summary": "Não havia erro de contagem: ShootLaunchDegraded ainda cria ActiveShoot; cinco casos terminam em gol. Repetição seed1731 idêntica nos dois braços. Taxa de gols e efeito de qualidade permanecem desconhecidos."
+    },
+    {
+      "id": "W155",
+      "wave": "W155",
+      "publishedAt": "2026-10-28T05:25:27Z",
+      "macro": "M2",
+      "title": "W155: distância e crossing dos chutes SafeForward",
+      "status": "1/1 PASS; W152/W153 hash-exact; origens de gol ON em média 5,63m/5,38m do centro.",
+      "summary": "Seed1730 ON 27/29 gols; seed1731 ON 17/24. Lifecycles e crossings reconciliados; muitas finalizações começam perto do gol, mas defesa/goleiro não foram capturados. Sem aceite de qualidade."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W147",
-      "wave": "W147",
-      "publishedAt": "2026-10-28T04:04:04Z",
-      "macro": "M2",
-      "title": "W147: primeiro recovery SafeForward na seed1730",
-      "status": "1/1 PASS; ON/OFF iguais no t173.",
-      "summary": "Após offside t152, recovery t172 leva a Move no t173. Baseline já avança; MoveToGoal aproximaria o defensor de 7,744 para 2,110, então o selector não troca."
-    },
-    {
       "id": "W148",
       "wave": "W148",
       "publishedAt": "2026-10-28T04:17:23Z",
@@ -1116,6 +1107,15 @@
       "title": "W154: ciclo de chute reconciliado e replay determinístico",
       "status": "1/1 PASS; W153 reproduzido tick a tick; 24 lifecycles terminados em 17 gols, 5 bloqueios e 2 fora.",
       "summary": "Não havia erro de contagem: ShootLaunchDegraded ainda cria ActiveShoot; cinco casos terminam em gol. Repetição seed1731 idêntica nos dois braços. Taxa de gols e efeito de qualidade permanecem desconhecidos."
+    },
+    {
+      "id": "W155",
+      "wave": "W155",
+      "publishedAt": "2026-10-28T05:25:27Z",
+      "macro": "M2",
+      "title": "W155: distância e crossing dos chutes SafeForward",
+      "status": "1/1 PASS; W152/W153 hash-exact; origens de gol ON em média 5,63m/5,38m do centro.",
+      "summary": "Seed1730 ON 27/29 gols; seed1731 ON 17/24. Lifecycles e crossings reconciliados; muitas finalizações começam perto do gol, mas defesa/goleiro não foram capturados. Sem aceite de qualidade."
     },
     {
       "wave": "W66",
@@ -2910,6 +2910,10 @@
     {
       "id": "CP-W154-01",
       "title": "W154 reconciled shot lifecycle and replay"
+    },
+    {
+      "id": "CP-W155-01",
+      "title": "W155 shot origin and terminal geometry"
     }
   ]
 }
