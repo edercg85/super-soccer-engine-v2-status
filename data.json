@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-82",
-  "updatedAt": "2026-10-28T01:04:04-03:00",
-  "cycle": "SS-ORCH-001-W147-SAFEFORWARD-SEED1730",
+  "version": "2026.10.28-portal-83",
+  "updatedAt": "2026-10-28T01:17:23-03:00",
+  "cycle": "SS-ORCH-001-W148-SAFEFORWARD-GUARD-CENSUS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W148: percorrer os recoveries same-team restantes após offside t152 na seed1730; contar guardas verdadeiras apenas nessa janela e registrar cada comparação do mesmo estado.",
+  "currentFocus": "W149: capture candidates and vectors directly at the SafeForward branch for snapshots t1423, t3533 and t4501; reconcile recomputed guards, diagnostics and final result without changing policy.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W147",
-    "wave": "W147",
-    "publishedAt": "2026-10-28T04:04:04Z",
+    "id": "W148",
+    "wave": "W148",
+    "publishedAt": "2026-10-28T04:17:23Z",
     "macro": "M2",
-    "title": "W147: primeiro recovery SafeForward na seed1730",
-    "status": "1/1 PASS; ON/OFF iguais no t173.",
-    "summary": "Após offside t152, recovery t172 leva a Move no t173. Baseline já avança; MoveToGoal aproximaria o defensor de 7,744 para 2,110, então o selector não troca."
+    "title": "W148: SafeForward post-offside guard census",
+    "status": "1/1 PASS; 102 same-state ON replay matches; causal guard evidence partial due divergences.",
+    "summary": "Seed1730 after offside t152: 102 carrier decisions after recovery (69 Pass, 33 Move); five final MoveToGoal choices differ ON/OFF, three align with recomputed guards. t1423/t3533/t4501 diverge across decision, diagnostics and reconstructed selector; retained as UNKNOWN."
   },
   "recentCycles": [
-    {
-      "id": "W140",
-      "wave": "W140",
-      "publishedAt": "2026-10-28T03:32:17Z",
-      "macro": "M2",
-      "title": "W140: ação após recovery",
-      "status": "1/1 PASS; carrier away executa MoveCompleted e mantém a posse em t135.",
-      "summary": "O mesmo 4c69… que recuperou após PassFailed recebe Move em t135, continua com a bola e não cria ActivePass."
-    },
     {
       "id": "W141",
       "wave": "W141",
@@ -92,6 +83,15 @@
       "title": "W147: primeiro recovery SafeForward na seed1730",
       "status": "1/1 PASS; ON/OFF iguais no t173.",
       "summary": "Após offside t152, recovery t172 leva a Move no t173. Baseline já avança; MoveToGoal aproximaria o defensor de 7,744 para 2,110, então o selector não troca."
+    },
+    {
+      "id": "W148",
+      "wave": "W148",
+      "publishedAt": "2026-10-28T04:17:23Z",
+      "macro": "M2",
+      "title": "W148: SafeForward post-offside guard census",
+      "status": "1/1 PASS; 102 same-state ON replay matches; causal guard evidence partial due divergences.",
+      "summary": "Seed1730 after offside t152: 102 carrier decisions after recovery (69 Pass, 33 Move); five final MoveToGoal choices differ ON/OFF, three align with recomputed guards. t1423/t3533/t4501 diverge across decision, diagnostics and reconstructed selector; retained as UNKNOWN."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W140",
-      "wave": "W140",
-      "publishedAt": "2026-10-28T03:32:17Z",
-      "macro": "M2",
-      "title": "W140: ação após recovery",
-      "status": "1/1 PASS; carrier away executa MoveCompleted e mantém a posse em t135.",
-      "summary": "O mesmo 4c69… que recuperou após PassFailed recebe Move em t135, continua com a bola e não cria ActivePass."
-    },
-    {
       "id": "W141",
       "wave": "W141",
       "publishedAt": "2026-10-28T03:34:25Z",
@@ -1116,6 +1107,15 @@
       "title": "W147: primeiro recovery SafeForward na seed1730",
       "status": "1/1 PASS; ON/OFF iguais no t173.",
       "summary": "Após offside t152, recovery t172 leva a Move no t173. Baseline já avança; MoveToGoal aproximaria o defensor de 7,744 para 2,110, então o selector não troca."
+    },
+    {
+      "id": "W148",
+      "wave": "W148",
+      "publishedAt": "2026-10-28T04:17:23Z",
+      "macro": "M2",
+      "title": "W148: SafeForward post-offside guard census",
+      "status": "1/1 PASS; 102 same-state ON replay matches; causal guard evidence partial due divergences.",
+      "summary": "Seed1730 after offside t152: 102 carrier decisions after recovery (69 Pass, 33 Move); five final MoveToGoal choices differ ON/OFF, three align with recomputed guards. t1423/t3533/t4501 diverge across decision, diagnostics and reconstructed selector; retained as UNKNOWN."
     },
     {
       "wave": "W66",
@@ -2878,6 +2878,10 @@
     {
       "id": "CP-W147-01",
       "title": "Contrafactual ON/OFF no recovery seed1730"
+    },
+    {
+      "id": "CP-W148-00",
+      "title": "W148 census and discrepancy checkpoint"
     }
   ]
 }
