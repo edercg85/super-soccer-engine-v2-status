@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-190",
-  "updatedAt": "2026-10-28T18:23:00Z",
-  "cycle": "W265",
+  "version": "2026.10.28-portal-191",
+  "updatedAt": "2026-10-28T18:35:35Z",
+  "cycle": "W266",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W265 concluiu análise de evento e geometria em W261 clips vinculados. W266 planejada: verificar PDB/símbolos/source mapping da build W214; não atribuir source HEAD sem crosswalk demonstrado.",
+  "currentFocus": "W266 concluiu o crosswalk dos assemblies W214: checksums PDB normalizados, GUIDs CodeView e documentos-fonte conferem. Próximo: tentar reconstruir candidatos do recovery nos dados existentes; se os campos não existirem, priorizar revisão humana do replay W262. W255 segue a última avaliação integrada.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W265",
-    "wave": "W265",
-    "publishedAt": "2026-10-28T18:23:00Z",
+    "id": "W266",
+    "wave": "W266",
+    "publishedAt": "2026-10-28T18:35:35Z",
     "macro": "M3",
-    "title": "Loose-ball recovery ligado ao passe falhado por evento e posição",
-    "status": "Efeito local observado; motivo interno e qualidade desconhecidos",
-    "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferência de interception/qualidade."
+    "title": "PDB/fonte W214 validado; semântica de PassFailed e recovery explicada",
+    "status": "Mecanismo estático confirmado; causa física do caso W265 e qualidade permanecem UNKNOWN",
+    "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos três assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distância ao endpoint e ordena por BallControl."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W261",
-      "wave": "W261",
-      "publishedAt": "2026-10-28T18:03:15Z",
-      "macro": "M3",
-      "title": "Clips W260 ligados ao run por fingerprints completos",
-      "status": "Artefato visual verificável; review humano pendente",
-      "summary": "Clips de 11 frames nos dois braços; input, state final, eventos, draws RNG, ticks e scores coincidem exatamente com W260; manifests/chunks ReadVerified PASS. Human review UNKNOWN."
-    },
-    {
       "id": "W262",
       "wave": "W262",
       "publishedAt": "2026-10-28T18:10:14Z",
@@ -101,6 +92,15 @@
       "title": "Loose-ball recovery ligado ao passe falhado por evento e posição",
       "status": "Efeito local observado; motivo interno e qualidade desconhecidos",
       "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferência de interception/qualidade."
+    },
+    {
+      "id": "W266",
+      "wave": "W266",
+      "publishedAt": "2026-10-28T18:35:35Z",
+      "macro": "M3",
+      "title": "PDB/fonte W214 validado; semântica de PassFailed e recovery explicada",
+      "status": "Mecanismo estático confirmado; causa física do caso W265 e qualidade permanecem UNKNOWN",
+      "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos três assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distância ao endpoint e ordena por BallControl."
     }
   ],
   "macros": [
@@ -1060,8 +1060,8 @@
     "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
     "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
     "shotsGoals": "Finalizações 6→13 e gols 5→11; intervalos pareados cruzam zero, sem evidência de ganho consistente.",
-    "lastIntegrated": "W255 permanece última avaliação integrada. W265 relaciona evento de recovery e geometria em um recorte seed1750; sem motivo de falha, review humano ou conclusão de qualidade.",
-    "mainBlocker": "Mecanismo interno de PassFailed não foi exposto no trace; nenhuma avaliação humana de gameplay e nenhuma avaliação integrada posterior a W255.",
+    "lastIntegrated": "W255 continua sendo a última avaliação integrada (18 pares). W266 é análise estática de mecanismo, não uma nova avaliação de partida; nenhum julgamento humano do replay foi registrado.",
+    "mainBlocker": "Ainda falta avaliação humana do replay e uma avaliação integrada posterior a W255. Para a causa específica de W265, faltam todos os candidatos elegíveis e dados de ordem intratick.",
     "replay": "Não há replay navegável publicado no portal; viewer offline local de ticks686-696 passou renderização técnica, mas revisão humana do futebol segue pendente."
   },
   "diary": [
@@ -1102,15 +1102,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W261",
-      "wave": "W261",
-      "publishedAt": "2026-10-28T18:03:15Z",
-      "macro": "M3",
-      "title": "Clips W260 ligados ao run por fingerprints completos",
-      "status": "Artefato visual verificável; review humano pendente",
-      "summary": "Clips de 11 frames nos dois braços; input, state final, eventos, draws RNG, ticks e scores coincidem exatamente com W260; manifests/chunks ReadVerified PASS. Human review UNKNOWN."
-    },
-    {
       "id": "W262",
       "wave": "W262",
       "publishedAt": "2026-10-28T18:10:14Z",
@@ -1145,6 +1136,15 @@
       "title": "Loose-ball recovery ligado ao passe falhado por evento e posição",
       "status": "Efeito local observado; motivo interno e qualidade desconhecidos",
       "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferência de interception/qualidade."
+    },
+    {
+      "id": "W266",
+      "wave": "W266",
+      "publishedAt": "2026-10-28T18:35:35Z",
+      "macro": "M3",
+      "title": "PDB/fonte W214 validado; semântica de PassFailed e recovery explicada",
+      "status": "Mecanismo estático confirmado; causa física do caso W265 e qualidade permanecem UNKNOWN",
+      "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos três assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distância ao endpoint e ordena por BallControl."
     },
     {
       "wave": "W66",
@@ -3375,6 +3375,10 @@
     {
       "id": "CP-W265-FINAL",
       "title": "W265 final — recovery e geometria observável de PassFailed"
+    },
+    {
+      "id": "CP-W266-FINAL",
+      "title": "W266 final — source mapping e terminal/recovery estáticos"
     }
   ]
 }
