@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-75",
-  "updatedAt": "2026-10-28T00:32:17-03:00",
-  "cycle": "SS-ORCH-001-W140-RECOVERY-CARRIER-ACTION",
+  "version": "2026.10.28-portal-76",
+  "updatedAt": "2026-10-28T00:34:25-03:00",
+  "cycle": "SS-ORCH-001-W141-RECOVERY-CARRIER-T136",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W141: capturar t136 para 4c69… no mesmo replay, validando decisão e posse sem extrapolar além da janela.",
+  "currentFocus": "W142: confirmar a decisão/efeitos em t137 no mesmo trace e interromper se a posse ou a identidade do carrier mudar.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W140",
-    "wave": "W140",
-    "publishedAt": "2026-10-28T03:32:17Z",
+    "id": "W141",
+    "wave": "W141",
+    "publishedAt": "2026-10-28T03:34:25Z",
     "macro": "M2",
-    "title": "W140: ação após recovery",
-    "status": "1/1 PASS; carrier away executa MoveCompleted e mantém a posse em t135.",
-    "summary": "O mesmo 4c69… que recuperou após PassFailed recebe Move em t135, continua com a bola e não cria ActivePass."
+    "title": "W141: segundo tick após recovery",
+    "status": "1/1 PASS; MoveCompleted e posse retida em t136 neste trace.",
+    "summary": "No mesmo caso seed1731 ON de W140, 4c69… executa outro MoveCompleted em t136; posse permanece e ActivePass nulo."
   },
   "recentCycles": [
-    {
-      "id": "W133",
-      "wave": "W133",
-      "publishedAt": "2026-10-28T03:03:37Z",
-      "macro": "M2",
-      "title": "W133: cobrador e lançamento do indireto",
-      "status": "2/2 PASS (quatro traces); receiver e ActivePass ligados; recepção ainda UNKNOWN.",
-      "summary": "Nos quatro traces W07, OffsideSetup chega a Ready em dois ticks; no seguinte o kicker executa PassAction. Beneficiário, kicker, receiver, ActionResult e ActivePass foram unidos."
-    },
     {
       "id": "W134",
       "wave": "W134",
@@ -92,6 +83,15 @@
       "title": "W140: ação após recovery",
       "status": "1/1 PASS; carrier away executa MoveCompleted e mantém a posse em t135.",
       "summary": "O mesmo 4c69… que recuperou após PassFailed recebe Move em t135, continua com a bola e não cria ActivePass."
+    },
+    {
+      "id": "W141",
+      "wave": "W141",
+      "publishedAt": "2026-10-28T03:34:25Z",
+      "macro": "M2",
+      "title": "W141: segundo tick após recovery",
+      "status": "1/1 PASS; MoveCompleted e posse retida em t136 neste trace.",
+      "summary": "No mesmo caso seed1731 ON de W140, 4c69… executa outro MoveCompleted em t136; posse permanece e ActivePass nulo."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W133",
-      "wave": "W133",
-      "publishedAt": "2026-10-28T03:03:37Z",
-      "macro": "M2",
-      "title": "W133: cobrador e lançamento do indireto",
-      "status": "2/2 PASS (quatro traces); receiver e ActivePass ligados; recepção ainda UNKNOWN.",
-      "summary": "Nos quatro traces W07, OffsideSetup chega a Ready em dois ticks; no seguinte o kicker executa PassAction. Beneficiário, kicker, receiver, ActionResult e ActivePass foram unidos."
-    },
-    {
       "id": "W134",
       "wave": "W134",
       "publishedAt": "2026-10-28T03:07:32Z",
@@ -1116,6 +1107,15 @@
       "title": "W140: ação após recovery",
       "status": "1/1 PASS; carrier away executa MoveCompleted e mantém a posse em t135.",
       "summary": "O mesmo 4c69… que recuperou após PassFailed recebe Move em t135, continua com a bola e não cria ActivePass."
+    },
+    {
+      "id": "W141",
+      "wave": "W141",
+      "publishedAt": "2026-10-28T03:34:25Z",
+      "macro": "M2",
+      "title": "W141: segundo tick após recovery",
+      "status": "1/1 PASS; MoveCompleted e posse retida em t136 neste trace.",
+      "summary": "No mesmo caso seed1731 ON de W140, 4c69… executa outro MoveCompleted em t136; posse permanece e ActivePass nulo."
     },
     {
       "wave": "W66",
@@ -2822,6 +2822,14 @@
     {
       "id": "CP-W140-01",
       "title": "Move e posse pós-recovery"
+    },
+    {
+      "id": "CP-W141-00",
+      "title": "Preflight da continuação do recovery"
+    },
+    {
+      "id": "CP-W141-01",
+      "title": "Segunda ação após recovery em t136"
     }
   ]
 }
