@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-76",
-  "updatedAt": "2026-10-28T00:34:25-03:00",
-  "cycle": "SS-ORCH-001-W141-RECOVERY-CARRIER-T136",
+  "version": "2026.10.28-portal-77",
+  "updatedAt": "2026-10-28T00:35:26-03:00",
+  "cycle": "SS-ORCH-001-W142-RECOVERY-CARRIER-T137",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W142: confirmar a decisão/efeitos em t137 no mesmo trace e interromper se a posse ou a identidade do carrier mudar.",
+  "currentFocus": "W143: capturar DecisionDiagnostics já disponível para o carrier nos ticks t135–137; verificar objetivo Move, candidatos e avaliação concorrente Pass/Shoot/Dribble sem inferir intenção.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W141",
-    "wave": "W141",
-    "publishedAt": "2026-10-28T03:34:25Z",
+    "id": "W142",
+    "wave": "W142",
+    "publishedAt": "2026-10-28T03:35:26Z",
     "macro": "M2",
-    "title": "W141: segundo tick após recovery",
-    "status": "1/1 PASS; MoveCompleted e posse retida em t136 neste trace.",
-    "summary": "No mesmo caso seed1731 ON de W140, 4c69… executa outro MoveCompleted em t136; posse permanece e ActivePass nulo."
+    "title": "W142: terceiro tick após recovery",
+    "status": "1/1 PASS; terceiro MoveCompleted e posse retida em t137.",
+    "summary": "No mesmo caso seed1731 ON, o carrier executa Move em t135–137 consecutivamente, sem perda de posse nem ActivePass. A causa/objetivo do Move não está identificada."
   },
   "recentCycles": [
-    {
-      "id": "W134",
-      "wave": "W134",
-      "publishedAt": "2026-10-28T03:07:32Z",
-      "macro": "M2",
-      "title": "W134: terminal do passe do indireto",
-      "status": "4/4 PASS; os quatro passes completaram para o receiver em 2–3 ticks.",
-      "summary": "PassCompleted, IDs, posse do receiver e limpeza do ActivePass foram ligados por referência de objeto; nas quatro avaliações observadas só o receiver constava como candidato."
-    },
     {
       "id": "W135",
       "wave": "W135",
@@ -92,6 +83,15 @@
       "title": "W141: segundo tick após recovery",
       "status": "1/1 PASS; MoveCompleted e posse retida em t136 neste trace.",
       "summary": "No mesmo caso seed1731 ON de W140, 4c69… executa outro MoveCompleted em t136; posse permanece e ActivePass nulo."
+    },
+    {
+      "id": "W142",
+      "wave": "W142",
+      "publishedAt": "2026-10-28T03:35:26Z",
+      "macro": "M2",
+      "title": "W142: terceiro tick após recovery",
+      "status": "1/1 PASS; terceiro MoveCompleted e posse retida em t137.",
+      "summary": "No mesmo caso seed1731 ON, o carrier executa Move em t135–137 consecutivamente, sem perda de posse nem ActivePass. A causa/objetivo do Move não está identificada."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W134",
-      "wave": "W134",
-      "publishedAt": "2026-10-28T03:07:32Z",
-      "macro": "M2",
-      "title": "W134: terminal do passe do indireto",
-      "status": "4/4 PASS; os quatro passes completaram para o receiver em 2–3 ticks.",
-      "summary": "PassCompleted, IDs, posse do receiver e limpeza do ActivePass foram ligados por referência de objeto; nas quatro avaliações observadas só o receiver constava como candidato."
-    },
-    {
       "id": "W135",
       "wave": "W135",
       "publishedAt": "2026-10-28T03:10:37Z",
@@ -1116,6 +1107,15 @@
       "title": "W141: segundo tick após recovery",
       "status": "1/1 PASS; MoveCompleted e posse retida em t136 neste trace.",
       "summary": "No mesmo caso seed1731 ON de W140, 4c69… executa outro MoveCompleted em t136; posse permanece e ActivePass nulo."
+    },
+    {
+      "id": "W142",
+      "wave": "W142",
+      "publishedAt": "2026-10-28T03:35:26Z",
+      "macro": "M2",
+      "title": "W142: terceiro tick após recovery",
+      "status": "1/1 PASS; terceiro MoveCompleted e posse retida em t137.",
+      "summary": "No mesmo caso seed1731 ON, o carrier executa Move em t135–137 consecutivamente, sem perda de posse nem ActivePass. A causa/objetivo do Move não está identificada."
     },
     {
       "wave": "W66",
@@ -2830,6 +2830,14 @@
     {
       "id": "CP-W141-01",
       "title": "Segunda ação após recovery em t136"
+    },
+    {
+      "id": "CP-W142-00",
+      "title": "Preflight terceiro tick do carrier"
+    },
+    {
+      "id": "CP-W142-01",
+      "title": "MoveCompleted em t137"
     }
   ]
 }
