@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-83",
-  "updatedAt": "2026-10-28T01:17:23-03:00",
-  "cycle": "SS-ORCH-001-W148-SAFEFORWARD-GUARD-CENSUS",
+  "version": "2026.10.28-portal-84",
+  "updatedAt": "2026-10-28T01:32:49-03:00",
+  "cycle": "SS-ORCH-001-W149-SAFEFORWARD-INVOCATION-TRACE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W149: capture candidates and vectors directly at the SafeForward branch for snapshots t1423, t3533 and t4501; reconcile recomputed guards, diagnostics and final result without changing policy.",
+  "currentFocus": "W150: medir efeitos espaciais e posse logo após os cinco overrides da seed1730 e nos dois ticks seguintes, em snapshots locais; não atribuir benefício global sem experimento pareado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W148",
-    "wave": "W148",
-    "publishedAt": "2026-10-28T04:17:23Z",
+    "id": "W149",
+    "wave": "W149",
+    "publishedAt": "2026-10-28T04:32:49Z",
     "macro": "M2",
-    "title": "W148: SafeForward post-offside guard census",
-    "status": "1/1 PASS; 102 same-state ON replay matches; causal guard evidence partial due divergences.",
-    "summary": "Seed1730 after offside t152: 102 carrier decisions after recovery (69 Pass, 33 Move); five final MoveToGoal choices differ ON/OFF, three align with recomputed guards. t1423/t3533/t4501 diverge across decision, diagnostics and reconstructed selector; retained as UNKNOWN."
+    "title": "W149: trace direto das entradas SafeForward",
+    "status": "1/1 PASS; três invocações instrumentadas e alinhadas com as guardas.",
+    "summary": "Em t1423/t3533, MoveToGoal progride e aumenta distância ao adversário; override aplicado. Em t4501, aproxima o adversário e é rejeitado. W148 reconstruía TargetPosition a partir de diagnóstico que combina alvo projetado e alvo bruto."
   },
   "recentCycles": [
-    {
-      "id": "W141",
-      "wave": "W141",
-      "publishedAt": "2026-10-28T03:34:25Z",
-      "macro": "M2",
-      "title": "W141: segundo tick após recovery",
-      "status": "1/1 PASS; MoveCompleted e posse retida em t136 neste trace.",
-      "summary": "No mesmo caso seed1731 ON de W140, 4c69… executa outro MoveCompleted em t136; posse permanece e ActivePass nulo."
-    },
     {
       "id": "W142",
       "wave": "W142",
@@ -92,6 +83,15 @@
       "title": "W148: SafeForward post-offside guard census",
       "status": "1/1 PASS; 102 same-state ON replay matches; causal guard evidence partial due divergences.",
       "summary": "Seed1730 after offside t152: 102 carrier decisions after recovery (69 Pass, 33 Move); five final MoveToGoal choices differ ON/OFF, three align with recomputed guards. t1423/t3533/t4501 diverge across decision, diagnostics and reconstructed selector; retained as UNKNOWN."
+    },
+    {
+      "id": "W149",
+      "wave": "W149",
+      "publishedAt": "2026-10-28T04:32:49Z",
+      "macro": "M2",
+      "title": "W149: trace direto das entradas SafeForward",
+      "status": "1/1 PASS; três invocações instrumentadas e alinhadas com as guardas.",
+      "summary": "Em t1423/t3533, MoveToGoal progride e aumenta distância ao adversário; override aplicado. Em t4501, aproxima o adversário e é rejeitado. W148 reconstruía TargetPosition a partir de diagnóstico que combina alvo projetado e alvo bruto."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W141",
-      "wave": "W141",
-      "publishedAt": "2026-10-28T03:34:25Z",
-      "macro": "M2",
-      "title": "W141: segundo tick após recovery",
-      "status": "1/1 PASS; MoveCompleted e posse retida em t136 neste trace.",
-      "summary": "No mesmo caso seed1731 ON de W140, 4c69… executa outro MoveCompleted em t136; posse permanece e ActivePass nulo."
-    },
-    {
       "id": "W142",
       "wave": "W142",
       "publishedAt": "2026-10-28T03:35:26Z",
@@ -1116,6 +1107,15 @@
       "title": "W148: SafeForward post-offside guard census",
       "status": "1/1 PASS; 102 same-state ON replay matches; causal guard evidence partial due divergences.",
       "summary": "Seed1730 after offside t152: 102 carrier decisions after recovery (69 Pass, 33 Move); five final MoveToGoal choices differ ON/OFF, three align with recomputed guards. t1423/t3533/t4501 diverge across decision, diagnostics and reconstructed selector; retained as UNKNOWN."
+    },
+    {
+      "id": "W149",
+      "wave": "W149",
+      "publishedAt": "2026-10-28T04:32:49Z",
+      "macro": "M2",
+      "title": "W149: trace direto das entradas SafeForward",
+      "status": "1/1 PASS; três invocações instrumentadas e alinhadas com as guardas.",
+      "summary": "Em t1423/t3533, MoveToGoal progride e aumenta distância ao adversário; override aplicado. Em t4501, aproxima o adversário e é rejeitado. W148 reconstruía TargetPosition a partir de diagnóstico que combina alvo projetado e alvo bruto."
     },
     {
       "wave": "W66",
@@ -2882,6 +2882,14 @@
     {
       "id": "CP-W148-00",
       "title": "W148 census and discrepancy checkpoint"
+    },
+    {
+      "id": "CP-W149-00",
+      "title": "W149 direct selector probe preflight"
+    },
+    {
+      "id": "CP-W149-01",
+      "title": "W149 final claims and next test"
     }
   ]
 }
