@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-70",
-  "updatedAt": "2026-10-28T00:10:37-03:00",
-  "cycle": "SS-ORCH-001-W135-POST-RECEPTION-DECISION",
+  "version": "2026.10.28-portal-71",
+  "updatedAt": "2026-10-28T00:17:23-03:00",
+  "cycle": "SS-ORCH-001-W136-POST-RECEIPT-PASS-TERMINAL",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W136: seguir os três ActivePass novos até terminal; manter a rota Move como controle sem passe e esclarecer o resultado PassLaunchDegraded apenas por eventos/estado.",
+  "currentFocus": "W137: observar a primeira decisão após os três terminais e a decisão seguinte da rota Move, ligando posse/ação/ActivePass; sem inferir qualidade global.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W135",
-    "wave": "W135",
-    "publishedAt": "2026-10-28T03:10:37Z",
+    "id": "W136",
+    "wave": "W136",
+    "publishedAt": "2026-10-28T03:17:23Z",
     "macro": "M2",
-    "title": "W135: primeira decisão após a recepção",
-    "status": "4/4 PASS; três Pass, um Move; um PassLaunchDegraded/false com ActivePass presente.",
-    "summary": "O receiver começa o tick com posse. Três passes removem a posse e criam ActivePass; um Move completa e mantém a posse. O passe degradado ainda não tem terminal observado."
+    "title": "W136: terminais das continuações",
+    "status": "4/4 PASS; três passes completam (incluindo o degradado), Move conserva posse.",
+    "summary": "PassCompleted e posse no alvo ligados por ActivePass nos três ramos. No quarto, MoveCompleted mantém posse e não há novo ActivePass naquele tick."
   },
   "recentCycles": [
-    {
-      "id": "W128",
-      "wave": "W128",
-      "publishedAt": "2026-10-28T03:05:00Z",
-      "macro": "M2",
-      "title": "W128: correção da numeração do OffsideSnapshot",
-      "status": "Corrigendum confirmado; 3/3 PASS; seleção, score e mapa espacial inalterados; conclusão sobre próximo tick permanece UNKNOWN.",
-      "summary": "W126 calculava o tick do resolver pelo prestate anterior. Valores corrigidos: W06=86, W07/1730=57, W07/1731=26. ZIPs originais preservados; W128 publica a correção append-only."
-    },
     {
       "id": "W129",
       "wave": "W129",
@@ -92,6 +83,15 @@
       "title": "W135: primeira decisão após a recepção",
       "status": "4/4 PASS; três Pass, um Move; um PassLaunchDegraded/false com ActivePass presente.",
       "summary": "O receiver começa o tick com posse. Três passes removem a posse e criam ActivePass; um Move completa e mantém a posse. O passe degradado ainda não tem terminal observado."
+    },
+    {
+      "id": "W136",
+      "wave": "W136",
+      "publishedAt": "2026-10-28T03:17:23Z",
+      "macro": "M2",
+      "title": "W136: terminais das continuações",
+      "status": "4/4 PASS; três passes completam (incluindo o degradado), Move conserva posse.",
+      "summary": "PassCompleted e posse no alvo ligados por ActivePass nos três ramos. No quarto, MoveCompleted mantém posse e não há novo ActivePass naquele tick."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W128",
-      "wave": "W128",
-      "publishedAt": "2026-10-28T03:05:00Z",
-      "macro": "M2",
-      "title": "W128: correção da numeração do OffsideSnapshot",
-      "status": "Corrigendum confirmado; 3/3 PASS; seleção, score e mapa espacial inalterados; conclusão sobre próximo tick permanece UNKNOWN.",
-      "summary": "W126 calculava o tick do resolver pelo prestate anterior. Valores corrigidos: W06=86, W07/1730=57, W07/1731=26. ZIPs originais preservados; W128 publica a correção append-only."
-    },
-    {
       "id": "W129",
       "wave": "W129",
       "publishedAt": "2026-10-28T03:31:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W135: primeira decisão após a recepção",
       "status": "4/4 PASS; três Pass, um Move; um PassLaunchDegraded/false com ActivePass presente.",
       "summary": "O receiver começa o tick com posse. Três passes removem a posse e criam ActivePass; um Move completa e mantém a posse. O passe degradado ainda não tem terminal observado."
+    },
+    {
+      "id": "W136",
+      "wave": "W136",
+      "publishedAt": "2026-10-28T03:17:23Z",
+      "macro": "M2",
+      "title": "W136: terminais das continuações",
+      "status": "4/4 PASS; três passes completam (incluindo o degradado), Move conserva posse.",
+      "summary": "PassCompleted e posse no alvo ligados por ActivePass nos três ramos. No quarto, MoveCompleted mantém posse e não há novo ActivePass naquele tick."
     },
     {
       "wave": "W66",
@@ -2782,6 +2782,14 @@
     {
       "id": "CP-W135-01",
       "title": "Ação pós-recepção e estado imediato"
+    },
+    {
+      "id": "CP-W136-00",
+      "title": "Preflight dos passes subsequentes"
+    },
+    {
+      "id": "CP-W136-01",
+      "title": "Terminal e posse das continuações"
     }
   ]
 }
