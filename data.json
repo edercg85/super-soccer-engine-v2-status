@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-84",
-  "updatedAt": "2026-10-28T01:32:49-03:00",
-  "cycle": "SS-ORCH-001-W149-SAFEFORWARD-INVOCATION-TRACE",
+  "version": "2026.10.28-portal-85",
+  "updatedAt": "2026-10-28T01:39:44-03:00",
+  "cycle": "SS-ORCH-001-W150-SAFEFORWARD-CONSEQUENCES",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W150: medir efeitos espaciais e posse logo após os cinco overrides da seed1730 e nos dois ticks seguintes, em snapshots locais; não atribuir benefício global sem experimento pareado.",
+  "currentFocus": "W151: recuperar snapshot e decision set de t4719 e resolver duas variantes do mesmo estado, mudando somente o Move do carrier ON versus OFF para testar se resultado TackleSucceeded/posse muda.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W149",
-    "wave": "W149",
-    "publishedAt": "2026-10-28T04:32:49Z",
+    "id": "W150",
+    "wave": "W150",
+    "publishedAt": "2026-10-28T04:39:44Z",
     "macro": "M2",
-    "title": "W149: trace direto das entradas SafeForward",
-    "status": "1/1 PASS; três invocações instrumentadas e alinhadas com as guardas.",
-    "summary": "Em t1423/t3533, MoveToGoal progride e aumenta distância ao adversário; override aplicado. Em t4501, aproxima o adversário e é rejeitado. W148 reconstruía TargetPosition a partir de diagnóstico que combina alvo projetado e alvo bruto."
+    "title": "W150: efeitos imediatos dos overrides",
+    "status": "1/1 PASS; cinemática projetada bateu runtime nos cinco casos.",
+    "summary": "Cinco MoveToGoal: quatro mantêm posse no tick e nos dois seguintes; t4719 sofre TackleSucceeded por adversário, com contato UNKNOWN. OFF é só projeção pelo mesmo resolver, não simulação pareada."
   },
   "recentCycles": [
-    {
-      "id": "W142",
-      "wave": "W142",
-      "publishedAt": "2026-10-28T03:35:26Z",
-      "macro": "M2",
-      "title": "W142: terceiro tick após recovery",
-      "status": "1/1 PASS; terceiro MoveCompleted e posse retida em t137.",
-      "summary": "No mesmo caso seed1731 ON, o carrier executa Move em t135–137 consecutivamente, sem perda de posse nem ActivePass. A causa/objetivo do Move não está identificada."
-    },
     {
       "id": "W143",
       "wave": "W143",
@@ -92,6 +83,15 @@
       "title": "W149: trace direto das entradas SafeForward",
       "status": "1/1 PASS; três invocações instrumentadas e alinhadas com as guardas.",
       "summary": "Em t1423/t3533, MoveToGoal progride e aumenta distância ao adversário; override aplicado. Em t4501, aproxima o adversário e é rejeitado. W148 reconstruía TargetPosition a partir de diagnóstico que combina alvo projetado e alvo bruto."
+    },
+    {
+      "id": "W150",
+      "wave": "W150",
+      "publishedAt": "2026-10-28T04:39:44Z",
+      "macro": "M2",
+      "title": "W150: efeitos imediatos dos overrides",
+      "status": "1/1 PASS; cinemática projetada bateu runtime nos cinco casos.",
+      "summary": "Cinco MoveToGoal: quatro mantêm posse no tick e nos dois seguintes; t4719 sofre TackleSucceeded por adversário, com contato UNKNOWN. OFF é só projeção pelo mesmo resolver, não simulação pareada."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W142",
-      "wave": "W142",
-      "publishedAt": "2026-10-28T03:35:26Z",
-      "macro": "M2",
-      "title": "W142: terceiro tick após recovery",
-      "status": "1/1 PASS; terceiro MoveCompleted e posse retida em t137.",
-      "summary": "No mesmo caso seed1731 ON, o carrier executa Move em t135–137 consecutivamente, sem perda de posse nem ActivePass. A causa/objetivo do Move não está identificada."
-    },
-    {
       "id": "W143",
       "wave": "W143",
       "publishedAt": "2026-10-28T03:40:06Z",
@@ -1116,6 +1107,15 @@
       "title": "W149: trace direto das entradas SafeForward",
       "status": "1/1 PASS; três invocações instrumentadas e alinhadas com as guardas.",
       "summary": "Em t1423/t3533, MoveToGoal progride e aumenta distância ao adversário; override aplicado. Em t4501, aproxima o adversário e é rejeitado. W148 reconstruía TargetPosition a partir de diagnóstico que combina alvo projetado e alvo bruto."
+    },
+    {
+      "id": "W150",
+      "wave": "W150",
+      "publishedAt": "2026-10-28T04:39:44Z",
+      "macro": "M2",
+      "title": "W150: efeitos imediatos dos overrides",
+      "status": "1/1 PASS; cinemática projetada bateu runtime nos cinco casos.",
+      "summary": "Cinco MoveToGoal: quatro mantêm posse no tick e nos dois seguintes; t4719 sofre TackleSucceeded por adversário, com contato UNKNOWN. OFF é só projeção pelo mesmo resolver, não simulação pareada."
     },
     {
       "wave": "W66",
@@ -2890,6 +2890,10 @@
     {
       "id": "CP-W149-01",
       "title": "W149 final claims and next test"
+    },
+    {
+      "id": "CP-W150-00",
+      "title": "W150 local consequence checkpoint"
     }
   ]
 }
