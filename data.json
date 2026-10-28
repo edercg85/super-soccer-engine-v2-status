@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-86",
-  "updatedAt": "2026-10-28T01:48:09-03:00",
-  "cycle": "SS-ORCH-001-W151-TACKLE-MOVE-CAUSALITY",
+  "version": "2026.10.28-portal-87",
+  "updatedAt": "2026-10-28T02:02:55-03:00",
+  "cycle": "SS-ORCH-001-W152-SAFEFORWARD-FULL-MATCH-PAIR",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W152: executar par completo determinístico seed1730 ON/OFF com demais parâmetros idênticos e estatísticas agregadas compactas, sem interpretar placar isolado como qualidade.",
+  "currentFocus": "W153: repetir par ON/OFF integral na fixture PALxCOR seed1731, mesma revisão e configurações congeladas; avaliar se a sensibilidade de SafeForward se repete e comparar primeiro ponto de divergência. Manter qualidade global UNKNOWN.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W151",
-    "wave": "W151",
-    "publishedAt": "2026-10-28T04:48:09Z",
+    "id": "W152",
+    "wave": "W152",
+    "publishedAt": "2026-10-28T05:02:00Z",
     "macro": "M2",
-    "title": "W151: tackle pareado ON/OFF t4719",
-    "status": "1/1 PASS; TackleSucceeded/posse/eventos iguais com draw real; hipótese causal rejeitada localmente.",
-    "summary": "No mesmo snapshot e decision set, somente a direção Move do carrier mudou. TackleSucceeded, efeitos semânticos e posse continuam iguais; posição do carrier diverge. Validação usa estado pré-movimento."
+    "title": "W152: pareamento integral SafeForward seed1730",
+    "status": "1/1 PASS; divergência de decisão/estado t56 e evento t57; grande sensibilidade em uma única seed.",
+    "summary": "ON 21–6/5400 ticks; OFF 1–0/5401; decisões Move diferem primeiro em t56. Há divergência tardia extensa, mas uma seed não confirma qualidade. ShotEvent não equivale a ShootLaunched."
   },
   "recentCycles": [
-    {
-      "id": "W144",
-      "wave": "W144",
-      "publishedAt": "2026-10-28T03:52:23Z",
-      "macro": "M2",
-      "title": "W144: contrafactual SafeForward no mesmo estado",
-      "status": "1/1 PASS; MoveToGoal ON vs MoveToTeammate OFF no snapshot t135.",
-      "summary": "Com as quatro guardas verdadeiras, SafeForward altera direção/objetivo do Move. A ação e o score ficam iguais; o candidato ON progride rumo ao objetivo sem aproximar o adversário mais próximo."
-    },
     {
       "id": "W145",
       "wave": "W145",
@@ -92,6 +83,15 @@
       "title": "W151: tackle pareado ON/OFF t4719",
       "status": "1/1 PASS; TackleSucceeded/posse/eventos iguais com draw real; hipótese causal rejeitada localmente.",
       "summary": "No mesmo snapshot e decision set, somente a direção Move do carrier mudou. TackleSucceeded, efeitos semânticos e posse continuam iguais; posição do carrier diverge. Validação usa estado pré-movimento."
+    },
+    {
+      "id": "W152",
+      "wave": "W152",
+      "publishedAt": "2026-10-28T05:02:00Z",
+      "macro": "M2",
+      "title": "W152: pareamento integral SafeForward seed1730",
+      "status": "1/1 PASS; divergência de decisão/estado t56 e evento t57; grande sensibilidade em uma única seed.",
+      "summary": "ON 21–6/5400 ticks; OFF 1–0/5401; decisões Move diferem primeiro em t56. Há divergência tardia extensa, mas uma seed não confirma qualidade. ShotEvent não equivale a ShootLaunched."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W144",
-      "wave": "W144",
-      "publishedAt": "2026-10-28T03:52:23Z",
-      "macro": "M2",
-      "title": "W144: contrafactual SafeForward no mesmo estado",
-      "status": "1/1 PASS; MoveToGoal ON vs MoveToTeammate OFF no snapshot t135.",
-      "summary": "Com as quatro guardas verdadeiras, SafeForward altera direção/objetivo do Move. A ação e o score ficam iguais; o candidato ON progride rumo ao objetivo sem aproximar o adversário mais próximo."
-    },
-    {
       "id": "W145",
       "wave": "W145",
       "publishedAt": "2026-10-28T03:56:06Z",
@@ -1116,6 +1107,15 @@
       "title": "W151: tackle pareado ON/OFF t4719",
       "status": "1/1 PASS; TackleSucceeded/posse/eventos iguais com draw real; hipótese causal rejeitada localmente.",
       "summary": "No mesmo snapshot e decision set, somente a direção Move do carrier mudou. TackleSucceeded, efeitos semânticos e posse continuam iguais; posição do carrier diverge. Validação usa estado pré-movimento."
+    },
+    {
+      "id": "W152",
+      "wave": "W152",
+      "publishedAt": "2026-10-28T05:02:00Z",
+      "macro": "M2",
+      "title": "W152: pareamento integral SafeForward seed1730",
+      "status": "1/1 PASS; divergência de decisão/estado t56 e evento t57; grande sensibilidade em uma única seed.",
+      "summary": "ON 21–6/5400 ticks; OFF 1–0/5401; decisões Move diferem primeiro em t56. Há divergência tardia extensa, mas uma seed não confirma qualidade. ShotEvent não equivale a ShootLaunched."
     },
     {
       "wave": "W66",
@@ -2898,6 +2898,10 @@
     {
       "id": "CP-W151-00",
       "title": "W151 same-snapshot tackle counterfactual"
+    },
+    {
+      "id": "CP-W152-00",
+      "title": "W152 paired full-match seed1730"
     }
   ]
 }
