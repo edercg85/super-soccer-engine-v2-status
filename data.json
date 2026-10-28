@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-57",
-  "updatedAt": "2026-10-27T23:02:26-03:00",
+  "version": "2026.10.28-portal-58",
+  "updatedAt": "2026-10-27T23:07:39-03:00",
   "cycle": "SS-ORCH-001-W123-LAUNCH-ORIGIN-AND-PASS-FAILURE-OWNERSHIP",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Próximo teste: obter sessão isolada ou instrumentação que carregue exatamente o EXE limpo SHA 0c78…; validar hash antes de consultar e traçar um reader com return address, code, arg2, +0x8d4c/+0x8d4e/+0x8ed0 e última escrita. Enquanto isso, auditar estaticamente os demais VA/raw-offsets citados no 003J usando o mapa PE corrigido.",
+  "currentFocus": "Próximo teste falsificável: instrumentar ou abrir em analisador isolado exatamente o EXE limpo SHA 0c78…; registrar no reader return address, code, arg2, +0x8d4c/+0x8d4e/+0x8ed0 e última escrita. A auditoria de offsets não prova identidade do objeto nem consumo runtime.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -14,11 +14,11 @@
   "latestAction": {
     "id": "W123",
     "wave": "W123",
-    "publishedAt": "2026-10-28T02:02:26Z",
+    "publishedAt": "2026-10-28T02:07:39Z",
     "macro": "M2",
-    "title": "W123: cross-build byte windows e corrigendum 003J",
-    "status": "CP19 confirmou dez janelas locais iguais e corrigiu seis offsets PE; CP20 publicou corrigendum append-only. Sem equivalência global ou reaching definition.",
-    "summary": "CP19 comparou 320 bytes em dez VAs, idênticos entre 3181… e o EXE limpo 0c78…. A correção PE mostrou seis offsets B1/C1 deslocados em +0x1000. CP20 atualizou a KB preservando B1/C1 e o manifesto original; ZIP 003J validado. Versão da imagem 3181 e consumo dinâmico continuam UNKNOWN."
+    "title": "W123: corrigendum PE e auditoria B1/C1",
+    "status": "CP19 dez janelas locais iguais; CP20 corrigendum 003J validado; CP21 conferiu todos os offsets explícitos B1/C1. Reaching definition e consumo runtime UNKNOWN.",
+    "summary": "O corrigendum 003J corrigiu seis file offsets e preservou os registros originais. CP21 conferiu dez ocorrências em B1/C1: seis pares únicos incorretos já corrigidos e dois corretos; nenhum erro adicional nessas fichas. A imagem 3181 e a build limpa 0c78 só têm correspondência demonstrada nas dez janelas; reaching definition segue UNKNOWN."
   },
   "recentCycles": [
     {
@@ -87,11 +87,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-28T02:02:26Z",
+      "publishedAt": "2026-10-28T02:07:39Z",
       "macro": "M2",
-      "title": "W123: cross-build byte windows e corrigendum 003J",
-      "status": "CP19 confirmou dez janelas locais iguais e corrigiu seis offsets PE; CP20 publicou corrigendum append-only. Sem equivalência global ou reaching definition.",
-      "summary": "CP19 comparou 320 bytes em dez VAs, idênticos entre 3181… e o EXE limpo 0c78…. A correção PE mostrou seis offsets B1/C1 deslocados em +0x1000. CP20 atualizou a KB preservando B1/C1 e o manifesto original; ZIP 003J validado. Versão da imagem 3181 e consumo dinâmico continuam UNKNOWN."
+      "title": "W123: corrigendum PE e auditoria B1/C1",
+      "status": "CP19 dez janelas locais iguais; CP20 corrigendum 003J validado; CP21 conferiu todos os offsets explícitos B1/C1. Reaching definition e consumo runtime UNKNOWN.",
+      "summary": "O corrigendum 003J corrigiu seis file offsets e preservou os registros originais. CP21 conferiu dez ocorrências em B1/C1: seis pares únicos incorretos já corrigidos e dois corretos; nenhum erro adicional nessas fichas. A imagem 3181 e a build limpa 0c78 só têm correspondência demonstrada nas dez janelas; reaching definition segue UNKNOWN."
     }
   ],
   "macros": [
@@ -1111,11 +1111,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-28T02:02:26Z",
+      "publishedAt": "2026-10-28T02:07:39Z",
       "macro": "M2",
-      "title": "W123: cross-build byte windows e corrigendum 003J",
-      "status": "CP19 confirmou dez janelas locais iguais e corrigiu seis offsets PE; CP20 publicou corrigendum append-only. Sem equivalência global ou reaching definition.",
-      "summary": "CP19 comparou 320 bytes em dez VAs, idênticos entre 3181… e o EXE limpo 0c78…. A correção PE mostrou seis offsets B1/C1 deslocados em +0x1000. CP20 atualizou a KB preservando B1/C1 e o manifesto original; ZIP 003J validado. Versão da imagem 3181 e consumo dinâmico continuam UNKNOWN."
+      "title": "W123: corrigendum PE e auditoria B1/C1",
+      "status": "CP19 dez janelas locais iguais; CP20 corrigendum 003J validado; CP21 conferiu todos os offsets explícitos B1/C1. Reaching definition e consumo runtime UNKNOWN.",
+      "summary": "O corrigendum 003J corrigiu seis file offsets e preservou os registros originais. CP21 conferiu dez ocorrências em B1/C1: seis pares únicos incorretos já corrigidos e dois corretos; nenhum erro adicional nessas fichas. A imagem 3181 e a build limpa 0c78 só têm correspondência demonstrada nas dez janelas; reaching definition segue UNKNOWN."
     },
     {
       "wave": "W66",
@@ -2682,6 +2682,10 @@
     {
       "id": "CP-W123-20",
       "title": "Corrigendum 003J e handoff validado"
+    },
+    {
+      "id": "CP-W123-21",
+      "title": "Auditoria exaustiva dos offsets explícitos B1/C1"
     }
   ]
 }
