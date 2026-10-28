@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-184",
-  "updatedAt": "2026-10-28T17:42:19Z",
-  "cycle": "W259",
+  "version": "2026.10.28-portal-185",
+  "updatedAt": "2026-10-28T17:53:43Z",
+  "cycle": "W260",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W259 concluiu a localização da primeira divergência e do terminal de passe em seeds1740/1749. Próxima etapa: terceiro seed na mesma preparação e revisão humana/replay do mecanismo, antes de propor mudanças de gameplay.",
+  "currentFocus": "W260 concluiu a replicação local no terceiro seed e expôs falha do passe alternativo. Próximo passo: auditoria humana/replay dos recortes; se indisponível, rastrear consequências curtas de posse/progressão e manter a conclusão limitada.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W259",
-    "wave": "W259",
-    "publishedAt": "2026-10-28T17:42:19Z",
+    "id": "W260",
+    "wave": "W260",
+    "publishedAt": "2026-10-28T17:53:43Z",
     "macro": "M3",
-    "title": "Efeito local Pass-aware: decisão→impedimento/conclusão em dois seeds",
-    "status": "Mecanismo causal local replicado; qualidade global UNKNOWN",
-    "summary": "Com mesmo prestate, OFF tenta passe a alvo offside e gera impedimento; ON seleciona Move e o mesmo passe é tentado depois e completado (seed1749). Seed1740 também liga a tentativa OFF ao impedimento; sem atribuição ao placar."
+    "title": "Terceiro seed: target switch e falha do passe alternativo",
+    "status": "Mecanismo local confirmado; custo imediato observado; qualidade UNKNOWN",
+    "summary": "No mesmo prestate tick688, ON rebaixa o alvo offside rank1→10 e escolhe outro passe; este falha no tick691 e a posse muda ao adversário. OFF tem impedimento no tick691 e reinício adversário tick694. Scores 1–1/0–2 sem atribuição causal."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W250",
-      "wave": "W250",
-      "publishedAt": "2026-10-28T17:01:00Z",
-      "macro": "M3",
-      "title": "W250: eventos iniciais depois do Receive split",
-      "status": "Concluído — efeito local por toggle confirmado; mediação de partida completa UNKNOWN.",
-      "summary": "Em 18 pares de ticks1–10, OFF passa a Kaio; ON a 4c69. ON gera impedimento no tick6 ligado ao snapshot do tick3 em 18/18; OFF tem 16 falhas de passe e 16 impedimentos. Aberturas variam em 3 grupos OFF/2 ON; quality/full-match não inferida."
-    },
-    {
       "id": "W256",
       "wave": "W256",
       "publishedAt": "2026-10-28T17:10:00Z",
@@ -101,6 +92,15 @@
       "title": "Efeito local Pass-aware: decisão→impedimento/conclusão em dois seeds",
       "status": "Mecanismo causal local replicado; qualidade global UNKNOWN",
       "summary": "Com mesmo prestate, OFF tenta passe a alvo offside e gera impedimento; ON seleciona Move e o mesmo passe é tentado depois e completado (seed1749). Seed1740 também liga a tentativa OFF ao impedimento; sem atribuição ao placar."
+    },
+    {
+      "id": "W260",
+      "wave": "W260",
+      "publishedAt": "2026-10-28T17:53:43Z",
+      "macro": "M3",
+      "title": "Terceiro seed: target switch e falha do passe alternativo",
+      "status": "Mecanismo local confirmado; custo imediato observado; qualidade UNKNOWN",
+      "summary": "No mesmo prestate tick688, ON rebaixa o alvo offside rank1→10 e escolhe outro passe; este falha no tick691 e a posse muda ao adversário. OFF tem impedimento no tick691 e reinício adversário tick694. Scores 1–1/0–2 sem atribuição causal."
     }
   ],
   "macros": [
@@ -1060,9 +1060,9 @@
     "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
     "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
     "shotsGoals": "Finalizações 6→13 e gols 5→11; intervalos pareados cruzam zero, sem evidência de ganho consistente.",
-    "lastIntegrated": "W255 continua a última comparação integrada de qualidade. W259 é evidência causal local em dois seeds, não um teste de qualidade ou promoção de flag.",
-    "mainBlocker": "Progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência geral ainda precisam de avaliação integrada e revisão humana de replay. W259 não liga o mecanismo local ao placar final.",
-    "replay": "Não há replay navegável referenciado; revisão humana dos recortes W259 pendente."
+    "lastIntegrated": "W255 segue a última avaliação integrada. W259/W260 replicam efeitos locais em três seeds; W260 mostra que o alvo alternativo pode falhar imediatamente. Sem qualidade global aprovada.",
+    "mainBlocker": "Falta revisão humana/replay, além de avaliação integrada de progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência. Efeitos locais W259/W260 não atribuem scores.",
+    "replay": "Não há replay navegável referenciado; revisão humana de W259/W260 pendente."
   },
   "diary": [
     {
@@ -1102,15 +1102,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W250",
-      "wave": "W250",
-      "publishedAt": "2026-10-28T17:01:00Z",
-      "macro": "M3",
-      "title": "W250: eventos iniciais depois do Receive split",
-      "status": "Concluído — efeito local por toggle confirmado; mediação de partida completa UNKNOWN.",
-      "summary": "Em 18 pares de ticks1–10, OFF passa a Kaio; ON a 4c69. ON gera impedimento no tick6 ligado ao snapshot do tick3 em 18/18; OFF tem 16 falhas de passe e 16 impedimentos. Aberturas variam em 3 grupos OFF/2 ON; quality/full-match não inferida."
-    },
-    {
       "id": "W256",
       "wave": "W256",
       "publishedAt": "2026-10-28T17:10:00Z",
@@ -1145,6 +1136,15 @@
       "title": "Efeito local Pass-aware: decisão→impedimento/conclusão em dois seeds",
       "status": "Mecanismo causal local replicado; qualidade global UNKNOWN",
       "summary": "Com mesmo prestate, OFF tenta passe a alvo offside e gera impedimento; ON seleciona Move e o mesmo passe é tentado depois e completado (seed1749). Seed1740 também liga a tentativa OFF ao impedimento; sem atribuição ao placar."
+    },
+    {
+      "id": "W260",
+      "wave": "W260",
+      "publishedAt": "2026-10-28T17:53:43Z",
+      "macro": "M3",
+      "title": "Terceiro seed: target switch e falha do passe alternativo",
+      "status": "Mecanismo local confirmado; custo imediato observado; qualidade UNKNOWN",
+      "summary": "No mesmo prestate tick688, ON rebaixa o alvo offside rank1→10 e escolhe outro passe; este falha no tick691 e a posse muda ao adversário. OFF tem impedimento no tick691 e reinício adversário tick694. Scores 1–1/0–2 sem atribuição causal."
     },
     {
       "wave": "W66",
@@ -3347,6 +3347,14 @@
     {
       "id": "CP-W259-FINAL",
       "title": "W259 final — mesmo alvo: OFF impedimento, ON conclusão posterior"
+    },
+    {
+      "id": "CP-W260-PREFLIGHT",
+      "title": "W260 preflight — terceiro seed W214 CORxPAL"
+    },
+    {
+      "id": "CP-W260-FINAL",
+      "title": "W260 final — target switch reproduced; alternative fails"
     }
   ]
 }
