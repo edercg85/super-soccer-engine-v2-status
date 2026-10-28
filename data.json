@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-117",
-  "updatedAt": "2026-10-28T09:14:11Z",
-  "cycle": "SS-ORCH-001-W184-FIRST-NATURAL-SHOOT",
+  "version": "2026.10.28-portal-118",
+  "updatedAt": "2026-10-28T09:24:30Z",
+  "cycle": "SS-ORCH-001-W185-FULL-MATCH-SHOOT-DECISION-CENSUS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W184: continuar seed1733 a partir do estado W181 tick95, configuração reach4 e mesma fixture; capturar janela mínima da primeira ShootAction/ShotAttempted com decisão, resolução e efeito imediato. Se não houver tentativa até o fim, registrar ausência no escopo e encerrar o ramo com UNKNOWN.",
+  "currentFocus": "W185: executar novamente seed1733 em reach4 e agregar diagnostics de todas as decisões do portador (Shoot elegível, scores concorrentes, vencedor, distância e fase) para explicar a partida sem chute. Não alterar pesos; verificar hash do tick95 antes de interpretar.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W183",
-    "wave": "W183",
-    "publishedAt": "2026-10-28T09:14:11Z",
+    "id": "W184",
+    "wave": "W184",
+    "publishedAt": "2026-10-28T09:24:30Z",
     "macro": "M2",
-    "title": "W183: decomposição do score Shoot",
-    "status": "Auditoria automática 10/10 PASS; sem rerun; nenhum ajuste de gameplay.",
-    "summary": "Recalculados distanceScore, laneScore e pesos de atributos. Shoot permaneceu elegível em long range por ausência de gate de distância; perdeu para Move/Pass nos dez estados W181. Zeros de insideBox/ângulo/threat eram defaults do harness."
+    "title": "W184: partida completa sem tentativa de chute",
+    "status": "1/1 PASS; replay compatível no tick95; resultado restrito à seed1733.",
+    "summary": "PALxCOR seed1733 reach4 completou 5401 ticks, 0–0, sem ShootAction/ShotEvent/terminal de chute. Hash do estado tick95 reproduz W181."
   },
   "recentCycles": [
-    {
-      "id": "W176",
-      "wave": "W176",
-      "publishedAt": "2026-10-28T08:48:00Z",
-      "macro": "M2",
-      "title": "W176: resolução do passe de retorno",
-      "status": "2/2 PASS; retorno completado tick29; 12 MoveCompleted; auditoria PASS, estado exato repetido.",
-      "summary": "Passe de volta completa ao primeiro alvo no tick29. Ele mantém posse e executa MoveCompleted nos ticks29–40 sem novo passe. Uma sequência determinística repetida, sem alegação de qualidade."
-    },
     {
       "id": "W177",
       "wave": "W177",
@@ -92,6 +83,15 @@
       "title": "W183: decomposição do score Shoot",
       "status": "Auditoria automática 10/10 PASS; sem rerun; nenhum ajuste de gameplay.",
       "summary": "Recalculados distanceScore, laneScore e pesos de atributos. Shoot permaneceu elegível em long range por ausência de gate de distância; perdeu para Move/Pass nos dez estados W181. Zeros de insideBox/ângulo/threat eram defaults do harness."
+    },
+    {
+      "id": "W184",
+      "wave": "W184",
+      "publishedAt": "2026-10-28T09:24:30Z",
+      "macro": "M2",
+      "title": "W184: partida completa sem tentativa de chute",
+      "status": "1/1 PASS; replay compatível no tick95; resultado restrito à seed1733.",
+      "summary": "PALxCOR seed1733 reach4 completou 5401 ticks, 0–0, sem ShootAction/ShotEvent/terminal de chute. Hash do estado tick95 reproduz W181."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W176",
-      "wave": "W176",
-      "publishedAt": "2026-10-28T08:48:00Z",
-      "macro": "M2",
-      "title": "W176: resolução do passe de retorno",
-      "status": "2/2 PASS; retorno completado tick29; 12 MoveCompleted; auditoria PASS, estado exato repetido.",
-      "summary": "Passe de volta completa ao primeiro alvo no tick29. Ele mantém posse e executa MoveCompleted nos ticks29–40 sem novo passe. Uma sequência determinística repetida, sem alegação de qualidade."
-    },
-    {
       "id": "W177",
       "wave": "W177",
       "publishedAt": "2026-10-28T08:55:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W183: decomposição do score Shoot",
       "status": "Auditoria automática 10/10 PASS; sem rerun; nenhum ajuste de gameplay.",
       "summary": "Recalculados distanceScore, laneScore e pesos de atributos. Shoot permaneceu elegível em long range por ausência de gate de distância; perdeu para Move/Pass nos dez estados W181. Zeros de insideBox/ângulo/threat eram defaults do harness."
+    },
+    {
+      "id": "W184",
+      "wave": "W184",
+      "publishedAt": "2026-10-28T09:24:30Z",
+      "macro": "M2",
+      "title": "W184: partida completa sem tentativa de chute",
+      "status": "1/1 PASS; replay compatível no tick95; resultado restrito à seed1733.",
+      "summary": "PALxCOR seed1733 reach4 completou 5401 ticks, 0–0, sem ShootAction/ShotEvent/terminal de chute. Hash do estado tick95 reproduz W181."
     },
     {
       "wave": "W66",
@@ -3062,6 +3062,10 @@
     {
       "id": "CP-W183-02",
       "title": "W183 fechado; ZIP validado e W184 iniciado"
+    },
+    {
+      "id": "CP-W184-02",
+      "title": "W184 fechado; handoff validado; W185 iniciado"
     }
   ]
 }
