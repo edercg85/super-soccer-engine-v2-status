@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-69",
-  "updatedAt": "2026-10-28T00:07:32-03:00",
-  "cycle": "SS-ORCH-001-W134-INDIRECT-PASS-TERMINAL",
+  "version": "2026.10.28-portal-70",
+  "updatedAt": "2026-10-28T00:10:37-03:00",
+  "cycle": "SS-ORCH-001-W135-POST-RECEPTION-DECISION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W135: observar o primeiro tick após conclusão e ligar a posse do receiver à ação escolhida; sem inferir qualidade global.",
+  "currentFocus": "W136: seguir os três ActivePass novos até terminal; manter a rota Move como controle sem passe e esclarecer o resultado PassLaunchDegraded apenas por eventos/estado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W134",
-    "wave": "W134",
-    "publishedAt": "2026-10-28T03:07:32Z",
+    "id": "W135",
+    "wave": "W135",
+    "publishedAt": "2026-10-28T03:10:37Z",
     "macro": "M2",
-    "title": "W134: terminal do passe do indireto",
-    "status": "4/4 PASS; os quatro passes completaram para o receiver em 2–3 ticks.",
-    "summary": "PassCompleted, IDs, posse do receiver e limpeza do ActivePass foram ligados por referência de objeto; nas quatro avaliações observadas só o receiver constava como candidato."
+    "title": "W135: primeira decisão após a recepção",
+    "status": "4/4 PASS; três Pass, um Move; um PassLaunchDegraded/false com ActivePass presente.",
+    "summary": "O receiver começa o tick com posse. Três passes removem a posse e criam ActivePass; um Move completa e mantém a posse. O passe degradado ainda não tem terminal observado."
   },
   "recentCycles": [
-    {
-      "id": "W127",
-      "wave": "W127",
-      "publishedAt": "2026-10-28T02:47:00Z",
-      "macro": "M2",
-      "title": "W127: decomposição causal local do score de passe",
-      "status": "3/3 PASS; score bruto recomposto por componentes; conclusão estreita, sem auditoria humana independente.",
-      "summary": "Nos snapshots W07, espaço e corredor mantêm 100; progressão cai 47,570770→21,176707 e Pass cruza abaixo de Move. Em W06, corredor varia em outra geometria e Move segue acima de Pass."
-    },
     {
       "id": "W128",
       "wave": "W128",
@@ -92,6 +83,15 @@
       "title": "W134: terminal do passe do indireto",
       "status": "4/4 PASS; os quatro passes completaram para o receiver em 2–3 ticks.",
       "summary": "PassCompleted, IDs, posse do receiver e limpeza do ActivePass foram ligados por referência de objeto; nas quatro avaliações observadas só o receiver constava como candidato."
+    },
+    {
+      "id": "W135",
+      "wave": "W135",
+      "publishedAt": "2026-10-28T03:10:37Z",
+      "macro": "M2",
+      "title": "W135: primeira decisão após a recepção",
+      "status": "4/4 PASS; três Pass, um Move; um PassLaunchDegraded/false com ActivePass presente.",
+      "summary": "O receiver começa o tick com posse. Três passes removem a posse e criam ActivePass; um Move completa e mantém a posse. O passe degradado ainda não tem terminal observado."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W127",
-      "wave": "W127",
-      "publishedAt": "2026-10-28T02:47:00Z",
-      "macro": "M2",
-      "title": "W127: decomposição causal local do score de passe",
-      "status": "3/3 PASS; score bruto recomposto por componentes; conclusão estreita, sem auditoria humana independente.",
-      "summary": "Nos snapshots W07, espaço e corredor mantêm 100; progressão cai 47,570770→21,176707 e Pass cruza abaixo de Move. Em W06, corredor varia em outra geometria e Move segue acima de Pass."
-    },
-    {
       "id": "W128",
       "wave": "W128",
       "publishedAt": "2026-10-28T03:05:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W134: terminal do passe do indireto",
       "status": "4/4 PASS; os quatro passes completaram para o receiver em 2–3 ticks.",
       "summary": "PassCompleted, IDs, posse do receiver e limpeza do ActivePass foram ligados por referência de objeto; nas quatro avaliações observadas só o receiver constava como candidato."
+    },
+    {
+      "id": "W135",
+      "wave": "W135",
+      "publishedAt": "2026-10-28T03:10:37Z",
+      "macro": "M2",
+      "title": "W135: primeira decisão após a recepção",
+      "status": "4/4 PASS; três Pass, um Move; um PassLaunchDegraded/false com ActivePass presente.",
+      "summary": "O receiver começa o tick com posse. Três passes removem a posse e criam ActivePass; um Move completa e mantém a posse. O passe degradado ainda não tem terminal observado."
     },
     {
       "wave": "W66",
@@ -2774,6 +2774,14 @@
     {
       "id": "CP-W134-01",
       "title": "Passe completo e posse do receiver"
+    },
+    {
+      "id": "CP-W135-00",
+      "title": "Preflight da decisão após recepção"
+    },
+    {
+      "id": "CP-W135-01",
+      "title": "Ação pós-recepção e estado imediato"
     }
   ]
 }
