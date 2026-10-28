@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-139",
-  "updatedAt": "2026-10-28T12:13:00Z",
-  "cycle": "SS-ORCH-001-W209-M3-DYNAMIC-SHAPE-SOURCE-AUDIT",
+  "version": "2026.10.28-portal-140",
+  "updatedAt": "2026-10-28T12:15:00Z",
+  "cycle": "SS-ORCH-001-W210-SHAPE-DERR-INTERACTION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W209 M3: mapear campos DynamicTeamShape desde produtor até consumidor Move, guardas e testes existentes; sem nomear intenção coletiva sem evidência.",
+  "currentFocus": "W210: medir se DefensiveEngagement consome slots de DynamicTeamShape com modo Off, em estado fixo e artefatos isolados; sem alteração de gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W208",
-    "wave": "W208",
-    "publishedAt": "2026-10-28T12:11:00Z",
-    "macro": "M4",
-    "title": "W208: traces existentes só cobrem offside e kickoff",
-    "status": "Corpus read-only confirmado; coverage de outros restarts UNKNOWN.",
-    "summary": "W15 seis braços: offside/setup/ready/indirect kick e kickoff; W16 examina só KickOffPrepared no período 2. Sem dados de goal kick/corner/throw-in."
+    "id": "W209",
+    "wave": "W209",
+    "publishedAt": "2026-10-28T12:15:00Z",
+    "macro": "M3",
+    "title": "W209: slots do DynamicTeamShape têm consumidores em Move e pressão",
+    "status": "Source mechanism confirmado; efeitos coletivos em partida UNKNOWN.",
+    "summary": "Fonte atual: formação+bola→slots→destino Move e custo estrutural de assignment. DynamicTeamShapeMode=Off não neutraliza o consumo com DefensiveEngagement ativo. TRX W15 é de outro hash."
   },
   "recentCycles": [
-    {
-      "id": "W197",
-      "wave": "W197",
-      "publishedAt": "2026-10-28T11:29:00Z",
-      "macro": "M2",
-      "title": "W197: dois chutes ON interceptados após avanço do goleiro",
-      "status": "Auditoria secundária PASS; terminais e destino comum do goleiro no tick29 confirmados.",
-      "summary": "Nos dois braços Hugo Souza move no tick29 para a bola em (90,886;30,736). ON lança dali e sofre ShotBlocked em ticks30/34; OFF Move desloca bola a x99,455 e chuta no30, gol no31. Efeito local, não política geral."
-    },
     {
       "id": "W198",
       "wave": "W198",
@@ -101,6 +92,15 @@
       "title": "W208: traces existentes só cobrem offside e kickoff",
       "status": "Corpus read-only confirmado; coverage de outros restarts UNKNOWN.",
       "summary": "W15 seis braços: offside/setup/ready/indirect kick e kickoff; W16 examina só KickOffPrepared no período 2. Sem dados de goal kick/corner/throw-in."
+    },
+    {
+      "id": "W209",
+      "wave": "W209",
+      "publishedAt": "2026-10-28T12:15:00Z",
+      "macro": "M3",
+      "title": "W209: slots do DynamicTeamShape têm consumidores em Move e pressão",
+      "status": "Source mechanism confirmado; efeitos coletivos em partida UNKNOWN.",
+      "summary": "Fonte atual: formação+bola→slots→destino Move e custo estrutural de assignment. DynamicTeamShapeMode=Off não neutraliza o consumo com DefensiveEngagement ativo. TRX W15 é de outro hash."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W197",
-      "wave": "W197",
-      "publishedAt": "2026-10-28T11:29:00Z",
-      "macro": "M2",
-      "title": "W197: dois chutes ON interceptados após avanço do goleiro",
-      "status": "Auditoria secundária PASS; terminais e destino comum do goleiro no tick29 confirmados.",
-      "summary": "Nos dois braços Hugo Souza move no tick29 para a bola em (90,886;30,736). ON lança dali e sofre ShotBlocked em ticks30/34; OFF Move desloca bola a x99,455 e chuta no30, gol no31. Efeito local, não política geral."
-    },
-    {
       "id": "W198",
       "wave": "W198",
       "publishedAt": "2026-10-28T11:36:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W208: traces existentes só cobrem offside e kickoff",
       "status": "Corpus read-only confirmado; coverage de outros restarts UNKNOWN.",
       "summary": "W15 seis braços: offside/setup/ready/indirect kick e kickoff; W16 examina só KickOffPrepared no período 2. Sem dados de goal kick/corner/throw-in."
+    },
+    {
+      "id": "W209",
+      "wave": "W209",
+      "publishedAt": "2026-10-28T12:15:00Z",
+      "macro": "M3",
+      "title": "W209: slots do DynamicTeamShape têm consumidores em Move e pressão",
+      "status": "Source mechanism confirmado; efeitos coletivos em partida UNKNOWN.",
+      "summary": "Fonte atual: formação+bola→slots→destino Move e custo estrutural de assignment. DynamicTeamShapeMode=Off não neutraliza o consumo com DefensiveEngagement ativo. TRX W15 é de outro hash."
     },
     {
       "wave": "W66",
@@ -3144,6 +3144,10 @@
     {
       "id": "CP-W208-01",
       "title": "M4-05/07 recorte de restart delimitado; M3 source-first iniciado"
+    },
+    {
+      "id": "CP-W209-01",
+      "title": "M3 source mapping concluído; teste da interação Off/DERR iniciado"
     }
   ]
 }
