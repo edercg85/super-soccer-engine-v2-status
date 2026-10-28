@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-126",
-  "updatedAt": "2026-10-28T10:58:00Z",
-  "cycle": "SS-ORCH-001-W193-CONTEXTUAL-SHOOT-SEED-REPLICATION",
+  "version": "2026.10.28-portal-127",
+  "updatedAt": "2026-10-28T11:03:00Z",
+  "cycle": "SS-ORCH-001-W194-SHOT-RESOLUTION-CAUSAL-TRACE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W193: OFF/ON pareado na seed1731 com fixture W07, DLL histórica 061c e reach4; procurar oportunidade insideBox, primeira divergência, posse, eventos, chute e placar. Se não disparar, usar snapshot elegível de W191 como teste local sem alegar efeito em partida completa.",
+  "currentFocus": "W194: recapturar pre-state, decisão, ActionResult, ShotEvent e terminal no tick2118–2120 em OFF/ON, mesma seed1731/build/fixture. Distinguir tentativa, resolução técnica, gol e placar; preservar default-off.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W192",
-    "wave": "W192",
-    "publishedAt": "2026-10-28T10:58:00Z",
+    "id": "W193",
+    "wave": "W193",
+    "publishedAt": "2026-10-28T11:03:00Z",
     "macro": "M2",
-    "title": "W192: Shoot contextual sem oportunidade na área",
-    "status": "1/1 auditoria PASS; duas repetições ON determinísticas; sem efeito nesta seed.",
-    "summary": "Na seed1732, 2517 avaliações elegíveis; nenhuma insideBox/ameaça. Ações, score Shoot, estado e eventos iguais OFF/ON. Tick95 e agregados reproduzem W186."
+    "title": "W193: Shoot contextual desviou para tentativa e gol nesta seed",
+    "status": "Auditoria PASS; efeito local confirmado; duas repetições ON idênticas.",
+    "summary": "Primeiro score mudou tick770 sem trocar vencedor; Move→Shoot tick2118 (.7458→.9021), insideBox/threat ativos. ON marcou aos2120 e terminou1–1; OFF0–0 sem chute. Não generalizável."
   },
   "recentCycles": [
-    {
-      "id": "W184",
-      "wave": "W184",
-      "publishedAt": "2026-10-28T09:24:30Z",
-      "macro": "M2",
-      "title": "W184: partida completa sem tentativa de chute",
-      "status": "1/1 PASS; replay compatível no tick95; resultado restrito à seed1733.",
-      "summary": "PALxCOR seed1733 reach4 completou 5401 ticks, 0–0, sem ShootAction/ShotEvent/terminal de chute. Hash do estado tick95 reproduz W181."
-    },
     {
       "id": "W185",
       "wave": "W185",
@@ -101,6 +92,15 @@
       "title": "W192: Shoot contextual sem oportunidade na área",
       "status": "1/1 auditoria PASS; duas repetições ON determinísticas; sem efeito nesta seed.",
       "summary": "Na seed1732, 2517 avaliações elegíveis; nenhuma insideBox/ameaça. Ações, score Shoot, estado e eventos iguais OFF/ON. Tick95 e agregados reproduzem W186."
+    },
+    {
+      "id": "W193",
+      "wave": "W193",
+      "publishedAt": "2026-10-28T11:03:00Z",
+      "macro": "M2",
+      "title": "W193: Shoot contextual desviou para tentativa e gol nesta seed",
+      "status": "Auditoria PASS; efeito local confirmado; duas repetições ON idênticas.",
+      "summary": "Primeiro score mudou tick770 sem trocar vencedor; Move→Shoot tick2118 (.7458→.9021), insideBox/threat ativos. ON marcou aos2120 e terminou1–1; OFF0–0 sem chute. Não generalizável."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W184",
-      "wave": "W184",
-      "publishedAt": "2026-10-28T09:24:30Z",
-      "macro": "M2",
-      "title": "W184: partida completa sem tentativa de chute",
-      "status": "1/1 PASS; replay compatível no tick95; resultado restrito à seed1733.",
-      "summary": "PALxCOR seed1733 reach4 completou 5401 ticks, 0–0, sem ShootAction/ShotEvent/terminal de chute. Hash do estado tick95 reproduz W181."
-    },
-    {
       "id": "W185",
       "wave": "W185",
       "publishedAt": "2026-10-28T09:29:10Z",
@@ -1134,6 +1125,15 @@
       "title": "W192: Shoot contextual sem oportunidade na área",
       "status": "1/1 auditoria PASS; duas repetições ON determinísticas; sem efeito nesta seed.",
       "summary": "Na seed1732, 2517 avaliações elegíveis; nenhuma insideBox/ameaça. Ações, score Shoot, estado e eventos iguais OFF/ON. Tick95 e agregados reproduzem W186."
+    },
+    {
+      "id": "W193",
+      "wave": "W193",
+      "publishedAt": "2026-10-28T11:03:00Z",
+      "macro": "M2",
+      "title": "W193: Shoot contextual desviou para tentativa e gol nesta seed",
+      "status": "Auditoria PASS; efeito local confirmado; duas repetições ON idênticas.",
+      "summary": "Primeiro score mudou tick770 sem trocar vencedor; Move→Shoot tick2118 (.7458→.9021), insideBox/threat ativos. ON marcou aos2120 e terminou1–1; OFF0–0 sem chute. Não generalizável."
     },
     {
       "wave": "W66",
