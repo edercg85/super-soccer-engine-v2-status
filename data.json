@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-187",
-  "updatedAt": "2026-10-28T18:10:14Z",
-  "cycle": "W262",
+  "version": "2026.10.28-portal-188",
+  "updatedAt": "2026-10-28T18:15:04Z",
+  "cycle": "W263",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Próximo: W263 está planejada para comparar a continuação imediata da posse após tick691 usando os dados já capturados; ainda não iniciada. A revisão humana do viewer também segue pendente.",
+  "currentFocus": "W263 concluiu uma extensão local da trilha seed1750. W264 planejada: verificar as janelas equivalentes nas evidências existentes das seeds1740 e 1749, sem rerodar partidas; parar se faltar granularidade.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W262",
-    "wave": "W262",
-    "publishedAt": "2026-10-28T18:10:14Z",
+    "id": "W263",
+    "wave": "W263",
+    "publishedAt": "2026-10-28T18:15:04Z",
     "macro": "M3",
-    "title": "Viewer offline renderizado e controles dos clips validados",
-    "status": "Ferramenta de inspeção pronta; review humano de gameplay pendente",
-    "summary": "HTML autocontido para ticks686-696. Edge encontrou e validou correção de contraste; harness de DOM/canvas passou 10 checks. Não houve julgamento de qualidade da jogada."
+    "title": "Primeiro passe após offside/recovery rastreado",
+    "status": "Ligação local confirmada; causalidade funcional desconhecida",
+    "summary": "Seed1750 OFF restart holder passes and completes at tick697. ON recovered holder passes and fails at tick696, then regains possession. IDs link decisions/events; branches differ since tick689."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W258",
-      "wave": "W258",
-      "publishedAt": "2026-10-28T17:31:44Z",
-      "macro": "M3",
-      "title": "Pass-aware penaliza candidato, mas o primeiro alvo não muda",
-      "status": "Mecanismo local confirmado; efeito no placar não atribuído",
-      "summary": "Em COR×PAL, o tick2 same-state rebaixou candidato offside rank1→6 nos dois seeds, mas Move venceu. O primeiro passe no tick4 teve mesmo estado e alvo nos braços. Ambos os ON terminaram 0–1 contra 0–0 OFF; divergência tardia não localizada."
-    },
-    {
       "id": "W259",
       "wave": "W259",
       "publishedAt": "2026-10-28T17:42:19Z",
@@ -101,6 +92,15 @@
       "title": "Viewer offline renderizado e controles dos clips validados",
       "status": "Ferramenta de inspeção pronta; review humano de gameplay pendente",
       "summary": "HTML autocontido para ticks686-696. Edge encontrou e validou correção de contraste; harness de DOM/canvas passou 10 checks. Não houve julgamento de qualidade da jogada."
+    },
+    {
+      "id": "W263",
+      "wave": "W263",
+      "publishedAt": "2026-10-28T18:15:04Z",
+      "macro": "M3",
+      "title": "Primeiro passe após offside/recovery rastreado",
+      "status": "Ligação local confirmada; causalidade funcional desconhecida",
+      "summary": "Seed1750 OFF restart holder passes and completes at tick697. ON recovered holder passes and fails at tick696, then regains possession. IDs link decisions/events; branches differ since tick689."
     }
   ],
   "macros": [
@@ -1060,8 +1060,8 @@
     "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
     "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
     "shotsGoals": "Finalizações 6→13 e gols 5→11; intervalos pareados cruzam zero, sem evidência de ganho consistente.",
-    "lastIntegrated": "W255 continua a última avaliação integrada. W259/W260 mostram efeitos locais; W261/W262 ligam esses dados a clips e viewer, sem avaliação humana do futebol.",
-    "mainBlocker": "Revisão humana da sequência permanece pendente; também faltam avaliações integradas recentes de progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência.",
+    "lastIntegrated": "W255 continua a última avaliação integrada. W259/W260/W263 mostram efeitos locais e sequências em traces; sem review humano e sem conclusões sobre qualidade geral.",
+    "mainBlocker": "Faltam revisão humana dos clips e avaliação integrada recente de progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência. Janelas locais são pós-divergência e não isolam qualidade.",
     "replay": "Não há replay navegável publicado no portal; viewer offline local de ticks686-696 passou renderização técnica, mas revisão humana do futebol segue pendente."
   },
   "diary": [
@@ -1102,15 +1102,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W258",
-      "wave": "W258",
-      "publishedAt": "2026-10-28T17:31:44Z",
-      "macro": "M3",
-      "title": "Pass-aware penaliza candidato, mas o primeiro alvo não muda",
-      "status": "Mecanismo local confirmado; efeito no placar não atribuído",
-      "summary": "Em COR×PAL, o tick2 same-state rebaixou candidato offside rank1→6 nos dois seeds, mas Move venceu. O primeiro passe no tick4 teve mesmo estado e alvo nos braços. Ambos os ON terminaram 0–1 contra 0–0 OFF; divergência tardia não localizada."
-    },
-    {
       "id": "W259",
       "wave": "W259",
       "publishedAt": "2026-10-28T17:42:19Z",
@@ -1145,6 +1136,15 @@
       "title": "Viewer offline renderizado e controles dos clips validados",
       "status": "Ferramenta de inspeção pronta; review humano de gameplay pendente",
       "summary": "HTML autocontido para ticks686-696. Edge encontrou e validou correção de contraste; harness de DOM/canvas passou 10 checks. Não houve julgamento de qualidade da jogada."
+    },
+    {
+      "id": "W263",
+      "wave": "W263",
+      "publishedAt": "2026-10-28T18:15:04Z",
+      "macro": "M3",
+      "title": "Primeiro passe após offside/recovery rastreado",
+      "status": "Ligação local confirmada; causalidade funcional desconhecida",
+      "summary": "Seed1750 OFF restart holder passes and completes at tick697. ON recovered holder passes and fails at tick696, then regains possession. IDs link decisions/events; branches differ since tick689."
     },
     {
       "wave": "W66",
@@ -3363,6 +3363,10 @@
     {
       "id": "CP-W262-FINAL",
       "title": "W262 final — viewer offline renderizado e controles validados"
+    },
+    {
+      "id": "CP-W263-FINAL",
+      "title": "W263 final — continuação de posse e terminal local ligados"
     }
   ]
 }
