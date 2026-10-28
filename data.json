@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-113",
-  "updatedAt": "2026-10-28T08:56:38Z",
-  "cycle": "SS-ORCH-001-W179-TACKLE-PASS-CONTINUATION",
+  "version": "2026.10.28-portal-114",
+  "updatedAt": "2026-10-28T09:00:25Z",
+  "cycle": "SS-ORCH-001-W180-POST-RECOVERY-CHAIN",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W180: seguir a posse recebida no tick65 por seed1733, com decisões e eventos até tick80. Identificar primeiro passe/chute/falta/turnover/reinício e separar resultado de ação do efeito observado.",
+  "currentFocus": "W181: seguir a mesma trajetória seed1733 do tick80 ao95, incluindo decisões do jogador que recuperou a posse. Registrar ação/result/eventos e primeiro terminal; depois escolher nova dependência se a janela não gerar pergunta nova.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W179",
-    "wave": "W179",
-    "publishedAt": "2026-10-28T08:55:29Z",
+    "id": "W180",
+    "wave": "W180",
+    "publishedAt": "2026-10-28T08:59:40Z",
     "macro": "M2",
-    "title": "W179: passe pós-tackle e continuação",
-    "status": "2/2 PASS; auditoria PASS; outcomes locais confirmados.",
-    "summary": "Passe tick55 `PassLaunchDegraded` completa tick58. Passe tick61 falha tick62, mas companheiro do mesmo time recupera; novo passe completa tick65. Sem chute no horizonte."
+    "title": "W180: continuação após posse no tick65",
+    "status": "Teste focado 1/1 PASS; duas conclusões de passe e recuperação final auditadas.",
+    "summary": "Dois passes rank1 completam 71/75; terceiro degraded 77 falha79, mas target recebe posse no80. Nenhum chute 65–80; contraste com degraded que completou em W179."
   },
   "recentCycles": [
-    {
-      "id": "W172",
-      "wave": "W172",
-      "publishedAt": "2026-10-28T08:26:52Z",
-      "macro": "M2",
-      "title": "W172: guarda de participação do impedimento",
-      "status": "Runs 2/2 PASS e testes diretos marked/unmarked/null 2/2 PASS; payload/evento corresponde ao target/snapshot.",
-      "summary": "Em duas seeds, OffsideEvent aponta para target marcado, source e SnapshotTick do passe; a posição atual coincide com endpoint; restart home. Resolver bloqueia ausência de controlador e jogador não marcado. Nenhum caso real onside equivalente ainda."
-    },
     {
       "id": "W173",
       "wave": "W173",
@@ -92,6 +83,15 @@
       "title": "W179: passe pós-tackle e continuação",
       "status": "2/2 PASS; auditoria PASS; outcomes locais confirmados.",
       "summary": "Passe tick55 `PassLaunchDegraded` completa tick58. Passe tick61 falha tick62, mas companheiro do mesmo time recupera; novo passe completa tick65. Sem chute no horizonte."
+    },
+    {
+      "id": "W180",
+      "wave": "W180",
+      "publishedAt": "2026-10-28T08:59:40Z",
+      "macro": "M2",
+      "title": "W180: continuação após posse no tick65",
+      "status": "Teste focado 1/1 PASS; duas conclusões de passe e recuperação final auditadas.",
+      "summary": "Dois passes rank1 completam 71/75; terceiro degraded 77 falha79, mas target recebe posse no80. Nenhum chute 65–80; contraste com degraded que completou em W179."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W172",
-      "wave": "W172",
-      "publishedAt": "2026-10-28T08:26:52Z",
-      "macro": "M2",
-      "title": "W172: guarda de participação do impedimento",
-      "status": "Runs 2/2 PASS e testes diretos marked/unmarked/null 2/2 PASS; payload/evento corresponde ao target/snapshot.",
-      "summary": "Em duas seeds, OffsideEvent aponta para target marcado, source e SnapshotTick do passe; a posição atual coincide com endpoint; restart home. Resolver bloqueia ausência de controlador e jogador não marcado. Nenhum caso real onside equivalente ainda."
-    },
-    {
       "id": "W173",
       "wave": "W173",
       "publishedAt": "2026-10-28T08:32:28Z",
@@ -1116,6 +1107,15 @@
       "title": "W179: passe pós-tackle e continuação",
       "status": "2/2 PASS; auditoria PASS; outcomes locais confirmados.",
       "summary": "Passe tick55 `PassLaunchDegraded` completa tick58. Passe tick61 falha tick62, mas companheiro do mesmo time recupera; novo passe completa tick65. Sem chute no horizonte."
+    },
+    {
+      "id": "W180",
+      "wave": "W180",
+      "publishedAt": "2026-10-28T08:59:40Z",
+      "macro": "M2",
+      "title": "W180: continuação após posse no tick65",
+      "status": "Teste focado 1/1 PASS; duas conclusões de passe e recuperação final auditadas.",
+      "summary": "Dois passes rank1 completam 71/75; terceiro degraded 77 falha79, mas target recebe posse no80. Nenhum chute 65–80; contraste com degraded que completou em W179."
     },
     {
       "wave": "W66",
@@ -3034,6 +3034,14 @@
     {
       "id": "CP-W179-02",
       "title": "Handoff W179 validado"
+    },
+    {
+      "id": "CP-W180-01",
+      "title": "Continuação de passe pós-recuperação"
+    },
+    {
+      "id": "CP-W180-02",
+      "title": "Handoff W180 validado"
     }
   ]
 }
