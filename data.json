@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-53",
-  "updatedAt": "2026-10-27T22:45:04-03:00",
+  "version": "2026.10.28-portal-54",
+  "updatedAt": "2026-10-27T22:47:46-03:00",
   "cycle": "SS-ORCH-001-W123-LAUNCH-ORIGIN-AND-PASS-FAILURE-OWNERSHIP",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Manter a flag desligada. Para avançar a analogia CM, obter trace da build limpa nos três readers com identidade/versão do arg2 e última escrita; refutar ou confirmar consumo do produtor por ocorrência.",
+  "currentFocus": "Não alterar gameplay com base em um contrafactual de 12 casos. Preservar a flag default-off; próximo valor é teste pareado isolado da ordenação apenas se a hipótese de produto for aprovada, com estados posteriores e geometria revisados.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -14,11 +14,11 @@
   "latestAction": {
     "id": "W123",
     "wave": "W123",
-    "publishedAt": "2026-10-28T01:45:04Z",
+    "publishedAt": "2026-10-28T01:47:46Z",
     "macro": "M2",
-    "title": "W123: semântica de recovery e crosswalk CM–V2",
-    "status": "CP14/15: testes sintéticos 2/2 PASS; CP16: 003J static paths confirmados, producer consumption/CM↔V2 UNKNOWN; flag default-off; portal e ZIP em validação. Qualidade UNKNOWN.",
-    "summary": "Quatro rotas: target conclui, teammate falha preservando posse, opponent falha transferindo, ninguém mantém estado em aberto. Em disputa, BallControl e depois ID ordenam elegíveis; tempo não prioriza. A KB CM não liga os valores do produtor aos readers; não há fundamento para copiar a ordem à V2."
+    "title": "W123: recovery CM/V2 e contrafactual de primeiro tempo",
+    "status": "CP14–15 sintéticos PASS; CP16 CM↔V2 UNKNOWN; CP17 troca o jogador winner em 1/12, zero troca de equipe. Sem auditor externo/qualidade; default-off.",
+    "summary": "CP14–15: quatro rotas e disputa usam BallControl/ID para ordenar elegíveis; CP16: a KB CM não liga produtor aos readers; CP17: ordem hipotética por tempo muda o jogador em 1/12, mas mantém a equipe. Hipótese linear; sem efeito de qualidade."
   },
   "recentCycles": [
     {
@@ -87,11 +87,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-28T01:45:04Z",
+      "publishedAt": "2026-10-28T01:47:46Z",
       "macro": "M2",
-      "title": "W123: semântica de recovery e crosswalk CM–V2",
-      "status": "CP14/15: testes sintéticos 2/2 PASS; CP16: 003J static paths confirmados, producer consumption/CM↔V2 UNKNOWN; flag default-off; portal e ZIP em validação. Qualidade UNKNOWN.",
-      "summary": "Quatro rotas: target conclui, teammate falha preservando posse, opponent falha transferindo, ninguém mantém estado em aberto. Em disputa, BallControl e depois ID ordenam elegíveis; tempo não prioriza. A KB CM não liga os valores do produtor aos readers; não há fundamento para copiar a ordem à V2."
+      "title": "W123: recovery CM/V2 e contrafactual de primeiro tempo",
+      "status": "CP14–15 sintéticos PASS; CP16 CM↔V2 UNKNOWN; CP17 troca o jogador winner em 1/12, zero troca de equipe. Sem auditor externo/qualidade; default-off.",
+      "summary": "CP14–15: quatro rotas e disputa usam BallControl/ID para ordenar elegíveis; CP16: a KB CM não liga produtor aos readers; CP17: ordem hipotética por tempo muda o jogador em 1/12, mas mantém a equipe. Hipótese linear; sem efeito de qualidade."
     }
   ],
   "macros": [
@@ -1111,11 +1111,11 @@
     {
       "id": "W123",
       "wave": "W123",
-      "publishedAt": "2026-10-28T01:45:04Z",
+      "publishedAt": "2026-10-28T01:47:46Z",
       "macro": "M2",
-      "title": "W123: semântica de recovery e crosswalk CM–V2",
-      "status": "CP14/15: testes sintéticos 2/2 PASS; CP16: 003J static paths confirmados, producer consumption/CM↔V2 UNKNOWN; flag default-off; portal e ZIP em validação. Qualidade UNKNOWN.",
-      "summary": "Quatro rotas: target conclui, teammate falha preservando posse, opponent falha transferindo, ninguém mantém estado em aberto. Em disputa, BallControl e depois ID ordenam elegíveis; tempo não prioriza. A KB CM não liga os valores do produtor aos readers; não há fundamento para copiar a ordem à V2."
+      "title": "W123: recovery CM/V2 e contrafactual de primeiro tempo",
+      "status": "CP14–15 sintéticos PASS; CP16 CM↔V2 UNKNOWN; CP17 troca o jogador winner em 1/12, zero troca de equipe. Sem auditor externo/qualidade; default-off.",
+      "summary": "CP14–15: quatro rotas e disputa usam BallControl/ID para ordenar elegíveis; CP16: a KB CM não liga produtor aos readers; CP17: ordem hipotética por tempo muda o jogador em 1/12, mas mantém a equipe. Hipótese linear; sem efeito de qualidade."
     },
     {
       "wave": "W66",
@@ -2666,6 +2666,10 @@
     {
       "id": "CP-W123-16",
       "title": "Cruzamento com readers CM e limite da analogia V2"
+    },
+    {
+      "id": "CP-W123-17",
+      "title": "Contrafactual offline: tempo de aproximação versus BallControl"
     }
   ]
 }
