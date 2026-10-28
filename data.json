@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-95",
-  "updatedAt": "2026-10-28T03:23:33-03:00",
-  "cycle": "SS-ORCH-001-W160-SHOOT-TACKLE-BRANCH-MATRIX",
+  "version": "2026.10.28-portal-96",
+  "updatedAt": "2026-10-28T06:35:00Z",
+  "cycle": "SS-ORCH-001-W162-GK-NONSELECTION-CENSUS",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W161: cruzar os 30 ShotBlocked terminais W158 ON com interceptações efetivas do goleiro por seed/shooter/tick, e procurar sucessos sem bloqueio ou bloqueios sem intercept; validar fluxo em Simulation, ActionResolutionEngine e EventDetector.",
+  "currentFocus": "W163: inspecionar diffs preexistentes do DecisionEngine e harness, definir método isolado para comparar reach 4m versus 5m com fixture/seeds W158; preservar código disputado. Se não houver isolamento seguro, fechar protocolo e diagnóstico sem editar gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,33 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W160",
-    "wave": "W160",
-    "publishedAt": "2026-10-28T06:23:33Z",
+    "id": "W162",
+    "wave": "W162",
+    "publishedAt": "2026-10-28T06:35:00Z",
     "macro": "M2",
-    "title": "W160: matriz completa Shoot×Tackle em 1.151 testes",
-    "status": "1.151/1.151 PASS; quatro branches em fixture confirmados; sem prevalência em partida.",
-    "summary": "Sucesso duplo → ShootLaunchInterfered 30m; sucesso/falha → lançamento normal; falha/sucesso → ShotBlocked; falha dupla → ShootErrorSide. Zero ShootLaunchInterfered em 136 shots W158 ON, limitado a quatro seeds."
+    "title": "W162: censo de não seleção do goleiro em gols",
+    "status": "100/100 lifecycles particionados; CRC/manifesto/hash ZIP PASS; sem mudança de gameplay.",
+    "summary": "Dos 100 gols W158, 85 não tinham intercept candidato por alcance especializado (>4m), 4 não alcançavam o limite genérico (2m), e 11 tentativas selecionadas falharam tecnicamente. A sensibilidade de 5m é geométrica; defesas e qualidade continuam UNKNOWN."
   },
   "recentCycles": [
-    {
-      "id": "W153",
-      "wave": "W153",
-      "publishedAt": "2026-10-28T05:06:58Z",
-      "macro": "M2",
-      "title": "W153: replicação SafeForward na seed1731",
-      "status": "1/1 PASS; primeiro diff t25/t26; ON 10–7 e OFF 0–0. Sensibilidade replicada em duas seeds, qualidade não aprovada.",
-      "summary": "Na segunda seed, primeiro Move/estado diverge em t25 e evento em t26. A flag ON tem 24 Shoot events e 17 gols contra zero OFF; contagens não validam qualidade nem conversão técnica. Investigar lifecycle Shoot/Goal antes de ampliar seeds."
-    },
-    {
-      "id": "W154",
-      "wave": "W154",
-      "publishedAt": "2026-10-28T05:16:53Z",
-      "macro": "M2",
-      "title": "W154: ciclo de chute reconciliado e replay determinístico",
-      "status": "1/1 PASS; W153 reproduzido tick a tick; 24 lifecycles terminados em 17 gols, 5 bloqueios e 2 fora.",
-      "summary": "Não havia erro de contagem: ShootLaunchDegraded ainda cria ActiveShoot; cinco casos terminam em gol. Repetição seed1731 idêntica nos dois braços. Taxa de gols e efeito de qualidade permanecem desconhecidos."
-    },
     {
       "id": "W155",
       "wave": "W155",
@@ -92,6 +74,24 @@
       "title": "W160: matriz completa Shoot×Tackle em 1.151 testes",
       "status": "1.151/1.151 PASS; quatro branches em fixture confirmados; sem prevalência em partida.",
       "summary": "Sucesso duplo → ShootLaunchInterfered 30m; sucesso/falha → lançamento normal; falha/sucesso → ShotBlocked; falha dupla → ShootErrorSide. Zero ShootLaunchInterfered em 136 shots W158 ON, limitado a quatro seeds."
+    },
+    {
+      "id": "W161",
+      "wave": "W161",
+      "publishedAt": "2026-10-28T06:29:04Z",
+      "macro": "M2",
+      "title": "W161: crosswalk GK interception → ShotBlocked",
+      "status": "Scripts Python e PowerShell PASS; 30/30 bloqueios ligados a intercepts GK bem-sucedidos; limitações de proveniência registradas.",
+      "summary": "Trinta ShotBlocked ActiveShoot coincidem com InterceptSucceededAtClosestApproach no mesmo seed/lifecycle/tick; 17 falhas tiveram terminais variados. Fluxo fonte compatível, mas hash Simulation/assembly histórico ausente; linkage PARTIAL."
+    },
+    {
+      "id": "W162",
+      "wave": "W162",
+      "publishedAt": "2026-10-28T06:35:00Z",
+      "macro": "M2",
+      "title": "W162: censo de não seleção do goleiro em gols",
+      "status": "100/100 lifecycles particionados; CRC/manifesto/hash ZIP PASS; sem mudança de gameplay.",
+      "summary": "Dos 100 gols W158, 85 não tinham intercept candidato por alcance especializado (>4m), 4 não alcançavam o limite genérico (2m), e 11 tentativas selecionadas falharam tecnicamente. A sensibilidade de 5m é geométrica; defesas e qualidade continuam UNKNOWN."
     }
   ],
   "macros": [
@@ -1046,24 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W153",
-      "wave": "W153",
-      "publishedAt": "2026-10-28T05:06:58Z",
-      "macro": "M2",
-      "title": "W153: replicação SafeForward na seed1731",
-      "status": "1/1 PASS; primeiro diff t25/t26; ON 10–7 e OFF 0–0. Sensibilidade replicada em duas seeds, qualidade não aprovada.",
-      "summary": "Na segunda seed, primeiro Move/estado diverge em t25 e evento em t26. A flag ON tem 24 Shoot events e 17 gols contra zero OFF; contagens não validam qualidade nem conversão técnica. Investigar lifecycle Shoot/Goal antes de ampliar seeds."
-    },
-    {
-      "id": "W154",
-      "wave": "W154",
-      "publishedAt": "2026-10-28T05:16:53Z",
-      "macro": "M2",
-      "title": "W154: ciclo de chute reconciliado e replay determinístico",
-      "status": "1/1 PASS; W153 reproduzido tick a tick; 24 lifecycles terminados em 17 gols, 5 bloqueios e 2 fora.",
-      "summary": "Não havia erro de contagem: ShootLaunchDegraded ainda cria ActiveShoot; cinco casos terminam em gol. Repetição seed1731 idêntica nos dois braços. Taxa de gols e efeito de qualidade permanecem desconhecidos."
-    },
-    {
       "id": "W155",
       "wave": "W155",
       "publishedAt": "2026-10-28T05:25:27Z",
@@ -1116,6 +1098,24 @@
       "title": "W160: matriz completa Shoot×Tackle em 1.151 testes",
       "status": "1.151/1.151 PASS; quatro branches em fixture confirmados; sem prevalência em partida.",
       "summary": "Sucesso duplo → ShootLaunchInterfered 30m; sucesso/falha → lançamento normal; falha/sucesso → ShotBlocked; falha dupla → ShootErrorSide. Zero ShootLaunchInterfered em 136 shots W158 ON, limitado a quatro seeds."
+    },
+    {
+      "id": "W161",
+      "wave": "W161",
+      "publishedAt": "2026-10-28T06:29:04Z",
+      "macro": "M2",
+      "title": "W161: crosswalk GK interception → ShotBlocked",
+      "status": "Scripts Python e PowerShell PASS; 30/30 bloqueios ligados a intercepts GK bem-sucedidos; limitações de proveniência registradas.",
+      "summary": "Trinta ShotBlocked ActiveShoot coincidem com InterceptSucceededAtClosestApproach no mesmo seed/lifecycle/tick; 17 falhas tiveram terminais variados. Fluxo fonte compatível, mas hash Simulation/assembly histórico ausente; linkage PARTIAL."
+    },
+    {
+      "id": "W162",
+      "wave": "W162",
+      "publishedAt": "2026-10-28T06:35:00Z",
+      "macro": "M2",
+      "title": "W162: censo de não seleção do goleiro em gols",
+      "status": "100/100 lifecycles particionados; CRC/manifesto/hash ZIP PASS; sem mudança de gameplay.",
+      "summary": "Dos 100 gols W158, 85 não tinham intercept candidato por alcance especializado (>4m), 4 não alcançavam o limite genérico (2m), e 11 tentativas selecionadas falharam tecnicamente. A sensibilidade de 5m é geométrica; defesas e qualidade continuam UNKNOWN."
     },
     {
       "wave": "W66",
@@ -2934,6 +2934,14 @@
     {
       "id": "CP-W160-01",
       "title": "Shoot tackle branches and existing comparison suite rerun"
+    },
+    {
+      "id": "CP-W162-01",
+      "title": "Censo e partição 100 gols"
+    },
+    {
+      "id": "CP-W163-00",
+      "title": "Preflight experimental de reach GK 5m"
     }
   ]
 }
