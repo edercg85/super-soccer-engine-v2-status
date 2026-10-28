@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-114",
-  "updatedAt": "2026-10-28T09:00:25Z",
-  "cycle": "SS-ORCH-001-W180-POST-RECOVERY-CHAIN",
+  "version": "2026.10.28-portal-115",
+  "updatedAt": "2026-10-28T09:04:50Z",
+  "cycle": "SS-ORCH-001-W181-POST-RECOVERY-TURNOVER",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W181: seguir a mesma trajetória seed1733 do tick80 ao95, incluindo decisões do jogador que recuperou a posse. Registrar ação/result/eventos e primeiro terminal; depois escolher nova dependência se a janela não gerar pergunta nova.",
+  "currentFocus": "W182: nos ticks81–95, auditar por que as ações Move/Pass foram escolhidas: eligibility, scores concorrentes de Move/Pass/Shoot para os portadores. Limitar conclusão ao estado local, sem batizar intenção coletiva.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W180",
-    "wave": "W180",
-    "publishedAt": "2026-10-28T08:59:40Z",
+    "id": "W181",
+    "wave": "W181",
+    "publishedAt": "2026-10-28T09:03:00Z",
     "macro": "M2",
-    "title": "W180: continuação após posse no tick65",
-    "status": "Teste focado 1/1 PASS; duas conclusões de passe e recuperação final auditadas.",
-    "summary": "Dois passes rank1 completam 71/75; terceiro degraded 77 falha79, mas target recebe posse no80. Nenhum chute 65–80; contraste com degraded que completou em W179."
+    "title": "W181: turnover após recuperação e nova posse",
+    "status": "1/1 PASS; audit PASS; sequência local verificada.",
+    "summary": "PassFailed tick79 deixa target away recuperar no80; tackle home successful muda posse no81. Home passa/conclui no90; outro passe falha95 e home teammate recupera. Sem chute80–95."
   },
   "recentCycles": [
-    {
-      "id": "W173",
-      "wave": "W173",
-      "publishedAt": "2026-10-28T08:32:28Z",
-      "macro": "M2",
-      "title": "W173: contraponto onside em bola parada",
-      "status": "Caso natural 2/2 repetições determinísticas; target onside recebe o passe; ocorrência em indirect free kick, não open play.",
-      "summary": "Passe lançado no tick 12 após indirect free kick; snapshot sem players marcados; target recupera posse no tick 15; nenhum OffsideOffence. Seeds 1732/1733 reproduzem o mesmo hash de estado, logo um único estado repetido."
-    },
     {
       "id": "W174",
       "wave": "W174",
@@ -92,6 +83,15 @@
       "title": "W180: continuação após posse no tick65",
       "status": "Teste focado 1/1 PASS; duas conclusões de passe e recuperação final auditadas.",
       "summary": "Dois passes rank1 completam 71/75; terceiro degraded 77 falha79, mas target recebe posse no80. Nenhum chute 65–80; contraste com degraded que completou em W179."
+    },
+    {
+      "id": "W181",
+      "wave": "W181",
+      "publishedAt": "2026-10-28T09:03:00Z",
+      "macro": "M2",
+      "title": "W181: turnover após recuperação e nova posse",
+      "status": "1/1 PASS; audit PASS; sequência local verificada.",
+      "summary": "PassFailed tick79 deixa target away recuperar no80; tackle home successful muda posse no81. Home passa/conclui no90; outro passe falha95 e home teammate recupera. Sem chute80–95."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W173",
-      "wave": "W173",
-      "publishedAt": "2026-10-28T08:32:28Z",
-      "macro": "M2",
-      "title": "W173: contraponto onside em bola parada",
-      "status": "Caso natural 2/2 repetições determinísticas; target onside recebe o passe; ocorrência em indirect free kick, não open play.",
-      "summary": "Passe lançado no tick 12 após indirect free kick; snapshot sem players marcados; target recupera posse no tick 15; nenhum OffsideOffence. Seeds 1732/1733 reproduzem o mesmo hash de estado, logo um único estado repetido."
-    },
-    {
       "id": "W174",
       "wave": "W174",
       "publishedAt": "2026-10-28T08:40:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W180: continuação após posse no tick65",
       "status": "Teste focado 1/1 PASS; duas conclusões de passe e recuperação final auditadas.",
       "summary": "Dois passes rank1 completam 71/75; terceiro degraded 77 falha79, mas target recebe posse no80. Nenhum chute 65–80; contraste com degraded que completou em W179."
+    },
+    {
+      "id": "W181",
+      "wave": "W181",
+      "publishedAt": "2026-10-28T09:03:00Z",
+      "macro": "M2",
+      "title": "W181: turnover após recuperação e nova posse",
+      "status": "1/1 PASS; audit PASS; sequência local verificada.",
+      "summary": "PassFailed tick79 deixa target away recuperar no80; tackle home successful muda posse no81. Home passa/conclui no90; outro passe falha95 e home teammate recupera. Sem chute80–95."
     },
     {
       "wave": "W66",
@@ -3042,6 +3042,14 @@
     {
       "id": "CP-W180-02",
       "title": "Handoff W180 validado"
+    },
+    {
+      "id": "CP-W181-01",
+      "title": "Recuperação de passe e tackle imediato"
+    },
+    {
+      "id": "CP-W181-02",
+      "title": "Handoff W181 compacto publicado"
     }
   ]
 }
