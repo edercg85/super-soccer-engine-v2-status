@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-194",
-  "updatedAt": "2026-10-28T21:35:00Z",
-  "cycle": "W270",
+  "version": "2026.10.28-portal-195",
+  "updatedAt": "2026-10-28T22:18:38Z",
+  "cycle": "W271",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — progressão e criação: recaptura observacional pareada W214 (W246/W255), começando por seed-pair piloto; mapear progressão, apoio, zonas ofensivas, elegibilidade/seleção de Shoot, eventos e terminais com fingerprints; produzir replay completo de estados reais para revisão humana.",
+  "currentFocus": "Frente ativa M2 — progressão e criação: W270 mediu o funil em 18 pares W214; o gargalo medido é a raridade de progressão ao terço ofensivo e de entradas na área penal. W271 compara BallCarrierContextualMoveV2 OFF/ON com Receive ON e Pass OFF fixos, sem alterar defaults; W255 segue a última avaliação integrada e a revisão humana do replay permanece pendente.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W270",
-    "wave": "W270",
-    "publishedAt": "2026-10-28T21:35:00Z",
+    "id": "W271",
+    "wave": "W271",
+    "publishedAt": "2026-10-28T22:18:38Z",
     "macro": "M2",
-    "title": "Funil ofensivo W214 e replay completo",
-    "status": "EM EXECUÇÃO — piloto de instrumentação; sem alteração de gameplay.",
-    "summary": "Frente ativa M2: recaptura observacional pareada W246/W255 para localizar o primeiro gargalo ofensivo, validar neutralidade por fingerprints e gerar replay integral de 90 minutos."
+    "title": "Experimento de progressão com movimento contextual",
+    "status": "EM EXECUÇÃO — uma variável, sem mudança de defaults.",
+    "summary": "Comparação W214 de BallCarrierContextualMoveV2 OFF/ON em 18 pares; Receive ON e Pass OFF fixos. Medir chegada ao terço/área, continuidade, apoio, tentativas e terminais."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "InvestigaÃ§Ã£o continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W266",
-      "wave": "W266",
-      "publishedAt": "2026-10-28T18:35:35Z",
-      "macro": "M3",
-      "title": "PDB/fonte W214 validado; semÃ¢ntica de PassFailed e recovery explicada",
-      "status": "Mecanismo estÃ¡tico confirmado; causa fÃ­sica do caso W265 e qualidade permanecem UNKNOWN",
-      "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos trÃªs assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distÃ¢ncia ao endpoint e ordena por BallControl."
-    },
-    {
       "id": "W267",
       "wave": "W267",
       "publishedAt": "2026-10-28T18:46:00Z",
@@ -96,11 +87,20 @@
     {
       "id": "W270",
       "wave": "W270",
-      "publishedAt": "2026-10-28T21:35:00Z",
+      "publishedAt": "2026-10-28T22:18:38Z",
       "macro": "M2",
       "title": "Funil ofensivo W214 e replay completo",
-      "status": "EM EXECUÇÃO — piloto de instrumentação; sem alteração de gameplay.",
-      "summary": "Frente ativa M2: recaptura observacional pareada W246/W255 para localizar o primeiro gargalo ofensivo, validar neutralidade por fingerprints e gerar replay integral de 90 minutos."
+      "status": "CONCLUÍDO TECNICAMENTE — sem promoção de gameplay; M2 continua ativa.",
+      "summary": "18 pares completos W246/W255. Terço 289→288, área 21→25; tentativas 6→12 e gols 5→11 com IC incluindo zero. Gargalo funcional medido: progressão territorial rara. Replay seed1744 pronto; revisão humana pendente."
+    },
+    {
+      "id": "W271",
+      "wave": "W271",
+      "publishedAt": "2026-10-28T22:18:38Z",
+      "macro": "M2",
+      "title": "Experimento de progressão com movimento contextual",
+      "status": "EM EXECUÇÃO — uma variável, sem mudança de defaults.",
+      "summary": "Comparação W214 de BallCarrierContextualMoveV2 OFF/ON em 18 pares; Receive ON e Pass OFF fixos. Medir chegada ao terço/área, continuidade, apoio, tentativas e terminais."
     }
   ],
   "macros": [
@@ -1070,8 +1070,8 @@
     "worsened": "Tentativas de passe: 18.807â†’18.495, menores em 13/18. Passes completos: 15.047â†’14.915; IC pareado cruza zero.",
     "shotsGoals": "Tentativas (ShotEvent): 6→12 corrigidas; média pareada +0,333, IC 95% aproximado [−0,282;+0,948]. Gols 5→11, IC [−0,232;+0,899]. Sem ganho demonstrado; W255 usava contagem ampla que duplicava ShotOffTargetEvent no seed1744.",
     "lastIntegrated": "W255 continua sendo a Ãºltima avaliaÃ§Ã£o integrada (18 pares). W268 Ã© diagnÃ³stico causal local num seed divergido, nÃ£o comparaÃ§Ã£o de qualidade.",
-    "mainBlocker": "9/18 partidas candidatas sem ShotEvent. Os traces W255 não medem progressão territorial, apoio, oportunidade nem elegibilidade de Shoot; primeiro gargalo do funil permanece UNKNOWN. Avaliação humana do replay curto pendente.",
-    "replay": "Viewer W262 local cobre ticks686–696 (11 frames); ainda não existe replay navegável de partida completa publicado. Avaliação humana UNKNOWN."
+    "mainBlocker": "W270 mediu apenas 289/288 segmentos que chegam ao terço e 21/25 que entram na área em 18 pares. ShotEvent 6→12 e gols 5→11 têm IC pareados incluindo zero. O principal gargalo observado é a progressão territorial; W271 testa BCCM V2 OFF/ON no W214, com Pass OFF fixo.",
+    "replay": "Replay W270 completo seed1744 disponível no ZIP consolidado para avaliação humana; auditoria técnica concluída, avaliação de futebol pendente."
   },
   "diary": [
     {
@@ -1111,15 +1111,6 @@
       "summary": "InvestigaÃ§Ã£o continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W266",
-      "wave": "W266",
-      "publishedAt": "2026-10-28T18:35:35Z",
-      "macro": "M3",
-      "title": "PDB/fonte W214 validado; semÃ¢ntica de PassFailed e recovery explicada",
-      "status": "Mecanismo estÃ¡tico confirmado; causa fÃ­sica do caso W265 e qualidade permanecem UNKNOWN",
-      "summary": "Checksums PDB normalizados, GUIDs CodeView e hashes de documentos-fonte correspondem nos trÃªs assemblies W214. PassFailed deriva da posse terminal; o recovery baseline usa distÃ¢ncia ao endpoint e ordena por BallControl."
-    },
-    {
       "id": "W267",
       "wave": "W267",
       "publishedAt": "2026-10-28T18:46:00Z",
@@ -1149,11 +1140,20 @@
     {
       "id": "W270",
       "wave": "W270",
-      "publishedAt": "2026-10-28T21:35:00Z",
+      "publishedAt": "2026-10-28T22:18:38Z",
       "macro": "M2",
       "title": "Funil ofensivo W214 e replay completo",
-      "status": "EM EXECUÇÃO — piloto de instrumentação; sem alteração de gameplay.",
-      "summary": "Frente ativa M2: recaptura observacional pareada W246/W255 para localizar o primeiro gargalo ofensivo, validar neutralidade por fingerprints e gerar replay integral de 90 minutos."
+      "status": "CONCLUÍDO TECNICAMENTE — sem promoção de gameplay; M2 continua ativa.",
+      "summary": "18 pares completos W246/W255. Terço 289→288, área 21→25; tentativas 6→12 e gols 5→11 com IC incluindo zero. Gargalo funcional medido: progressão territorial rara. Replay seed1744 pronto; revisão humana pendente."
+    },
+    {
+      "id": "W271",
+      "wave": "W271",
+      "publishedAt": "2026-10-28T22:18:38Z",
+      "macro": "M2",
+      "title": "Experimento de progressão com movimento contextual",
+      "status": "EM EXECUÇÃO — uma variável, sem mudança de defaults.",
+      "summary": "Comparação W214 de BallCarrierContextualMoveV2 OFF/ON em 18 pares; Receive ON e Pass OFF fixos. Medir chegada ao terço/área, continuidade, apoio, tentativas e terminais."
     },
     {
       "wave": "W66",
