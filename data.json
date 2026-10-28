@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-121",
-  "updatedAt": "2026-10-28T09:36:00Z",
-  "cycle": "SS-ORCH-001-W188-SCORE-SCALE-SOURCE-AUDIT",
+  "version": "2026.10.28-portal-122",
+  "updatedAt": "2026-10-28T09:39:10Z",
+  "cycle": "SS-ORCH-001-W189-SHOOT-MARGIN-DISTRIBUTION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W188: inspecionar fontes atuais de Move/Pass/Shoot: fórmulas, normalização, pisos/tetos, elegibilidade e winner-selection; explicar as margens observadas sem inferir intenção. Recalcular pontos de controle em faixas conhecidas antes de recomendar qualquer patch.",
+  "currentFocus": "W189: registrar scores/rank/distance por decisão elegível em seed1732; calcular distribuição do gap entre vencedor atual e Shoot em vez de médias por faixa. Apenas offline replay data; sem intervenção de gameplay. Usar como threshold characterization, não como estimativa de chute de gol.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W187",
-    "wave": "W187",
-    "publishedAt": "2026-10-28T09:36:00Z",
+    "id": "W188",
+    "wave": "W188",
+    "publishedAt": "2026-10-28T09:39:10Z",
     "macro": "M2",
-    "title": "W187: comparação de scores por distância",
-    "status": "1/1 PASS; bins e hash cruzado W186 auditados.",
-    "summary": "Move > Shoot em2517/2517 decisões elegíveis; Pass > Shoot em2481. Score médio em20–40m: Shoot.568, Move.801, Pass.654; sem amostras <20m."
+    "title": "W188: fórmula e escala dos scores de ação",
+    "status": "Auditoria estática de seis arquivos fonte PASS; sem mudança no motor.",
+    "summary": "Move default é weighted attributes sem contexto espacial; Shoot=.30 distância+.20 lane+.50 atributos; Pass=.40 progressão+.30 espaço+.30 lane. Correção funcional do score permanece UNKNOWN."
   },
   "recentCycles": [
-    {
-      "id": "W180",
-      "wave": "W180",
-      "publishedAt": "2026-10-28T08:59:40Z",
-      "macro": "M2",
-      "title": "W180: continuação após posse no tick65",
-      "status": "Teste focado 1/1 PASS; duas conclusões de passe e recuperação final auditadas.",
-      "summary": "Dois passes rank1 completam 71/75; terceiro degraded 77 falha79, mas target recebe posse no80. Nenhum chute 65–80; contraste com degraded que completou em W179."
-    },
     {
       "id": "W181",
       "wave": "W181",
@@ -92,6 +83,15 @@
       "title": "W187: comparação de scores por distância",
       "status": "1/1 PASS; bins e hash cruzado W186 auditados.",
       "summary": "Move > Shoot em2517/2517 decisões elegíveis; Pass > Shoot em2481. Score médio em20–40m: Shoot.568, Move.801, Pass.654; sem amostras <20m."
+    },
+    {
+      "id": "W188",
+      "wave": "W188",
+      "publishedAt": "2026-10-28T09:39:10Z",
+      "macro": "M2",
+      "title": "W188: fórmula e escala dos scores de ação",
+      "status": "Auditoria estática de seis arquivos fonte PASS; sem mudança no motor.",
+      "summary": "Move default é weighted attributes sem contexto espacial; Shoot=.30 distância+.20 lane+.50 atributos; Pass=.40 progressão+.30 espaço+.30 lane. Correção funcional do score permanece UNKNOWN."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W180",
-      "wave": "W180",
-      "publishedAt": "2026-10-28T08:59:40Z",
-      "macro": "M2",
-      "title": "W180: continuação após posse no tick65",
-      "status": "Teste focado 1/1 PASS; duas conclusões de passe e recuperação final auditadas.",
-      "summary": "Dois passes rank1 completam 71/75; terceiro degraded 77 falha79, mas target recebe posse no80. Nenhum chute 65–80; contraste com degraded que completou em W179."
-    },
-    {
       "id": "W181",
       "wave": "W181",
       "publishedAt": "2026-10-28T09:03:00Z",
@@ -1116,6 +1107,15 @@
       "title": "W187: comparação de scores por distância",
       "status": "1/1 PASS; bins e hash cruzado W186 auditados.",
       "summary": "Move > Shoot em2517/2517 decisões elegíveis; Pass > Shoot em2481. Score médio em20–40m: Shoot.568, Move.801, Pass.654; sem amostras <20m."
+    },
+    {
+      "id": "W188",
+      "wave": "W188",
+      "publishedAt": "2026-10-28T09:39:10Z",
+      "macro": "M2",
+      "title": "W188: fórmula e escala dos scores de ação",
+      "status": "Auditoria estática de seis arquivos fonte PASS; sem mudança no motor.",
+      "summary": "Move default é weighted attributes sem contexto espacial; Shoot=.30 distância+.20 lane+.50 atributos; Pass=.40 progressão+.30 espaço+.30 lane. Correção funcional do score permanece UNKNOWN."
     },
     {
       "wave": "W66",
@@ -3078,6 +3078,10 @@
     {
       "id": "CP-W187-02",
       "title": "W187 por distância concluído; W188 iniciado"
+    },
+    {
+      "id": "CP-W188-02",
+      "title": "W188 fórmula auditada; W189 iniciado"
     }
   ]
 }
