@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-123",
-  "updatedAt": "2026-10-28T09:42:00Z",
-  "cycle": "SS-ORCH-001-W190-CROSS-SEED-MARGIN-CHECK",
+  "version": "2026.10.28-portal-124",
+  "updatedAt": "2026-10-28T09:47:00Z",
+  "cycle": "SS-ORCH-001-W191-VERTICAL-SHOOT-OPTIONAL-EXPERIMENT",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W190: recolher mesma tabela per-decision para seed1733 e comparar distribuições por distância; comprovar hash de estado W181 ao tick95 e validar os 2.526 elegíveis. Não agregar se denominadores/inputs divergirem.",
+  "currentFocus": "W191: habilitar somente VerticalAttacking.Shoot em configuração temporária; comparar mesma fixture/seed1733 reach4 contra W190 baseline. Capture quando a flag cria threat value, muda vencedor, tentativa/resolução e placar; repetir ON para determinismo. Flag permanece default-off e nenhum fonte de produção é editado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W189",
-    "wave": "W189",
-    "publishedAt": "2026-10-28T09:42:00Z",
+    "id": "W190",
+    "wave": "W190",
+    "publishedAt": "2026-10-28T09:47:00Z",
     "macro": "M2",
-    "title": "W189: distribuição da margem Shoot vs vencedor",
-    "status": "1/1 PASS; 2517 per-decision rows, margens e bins auditados.",
-    "summary": "Gap vencedor−Shoot positivo em todos os pontos; mediana .224 (20–40m), .339 (40–60m), .392 (60–80m), .467 (≥80m). Offset snapshot-only .20/.30/.40 mudaria 113/689/1532 rankings."
+    "title": "W190: margens de Shoot validadas cross-seed",
+    "status": "1/1 PASS; seed1733 tick95 matches W181; cross-seed audit PASS.",
+    "summary": "Move > Shoot em5043/5043 decisões elegíveis; gap<.08 em duas linhas de cada seed; 0 chutes nas duas partidas. +.08 é só aritmética de snapshot."
   },
   "recentCycles": [
-    {
-      "id": "W182",
-      "wave": "W182",
-      "publishedAt": "2026-10-28T09:06:44Z",
-      "macro": "M2",
-      "title": "W182: ranking de Shoot vs Move/Pass",
-      "status": "Auditoria 10/10 PASS; Shoot elegível sempre, score nunca vencedor.",
-      "summary": "Nos ticks82–94, Shoot elegível 10/10 e selecionado 0; Move vence8, Pass2. Explica ausência local por comparação de scores, não calibragem global."
-    },
     {
       "id": "W183",
       "wave": "W183",
@@ -92,6 +83,15 @@
       "title": "W189: distribuição da margem Shoot vs vencedor",
       "status": "1/1 PASS; 2517 per-decision rows, margens e bins auditados.",
       "summary": "Gap vencedor−Shoot positivo em todos os pontos; mediana .224 (20–40m), .339 (40–60m), .392 (60–80m), .467 (≥80m). Offset snapshot-only .20/.30/.40 mudaria 113/689/1532 rankings."
+    },
+    {
+      "id": "W190",
+      "wave": "W190",
+      "publishedAt": "2026-10-28T09:47:00Z",
+      "macro": "M2",
+      "title": "W190: margens de Shoot validadas cross-seed",
+      "status": "1/1 PASS; seed1733 tick95 matches W181; cross-seed audit PASS.",
+      "summary": "Move > Shoot em5043/5043 decisões elegíveis; gap<.08 em duas linhas de cada seed; 0 chutes nas duas partidas. +.08 é só aritmética de snapshot."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W182",
-      "wave": "W182",
-      "publishedAt": "2026-10-28T09:06:44Z",
-      "macro": "M2",
-      "title": "W182: ranking de Shoot vs Move/Pass",
-      "status": "Auditoria 10/10 PASS; Shoot elegível sempre, score nunca vencedor.",
-      "summary": "Nos ticks82–94, Shoot elegível 10/10 e selecionado 0; Move vence8, Pass2. Explica ausência local por comparação de scores, não calibragem global."
-    },
-    {
       "id": "W183",
       "wave": "W183",
       "publishedAt": "2026-10-28T09:14:11Z",
@@ -1116,6 +1107,15 @@
       "title": "W189: distribuição da margem Shoot vs vencedor",
       "status": "1/1 PASS; 2517 per-decision rows, margens e bins auditados.",
       "summary": "Gap vencedor−Shoot positivo em todos os pontos; mediana .224 (20–40m), .339 (40–60m), .392 (60–80m), .467 (≥80m). Offset snapshot-only .20/.30/.40 mudaria 113/689/1532 rankings."
+    },
+    {
+      "id": "W190",
+      "wave": "W190",
+      "publishedAt": "2026-10-28T09:47:00Z",
+      "macro": "M2",
+      "title": "W190: margens de Shoot validadas cross-seed",
+      "status": "1/1 PASS; seed1733 tick95 matches W181; cross-seed audit PASS.",
+      "summary": "Move > Shoot em5043/5043 decisões elegíveis; gap<.08 em duas linhas de cada seed; 0 chutes nas duas partidas. +.08 é só aritmética de snapshot."
     },
     {
       "wave": "W66",
@@ -3086,6 +3086,10 @@
     {
       "id": "CP-W189-02",
       "title": "W189 distribuído e validado; W190 iniciado"
+    },
+    {
+      "id": "CP-W190-02",
+      "title": "W190 cross-seed encerrado; W191 flag experimental iniciada"
     }
   ]
 }
