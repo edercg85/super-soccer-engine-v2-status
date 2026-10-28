@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-151",
-  "updatedAt": "2026-10-28T13:59:55Z",
-  "cycle": "SS-ORCH-001-W229-RESTART-REPLICATION",
+  "version": "2026.10.28-portal-152",
+  "updatedAt": "2026-10-28T14:05:50Z",
+  "cycle": "SS-ORCH-001-W230-LOOSE-BALL-RECOVERY",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Mapear no código e nos registros disponíveis quais jogadores são candidatos a recuperar a bola solta, como distância/estado e ordenação escolhem o vencedor nos ticks4 de 1730/1731, e se isso explica a diferença de IDs após o passe. Não inferir qualidade global.",
+  "currentFocus": "Determinar se existe checkpoint íntegro que permita isolar a transição tick3→tick4 nas seeds1730/1731: validar histórico de runtime e vetores completos antes de qualquer híbrida. Se ausente, manter causa temporal UNKNOWN e pivotar para outra diferença com estado completo.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W229",
-    "wave": "W229",
-    "publishedAt": "2026-10-28T13:59:55Z",
+    "id": "W230",
+    "wave": "W230",
+    "publishedAt": "2026-10-28T14:05:50Z",
     "macro": "M3",
-    "title": "W229: W228 não replicado nos prefixes restantes",
-    "status": "Busca em 1730/1731 sem segunda amostra pareada; casos ON censurados.",
-    "summary": "W229 limitou a conclusão: o restart de W228 segue como efeito de um único caso; seed1730 OFF repete o mesmo restart, sem contraste DERR. Atraso agregado continua UNKNOWN."
+    "title": "W230: recuperador de bola solta explicado por elegibilidade local",
+    "status": "Regra confirmada em quatro braços/sementes observadas; causa global UNKNOWN.",
+    "summary": "Todos os quatro recuperadores coincidem com o único jogador até 1m do endpoint. Híbridos de seed1730 requerem endpoint e posições ON juntos; seed1731 mantém o mesmo ID apesar do passe bem-sucedido."
   },
   "recentCycles": [
-    {
-      "id": "W227",
-      "wave": "W227",
-      "publishedAt": "2026-10-28T13:43:37Z",
-      "macro": "M3",
-      "title": "W227: movimento DERR bloqueia passe da seed1730",
-      "status": "Mesmo sample e endpoints; a linha defensiva muda a execução técnica.",
-      "summary": "Clearance 4.689→1.671m; lane 100→57.47; chance76.466→43.945%; PassLaunched vira PassLaunchDegraded. A posição Primary 50b9 sozinha reproduz a métrica ON em híbrida estática."
-    },
     {
       "id": "W226",
       "wave": "W226",
@@ -101,6 +92,15 @@
       "title": "W229: W228 não replicado nos prefixes restantes",
       "status": "Busca em 1730/1731 sem segunda amostra pareada; casos ON censurados.",
       "summary": "W229 limitou a conclusão: o restart de W228 segue como efeito de um único caso; seed1730 OFF repete o mesmo restart, sem contraste DERR. Atraso agregado continua UNKNOWN."
+    },
+    {
+      "id": "W230",
+      "wave": "W230",
+      "publishedAt": "2026-10-28T14:05:50Z",
+      "macro": "M3",
+      "title": "W230: recuperador de bola solta explicado por elegibilidade local",
+      "status": "Regra confirmada em quatro braços/sementes observadas; causa global UNKNOWN.",
+      "summary": "Todos os quatro recuperadores coincidem com o único jogador até 1m do endpoint. Híbridos de seed1730 requerem endpoint e posições ON juntos; seed1731 mantém o mesmo ID apesar do passe bem-sucedido."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W227",
-      "wave": "W227",
-      "publishedAt": "2026-10-28T13:43:37Z",
-      "macro": "M3",
-      "title": "W227: movimento DERR bloqueia passe da seed1730",
-      "status": "Mesmo sample e endpoints; a linha defensiva muda a execução técnica.",
-      "summary": "Clearance 4.689→1.671m; lane 100→57.47; chance76.466→43.945%; PassLaunched vira PassLaunchDegraded. A posição Primary 50b9 sozinha reproduz a métrica ON em híbrida estática."
-    },
-    {
       "id": "W226",
       "wave": "W226",
       "publishedAt": "2026-10-28T13:43:37Z",
@@ -1134,6 +1125,15 @@
       "title": "W229: W228 não replicado nos prefixes restantes",
       "status": "Busca em 1730/1731 sem segunda amostra pareada; casos ON censurados.",
       "summary": "W229 limitou a conclusão: o restart de W228 segue como efeito de um único caso; seed1730 OFF repete o mesmo restart, sem contraste DERR. Atraso agregado continua UNKNOWN."
+    },
+    {
+      "id": "W230",
+      "wave": "W230",
+      "publishedAt": "2026-10-28T14:05:50Z",
+      "macro": "M3",
+      "title": "W230: recuperador de bola solta explicado por elegibilidade local",
+      "status": "Regra confirmada em quatro braços/sementes observadas; causa global UNKNOWN.",
+      "summary": "Todos os quatro recuperadores coincidem com o único jogador até 1m do endpoint. Híbridos de seed1730 requerem endpoint e posições ON juntos; seed1731 mantém o mesmo ID apesar do passe bem-sucedido."
     },
     {
       "wave": "W66",
@@ -3188,6 +3188,10 @@
     {
       "id": "CP-W229-FINAL",
       "title": "W229: não há segunda amostra pareada suficiente para replicar o atraso do kicker"
+    },
+    {
+      "id": "CP-W230-FINAL",
+      "title": "W230: os quatro recuperadores são os únicos candidatos dentro do limiar do endpoint"
     }
   ]
 }
