@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-61",
-  "updatedAt": "2026-10-27T23:33:00-03:00",
-  "cycle": "SS-ORCH-001-W126-READER-CONSUMER-SNAPSHOT",
+  "version": "2026.10.28-portal-62",
+  "updatedAt": "2026-10-27T23:38:00-03:00",
+  "cycle": "SS-ORCH-001-W127-PASS-SCORE-COMPONENT-DECOMPOSITION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W127: replay pareado controlado de um passe OFF naturalmente selecionado até o primeiro efeito terminal, com prestate/RNG compartilhados; abortar se cursor RNG não puder ser reconstruído.",
+  "currentFocus": "W128: caracterizar snapshots arquivados adicionais por hash e geometria para testar quando progression, receiver-space ou lane explicam crossing Pass/Move. Se os registros não bastarem, capturar cenário curto determinístico sem alterar gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W126",
-    "wave": "W126",
-    "publishedAt": "2026-10-28T02:32:00Z",
+    "id": "W127",
+    "wave": "W127",
+    "publishedAt": "2026-10-28T02:47:00Z",
     "macro": "M2",
-    "title": "W126: escolha local de passe e snapshot de impedimento",
-    "status": "3/3 testes focais PASS; claim local confirmada; auditoria independente pendente; próximo tick UNKNOWN.",
-    "summary": "Nos snapshots W07 1730/1731, após movimentos OFF/ON pareados, OFF escolhe Pass e ON Move; candidato OFF corresponde ao PassAction e não aparece marcado em OffsideSnapshot. W06 1729 mantém Move nos dois braços. Os snapshots W07 compartilham geometria; não são réplicas independentes."
+    "title": "W127: decomposição causal local do score de passe",
+    "status": "3/3 PASS; score bruto recomposto por componentes; conclusão estreita, sem auditoria humana independente.",
+    "summary": "Nos snapshots W07, espaço e corredor mantêm 100; progressão cai 47,570770→21,176707 e Pass cruza abaixo de Move. Em W06, corredor varia em outra geometria e Move segue acima de Pass."
   },
   "recentCycles": [
-    {
-      "id": "W119",
-      "wave": "W119",
-      "publishedAt": "2026-10-27T22:01:57Z",
-      "macro": "M2",
-      "title": "Conformance do recovery linear-relative",
-      "status": "Focal 7/7, regressão 35/35 PASS; auditoria independente PASS estreito / PARTIAL integração",
-      "summary": "Limiar 1m inclusivo; 1.000001 excluído; delta relativo zero; maior BallControl e tie ordinal; precedência linear; ActivePass removido desativa. Fixtures de componente."
-    },
     {
       "id": "W120",
       "wave": "W120",
@@ -92,6 +83,15 @@
       "title": "W126: escolha local de passe e snapshot de impedimento",
       "status": "3/3 testes focais PASS; claim local confirmada; auditoria independente pendente; próximo tick UNKNOWN.",
       "summary": "Nos snapshots W07 1730/1731, após movimentos OFF/ON pareados, OFF escolhe Pass e ON Move; candidato OFF corresponde ao PassAction e não aparece marcado em OffsideSnapshot. W06 1729 mantém Move nos dois braços. Os snapshots W07 compartilham geometria; não são réplicas independentes."
+    },
+    {
+      "id": "W127",
+      "wave": "W127",
+      "publishedAt": "2026-10-28T02:47:00Z",
+      "macro": "M2",
+      "title": "W127: decomposição causal local do score de passe",
+      "status": "3/3 PASS; score bruto recomposto por componentes; conclusão estreita, sem auditoria humana independente.",
+      "summary": "Nos snapshots W07, espaço e corredor mantêm 100; progressão cai 47,570770→21,176707 e Pass cruza abaixo de Move. Em W06, corredor varia em outra geometria e Move segue acima de Pass."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W119",
-      "wave": "W119",
-      "publishedAt": "2026-10-27T22:01:57Z",
-      "macro": "M2",
-      "title": "Conformance do recovery linear-relative",
-      "status": "Focal 7/7, regressão 35/35 PASS; auditoria independente PASS estreito / PARTIAL integração",
-      "summary": "Limiar 1m inclusivo; 1.000001 excluído; delta relativo zero; maior BallControl e tie ordinal; precedência linear; ActivePass removido desativa. Fixtures de componente."
-    },
-    {
       "id": "W120",
       "wave": "W120",
       "publishedAt": "2026-10-27T22:08:20Z",
@@ -1116,6 +1107,15 @@
       "title": "W126: escolha local de passe e snapshot de impedimento",
       "status": "3/3 testes focais PASS; claim local confirmada; auditoria independente pendente; próximo tick UNKNOWN.",
       "summary": "Nos snapshots W07 1730/1731, após movimentos OFF/ON pareados, OFF escolhe Pass e ON Move; candidato OFF corresponde ao PassAction e não aparece marcado em OffsideSnapshot. W06 1729 mantém Move nos dois braços. Os snapshots W07 compartilham geometria; não são réplicas independentes."
+    },
+    {
+      "id": "W127",
+      "wave": "W127",
+      "publishedAt": "2026-10-28T02:47:00Z",
+      "macro": "M2",
+      "title": "W127: decomposição causal local do score de passe",
+      "status": "3/3 PASS; score bruto recomposto por componentes; conclusão estreita, sem auditoria humana independente.",
+      "summary": "Nos snapshots W07, espaço e corredor mantêm 100; progressão cai 47,570770→21,176707 e Pass cruza abaixo de Move. Em W06, corredor varia em outra geometria e Move segue acima de Pass."
     },
     {
       "wave": "W66",
@@ -2710,6 +2710,14 @@
     {
       "id": "CP-W126-01",
       "title": "Seleção de Pass e OffsideSnapshot em fixtures congeladas"
+    },
+    {
+      "id": "CP-W127-00",
+      "title": "Preflight e seleção de snapshots para decomposição"
+    },
+    {
+      "id": "CP-W127-01",
+      "title": "Recomposição dos componentes Pass"
     }
   ]
 }
