@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-196",
-  "updatedAt": "2026-10-28T22:49:49Z",
-  "cycle": "W272",
+  "version": "2026.10.28-portal-197",
+  "updatedAt": "2026-10-28T23:20:34Z",
+  "cycle": "W273",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — progressão e criação. W270 localizou o gargalo territorial; W271 refutou BCCM V2 como solução de progressão. W272 compara somente VerticalAttacking.Move em 18 pares W214, com Receive ON, Pass OFF e BCCM V2 OFF. Revisão humana dos replays segue pendente.",
+  "currentFocus": "Frente ativa M2 — progressão e criação. W272 encontrou grande ganho de acesso ao terço/área e menos ticks sem posse com VerticalAttacking.Move ON, mas também menor apoio próximo e 6 gols por jogo. W273 isola Pass OFF/ON com Move ON para testar conexão e suporte sem perder progressão. Replays aguardam julgamento humano.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W272",
-    "wave": "W272",
-    "publishedAt": "2026-10-28T22:49:49Z",
+    "id": "W273",
+    "wave": "W273",
+    "publishedAt": "2026-10-28T23:20:34Z",
     "macro": "M2",
-    "title": "Experimento de progressão pelo score de Move",
-    "status": "EM EXECUÇÃO — uma variável; defaults preservados.",
-    "summary": "Matriz W214 pareada, 18 seeds, VerticalAttacking.Move OFF/ON; Receive ON, Pass OFF, BCCM V2 OFF fixos. Avaliar território e continuidade da posse."
+    "title": "Passes com progressão vertical ativa",
+    "status": "EM EXECUÇÃO — default permanece OFF.",
+    "summary": "18 pares W214; Move ON fixo; Pass OFF/ON como única diferença; Receive ON e BCCM V2 OFF. Hipótese: recuperar conexão de apoio mantendo acesso territorial."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "InvestigaÃ§Ã£o continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W268",
-      "wave": "W268",
-      "publishedAt": "2026-10-28T18:51:41Z",
-      "macro": "M3",
-      "title": "Recovery endpoint seed1750 reproduzido e auditado",
-      "status": "Mecanismo local confirmado; qualidade e causa fÃ­sica UNKNOWN; auditoria 18/18 PASS.",
-      "summary": "Pass ON tick691: receptor elegÃ­vel 0,155m/BC73 perde para adversÃ¡rio 0,794m/BC86; tick696 sÃ³ passador elegÃ­vel. Ambos os passes foram lanÃ§ados e terminaram PassFailed apÃ³s recovery. Paridade W260 completa."
-    },
-    {
       "id": "W269",
       "wave": "W269",
       "publishedAt": "2026-10-28T20:47:14Z",
@@ -99,8 +90,17 @@
       "publishedAt": "2026-10-28T22:49:49Z",
       "macro": "M2",
       "title": "Experimento de progressão pelo score de Move",
-      "status": "EM EXECUÇÃO — uma variável; defaults preservados.",
-      "summary": "Matriz W214 pareada, 18 seeds, VerticalAttacking.Move OFF/ON; Receive ON, Pass OFF, BCCM V2 OFF fixos. Avaliar território e continuidade da posse."
+      "status": "CONCLUÍDO TECNICAMENTE — forte progressão territorial; plausibilidade e suporte pendentes de avaliação humana.",
+      "summary": "18 pares W214: episódios no terço 289→1.479, área 21→408, ticks sem possuidor 50.236→32.084; ShotEvent 6→265, gols 5→108. Acesso melhorou 18/18, mas suporte próximo caiu 18/18 e 108 gols/18 jogos exige revisão; nenhuma promoção."
+    },
+    {
+      "id": "W273",
+      "wave": "W273",
+      "publishedAt": "2026-10-28T23:20:34Z",
+      "macro": "M2",
+      "title": "Passes com progressão vertical ativa",
+      "status": "EM EXECUÇÃO — default permanece OFF.",
+      "summary": "18 pares W214; Move ON fixo; Pass OFF/ON como única diferença; Receive ON e BCCM V2 OFF. Hipótese: recuperar conexão de apoio mantendo acesso territorial."
     }
   ],
   "macros": [
@@ -1070,8 +1070,8 @@
     "worsened": "Tentativas de passe: 18.807â†’18.495, menores em 13/18. Passes completos: 15.047â†’14.915; IC pareado cruza zero.",
     "shotsGoals": "Tentativas (ShotEvent): 6→12 corrigidas; média pareada +0,333, IC 95% aproximado [−0,282;+0,948]. Gols 5→11, IC [−0,232;+0,899]. Sem ganho demonstrado; W255 usava contagem ampla que duplicava ShotOffTargetEvent no seed1744.",
     "lastIntegrated": "W255 continua sendo a Ãºltima avaliaÃ§Ã£o integrada (18 pares). W268 Ã© diagnÃ³stico causal local num seed divergido, nÃ£o comparaÃ§Ã£o de qualidade.",
-    "mainBlocker": "W270 mediu progressão territorial rara. W271 mostrou que BCCM V2 aumenta chutes longos, porém reduz segmentos no terço 289→60, entradas na área 21→0 e eleva ticks sem possuidor 50.236→70.013. W272 testa VerticalAttacking.Move isoladamente para verificar progressão controlada; qualidade do jogo permanece sem aceite.",
-    "replay": "Replays completos W270 seed1744 e W271 seed1744 estão tecnicamente disponíveis para revisão humana. Revisão de futebol pendente; o replay W272 será selecionado após a matriz."
+    "mainBlocker": "W272 identificou uma via forte de progressão com Move ON (terço 289→1.479, área 21→408, ticks sem posse 50.236→32.084), mas apoio local/a frente caiu em todos os pares e o volume chegou a 108 gols em 18 jogos. W273 testa se Pass ON melhora conexão e plausibilidade sem retirar o avanço. A aceitação humana do replay continua pendente.",
+    "replay": "Replays completos W270/W271 seed1744 e W272 seed1732 estão tecnicamente disponíveis. W272 HTML SHA-256 2555899f4aa1021a8233bedacd923916371abcc8f9ff7fbd65fc67d3119b1d48; viewer audit 13/13 e render Edge confirmados. Julgamento humano pendente."
   },
   "diary": [
     {
@@ -1111,15 +1111,6 @@
       "summary": "InvestigaÃ§Ã£o continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W268",
-      "wave": "W268",
-      "publishedAt": "2026-10-28T18:51:41Z",
-      "macro": "M3",
-      "title": "Recovery endpoint seed1750 reproduzido e auditado",
-      "status": "Mecanismo local confirmado; qualidade e causa fÃ­sica UNKNOWN; auditoria 18/18 PASS.",
-      "summary": "Pass ON tick691: receptor elegÃ­vel 0,155m/BC73 perde para adversÃ¡rio 0,794m/BC86; tick696 sÃ³ passador elegÃ­vel. Ambos os passes foram lanÃ§ados e terminaram PassFailed apÃ³s recovery. Paridade W260 completa."
-    },
-    {
       "id": "W269",
       "wave": "W269",
       "publishedAt": "2026-10-28T20:47:14Z",
@@ -1152,8 +1143,17 @@
       "publishedAt": "2026-10-28T22:49:49Z",
       "macro": "M2",
       "title": "Experimento de progressão pelo score de Move",
-      "status": "EM EXECUÇÃO — uma variável; defaults preservados.",
-      "summary": "Matriz W214 pareada, 18 seeds, VerticalAttacking.Move OFF/ON; Receive ON, Pass OFF, BCCM V2 OFF fixos. Avaliar território e continuidade da posse."
+      "status": "CONCLUÍDO TECNICAMENTE — forte progressão territorial; plausibilidade e suporte pendentes de avaliação humana.",
+      "summary": "18 pares W214: episódios no terço 289→1.479, área 21→408, ticks sem possuidor 50.236→32.084; ShotEvent 6→265, gols 5→108. Acesso melhorou 18/18, mas suporte próximo caiu 18/18 e 108 gols/18 jogos exige revisão; nenhuma promoção."
+    },
+    {
+      "id": "W273",
+      "wave": "W273",
+      "publishedAt": "2026-10-28T23:20:34Z",
+      "macro": "M2",
+      "title": "Passes com progressão vertical ativa",
+      "status": "EM EXECUÇÃO — default permanece OFF.",
+      "summary": "18 pares W214; Move ON fixo; Pass OFF/ON como única diferença; Receive ON e BCCM V2 OFF. Hipótese: recuperar conexão de apoio mantendo acesso territorial."
     },
     {
       "wave": "W66",
