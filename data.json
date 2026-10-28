@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-130",
-  "updatedAt": "2026-10-28T11:22:00Z",
-  "cycle": "SS-ORCH-001-W197-SHOT-TERMINAL-RECONCILIATION",
+  "version": "2026.10.28-portal-131",
+  "updatedAt": "2026-10-28T11:29:00Z",
+  "cycle": "SS-ORCH-001-W198-GOALKEEPER-INTERCEPT-GUARD-AUDIT",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W197: seguir estados/terminais das tentativas OFF tick30 e ON ticks29/33; distinguir lançamento, resolução técnica, defesa/interceptação, cruzamento e gol sem presumir causa pela ausência de gol.",
+  "currentFocus": "W198: investigar as decisões/guardas do goleiro na janela tick29–34 e a geometria de interceptação; preservar a diferença entre fonte, snapshot e outcome observado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W196",
-    "wave": "W196",
-    "publishedAt": "2026-10-28T11:22:00Z",
+    "id": "W197",
+    "wave": "W197",
+    "publishedAt": "2026-10-28T11:29:00Z",
     "macro": "M2",
-    "title": "W196: estado comum confirma efeito local do Shoot contextual",
-    "status": "Auditoria secundária PASS; pre-state do tick29 igual; escolha Move→Shoot e lançamento mudam sob flag.",
-    "summary": "Hash pre-state igual `0d7e…7fc9`; Move .80619 e Pass .74927 estáveis; Shoot .80535→.99882. OFF MoveCompleted/posse mantida; ON ShootLaunched, posse null, trajetória60m. Qualidade global UNKNOWN."
+    "title": "W197: dois chutes ON interceptados após avanço do goleiro",
+    "status": "Auditoria secundária PASS; terminais e destino comum do goleiro no tick29 confirmados.",
+    "summary": "Nos dois braços Hugo Souza move no tick29 para a bola em (90,886;30,736). ON lança dali e sofre ShotBlocked em ticks30/34; OFF Move desloca bola a x99,455 e chuta no30, gol no31. Efeito local, não política geral."
   },
   "recentCycles": [
-    {
-      "id": "W188",
-      "wave": "W188",
-      "publishedAt": "2026-10-28T09:39:10Z",
-      "macro": "M2",
-      "title": "W188: fórmula e escala dos scores de ação",
-      "status": "Auditoria estática de seis arquivos fonte PASS; sem mudança no motor.",
-      "summary": "Move default é weighted attributes sem contexto espacial; Shoot=.30 distância+.20 lane+.50 atributos; Pass=.40 progressão+.30 espaço+.30 lane. Correção funcional do score permanece UNKNOWN."
-    },
     {
       "id": "W189",
       "wave": "W189",
@@ -101,6 +92,15 @@
       "title": "W196: estado comum confirma efeito local do Shoot contextual",
       "status": "Auditoria secundária PASS; pre-state do tick29 igual; escolha Move→Shoot e lançamento mudam sob flag.",
       "summary": "Hash pre-state igual `0d7e…7fc9`; Move .80619 e Pass .74927 estáveis; Shoot .80535→.99882. OFF MoveCompleted/posse mantida; ON ShootLaunched, posse null, trajetória60m. Qualidade global UNKNOWN."
+    },
+    {
+      "id": "W197",
+      "wave": "W197",
+      "publishedAt": "2026-10-28T11:29:00Z",
+      "macro": "M2",
+      "title": "W197: dois chutes ON interceptados após avanço do goleiro",
+      "status": "Auditoria secundária PASS; terminais e destino comum do goleiro no tick29 confirmados.",
+      "summary": "Nos dois braços Hugo Souza move no tick29 para a bola em (90,886;30,736). ON lança dali e sofre ShotBlocked em ticks30/34; OFF Move desloca bola a x99,455 e chuta no30, gol no31. Efeito local, não política geral."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W188",
-      "wave": "W188",
-      "publishedAt": "2026-10-28T09:39:10Z",
-      "macro": "M2",
-      "title": "W188: fórmula e escala dos scores de ação",
-      "status": "Auditoria estática de seis arquivos fonte PASS; sem mudança no motor.",
-      "summary": "Move default é weighted attributes sem contexto espacial; Shoot=.30 distância+.20 lane+.50 atributos; Pass=.40 progressão+.30 espaço+.30 lane. Correção funcional do score permanece UNKNOWN."
-    },
-    {
       "id": "W189",
       "wave": "W189",
       "publishedAt": "2026-10-28T09:42:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W196: estado comum confirma efeito local do Shoot contextual",
       "status": "Auditoria secundária PASS; pre-state do tick29 igual; escolha Move→Shoot e lançamento mudam sob flag.",
       "summary": "Hash pre-state igual `0d7e…7fc9`; Move .80619 e Pass .74927 estáveis; Shoot .80535→.99882. OFF MoveCompleted/posse mantida; ON ShootLaunched, posse null, trajetória60m. Qualidade global UNKNOWN."
+    },
+    {
+      "id": "W197",
+      "wave": "W197",
+      "publishedAt": "2026-10-28T11:29:00Z",
+      "macro": "M2",
+      "title": "W197: dois chutes ON interceptados após avanço do goleiro",
+      "status": "Auditoria secundária PASS; terminais e destino comum do goleiro no tick29 confirmados.",
+      "summary": "Nos dois braços Hugo Souza move no tick29 para a bola em (90,886;30,736). ON lança dali e sofre ShotBlocked em ticks30/34; OFF Move desloca bola a x99,455 e chuta no30, gol no31. Efeito local, não política geral."
     },
     {
       "wave": "W66",
@@ -3108,6 +3108,10 @@
     {
       "id": "CP-W196-02",
       "title": "W196 mecanismo local confirmado; W197 terminal tracing iniciado"
+    },
+    {
+      "id": "CP-W197-02",
+      "title": "W197 terminais reconciliados; W198 auditoria do goleiro iniciada"
     }
   ]
 }
