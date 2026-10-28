@@ -1071,7 +1071,7 @@
     "shotsGoals": "Tentativas (ShotEvent): 6→12 corrigidas; média pareada +0,333, IC 95% aproximado [−0,282;+0,948]. Gols 5→11, IC [−0,232;+0,899]. Sem ganho demonstrado; W255 usava contagem ampla que duplicava ShotOffTargetEvent no seed1744.",
     "lastIntegrated": "W255 continua sendo a Ãºltima avaliaÃ§Ã£o integrada (18 pares). W268 Ã© diagnÃ³stico causal local num seed divergido, nÃ£o comparaÃ§Ã£o de qualidade.",
     "mainBlocker": "W272 identificou uma via forte de progressão com Move ON (terço 289→1.479, área 21→408, ticks sem posse 50.236→32.084), mas apoio local/a frente caiu em todos os pares e o volume chegou a 108 gols em 18 jogos. W273 testa se Pass ON melhora conexão e plausibilidade sem retirar o avanço. A aceitação humana do replay continua pendente.",
-    "replay": "Replays completos W270/W271 seed1744 e W272 seed1732 estão tecnicamente disponíveis. W272 HTML SHA-256 2555899f4aa1021a8233bedacd923916371abcc8f9ff7fbd65fc67d3119b1d48; viewer audit 13/13 e render Edge confirmados. Julgamento humano pendente."
+    "replay": "Replays completos W270/W271 seed1744 e W272 seed1732 estão tecnicamente disponíveis; viewer W272 auditado e renderizado. Julgamento humano pendente."
   },
   "diary": [
     {
