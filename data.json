@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-138",
-  "updatedAt": "2026-10-28T12:07:00Z",
-  "cycle": "SS-ORCH-001-W208-M4-RESTART-COVERAGE",
+  "version": "2026.10.28-portal-139",
+  "updatedAt": "2026-10-28T12:13:00Z",
+  "cycle": "SS-ORCH-001-W209-M3-DYNAMIC-SHAPE-SOURCE-AUDIT",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W208 M4-05: inventário read-only de evidências W15/W16 para produtores/eventos/retomada em goal kick, corner e throw-in; sem nova simulação ou mudança de gameplay.",
+  "currentFocus": "W209 M3: mapear campos DynamicTeamShape desde produtor até consumidor Move, guardas e testes existentes; sem nomear intenção coletiva sem evidência.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W204-W207",
-    "wave": "W204-W207",
-    "publishedAt": "2026-10-28T12:07:00Z",
-    "macro": "M2",
-    "title": "W204–W207: correção do treatment W158 e censo homogêneo SafeForward",
-    "status": "Fonte/teste CONFIRMED; DLL histórica PARTIAL; sem auditor independente novo.",
-    "summary": "W159/W160 já corrigiam o metadado; W203 recebeu adendo. W156–W158 usam o seam SafeForward ON/OFF, não BCCM V2. Sem TRX/DLL históricos."
+    "id": "W208",
+    "wave": "W208",
+    "publishedAt": "2026-10-28T12:11:00Z",
+    "macro": "M4",
+    "title": "W208: traces existentes só cobrem offside e kickoff",
+    "status": "Corpus read-only confirmado; coverage de outros restarts UNKNOWN.",
+    "summary": "W15 seis braços: offside/setup/ready/indirect kick e kickoff; W16 examina só KickOffPrepared no período 2. Sem dados de goal kick/corner/throw-in."
   },
   "recentCycles": [
-    {
-      "id": "W196",
-      "wave": "W196",
-      "publishedAt": "2026-10-28T11:22:00Z",
-      "macro": "M2",
-      "title": "W196: estado comum confirma efeito local do Shoot contextual",
-      "status": "Auditoria secundária PASS; pre-state do tick29 igual; escolha Move→Shoot e lançamento mudam sob flag.",
-      "summary": "Hash pre-state igual `0d7e…7fc9`; Move .80619 e Pass .74927 estáveis; Shoot .80535→.99882. OFF MoveCompleted/posse mantida; ON ShootLaunched, posse null, trajetória60m. Qualidade global UNKNOWN."
-    },
     {
       "id": "W197",
       "wave": "W197",
@@ -101,6 +92,15 @@
       "title": "W204–W207: correção do treatment W158 e censo homogêneo SafeForward",
       "status": "Fonte/teste CONFIRMED; DLL histórica PARTIAL; sem auditor independente novo.",
       "summary": "W159/W160 já corrigiam o metadado; W203 recebeu adendo. W156–W158 usam o seam SafeForward ON/OFF, não BCCM V2. Sem TRX/DLL históricos."
+    },
+    {
+      "id": "W208",
+      "wave": "W208",
+      "publishedAt": "2026-10-28T12:11:00Z",
+      "macro": "M4",
+      "title": "W208: traces existentes só cobrem offside e kickoff",
+      "status": "Corpus read-only confirmado; coverage de outros restarts UNKNOWN.",
+      "summary": "W15 seis braços: offside/setup/ready/indirect kick e kickoff; W16 examina só KickOffPrepared no período 2. Sem dados de goal kick/corner/throw-in."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W196",
-      "wave": "W196",
-      "publishedAt": "2026-10-28T11:22:00Z",
-      "macro": "M2",
-      "title": "W196: estado comum confirma efeito local do Shoot contextual",
-      "status": "Auditoria secundária PASS; pre-state do tick29 igual; escolha Move→Shoot e lançamento mudam sob flag.",
-      "summary": "Hash pre-state igual `0d7e…7fc9`; Move .80619 e Pass .74927 estáveis; Shoot .80535→.99882. OFF MoveCompleted/posse mantida; ON ShootLaunched, posse null, trajetória60m. Qualidade global UNKNOWN."
-    },
-    {
       "id": "W197",
       "wave": "W197",
       "publishedAt": "2026-10-28T11:29:00Z",
@@ -1134,6 +1125,15 @@
       "title": "W204–W207: correção do treatment W158 e censo homogêneo SafeForward",
       "status": "Fonte/teste CONFIRMED; DLL histórica PARTIAL; sem auditor independente novo.",
       "summary": "W159/W160 já corrigiam o metadado; W203 recebeu adendo. W156–W158 usam o seam SafeForward ON/OFF, não BCCM V2. Sem TRX/DLL históricos."
+    },
+    {
+      "id": "W208",
+      "wave": "W208",
+      "publishedAt": "2026-10-28T12:11:00Z",
+      "macro": "M4",
+      "title": "W208: traces existentes só cobrem offside e kickoff",
+      "status": "Corpus read-only confirmado; coverage de outros restarts UNKNOWN.",
+      "summary": "W15 seis braços: offside/setup/ready/indirect kick e kickoff; W16 examina só KickOffPrepared no período 2. Sem dados de goal kick/corner/throw-in."
     },
     {
       "wave": "W66",
@@ -3140,6 +3140,10 @@
     {
       "id": "CP-W207-01",
       "title": "W204–W207 corrigendum e censo de treatment concluídos; M4-05 inicia W208"
+    },
+    {
+      "id": "CP-W208-01",
+      "title": "M4-05/07 recorte de restart delimitado; M3 source-first iniciado"
     }
   ]
 }
