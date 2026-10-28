@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-91",
-  "updatedAt": "2026-10-28T02:45:12-03:00",
-  "cycle": "SS-ORCH-001-W156-KEEPER-SHOT-CHALLENGE",
+  "version": "2026.10.28-portal-92",
+  "updatedAt": "2026-10-28T02:51:14-03:00",
+  "cycle": "SS-ORCH-001-W157-KEEPER-INTERCEPT-PROBABILITY",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W157: nos 20 intercepts GK ON hash-matched, cruzar distância de aproximação, BallControl do goleiro, curva de probabilidade técnica e RNG outcome; quantificar sucessos/falhas sem alterar gameplay.",
+  "currentFocus": "W158: ampliar a amostra para seeds 1732–1735 em pares ON/OFF sobre a mesma fixture PAL×COR; capturar intercepts, draws, gols e hashes, sem alteração do gameplay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W156",
-    "wave": "W156",
-    "publishedAt": "2026-10-28T05:45:12Z",
+    "id": "W157",
+    "wave": "W157",
+    "publishedAt": "2026-10-28T05:51:14Z",
     "macro": "M2",
-    "title": "W156: guarda de interceptação do goleiro durante ActiveShoot",
-    "status": "1/1 PASS; W152/W153 hash-exact; 20 intercepts GK ON, 7 bloqueios e 13 falhas.",
-    "summary": "A associação do defensor foi corrigida para respeitar a inversão de lados. Em 60 ticks especializados, os 19 LastUsefulOpportunity coincidem com elegibilidade/seleção; um bloqueio ocorreu pelo alcance genérico a 0 m. OFF seed1730: 1 chute/gol, sem intercept elegível. Amostra estreita; qualidade global desconhecida."
+    "title": "W157: probabilidade técnica e resultado do intercept GK",
+    "status": "1/1 PASS; 20/20 resultados reconciliados com p/draw; 7 sucessos e 13 falhas.",
+    "summary": "Hashes W152/W153 preservados. A fórmula e os draws explicam os 20 resultados. Soma de probabilidades=11,677 e sucessos=7, mas amostra dependente de dois seeds e uma fixture: não é evidência de descalibração. W158 ampliará seeds pareados, curva inalterada."
   },
   "recentCycles": [
-    {
-      "id": "W149",
-      "wave": "W149",
-      "publishedAt": "2026-10-28T04:32:49Z",
-      "macro": "M2",
-      "title": "W149: trace direto das entradas SafeForward",
-      "status": "1/1 PASS; três invocações instrumentadas e alinhadas com as guardas.",
-      "summary": "Em t1423/t3533, MoveToGoal progride e aumenta distância ao adversário; override aplicado. Em t4501, aproxima o adversário e é rejeitado. W148 reconstruía TargetPosition a partir de diagnóstico que combina alvo projetado e alvo bruto."
-    },
     {
       "id": "W150",
       "wave": "W150",
@@ -92,6 +83,15 @@
       "title": "W156: guarda de interceptação do goleiro durante ActiveShoot",
       "status": "1/1 PASS; W152/W153 hash-exact; 20 intercepts GK ON, 7 bloqueios e 13 falhas.",
       "summary": "A associação do defensor foi corrigida para respeitar a inversão de lados. Em 60 ticks especializados, os 19 LastUsefulOpportunity coincidem com elegibilidade/seleção; um bloqueio ocorreu pelo alcance genérico a 0 m. OFF seed1730: 1 chute/gol, sem intercept elegível. Amostra estreita; qualidade global desconhecida."
+    },
+    {
+      "id": "W157",
+      "wave": "W157",
+      "publishedAt": "2026-10-28T05:51:14Z",
+      "macro": "M2",
+      "title": "W157: probabilidade técnica e resultado do intercept GK",
+      "status": "1/1 PASS; 20/20 resultados reconciliados com p/draw; 7 sucessos e 13 falhas.",
+      "summary": "Hashes W152/W153 preservados. A fórmula e os draws explicam os 20 resultados. Soma de probabilidades=11,677 e sucessos=7, mas amostra dependente de dois seeds e uma fixture: não é evidência de descalibração. W158 ampliará seeds pareados, curva inalterada."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W149",
-      "wave": "W149",
-      "publishedAt": "2026-10-28T04:32:49Z",
-      "macro": "M2",
-      "title": "W149: trace direto das entradas SafeForward",
-      "status": "1/1 PASS; três invocações instrumentadas e alinhadas com as guardas.",
-      "summary": "Em t1423/t3533, MoveToGoal progride e aumenta distância ao adversário; override aplicado. Em t4501, aproxima o adversário e é rejeitado. W148 reconstruía TargetPosition a partir de diagnóstico que combina alvo projetado e alvo bruto."
-    },
-    {
       "id": "W150",
       "wave": "W150",
       "publishedAt": "2026-10-28T04:39:44Z",
@@ -1116,6 +1107,15 @@
       "title": "W156: guarda de interceptação do goleiro durante ActiveShoot",
       "status": "1/1 PASS; W152/W153 hash-exact; 20 intercepts GK ON, 7 bloqueios e 13 falhas.",
       "summary": "A associação do defensor foi corrigida para respeitar a inversão de lados. Em 60 ticks especializados, os 19 LastUsefulOpportunity coincidem com elegibilidade/seleção; um bloqueio ocorreu pelo alcance genérico a 0 m. OFF seed1730: 1 chute/gol, sem intercept elegível. Amostra estreita; qualidade global desconhecida."
+    },
+    {
+      "id": "W157",
+      "wave": "W157",
+      "publishedAt": "2026-10-28T05:51:14Z",
+      "macro": "M2",
+      "title": "W157: probabilidade técnica e resultado do intercept GK",
+      "status": "1/1 PASS; 20/20 resultados reconciliados com p/draw; 7 sucessos e 13 falhas.",
+      "summary": "Hashes W152/W153 preservados. A fórmula e os draws explicam os 20 resultados. Soma de probabilidades=11,677 e sucessos=7, mas amostra dependente de dois seeds e uma fixture: não é evidência de descalibração. W158 ampliará seeds pareados, curva inalterada."
     },
     {
       "wave": "W66",
@@ -2918,6 +2918,10 @@
     {
       "id": "CP-W156-01",
       "title": "W156 keeper challenge result and specialized guard reconciliation"
+    },
+    {
+      "id": "CP-W157-01",
+      "title": "W157 goalkeeper interception probability and draw reconciliation"
     }
   ]
 }
