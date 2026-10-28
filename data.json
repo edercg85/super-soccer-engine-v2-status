@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-120",
-  "updatedAt": "2026-10-28T09:33:00Z",
-  "cycle": "SS-ORCH-001-W187-ACTION-SCORE-BY-DISTANCE",
+  "version": "2026.10.28-portal-121",
+  "updatedAt": "2026-10-28T09:36:00Z",
+  "cycle": "SS-ORCH-001-W188-SCORE-SCALE-SOURCE-AUDIT",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W187: por faixa de distância do gol, agregar scores e vencedores de Shoot/Move/Pass nos carrier ticks. Distinguir se gap adversário vem de Move, Pass ou ambos; não alterar fórmula sem teste falsificável.",
+  "currentFocus": "W188: inspecionar fontes atuais de Move/Pass/Shoot: fórmulas, normalização, pisos/tetos, elegibilidade e winner-selection; explicar as margens observadas sem inferir intenção. Recalcular pontos de controle em faixas conhecidas antes de recomendar qualquer patch.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W186",
-    "wave": "W186",
-    "publishedAt": "2026-10-28T09:33:00Z",
+    "id": "W187",
+    "wave": "W187",
+    "publishedAt": "2026-10-28T09:36:00Z",
     "macro": "M2",
-    "title": "W186: controle cross-seed do ranking Shoot",
-    "status": "1/1 PASS; resultado semelhante em seed1732, auditoria dos denominadores PASS.",
-    "summary": "2519 carrier ticks; Shoot elegível2517, escolhido0 e menor que melhor concorrente em2517; gap médio0,36015, distância média63,76m. Match0–0 sem chutes."
+    "title": "W187: comparação de scores por distância",
+    "status": "1/1 PASS; bins e hash cruzado W186 auditados.",
+    "summary": "Move > Shoot em2517/2517 decisões elegíveis; Pass > Shoot em2481. Score médio em20–40m: Shoot.568, Move.801, Pass.654; sem amostras <20m."
   },
   "recentCycles": [
-    {
-      "id": "W179",
-      "wave": "W179",
-      "publishedAt": "2026-10-28T08:55:29Z",
-      "macro": "M2",
-      "title": "W179: passe pós-tackle e continuação",
-      "status": "2/2 PASS; auditoria PASS; outcomes locais confirmados.",
-      "summary": "Passe tick55 `PassLaunchDegraded` completa tick58. Passe tick61 falha tick62, mas companheiro do mesmo time recupera; novo passe completa tick65. Sem chute no horizonte."
-    },
     {
       "id": "W180",
       "wave": "W180",
@@ -92,6 +83,15 @@
       "title": "W186: controle cross-seed do ranking Shoot",
       "status": "1/1 PASS; resultado semelhante em seed1732, auditoria dos denominadores PASS.",
       "summary": "2519 carrier ticks; Shoot elegível2517, escolhido0 e menor que melhor concorrente em2517; gap médio0,36015, distância média63,76m. Match0–0 sem chutes."
+    },
+    {
+      "id": "W187",
+      "wave": "W187",
+      "publishedAt": "2026-10-28T09:36:00Z",
+      "macro": "M2",
+      "title": "W187: comparação de scores por distância",
+      "status": "1/1 PASS; bins e hash cruzado W186 auditados.",
+      "summary": "Move > Shoot em2517/2517 decisões elegíveis; Pass > Shoot em2481. Score médio em20–40m: Shoot.568, Move.801, Pass.654; sem amostras <20m."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W179",
-      "wave": "W179",
-      "publishedAt": "2026-10-28T08:55:29Z",
-      "macro": "M2",
-      "title": "W179: passe pós-tackle e continuação",
-      "status": "2/2 PASS; auditoria PASS; outcomes locais confirmados.",
-      "summary": "Passe tick55 `PassLaunchDegraded` completa tick58. Passe tick61 falha tick62, mas companheiro do mesmo time recupera; novo passe completa tick65. Sem chute no horizonte."
-    },
-    {
       "id": "W180",
       "wave": "W180",
       "publishedAt": "2026-10-28T08:59:40Z",
@@ -1116,6 +1107,15 @@
       "title": "W186: controle cross-seed do ranking Shoot",
       "status": "1/1 PASS; resultado semelhante em seed1732, auditoria dos denominadores PASS.",
       "summary": "2519 carrier ticks; Shoot elegível2517, escolhido0 e menor que melhor concorrente em2517; gap médio0,36015, distância média63,76m. Match0–0 sem chutes."
+    },
+    {
+      "id": "W187",
+      "wave": "W187",
+      "publishedAt": "2026-10-28T09:36:00Z",
+      "macro": "M2",
+      "title": "W187: comparação de scores por distância",
+      "status": "1/1 PASS; bins e hash cruzado W186 auditados.",
+      "summary": "Move > Shoot em2517/2517 decisões elegíveis; Pass > Shoot em2481. Score médio em20–40m: Shoot.568, Move.801, Pass.654; sem amostras <20m."
     },
     {
       "wave": "W66",
@@ -3074,6 +3074,10 @@
     {
       "id": "CP-W186-02",
       "title": "W186 cross-seed fechado; W187 iniciado"
+    },
+    {
+      "id": "CP-W187-02",
+      "title": "W187 por distância concluído; W188 iniciado"
     }
   ]
 }
