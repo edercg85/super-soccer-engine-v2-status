@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-189",
-  "updatedAt": "2026-10-28T18:19:38Z",
-  "cycle": "W264",
+  "version": "2026.10.28-portal-190",
+  "updatedAt": "2026-10-28T18:23:00Z",
+  "cycle": "W265",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W264 concluiu reextração dos traces 1740/1749/1750. W265 planejada: verificar se os registros existentes contêm posição e fatores de resolução para explicar a falha ON seed1750; se não, documentar lacuna e trocar para investigação independente.",
+  "currentFocus": "W265 concluiu análise de evento e geometria em W261 clips vinculados. W266 planejada: verificar PDB/símbolos/source mapping da build W214; não atribuir source HEAD sem crosswalk demonstrado.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W264",
-    "wave": "W264",
-    "publishedAt": "2026-10-28T18:19:38Z",
+    "id": "W265",
+    "wave": "W265",
+    "publishedAt": "2026-10-28T18:23:00Z",
     "macro": "M3",
-    "title": "Outcomes do primeiro passe rastreados em três seeds",
-    "status": "Ligação local confirmada; efeito em qualidade UNKNOWN",
-    "summary": "ON passa de completa em 1740/1749 para falha em 1750. OFF pós-restart completa nos três. Traces W214 pareados, mas estados e alvos diferem após divergência."
+    "title": "Loose-ball recovery ligado ao passe falhado por evento e posição",
+    "status": "Efeito local observado; motivo interno e qualidade desconhecidos",
+    "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferência de interception/qualidade."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W260",
-      "wave": "W260",
-      "publishedAt": "2026-10-28T17:53:43Z",
-      "macro": "M3",
-      "title": "Terceiro seed: target switch e falha do passe alternativo",
-      "status": "Mecanismo local confirmado; custo imediato observado; qualidade UNKNOWN",
-      "summary": "No mesmo prestate tick688, ON rebaixa o alvo offside rank1→10 e escolhe outro passe; este falha no tick691 e a posse muda ao adversário. OFF tem impedimento no tick691 e reinício adversário tick694. Scores 1–1/0–2 sem atribuição causal."
-    },
-    {
       "id": "W261",
       "wave": "W261",
       "publishedAt": "2026-10-28T18:03:15Z",
@@ -101,6 +92,15 @@
       "title": "Outcomes do primeiro passe rastreados em três seeds",
       "status": "Ligação local confirmada; efeito em qualidade UNKNOWN",
       "summary": "ON passa de completa em 1740/1749 para falha em 1750. OFF pós-restart completa nos três. Traces W214 pareados, mas estados e alvos diferem após divergência."
+    },
+    {
+      "id": "W265",
+      "wave": "W265",
+      "publishedAt": "2026-10-28T18:23:00Z",
+      "macro": "M3",
+      "title": "Loose-ball recovery ligado ao passe falhado por evento e posição",
+      "status": "Efeito local observado; motivo interno e qualidade desconhecidos",
+      "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferência de interception/qualidade."
     }
   ],
   "macros": [
@@ -1060,8 +1060,8 @@
     "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
     "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
     "shotsGoals": "Finalizações 6→13 e gols 5→11; intervalos pareados cruzam zero, sem evidência de ganho consistente.",
-    "lastIntegrated": "W255 permanece a última avaliação integrada. W259/W260/W263/W264 mostram variação de efeitos locais pós-divergência, sem estimativa de qualidade.",
-    "mainBlocker": "Não há review humano de gameplay; faltam coordenadas/resolução detalhada para explicar a falha específica e falta avaliação integrada atual.",
+    "lastIntegrated": "W255 permanece última avaliação integrada. W265 relaciona evento de recovery e geometria em um recorte seed1750; sem motivo de falha, review humano ou conclusão de qualidade.",
+    "mainBlocker": "Mecanismo interno de PassFailed não foi exposto no trace; nenhuma avaliação humana de gameplay e nenhuma avaliação integrada posterior a W255.",
     "replay": "Não há replay navegável publicado no portal; viewer offline local de ticks686-696 passou renderização técnica, mas revisão humana do futebol segue pendente."
   },
   "diary": [
@@ -1102,15 +1102,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W260",
-      "wave": "W260",
-      "publishedAt": "2026-10-28T17:53:43Z",
-      "macro": "M3",
-      "title": "Terceiro seed: target switch e falha do passe alternativo",
-      "status": "Mecanismo local confirmado; custo imediato observado; qualidade UNKNOWN",
-      "summary": "No mesmo prestate tick688, ON rebaixa o alvo offside rank1→10 e escolhe outro passe; este falha no tick691 e a posse muda ao adversário. OFF tem impedimento no tick691 e reinício adversário tick694. Scores 1–1/0–2 sem atribuição causal."
-    },
-    {
       "id": "W261",
       "wave": "W261",
       "publishedAt": "2026-10-28T18:03:15Z",
@@ -1145,6 +1136,15 @@
       "title": "Outcomes do primeiro passe rastreados em três seeds",
       "status": "Ligação local confirmada; efeito em qualidade UNKNOWN",
       "summary": "ON passa de completa em 1740/1749 para falha em 1750. OFF pós-restart completa nos três. Traces W214 pareados, mas estados e alvos diferem após divergência."
+    },
+    {
+      "id": "W265",
+      "wave": "W265",
+      "publishedAt": "2026-10-28T18:23:00Z",
+      "macro": "M3",
+      "title": "Loose-ball recovery ligado ao passe falhado por evento e posição",
+      "status": "Efeito local observado; motivo interno e qualidade desconhecidos",
+      "summary": "Tick691 ON: PassFailed, LooseBallRecovery de Andreas e posse nele; bola 0m de Andreas e 0.901m de Raniele no frame. Sem motivo de falha; sem inferência de interception/qualidade."
     },
     {
       "wave": "W66",
@@ -3371,6 +3371,10 @@
     {
       "id": "CP-W264-FINAL",
       "title": "W264 final — linkage de passe pós-divergência em três seeds"
+    },
+    {
+      "id": "CP-W265-FINAL",
+      "title": "W265 final — recovery e geometria observável de PassFailed"
     }
   ]
 }
