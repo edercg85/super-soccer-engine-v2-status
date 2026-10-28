@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-153",
-  "updatedAt": "2026-10-28T14:10:24Z",
-  "cycle": "SS-ORCH-001-W231-RECOVERY-CONSUMER",
+  "version": "2026.10.28-portal-154",
+  "updatedAt": "2026-10-28T14:21:56Z",
+  "cycle": "SS-ORCH-001-W233-OFFSIDE-PASS-CONFIG-EXPERIMENT",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Verificar se artefatos preservam decisões, avaliações e guardas do recuperador no tick5. Se houver, ligar alvo observado a corpo/consumidor; caso contrário manter alvo UNKNOWN e pivotar.",
+  "currentFocus": "Executar cinco novos pares de 90 minutos (OFF versus OffsideAttacking.Pass=true), seeds 1732–1736, assemblies W214 e demais opções idênticas. Revalidar determinismo e medir offsides, passes/completions, chutes/gols, placar e ticks sem posse; manter o default-off.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,33 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W231",
-    "wave": "W231",
-    "publishedAt": "2026-10-28T14:10:24Z",
+    "id": "W233",
+    "wave": "W233",
+    "publishedAt": "2026-10-28T14:21:56Z",
     "macro": "M3",
-    "title": "W231: recuperador passa no tick seguinte e fica sem posse ao lançar",
-    "status": "Sequência local confirmada; escolha do alvo e causalidade parcial.",
-    "summary": "Nos quatro braços, o recuperador passa no tick seguinte e posse zera no lançamento. Seed1730 ON segue outra rota e recupera novamente; OFF/seed1731 entram em offside. Em 1731 alvo é igual ON/OFF."
+    "title": "W233: experimento config-only reduz offsides e ticks sem posse",
+    "status": "Promissor, qualidade não aceita; permanece default-off.",
+    "summary": "3 pares: offside cai 22→0, 15→0, 22→1; ticks sem posse caem. Chute +1 por seed, mas seed1730 perde o gol baseline."
   },
   "recentCycles": [
-    {
-      "id": "W225",
-      "wave": "W225",
-      "publishedAt": "2026-10-28T13:33:55Z",
-      "macro": "M3",
-      "title": "W225: fork confirma recepção/pass sem efeito DERR local",
-      "status": "Fork pareado seed1730; recepção e passe seguinte iguais ON/OFF.",
-      "summary": "No estado pré-tick62 ambos recebem a bola por PassCompleted; tick seguinte ambos escolhem/lançam mesmo passe. Contrasta com tackle seed1731; causalidade global não concluída."
-    },
-    {
-      "id": "W224",
-      "wave": "W224",
-      "publishedAt": "2026-10-28T13:33:55Z",
-      "macro": "M3",
-      "title": "W224: tackle DERR transfere posse no estado da seed1731",
-      "status": "Fork/checkpoint exato confirma efeito imediato de um tick.",
-      "summary": "ON repete tackle bem-sucedido/draw e transfere posse; OFF escolhe Move e não transfere posse no passo. Continuação global tem diferenças de tick/atores."
-    },
     {
       "id": "W210-W213",
       "wave": "W210-W213",
@@ -101,6 +83,24 @@
       "title": "W231: recuperador passa no tick seguinte e fica sem posse ao lançar",
       "status": "Sequência local confirmada; escolha do alvo e causalidade parcial.",
       "summary": "Nos quatro braços, o recuperador passa no tick seguinte e posse zera no lançamento. Seed1730 ON segue outra rota e recupera novamente; OFF/seed1731 entram em offside. Em 1731 alvo é igual ON/OFF."
+    },
+    {
+      "id": "W232",
+      "wave": "W232",
+      "publishedAt": "2026-10-28T14:21:56Z",
+      "macro": "M3",
+      "title": "W232: penalidade de impedimento muda alvo no mesmo estado",
+      "status": "Efeito local confirmado; continuação desconhecida.",
+      "summary": "Pass-aware substitui o alvo offside por candidato onside e muda Pass→Move em 3/4 estados; 1730 ON permanece onside."
+    },
+    {
+      "id": "W233",
+      "wave": "W233",
+      "publishedAt": "2026-10-28T14:21:56Z",
+      "macro": "M3",
+      "title": "W233: experimento config-only reduz offsides e ticks sem posse",
+      "status": "Promissor, qualidade não aceita; permanece default-off.",
+      "summary": "3 pares: offside cai 22→0, 15→0, 22→1; ticks sem posse caem. Chute +1 por seed, mas seed1730 perde o gol baseline."
     }
   ],
   "macros": [
@@ -1055,24 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W225",
-      "wave": "W225",
-      "publishedAt": "2026-10-28T13:33:55Z",
-      "macro": "M3",
-      "title": "W225: fork confirma recepção/pass sem efeito DERR local",
-      "status": "Fork pareado seed1730; recepção e passe seguinte iguais ON/OFF.",
-      "summary": "No estado pré-tick62 ambos recebem a bola por PassCompleted; tick seguinte ambos escolhem/lançam mesmo passe. Contrasta com tackle seed1731; causalidade global não concluída."
-    },
-    {
-      "id": "W224",
-      "wave": "W224",
-      "publishedAt": "2026-10-28T13:33:55Z",
-      "macro": "M3",
-      "title": "W224: tackle DERR transfere posse no estado da seed1731",
-      "status": "Fork/checkpoint exato confirma efeito imediato de um tick.",
-      "summary": "ON repete tackle bem-sucedido/draw e transfere posse; OFF escolhe Move e não transfere posse no passo. Continuação global tem diferenças de tick/atores."
-    },
-    {
       "id": "W210-W213",
       "wave": "W210-W213",
       "publishedAt": "2026-10-28T12:31:00Z",
@@ -1134,6 +1116,24 @@
       "title": "W231: recuperador passa no tick seguinte e fica sem posse ao lançar",
       "status": "Sequência local confirmada; escolha do alvo e causalidade parcial.",
       "summary": "Nos quatro braços, o recuperador passa no tick seguinte e posse zera no lançamento. Seed1730 ON segue outra rota e recupera novamente; OFF/seed1731 entram em offside. Em 1731 alvo é igual ON/OFF."
+    },
+    {
+      "id": "W232",
+      "wave": "W232",
+      "publishedAt": "2026-10-28T14:21:56Z",
+      "macro": "M3",
+      "title": "W232: penalidade de impedimento muda alvo no mesmo estado",
+      "status": "Efeito local confirmado; continuação desconhecida.",
+      "summary": "Pass-aware substitui o alvo offside por candidato onside e muda Pass→Move em 3/4 estados; 1730 ON permanece onside."
+    },
+    {
+      "id": "W233",
+      "wave": "W233",
+      "publishedAt": "2026-10-28T14:21:56Z",
+      "macro": "M3",
+      "title": "W233: experimento config-only reduz offsides e ticks sem posse",
+      "status": "Promissor, qualidade não aceita; permanece default-off.",
+      "summary": "3 pares: offside cai 22→0, 15→0, 22→1; ticks sem posse caem. Chute +1 por seed, mas seed1730 perde o gol baseline."
     },
     {
       "wave": "W66",
@@ -3196,6 +3196,14 @@
     {
       "id": "CP-W231-FINAL",
       "title": "Recuperador lança passe no tick seguinte; o lançamento zera posse em quatro braços"
+    },
+    {
+      "id": "CP-W232-FINAL",
+      "title": "Mesmo estado: Pass-aware muda a ação para Move em três alvos offside"
+    },
+    {
+      "id": "CP-W233-FINAL",
+      "title": "Três seeds pareadas: menos offsides/ticks sem posse; seed1730 perde gol"
     }
   ]
 }
