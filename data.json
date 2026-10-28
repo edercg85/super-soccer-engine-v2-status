@@ -1,5 +1,5 @@
 {
-  "version": "2026.10.28-portal-55",
+  "version": "2026.10.28-portal-56",
   "updatedAt": "2026-10-27T22:50:47-03:00",
   "cycle": "SS-ORCH-001-W123-LAUNCH-ORIGIN-AND-PASS-FAILURE-OWNERSHIP",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
@@ -17,8 +17,8 @@
     "publishedAt": "2026-10-28T01:50:47Z",
     "macro": "M2",
     "title": "W123: investigação de recovery e preflight do trace CM limpo",
-    "status": "CP14–17 investigados; CP18 Ghidra hash diferente do clean; sem query no binário discrepante. Trace clean bloqueado por capacidade não demonstrada. ZIP anterior validado; consolidação CP18 em andamento.",
-    "summary": "Ghidra MCP está apontado para SHA 3181…, enquanto 003J afirma apenas o EXE limpo SHA 0c78…. Hash do clean foi revalidado; a origem do arquivo carregado é desconhecida. Para preservar identidade, não consultamos código do binário divergente. É necessário projeto isolado/disassembler ou debugger da build cujo hash seja 0c78…."
+    "status": "CP14–15 fixtures sintéticas PASS; CP16 producer CM↔V2 UNKNOWN; CP17 muda o winner em 1/12 sem trocar equipe; CP18 Ghidra carregado não corresponde ao EXE limpo. Qualidade UNKNOWN, flag default-off.",
+    "summary": "CP14–15: target conclui; teammate falha mantendo posse; opponent falha transferindo; sem candidato a bola/ActivePass continuam. Maior BallControl/ID ordena elegíveis; o contrafactual por tempo muda o jogador em 1/12 sem mudar equipe. A KB CM não provou que o producer alcança os readers. Ghidra está carregado com SHA 3181…, não o clean 0c78…; a origem da imagem 3181 é UNKNOWN. Nenhuma alteração de gameplay."
   },
   "recentCycles": [
     {
@@ -90,8 +90,8 @@
       "publishedAt": "2026-10-28T01:50:47Z",
       "macro": "M2",
       "title": "W123: investigação de recovery e preflight do trace CM limpo",
-      "status": "CP14–17 investigados; CP18 Ghidra hash diferente do clean; sem query no binário discrepante. Trace clean bloqueado por capacidade não demonstrada. ZIP anterior validado; consolidação CP18 em andamento.",
-      "summary": "Ghidra MCP está apontado para SHA 3181…, enquanto 003J afirma apenas o EXE limpo SHA 0c78…. Hash do clean foi revalidado; a origem do arquivo carregado é desconhecida. Para preservar identidade, não consultamos código do binário divergente. É necessário projeto isolado/disassembler ou debugger da build cujo hash seja 0c78…."
+      "status": "CP14–15 fixtures sintéticas PASS; CP16 producer CM↔V2 UNKNOWN; CP17 muda o winner em 1/12 sem trocar equipe; CP18 Ghidra carregado não corresponde ao EXE limpo. Qualidade UNKNOWN, flag default-off.",
+      "summary": "CP14–15: target conclui; teammate falha mantendo posse; opponent falha transferindo; sem candidato a bola/ActivePass continuam. Maior BallControl/ID ordena elegíveis; o contrafactual por tempo muda o jogador em 1/12 sem mudar equipe. A KB CM não provou que o producer alcança os readers. Ghidra está carregado com SHA 3181…, não o clean 0c78…; a origem da imagem 3181 é UNKNOWN. Nenhuma alteração de gameplay."
     }
   ],
   "macros": [
@@ -1114,8 +1114,8 @@
       "publishedAt": "2026-10-28T01:50:47Z",
       "macro": "M2",
       "title": "W123: investigação de recovery e preflight do trace CM limpo",
-      "status": "CP14–17 investigados; CP18 Ghidra hash diferente do clean; sem query no binário discrepante. Trace clean bloqueado por capacidade não demonstrada. ZIP anterior validado; consolidação CP18 em andamento.",
-      "summary": "Ghidra MCP está apontado para SHA 3181…, enquanto 003J afirma apenas o EXE limpo SHA 0c78…. Hash do clean foi revalidado; a origem do arquivo carregado é desconhecida. Para preservar identidade, não consultamos código do binário divergente. É necessário projeto isolado/disassembler ou debugger da build cujo hash seja 0c78…."
+      "status": "CP14–15 fixtures sintéticas PASS; CP16 producer CM↔V2 UNKNOWN; CP17 muda o winner em 1/12 sem trocar equipe; CP18 Ghidra carregado não corresponde ao EXE limpo. Qualidade UNKNOWN, flag default-off.",
+      "summary": "CP14–15: target conclui; teammate falha mantendo posse; opponent falha transferindo; sem candidato a bola/ActivePass continuam. Maior BallControl/ID ordena elegíveis; o contrafactual por tempo muda o jogador em 1/12 sem mudar equipe. A KB CM não provou que o producer alcança os readers. Ghidra está carregado com SHA 3181…, não o clean 0c78…; a origem da imagem 3181 é UNKNOWN. Nenhuma alteração de gameplay."
     },
     {
       "wave": "W66",
