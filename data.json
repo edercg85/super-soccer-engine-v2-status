@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-59",
-  "updatedAt": "2026-10-27T23:13:11-03:00",
-  "cycle": "SS-ORCH-001-W124-M2-02-MOVE-DESTINATIONS-AND-GUARDS",
+  "version": "2026.10.28-portal-60",
+  "updatedAt": "2026-10-27T23:16:40-03:00",
+  "cycle": "SS-ORCH-001-W125-NEXT-PASS-CANDIDATE-SCORE-TRACE",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W125: auditoria offline do corpus pareado W05 para associar cada mudança de MoveToGoal do selector aos impedimentos posteriores, sempre interrompendo no primeiro estado divergente. Se traces não guardam objetivo selecionado no mesmo tick/ID, registrar associação causal UNKNOWN e não rodar nova partida.",
+  "currentFocus": "W126 teste falsificável: forçar, como contrafactual explicitamente rotulado, o candidato Pass de maior score de cada um dos dois estados pós-movimento ao ActionResolutionEngine e comparar snapshots de impedimento/ActivePass, mantendo os outros jogadores fixos. Não chamar esses tops de alvo real, pois Pass não venceu.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W124",
-    "wave": "W124",
-    "publishedAt": "2026-10-28T02:13:11Z",
+    "id": "W125",
+    "wave": "W125",
+    "publishedAt": "2026-10-28T02:16:40Z",
     "macro": "M2",
-    "title": "W124: destinos e guardas do Move do carrier",
-    "status": "42 testes focais PASS; mecanismos de source caracterizados; qualidade em partida UNKNOWN.",
-    "summary": "MoveToGoal tem score proporcional à distância atual da meta; MoveToTeammate usa necessidade radial quadrática com ideal de 12m. SafeForward é default-off e troca um destino apenas sob guards de progresso e distância do adversário. Source está sujo e nenhum gameplay foi alterado."
+    "title": "W125: score dos passes após mudança de Move",
+    "status": "Um snapshot pareado altera o candidate ranking; Move vence e nenhum passe é disparado. Claim local parcial, sem qualidade de jogo.",
+    "summary": "No estado W05 seed1729 pré-divergência, os mesmos dez receptores seguem elegíveis. O maior score muda de um jogador para outro depois dos movimentos OFF/ON, mas a próxima ação global continua Move nos dois braços; os tops são apenas candidatos potenciais."
   },
   "recentCycles": [
-    {
-      "id": "W117",
-      "wave": "W117",
-      "publishedAt": "2026-10-27T22:00:40Z",
-      "macro": "M2",
-      "title": "Protótipo ActivePass linear-relative V2 opt-in",
-      "status": "Concluído; fixtures e auditoria independente PASS estreito; interpretação física/produto PARTIAL",
-      "summary": "Novo parâmetro resolver V2 false por padrão. Falso positivo espacial rejeitado a 4,472m; crossing sincronizado aceito; sem ActivePass não aplica. Sem config/integration."
-    },
     {
       "id": "W118",
       "wave": "W118",
@@ -87,11 +78,20 @@
     {
       "id": "W124",
       "wave": "W124",
-      "publishedAt": "2026-10-28T02:13:11Z",
+      "publishedAt": "2026-10-28T02:14:35Z",
       "macro": "M2",
       "title": "W124: destinos e guardas do Move do carrier",
       "status": "42 testes focais PASS; mecanismos de source caracterizados; qualidade em partida UNKNOWN.",
       "summary": "MoveToGoal tem score proporcional à distância atual da meta; MoveToTeammate usa necessidade radial quadrática com ideal de 12m. SafeForward é default-off e troca um destino apenas sob guards de progresso e distância do adversário. Source está sujo e nenhum gameplay foi alterado."
+    },
+    {
+      "id": "W125",
+      "wave": "W125",
+      "publishedAt": "2026-10-28T02:16:40Z",
+      "macro": "M2",
+      "title": "W125: score dos passes após mudança de Move",
+      "status": "Um snapshot pareado altera o candidate ranking; Move vence e nenhum passe é disparado. Claim local parcial, sem qualidade de jogo.",
+      "summary": "No estado W05 seed1729 pré-divergência, os mesmos dez receptores seguem elegíveis. O maior score muda de um jogador para outro depois dos movimentos OFF/ON, mas a próxima ação global continua Move nos dois braços; os tops são apenas candidatos potenciais."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W117",
-      "wave": "W117",
-      "publishedAt": "2026-10-27T22:00:40Z",
-      "macro": "M2",
-      "title": "Protótipo ActivePass linear-relative V2 opt-in",
-      "status": "Concluído; fixtures e auditoria independente PASS estreito; interpretação física/produto PARTIAL",
-      "summary": "Novo parâmetro resolver V2 false por padrão. Falso positivo espacial rejeitado a 4,472m; crossing sincronizado aceito; sem ActivePass não aplica. Sem config/integration."
-    },
-    {
       "id": "W118",
       "wave": "W118",
       "publishedAt": "2026-10-27T22:00:40Z",
@@ -1111,11 +1102,20 @@
     {
       "id": "W124",
       "wave": "W124",
-      "publishedAt": "2026-10-28T02:13:11Z",
+      "publishedAt": "2026-10-28T02:14:35Z",
       "macro": "M2",
       "title": "W124: destinos e guardas do Move do carrier",
       "status": "42 testes focais PASS; mecanismos de source caracterizados; qualidade em partida UNKNOWN.",
       "summary": "MoveToGoal tem score proporcional à distância atual da meta; MoveToTeammate usa necessidade radial quadrática com ideal de 12m. SafeForward é default-off e troca um destino apenas sob guards de progresso e distância do adversário. Source está sujo e nenhum gameplay foi alterado."
+    },
+    {
+      "id": "W125",
+      "wave": "W125",
+      "publishedAt": "2026-10-28T02:16:40Z",
+      "macro": "M2",
+      "title": "W125: score dos passes após mudança de Move",
+      "status": "Um snapshot pareado altera o candidate ranking; Move vence e nenhum passe é disparado. Claim local parcial, sem qualidade de jogo.",
+      "summary": "No estado W05 seed1729 pré-divergência, os mesmos dez receptores seguem elegíveis. O maior score muda de um jogador para outro depois dos movimentos OFF/ON, mas a próxima ação global continua Move nos dois braços; os tops são apenas candidatos potenciais."
     },
     {
       "wave": "W66",
@@ -2694,6 +2694,14 @@
     {
       "id": "CP-W124-01",
       "title": "Destinos/guards do Move e testes focais"
+    },
+    {
+      "id": "CP-W125-00",
+      "title": "W125 preflight: scores downstream do movimento"
+    },
+    {
+      "id": "CP-W125-01",
+      "title": "Candidatos de passe após o movimento em t84"
     }
   ]
 }
