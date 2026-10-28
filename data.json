@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-129",
-  "updatedAt": "2026-10-28T11:15:00Z",
-  "cycle": "SS-ORCH-001-W196-TICK29-CONTEXT-STATE-REPLAY",
+  "version": "2026.10.28-portal-130",
+  "updatedAt": "2026-10-28T11:22:00Z",
+  "cycle": "SS-ORCH-001-W197-SHOT-TERMINAL-RECONCILIATION",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W196: instrumentar a fixture seed1730 perto do tick29 com hash do pre-state, inputs espaciais e scores em OFF/ON; separar alteração de escolha da resolução dos chutes.",
+  "currentFocus": "W197: seguir estados/terminais das tentativas OFF tick30 e ON ticks29/33; distinguir lançamento, resolução técnica, defesa/interceptação, cruzamento e gol sem presumir causa pela ausência de gol.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W195",
-    "wave": "W195",
-    "publishedAt": "2026-10-28T11:14:00Z",
+    "id": "W196",
+    "wave": "W196",
+    "publishedAt": "2026-10-28T11:22:00Z",
     "macro": "M2",
-    "title": "W195: Shoot contextual reproduzido com efeito adverso nesta seed",
-    "status": "Auditoria automática PASS; ON determinístico; OFF marcou e ON não marcou nesta fixture.",
-    "summary": "Seed1730: OFF 1–0 com 1 chute; ON 0–0 com 2. Primeira divergência tick29 (Move→Shoot); distance 14,49m igual, insideBox 0→1, threat 0→0,1935. Sem pre-state hash tick29; qualidade geral segue UNKNOWN."
+    "title": "W196: estado comum confirma efeito local do Shoot contextual",
+    "status": "Auditoria secundária PASS; pre-state do tick29 igual; escolha Move→Shoot e lançamento mudam sob flag.",
+    "summary": "Hash pre-state igual `0d7e…7fc9`; Move .80619 e Pass .74927 estáveis; Shoot .80535→.99882. OFF MoveCompleted/posse mantida; ON ShootLaunched, posse null, trajetória60m. Qualidade global UNKNOWN."
   },
   "recentCycles": [
-    {
-      "id": "W187",
-      "wave": "W187",
-      "publishedAt": "2026-10-28T09:36:00Z",
-      "macro": "M2",
-      "title": "W187: comparação de scores por distância",
-      "status": "1/1 PASS; bins e hash cruzado W186 auditados.",
-      "summary": "Move > Shoot em2517/2517 decisões elegíveis; Pass > Shoot em2481. Score médio em20–40m: Shoot.568, Move.801, Pass.654; sem amostras <20m."
-    },
     {
       "id": "W188",
       "wave": "W188",
@@ -101,6 +92,15 @@
       "title": "W195: Shoot contextual reproduzido com efeito adverso nesta seed",
       "status": "Auditoria automática PASS; ON determinístico; OFF marcou e ON não marcou nesta fixture.",
       "summary": "Seed1730: OFF 1–0 com 1 chute; ON 0–0 com 2. Primeira divergência tick29 (Move→Shoot); distance 14,49m igual, insideBox 0→1, threat 0→0,1935. Sem pre-state hash tick29; qualidade geral segue UNKNOWN."
+    },
+    {
+      "id": "W196",
+      "wave": "W196",
+      "publishedAt": "2026-10-28T11:22:00Z",
+      "macro": "M2",
+      "title": "W196: estado comum confirma efeito local do Shoot contextual",
+      "status": "Auditoria secundária PASS; pre-state do tick29 igual; escolha Move→Shoot e lançamento mudam sob flag.",
+      "summary": "Hash pre-state igual `0d7e…7fc9`; Move .80619 e Pass .74927 estáveis; Shoot .80535→.99882. OFF MoveCompleted/posse mantida; ON ShootLaunched, posse null, trajetória60m. Qualidade global UNKNOWN."
     }
   ],
   "macros": [
@@ -1055,15 +1055,6 @@
   ],
   "diary": [
     {
-      "id": "W187",
-      "wave": "W187",
-      "publishedAt": "2026-10-28T09:36:00Z",
-      "macro": "M2",
-      "title": "W187: comparação de scores por distância",
-      "status": "1/1 PASS; bins e hash cruzado W186 auditados.",
-      "summary": "Move > Shoot em2517/2517 decisões elegíveis; Pass > Shoot em2481. Score médio em20–40m: Shoot.568, Move.801, Pass.654; sem amostras <20m."
-    },
-    {
       "id": "W188",
       "wave": "W188",
       "publishedAt": "2026-10-28T09:39:10Z",
@@ -1134,6 +1125,15 @@
       "title": "W195: Shoot contextual reproduzido com efeito adverso nesta seed",
       "status": "Auditoria automática PASS; ON determinístico; OFF marcou e ON não marcou nesta fixture.",
       "summary": "Seed1730: OFF 1–0 com 1 chute; ON 0–0 com 2. Primeira divergência tick29 (Move→Shoot); distance 14,49m igual, insideBox 0→1, threat 0→0,1935. Sem pre-state hash tick29; qualidade geral segue UNKNOWN."
+    },
+    {
+      "id": "W196",
+      "wave": "W196",
+      "publishedAt": "2026-10-28T11:22:00Z",
+      "macro": "M2",
+      "title": "W196: estado comum confirma efeito local do Shoot contextual",
+      "status": "Auditoria secundária PASS; pre-state do tick29 igual; escolha Move→Shoot e lançamento mudam sob flag.",
+      "summary": "Hash pre-state igual `0d7e…7fc9`; Move .80619 e Pass .74927 estáveis; Shoot .80535→.99882. OFF MoveCompleted/posse mantida; ON ShootLaunched, posse null, trajetória60m. Qualidade global UNKNOWN."
     },
     {
       "wave": "W66",
@@ -3104,6 +3104,10 @@
     {
       "id": "CP-W195-02",
       "title": "W195 concluído; W196 causal replay iniciado"
+    },
+    {
+      "id": "CP-W196-02",
+      "title": "W196 mecanismo local confirmado; W197 terminal tracing iniciado"
     }
   ]
 }
