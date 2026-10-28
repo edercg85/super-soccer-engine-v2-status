@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-62",
-  "updatedAt": "2026-10-27T23:38:00-03:00",
-  "cycle": "SS-ORCH-001-W127-PASS-SCORE-COMPONENT-DECOMPOSITION",
+  "version": "2026.10.28-portal-63",
+  "updatedAt": "2026-10-28T00:24:00-03:00",
+  "cycle": "SS-ORCH-001-W128-OFFSIDE-SNAPSHOT-TICK-CORRIGENDUM",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W128: caracterizar snapshots arquivados adicionais por hash e geometria para testar quando progression, receiver-space ou lane explicam crossing Pass/Move. Se os registros não bastarem, capturar cenário curto determinístico sem alterar gameplay.",
+  "currentFocus": "W129: vincular em execução via TickObserver o prestate, tick, decisão Pass, ActionResult/PassAttempted e ActivePass snapshot; exigir trace tick = snapshot tick e source/target correspondentes.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,24 +12,15 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W127",
-    "wave": "W127",
-    "publishedAt": "2026-10-28T02:47:00Z",
+    "id": "W128",
+    "wave": "W128",
+    "publishedAt": "2026-10-28T03:05:00Z",
     "macro": "M2",
-    "title": "W127: decomposição causal local do score de passe",
-    "status": "3/3 PASS; score bruto recomposto por componentes; conclusão estreita, sem auditoria humana independente.",
-    "summary": "Nos snapshots W07, espaço e corredor mantêm 100; progressão cai 47,570770→21,176707 e Pass cruza abaixo de Move. Em W06, corredor varia em outra geometria e Move segue acima de Pass."
+    "title": "W128: correção da numeração do OffsideSnapshot",
+    "status": "Corrigendum confirmado; 3/3 PASS; seleção, score e mapa espacial inalterados; conclusão sobre próximo tick permanece UNKNOWN.",
+    "summary": "W126 calculava o tick do resolver pelo prestate anterior. Valores corrigidos: W06=86, W07/1730=57, W07/1731=26. ZIPs originais preservados; W128 publica a correção append-only."
   },
   "recentCycles": [
-    {
-      "id": "W120",
-      "wave": "W120",
-      "publishedAt": "2026-10-27T22:08:20Z",
-      "macro": "M2",
-      "title": "Integração Simulation com candidatos concorrentes",
-      "status": "Concluído; auditoria PASS estreito / PARTIAL build binding e generalização",
-      "summary": "Fixture sintética de um tick: endpoint escolhe candidato do endpoint; segmento e linear-relative escolhem midpoint de maior BallControl. Decisions/ActionKey iguais; PassFailed e limpeza de ActivePass/BallMovement nos três. Auditoria calcula InterceptBall inelegível no fixture, mas teste não tem assert negativa explícita. Sem prova de contato ou gameplay."
-    },
     {
       "id": "W121",
       "wave": "W121",
@@ -92,6 +83,15 @@
       "title": "W127: decomposição causal local do score de passe",
       "status": "3/3 PASS; score bruto recomposto por componentes; conclusão estreita, sem auditoria humana independente.",
       "summary": "Nos snapshots W07, espaço e corredor mantêm 100; progressão cai 47,570770→21,176707 e Pass cruza abaixo de Move. Em W06, corredor varia em outra geometria e Move segue acima de Pass."
+    },
+    {
+      "id": "W128",
+      "wave": "W128",
+      "publishedAt": "2026-10-28T03:05:00Z",
+      "macro": "M2",
+      "title": "W128: correção da numeração do OffsideSnapshot",
+      "status": "Corrigendum confirmado; 3/3 PASS; seleção, score e mapa espacial inalterados; conclusão sobre próximo tick permanece UNKNOWN.",
+      "summary": "W126 calculava o tick do resolver pelo prestate anterior. Valores corrigidos: W06=86, W07/1730=57, W07/1731=26. ZIPs originais preservados; W128 publica a correção append-only."
     }
   ],
   "macros": [
@@ -1046,15 +1046,6 @@
   ],
   "diary": [
     {
-      "id": "W120",
-      "wave": "W120",
-      "publishedAt": "2026-10-27T22:08:20Z",
-      "macro": "M2",
-      "title": "Integração Simulation com candidatos concorrentes",
-      "status": "Concluído; auditoria PASS estreito / PARTIAL build binding e generalização",
-      "summary": "Fixture sintética de um tick: endpoint escolhe candidato do endpoint; segmento e linear-relative escolhem midpoint de maior BallControl. Decisions/ActionKey iguais; PassFailed e limpeza de ActivePass/BallMovement nos três. Auditoria calcula InterceptBall inelegível no fixture, mas teste não tem assert negativa explícita. Sem prova de contato ou gameplay."
-    },
-    {
       "id": "W121",
       "wave": "W121",
       "publishedAt": "2026-10-27T22:17:14Z",
@@ -1116,6 +1107,15 @@
       "title": "W127: decomposição causal local do score de passe",
       "status": "3/3 PASS; score bruto recomposto por componentes; conclusão estreita, sem auditoria humana independente.",
       "summary": "Nos snapshots W07, espaço e corredor mantêm 100; progressão cai 47,570770→21,176707 e Pass cruza abaixo de Move. Em W06, corredor varia em outra geometria e Move segue acima de Pass."
+    },
+    {
+      "id": "W128",
+      "wave": "W128",
+      "publishedAt": "2026-10-28T03:05:00Z",
+      "macro": "M2",
+      "title": "W128: correção da numeração do OffsideSnapshot",
+      "status": "Corrigendum confirmado; 3/3 PASS; seleção, score e mapa espacial inalterados; conclusão sobre próximo tick permanece UNKNOWN.",
+      "summary": "W126 calculava o tick do resolver pelo prestate anterior. Valores corrigidos: W06=86, W07/1730=57, W07/1731=26. ZIPs originais preservados; W128 publica a correção append-only."
     },
     {
       "wave": "W66",
@@ -2718,6 +2718,14 @@
     {
       "id": "CP-W127-01",
       "title": "Recomposição dos componentes Pass"
+    },
+    {
+      "id": "CP-W128-00",
+      "title": "Pré-flight e preservação dos artefatos históricos"
+    },
+    {
+      "id": "CP-W128-01",
+      "title": "Tick de resolução corrigido e assertions explícitas"
     }
   ]
 }
