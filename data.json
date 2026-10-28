@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-185",
-  "updatedAt": "2026-10-28T17:53:43Z",
-  "cycle": "W260",
+  "version": "2026.10.28-portal-186",
+  "updatedAt": "2026-10-28T18:03:15Z",
+  "cycle": "W261",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "W260 concluiu a replicação local no terceiro seed e expôs falha do passe alternativo. Próximo passo: auditoria humana/replay dos recortes; se indisponível, rastrear consequências curtas de posse/progressão e manter a conclusão limitada.",
+  "currentFocus": "W261 concluiu a ligação dos clips visuais ao W260 por fingerprints completos. W262 prioriza revisão humana dos clips; se indisponível, seguir com rastreio compacto de posse/progressão sem promover conclusões de qualidade.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W260",
-    "wave": "W260",
-    "publishedAt": "2026-10-28T17:53:43Z",
+    "id": "W261",
+    "wave": "W261",
+    "publishedAt": "2026-10-28T18:03:15Z",
     "macro": "M3",
-    "title": "Terceiro seed: target switch e falha do passe alternativo",
-    "status": "Mecanismo local confirmado; custo imediato observado; qualidade UNKNOWN",
-    "summary": "No mesmo prestate tick688, ON rebaixa o alvo offside rank1→10 e escolhe outro passe; este falha no tick691 e a posse muda ao adversário. OFF tem impedimento no tick691 e reinício adversário tick694. Scores 1–1/0–2 sem atribuição causal."
+    "title": "Clips W260 ligados ao run por fingerprints completos",
+    "status": "Artefato visual verificável; review humano pendente",
+    "summary": "Clips de 11 frames nos dois braços; input, state final, eventos, draws RNG, ticks e scores coincidem exatamente com W260; manifests/chunks ReadVerified PASS. Human review UNKNOWN."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W256",
-      "wave": "W256",
-      "publishedAt": "2026-10-28T17:10:00Z",
-      "macro": "M3",
-      "title": "Auditoria independente dos 18 pares W255",
-      "status": "Concluído; recontagem independente e mecanismo local seed1744",
-      "summary": "Auditoria reproduziu os 18 pares; same-state seed1744 confirma penalidade Pass-aware e redirecionamento rank1 antes do state split."
-    },
-    {
       "id": "W257",
       "wave": "W257",
       "publishedAt": "2026-10-28T17:14:29Z",
@@ -101,6 +92,15 @@
       "title": "Terceiro seed: target switch e falha do passe alternativo",
       "status": "Mecanismo local confirmado; custo imediato observado; qualidade UNKNOWN",
       "summary": "No mesmo prestate tick688, ON rebaixa o alvo offside rank1→10 e escolhe outro passe; este falha no tick691 e a posse muda ao adversário. OFF tem impedimento no tick691 e reinício adversário tick694. Scores 1–1/0–2 sem atribuição causal."
+    },
+    {
+      "id": "W261",
+      "wave": "W261",
+      "publishedAt": "2026-10-28T18:03:15Z",
+      "macro": "M3",
+      "title": "Clips W260 ligados ao run por fingerprints completos",
+      "status": "Artefato visual verificável; review humano pendente",
+      "summary": "Clips de 11 frames nos dois braços; input, state final, eventos, draws RNG, ticks e scores coincidem exatamente com W260; manifests/chunks ReadVerified PASS. Human review UNKNOWN."
     }
   ],
   "macros": [
@@ -1060,9 +1060,9 @@
     "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
     "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
     "shotsGoals": "Finalizações 6→13 e gols 5→11; intervalos pareados cruzam zero, sem evidência de ganho consistente.",
-    "lastIntegrated": "W255 segue a última avaliação integrada. W259/W260 replicam efeitos locais em três seeds; W260 mostra que o alvo alternativo pode falhar imediatamente. Sem qualidade global aprovada.",
-    "mainBlocker": "Falta revisão humana/replay, além de avaliação integrada de progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência. Efeitos locais W259/W260 não atribuem scores.",
-    "replay": "Não há replay navegável referenciado; revisão humana de W259/W260 pendente."
+    "lastIntegrated": "W255 continua a última avaliação integrada. W259/W260 replicam efeitos locais em três seeds. W261 torna o mecanismo visualmente inspecionável por clips, mas ainda sem julgamento humano.",
+    "mainBlocker": "Revisão humana dos clips pendente; faltam também avaliação integrada de progressão, apoio, recuperação, defesa, goleiros, reinícios e coerência. Os efeitos locais não atribuem scores.",
+    "replay": "Não há replay navegável publicado no portal; clips W260 OFF/ON ticks686-696 foram preparados e verificados por fingerprint, mas revisão humana segue pendente."
   },
   "diary": [
     {
@@ -1102,15 +1102,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W256",
-      "wave": "W256",
-      "publishedAt": "2026-10-28T17:10:00Z",
-      "macro": "M3",
-      "title": "Auditoria independente dos 18 pares W255",
-      "status": "Concluído; recontagem independente e mecanismo local seed1744",
-      "summary": "Auditoria reproduziu os 18 pares; same-state seed1744 confirma penalidade Pass-aware e redirecionamento rank1 antes do state split."
-    },
-    {
       "id": "W257",
       "wave": "W257",
       "publishedAt": "2026-10-28T17:14:29Z",
@@ -1145,6 +1136,15 @@
       "title": "Terceiro seed: target switch e falha do passe alternativo",
       "status": "Mecanismo local confirmado; custo imediato observado; qualidade UNKNOWN",
       "summary": "No mesmo prestate tick688, ON rebaixa o alvo offside rank1→10 e escolhe outro passe; este falha no tick691 e a posse muda ao adversário. OFF tem impedimento no tick691 e reinício adversário tick694. Scores 1–1/0–2 sem atribuição causal."
+    },
+    {
+      "id": "W261",
+      "wave": "W261",
+      "publishedAt": "2026-10-28T18:03:15Z",
+      "macro": "M3",
+      "title": "Clips W260 ligados ao run por fingerprints completos",
+      "status": "Artefato visual verificável; review humano pendente",
+      "summary": "Clips de 11 frames nos dois braços; input, state final, eventos, draws RNG, ticks e scores coincidem exatamente com W260; manifests/chunks ReadVerified PASS. Human review UNKNOWN."
     },
     {
       "wave": "W66",
@@ -3355,6 +3355,10 @@
     {
       "id": "CP-W260-FINAL",
       "title": "W260 final — target switch reproduced; alternative fails"
+    },
+    {
+      "id": "CP-W261-FINAL",
+      "title": "W261 final — clips visuais com identidade W260 confirmada"
     }
   ]
 }
