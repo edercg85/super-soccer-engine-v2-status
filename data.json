@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-201",
-  "updatedAt": "2026-10-29T00:40:00Z",
+  "version": "2026.10.28-portal-202",
+  "updatedAt": "2026-10-29T00:42:00Z",
   "cycle": "W275",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — progressão e criação. W275 compara forma dinâmica SupportBlendConservative contra Off, mantendo Move+Pass ON, no mesmo input COR×PAL e seeds 1732–1749. Controle precisa reproduzir W274 candidato em fingerprints completos por seed. Revisão humana dos replays completos segue pendente.",
+  "currentFocus": "Frente ativa M2 — W275 completou 10/18 pares. Controle reproduz W274 por fingerprints; SupportBlendConservative mostra pequena variação de apoio e piora territorial/ofensiva preliminar. Coleta continua; defaults OFF.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -18,7 +18,7 @@
     "macro": "M2",
     "title": "Teste de suporte coletivo com forma dinâmica conservadora",
     "status": "EM EXECUÇÃO — hipótese escolhida pelo gargalo de suporte W274; defaults OFF.",
-    "summary": "Compara DynamicTeamShapeMode Off vs SupportBlendConservative mantendo Move+Pass ON, 18 pares W214 na preparação COR×PAL."
+    "summary": "INTERIM 10/18 pares: controle Off reproduz W274 por fingerprints. SupportBlendConservative: apoio próximo +0.064 (IC cruza zero), apoio à frente +0.160; episódios no terço -47.0, na área -25.4, chutes -16.9, gols -7.3 por partida. Coorte continua em execução, sem aceitação."
   },
   "recentCycles": [
     {
@@ -100,7 +100,7 @@
       "macro": "M2",
       "title": "Teste de suporte coletivo com forma dinâmica conservadora",
       "status": "EM EXECUÇÃO — hipótese escolhida pelo gargalo de suporte W274; defaults OFF.",
-      "summary": "Compara DynamicTeamShapeMode Off vs SupportBlendConservative mantendo Move+Pass ON, 18 pares W214 na preparação COR×PAL."
+      "summary": "INTERIM 10/18 pares: controle Off reproduz W274 por fingerprints. SupportBlendConservative: apoio próximo +0.064 (IC cruza zero), apoio à frente +0.160; episódios no terço -47.0, na área -25.4, chutes -16.9, gols -7.3 por partida. Coorte continua em execução, sem aceitação."
     }
   ],
   "macros": [
@@ -1153,7 +1153,7 @@
       "macro": "M2",
       "title": "Teste de suporte coletivo com forma dinâmica conservadora",
       "status": "EM EXECUÇÃO — hipótese escolhida pelo gargalo de suporte W274; defaults OFF.",
-      "summary": "Compara DynamicTeamShapeMode Off vs SupportBlendConservative mantendo Move+Pass ON, 18 pares W214 na preparação COR×PAL."
+      "summary": "INTERIM 10/18 pares: controle Off reproduz W274 por fingerprints. SupportBlendConservative: apoio próximo +0.064 (IC cruza zero), apoio à frente +0.160; episódios no terço -47.0, na área -25.4, chutes -16.9, gols -7.3 por partida. Coorte continua em execução, sem aceitação."
     },
     {
       "wave": "W66",
@@ -3392,6 +3392,10 @@
     {
       "id": "CP-PORTAL-05-ENCODING",
       "title": "Public portal text encoding repaired"
+    },
+    {
+      "id": "CP-W275-INTERIM",
+      "title": "W275 parcial — 10/18 pares, sinal territorial negativo"
     }
   ]
 }
