@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-239",
-  "updatedAt": "2026-10-29T09:06:45Z",
+  "version": "2026.10.28-portal-240",
+  "updatedAt": "2026-10-29T09:09:41Z",
   "cycle": "W292",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M2 — W292: medir em partidas completas se ticks sem possuidor coincidem com ActivePass, BallMovementState, ActiveShoot ou RestartState, nos braços0%,6,25% filtrado e12,5% filtrado. Piloto seed1742 reproduziu W291 exatamente nos três braços; coorte18×3 em execução.",
@@ -3621,6 +3621,10 @@
     {
       "id": "CP-W292-PREFLIGHT",
       "title": "W292 — diagnosticar ticks sem possuidor"
+    },
+    {
+      "id": "CP-PORTAL-31",
+      "title": "W291 final / W292 ativo; M2 detalhada e UTF-8 validado no Pages v239"
     }
   ]
 }
