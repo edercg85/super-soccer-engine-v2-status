@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-245",
-  "updatedAt": "2026-10-29T11:53:00Z",
-  "cycle": "W298",
+  "version": "2026.10.28-portal-246",
+  "updatedAt": "2026-10-29T14:35:00Z",
+  "cycle": "W299",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "M2 active — W298 preflight for passive diagnostics from ShotEvent launch through goalkeeper/interception/trajectory to terminal; validate observer-on/off fingerprints before cohort.",
+  "currentFocus": "M2 active — W299 tests ShootRules.MaximumSuccessProbability=45 vs95 on fixed outside-area score multiplier0.98; W298 control reproduced exactly in pilot; scratch only.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W298",
-    "wave": "W298",
-    "publishedAt": "2026-10-29T11:53:00Z",
+    "id": "W299",
+    "wave": "W299",
+    "publishedAt": "2026-10-29T14:35:00Z",
     "macro": "M2",
-    "title": "Diagnosticar a resolução de chutes",
-    "status": "EM EXECUÇÃO — preflight aprovado; defaults inalterados.",
-    "summary": "W297: 0.96 reduziu seleção externa; gols e chutes totais inconclusivos. W298 mede trajetória, goleiro/defesa e terminais com observador passivo."
+    "title": "Calibrar a probabilidade técnica do chute",
+    "status": "EM EXECUÇÃO — coorte scratch; defaults inalterados.",
+    "summary": "Piloto controle95 reproduz W298; cap45 reduz shoots bem lançados6→4, eleva degradados6→7 e placar3–3→3–2. Coorte de18 pares começou."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W294",
-      "wave": "W294",
-      "publishedAt": "2026-10-29T09:41:50Z",
-      "macro": "M2",
-      "title": "Testar prioridade de progressão no passe",
-      "status": "FINALIZADO — ganho local de progressão; regressão em apoio à frente/área e aumento de circulação; default OFF.",
-      "summary": "36 jogos; controle W273 exato18/18; lifecycle passe24.182/24.182, chute36/36. Progressão condicional +0,00885 (IC95% [+0,00718;+0,01053]), maior18/18; passes +169,56/jogo, ticks sem posse +446,44, área -4,17, apoio à frente -0,222. Nenhuma promoção."
-    },
-    {
       "id": "W295",
       "wave": "W295",
       "publishedAt": "2026-10-29T10:16:50Z",
@@ -96,11 +87,20 @@
     {
       "id": "W298",
       "wave": "W298",
-      "publishedAt": "2026-10-29T11:53:00Z",
+      "publishedAt": "2026-10-29T14:35:00Z",
       "macro": "M2",
       "title": "Diagnosticar a resolução de chutes",
-      "status": "EM EXECUÇÃO — preflight aprovado; defaults inalterados.",
-      "summary": "W297: 0.96 reduziu seleção externa; gols e chutes totais inconclusivos. W298 mede trajetória, goleiro/defesa e terminais com observador passivo."
+      "status": "FINALIZADO — 532 chutes conciliados; perfil da conversão é descritivo; nenhum default alterado.",
+      "summary": "36 jogos; W297 exato36/36; chutes267/265, gols115/119; 532/532 terminais; viewer13/13."
+    },
+    {
+      "id": "W299",
+      "wave": "W299",
+      "publishedAt": "2026-10-29T14:35:00Z",
+      "macro": "M2",
+      "title": "Calibrar a probabilidade técnica do chute",
+      "status": "EM EXECUÇÃO — coorte scratch; defaults inalterados.",
+      "summary": "Piloto controle95 reproduz W298; cap45 reduz shoots bem lançados6→4, eleva degradados6→7 e placar3–3→3–2. Coorte de18 pares começou."
     }
   ],
   "macros": [
@@ -1074,13 +1074,13 @@
   "footballQuality": {
     "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
     "baseline": "W274 baseline Move+Pass OFF: 18 jogos COR×PAL, seeds 1732–1749, assemblies W214.",
-    "candidate": "W298 preflight: diagnóstico observacional passivo da resolução do chute em scratch; sem alteração de regra ou default.",
+    "candidate": "W299 scratch: teto de sucesso técnico do chute45 contra95; controle W298 exato, coorte em execução; sem promotion/default.",
     "improved": "W293 ligou41.692/41.692 tentativas a terminais sem ambiguidades; progressão média condicionada a passes completos:+0,05143 controle,+0,01411 6,25%,−0,01173 12,5%.",
     "worsened": "Doses BCCM6,25%/12,5% reduziram progressão por conclusão −0,03734/−0,06316 (18/18 seeds, IC pareado); Move contextual rejeitado.",
     "shotsGoals": "W2916,25%: gols108 vs119 controle (−0,611/jogo, IC95% [−2,080;+0,858]); chutes231 vs264. Lifecycle54/54.",
-    "lastIntegrated": "W297: score elegível externo caiu 0,00931 em 18/18 e chutes externos selecionados -0,72/jogo (IC95% [-1,40;-0,04]); chutes totais -0,11 ([-1,13;+0,91]) e gols +0,22 ([-0,51;+0,96]), inconclusivos. Lifecycle 20.906/20.906 passes e 532/532 chutes.",
-    "mainBlocker": "A dose 0,96 reduz seleção externa sem evidência de melhora em gols ou chutes totais. W298 mede a cadeia de resolução do chute e contribuição de goleiro/defesa antes de propor intervenção causal.",
-    "replay": "W297 viewer seed1732 auditado 13/13; ambos braços 3–3 e fingerprints iguais nesse seed. Revisão humana pendente."
+    "lastIntegrated": "W298: controle0.98 267 chutes/115 gols, tratamento0.96 265/119; 532/532 terminais; dentro da área a <10m 72/100 e74/107 gols. Perfil descritivo, nenhuma causalidade ou default promovido.",
+    "mainBlocker": "Conversão e seleção de chute continuam altas; W299 testa teto técnico com sensibilidade demonstrada no piloto, sem promover valores experimentais.",
+    "replay": "W298 seed1732 viewer auditado13/13 (3–3 em ambos); revisão humana pendente. W299 replay pendente da coorte."
   },
   "diary": [
     {
@@ -1120,15 +1120,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W294",
-      "wave": "W294",
-      "publishedAt": "2026-10-29T09:41:50Z",
-      "macro": "M2",
-      "title": "Testar prioridade de progressão no passe",
-      "status": "FINALIZADO — ganho local de progressão; regressão em apoio à frente/área e aumento de circulação; default OFF.",
-      "summary": "36 jogos; controle W273 exato18/18; lifecycle passe24.182/24.182, chute36/36. Progressão condicional +0,00885 (IC95% [+0,00718;+0,01053]), maior18/18; passes +169,56/jogo, ticks sem posse +446,44, área -4,17, apoio à frente -0,222. Nenhuma promoção."
-    },
-    {
       "id": "W295",
       "wave": "W295",
       "publishedAt": "2026-10-29T10:16:50Z",
@@ -1158,11 +1149,20 @@
     {
       "id": "W298",
       "wave": "W298",
-      "publishedAt": "2026-10-29T11:53:00Z",
+      "publishedAt": "2026-10-29T14:35:00Z",
       "macro": "M2",
       "title": "Diagnosticar a resolução de chutes",
-      "status": "EM EXECUÇÃO — preflight aprovado; defaults inalterados.",
-      "summary": "W297: 0.96 reduziu seleção externa; gols e chutes totais inconclusivos. W298 mede trajetória, goleiro/defesa e terminais com observador passivo."
+      "status": "FINALIZADO — 532 chutes conciliados; perfil da conversão é descritivo; nenhum default alterado.",
+      "summary": "36 jogos; W297 exato36/36; chutes267/265, gols115/119; 532/532 terminais; viewer13/13."
+    },
+    {
+      "id": "W299",
+      "wave": "W299",
+      "publishedAt": "2026-10-29T14:35:00Z",
+      "macro": "M2",
+      "title": "Calibrar a probabilidade técnica do chute",
+      "status": "EM EXECUÇÃO — coorte scratch; defaults inalterados.",
+      "summary": "Piloto controle95 reproduz W298; cap45 reduz shoots bem lançados6→4, eleva degradados6→7 e placar3–3→3–2. Coorte de18 pares começou."
     },
     {
       "wave": "W66",
