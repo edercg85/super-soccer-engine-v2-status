@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-218",
-  "updatedAt": "2026-10-29T03:05:00Z",
+  "version": "2026.10.28-portal-219",
+  "updatedAt": "2026-10-29T03:10:00Z",
   "cycle": "W280",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M2 — W280 coorte 18 pares: OffsideAttacking.Pass OFF vs ON, PassPenaltyMaximum 21,25, Move ON fixo. W279 confirma queda de impedimentos mas mantém apoio à frente como gargalo. Revisões humanas dos replays anteriores pendentes.",
@@ -3468,6 +3468,10 @@
     {
       "id": "CP-W280-PILOT",
       "title": "W280 piloto — controle e observer exatos"
+    },
+    {
+      "id": "CP-PORTAL-18",
+      "title": "Portal v218 e ZIP W280 piloto publicados"
     }
   ]
 }
