@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-246",
-  "updatedAt": "2026-10-29T14:35:00Z",
-  "cycle": "W299",
+  "version": "2026.10.28-portal-247",
+  "updatedAt": "2026-10-29T13:26:35Z",
+  "cycle": "W300",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "M2 active — W299 tests ShootRules.MaximumSuccessProbability=45 vs95 on fixed outside-area score multiplier0.98; W298 control reproduced exactly in pilot; scratch only.",
+  "currentFocus": "M2 ativa — W300 audita decisão, distância/ângulo, draw técnico e terminal da coorte W299; defaults preservados, sem nova coorte até validar mecanismo.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W299",
-    "wave": "W299",
-    "publishedAt": "2026-10-29T14:35:00Z",
+    "id": "W300",
+    "wave": "W300",
+    "publishedAt": "2026-10-29T13:26:35Z",
     "macro": "M2",
-    "title": "Calibrar a probabilidade técnica do chute",
-    "status": "EM EXECUÇÃO — coorte scratch; defaults inalterados.",
-    "summary": "Piloto controle95 reproduz W298; cap45 reduz shoots bem lançados6→4, eleva degradados6→7 e placar3–3→3–2. Coorte de18 pares começou."
+    "title": "Auditar seleção e resolução de finalizações",
+    "status": "EM EXECUÇÃO — análise observacional dos artefatos W299; sem nova coorte ou mudança de default.",
+    "summary": "W299 rejeitou cap45: mais chutes e acesso ao terço, menor conversão e gols/jogo. W300 confere geometria, draw, escolha e terminais antes de derivar hipótese."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W295",
-      "wave": "W295",
-      "publishedAt": "2026-10-29T10:16:50Z",
-      "macro": "M2",
-      "title": "Pass vertical sem movimento vertical do portador",
-      "status": "FINALIZADO — bônus Pass com Move OFF piora progressão e apoio à frente; matriz 2x2 favorece Move ON/Pass OFF; nenhum default promovido.",
-      "summary": "36 jogos; lifecycle passe38.920/38.920 e chutes36/36. Pass ON com Move OFF: progressão -0,00411/seed (IC95% [-0,00586;-0,00235]), pior15/18; passes +107,22/jogo; no-possession +289,83; apoio à frente -0,835/obs."
-    },
-    {
       "id": "W296",
       "wave": "W296",
       "publishedAt": "2026-10-29T11:23:37Z",
@@ -87,7 +78,7 @@
     {
       "id": "W298",
       "wave": "W298",
-      "publishedAt": "2026-10-29T14:35:00Z",
+      "publishedAt": "2026-10-29T13:26:35Z",
       "macro": "M2",
       "title": "Diagnosticar a resolução de chutes",
       "status": "FINALIZADO — 532 chutes conciliados; perfil da conversão é descritivo; nenhum default alterado.",
@@ -96,11 +87,20 @@
     {
       "id": "W299",
       "wave": "W299",
-      "publishedAt": "2026-10-29T14:35:00Z",
+      "publishedAt": "2026-10-29T13:26:35Z",
       "macro": "M2",
       "title": "Calibrar a probabilidade técnica do chute",
-      "status": "EM EXECUÇÃO — coorte scratch; defaults inalterados.",
-      "summary": "Piloto controle95 reproduz W298; cap45 reduz shoots bem lançados6→4, eleva degradados6→7 e placar3–3→3–2. Coorte de18 pares começou."
+      "status": "FINALIZADO — teto técnico 45 rejeitado; nenhum default promovido.",
+      "summary": "18 pares/36 jogos; controle exato18/18; gols/jogo6,39→6,06; chutes/jogo14,83→17,72; conversão43,1%→34,2%; 586/586 chutes e20.845/20.845 passes conciliados."
+    },
+    {
+      "id": "W300",
+      "wave": "W300",
+      "publishedAt": "2026-10-29T13:26:35Z",
+      "macro": "M2",
+      "title": "Auditar seleção e resolução de finalizações",
+      "status": "EM EXECUÇÃO — análise observacional dos artefatos W299; sem nova coorte ou mudança de default.",
+      "summary": "W299 rejeitou cap45: mais chutes e acesso ao terço, menor conversão e gols/jogo. W300 confere geometria, draw, escolha e terminais antes de derivar hipótese."
     }
   ],
   "macros": [
@@ -331,7 +331,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": true,
-      "activeNote": "FRENTE ATIVA — 2x2 W294/W295 favorece Move ON / Vertical Pass OFF: Move ON aumenta acesso e chutes em18/18. Ainda há 7,17 gols e17,94 chutes/jogo. W296 testa desconto remote-shot2% com controle W294 exato; build scratch, nenhum default promovido.",
+      "activeNote": "FRENTE ATIVA — W299 rejeitou teto técnico 45: gols/jogo6,39→6,06, conversão43,1%→34,2%, apesar de +2,89 chutes/jogo e +31,7 amostras no terço ofensivo. W300 audita escolha, geometria e resolução de chute em modo observacional; sem promover defaults.",
       "items": [
         {
           "id": "M2-01",
@@ -1073,14 +1073,14 @@
   ],
   "footballQuality": {
     "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
-    "baseline": "W274 baseline Move+Pass OFF: 18 jogos COR×PAL, seeds 1732–1749, assemblies W214.",
-    "candidate": "W299 scratch: teto de sucesso técnico do chute45 contra95; controle W298 exato, coorte em execução; sem promotion/default.",
-    "improved": "W293 ligou41.692/41.692 tentativas a terminais sem ambiguidades; progressão média condicionada a passes completos:+0,05143 controle,+0,01411 6,25%,−0,01173 12,5%.",
-    "worsened": "Doses BCCM6,25%/12,5% reduziram progressão por conclusão −0,03734/−0,06316 (18/18 seeds, IC pareado); Move contextual rejeitado.",
-    "shotsGoals": "W2916,25%: gols108 vs119 controle (−0,611/jogo, IC95% [−2,080;+0,858]); chutes231 vs264. Lifecycle54/54.",
-    "lastIntegrated": "W298: controle0.98 267 chutes/115 gols, tratamento0.96 265/119; 532/532 terminais; dentro da área a <10m 72/100 e74/107 gols. Perfil descritivo, nenhuma causalidade ou default promovido.",
-    "mainBlocker": "Conversão e seleção de chute continuam altas; W299 testa teto técnico com sensibilidade demonstrada no piloto, sem promover valores experimentais.",
-    "replay": "W298 seed1732 viewer auditado13/13 (3–3 em ambos); revisão humana pendente. W299 replay pendente da coorte."
+    "baseline": "W299 controle: teto técnico95, score remoto0,98, Move ON / Pass OFF; 18 jogos pareados.",
+    "candidate": "W299 tratamento: teto técnico45 experimental contra95; dose rejeitada, defaults W214 preservados.",
+    "improved": "W299 elevou chutes em2,89/jogo e amostras do terço ofensivo em31,7/jogo (diferenças pareadas exploratórias).",
+    "worsened": "W299 reduziu gols em0,33/jogo e conversão agregada43,1%→34,2%; IC pareado de gols inclui zero, conversão cai claramente.",
+    "shotsGoals": "W299: 267→319 chutes, 115→109 gols; diferença pareada de gols−0,33/jogo, IC95% exploratório [−1,38;+0,72].",
+    "lastIntegrated": "W299: 18 pares; controle exato18/18; 586/586 chutes conciliados; 20.845/20.845 passes conciliados incluindo impedimentos; nenhum default promovido.",
+    "mainBlocker": "Qualidade da seleção e resolução de finalizações: mais acesso e volume não elevaram gols, e a conversão caiu sob o teto45 experimental.",
+    "replay": "W299 seed1732: replay comparativo integral pronto para revisão humana; aceite funcional ainda pendente."
   },
   "diary": [
     {
@@ -1120,15 +1120,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W295",
-      "wave": "W295",
-      "publishedAt": "2026-10-29T10:16:50Z",
-      "macro": "M2",
-      "title": "Pass vertical sem movimento vertical do portador",
-      "status": "FINALIZADO — bônus Pass com Move OFF piora progressão e apoio à frente; matriz 2x2 favorece Move ON/Pass OFF; nenhum default promovido.",
-      "summary": "36 jogos; lifecycle passe38.920/38.920 e chutes36/36. Pass ON com Move OFF: progressão -0,00411/seed (IC95% [-0,00586;-0,00235]), pior15/18; passes +107,22/jogo; no-possession +289,83; apoio à frente -0,835/obs."
-    },
-    {
       "id": "W296",
       "wave": "W296",
       "publishedAt": "2026-10-29T11:23:37Z",
@@ -1149,7 +1140,7 @@
     {
       "id": "W298",
       "wave": "W298",
-      "publishedAt": "2026-10-29T14:35:00Z",
+      "publishedAt": "2026-10-29T13:26:35Z",
       "macro": "M2",
       "title": "Diagnosticar a resolução de chutes",
       "status": "FINALIZADO — 532 chutes conciliados; perfil da conversão é descritivo; nenhum default alterado.",
@@ -1158,11 +1149,20 @@
     {
       "id": "W299",
       "wave": "W299",
-      "publishedAt": "2026-10-29T14:35:00Z",
+      "publishedAt": "2026-10-29T13:26:35Z",
       "macro": "M2",
       "title": "Calibrar a probabilidade técnica do chute",
-      "status": "EM EXECUÇÃO — coorte scratch; defaults inalterados.",
-      "summary": "Piloto controle95 reproduz W298; cap45 reduz shoots bem lançados6→4, eleva degradados6→7 e placar3–3→3–2. Coorte de18 pares começou."
+      "status": "FINALIZADO — teto técnico 45 rejeitado; nenhum default promovido.",
+      "summary": "18 pares/36 jogos; controle exato18/18; gols/jogo6,39→6,06; chutes/jogo14,83→17,72; conversão43,1%→34,2%; 586/586 chutes e20.845/20.845 passes conciliados."
+    },
+    {
+      "id": "W300",
+      "wave": "W300",
+      "publishedAt": "2026-10-29T13:26:35Z",
+      "macro": "M2",
+      "title": "Auditar seleção e resolução de finalizações",
+      "status": "EM EXECUÇÃO — análise observacional dos artefatos W299; sem nova coorte ou mudança de default.",
+      "summary": "W299 rejeitou cap45: mais chutes e acesso ao terço, menor conversão e gols/jogo. W300 confere geometria, draw, escolha e terminais antes de derivar hipótese."
     },
     {
       "wave": "W66",
