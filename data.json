@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-219",
-  "updatedAt": "2026-10-29T03:10:00Z",
-  "cycle": "W280",
+  "version": "2026.10.28-portal-220",
+  "updatedAt": "2026-10-29T03:45:00Z",
+  "cycle": "W281",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W280 coorte 18 pares: OffsideAttacking.Pass OFF vs ON, PassPenaltyMaximum 21,25, Move ON fixo. W279 confirma queda de impedimentos mas mantém apoio à frente como gargalo. Revisões humanas dos replays anteriores pendentes.",
+  "currentFocus": "Frente ativa M2 — W281 coorte de 18 pares: OffsideAttacking.Pass OFF vs ON, PassPenaltyMaximum 10,625, Move ON fixo. W279/W280 indicam suporte à frente e circulação como regressões persistentes; revisão humana dos replays permanece pendente.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W280",
-    "wave": "W280",
-    "publishedAt": "2026-10-29T03:05:00Z",
+    "id": "W281",
+    "wave": "W281",
+    "publishedAt": "2026-10-29T03:45:00Z",
     "macro": "M2",
-    "title": "Testar dose baixa de impedimento",
-    "status": "PILOTO EXATO — coorte 18 pares ativa",
-    "summary": "Pass OFF seed1732 reproduziu W277; observer ON/OFF neutro nos dois braços; input pareado idêntico. Pass maximum21,25 em avaliação controlada."
+    "title": "Recuperar apoio sem perder efeito nos impedimentos",
+    "status": "PILOTO EXATO — coorte 18 pares em execução",
+    "summary": "Pass OFF reproduziu W277 seed1732; observer ON/OFF neutro nos dois braços; input pareado idêntico. Pass maximum10,625 em avaliação."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W276",
-      "wave": "W276",
-      "publishedAt": "2026-10-29T01:01:24Z",
-      "macro": "M2",
-      "title": "Forma SupportBlend: apoio maior, penetração menor",
-      "status": "CONCLUÍDO TECNICAMENTE — SupportBlend elevou suporte, mas reduziu progressão/chutes/gols; default OFF.",
-      "summary": "18 pares com Move+Pass OFF: apoio próximo 5,435→5,626 (+0,192), à frente 4,188→4,243 (+0,055). Terço 324→128, área 45→1, chutes 15→1, gols 8→0; controle W274 baseline exato. Replay seed1748 pronto, revisão humana pendente."
-    },
-    {
       "id": "W277",
       "wave": "W277",
       "publishedAt": "2026-10-29T02:02:01Z",
@@ -96,11 +87,20 @@
     {
       "id": "W280",
       "wave": "W280",
-      "publishedAt": "2026-10-29T03:05:00Z",
+      "publishedAt": "2026-10-29T03:40:00Z",
       "macro": "M2",
       "title": "Testar dose baixa de impedimento",
-      "status": "PILOTO EXATO — coorte 18 pares ativa",
-      "summary": "Pass OFF seed1732 reproduziu W277; observer ON/OFF neutro nos dois braços; input pareado idêntico. Pass maximum21,25 em avaliação controlada."
+      "status": "FINALIZADO — max21,25 reduz impedimentos mas apoio e circulação seguem baixos",
+      "summary": "18 pares; controle W277 exato 18/18; offsides −39,278/jogo (18/18), gols +1,333 e chutes +1,722 (ICs cruzam zero), apoio à frente −0,084 (14/18), passes tentados −32,056, episódios de posse −30,889. Lifecycle 36/36; replay seed1742 exato; viewer audit 13/13; revisão humana pendente."
+    },
+    {
+      "id": "W281",
+      "wave": "W281",
+      "publishedAt": "2026-10-29T03:45:00Z",
+      "macro": "M2",
+      "title": "Recuperar apoio sem perder efeito nos impedimentos",
+      "status": "PILOTO EXATO — coorte 18 pares em execução",
+      "summary": "Pass OFF reproduziu W277 seed1732; observer ON/OFF neutro nos dois braços; input pareado idêntico. Pass maximum10,625 em avaliação."
     }
   ],
   "macros": [
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W276",
-      "wave": "W276",
-      "publishedAt": "2026-10-29T01:01:24Z",
-      "macro": "M2",
-      "title": "Forma SupportBlend: apoio maior, penetração menor",
-      "status": "CONCLUÍDO TECNICAMENTE — SupportBlend elevou suporte, mas reduziu progressão/chutes/gols; default OFF.",
-      "summary": "18 pares com Move+Pass OFF: apoio próximo 5,435→5,626 (+0,192), à frente 4,188→4,243 (+0,055). Terço 324→128, área 45→1, chutes 15→1, gols 8→0; controle W274 baseline exato. Replay seed1748 pronto, revisão humana pendente."
-    },
-    {
       "id": "W277",
       "wave": "W277",
       "publishedAt": "2026-10-29T02:02:01Z",
@@ -1149,11 +1140,20 @@
     {
       "id": "W280",
       "wave": "W280",
-      "publishedAt": "2026-10-29T03:05:00Z",
+      "publishedAt": "2026-10-29T03:40:00Z",
       "macro": "M2",
       "title": "Testar dose baixa de impedimento",
-      "status": "PILOTO EXATO — coorte 18 pares ativa",
-      "summary": "Pass OFF seed1732 reproduziu W277; observer ON/OFF neutro nos dois braços; input pareado idêntico. Pass maximum21,25 em avaliação controlada."
+      "status": "FINALIZADO — max21,25 reduz impedimentos mas apoio e circulação seguem baixos",
+      "summary": "18 pares; controle W277 exato 18/18; offsides −39,278/jogo (18/18), gols +1,333 e chutes +1,722 (ICs cruzam zero), apoio à frente −0,084 (14/18), passes tentados −32,056, episódios de posse −30,889. Lifecycle 36/36; replay seed1742 exato; viewer audit 13/13; revisão humana pendente."
+    },
+    {
+      "id": "W281",
+      "wave": "W281",
+      "publishedAt": "2026-10-29T03:45:00Z",
+      "macro": "M2",
+      "title": "Recuperar apoio sem perder efeito nos impedimentos",
+      "status": "PILOTO EXATO — coorte 18 pares em execução",
+      "summary": "Pass OFF reproduziu W277 seed1732; observer ON/OFF neutro nos dois braços; input pareado idêntico. Pass maximum10,625 em avaliação."
     },
     {
       "wave": "W66",
@@ -3472,6 +3472,22 @@
     {
       "id": "CP-PORTAL-18",
       "title": "Portal v218 e ZIP W280 piloto publicados"
+    },
+    {
+      "id": "CP-W280-FINAL",
+      "title": "W280 resultado final — maximum21,25"
+    },
+    {
+      "id": "CP-W280-REPLAY",
+      "title": "W280 replay seed1742 — revisão humana"
+    },
+    {
+      "id": "CP-W281-PREFLIGHT",
+      "title": "W281 preflight — dose10,625"
+    },
+    {
+      "id": "CP-W281-PILOT",
+      "title": "W281 piloto — controle e observer exatos"
     }
   ]
 }
