@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-228",
-  "updatedAt": "2026-10-29T05:22:25Z",
-  "cycle": "W286",
+  "version": "2026.10.28-portal-229",
+  "updatedAt": "2026-10-29T05:46:53Z",
+  "cycle": "W287",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W286: testar atenuação 25% do score contextual Move. W285 localizou seleção Move→Pass no mesmo estado. Piloto W286 passou controle e mudança prevista, com alerta de excesso de chutes em seed único; coorte de 18 pares em andamento, chutes/gols como salvaguardas.",
+  "currentFocus": "Frente ativa M2 — W287 M2-04: testar desconto de 5% no score de Shoot fora da área para reduzir chutes remotos no contexto BCCM25 rejeitado. Base não aceita; W287 é experimento de resgate com controle W286 seed1738, teste de 5% no mesmo estado e gates de gols/área/lifecycle. Source/default continuam inalterados.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W286",
-    "wave": "W286",
-    "publishedAt": "2026-10-29T05:22:25Z",
+    "id": "W287",
+    "wave": "W287",
+    "publishedAt": "2026-10-29T05:46:53Z",
     "macro": "M2",
-    "title": "Atenuar o score contextual Move em 25%",
-    "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO; ALERTA DE CHUTES NO SEED ÚNICO",
-    "summary": "Cópia experimental V2 compilada isolada. Sem patch reproduz W214 exatamente. Com peso contextual 25%, tick2 seleciona Move como previsto; piloto seed1745 fez 35 chutes vs17 e 2 gols vs9."
+    "title": "Reduzir chutes fora da área em 5%",
+    "status": "PREFLIGHT — CÓPIA V2 ISOLADA, PILOTO PENDENTE",
+    "summary": "Desconto de 5% no score Shoot fora da área sobre a base contextual BCCM25 já rejeitada. Análise W286 prevê que 249/541 seleções remotas seriam invertidas em estado congelado."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W283",
-      "wave": "W283",
-      "publishedAt": "2026-10-29T04:35:00Z",
-      "macro": "M2",
-      "title": "Medir o custo de impedimento no recebimento",
-      "status": "PILOTO EXATO — coorte 18 pares ativa",
-      "summary": "Receive ON reproduz W277 seed1732; observer neutro em ambos os braços e input idêntico. Único fator Receive ON/OFF."
-    },
-    {
       "id": "W284",
       "wave": "W284",
       "publishedAt": "2026-10-29T04:45:50Z",
@@ -99,8 +90,17 @@
       "publishedAt": "2026-10-29T05:22:25Z",
       "macro": "M2",
       "title": "Atenuar o score contextual Move em 25%",
-      "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO; ALERTA DE CHUTES NO SEED ÚNICO",
-      "summary": "Cópia experimental V2 compilada isolada. Sem patch reproduz W214 exatamente. Com peso contextual 25%, tick2 seleciona Move como previsto; piloto seed1745 fez 35 chutes vs17 e 2 gols vs9."
+      "status": "FINALIZADO — BCCM25 REJEITADO: VOLUME DE CHUTES SOBE, ÁREA/GOLS NÃO",
+      "summary": "18 pares; controle18/18 e lifecycle36/36. Gols119→123, inconclusivo; chutes264→613 (+19,389/jogo,18/18), fora da área +29/jogo; terço1561→1057 e área416→102; replay1738 auditado13/13."
+    },
+    {
+      "id": "W287",
+      "wave": "W287",
+      "publishedAt": "2026-10-29T05:46:53Z",
+      "macro": "M2",
+      "title": "Reduzir chutes fora da área em 5%",
+      "status": "PREFLIGHT — CÓPIA V2 ISOLADA, PILOTO PENDENTE",
+      "summary": "Desconto de 5% no score Shoot fora da área sobre a base contextual BCCM25 já rejeitada. Análise W286 prevê que 249/541 seleções remotas seriam invertidas em estado congelado."
     }
   ],
   "macros": [
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W283",
-      "wave": "W283",
-      "publishedAt": "2026-10-29T04:35:00Z",
-      "macro": "M2",
-      "title": "Medir o custo de impedimento no recebimento",
-      "status": "PILOTO EXATO — coorte 18 pares ativa",
-      "summary": "Receive ON reproduz W277 seed1732; observer neutro em ambos os braços e input idêntico. Único fator Receive ON/OFF."
-    },
-    {
       "id": "W284",
       "wave": "W284",
       "publishedAt": "2026-10-29T04:45:50Z",
@@ -1152,8 +1143,17 @@
       "publishedAt": "2026-10-29T05:22:25Z",
       "macro": "M2",
       "title": "Atenuar o score contextual Move em 25%",
-      "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO; ALERTA DE CHUTES NO SEED ÚNICO",
-      "summary": "Cópia experimental V2 compilada isolada. Sem patch reproduz W214 exatamente. Com peso contextual 25%, tick2 seleciona Move como previsto; piloto seed1745 fez 35 chutes vs17 e 2 gols vs9."
+      "status": "FINALIZADO — BCCM25 REJEITADO: VOLUME DE CHUTES SOBE, ÁREA/GOLS NÃO",
+      "summary": "18 pares; controle18/18 e lifecycle36/36. Gols119→123, inconclusivo; chutes264→613 (+19,389/jogo,18/18), fora da área +29/jogo; terço1561→1057 e área416→102; replay1738 auditado13/13."
+    },
+    {
+      "id": "W287",
+      "wave": "W287",
+      "publishedAt": "2026-10-29T05:46:53Z",
+      "macro": "M2",
+      "title": "Reduzir chutes fora da área em 5%",
+      "status": "PREFLIGHT — CÓPIA V2 ISOLADA, PILOTO PENDENTE",
+      "summary": "Desconto de 5% no score Shoot fora da área sobre a base contextual BCCM25 já rejeitada. Análise W286 prevê que 249/541 seleções remotas seriam invertidas em estado congelado."
     },
     {
       "wave": "W66",
@@ -3548,6 +3548,18 @@
     {
       "id": "CP-W286-PILOT",
       "title": "W286 — piloto da atenuação 25%"
+    },
+    {
+      "id": "CP-W286-FINAL",
+      "title": "W286 — BCCM 25% rejeitado"
+    },
+    {
+      "id": "CP-W287-PREFLIGHT",
+      "title": "W287 — desconto remoto de chute 5%"
+    },
+    {
+      "id": "CP-PORTAL-25",
+      "title": "W286 final / W287 ativo"
     }
   ]
 }
