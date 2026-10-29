@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-224",
-  "updatedAt": "2026-10-29T06:00:00Z",
+  "version": "2026.10.28-portal-225",
+  "updatedAt": "2026-10-29T04:45:50Z",
   "cycle": "W284",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M4-01 — W284 coorte pareada: BallCarrierContextualMoveV2 OFF vs ON, com Move ON / Pass OFF / Receive ON / shape Off. Piloto seed1732 reproduz W277 no controle e observer é neutro. Resultado de um seed é apenas diagnóstico; não inferir efeito antes dos 18 pares, lifecycle e replay.",
@@ -14,7 +14,7 @@
   "latestAction": {
     "id": "W284",
     "wave": "W284",
-    "publishedAt": "2026-10-29T06:00:00Z",
+    "publishedAt": "2026-10-29T04:45:50Z",
     "macro": "M4",
     "title": "Validar controle contextual do portador em partida completa",
     "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
@@ -96,7 +96,7 @@
     {
       "id": "W284",
       "wave": "W284",
-      "publishedAt": "2026-10-29T06:00:00Z",
+      "publishedAt": "2026-10-29T04:45:50Z",
       "macro": "M4",
       "title": "Validar controle contextual do portador em partida completa",
       "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
@@ -1149,7 +1149,7 @@
     {
       "id": "W284",
       "wave": "W284",
-      "publishedAt": "2026-10-29T06:00:00Z",
+      "publishedAt": "2026-10-29T04:45:50Z",
       "macro": "M4",
       "title": "Validar controle contextual do portador em partida completa",
       "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
