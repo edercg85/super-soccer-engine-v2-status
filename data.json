@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-235",
-  "updatedAt": "2026-10-29T07:39:36Z",
+  "version": "2026.10.28-portal-236",
+  "updatedAt": "2026-10-29T07:45:02Z",
   "cycle": "W290",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M2 — W290 M2-04: restringir o contexto Move de 12,5% a portadores fora do terço ofensivo para preservar progressão sem reduzir entradas na área. Controles W277/W289 reproduzidos exatamente no piloto; coorte 18×3 em execução.",
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W289",
-    "wave": "W289",
-    "publishedAt": "2026-10-29T06:56:47Z",
+    "id": "W290",
+    "wave": "W290",
+    "publishedAt": "2026-10-29T07:45:02Z",
     "macro": "M2",
-    "title": "Medir dose-resposta do contexto Move",
-    "status": "PILOTO EXATO — COORTE 18×3 EM EXECUÇÃO",
-    "summary": "Seed1732: peso0 reproduz W277 e peso25% reproduz W286 em input, estado, eventos, draws, placar e contagens. 12,5% é condição inédita."
+    "title": "Restringir contexto Move fora do terço ofensivo",
+    "status": "EM EXECUÇÃO — coorte de 18 partidas pareadas × 3 braços",
+    "summary": "W289 global 12,5% foi rejeitada por queda de entradas na área e circulação excessiva. W290 compara controle0%, controle12,5% global e 12,5% somente fora do terço ofensivo. Piloto1742 reproduziu exatamente os controles W277/W289; coorte observada em andamento."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W285",
-      "wave": "W285",
-      "publishedAt": "2026-10-29T05:09:17Z",
-      "macro": "M2",
-      "title": "Diagnosticar a seleção Move/Pass do portador",
-      "status": "FINALIZADO — mesma pre-state confirmou Move→Pass por queda contextual",
-      "summary": "Seed1745: mesmo estado tick2, score base Move0,839048; OFF final0,886616 e Move escolhido; ON final0,348083 e Pass0,731514 escolhido. Primeira divergência de estado tick14; ambos reproduzem W284 hashes."
-    },
-    {
       "id": "W286",
       "wave": "W286",
       "publishedAt": "2026-10-29T05:22:25Z",
@@ -101,6 +92,15 @@
       "title": "Medir dose-resposta do contexto Move",
       "status": "PILOTO EXATO — COORTE 18×3 EM EXECUÇÃO",
       "summary": "Seed1732: peso0 reproduz W277 e peso25% reproduz W286 em input, estado, eventos, draws, placar e contagens. 12,5% é condição inédita."
+    },
+    {
+      "id": "W290",
+      "wave": "W290",
+      "publishedAt": "2026-10-29T07:45:02Z",
+      "macro": "M2",
+      "title": "Restringir contexto Move fora do terço ofensivo",
+      "status": "EM EXECUÇÃO — coorte de 18 partidas pareadas × 3 braços",
+      "summary": "W289 global 12,5% foi rejeitada por queda de entradas na área e circulação excessiva. W290 compara controle0%, controle12,5% global e 12,5% somente fora do terço ofensivo. Piloto1742 reproduziu exatamente os controles W277/W289; coorte observada em andamento."
     }
   ],
   "macros": [
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W285",
-      "wave": "W285",
-      "publishedAt": "2026-10-29T05:09:17Z",
-      "macro": "M2",
-      "title": "Diagnosticar a seleção Move/Pass do portador",
-      "status": "FINALIZADO — mesma pre-state confirmou Move→Pass por queda contextual",
-      "summary": "Seed1745: mesmo estado tick2, score base Move0,839048; OFF final0,886616 e Move escolhido; ON final0,348083 e Pass0,731514 escolhido. Primeira divergência de estado tick14; ambos reproduzem W284 hashes."
-    },
-    {
       "id": "W286",
       "wave": "W286",
       "publishedAt": "2026-10-29T05:22:25Z",
@@ -1154,6 +1145,15 @@
       "title": "Medir dose-resposta do contexto Move",
       "status": "PILOTO EXATO — COORTE 18×3 EM EXECUÇÃO",
       "summary": "Seed1732: peso0 reproduz W277 e peso25% reproduz W286 em input, estado, eventos, draws, placar e contagens. 12,5% é condição inédita."
+    },
+    {
+      "id": "W290",
+      "wave": "W290",
+      "publishedAt": "2026-10-29T07:45:02Z",
+      "macro": "M2",
+      "title": "Restringir contexto Move fora do terço ofensivo",
+      "status": "EM EXECUÇÃO — coorte de 18 partidas pareadas × 3 braços",
+      "summary": "W289 global 12,5% foi rejeitada por queda de entradas na área e circulação excessiva. W290 compara controle0%, controle12,5% global e 12,5% somente fora do terço ofensivo. Piloto1742 reproduziu exatamente os controles W277/W289; coorte observada em andamento."
     },
     {
       "wave": "W66",
@@ -3592,6 +3592,10 @@
     {
       "id": "CP-PORTAL-29",
       "title": "Snapshot central W289 publicado"
+    },
+    {
+      "id": "CP-W290-PREFLIGHT",
+      "title": "W290 — contexto Move restrito fora do terço ofensivo"
     }
   ]
 }
