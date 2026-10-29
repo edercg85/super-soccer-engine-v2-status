@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-230",
-  "updatedAt": "2026-10-29T06:17:00Z",
+  "version": "2026.10.28-portal-231",
+  "updatedAt": "2026-10-29T06:18:55Z",
   "cycle": "W288",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M2 — W288 M2-04: dose-resposta de descontos externos de Shoot (0%, 1%, 2%) após W287 mostrar perda consistente de gols com 5%. Mesmo contexto BCCM25 experimental, controle W286, 18 seeds; bases/defaults continuam não aceitos e inalterados.",
@@ -3568,6 +3568,10 @@
     {
       "id": "CP-W288-PREFLIGHT",
       "title": "W288 — dose-resposta de desconto remoto"
+    },
+    {
+      "id": "CP-PORTAL-26",
+      "title": "W287 final / W288 M2-04 ativo"
     }
   ]
 }
