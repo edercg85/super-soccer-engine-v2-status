@@ -23,7 +23,7 @@ jobs:
           required={'index.html','history.html','data.json','README.md','.nojekyll','assets/site.css'}
           files={p.as_posix() for p in root.rglob('*') if p.is_file() and '.git' not in p.parts}
           data=json.loads((root/'data.json').read_text(encoding='utf-8'))
-          expected=required|{f'macro/{m["id"]}.html' for m in data['macros']}|{f'activity/{a["id"]}.html' for m in data['macros'] for a in m['items']}|{'.github/workflows/pages.yml'}
+          expected=required|{f'macro/{m["id"]}.html' for m in data['macros']}|{f'activity/{a["id"]}.html' for m in data['macros'] for a in m['items']}|{'.github/workflows/pages.yml','replays/index.html','replays/w299-fullmatch.html','replays/w302-fullmatch.html'}
           assert files==expected, f'allowlist mismatch: missing={sorted(expected-files)} extra={sorted(files-expected)}'
           for p in root.rglob('*'):
               if p.is_file() and '.git' not in p.parts: p.read_bytes().decode('utf-8')
@@ -62,3 +62,4 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
