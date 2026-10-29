@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-240",
-  "updatedAt": "2026-10-29T09:09:41Z",
-  "cycle": "W292",
+  "version": "2026.10.28-portal-241",
+  "updatedAt": "2026-10-29T09:41:50Z",
+  "cycle": "W294",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W292: medir em partidas completas se ticks sem possuidor coincidem com ActivePass, BallMovementState, ActiveShoot ou RestartState, nos braços0%,6,25% filtrado e12,5% filtrado. Piloto seed1742 reproduziu W291 exatamente nos três braços; coorte18×3 em execução.",
+  "currentFocus": "Frente ativa M2 — W294 testa VerticalAttacking.Pass ON/OFF sobre W273, mantendo OffsideAttacking.Pass e VerticalAttacking.Move ON. A hipótese decorre de W293: o bônus vertical do passe, ainda OFF em W273, pode recuperar progressão dos passes completos. Coorte18 pares W214; controle reproduz W273; defaults permanecem OFF.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W292",
-    "wave": "W292",
-    "publishedAt": "2026-10-29T09:00:46Z",
+    "id": "W294",
+    "wave": "W294",
+    "publishedAt": "2026-10-29T09:41:50Z",
     "macro": "M2",
-    "title": "Decompor a origem dos ticks sem possuidor",
-    "status": "EM EXECUÇÃO — DIAGNÓSTICO18×3 EM ANDAMENTO",
-    "summary": "W291 mostrou aumento de ticks sem possuidor e passes em18/18 na dose6,25%. Piloto W2921742 sugere BallMovementState+ActivePass na maioria; a coorte de54 partidas medirá e reproduzirá W291 exatamente."
+    "title": "Testar prioridade de progressão no passe",
+    "status": "EM EXECUÇÃO — piloto e coorte18 pares pendentes",
+    "summary": "Hipótese: o bônus default-off VerticalAttacking.Pass aumenta progressão ao primeiro controle; mantém OffsideAttacking.Pass e VerticalAttacking.Move de W273 iguais nos braços."
   },
   "recentCycles": [
     {
@@ -58,24 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W288",
-      "wave": "W288",
-      "publishedAt": "2026-10-29T06:56:47Z",
-      "macro": "M2",
-      "title": "Medir dose-resposta de desconto em chutes remotos",
-      "status": "FINALIZADO — 2% REJEITADO; 1% INCONCLUSIVO",
-      "summary": "54 jogos; controle W286 exato18/18; lifecycle54/54. 1% gols -0,611 (IC inclui 0); 2% gols -1,556/jogo (IC95% [-2,857;-0,254]), chutes externos -7,167/jogo; sem melhora significativa de progressão/área. Replay1741 auditado13/13."
-    },
-    {
-      "id": "W289",
-      "wave": "W289",
-      "publishedAt": "2026-10-29T06:56:47Z",
-      "macro": "M2",
-      "title": "Medir dose-resposta do contexto Move",
-      "status": "PILOTO EXATO — COORTE 18×3 EM EXECUÇÃO",
-      "summary": "Seed1732: peso0 reproduz W277 e peso25% reproduz W286 em input, estado, eventos, draws, placar e contagens. 12,5% é condição inédita."
-    },
-    {
       "id": "W290",
       "wave": "W290",
       "publishedAt": "2026-10-29T07:55:00Z",
@@ -96,11 +78,29 @@
     {
       "id": "W292",
       "wave": "W292",
-      "publishedAt": "2026-10-29T09:00:46Z",
+      "publishedAt": "2026-10-29T09:32:22Z",
       "macro": "M2",
       "title": "Decompor a origem dos ticks sem possuidor",
-      "status": "EM EXECUÇÃO — DIAGNÓSTICO18×3 EM ANDAMENTO",
-      "summary": "W291 mostrou aumento de ticks sem possuidor e passes em18/18 na dose6,25%. Piloto W2921742 sugere BallMovementState+ActivePass na maioria; a coorte de54 partidas medirá e reproduzirá W291 exatamente."
+      "status": "FINALIZADO — DIAGNÓSTICO COMPLETO; estado dominante é movimento+passe ativo",
+      "summary": "54 jogos; W291 exact54/54, lifecycle54/54 e perfis reconciliados. Movimento+passe=89,25%/92,15%/93,76%; 2,56 ticks/pass estável. Pass attempts620/770/926 por jogo."
+    },
+    {
+      "id": "W293",
+      "wave": "W293",
+      "publishedAt": "2026-10-29T09:39:23Z",
+      "macro": "M2",
+      "title": "Ligar tentativas de passe a terminal e progressão do recebedor",
+      "status": "FINALIZADO — doses Move contextual entregam menos progressão por passe completo",
+      "summary": "41.692 tentativas ligadas a complete/fail/offside sem resíduos; recebedor observado em29.934/31.845 completas. Progressão média+0,05143 controle,+0,01411 6,25%,−0,01173 12,5%; pior18/18."
+    },
+    {
+      "id": "W294",
+      "wave": "W294",
+      "publishedAt": "2026-10-29T09:41:50Z",
+      "macro": "M2",
+      "title": "Testar prioridade de progressão no passe",
+      "status": "EM EXECUÇÃO — piloto e coorte18 pares pendentes",
+      "summary": "Hipótese: o bônus default-off VerticalAttacking.Pass aumenta progressão ao primeiro controle; mantém OffsideAttacking.Pass e VerticalAttacking.Move de W273 iguais nos braços."
     }
   ],
   "macros": [
@@ -331,7 +331,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": true,
-      "activeNote": "FRENTE ATIVA — W289–W291 rejeitaram as variantes de Move contextual por regressão territorial/circulação; nenhuma foi promovida. W292 mede em 54 partidas completas os estados da bola e eventos coincidentes durante ticks sem possuidor, com controle exato e doses de 6,25%/12,5%. Coorte em execução; piloto reproduziu W291. Defaults OFF; revisão humana dos replays pendente.",
+      "activeNote": "FRENTE ATIVA — W289–W291 rejeitaram doses de Move contextual. W292 mostrou que 89–94% dos ticks sem possuidor ocorrem durante movimento+passe ativo, a2,56 ticks/tentativa. W293 ligou todos os41.692 lançamentos a terminais e mediu queda de progressão por conclusão18/18 nas doses BCCM. W294 testa somente VerticalAttacking.Pass sobre W273; nenhum default promovido. Revisão humana pendente.",
       "items": [
         {
           "id": "M2-01",
@@ -1074,13 +1074,13 @@
   "footballQuality": {
     "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
     "baseline": "W274 baseline Move+Pass OFF: 18 jogos COR×PAL, seeds 1732–1749, assemblies W214.",
-    "candidate": "W292 diagnóstico: medir estados e eventos durante ticks sem possuidor; nenhuma intervenção funcional é aplicada.",
-    "improved": "W291: dose6,25% reduz ticks sem possuidor389,333/jogo vs12,5% filtrado; ainda fica +358,444/jogo vs controle.",
-    "worsened": "W2916,25% vs controle: ticks sem possuidor +358,444 [338,363;378,526]; passes tentados +149,500 [141,352;157,648]; episódios no terço −6,500 [−12,392;−0,608].",
+    "candidate": "W294 em execução: VerticalAttacking.Pass ON versus OFF sobre W273 Pass ON/Move ON; default permanece OFF.",
+    "improved": "W293 ligou41.692/41.692 tentativas a terminais sem ambiguidades; progressão média condicionada a passes completos:+0,05143 controle,+0,01411 6,25%,−0,01173 12,5%.",
+    "worsened": "Doses BCCM6,25%/12,5% reduziram progressão por conclusão −0,03734/−0,06316 (18/18 seeds, IC pareado); Move contextual rejeitado.",
     "shotsGoals": "W2916,25%: gols108 vs119 controle (−0,611/jogo, IC95% [−2,080;+0,858]); chutes231 vs264. Lifecycle54/54.",
-    "lastIntegrated": "W291 rejeita6,25%; redução de circulação vs12,5% não restaura progressão nem demonstra benefício de gol/área.",
-    "mainBlocker": "Ticks sem possuidor/passagens sobem com a dose contextual; piloto W292 seed1742 encontra a maioria desses ticks durante ActivePass e BallMovementState. A coorte mede distribuição antes de nova intervenção.",
-    "replay": "W291 replay seed1742 controle vs6,25%: hashes vinculados à coorte; viewer auditado13/13; revisão humana pendente."
+    "lastIntegrated": "W291 é a última comparação de dose funcional integrada; W292 diagnóstico observacional em54 jogos. Nenhum candidato ganhou aceite global.",
+    "mainBlocker": "A progressão em passes completos caiu conforme BCCM contextual elevou volume. W294 testa bônus vertical de passe existente, isolado, default-off.",
+    "replay": "W273 e W291 replays de 90min disponíveis com hashes/manifestos; revisão humana pendente. W294 produzirá replay seed1732 apenas após piloto exato."
   },
   "diary": [
     {
@@ -1120,24 +1120,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W288",
-      "wave": "W288",
-      "publishedAt": "2026-10-29T06:56:47Z",
-      "macro": "M2",
-      "title": "Medir dose-resposta de desconto em chutes remotos",
-      "status": "FINALIZADO — 2% REJEITADO; 1% INCONCLUSIVO",
-      "summary": "54 jogos; controle W286 exato18/18; lifecycle54/54. 1% gols -0,611 (IC inclui 0); 2% gols -1,556/jogo (IC95% [-2,857;-0,254]), chutes externos -7,167/jogo; sem melhora significativa de progressão/área. Replay1741 auditado13/13."
-    },
-    {
-      "id": "W289",
-      "wave": "W289",
-      "publishedAt": "2026-10-29T06:56:47Z",
-      "macro": "M2",
-      "title": "Medir dose-resposta do contexto Move",
-      "status": "PILOTO EXATO — COORTE 18×3 EM EXECUÇÃO",
-      "summary": "Seed1732: peso0 reproduz W277 e peso25% reproduz W286 em input, estado, eventos, draws, placar e contagens. 12,5% é condição inédita."
-    },
-    {
       "id": "W290",
       "wave": "W290",
       "publishedAt": "2026-10-29T07:55:00Z",
@@ -1158,11 +1140,29 @@
     {
       "id": "W292",
       "wave": "W292",
-      "publishedAt": "2026-10-29T09:00:46Z",
+      "publishedAt": "2026-10-29T09:32:22Z",
       "macro": "M2",
       "title": "Decompor a origem dos ticks sem possuidor",
-      "status": "EM EXECUÇÃO — DIAGNÓSTICO18×3 EM ANDAMENTO",
-      "summary": "W291 mostrou aumento de ticks sem possuidor e passes em18/18 na dose6,25%. Piloto W2921742 sugere BallMovementState+ActivePass na maioria; a coorte de54 partidas medirá e reproduzirá W291 exatamente."
+      "status": "FINALIZADO — DIAGNÓSTICO COMPLETO; estado dominante é movimento+passe ativo",
+      "summary": "54 jogos; W291 exact54/54, lifecycle54/54 e perfis reconciliados. Movimento+passe=89,25%/92,15%/93,76%; 2,56 ticks/pass estável. Pass attempts620/770/926 por jogo."
+    },
+    {
+      "id": "W293",
+      "wave": "W293",
+      "publishedAt": "2026-10-29T09:39:23Z",
+      "macro": "M2",
+      "title": "Ligar tentativas de passe a terminal e progressão do recebedor",
+      "status": "FINALIZADO — doses Move contextual entregam menos progressão por passe completo",
+      "summary": "41.692 tentativas ligadas a complete/fail/offside sem resíduos; recebedor observado em29.934/31.845 completas. Progressão média+0,05143 controle,+0,01411 6,25%,−0,01173 12,5%; pior18/18."
+    },
+    {
+      "id": "W294",
+      "wave": "W294",
+      "publishedAt": "2026-10-29T09:41:50Z",
+      "macro": "M2",
+      "title": "Testar prioridade de progressão no passe",
+      "status": "EM EXECUÇÃO — piloto e coorte18 pares pendentes",
+      "summary": "Hipótese: o bônus default-off VerticalAttacking.Pass aumenta progressão ao primeiro controle; mantém OffsideAttacking.Pass e VerticalAttacking.Move de W273 iguais nos braços."
     },
     {
       "wave": "W66",
@@ -3625,6 +3625,10 @@
     {
       "id": "CP-PORTAL-31",
       "title": "W291 final / W292 ativo; M2 detalhada e UTF-8 validado no Pages v239"
+    },
+    {
+      "id": "CP-PORTAL-32",
+      "title": "W292/W293 finalizados; W294 ativo na M2"
     }
   ]
 }
