@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-231",
-  "updatedAt": "2026-10-29T06:18:55Z",
+  "version": "2026.10.28-portal-232",
+  "updatedAt": "2026-10-29T06:24:30Z",
   "cycle": "W288",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M2 — W288 M2-04: dose-resposta de descontos externos de Shoot (0%, 1%, 2%) após W287 mostrar perda consistente de gols com 5%. Mesmo contexto BCCM25 experimental, controle W286, 18 seeds; bases/defaults continuam não aceitos e inalterados.",
@@ -3572,6 +3572,10 @@
     {
       "id": "CP-PORTAL-26",
       "title": "W287 final / W288 M2-04 ativo"
+    },
+    {
+      "id": "CP-PORTAL-27",
+      "title": "Snapshot central W288 publicado"
     }
   ]
 }
