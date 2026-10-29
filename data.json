@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-232",
-  "updatedAt": "2026-10-29T06:24:30Z",
-  "cycle": "W288",
+  "version": "2026.10.28-portal-233",
+  "updatedAt": "2026-10-29T06:56:47Z",
+  "cycle": "W289",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W288 M2-04: dose-resposta de descontos externos de Shoot (0%, 1%, 2%) após W287 mostrar perda consistente de gols com 5%. Mesmo contexto BCCM25 experimental, controle W286, 18 seeds; bases/defaults continuam não aceitos e inalterados.",
+  "currentFocus": "Frente ativa M2 — W289 M2-04: testar dose contextual Move 0%, 12,5%, 25% após descontos de chute de 1%/2% falharem em demonstrar melhora funcional. Controle 0% reproduz W277, 25% reproduz W286; 18 seeds em partidas completas. Nenhuma base/default promovida.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W288",
-    "wave": "W288",
-    "publishedAt": "2026-10-29T06:17:00Z",
+    "id": "W289",
+    "wave": "W289",
+    "publishedAt": "2026-10-29T06:56:47Z",
     "macro": "M2",
-    "title": "Medir dose-resposta de desconto em chutes remotos",
-    "status": "PILOTO PASSOU — COORTE 18×3 EM EXECUÇÃO",
-    "summary": "Seed1738 controle 1,00 reproduz W286 exatamente; score remoto multiplicado por 0,99/0,98 nos estados comparáveis. Experimento isolado, sem alteração de defaults."
+    "title": "Medir dose-resposta do contexto Move",
+    "status": "PILOTO EXATO — COORTE 18×3 EM EXECUÇÃO",
+    "summary": "Seed1732: peso0 reproduz W277 e peso25% reproduz W286 em input, estado, eventos, draws, placar e contagens. 12,5% é condição inédita."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W284",
-      "wave": "W284",
-      "publishedAt": "2026-10-29T05:09:17Z",
-      "macro": "M4",
-      "title": "Validar controle contextual do portador em partida completa",
-      "status": "FINALIZADO — BCCM V2 ON REJEITADO; ataque colapsa",
-      "summary": "18 pares; controle W277 exato 18/18, lifecycle36/36. Gols119→29 (−5/jogo, CI [−6,131;−3,869], pior18/18); chutes inconclusivos; offsides797→94, terço1561→78, área416→1; sem possuidor +2.103/jogo. Move53.563→96; Pass10.366→26.065. Replay seed1745 auditado13/13."
-    },
-    {
       "id": "W285",
       "wave": "W285",
       "publishedAt": "2026-10-29T05:09:17Z",
@@ -96,11 +87,20 @@
     {
       "id": "W288",
       "wave": "W288",
-      "publishedAt": "2026-10-29T06:17:00Z",
+      "publishedAt": "2026-10-29T06:56:47Z",
       "macro": "M2",
       "title": "Medir dose-resposta de desconto em chutes remotos",
-      "status": "PILOTO PASSOU — COORTE 18×3 EM EXECUÇÃO",
-      "summary": "Seed1738 controle 1,00 reproduz W286 exatamente; score remoto multiplicado por 0,99/0,98 nos estados comparáveis. Experimento isolado, sem alteração de defaults."
+      "status": "FINALIZADO — 2% REJEITADO; 1% INCONCLUSIVO",
+      "summary": "54 jogos; controle W286 exato18/18; lifecycle54/54. 1% gols -0,611 (IC inclui 0); 2% gols -1,556/jogo (IC95% [-2,857;-0,254]), chutes externos -7,167/jogo; sem melhora significativa de progressão/área. Replay1741 auditado13/13."
+    },
+    {
+      "id": "W289",
+      "wave": "W289",
+      "publishedAt": "2026-10-29T06:56:47Z",
+      "macro": "M2",
+      "title": "Medir dose-resposta do contexto Move",
+      "status": "PILOTO EXATO — COORTE 18×3 EM EXECUÇÃO",
+      "summary": "Seed1732: peso0 reproduz W277 e peso25% reproduz W286 em input, estado, eventos, draws, placar e contagens. 12,5% é condição inédita."
     }
   ],
   "macros": [
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W284",
-      "wave": "W284",
-      "publishedAt": "2026-10-29T05:09:17Z",
-      "macro": "M4",
-      "title": "Validar controle contextual do portador em partida completa",
-      "status": "FINALIZADO — BCCM V2 ON REJEITADO; ataque colapsa",
-      "summary": "18 pares; controle W277 exato 18/18, lifecycle36/36. Gols119→29 (−5/jogo, CI [−6,131;−3,869], pior18/18); chutes inconclusivos; offsides797→94, terço1561→78, área416→1; sem possuidor +2.103/jogo. Move53.563→96; Pass10.366→26.065. Replay seed1745 auditado13/13."
-    },
-    {
       "id": "W285",
       "wave": "W285",
       "publishedAt": "2026-10-29T05:09:17Z",
@@ -1149,11 +1140,20 @@
     {
       "id": "W288",
       "wave": "W288",
-      "publishedAt": "2026-10-29T06:17:00Z",
+      "publishedAt": "2026-10-29T06:56:47Z",
       "macro": "M2",
       "title": "Medir dose-resposta de desconto em chutes remotos",
-      "status": "PILOTO PASSOU — COORTE 18×3 EM EXECUÇÃO",
-      "summary": "Seed1738 controle 1,00 reproduz W286 exatamente; score remoto multiplicado por 0,99/0,98 nos estados comparáveis. Experimento isolado, sem alteração de defaults."
+      "status": "FINALIZADO — 2% REJEITADO; 1% INCONCLUSIVO",
+      "summary": "54 jogos; controle W286 exato18/18; lifecycle54/54. 1% gols -0,611 (IC inclui 0); 2% gols -1,556/jogo (IC95% [-2,857;-0,254]), chutes externos -7,167/jogo; sem melhora significativa de progressão/área. Replay1741 auditado13/13."
+    },
+    {
+      "id": "W289",
+      "wave": "W289",
+      "publishedAt": "2026-10-29T06:56:47Z",
+      "macro": "M2",
+      "title": "Medir dose-resposta do contexto Move",
+      "status": "PILOTO EXATO — COORTE 18×3 EM EXECUÇÃO",
+      "summary": "Seed1732: peso0 reproduz W277 e peso25% reproduz W286 em input, estado, eventos, draws, placar e contagens. 12,5% é condição inédita."
     },
     {
       "wave": "W66",
@@ -3576,6 +3576,18 @@
     {
       "id": "CP-PORTAL-27",
       "title": "Snapshot central W288 publicado"
+    },
+    {
+      "id": "CP-W288-FINAL",
+      "title": "W288 dose-resposta — descontos remotos não aceitos"
+    },
+    {
+      "id": "CP-W289-PREFLIGHT",
+      "title": "W289 — peso contextual Move em dose-resposta"
+    },
+    {
+      "id": "CP-PORTAL-28",
+      "title": "W288 final / W289 M2-04 ativo"
     }
   ]
 }
