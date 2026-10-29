@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-247",
-  "updatedAt": "2026-10-29T13:26:35Z",
-  "cycle": "W300",
+  "version": "2026.10.28-portal-248",
+  "updatedAt": "2026-10-29T13:42:58Z",
+  "cycle": "W302",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "M2 ativa — W300 audita decisão, distância/ângulo, draw técnico e terminal da coorte W299; defaults preservados, sem nova coorte até validar mecanismo.",
+  "currentFocus": "M2 ativa — W302 testa penalidade scratch 0,015 no score de Shoot apenas dentro da área a 10–20m; controle95/W299, piloto passou e coorte de18 pares em execução.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W300",
-    "wave": "W300",
-    "publishedAt": "2026-10-29T13:26:35Z",
+    "id": "W302",
+    "wave": "W302",
+    "publishedAt": "2026-10-29T13:42:58Z",
     "macro": "M2",
-    "title": "Auditar seleção e resolução de finalizações",
-    "status": "EM EXECUÇÃO — análise observacional dos artefatos W299; sem nova coorte ou mudança de default.",
-    "summary": "W299 rejeitou cap45: mais chutes e acesso ao terço, menor conversão e gols/jogo. W300 confere geometria, draw, escolha e terminais antes de derivar hipótese."
+    "title": "Testar a seleção de chute entre 10 e 20 metros",
+    "status": "EM EXECUÇÃO — coorte pareada scratch, controle e observador passaram no piloto; defaults preservados.",
+    "summary": "Redução0,015 na pontuação Shoot só dentro da área a10–20m; probabilidade técnica95 fixa. Controle exato18/18 e replay humano serão gates."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W296",
-      "wave": "W296",
-      "publishedAt": "2026-10-29T11:23:37Z",
-      "macro": "M2",
-      "title": "Calibrar chutes remotos sem sacrificar área",
-      "status": "FINALIZADO — multiplier0.98 reduz 3,11 chutes/jogo; efeito em gols inconclusivo; default OFF.",
-      "summary": "36 jogos; controle W294/W273 exato18/18; chutes -3,11/jogo (IC95% [-5,75;-0,47]); gols -0,78 ([-1,57;+0,01]); 21.040/21.040 passes e590/590 chutes conciliados. Viewer13/13; revisão humana pendente."
-    },
-    {
       "id": "W297",
       "wave": "W297",
       "publishedAt": "2026-10-29T11:53:00Z",
@@ -96,11 +87,20 @@
     {
       "id": "W300",
       "wave": "W300",
-      "publishedAt": "2026-10-29T13:26:35Z",
+      "publishedAt": "2026-10-29T13:42:58Z",
       "macro": "M2",
       "title": "Auditar seleção e resolução de finalizações",
-      "status": "EM EXECUÇÃO — análise observacional dos artefatos W299; sem nova coorte ou mudança de default.",
-      "summary": "W299 rejeitou cap45: mais chutes e acesso ao terço, menor conversão e gols/jogo. W300 confere geometria, draw, escolha e terminais antes de derivar hipótese."
+      "status": "FINALIZADO — 586/586 chutes ligados a decisão, geometria por período, draw e terminal.",
+      "summary": "Reutilizou os 36 jogos W299; corrigiu objetivo no segundo tempo e classificou todas as observações técnicas; sem runtime alterado."
+    },
+    {
+      "id": "W302",
+      "wave": "W302",
+      "publishedAt": "2026-10-29T13:42:58Z",
+      "macro": "M2",
+      "title": "Testar a seleção de chute entre 10 e 20 metros",
+      "status": "EM EXECUÇÃO — coorte pareada scratch, controle e observador passaram no piloto; defaults preservados.",
+      "summary": "Redução0,015 na pontuação Shoot só dentro da área a10–20m; probabilidade técnica95 fixa. Controle exato18/18 e replay humano serão gates."
     }
   ],
   "macros": [
@@ -331,7 +331,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": true,
-      "activeNote": "FRENTE ATIVA — W299 rejeitou teto técnico 45: gols/jogo6,39→6,06, conversão43,1%→34,2%, apesar de +2,89 chutes/jogo e +31,7 amostras no terço ofensivo. W300 audita escolha, geometria e resolução de chute em modo observacional; sem promover defaults.",
+      "activeNote": "FRENTE ATIVA — W300/W301 localizaram o volume adicional em10–20m: +46 chutes agregados e conversão menor sob cap45; Move era melhor alternativa em282/318 tentativas. W302 testa redução scratch0,015 na pontuação Shoot apenas nesta faixa, preservando <=10m e a probabilidade95; coorte pareada ativa.",
       "items": [
         {
           "id": "M2-01",
@@ -1073,14 +1073,14 @@
   ],
   "footballQuality": {
     "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
-    "baseline": "W299 controle: teto técnico95, score remoto0,98, Move ON / Pass OFF; 18 jogos pareados.",
-    "candidate": "W299 tratamento: teto técnico45 experimental contra95; dose rejeitada, defaults W214 preservados.",
-    "improved": "W299 elevou chutes em2,89/jogo e amostras do terço ofensivo em31,7/jogo (diferenças pareadas exploratórias).",
-    "worsened": "W299 reduziu gols em0,33/jogo e conversão agregada43,1%→34,2%; IC pareado de gols inclui zero, conversão cai claramente.",
-    "shotsGoals": "W299: 267→319 chutes, 115→109 gols; diferença pareada de gols−0,33/jogo, IC95% exploratório [−1,38;+0,72].",
-    "lastIntegrated": "W299: 18 pares; controle exato18/18; 586/586 chutes conciliados; 20.845/20.845 passes conciliados incluindo impedimentos; nenhum default promovido.",
-    "mainBlocker": "Qualidade da seleção e resolução de finalizações: mais acesso e volume não elevaram gols, e a conversão caiu sob o teto45 experimental.",
-    "replay": "W299 seed1732: replay comparativo integral pronto para revisão humana; aceite funcional ainda pendente."
+    "baseline": "W302 controle: score remoto0,98, probabilidade técnica95, Move ON / Pass OFF; 18 seeds congelados.",
+    "candidate": "W302 scratch: score Shoot−0,015 somente em área a10–20m; coorte em andamento, sem promoção.",
+    "improved": "W300 ligou586/586 chutes a decisão, draw e terminal com objetivo correto por período; W301 localizou a expansão de volume em10–20m.",
+    "worsened": "No W299, cap45 elevou tiros e território sem gols; conversão43,1%→34,2%, regra rejeitada.",
+    "shotsGoals": "W301: em10–20m, teto95 fez136 chutes/35 gols; teto45 fez182/31. Diferença pareada+2,56 chutes/jogo; goles−0,22/jogo (IC inclui zero).",
+    "lastIntegrated": "W302: piloto de seleção passou; coorte18 pares em curso; controle reproduz W299 em18/18 é gate; revisão humana W299 pendente.",
+    "mainBlocker": "Seleção de finalizações intermediárias: muitas tentativas10–20m têm margem pequena contra Move e baixa conversão observada; teste contextual em execução.",
+    "replay": "Replay W299 seed1732 pronto para avaliação humana; replay W302 será gerado após coorte."
   },
   "diary": [
     {
@@ -1120,15 +1120,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W296",
-      "wave": "W296",
-      "publishedAt": "2026-10-29T11:23:37Z",
-      "macro": "M2",
-      "title": "Calibrar chutes remotos sem sacrificar área",
-      "status": "FINALIZADO — multiplier0.98 reduz 3,11 chutes/jogo; efeito em gols inconclusivo; default OFF.",
-      "summary": "36 jogos; controle W294/W273 exato18/18; chutes -3,11/jogo (IC95% [-5,75;-0,47]); gols -0,78 ([-1,57;+0,01]); 21.040/21.040 passes e590/590 chutes conciliados. Viewer13/13; revisão humana pendente."
-    },
-    {
       "id": "W297",
       "wave": "W297",
       "publishedAt": "2026-10-29T11:53:00Z",
@@ -1158,11 +1149,20 @@
     {
       "id": "W300",
       "wave": "W300",
-      "publishedAt": "2026-10-29T13:26:35Z",
+      "publishedAt": "2026-10-29T13:42:58Z",
       "macro": "M2",
       "title": "Auditar seleção e resolução de finalizações",
-      "status": "EM EXECUÇÃO — análise observacional dos artefatos W299; sem nova coorte ou mudança de default.",
-      "summary": "W299 rejeitou cap45: mais chutes e acesso ao terço, menor conversão e gols/jogo. W300 confere geometria, draw, escolha e terminais antes de derivar hipótese."
+      "status": "FINALIZADO — 586/586 chutes ligados a decisão, geometria por período, draw e terminal.",
+      "summary": "Reutilizou os 36 jogos W299; corrigiu objetivo no segundo tempo e classificou todas as observações técnicas; sem runtime alterado."
+    },
+    {
+      "id": "W302",
+      "wave": "W302",
+      "publishedAt": "2026-10-29T13:42:58Z",
+      "macro": "M2",
+      "title": "Testar a seleção de chute entre 10 e 20 metros",
+      "status": "EM EXECUÇÃO — coorte pareada scratch, controle e observador passaram no piloto; defaults preservados.",
+      "summary": "Redução0,015 na pontuação Shoot só dentro da área a10–20m; probabilidade técnica95 fixa. Controle exato18/18 e replay humano serão gates."
     },
     {
       "wave": "W66",
