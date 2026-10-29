@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-220",
-  "updatedAt": "2026-10-29T03:45:00Z",
-  "cycle": "W281",
+  "version": "2026.10.28-portal-221",
+  "updatedAt": "2026-10-29T04:10:00Z",
+  "cycle": "W282",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W281 coorte de 18 pares: OffsideAttacking.Pass OFF vs ON, PassPenaltyMaximum 10,625, Move ON fixo. W279/W280 indicam suporte à frente e circulação como regressões persistentes; revisão humana dos replays permanece pendente.",
+  "currentFocus": "Frente ativa M2 — W282 coorte: DynamicTeamShapeMode Off vs SupportBlendConservative, Move ON / Pass OFF fixos. W275/W276 cobriram Move+Pass ON e OFF; esta é a interação ausente. A dose de impedimento foi rejeitada por perda persistente de apoio e circulação.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W281",
-    "wave": "W281",
-    "publishedAt": "2026-10-29T03:45:00Z",
+    "id": "W282",
+    "wave": "W282",
+    "publishedAt": "2026-10-29T04:10:00Z",
     "macro": "M2",
-    "title": "Recuperar apoio sem perder efeito nos impedimentos",
+    "title": "Testar suporte com movimento vertical isolado",
     "status": "PILOTO EXATO — coorte 18 pares em execução",
-    "summary": "Pass OFF reproduziu W277 seed1732; observer ON/OFF neutro nos dois braços; input pareado idêntico. Pass maximum10,625 em avaliação."
+    "summary": "W282 compara somente shape Off vs SupportBlendConservative, com Move ON e Pass OFF. Controle W277 seed1732 exato; observer neutro."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W277",
-      "wave": "W277",
-      "publishedAt": "2026-10-29T02:02:01Z",
-      "macro": "M2",
-      "title": "Movimento isolado sem passe avançado",
-      "status": "FINALIZADO — Move ON rejeitado; aumento excessivo e perda de apoio",
-      "summary": "18 pares; controle W274 exato 18/18. Move ON: +6,167 gols, +13,833 chutes, +68,722 episódios no terço e +32,444 offsides/jogo; apoio próximo −1,322 e à frente −2,088. Lifecycle 279/279; replay seed1746 exato, revisão humana pendente."
-    },
-    {
       "id": "W278",
       "wave": "W278",
       "publishedAt": "2026-10-29T02:27:51Z",
@@ -96,11 +87,20 @@
     {
       "id": "W281",
       "wave": "W281",
-      "publishedAt": "2026-10-29T03:45:00Z",
+      "publishedAt": "2026-10-29T04:05:00Z",
       "macro": "M2",
       "title": "Recuperar apoio sem perder efeito nos impedimentos",
+      "status": "FINALIZADO — max10,625 reduz menos offsides e piora circulação",
+      "summary": "18 pares; controle W277 exato 18/18; offsides −22,111/jogo; gols +0,833 e chutes +2,278 inconclusivos; apoio próximo −0,080 (14/18), apoio à frente −0,074 (15/18); passes tentados −43,889, episódios posse −42,889 (18/18). Lifecycle36/36; replay seed1737 exato, auditoria13/13; revisão humana pendente."
+    },
+    {
+      "id": "W282",
+      "wave": "W282",
+      "publishedAt": "2026-10-29T04:10:00Z",
+      "macro": "M2",
+      "title": "Testar suporte com movimento vertical isolado",
       "status": "PILOTO EXATO — coorte 18 pares em execução",
-      "summary": "Pass OFF reproduziu W277 seed1732; observer ON/OFF neutro nos dois braços; input pareado idêntico. Pass maximum10,625 em avaliação."
+      "summary": "W282 compara somente shape Off vs SupportBlendConservative, com Move ON e Pass OFF. Controle W277 seed1732 exato; observer neutro."
     }
   ],
   "macros": [
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W277",
-      "wave": "W277",
-      "publishedAt": "2026-10-29T02:02:01Z",
-      "macro": "M2",
-      "title": "Movimento isolado sem passe avançado",
-      "status": "FINALIZADO — Move ON rejeitado; aumento excessivo e perda de apoio",
-      "summary": "18 pares; controle W274 exato 18/18. Move ON: +6,167 gols, +13,833 chutes, +68,722 episódios no terço e +32,444 offsides/jogo; apoio próximo −1,322 e à frente −2,088. Lifecycle 279/279; replay seed1746 exato, revisão humana pendente."
-    },
-    {
       "id": "W278",
       "wave": "W278",
       "publishedAt": "2026-10-29T02:27:51Z",
@@ -1149,11 +1140,20 @@
     {
       "id": "W281",
       "wave": "W281",
-      "publishedAt": "2026-10-29T03:45:00Z",
+      "publishedAt": "2026-10-29T04:05:00Z",
       "macro": "M2",
       "title": "Recuperar apoio sem perder efeito nos impedimentos",
+      "status": "FINALIZADO — max10,625 reduz menos offsides e piora circulação",
+      "summary": "18 pares; controle W277 exato 18/18; offsides −22,111/jogo; gols +0,833 e chutes +2,278 inconclusivos; apoio próximo −0,080 (14/18), apoio à frente −0,074 (15/18); passes tentados −43,889, episódios posse −42,889 (18/18). Lifecycle36/36; replay seed1737 exato, auditoria13/13; revisão humana pendente."
+    },
+    {
+      "id": "W282",
+      "wave": "W282",
+      "publishedAt": "2026-10-29T04:10:00Z",
+      "macro": "M2",
+      "title": "Testar suporte com movimento vertical isolado",
       "status": "PILOTO EXATO — coorte 18 pares em execução",
-      "summary": "Pass OFF reproduziu W277 seed1732; observer ON/OFF neutro nos dois braços; input pareado idêntico. Pass maximum10,625 em avaliação."
+      "summary": "W282 compara somente shape Off vs SupportBlendConservative, com Move ON e Pass OFF. Controle W277 seed1732 exato; observer neutro."
     },
     {
       "wave": "W66",
@@ -3488,6 +3488,22 @@
     {
       "id": "CP-W281-PILOT",
       "title": "W281 piloto — controle e observer exatos"
+    },
+    {
+      "id": "CP-W281-FINAL",
+      "title": "W281 resultado final — maximum10,625"
+    },
+    {
+      "id": "CP-W281-REPLAY",
+      "title": "W281 replay seed1737 — revisão humana"
+    },
+    {
+      "id": "CP-W282-PREFLIGHT",
+      "title": "W282 preflight — SupportBlend com Move ON / Pass OFF"
+    },
+    {
+      "id": "CP-W282-PILOT",
+      "title": "W282 piloto — controle exato, coorte ativa"
     }
   ]
 }
