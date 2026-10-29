@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-223",
-  "updatedAt": "2026-10-29T04:22:30Z",
-  "cycle": "W283",
+  "version": "2026.10.28-portal-224",
+  "updatedAt": "2026-10-29T06:00:00Z",
+  "cycle": "W284",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W283 coorte: OffsideAttacking.Receive ON vs OFF; Move ON, Pass OFF, shape Off fixos. W282 confirmou SupportBlend melhora apoio mas colapsa finalização; série de penalty doses rejeitada. Revisão humana dos replays pendente.",
+  "currentFocus": "Frente ativa M4-01 — W284 coorte pareada: BallCarrierContextualMoveV2 OFF vs ON, com Move ON / Pass OFF / Receive ON / shape Off. Piloto seed1732 reproduz W277 no controle e observer é neutro. Resultado de um seed é apenas diagnóstico; não inferir efeito antes dos 18 pares, lifecycle e replay.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W283",
-    "wave": "W283",
-    "publishedAt": "2026-10-29T04:35:00Z",
-    "macro": "M2",
-    "title": "Medir o custo de impedimento no recebimento",
-    "status": "PILOTO EXATO — coorte 18 pares ativa",
-    "summary": "Receive ON reproduz W277 seed1732; observer neutro em ambos os braços e input idêntico. Único fator Receive ON/OFF."
+    "id": "W284",
+    "wave": "W284",
+    "publishedAt": "2026-10-29T06:00:00Z",
+    "macro": "M4",
+    "title": "Validar controle contextual do portador em partida completa",
+    "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
+    "summary": "BCCM OFF seed1732 reproduziu W277 Move ON em input, estado final, eventos, draws, score 2–8, tick 5404, eventCount 3945 e drawCount 799. Observer com/sem produziu os mesmos hashes e métricas. Braço BCCM ON seed1732 marcou 1–0 e 18 chutes; apenas piloto, sem inferência causal."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W279",
-      "wave": "W279",
-      "publishedAt": "2026-10-29T02:58:00Z",
-      "macro": "M2",
-      "title": "Dosar penalidade de impedimento",
-      "status": "FINALIZADO — max42,5 reduz offsides; não resolve apoio/continuidade",
-      "summary": "18 pares; controle W277 exato 18/18. Offsides −42,333/jogo (18/18); gols +1,000 (IC cruza zero); chutes +1,222 (IC cruza zero); apoio à frente −0,083 (IC [−0,117, −0,049], pior 14/18); episódios posse −31,444. Lifecycle 36/36; replay seed1733 exato, auditoria 13/13, revisão humana pendente."
-    },
-    {
       "id": "W280",
       "wave": "W280",
       "publishedAt": "2026-10-29T03:40:00Z",
@@ -101,6 +92,15 @@
       "title": "Medir o custo de impedimento no recebimento",
       "status": "PILOTO EXATO — coorte 18 pares ativa",
       "summary": "Receive ON reproduz W277 seed1732; observer neutro em ambos os braços e input idêntico. Único fator Receive ON/OFF."
+    },
+    {
+      "id": "W284",
+      "wave": "W284",
+      "publishedAt": "2026-10-29T06:00:00Z",
+      "macro": "M4",
+      "title": "Validar controle contextual do portador em partida completa",
+      "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
+      "summary": "BCCM OFF seed1732 reproduziu W277 Move ON em input, estado final, eventos, draws, score 2–8, tick 5404, eventCount 3945 e drawCount 799. Observer com/sem produziu os mesmos hashes e métricas. Braço BCCM ON seed1732 marcou 1–0 e 18 chutes; apenas piloto, sem inferência causal."
     }
   ],
   "macros": [
@@ -328,7 +328,7 @@
       "importance": "Ganhar território com controle e opções é a base de um ataque convincente.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
-      "active": true,
+      "active": false,
       "items": [
         {
           "id": "M2-01",
@@ -506,7 +506,7 @@
       "importance": "Uma boa decisão perde valor quando a resolução quebra a posse ou deixa estados presos.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
-      "active": false,
+      "active": true,
       "items": [
         {
           "id": "M4-01",
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W279",
-      "wave": "W279",
-      "publishedAt": "2026-10-29T02:58:00Z",
-      "macro": "M2",
-      "title": "Dosar penalidade de impedimento",
-      "status": "FINALIZADO — max42,5 reduz offsides; não resolve apoio/continuidade",
-      "summary": "18 pares; controle W277 exato 18/18. Offsides −42,333/jogo (18/18); gols +1,000 (IC cruza zero); chutes +1,222 (IC cruza zero); apoio à frente −0,083 (IC [−0,117, −0,049], pior 14/18); episódios posse −31,444. Lifecycle 36/36; replay seed1733 exato, auditoria 13/13, revisão humana pendente."
-    },
-    {
       "id": "W280",
       "wave": "W280",
       "publishedAt": "2026-10-29T03:40:00Z",
@@ -1154,6 +1145,15 @@
       "title": "Medir o custo de impedimento no recebimento",
       "status": "PILOTO EXATO — coorte 18 pares ativa",
       "summary": "Receive ON reproduz W277 seed1732; observer neutro em ambos os braços e input idêntico. Único fator Receive ON/OFF."
+    },
+    {
+      "id": "W284",
+      "wave": "W284",
+      "publishedAt": "2026-10-29T06:00:00Z",
+      "macro": "M4",
+      "title": "Validar controle contextual do portador em partida completa",
+      "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
+      "summary": "BCCM OFF seed1732 reproduziu W277 Move ON em input, estado final, eventos, draws, score 2–8, tick 5404, eventCount 3945 e drawCount 799. Observer com/sem produziu os mesmos hashes e métricas. Braço BCCM ON seed1732 marcou 1–0 e 18 chutes; apenas piloto, sem inferência causal."
     },
     {
       "wave": "W66",
@@ -3524,6 +3524,10 @@
     {
       "id": "CP-PORTAL-21",
       "title": "ZIP W282 final / W283 ativo publicado"
+    },
+    {
+      "id": "CP-W284-PILOT",
+      "title": "W284 piloto — controle exato e observer neutro"
     }
   ]
 }
