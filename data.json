@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-248",
-  "updatedAt": "2026-10-29T13:42:58Z",
-  "cycle": "W302",
+  "version": "2026.10.28-portal-249",
+  "updatedAt": "2026-10-29T14:10:49Z",
+  "cycle": "W304",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "M2 ativa — W302 testa penalidade scratch 0,015 no score de Shoot apenas dentro da área a 10–20m; controle95/W299, piloto passou e coorte de18 pares em execução.",
+  "currentFocus": "M2 ativa — W304 aguarda revisão humana dos replays W299/W302; W302/W303 não demonstraram melhora funcional e nenhum default foi promovido.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W302",
-    "wave": "W302",
-    "publishedAt": "2026-10-29T13:42:58Z",
+    "id": "W304",
+    "wave": "W304",
+    "publishedAt": "2026-10-29T14:10:49Z",
     "macro": "M2",
-    "title": "Testar a seleção de chute entre 10 e 20 metros",
-    "status": "EM EXECUÇÃO — coorte pareada scratch, controle e observador passaram no piloto; defaults preservados.",
-    "summary": "Redução0,015 na pontuação Shoot só dentro da área a10–20m; probabilidade técnica95 fixa. Controle exato18/18 e replay humano serão gates."
+    "title": "Avaliar replays completos W299 e W302",
+    "status": "PENDENTE — revisão humana; nenhuma nova coorte/promocão até julgar plausibilidade futebolística.",
+    "summary": "Replays lado a lado e relatórios pareados estão preparados. Avaliar qualidade do apoio, criação e continuidade; defaults preservados, MVP NÃO ACEITO."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W297",
-      "wave": "W297",
-      "publishedAt": "2026-10-29T11:53:00Z",
-      "macro": "M2",
-      "title": "Testar dose incremental no chute remoto",
-      "status": "FINALIZADO — dose0.96 reduz seleção de chutes externos; gols e volume total inconclusivos; nenhum default promovido.",
-      "summary": "36 jogos, controle W296 0.98 exato18/18; gols +0,22/jogo ([−0,51;+0,96]); chutes −0,11 ([−1,13;+0,91]); chutes externos selecionados −0,72 ([−1,40;−0,04]); lifecycle passes20.906/20.906, chutes532/532; viewer13/13."
-    },
-    {
       "id": "W298",
       "wave": "W298",
       "publishedAt": "2026-10-29T13:26:35Z",
@@ -96,11 +87,20 @@
     {
       "id": "W302",
       "wave": "W302",
-      "publishedAt": "2026-10-29T13:42:58Z",
+      "publishedAt": "2026-10-29T14:10:49Z",
       "macro": "M2",
       "title": "Testar a seleção de chute entre 10 e 20 metros",
-      "status": "EM EXECUÇÃO — coorte pareada scratch, controle e observador passaram no piloto; defaults preservados.",
-      "summary": "Redução0,015 na pontuação Shoot só dentro da área a10–20m; probabilidade técnica95 fixa. Controle exato18/18 e replay humano serão gates."
+      "status": "FINALIZADO — dose reduz chutes10–20m mas não melhora gols e reduz apoio à frente; nenhum default promovido.",
+      "summary": "18 pares; controle W299 exato18/18; 518 chutes e20.959 passes conciliados. Chutes10–20m−1,61/jogo; gols−0,11/jogo (IC inclui0); apoio à frente−1,22/jogo."
+    },
+    {
+      "id": "W304",
+      "wave": "W304",
+      "publishedAt": "2026-10-29T14:10:49Z",
+      "macro": "M2",
+      "title": "Avaliar replays completos W299 e W302",
+      "status": "PENDENTE — revisão humana; nenhuma nova coorte/promocão até julgar plausibilidade futebolística.",
+      "summary": "Replays lado a lado e relatórios pareados estão preparados. Avaliar qualidade do apoio, criação e continuidade; defaults preservados, MVP NÃO ACEITO."
     }
   ],
   "macros": [
@@ -331,7 +331,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": true,
-      "activeNote": "FRENTE ATIVA — W300/W301 localizaram o volume adicional em10–20m: +46 chutes agregados e conversão menor sob cap45; Move era melhor alternativa em282/318 tentativas. W302 testa redução scratch0,015 na pontuação Shoot apenas nesta faixa, preservando <=10m e a probabilidade95; coorte pareada ativa.",
+      "activeNote": "FRENTE ATIVA — W302/W303 não demonstraram ganho funcional: chutes10–20m caíram1,61/jogo, sem aumento de gols, progressão ou entradas na área; apoio à frente em contextos Shoot caiu1,22/jogo. W304 aguarda avaliação humana dos replays W299/W302 antes de outro teste.",
       "items": [
         {
           "id": "M2-01",
@@ -1073,14 +1073,14 @@
   ],
   "footballQuality": {
     "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
-    "baseline": "W302 controle: score remoto0,98, probabilidade técnica95, Move ON / Pass OFF; 18 seeds congelados.",
-    "candidate": "W302 scratch: score Shoot−0,015 somente em área a10–20m; coorte em andamento, sem promoção.",
-    "improved": "W300 ligou586/586 chutes a decisão, draw e terminal com objetivo correto por período; W301 localizou a expansão de volume em10–20m.",
-    "worsened": "No W299, cap45 elevou tiros e território sem gols; conversão43,1%→34,2%, regra rejeitada.",
-    "shotsGoals": "W301: em10–20m, teto95 fez136 chutes/35 gols; teto45 fez182/31. Diferença pareada+2,56 chutes/jogo; goles−0,22/jogo (IC inclui zero).",
-    "lastIntegrated": "W302: piloto de seleção passou; coorte18 pares em curso; controle reproduz W299 em18/18 é gate; revisão humana W299 pendente.",
-    "mainBlocker": "Seleção de finalizações intermediárias: muitas tentativas10–20m têm margem pequena contra Move e baixa conversão observada; teste contextual em execução.",
-    "replay": "Replay W299 seed1732 pronto para avaliação humana; replay W302 será gerado após coorte."
+    "baseline": "W302 controle: 95 técnico, score remoto0,98; reproduziu W299 em18/18.",
+    "candidate": "Dose W302 Shoot−0,015 na área10–20m rejeitada como melhoria pronta; sem default promovido.",
+    "improved": "W302 reduziu chutes na faixa10–20m em1,61/jogo (IC [−2,66;−0,56]); sem ganhos demonstráveis em gols ou criação.",
+    "worsened": "Apoio à frente em contextos Shoot recuou1,22/jogo (IC [−2,10;−0,34]); entrada na área/progressão sem aumento.",
+    "shotsGoals": "W302 gols6,39→6,28/jogo (IC inclui zero), chutes14,83→13,94; conversão pareada inconclusiva.",
+    "lastIntegrated": "W303 analisou segmentos de posse nos36 jogos W302; nenhuma reposição clara de chance após menor Shoot. Todos os ciclos estão scratch.",
+    "mainBlocker": "Qualidade de chance e apoio ao portador não estão demonstrados como melhoria; replays W299/W302 aguardam julgamento humano antes de nova hipótese.",
+    "replay": "W299 e W302: replays integrais em5.402 frames por braço, auditados13/13; avaliação humana pendente."
   },
   "diary": [
     {
@@ -1120,15 +1120,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W297",
-      "wave": "W297",
-      "publishedAt": "2026-10-29T11:53:00Z",
-      "macro": "M2",
-      "title": "Testar dose incremental no chute remoto",
-      "status": "FINALIZADO — dose0.96 reduz seleção de chutes externos; gols e volume total inconclusivos; nenhum default promovido.",
-      "summary": "36 jogos, controle W296 0.98 exato18/18; gols +0,22/jogo ([−0,51;+0,96]); chutes −0,11 ([−1,13;+0,91]); chutes externos selecionados −0,72 ([−1,40;−0,04]); lifecycle passes20.906/20.906, chutes532/532; viewer13/13."
-    },
-    {
       "id": "W298",
       "wave": "W298",
       "publishedAt": "2026-10-29T13:26:35Z",
@@ -1158,11 +1149,20 @@
     {
       "id": "W302",
       "wave": "W302",
-      "publishedAt": "2026-10-29T13:42:58Z",
+      "publishedAt": "2026-10-29T14:10:49Z",
       "macro": "M2",
       "title": "Testar a seleção de chute entre 10 e 20 metros",
-      "status": "EM EXECUÇÃO — coorte pareada scratch, controle e observador passaram no piloto; defaults preservados.",
-      "summary": "Redução0,015 na pontuação Shoot só dentro da área a10–20m; probabilidade técnica95 fixa. Controle exato18/18 e replay humano serão gates."
+      "status": "FINALIZADO — dose reduz chutes10–20m mas não melhora gols e reduz apoio à frente; nenhum default promovido.",
+      "summary": "18 pares; controle W299 exato18/18; 518 chutes e20.959 passes conciliados. Chutes10–20m−1,61/jogo; gols−0,11/jogo (IC inclui0); apoio à frente−1,22/jogo."
+    },
+    {
+      "id": "W304",
+      "wave": "W304",
+      "publishedAt": "2026-10-29T14:10:49Z",
+      "macro": "M2",
+      "title": "Avaliar replays completos W299 e W302",
+      "status": "PENDENTE — revisão humana; nenhuma nova coorte/promocão até julgar plausibilidade futebolística.",
+      "summary": "Replays lado a lado e relatórios pareados estão preparados. Avaliar qualidade do apoio, criação e continuidade; defaults preservados, MVP NÃO ACEITO."
     },
     {
       "wave": "W66",
