@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-202",
-  "updatedAt": "2026-10-29T00:42:00Z",
-  "cycle": "W275",
+  "version": "2026.10.28-portal-203",
+  "updatedAt": "2026-10-29T01:01:24Z",
+  "cycle": "W276",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W275 completou 10/18 pares. Controle reproduz W274 por fingerprints; SupportBlendConservative mostra pequena variação de apoio e piora territorial/ofensiva preliminar. Coleta continua; defaults OFF.",
+  "currentFocus": "Frente ativa M2 — W276 completa o fatorial: DynamicTeamShape Off vs SupportBlendConservative sobre Move+Pass OFF. Piloto deve reproduzir W274 baseline antes da coorte. W275 e W274 replays estão prontos; avaliação humana pendente.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W275",
-    "wave": "W275",
-    "publishedAt": "2026-10-29T00:31:23Z",
+    "id": "W276",
+    "wave": "W276",
+    "publishedAt": "2026-10-29T01:01:24Z",
     "macro": "M2",
-    "title": "Teste de suporte coletivo com forma dinâmica conservadora",
-    "status": "EM EXECUÇÃO — hipótese escolhida pelo gargalo de suporte W274; defaults OFF.",
-    "summary": "INTERIM 10/18 pares: controle Off reproduz W274 por fingerprints. SupportBlendConservative: apoio próximo +0.064 (IC cruza zero), apoio à frente +0.160; episódios no terço -47.0, na área -25.4, chutes -16.9, gols -7.3 por partida. Coorte continua em execução, sem aceitação."
+    "title": "Interação entre forma dinâmica e pacote progressivo",
+    "status": "PREFLIGHT CONCLUÍDO — piloto de identidade do controle em andamento; defaults OFF.",
+    "summary": "Célula fatorial faltante: SupportBlendConservative vs Off com Move+Pass OFF. Continuar para 18 pares somente se o controle reproduzir W274 baseline por fingerprints."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W271",
-      "wave": "W271",
-      "publishedAt": "2026-10-28T22:18:38Z",
-      "macro": "M2",
-      "title": "Experimento de progressão com movimento contextual",
-      "status": "CONCLUÍDO TECNICAMENTE — sem aceite funcional; BCCM piora progressão e posse.",
-      "summary": "18 pares W214: ShotEvent 6→236 e gols 5→32, mas 236 tentativas ON são de fora da área; segmentos no terço 289→60, entradas na área 21→0 e ticks sem possuidor 50.236→70.013. Piora territorial em 18/18 pares."
-    },
-    {
       "id": "W272",
       "wave": "W272",
       "publishedAt": "2026-10-28T22:49:49Z",
@@ -98,9 +89,18 @@
       "wave": "W275",
       "publishedAt": "2026-10-29T00:31:23Z",
       "macro": "M2",
-      "title": "Teste de suporte coletivo com forma dinâmica conservadora",
-      "status": "EM EXECUÇÃO — hipótese escolhida pelo gargalo de suporte W274; defaults OFF.",
-      "summary": "INTERIM 10/18 pares: controle Off reproduz W274 por fingerprints. SupportBlendConservative: apoio próximo +0.064 (IC cruza zero), apoio à frente +0.160; episódios no terço -47.0, na área -25.4, chutes -16.9, gols -7.3 por partida. Coorte continua em execução, sem aceitação."
+      "title": "SupportBlendConservative: mais apoio à frente, colapso de progressão",
+      "status": "CONCLUÍDO TECNICAMENTE — variante não aceita; piora territorial/ofensiva em 18/18 pares.",
+      "summary": "W275 18 pares: apoio à frente 2,016→2,169 (+0,154), apoio próximo inconclusivo. Terço 1.713→832, área 473→30, chutes 328→30 e gols 129→7; cada queda ocorreu em 18/18 pares. Controle reproduziu W274; sem mudança de default."
+    },
+    {
+      "id": "W276",
+      "wave": "W276",
+      "publishedAt": "2026-10-29T01:01:24Z",
+      "macro": "M2",
+      "title": "Interação entre forma dinâmica e pacote progressivo",
+      "status": "PREFLIGHT CONCLUÍDO — piloto de identidade do controle em andamento; defaults OFF.",
+      "summary": "Célula fatorial faltante: SupportBlendConservative vs Off com Move+Pass OFF. Continuar para 18 pares somente se o controle reproduzir W274 baseline por fingerprints."
     }
   ],
   "macros": [
@@ -1064,14 +1064,14 @@
   ],
   "footballQuality": {
     "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
-    "baseline": "W246: Receive ON / Pass OFF; 18 partidas completas, seeds 1732–1749, assemblies W214.",
-    "candidate": "W255: Receive ON / Pass ON; comparação pareada, mesmas entradas e assemblies, 18 seeds.",
-    "improved": "Impedimentos: 202→9 (menores nos 18 pares). Ticks sem possuidor: 50.236→48.669 (menores em 16/18).",
-    "worsened": "Tentativas de passe: 18.807→18.495, menores em 13/18. Passes completos: 15.047→14.915; IC pareado cruza zero.",
-    "shotsGoals": "Tentativas (ShotEvent): 6→12 corrigidas; média pareada +0,333, IC 95% aproximado [−0,282;+0,948]. Gols 5→11, IC [−0,232;+0,899]. Sem ganho demonstrado; W255 usava contagem ampla que duplicava ShotOffTargetEvent no seed1744.",
-    "lastIntegrated": "W255 continua sendo a última avaliação integrada (18 pares). W268 é diagnóstico causal local num seed divergido, não comparação de qualidade.",
-    "mainBlocker": "W274 transferiu progressão territorial, mas os proxies de apoio caíram em todos os pares, os passes caíram e o candidato marcou 7,17 gols/jogo. W275 testa a variante conservadora de shape para recuperar apoio sem perder território. Revisão humana de replay e qualidade do futebol permanecem pendentes.",
-    "replay": "W270/W271 replay seed1744; W272/W273 replay seed1732; W274 replay completo seed1732 (COR×PAL) pronto para avaliação humana. W274 recaptura coincide com os fingerprints de coorte nos dois braços; viewer audit 13/13 e Edge renderizados. Julgamento humano pendente."
+    "baseline": "W274 baseline no pacote Move+Pass: 18 jogos COR×PAL, seeds 1732–1749, assemblies W214.",
+    "candidate": "W275: DynamicTeamShape Off vs SupportBlendConservative com Move+Pass ON; 18 pares completos, mesmos input/assemblies.",
+    "improved": "Apoio à frente: 2,016→2,169 por observação (+0,154; IC95% [+0,127;+0,181], 18/18 pares). Passes completos 8.533→9.821.",
+    "worsened": "Terço: 1.713→832 episódios (−48,944/jogo); área 473→30 (−24,611/jogo). Ticks sem possuidor 28.022→31.482 (+192,222/jogo).",
+    "shotsGoals": "ShotEvent 328→30 (−16,556/jogo; IC95% [−17,890;−15,221]); gols 129→7 (−6,778/jogo; IC [−8,094;−5,461]), menores nos 18/18 pares. Lifecycle 100% reconciliado.",
+    "lastIntegrated": "W275 é a avaliação experimental integrada mais recente (18 pares); qualidade global segue não aprovada e nenhum default mudou.",
+    "mainBlocker": "SupportBlendConservative aumenta opções à frente mas interrompe progressão/finalização quando combinado a Move+Pass. W276 isola se o colapso é efeito do shape ou interação; revisão humana continua pendente.",
+    "replay": "W274 seed1732 e W275 seed1744 são replays integrais offline, recapturas exatas da coorte. Auditorias dos viewers passaram; julgamento humano pendente."
   },
   "diary": [
     {
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W271",
-      "wave": "W271",
-      "publishedAt": "2026-10-28T22:18:38Z",
-      "macro": "M2",
-      "title": "Experimento de progressão com movimento contextual",
-      "status": "CONCLUÍDO TECNICAMENTE — sem aceite funcional; BCCM piora progressão e posse.",
-      "summary": "18 pares W214: ShotEvent 6→236 e gols 5→32, mas 236 tentativas ON são de fora da área; segmentos no terço 289→60, entradas na área 21→0 e ticks sem possuidor 50.236→70.013. Piora territorial em 18/18 pares."
-    },
-    {
       "id": "W272",
       "wave": "W272",
       "publishedAt": "2026-10-28T22:49:49Z",
@@ -1151,9 +1142,18 @@
       "wave": "W275",
       "publishedAt": "2026-10-29T00:31:23Z",
       "macro": "M2",
-      "title": "Teste de suporte coletivo com forma dinâmica conservadora",
-      "status": "EM EXECUÇÃO — hipótese escolhida pelo gargalo de suporte W274; defaults OFF.",
-      "summary": "INTERIM 10/18 pares: controle Off reproduz W274 por fingerprints. SupportBlendConservative: apoio próximo +0.064 (IC cruza zero), apoio à frente +0.160; episódios no terço -47.0, na área -25.4, chutes -16.9, gols -7.3 por partida. Coorte continua em execução, sem aceitação."
+      "title": "SupportBlendConservative: mais apoio à frente, colapso de progressão",
+      "status": "CONCLUÍDO TECNICAMENTE — variante não aceita; piora territorial/ofensiva em 18/18 pares.",
+      "summary": "W275 18 pares: apoio à frente 2,016→2,169 (+0,154), apoio próximo inconclusivo. Terço 1.713→832, área 473→30, chutes 328→30 e gols 129→7; cada queda ocorreu em 18/18 pares. Controle reproduziu W274; sem mudança de default."
+    },
+    {
+      "id": "W276",
+      "wave": "W276",
+      "publishedAt": "2026-10-29T01:01:24Z",
+      "macro": "M2",
+      "title": "Interação entre forma dinâmica e pacote progressivo",
+      "status": "PREFLIGHT CONCLUÍDO — piloto de identidade do controle em andamento; defaults OFF.",
+      "summary": "Célula fatorial faltante: SupportBlendConservative vs Off com Move+Pass OFF. Continuar para 18 pares somente se o controle reproduzir W274 baseline por fingerprints."
     },
     {
       "wave": "W66",
@@ -3396,6 +3396,14 @@
     {
       "id": "CP-W275-INTERIM",
       "title": "W275 parcial — 10/18 pares, sinal territorial negativo"
+    },
+    {
+      "id": "CP-W275-FINAL",
+      "title": "W275 final — shape à frente sem progressão, default-off"
+    },
+    {
+      "id": "CP-W276-PREFLIGHT",
+      "title": "W276 preflight — célula fatorial da forma sem Move+Pass"
     }
   ]
 }
