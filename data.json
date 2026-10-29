@@ -1,24 +1,24 @@
 {
-  "version": "2026.10.28-portal-249",
-  "updatedAt": "2026-10-29T14:10:49Z",
-  "cycle": "W304",
+  "version": "2026.10.28-portal-250",
+  "updatedAt": "2026-10-29T14:45:27Z",
+  "cycle": "W305",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "M2 ativa — W304 aguarda revisão humana dos replays W299/W302; W302/W303 não demonstraram melhora funcional e nenhum default foi promovido.",
+  "currentFocus": "M3 ativa — W304 rejeitou visualmente W299 e W302: os jogadores convergem para a bola sem organização coletiva perceptível. W305 identifica a referência original e diagnostica ocupação/posicionamento sem bola antes de alterar gameplay.",
   "counts": {
     "validated": 26,
-    "partial": 18,
+    "partial": 19,
     "blocked": 3,
     "planned": 14,
-    "unknown": 5
+    "unknown": 4
   },
   "latestAction": {
-    "id": "W304",
-    "wave": "W304",
-    "publishedAt": "2026-10-29T14:10:49Z",
-    "macro": "M2",
-    "title": "Avaliar replays completos W299 e W302",
-    "status": "PENDENTE — revisão humana; nenhuma nova coorte/promocão até julgar plausibilidade futebolística.",
-    "summary": "Replays lado a lado e relatórios pareados estão preparados. Avaliar qualidade do apoio, criação e continuidade; defaults preservados, MVP NÃO ACEITO."
+    "id": "W305",
+    "wave": "W305",
+    "publishedAt": "2026-10-29T14:45:27Z",
+    "macro": "M3",
+    "title": "Investigar organização coletiva sem bola",
+    "status": "EM ANDAMENTO — identificar referência original e diagnosticar M3-04; sem alteração de gameplay.",
+    "summary": "W304 rejeitou visualmente W299/W302: jogadores convergem para a bola sem tática perceptível. Build original ainda precisa de identificação confirmada."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W298",
-      "wave": "W298",
-      "publishedAt": "2026-10-29T13:26:35Z",
-      "macro": "M2",
-      "title": "Diagnosticar a resolução de chutes",
-      "status": "FINALIZADO — 532 chutes conciliados; perfil da conversão é descritivo; nenhum default alterado.",
-      "summary": "36 jogos; W297 exato36/36; chutes267/265, gols115/119; 532/532 terminais; viewer13/13."
-    },
-    {
       "id": "W299",
       "wave": "W299",
       "publishedAt": "2026-10-29T13:26:35Z",
@@ -99,8 +90,17 @@
       "publishedAt": "2026-10-29T14:10:49Z",
       "macro": "M2",
       "title": "Avaliar replays completos W299 e W302",
-      "status": "PENDENTE — revisão humana; nenhuma nova coorte/promocão até julgar plausibilidade futebolística.",
-      "summary": "Replays lado a lado e relatórios pareados estão preparados. Avaliar qualidade do apoio, criação e continuidade; defaults preservados, MVP NÃO ACEITO."
+      "status": "FINALIZADO — avaliação humana rejeitou visualmente W299 e W302; defaults inalterados.",
+      "summary": "Foi relatada perseguição coletiva à bola e ausência de tática perceptível; preferência declarada pelo motor original de Leandro. W305 foca M3-04 e identificação da referência."
+    },
+    {
+      "id": "W305",
+      "wave": "W305",
+      "publishedAt": "2026-10-29T14:45:27Z",
+      "macro": "M3",
+      "title": "Investigar organização coletiva sem bola",
+      "status": "EM ANDAMENTO — identificar referência original e diagnosticar M3-04; sem alteração de gameplay.",
+      "summary": "W304 rejeitou visualmente W299/W302: jogadores convergem para a bola sem tática perceptível. Build original ainda precisa de identificação confirmada."
     }
   ],
   "macros": [
@@ -330,8 +330,8 @@
       "importance": "Ganhar território com controle e opções é a base de um ataque convincente.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
-      "active": true,
-      "activeNote": "FRENTE ATIVA — W302/W303 não demonstraram ganho funcional: chutes10–20m caíram1,61/jogo, sem aumento de gols, progressão ou entradas na área; apoio à frente em contextos Shoot caiu1,22/jogo. W304 aguarda avaliação humana dos replays W299/W302 antes de outro teste.",
+      "active": false,
+      "activeNote": null,
       "items": [
         {
           "id": "M2-01",
@@ -418,10 +418,10 @@
       "name": "Movimentação coletiva",
       "description": "Coordenar jogadores sem bola para oferecer apoio, ocupar espaço e recompor.",
       "importance": "O portador precisa de opções viáveis e a equipe de equilíbrio após uma perda.",
-      "status": "Planejado",
-      "statusClass": "planned",
-      "active": false,
-      "activeNote": null,
+      "status": "Parcial / em análise",
+      "statusClass": "partial",
+      "active": true,
+      "activeNote": "FRENTE ATIVA — W305 investiga convergência à bola e ausência de organização coletiva percebida em W299/W302; referência original ainda precisa ser identificada. Nenhuma alteração de gameplay iniciada.",
       "items": [
         {
           "id": "M3-01",
@@ -800,8 +800,8 @@
         {
           "id": "M6-06",
           "name": "Referência de comportamento coletivo",
-          "status": "Desconhecido",
-          "statusClass": "planned",
+          "status": "Parcial / em análise",
+          "statusClass": "partial",
           "criteria": {
             "passed": 0,
             "pending": 0,
@@ -1072,15 +1072,15 @@
     }
   ],
   "footballQuality": {
-    "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
-    "baseline": "W302 controle: 95 técnico, score remoto0,98; reproduziu W299 em18/18.",
-    "candidate": "Dose W302 Shoot−0,015 na área10–20m rejeitada como melhoria pronta; sem default promovido.",
-    "improved": "W302 reduziu chutes na faixa10–20m em1,61/jogo (IC [−2,66;−0,56]); sem ganhos demonstráveis em gols ou criação.",
-    "worsened": "Apoio à frente em contextos Shoot recuou1,22/jogo (IC [−2,10;−0,34]); entrada na área/progressão sem aumento.",
-    "shotsGoals": "W302 gols6,39→6,28/jogo (IC inclui zero), chutes14,83→13,94; conversão pareada inconclusiva.",
-    "lastIntegrated": "W303 analisou segmentos de posse nos36 jogos W302; nenhuma reposição clara de chance após menor Shoot. Todos os ciclos estão scratch.",
-    "mainBlocker": "Qualidade de chance e apoio ao portador não estão demonstrados como melhoria; replays W299/W302 aguardam julgamento humano antes de nova hipótese.",
-    "replay": "W299 e W302: replays integrais em5.402 frames por braço, auditados13/13; avaliação humana pendente."
+    "satisfaction": "Não. O avaliador rejeitou visualmente W299 e W302; MVP NÃO ACEITO.",
+    "baseline": "W299 controle: julgamento humano relata jogadores convergindo para a bola e ausência de organização tática perceptível.",
+    "candidate": "W302: também rejeitado visualmente; não corrigiu o problema coletivo segundo a avaliação humana.",
+    "improved": "Nenhuma melhoria visual de qualidade aceita; a preferência relatada foi pelo motor original de Leandro.",
+    "worsened": "Problema comum percebido: jogadores correm em direção à bola sem ocupação coletiva/tática perceptível. Sem timestamps informados.",
+    "shotsGoals": "Resultados W299/W302 anteriores preservados; sem default promovido. A hipótese sobre organização coletiva exige diagnóstico independente.",
+    "lastIntegrated": "W304 revisão humana concluiu com rejeição visual de ambas as versões. Nenhuma nova coorte ou mudança de runtime.",
+    "mainBlocker": "Organização coletiva sem bola: papéis, espaçamento e ocupação parecem ceder à perseguição da bola. Prioridade M3-04; identificar e confirmar a build original antes de derivar uma solução.",
+    "replay": "W299 e W302, partidas integrais de 5.402 estados, agora com reprodução 0,25×/0,5×/0,75×; avaliação humana qualitativa recebida."
   },
   "diary": [
     {
@@ -1120,15 +1120,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W298",
-      "wave": "W298",
-      "publishedAt": "2026-10-29T13:26:35Z",
-      "macro": "M2",
-      "title": "Diagnosticar a resolução de chutes",
-      "status": "FINALIZADO — 532 chutes conciliados; perfil da conversão é descritivo; nenhum default alterado.",
-      "summary": "36 jogos; W297 exato36/36; chutes267/265, gols115/119; 532/532 terminais; viewer13/13."
-    },
-    {
       "id": "W299",
       "wave": "W299",
       "publishedAt": "2026-10-29T13:26:35Z",
@@ -1161,8 +1152,17 @@
       "publishedAt": "2026-10-29T14:10:49Z",
       "macro": "M2",
       "title": "Avaliar replays completos W299 e W302",
-      "status": "PENDENTE — revisão humana; nenhuma nova coorte/promocão até julgar plausibilidade futebolística.",
-      "summary": "Replays lado a lado e relatórios pareados estão preparados. Avaliar qualidade do apoio, criação e continuidade; defaults preservados, MVP NÃO ACEITO."
+      "status": "FINALIZADO — avaliação humana rejeitou visualmente W299 e W302; defaults inalterados.",
+      "summary": "Foi relatada perseguição coletiva à bola e ausência de tática perceptível; preferência declarada pelo motor original de Leandro. W305 foca M3-04 e identificação da referência."
+    },
+    {
+      "id": "W305",
+      "wave": "W305",
+      "publishedAt": "2026-10-29T14:45:27Z",
+      "macro": "M3",
+      "title": "Investigar organização coletiva sem bola",
+      "status": "EM ANDAMENTO — identificar referência original e diagnosticar M3-04; sem alteração de gameplay.",
+      "summary": "W304 rejeitou visualmente W299/W302: jogadores convergem para a bola sem tática perceptível. Build original ainda precisa de identificação confirmada."
     },
     {
       "wave": "W66",
@@ -3641,6 +3641,10 @@
     {
       "id": "CP-PORTAL-35",
       "title": "W296 final e W297 ativa; M2 e UTF-8 confirmado no Pages v243"
+    },
+    {
+      "id": "CP-PORTAL-40",
+      "title": "W304 revisão humana concluída; W305 M3 organização coletiva ativa"
     }
   ]
 }
