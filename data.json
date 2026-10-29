@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-209",
-  "updatedAt": "2026-10-29T01:39:04Z",
+  "version": "2026.10.28-portal-210",
+  "updatedAt": "2026-10-29T01:45:01Z",
   "cycle": "W277",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W277 coorte completa em execução, 18 pares Move ON vs OFF, Pass OFF e shape Off. Piloto seed1732 reproduziu W274 baseline em estado final, eventos, RNG, score e 5400 ticks. SupportBlendConservative não foi aceito; defaults OFF.",
+  "currentFocus": "Frente ativa M2 — W277 em 9/18 pares, Move ON isolado com Pass OFF. Controles reproduzem W274 baseline em 9/9; corte parcial aponta forte aumento de território e finalizações, ainda sem conclusão nem promoção. SupportBlendConservative permanece rejeitado e defaults OFF.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -14,11 +14,11 @@
   "latestAction": {
     "id": "W277",
     "wave": "W277",
-    "publishedAt": "2026-10-29T01:28:37Z",
+    "publishedAt": "2026-10-29T01:45:01Z",
     "macro": "M2",
     "title": "Movimento isolado sem passe avançado",
-    "status": "COORTE 18 PARES EM EXECUÇÃO — piloto controle exato",
-    "summary": "Piloto seed1732 reproduziu W274 baseline; coorte pareada Move ON vs OFF está em execução."
+    "status": "PARCIAL 9/18 — controles exatos 9/9; sem inferência final",
+    "summary": "Move ON/Pass OFF registra 125 ShotEvents e 54 gols vs 7/3 do controle em 9 pares. Progressão acima; resultado parcial, aguardando 18/18 e lifecycle."
   },
   "recentCycles": [
     {
@@ -96,11 +96,11 @@
     {
       "id": "W277",
       "wave": "W277",
-      "publishedAt": "2026-10-29T01:28:37Z",
+      "publishedAt": "2026-10-29T01:45:01Z",
       "macro": "M2",
       "title": "Movimento isolado sem passe avançado",
-      "status": "COORTE 18 PARES EM EXECUÇÃO — piloto controle exato",
-      "summary": "Piloto seed1732 reproduziu W274 baseline; coorte pareada Move ON vs OFF está em execução."
+      "status": "PARCIAL 9/18 — controles exatos 9/9; sem inferência final",
+      "summary": "Move ON/Pass OFF registra 125 ShotEvents e 54 gols vs 7/3 do controle em 9 pares. Progressão acima; resultado parcial, aguardando 18/18 e lifecycle."
     }
   ],
   "macros": [
@@ -1149,11 +1149,11 @@
     {
       "id": "W277",
       "wave": "W277",
-      "publishedAt": "2026-10-29T01:28:37Z",
+      "publishedAt": "2026-10-29T01:45:01Z",
       "macro": "M2",
       "title": "Movimento isolado sem passe avançado",
-      "status": "COORTE 18 PARES EM EXECUÇÃO — piloto controle exato",
-      "summary": "Piloto seed1732 reproduziu W274 baseline; coorte pareada Move ON vs OFF está em execução."
+      "status": "PARCIAL 9/18 — controles exatos 9/9; sem inferência final",
+      "summary": "Move ON/Pass OFF registra 125 ShotEvents e 54 gols vs 7/3 do controle em 9 pares. Progressão acima; resultado parcial, aguardando 18/18 e lifecycle."
     },
     {
       "wave": "W66",
