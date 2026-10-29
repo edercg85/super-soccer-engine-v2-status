@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-213",
-  "updatedAt": "2026-10-29T02:05:00Z",
+  "version": "2026.10.28-portal-214",
+  "updatedAt": "2026-10-29T02:13:54Z",
   "cycle": "W278",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W278 coorte 18 pares em execução: OffsideAttacking.Pass OFF vs ON, VerticalAttacking.Move ON fixo. Piloto seed1732 reproduziu W277 Move ON em input, assemblies, estado final, eventos/RNG, score, ticks e event count; observer não altera o resultado.",
+  "currentFocus": "Frente ativa M2 — W278 em 9/18 pares. OffsideAttacking.Pass ON reduz offsides no corte 398→15, mas aumenta chutes 125→162 e gols 54→67. Controle W277 exato 9/9; resultado parcial, sem aceitação.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -14,11 +14,11 @@
   "latestAction": {
     "id": "W278",
     "wave": "W278",
-    "publishedAt": "2026-10-29T02:05:00Z",
+    "publishedAt": "2026-10-29T02:13:54Z",
     "macro": "M2",
     "title": "Reduzir impedimentos sem perder progressão",
-    "status": "COORTE 18 PARES EM EXECUÇÃO — piloto exato W277",
-    "summary": "Piloto seed1732: controle Pass OFF coincide exatamente com W277 Move ON em hashes de input/estado/eventos/RNG, score, ticks e event count; observer neutro. ON teve 18 vs 20 chutes e 8 vs 10 gols nesse seed. Coorte iniciada."
+    "status": "PARCIAL 9/18 — offsides caem; volume ofensivo sobe",
+    "summary": "Controle Pass OFF exato contra W277 em 9/9. No corte parcial Pass ON: offsides 398→15, chutes 125→162 e gols 54→67; aguardando 18/18, lifecycle e IC pareado."
   },
   "recentCycles": [
     {
@@ -96,11 +96,11 @@
     {
       "id": "W278",
       "wave": "W278",
-      "publishedAt": "2026-10-29T02:05:00Z",
+      "publishedAt": "2026-10-29T02:13:54Z",
       "macro": "M2",
       "title": "Reduzir impedimentos sem perder progressão",
-      "status": "COORTE 18 PARES EM EXECUÇÃO — piloto exato W277",
-      "summary": "Piloto seed1732: controle Pass OFF coincide exatamente com W277 Move ON em hashes de input/estado/eventos/RNG, score, ticks e event count; observer neutro. ON teve 18 vs 20 chutes e 8 vs 10 gols nesse seed. Coorte iniciada."
+      "status": "PARCIAL 9/18 — offsides caem; volume ofensivo sobe",
+      "summary": "Controle Pass OFF exato contra W277 em 9/9. No corte parcial Pass ON: offsides 398→15, chutes 125→162 e gols 54→67; aguardando 18/18, lifecycle e IC pareado."
     }
   ],
   "macros": [
@@ -1149,11 +1149,11 @@
     {
       "id": "W278",
       "wave": "W278",
-      "publishedAt": "2026-10-29T02:05:00Z",
+      "publishedAt": "2026-10-29T02:13:54Z",
       "macro": "M2",
       "title": "Reduzir impedimentos sem perder progressão",
-      "status": "COORTE 18 PARES EM EXECUÇÃO — piloto exato W277",
-      "summary": "Piloto seed1732: controle Pass OFF coincide exatamente com W277 Move ON em hashes de input/estado/eventos/RNG, score, ticks e event count; observer neutro. ON teve 18 vs 20 chutes e 8 vs 10 gols nesse seed. Coorte iniciada."
+      "status": "PARCIAL 9/18 — offsides caem; volume ofensivo sobe",
+      "summary": "Controle Pass OFF exato contra W277 em 9/9. No corte parcial Pass ON: offsides 398→15, chutes 125→162 e gols 54→67; aguardando 18/18, lifecycle e IC pareado."
     },
     {
       "wave": "W66",
@@ -3432,6 +3432,10 @@
     {
       "id": "CP-W278-PILOT",
       "title": "W278 piloto — identidade exata com W277 Move ON"
+    },
+    {
+      "id": "CP-W278-INTERIM",
+      "title": "W278 parcial 9/18 — menos offsides, mais chutes e gols"
     }
   ]
 }
