@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-226",
-  "updatedAt": "2026-10-29T04:50:06Z",
-  "cycle": "W284",
+  "version": "2026.10.28-portal-227",
+  "updatedAt": "2026-10-29T05:09:17Z",
+  "cycle": "W285",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M4-01 — W284 coorte pareada: BallCarrierContextualMoveV2 OFF vs ON, com Move ON / Pass OFF / Receive ON / shape Off. Piloto seed1732 reproduz W277 no controle e observer é neutro. Resultado de um seed é apenas diagnóstico; não inferir efeito antes dos 18 pares, lifecycle e replay.",
+  "currentFocus": "Frente ativa M2 — W285 M2-02/M2-05: diagnóstico de scores Move/Pass em W284 replay seed1745. W284 mostrou colapso sob BCCM V2 ON e queda Move 53.563→96, enquanto Pass sobe 10.366→26.065. O harness compara pre-states idênticos antes de atribuir a causa; sem alteração de engine/defaults.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W284",
-    "wave": "W284",
-    "publishedAt": "2026-10-29T04:45:50Z",
-    "macro": "M4",
-    "title": "Validar controle contextual do portador em partida completa",
-    "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
-    "summary": "BCCM OFF seed1732 reproduziu W277 Move ON em input, estado final, eventos, draws, score 2–8, tick 5404, eventCount 3945 e drawCount 799. Observer com/sem produziu os mesmos hashes e métricas. Braço BCCM ON seed1732 marcou 1–0 e 18 chutes; apenas piloto, sem inferência causal."
+    "id": "W285",
+    "wave": "W285",
+    "publishedAt": "2026-10-29T05:09:17Z",
+    "macro": "M2",
+    "title": "Diagnosticar a seleção Move/Pass do portador",
+    "status": "IN_PROGRESS — instrumentação de scores em andamento",
+    "summary": "W284 isolou o desaparecimento de Move e excesso de Pass sob BCCM V2 ON. W285 compara os scores nos mesmos estados pré-ação do seed1745."
   },
   "recentCycles": [
     {
@@ -58,24 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W280",
-      "wave": "W280",
-      "publishedAt": "2026-10-29T03:40:00Z",
-      "macro": "M2",
-      "title": "Testar dose baixa de impedimento",
-      "status": "FINALIZADO — max21,25 reduz impedimentos mas apoio e circulação seguem baixos",
-      "summary": "18 pares; controle W277 exato 18/18; offsides −39,278/jogo (18/18), gols +1,333 e chutes +1,722 (ICs cruzam zero), apoio à frente −0,084 (14/18), passes tentados −32,056, episódios de posse −30,889. Lifecycle 36/36; replay seed1742 exato; viewer audit 13/13; revisão humana pendente."
-    },
-    {
-      "id": "W281",
-      "wave": "W281",
-      "publishedAt": "2026-10-29T04:05:00Z",
-      "macro": "M2",
-      "title": "Recuperar apoio sem perder efeito nos impedimentos",
-      "status": "FINALIZADO — max10,625 reduz menos offsides e piora circulação",
-      "summary": "18 pares; controle W277 exato 18/18; offsides −22,111/jogo; gols +0,833 e chutes +2,278 inconclusivos; apoio próximo −0,080 (14/18), apoio à frente −0,074 (15/18); passes tentados −43,889, episódios posse −42,889 (18/18). Lifecycle36/36; replay seed1737 exato, auditoria13/13; revisão humana pendente."
-    },
-    {
       "id": "W282",
       "wave": "W282",
       "publishedAt": "2026-10-29T04:30:00Z",
@@ -101,6 +83,24 @@
       "title": "Validar controle contextual do portador em partida completa",
       "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
       "summary": "BCCM OFF seed1732 reproduziu W277 Move ON em input, estado final, eventos, draws, score 2–8, tick 5404, eventCount 3945 e drawCount 799. Observer com/sem produziu os mesmos hashes e métricas. Braço BCCM ON seed1732 marcou 1–0 e 18 chutes; apenas piloto, sem inferência causal."
+    },
+    {
+      "id": "W284",
+      "wave": "W284",
+      "publishedAt": "2026-10-29T05:09:17Z",
+      "macro": "M4",
+      "title": "Validar controle contextual do portador em partida completa",
+      "status": "FINALIZADO — BCCM V2 ON REJEITADO; ataque colapsa",
+      "summary": "18 pares; controle W277 exato 18/18, lifecycle36/36. Gols119→29 (−5/jogo, CI [−6,131;−3,869], pior18/18); chutes inconclusivos; offsides797→94, terço1561→78, área416→1; sem possuidor +2.103/jogo. Move53.563→96; Pass10.366→26.065. Replay seed1745 auditado13/13."
+    },
+    {
+      "id": "W285",
+      "wave": "W285",
+      "publishedAt": "2026-10-29T05:09:17Z",
+      "macro": "M2",
+      "title": "Diagnosticar a seleção Move/Pass do portador",
+      "status": "IN_PROGRESS — instrumentação de scores em andamento",
+      "summary": "W284 isolou o desaparecimento de Move e excesso de Pass sob BCCM V2 ON. W285 compara os scores nos mesmos estados pré-ação do seed1745."
     }
   ],
   "macros": [
@@ -328,7 +328,7 @@
       "importance": "Ganhar território com controle e opções é a base de um ataque convincente.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
-      "active": false,
+      "active": true,
       "items": [
         {
           "id": "M2-01",
@@ -506,7 +506,7 @@
       "importance": "Uma boa decisão perde valor quando a resolução quebra a posse ou deixa estados presos.",
       "status": "Parcial / em análise",
       "statusClass": "partial",
-      "active": true,
+      "active": false,
       "items": [
         {
           "id": "M4-01",
@@ -1111,24 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W280",
-      "wave": "W280",
-      "publishedAt": "2026-10-29T03:40:00Z",
-      "macro": "M2",
-      "title": "Testar dose baixa de impedimento",
-      "status": "FINALIZADO — max21,25 reduz impedimentos mas apoio e circulação seguem baixos",
-      "summary": "18 pares; controle W277 exato 18/18; offsides −39,278/jogo (18/18), gols +1,333 e chutes +1,722 (ICs cruzam zero), apoio à frente −0,084 (14/18), passes tentados −32,056, episódios de posse −30,889. Lifecycle 36/36; replay seed1742 exato; viewer audit 13/13; revisão humana pendente."
-    },
-    {
-      "id": "W281",
-      "wave": "W281",
-      "publishedAt": "2026-10-29T04:05:00Z",
-      "macro": "M2",
-      "title": "Recuperar apoio sem perder efeito nos impedimentos",
-      "status": "FINALIZADO — max10,625 reduz menos offsides e piora circulação",
-      "summary": "18 pares; controle W277 exato 18/18; offsides −22,111/jogo; gols +0,833 e chutes +2,278 inconclusivos; apoio próximo −0,080 (14/18), apoio à frente −0,074 (15/18); passes tentados −43,889, episódios posse −42,889 (18/18). Lifecycle36/36; replay seed1737 exato, auditoria13/13; revisão humana pendente."
-    },
-    {
       "id": "W282",
       "wave": "W282",
       "publishedAt": "2026-10-29T04:30:00Z",
@@ -1154,6 +1136,24 @@
       "title": "Validar controle contextual do portador em partida completa",
       "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
       "summary": "BCCM OFF seed1732 reproduziu W277 Move ON em input, estado final, eventos, draws, score 2–8, tick 5404, eventCount 3945 e drawCount 799. Observer com/sem produziu os mesmos hashes e métricas. Braço BCCM ON seed1732 marcou 1–0 e 18 chutes; apenas piloto, sem inferência causal."
+    },
+    {
+      "id": "W284",
+      "wave": "W284",
+      "publishedAt": "2026-10-29T05:09:17Z",
+      "macro": "M4",
+      "title": "Validar controle contextual do portador em partida completa",
+      "status": "FINALIZADO — BCCM V2 ON REJEITADO; ataque colapsa",
+      "summary": "18 pares; controle W277 exato 18/18, lifecycle36/36. Gols119→29 (−5/jogo, CI [−6,131;−3,869], pior18/18); chutes inconclusivos; offsides797→94, terço1561→78, área416→1; sem possuidor +2.103/jogo. Move53.563→96; Pass10.366→26.065. Replay seed1745 auditado13/13."
+    },
+    {
+      "id": "W285",
+      "wave": "W285",
+      "publishedAt": "2026-10-29T05:09:17Z",
+      "macro": "M2",
+      "title": "Diagnosticar a seleção Move/Pass do portador",
+      "status": "IN_PROGRESS — instrumentação de scores em andamento",
+      "summary": "W284 isolou o desaparecimento de Move e excesso de Pass sob BCCM V2 ON. W285 compara os scores nos mesmos estados pré-ação do seed1745."
     },
     {
       "wave": "W66",
@@ -3532,6 +3532,14 @@
     {
       "id": "CP-PORTAL-23",
       "title": "ZIP W283 final / W284 ativo publicado"
+    },
+    {
+      "id": "CP-W284-FINAL",
+      "title": "W284 final — BCCM V2 ON rejeitado"
+    },
+    {
+      "id": "CP-W285-PREFLIGHT",
+      "title": "W285 — diagnóstico causal Move/Pass"
     }
   ]
 }
