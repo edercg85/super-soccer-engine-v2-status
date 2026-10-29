@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-205",
-  "updatedAt": "2026-10-29T01:14:55Z",
-  "cycle": "W276",
+  "version": "2026.10.28-portal-206",
+  "updatedAt": "2026-10-29T01:28:37Z",
+  "cycle": "W277",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W276 9/18 pares. SupportBlend com Move+Pass OFF melhora apoio próximo na parcial, mas reduz terço/área; gols e chutes ainda inconclusivos. Coorte continua; defaults OFF.",
+  "currentFocus": "Frente ativa M2 — W277 mede VerticalAttacking.Move ON isolado com Pass OFF em COR×PAL. Piloto seed1732 deve coincidir com W274 baseline; depois coorte 18 pares. SupportBlendConservative não foi aceito; defaults OFF.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W276",
-    "wave": "W276",
-    "publishedAt": "2026-10-29T01:01:24Z",
+    "id": "W277",
+    "wave": "W277",
+    "publishedAt": "2026-10-29T01:28:37Z",
     "macro": "M2",
-    "title": "Interação entre forma dinâmica e pacote progressivo",
-    "status": "EM EXECUÇÃO — 9/18 pares; controle exato; parcial ainda inconclusiva em gols/chutes.",
-    "summary": "Parcial 9/18: com Move+Pass OFF, SupportBlend eleva apoio próximo +0,197 (9/9), enquanto terço −11 e área −2,333 episódios/jogo. Gols e chutes inconclusivos; controle Off coincide com W274 baseline em 9/9. Coorte continua."
+    "title": "Movimento isolado sem passe avançado",
+    "status": "PREFLIGHT CONCLUÍDO — piloto de controle em andamento; defaults OFF.",
+    "summary": "Move ON vs OFF, Pass OFF e shape Off, COR×PAL 18 pares. Busca medir progressão intermediária; piloto Off precisa reproduzir W274 baseline por fingerprints."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W272",
-      "wave": "W272",
-      "publishedAt": "2026-10-28T22:49:49Z",
-      "macro": "M2",
-      "title": "Experimento de progressão pelo score de Move",
-      "status": "CONCLUÍDO TECNICAMENTE — forte progressão territorial; plausibilidade e suporte pendentes de avaliação humana.",
-      "summary": "18 pares W214: episódios no terço 289→1.479, área 21→408, ticks sem possuidor 50.236→32.084; ShotEvent 6→265, gols 5→108. Acesso melhorou 18/18, mas suporte próximo caiu 18/18 e 108 gols/18 jogos exige revisão; nenhuma promoção."
-    },
-    {
       "id": "W273",
       "wave": "W273",
       "publishedAt": "2026-10-28T23:20:34Z",
@@ -98,9 +89,18 @@
       "wave": "W276",
       "publishedAt": "2026-10-29T01:01:24Z",
       "macro": "M2",
-      "title": "Interação entre forma dinâmica e pacote progressivo",
-      "status": "EM EXECUÇÃO — 9/18 pares; controle exato; parcial ainda inconclusiva em gols/chutes.",
-      "summary": "Parcial 9/18: com Move+Pass OFF, SupportBlend eleva apoio próximo +0,197 (9/9), enquanto terço −11 e área −2,333 episódios/jogo. Gols e chutes inconclusivos; controle Off coincide com W274 baseline em 9/9. Coorte continua."
+      "title": "Forma SupportBlend: apoio maior, penetração menor",
+      "status": "CONCLUÍDO TECNICAMENTE — SupportBlend elevou suporte, mas reduziu progressão/chutes/gols; default OFF.",
+      "summary": "18 pares com Move+Pass OFF: apoio próximo 5,435→5,626 (+0,192), à frente 4,188→4,243 (+0,055). Terço 324→128, área 45→1, chutes 15→1, gols 8→0; controle W274 baseline exato. Replay seed1748 pronto, revisão humana pendente."
+    },
+    {
+      "id": "W277",
+      "wave": "W277",
+      "publishedAt": "2026-10-29T01:28:37Z",
+      "macro": "M2",
+      "title": "Movimento isolado sem passe avançado",
+      "status": "PREFLIGHT CONCLUÍDO — piloto de controle em andamento; defaults OFF.",
+      "summary": "Move ON vs OFF, Pass OFF e shape Off, COR×PAL 18 pares. Busca medir progressão intermediária; piloto Off precisa reproduzir W274 baseline por fingerprints."
     }
   ],
   "macros": [
@@ -1064,14 +1064,14 @@
   ],
   "footballQuality": {
     "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
-    "baseline": "W274 baseline no pacote Move+Pass: 18 jogos COR×PAL, seeds 1732–1749, assemblies W214.",
-    "candidate": "W275: DynamicTeamShape Off vs SupportBlendConservative com Move+Pass ON; 18 pares completos, mesmos input/assemblies.",
-    "improved": "Apoio à frente: 2,016→2,169 por observação (+0,154; IC95% [+0,127;+0,181], 18/18 pares). Passes completos 8.533→9.821.",
-    "worsened": "Terço: 1.713→832 episódios (−48,944/jogo); área 473→30 (−24,611/jogo). Ticks sem possuidor 28.022→31.482 (+192,222/jogo).",
-    "shotsGoals": "ShotEvent 328→30 (−16,556/jogo; IC95% [−17,890;−15,221]); gols 129→7 (−6,778/jogo; IC [−8,094;−5,461]), menores nos 18/18 pares. Lifecycle 100% reconciliado.",
-    "lastIntegrated": "W275 é a avaliação experimental integrada mais recente (18 pares); qualidade global segue não aprovada e nenhum default mudou.",
-    "mainBlocker": "SupportBlendConservative aumenta opções à frente mas interrompe progressão/finalização quando combinado a Move+Pass. W276 isola se o colapso é efeito do shape ou interação; revisão humana continua pendente.",
-    "replay": "W274 seed1732 e W275 seed1744 são replays integrais offline, recapturas exatas da coorte. Auditorias dos viewers passaram; julgamento humano pendente."
+    "baseline": "W274 baseline Move+Pass OFF: 18 jogos COR×PAL, seeds 1732–1749, assemblies W214.",
+    "candidate": "W276: DynamicTeamShape Off vs SupportBlendConservative com Move+Pass OFF; 18 pares completos, mesma preparação e assemblies.",
+    "improved": "Apoio próximo 5,435→5,626 (+0,192 por observação; IC95% [+0,132;+0,251], 17/18 pares); apoio à frente 4,188→4,243 (+0,055; IC [+0,014;+0,097], 14/18).",
+    "worsened": "Terço 324→128 (−10,889 episódios/jogo); área 45→1 (−2,444/jogo); ticks sem possuidor 50.322→51.764 (+80,111/jogo). Quedas de terço/área em 17/18 e 15/18.",
+    "shotsGoals": "ShotEvent 15→1 (−0,778/jogo; IC95% [−1,332;−0,224]); gols 8→0 (−0,444/jogo; IC [−0,795;−0,094]). Lifecycle 15/15 e 1/1 reconciliados.",
+    "lastIntegrated": "W276 é a avaliação experimental integrada mais recente (18 pares); qualidade global não aprovada e nenhuma configuração promovida.",
+    "mainBlocker": "Baseline quase não cria finalizações; pacote Move+Pass eleva chutes/gols excessivamente. SupportBlend aumenta suporte mas reduz penetração até sem Move+Pass. W277 isola Move ON com Pass OFF.",
+    "replay": "W274 seed1732, W275 seed1744 e W276 seed1748 têm replays completos recapturados e ligados às coortes; viewers auditados. Julgamento humano pendente."
   },
   "diary": [
     {
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W272",
-      "wave": "W272",
-      "publishedAt": "2026-10-28T22:49:49Z",
-      "macro": "M2",
-      "title": "Experimento de progressão pelo score de Move",
-      "status": "CONCLUÍDO TECNICAMENTE — forte progressão territorial; plausibilidade e suporte pendentes de avaliação humana.",
-      "summary": "18 pares W214: episódios no terço 289→1.479, área 21→408, ticks sem possuidor 50.236→32.084; ShotEvent 6→265, gols 5→108. Acesso melhorou 18/18, mas suporte próximo caiu 18/18 e 108 gols/18 jogos exige revisão; nenhuma promoção."
-    },
-    {
       "id": "W273",
       "wave": "W273",
       "publishedAt": "2026-10-28T23:20:34Z",
@@ -1151,9 +1142,18 @@
       "wave": "W276",
       "publishedAt": "2026-10-29T01:01:24Z",
       "macro": "M2",
-      "title": "Interação entre forma dinâmica e pacote progressivo",
-      "status": "EM EXECUÇÃO — 9/18 pares; controle exato; parcial ainda inconclusiva em gols/chutes.",
-      "summary": "Parcial 9/18: com Move+Pass OFF, SupportBlend eleva apoio próximo +0,197 (9/9), enquanto terço −11 e área −2,333 episódios/jogo. Gols e chutes inconclusivos; controle Off coincide com W274 baseline em 9/9. Coorte continua."
+      "title": "Forma SupportBlend: apoio maior, penetração menor",
+      "status": "CONCLUÍDO TECNICAMENTE — SupportBlend elevou suporte, mas reduziu progressão/chutes/gols; default OFF.",
+      "summary": "18 pares com Move+Pass OFF: apoio próximo 5,435→5,626 (+0,192), à frente 4,188→4,243 (+0,055). Terço 324→128, área 45→1, chutes 15→1, gols 8→0; controle W274 baseline exato. Replay seed1748 pronto, revisão humana pendente."
+    },
+    {
+      "id": "W277",
+      "wave": "W277",
+      "publishedAt": "2026-10-29T01:28:37Z",
+      "macro": "M2",
+      "title": "Movimento isolado sem passe avançado",
+      "status": "PREFLIGHT CONCLUÍDO — piloto de controle em andamento; defaults OFF.",
+      "summary": "Move ON vs OFF, Pass OFF e shape Off, COR×PAL 18 pares. Busca medir progressão intermediária; piloto Off precisa reproduzir W274 baseline por fingerprints."
     },
     {
       "wave": "W66",
@@ -3408,6 +3408,14 @@
     {
       "id": "CP-W276-INTERIM",
       "title": "W276 parcial — apoio próximo sobe; território recua"
+    },
+    {
+      "id": "CP-W276-FINAL",
+      "title": "W276 final — shape amplia apoio mas bloqueia progressão"
+    },
+    {
+      "id": "CP-W277-PREFLIGHT",
+      "title": "W277 preflight — movimento isolado sem passe avançado"
     }
   ]
 }
