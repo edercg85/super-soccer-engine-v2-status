@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-229",
-  "updatedAt": "2026-10-29T05:46:53Z",
-  "cycle": "W287",
+  "version": "2026.10.28-portal-230",
+  "updatedAt": "2026-10-29T06:17:00Z",
+  "cycle": "W288",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W287 M2-04: testar desconto de 5% no score de Shoot fora da área para reduzir chutes remotos no contexto BCCM25 rejeitado. Base não aceita; W287 é experimento de resgate com controle W286 seed1738, teste de 5% no mesmo estado e gates de gols/área/lifecycle. Source/default continuam inalterados.",
+  "currentFocus": "Frente ativa M2 — W288 M2-04: dose-resposta de descontos externos de Shoot (0%, 1%, 2%) após W287 mostrar perda consistente de gols com 5%. Mesmo contexto BCCM25 experimental, controle W286, 18 seeds; bases/defaults continuam não aceitos e inalterados.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W287",
-    "wave": "W287",
-    "publishedAt": "2026-10-29T05:46:53Z",
+    "id": "W288",
+    "wave": "W288",
+    "publishedAt": "2026-10-29T06:17:00Z",
     "macro": "M2",
-    "title": "Reduzir chutes fora da área em 5%",
-    "status": "PREFLIGHT — CÓPIA V2 ISOLADA, PILOTO PENDENTE",
-    "summary": "Desconto de 5% no score Shoot fora da área sobre a base contextual BCCM25 já rejeitada. Análise W286 prevê que 249/541 seleções remotas seriam invertidas em estado congelado."
+    "title": "Medir dose-resposta de desconto em chutes remotos",
+    "status": "PILOTO PASSOU — COORTE 18×3 EM EXECUÇÃO",
+    "summary": "Seed1738 controle 1,00 reproduz W286 exatamente; score remoto multiplicado por 0,99/0,98 nos estados comparáveis. Experimento isolado, sem alteração de defaults."
   },
   "recentCycles": [
     {
@@ -60,15 +60,6 @@
     {
       "id": "W284",
       "wave": "W284",
-      "publishedAt": "2026-10-29T04:45:50Z",
-      "macro": "M4",
-      "title": "Validar controle contextual do portador em partida completa",
-      "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
-      "summary": "BCCM OFF seed1732 reproduziu W277 Move ON em input, estado final, eventos, draws, score 2–8, tick 5404, eventCount 3945 e drawCount 799. Observer com/sem produziu os mesmos hashes e métricas. Braço BCCM ON seed1732 marcou 1–0 e 18 chutes; apenas piloto, sem inferência causal."
-    },
-    {
-      "id": "W284",
-      "wave": "W284",
       "publishedAt": "2026-10-29T05:09:17Z",
       "macro": "M4",
       "title": "Validar controle contextual do portador em partida completa",
@@ -96,11 +87,20 @@
     {
       "id": "W287",
       "wave": "W287",
-      "publishedAt": "2026-10-29T05:46:53Z",
+      "publishedAt": "2026-10-29T06:17:00Z",
       "macro": "M2",
       "title": "Reduzir chutes fora da área em 5%",
-      "status": "PREFLIGHT — CÓPIA V2 ISOLADA, PILOTO PENDENTE",
-      "summary": "Desconto de 5% no score Shoot fora da área sobre a base contextual BCCM25 já rejeitada. Análise W286 prevê que 249/541 seleções remotas seriam invertidas em estado congelado."
+      "status": "FINALIZADO — DESCONTO 5% REJEITADO; GOLS -2,556/JOGO",
+      "summary": "18 pares; gols 123→77 (-2,556/jogo, IC95% [-3,975;-1,136], pior14/18); chutes613→359, externos541→279; episódios área102→121, CI inclui zero. Controle W286 exato18/18, lifecycle36/36; replay1738 auditado13/13."
+    },
+    {
+      "id": "W288",
+      "wave": "W288",
+      "publishedAt": "2026-10-29T06:17:00Z",
+      "macro": "M2",
+      "title": "Medir dose-resposta de desconto em chutes remotos",
+      "status": "PILOTO PASSOU — COORTE 18×3 EM EXECUÇÃO",
+      "summary": "Seed1738 controle 1,00 reproduz W286 exatamente; score remoto multiplicado por 0,99/0,98 nos estados comparáveis. Experimento isolado, sem alteração de defaults."
     }
   ],
   "macros": [
@@ -1113,15 +1113,6 @@
     {
       "id": "W284",
       "wave": "W284",
-      "publishedAt": "2026-10-29T04:45:50Z",
-      "macro": "M4",
-      "title": "Validar controle contextual do portador em partida completa",
-      "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO",
-      "summary": "BCCM OFF seed1732 reproduziu W277 Move ON em input, estado final, eventos, draws, score 2–8, tick 5404, eventCount 3945 e drawCount 799. Observer com/sem produziu os mesmos hashes e métricas. Braço BCCM ON seed1732 marcou 1–0 e 18 chutes; apenas piloto, sem inferência causal."
-    },
-    {
-      "id": "W284",
-      "wave": "W284",
       "publishedAt": "2026-10-29T05:09:17Z",
       "macro": "M4",
       "title": "Validar controle contextual do portador em partida completa",
@@ -1149,11 +1140,20 @@
     {
       "id": "W287",
       "wave": "W287",
-      "publishedAt": "2026-10-29T05:46:53Z",
+      "publishedAt": "2026-10-29T06:17:00Z",
       "macro": "M2",
       "title": "Reduzir chutes fora da área em 5%",
-      "status": "PREFLIGHT — CÓPIA V2 ISOLADA, PILOTO PENDENTE",
-      "summary": "Desconto de 5% no score Shoot fora da área sobre a base contextual BCCM25 já rejeitada. Análise W286 prevê que 249/541 seleções remotas seriam invertidas em estado congelado."
+      "status": "FINALIZADO — DESCONTO 5% REJEITADO; GOLS -2,556/JOGO",
+      "summary": "18 pares; gols 123→77 (-2,556/jogo, IC95% [-3,975;-1,136], pior14/18); chutes613→359, externos541→279; episódios área102→121, CI inclui zero. Controle W286 exato18/18, lifecycle36/36; replay1738 auditado13/13."
+    },
+    {
+      "id": "W288",
+      "wave": "W288",
+      "publishedAt": "2026-10-29T06:17:00Z",
+      "macro": "M2",
+      "title": "Medir dose-resposta de desconto em chutes remotos",
+      "status": "PILOTO PASSOU — COORTE 18×3 EM EXECUÇÃO",
+      "summary": "Seed1738 controle 1,00 reproduz W286 exatamente; score remoto multiplicado por 0,99/0,98 nos estados comparáveis. Experimento isolado, sem alteração de defaults."
     },
     {
       "wave": "W66",
@@ -3560,6 +3560,14 @@
     {
       "id": "CP-PORTAL-25",
       "title": "W286 final / W287 ativo"
+    },
+    {
+      "id": "CP-W287-FINAL",
+      "title": "W287 final — desconto remoto de 5% rejeitado"
+    },
+    {
+      "id": "CP-W288-PREFLIGHT",
+      "title": "W288 — dose-resposta de desconto remoto"
     }
   ]
 }
