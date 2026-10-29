@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-243",
-  "updatedAt": "2026-10-29T10:43:59Z",
-  "cycle": "W296",
+  "version": "2026.10.28-portal-244",
+  "updatedAt": "2026-10-29T11:23:37Z",
+  "cycle": "W297",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "M2 active — W296 tests a scratch-only 2% score discount outside the penalty area on the best tested quadrant (Vertical Move ON, Vertical Pass OFF, Offside Pass ON, BCCM OFF). The 1.00 control must reproduce W294/W273 exactly before the cohort.",
+  "currentFocus": "M2 active — W297 tests an incremental outside-area shot-score multiplier 0.96 against W296 0.98. Require exact 18/18 control reproduction; default remains OFF.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W296",
-    "wave": "W296",
-    "publishedAt": "2026-10-29T10:43:59Z",
+    "id": "W297",
+    "wave": "W297",
+    "publishedAt": "2026-10-29T11:23:37Z",
     "macro": "M2",
-    "title": "Calibrar chutes remotos sem sacrificar área",
-    "status": "EM EXECUÇÃO — preflight pronto; default permanece OFF.",
-    "summary": "2x2 W294/W295 favorece Move ON/Vertical Pass OFF; ainda há 7,17 gols e17,94 chutes/game. W296 testa multiplicador remoto0,98 num build scratch com controle W294 exato."
+    "title": "Testar dose incremental no chute remoto",
+    "status": "EM EXECUÇÃO — preflight aprovado; default OFF.",
+    "summary": "W296: desconto externo0.98 reduziu chutes totais3,11/jogo; efeito em gols inconclusivo. W297 compara0.96 vs W296 controle."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W292",
-      "wave": "W292",
-      "publishedAt": "2026-10-29T09:32:22Z",
-      "macro": "M2",
-      "title": "Decompor a origem dos ticks sem possuidor",
-      "status": "FINALIZADO — DIAGNÓSTICO COMPLETO; estado dominante é movimento+passe ativo",
-      "summary": "54 jogos; W291 exact54/54, lifecycle54/54 e perfis reconciliados. Movimento+passe=89,25%/92,15%/93,76%; 2,56 ticks/pass estável. Pass attempts620/770/926 por jogo."
-    },
-    {
       "id": "W293",
       "wave": "W293",
       "publishedAt": "2026-10-29T09:39:23Z",
@@ -96,11 +87,20 @@
     {
       "id": "W296",
       "wave": "W296",
-      "publishedAt": "2026-10-29T10:43:59Z",
+      "publishedAt": "2026-10-29T11:23:37Z",
       "macro": "M2",
       "title": "Calibrar chutes remotos sem sacrificar área",
-      "status": "EM EXECUÇÃO — preflight pronto; default permanece OFF.",
-      "summary": "2x2 W294/W295 favorece Move ON/Vertical Pass OFF; ainda há 7,17 gols e17,94 chutes/game. W296 testa multiplicador remoto0,98 num build scratch com controle W294 exato."
+      "status": "FINALIZADO — multiplier0.98 reduz 3,11 chutes/jogo; efeito em gols inconclusivo; default OFF.",
+      "summary": "36 jogos; controle W294/W273 exato18/18; chutes -3,11/jogo (IC95% [-5,75;-0,47]); gols -0,78 ([-1,57;+0,01]); 21.040/21.040 passes e590/590 chutes conciliados. Viewer13/13; revisão humana pendente."
+    },
+    {
+      "id": "W297",
+      "wave": "W297",
+      "publishedAt": "2026-10-29T11:23:37Z",
+      "macro": "M2",
+      "title": "Testar dose incremental no chute remoto",
+      "status": "EM EXECUÇÃO — preflight aprovado; default OFF.",
+      "summary": "W296: desconto externo0.98 reduziu chutes totais3,11/jogo; efeito em gols inconclusivo. W297 compara0.96 vs W296 controle."
     }
   ],
   "macros": [
@@ -1074,13 +1074,13 @@
   "footballQuality": {
     "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
     "baseline": "W274 baseline Move+Pass OFF: 18 jogos COR×PAL, seeds 1732–1749, assemblies W214.",
-    "candidate": "W294 em execução: VerticalAttacking.Pass ON versus OFF sobre W273 Pass ON/Move ON; default permanece OFF.",
+    "candidate": "W297 em andamento: multiplier0.96 externo contra controle W296 0.98 no Move ON/Pass OFF; scratch only, default OFF.",
     "improved": "W293 ligou41.692/41.692 tentativas a terminais sem ambiguidades; progressão média condicionada a passes completos:+0,05143 controle,+0,01411 6,25%,−0,01173 12,5%.",
     "worsened": "Doses BCCM6,25%/12,5% reduziram progressão por conclusão −0,03734/−0,06316 (18/18 seeds, IC pareado); Move contextual rejeitado.",
     "shotsGoals": "W2916,25%: gols108 vs119 controle (−0,611/jogo, IC95% [−2,080;+0,858]); chutes231 vs264. Lifecycle54/54.",
-    "lastIntegrated": "W294/W295 form 2x2 Move×VerticalPass across18 seeds. Best tested cell Move ON / Vertical Pass OFF: 7.17 goals,17.94 chutes,98.06 third episodes,26.11 area episodes/game; Move ON effect vs OFF: goals +6.56/game (18/18), shots +17.28, area +24.72. Vertical Pass effect: progress +0.00885 with Move ON, -0.00411 with Move OFF; no promotion.",
-    "mainBlocker": "Move ON materially increases territorial access and shooting versus Move OFF, but best tested cell still has high score/shot volume. W296 evaluates only remote-shot score multiplier 0.98 on that cell; control must exactly reproduce W294/W273 18/18. W288 tested a different BCCM25 context and cannot answer this.",
-    "replay": "W294 e W295: viewers HTML auditados 13/13, revisão humana pendente. W296 criará replay de partida completa se o piloto passar no gate."
+    "lastIntegrated": "W296: multiplier0.98 reduziu chutes3.11/jogo (IC95% [-5.75;-0.47]) e chutes externos selecionados1.61/jogo; gols -0.78 ([-1.57;+0.01]), inconclusivo. Área/território/posse sem melhora conclusiva; nenhum default promovido.",
+    "mainBlocker": "Volume e seleção de finalizações permanecem altos sem evidência estável de melhora de gols/área; W297 testa dose incremental com controle exacto W296 em 18 seeds.",
+    "replay": "W294/W295 viewers auditados13/13 e W296 viewer auditado13/13; revisão humana pendente. Replay W296 seed1732 termina3–3 nos dois braços."
   },
   "diary": [
     {
@@ -1120,15 +1120,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W292",
-      "wave": "W292",
-      "publishedAt": "2026-10-29T09:32:22Z",
-      "macro": "M2",
-      "title": "Decompor a origem dos ticks sem possuidor",
-      "status": "FINALIZADO — DIAGNÓSTICO COMPLETO; estado dominante é movimento+passe ativo",
-      "summary": "54 jogos; W291 exact54/54, lifecycle54/54 e perfis reconciliados. Movimento+passe=89,25%/92,15%/93,76%; 2,56 ticks/pass estável. Pass attempts620/770/926 por jogo."
-    },
-    {
       "id": "W293",
       "wave": "W293",
       "publishedAt": "2026-10-29T09:39:23Z",
@@ -1158,11 +1149,20 @@
     {
       "id": "W296",
       "wave": "W296",
-      "publishedAt": "2026-10-29T10:43:59Z",
+      "publishedAt": "2026-10-29T11:23:37Z",
       "macro": "M2",
       "title": "Calibrar chutes remotos sem sacrificar área",
-      "status": "EM EXECUÇÃO — preflight pronto; default permanece OFF.",
-      "summary": "2x2 W294/W295 favorece Move ON/Vertical Pass OFF; ainda há 7,17 gols e17,94 chutes/game. W296 testa multiplicador remoto0,98 num build scratch com controle W294 exato."
+      "status": "FINALIZADO — multiplier0.98 reduz 3,11 chutes/jogo; efeito em gols inconclusivo; default OFF.",
+      "summary": "36 jogos; controle W294/W273 exato18/18; chutes -3,11/jogo (IC95% [-5,75;-0,47]); gols -0,78 ([-1,57;+0,01]); 21.040/21.040 passes e590/590 chutes conciliados. Viewer13/13; revisão humana pendente."
+    },
+    {
+      "id": "W297",
+      "wave": "W297",
+      "publishedAt": "2026-10-29T11:23:37Z",
+      "macro": "M2",
+      "title": "Testar dose incremental no chute remoto",
+      "status": "EM EXECUÇÃO — preflight aprovado; default OFF.",
+      "summary": "W296: desconto externo0.98 reduziu chutes totais3,11/jogo; efeito em gols inconclusivo. W297 compara0.96 vs W296 controle."
     },
     {
       "wave": "W66",
@@ -3637,6 +3637,10 @@
     {
       "id": "CP-PORTAL-34",
       "title": "W294/W295 2x2 finalizada; W296 ativo na M2"
+    },
+    {
+      "id": "CP-PORTAL-35",
+      "title": "W296 final e W297 ativa; M2 e UTF-8 confirmado no Pages v243"
     }
   ]
 }
