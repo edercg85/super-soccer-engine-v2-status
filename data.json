@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-215",
-  "updatedAt": "2026-10-29T02:18:15Z",
-  "cycle": "W278",
+  "version": "2026.10.28-portal-217",
+  "updatedAt": "2026-10-29T02:31:06Z",
+  "cycle": "W279",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W278 coorte em execução (12/18 pares concluídos); controle OffsidePass OFF é comparado a W277 Move ON. O corte publicado 9/18 mostra queda de offsides e subida de chutes/gols. ZIP W278 parcial atualizado no diretório central; defaults OFF.",
+  "currentFocus": "Frente ativa M2 — W279 coorte em andamento: OffsideAttacking.Pass OFF vs ON, PassPenaltyMaximum 42,5, Move ON fixo. Piloto seed1732 reproduziu W277/W278 Pass OFF em hashes e resultados; observer neutro. Revisão humana de W277/W278 pendente.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W278",
-    "wave": "W278",
-    "publishedAt": "2026-10-29T02:18:15Z",
+    "id": "W279",
+    "wave": "W279",
+    "publishedAt": "2026-10-29T02:31:06Z",
     "macro": "M2",
-    "title": "Reduzir impedimentos sem perder progressão",
-    "status": "COORTE EM EXECUÇÃO — 12/18; parcial publicada 9/18",
-    "summary": "Corte 9/18: Pass penalty ON reduz offsides 398→15, mas chutes 125→162 e gols 54→67; controles W277 exatos 9/9. ZIP W278 parcial central publicado; resultados finais pendentes."
+    "title": "Dosar penalidade de impedimento",
+    "status": "COORTE 18 PARES EM EXECUÇÃO — piloto exato W277",
+    "summary": "Piloto seed1732: Pass OFF reproduziu W277 Move ON; observer neutro, input/assemblies iguais. Pass maximum42,5 marcou 18 vs20 chutes e11 vs10 gols neste único seed. Coorte completa iniciada."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W274",
-      "wave": "W274",
-      "publishedAt": "2026-10-28T23:51:55Z",
-      "macro": "M2",
-      "title": "Validação cruzada Move+Pass em COR×PAL",
-      "status": "CONCLUÍDO TECNICAMENTE — progressão transferida; apoio e plausibilidade de gols pendentes.",
-      "summary": "18 pares COR×PAL: terço 324→1.713, área 45→473, ticks sem possuidor 50.322→28.022. ShotEvent 15→328 e gols 8→129; lifecycle reconcilia. Proxies de apoio caem em 18/18 pares; gols 7,17/jogo no candidato."
-    },
-    {
       "id": "W275",
       "wave": "W275",
       "publishedAt": "2026-10-29T00:31:23Z",
@@ -96,11 +87,20 @@
     {
       "id": "W278",
       "wave": "W278",
-      "publishedAt": "2026-10-29T02:18:15Z",
+      "publishedAt": "2026-10-29T02:27:51Z",
       "macro": "M2",
       "title": "Reduzir impedimentos sem perder progressão",
-      "status": "COORTE EM EXECUÇÃO — 12/18; parcial publicada 9/18",
-      "summary": "Corte 9/18: Pass penalty ON reduz offsides 398→15, mas chutes 125→162 e gols 54→67; controles W277 exatos 9/9. ZIP W278 parcial central publicado; resultados finais pendentes."
+      "status": "FINALIZADO — max85 reduz offsides mas aumenta chutes",
+      "summary": "18 pares; controle W277 exato 18/18. Offsides 797→23 (−43/jogo, 18/18); chutes 264→328 (+3,556); gols 119→129 (+0,556, IC cruza zero); apoio menor. Lifecycle 592/592; replay seed1741 exato, revisão humana pendente."
+    },
+    {
+      "id": "W279",
+      "wave": "W279",
+      "publishedAt": "2026-10-29T02:31:06Z",
+      "macro": "M2",
+      "title": "Dosar penalidade de impedimento",
+      "status": "COORTE 18 PARES EM EXECUÇÃO — piloto exato W277",
+      "summary": "Piloto seed1732: Pass OFF reproduziu W277 Move ON; observer neutro, input/assemblies iguais. Pass maximum42,5 marcou 18 vs20 chutes e11 vs10 gols neste único seed. Coorte completa iniciada."
     }
   ],
   "macros": [
@@ -1065,13 +1065,13 @@
   "footballQuality": {
     "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
     "baseline": "W274 baseline Move+Pass OFF: 18 jogos COR×PAL, seeds 1732–1749, assemblies W214.",
-    "candidate": "W277 Move ON isolado/Pass modifier OFF vs W274 baseline Move OFF; 18 pares completos em COR×PAL, seeds 1732–1749, assemblies W214.",
-    "improved": "Terço 324→1.561 (+68,722/jogo; IC95% [+63,378;+74,067], 18/18); área 45→416 (+20,611; IC [+18,109;+23,113]).",
-    "worsened": "Chutes 15→264 (+13,833/jogo; IC [+11,764;+15,903]); gols 8→119 (+6,167; IC [+5,019;+7,314]); offsides 213→797 (+32,444/jogo; IC [+29,763;+35,126]). Apoio próximo −1,322 e à frente −2,088, 18/18; 6,61 gols/jogo candidato.",
+    "candidate": "W278: OffsideAttacking.Pass OFF vs ON (maximum 85), com VerticalAttacking.Move ON fixo, 18 pares COR×PAL, assemblies W214.",
+    "improved": "OffsideOffenceEvent 797→23 (−43/jogo; IC95% [−45,339;−40,661], 18/18); terço 1.561→1.713 (+8,444; IC [+2,836;+14,053]).",
+    "worsened": "ShotEvent 264→328 (+3,556/jogo; IC [+0,890;+6,221], 13/18); apoio próximo −0,062 [−0,094;−0,029] e à frente −0,085 [−0,119;−0,050]. Gols 119→129 (+0,556; IC [−1,047;+2,158], inconclusivo); média candidata 7,17/jogo.",
     "shotsGoals": "ShotEvent 15→1 (−0,778/jogo; IC95% [−1,332;−0,224]); gols 8→0 (−0,444/jogo; IC [−0,795;−0,094]). Lifecycle 15/15 e 1/1 reconciliados.",
-    "lastIntegrated": "W277 mostra que Move ON isolado excede o volume funcional: progressão aumenta, suporte cai e offsides sobem. Não aprovado; nenhum default alterado.",
-    "mainBlocker": "Excesso de ataques diretos e infrações de impedimento com Move ON, junto a queda uniforme do apoio próximo e à frente. W278 isola penalidade contextual do passe para mitigar offsides sem apagar progressão.",
-    "replay": "Replays completos W274 seed1732, W275 seed1744, W276 seed1748 e W277 seed1746 ligados às coortes e viewers auditados; julgamento humano pendente."
+    "lastIntegrated": "W278 confirma redução causal de offsides com maximum 85 e aumento de chutes; suporte cai. Max85 rejeitado, nenhum default alterado.",
+    "mainBlocker": "Excesso de finalizações e baixa rede de apoio mesmo após remover grande parte dos offsides. W279 testa dose moderada 42,5 para ver se mantém disciplina sem aumentar volume de chances.",
+    "replay": "Replays W274 seed1732, W275 seed1744, W276 seed1748, W277 seed1746 e W278 seed1741 ligados às coortes e viewers auditados; julgamento humano pendente."
   },
   "diary": [
     {
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W274",
-      "wave": "W274",
-      "publishedAt": "2026-10-28T23:51:55Z",
-      "macro": "M2",
-      "title": "Validação cruzada Move+Pass em COR×PAL",
-      "status": "CONCLUÍDO TECNICAMENTE — progressão transferida; apoio e plausibilidade de gols pendentes.",
-      "summary": "18 pares COR×PAL: terço 324→1.713, área 45→473, ticks sem possuidor 50.322→28.022. ShotEvent 15→328 e gols 8→129; lifecycle reconcilia. Proxies de apoio caem em 18/18 pares; gols 7,17/jogo no candidato."
-    },
-    {
       "id": "W275",
       "wave": "W275",
       "publishedAt": "2026-10-29T00:31:23Z",
@@ -1149,11 +1140,20 @@
     {
       "id": "W278",
       "wave": "W278",
-      "publishedAt": "2026-10-29T02:18:15Z",
+      "publishedAt": "2026-10-29T02:27:51Z",
       "macro": "M2",
       "title": "Reduzir impedimentos sem perder progressão",
-      "status": "COORTE EM EXECUÇÃO — 12/18; parcial publicada 9/18",
-      "summary": "Corte 9/18: Pass penalty ON reduz offsides 398→15, mas chutes 125→162 e gols 54→67; controles W277 exatos 9/9. ZIP W278 parcial central publicado; resultados finais pendentes."
+      "status": "FINALIZADO — max85 reduz offsides mas aumenta chutes",
+      "summary": "18 pares; controle W277 exato 18/18. Offsides 797→23 (−43/jogo, 18/18); chutes 264→328 (+3,556); gols 119→129 (+0,556, IC cruza zero); apoio menor. Lifecycle 592/592; replay seed1741 exato, revisão humana pendente."
+    },
+    {
+      "id": "W279",
+      "wave": "W279",
+      "publishedAt": "2026-10-29T02:31:06Z",
+      "macro": "M2",
+      "title": "Dosar penalidade de impedimento",
+      "status": "COORTE 18 PARES EM EXECUÇÃO — piloto exato W277",
+      "summary": "Piloto seed1732: Pass OFF reproduziu W277 Move ON; observer neutro, input/assemblies iguais. Pass maximum42,5 marcou 18 vs20 chutes e11 vs10 gols neste único seed. Coorte completa iniciada."
     },
     {
       "wave": "W66",
@@ -3436,6 +3436,22 @@
     {
       "id": "CP-W278-INTERIM",
       "title": "W278 parcial 9/18 — menos offsides, mais chutes e gols"
+    },
+    {
+      "id": "CP-W278-FINAL",
+      "title": "W278 final — menos impedimentos, mais chutes"
+    },
+    {
+      "id": "CP-W278-REPLAY",
+      "title": "W278 replay seed1741 — avaliação humana"
+    },
+    {
+      "id": "CP-W279-PREFLIGHT",
+      "title": "W279 preflight — penalidade de impedimento em dose moderada"
+    },
+    {
+      "id": "CP-W279-PILOT",
+      "title": "W279 piloto — controle exato e dose 42,5"
     }
   ]
 }
