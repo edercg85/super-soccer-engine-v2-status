@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-227",
-  "updatedAt": "2026-10-29T05:09:17Z",
-  "cycle": "W285",
+  "version": "2026.10.28-portal-228",
+  "updatedAt": "2026-10-29T05:22:25Z",
+  "cycle": "W286",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W285 M2-02/M2-05: diagnóstico de scores Move/Pass em W284 replay seed1745. W284 mostrou colapso sob BCCM V2 ON e queda Move 53.563→96, enquanto Pass sobe 10.366→26.065. O harness compara pre-states idênticos antes de atribuir a causa; sem alteração de engine/defaults.",
+  "currentFocus": "Frente ativa M2 — W286: testar atenuação 25% do score contextual Move. W285 localizou seleção Move→Pass no mesmo estado. Piloto W286 passou controle e mudança prevista, com alerta de excesso de chutes em seed único; coorte de 18 pares em andamento, chutes/gols como salvaguardas.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W285",
-    "wave": "W285",
-    "publishedAt": "2026-10-29T05:09:17Z",
+    "id": "W286",
+    "wave": "W286",
+    "publishedAt": "2026-10-29T05:22:25Z",
     "macro": "M2",
-    "title": "Diagnosticar a seleção Move/Pass do portador",
-    "status": "IN_PROGRESS — instrumentação de scores em andamento",
-    "summary": "W284 isolou o desaparecimento de Move e excesso de Pass sob BCCM V2 ON. W285 compara os scores nos mesmos estados pré-ação do seed1745."
+    "title": "Atenuar o score contextual Move em 25%",
+    "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO; ALERTA DE CHUTES NO SEED ÚNICO",
+    "summary": "Cópia experimental V2 compilada isolada. Sem patch reproduz W214 exatamente. Com peso contextual 25%, tick2 seleciona Move como previsto; piloto seed1745 fez 35 chutes vs17 e 2 gols vs9."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W282",
-      "wave": "W282",
-      "publishedAt": "2026-10-29T04:30:00Z",
-      "macro": "M2",
-      "title": "Testar suporte com movimento vertical isolado",
-      "status": "FINALIZADO — suporte sobe, mas ataque colapsa em 18/18",
-      "summary": "SupportBlend com Move ON/Pass OFF: gols 119→7 (−6,222/jogo, 18/18), chutes 264→37 (−12,611), terço −39,833, área −20,944; apoio próximo +0,230 e à frente +0,112, ambos 18/18; passes tentados +75,167, posse +58,111. Controle W277 exato; lifecycle36/36; replay seed1748 auditado13/13."
-    },
-    {
       "id": "W283",
       "wave": "W283",
       "publishedAt": "2026-10-29T04:35:00Z",
@@ -99,8 +90,17 @@
       "publishedAt": "2026-10-29T05:09:17Z",
       "macro": "M2",
       "title": "Diagnosticar a seleção Move/Pass do portador",
-      "status": "IN_PROGRESS — instrumentação de scores em andamento",
-      "summary": "W284 isolou o desaparecimento de Move e excesso de Pass sob BCCM V2 ON. W285 compara os scores nos mesmos estados pré-ação do seed1745."
+      "status": "FINALIZADO — mesma pre-state confirmou Move→Pass por queda contextual",
+      "summary": "Seed1745: mesmo estado tick2, score base Move0,839048; OFF final0,886616 e Move escolhido; ON final0,348083 e Pass0,731514 escolhido. Primeira divergência de estado tick14; ambos reproduzem W284 hashes."
+    },
+    {
+      "id": "W286",
+      "wave": "W286",
+      "publishedAt": "2026-10-29T05:22:25Z",
+      "macro": "M2",
+      "title": "Atenuar o score contextual Move em 25%",
+      "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO; ALERTA DE CHUTES NO SEED ÚNICO",
+      "summary": "Cópia experimental V2 compilada isolada. Sem patch reproduz W214 exatamente. Com peso contextual 25%, tick2 seleciona Move como previsto; piloto seed1745 fez 35 chutes vs17 e 2 gols vs9."
     }
   ],
   "macros": [
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W282",
-      "wave": "W282",
-      "publishedAt": "2026-10-29T04:30:00Z",
-      "macro": "M2",
-      "title": "Testar suporte com movimento vertical isolado",
-      "status": "FINALIZADO — suporte sobe, mas ataque colapsa em 18/18",
-      "summary": "SupportBlend com Move ON/Pass OFF: gols 119→7 (−6,222/jogo, 18/18), chutes 264→37 (−12,611), terço −39,833, área −20,944; apoio próximo +0,230 e à frente +0,112, ambos 18/18; passes tentados +75,167, posse +58,111. Controle W277 exato; lifecycle36/36; replay seed1748 auditado13/13."
-    },
-    {
       "id": "W283",
       "wave": "W283",
       "publishedAt": "2026-10-29T04:35:00Z",
@@ -1152,8 +1143,17 @@
       "publishedAt": "2026-10-29T05:09:17Z",
       "macro": "M2",
       "title": "Diagnosticar a seleção Move/Pass do portador",
-      "status": "IN_PROGRESS — instrumentação de scores em andamento",
-      "summary": "W284 isolou o desaparecimento de Move e excesso de Pass sob BCCM V2 ON. W285 compara os scores nos mesmos estados pré-ação do seed1745."
+      "status": "FINALIZADO — mesma pre-state confirmou Move→Pass por queda contextual",
+      "summary": "Seed1745: mesmo estado tick2, score base Move0,839048; OFF final0,886616 e Move escolhido; ON final0,348083 e Pass0,731514 escolhido. Primeira divergência de estado tick14; ambos reproduzem W284 hashes."
+    },
+    {
+      "id": "W286",
+      "wave": "W286",
+      "publishedAt": "2026-10-29T05:22:25Z",
+      "macro": "M2",
+      "title": "Atenuar o score contextual Move em 25%",
+      "status": "PILOTO PASSOU — COORTE 18 PARES EM EXECUÇÃO; ALERTA DE CHUTES NO SEED ÚNICO",
+      "summary": "Cópia experimental V2 compilada isolada. Sem patch reproduz W214 exatamente. Com peso contextual 25%, tick2 seleciona Move como previsto; piloto seed1745 fez 35 chutes vs17 e 2 gols vs9."
     },
     {
       "wave": "W66",
@@ -3540,6 +3540,14 @@
     {
       "id": "CP-W285-PREFLIGHT",
       "title": "W285 — diagnóstico causal Move/Pass"
+    },
+    {
+      "id": "CP-W285-FINAL",
+      "title": "W285 — divergência causal Move/Pass"
+    },
+    {
+      "id": "CP-W286-PILOT",
+      "title": "W286 — piloto da atenuação 25%"
     }
   ]
 }
