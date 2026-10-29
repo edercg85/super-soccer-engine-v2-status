@@ -1080,7 +1080,7 @@
     "shotsGoals": "W2916,25%: gols108 vs119 controle (−0,611/jogo, IC95% [−2,080;+0,858]); chutes231 vs264. Lifecycle54/54.",
     "lastIntegrated": "W294: 36 partidas; controle exato18/18; progressão por passe completo +0,00885/seed (IC95% [+0,00718;+0,01053]), superior18/18. Tentativas de passe +169,56 e ticks sem posse +446,44 por jogo; episódios na área -4,17/jogo e apoio à frente -0,222/observação. Não promover.",
     "mainBlocker": "W294 encontrou progresso condicional maior, mas o bônus VerticalAttacking.Pass também elevou a frequência de passes/no-possession e reduziu apoio à frente e entradas na área. W295 testa esse flag com VerticalAttacking.Move OFF para medir interação e buscar progressão sem repetir esses custos.",
-    "replay": "W294 seed1732 HTML autocontido SHA-256 ced09a364732da99bd3b89f446f675ee2af5e6d8d27eeb46196e3660e91bd9ad; viewer auditado13/13; replay pareado com a coorte. Revisão humana pendente. W295 produzirá replay após piloto/coorte."
+    "replay": "W294 seed1732 HTML autocontido; viewer auditado13/13; replay pareado com a coorte. Revisão humana pendente. W295 produzirá replay após piloto/coorte."
   },
   "diary": [
     {
