@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-221",
-  "updatedAt": "2026-10-29T04:10:00Z",
-  "cycle": "W282",
+  "version": "2026.10.28-portal-222",
+  "updatedAt": "2026-10-29T04:35:00Z",
+  "cycle": "W283",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W282 coorte: DynamicTeamShapeMode Off vs SupportBlendConservative, Move ON / Pass OFF fixos. W275/W276 cobriram Move+Pass ON e OFF; esta é a interação ausente. A dose de impedimento foi rejeitada por perda persistente de apoio e circulação.",
+  "currentFocus": "Frente ativa M2 — W283 coorte: OffsideAttacking.Receive ON vs OFF; Move ON, Pass OFF, shape Off fixos. W282 confirmou SupportBlend melhora apoio mas colapsa finalização; série de penalty doses rejeitada. Revisão humana dos replays pendente.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W282",
-    "wave": "W282",
-    "publishedAt": "2026-10-29T04:10:00Z",
+    "id": "W283",
+    "wave": "W283",
+    "publishedAt": "2026-10-29T04:35:00Z",
     "macro": "M2",
-    "title": "Testar suporte com movimento vertical isolado",
-    "status": "PILOTO EXATO — coorte 18 pares em execução",
-    "summary": "W282 compara somente shape Off vs SupportBlendConservative, com Move ON e Pass OFF. Controle W277 seed1732 exato; observer neutro."
+    "title": "Medir o custo de impedimento no recebimento",
+    "status": "PILOTO EXATO — coorte 18 pares ativa",
+    "summary": "Receive ON reproduz W277 seed1732; observer neutro em ambos os braços e input idêntico. Único fator Receive ON/OFF."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W278",
-      "wave": "W278",
-      "publishedAt": "2026-10-29T02:27:51Z",
-      "macro": "M2",
-      "title": "Reduzir impedimentos sem perder progressão",
-      "status": "FINALIZADO — max85 reduz offsides mas aumenta chutes",
-      "summary": "18 pares; controle W277 exato 18/18. Offsides 797→23 (−43/jogo, 18/18); chutes 264→328 (+3,556); gols 119→129 (+0,556, IC cruza zero); apoio menor. Lifecycle 592/592; replay seed1741 exato, revisão humana pendente."
-    },
-    {
       "id": "W279",
       "wave": "W279",
       "publishedAt": "2026-10-29T02:58:00Z",
@@ -96,11 +87,20 @@
     {
       "id": "W282",
       "wave": "W282",
-      "publishedAt": "2026-10-29T04:10:00Z",
+      "publishedAt": "2026-10-29T04:30:00Z",
       "macro": "M2",
       "title": "Testar suporte com movimento vertical isolado",
-      "status": "PILOTO EXATO — coorte 18 pares em execução",
-      "summary": "W282 compara somente shape Off vs SupportBlendConservative, com Move ON e Pass OFF. Controle W277 seed1732 exato; observer neutro."
+      "status": "FINALIZADO — suporte sobe, mas ataque colapsa em 18/18",
+      "summary": "SupportBlend com Move ON/Pass OFF: gols 119→7 (−6,222/jogo, 18/18), chutes 264→37 (−12,611), terço −39,833, área −20,944; apoio próximo +0,230 e à frente +0,112, ambos 18/18; passes tentados +75,167, posse +58,111. Controle W277 exato; lifecycle36/36; replay seed1748 auditado13/13."
+    },
+    {
+      "id": "W283",
+      "wave": "W283",
+      "publishedAt": "2026-10-29T04:35:00Z",
+      "macro": "M2",
+      "title": "Medir o custo de impedimento no recebimento",
+      "status": "PILOTO EXATO — coorte 18 pares ativa",
+      "summary": "Receive ON reproduz W277 seed1732; observer neutro em ambos os braços e input idêntico. Único fator Receive ON/OFF."
     }
   ],
   "macros": [
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W278",
-      "wave": "W278",
-      "publishedAt": "2026-10-29T02:27:51Z",
-      "macro": "M2",
-      "title": "Reduzir impedimentos sem perder progressão",
-      "status": "FINALIZADO — max85 reduz offsides mas aumenta chutes",
-      "summary": "18 pares; controle W277 exato 18/18. Offsides 797→23 (−43/jogo, 18/18); chutes 264→328 (+3,556); gols 119→129 (+0,556, IC cruza zero); apoio menor. Lifecycle 592/592; replay seed1741 exato, revisão humana pendente."
-    },
-    {
       "id": "W279",
       "wave": "W279",
       "publishedAt": "2026-10-29T02:58:00Z",
@@ -1149,11 +1140,20 @@
     {
       "id": "W282",
       "wave": "W282",
-      "publishedAt": "2026-10-29T04:10:00Z",
+      "publishedAt": "2026-10-29T04:30:00Z",
       "macro": "M2",
       "title": "Testar suporte com movimento vertical isolado",
-      "status": "PILOTO EXATO — coorte 18 pares em execução",
-      "summary": "W282 compara somente shape Off vs SupportBlendConservative, com Move ON e Pass OFF. Controle W277 seed1732 exato; observer neutro."
+      "status": "FINALIZADO — suporte sobe, mas ataque colapsa em 18/18",
+      "summary": "SupportBlend com Move ON/Pass OFF: gols 119→7 (−6,222/jogo, 18/18), chutes 264→37 (−12,611), terço −39,833, área −20,944; apoio próximo +0,230 e à frente +0,112, ambos 18/18; passes tentados +75,167, posse +58,111. Controle W277 exato; lifecycle36/36; replay seed1748 auditado13/13."
+    },
+    {
+      "id": "W283",
+      "wave": "W283",
+      "publishedAt": "2026-10-29T04:35:00Z",
+      "macro": "M2",
+      "title": "Medir o custo de impedimento no recebimento",
+      "status": "PILOTO EXATO — coorte 18 pares ativa",
+      "summary": "Receive ON reproduz W277 seed1732; observer neutro em ambos os braços e input idêntico. Único fator Receive ON/OFF."
     },
     {
       "wave": "W66",
@@ -3504,6 +3504,22 @@
     {
       "id": "CP-W282-PILOT",
       "title": "W282 piloto — controle exato, coorte ativa"
+    },
+    {
+      "id": "CP-W282-FINAL",
+      "title": "W282 resultado final — SupportBlend com Move ON / Pass OFF"
+    },
+    {
+      "id": "CP-W282-REPLAY",
+      "title": "W282 replay seed1748 — revisão humana"
+    },
+    {
+      "id": "CP-W283-PREFLIGHT",
+      "title": "W283 preflight — Receive ON/OFF"
+    },
+    {
+      "id": "CP-W283-PILOT",
+      "title": "W283 piloto — controle e observer neutros"
     }
   ]
 }
