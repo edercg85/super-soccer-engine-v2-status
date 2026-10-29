@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-203",
-  "updatedAt": "2026-10-29T01:01:24Z",
+  "version": "2026.10.28-portal-204",
+  "updatedAt": "2026-10-29T01:04:36Z",
   "cycle": "W276",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W276 completa o fatorial: DynamicTeamShape Off vs SupportBlendConservative sobre Move+Pass OFF. Piloto deve reproduzir W274 baseline antes da coorte. W275 e W274 replays estão prontos; avaliação humana pendente.",
+  "currentFocus": "Frente ativa M2 — W276: piloto seed1732 reproduziu W274 baseline exatamente por fingerprints, input e assemblies. Coorte de 18 pares começou com Move+Pass OFF; variar somente DynamicTeamShapeMode. Defaults OFF.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -17,8 +17,8 @@
     "publishedAt": "2026-10-29T01:01:24Z",
     "macro": "M2",
     "title": "Interação entre forma dinâmica e pacote progressivo",
-    "status": "PREFLIGHT CONCLUÍDO — piloto de identidade do controle em andamento; defaults OFF.",
-    "summary": "Célula fatorial faltante: SupportBlendConservative vs Off com Move+Pass OFF. Continuar para 18 pares somente se o controle reproduzir W274 baseline por fingerprints."
+    "status": "EM EXECUÇÃO — piloto de identidade PASS; coorte 18 pares em andamento, defaults OFF.",
+    "summary": "W276 completa o fatorial faltante: SupportBlendConservative vs Off com Receive ON e Move+Pass OFF. Piloto seed1732 coincidiu com W274 baseline em input, assemblies e fingerprints completos; coorte de 18 pares começou."
   },
   "recentCycles": [
     {
@@ -99,8 +99,8 @@
       "publishedAt": "2026-10-29T01:01:24Z",
       "macro": "M2",
       "title": "Interação entre forma dinâmica e pacote progressivo",
-      "status": "PREFLIGHT CONCLUÍDO — piloto de identidade do controle em andamento; defaults OFF.",
-      "summary": "Célula fatorial faltante: SupportBlendConservative vs Off com Move+Pass OFF. Continuar para 18 pares somente se o controle reproduzir W274 baseline por fingerprints."
+      "status": "EM EXECUÇÃO — piloto de identidade PASS; coorte 18 pares em andamento, defaults OFF.",
+      "summary": "W276 completa o fatorial faltante: SupportBlendConservative vs Off com Receive ON e Move+Pass OFF. Piloto seed1732 coincidiu com W274 baseline em input, assemblies e fingerprints completos; coorte de 18 pares começou."
     }
   ],
   "macros": [
@@ -1152,8 +1152,8 @@
       "publishedAt": "2026-10-29T01:01:24Z",
       "macro": "M2",
       "title": "Interação entre forma dinâmica e pacote progressivo",
-      "status": "PREFLIGHT CONCLUÍDO — piloto de identidade do controle em andamento; defaults OFF.",
-      "summary": "Célula fatorial faltante: SupportBlendConservative vs Off com Move+Pass OFF. Continuar para 18 pares somente se o controle reproduzir W274 baseline por fingerprints."
+      "status": "EM EXECUÇÃO — piloto de identidade PASS; coorte 18 pares em andamento, defaults OFF.",
+      "summary": "W276 completa o fatorial faltante: SupportBlendConservative vs Off com Receive ON e Move+Pass OFF. Piloto seed1732 coincidiu com W274 baseline em input, assemblies e fingerprints completos; coorte de 18 pares começou."
     },
     {
       "wave": "W66",
