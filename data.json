@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-241",
-  "updatedAt": "2026-10-29T09:41:50Z",
-  "cycle": "W294",
+  "version": "2026.10.28-portal-242",
+  "updatedAt": "2026-10-29T10:16:50Z",
+  "cycle": "W295",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W294 testa VerticalAttacking.Pass ON/OFF sobre W273, mantendo OffsideAttacking.Pass e VerticalAttacking.Move ON. A hipótese decorre de W293: o bônus vertical do passe, ainda OFF em W273, pode recuperar progressão dos passes completos. Coorte18 pares W214; controle reproduz W273; defaults permanecem OFF.",
+  "currentFocus": "M2 active — W295 isolates VerticalAttacking.Pass OFF/ON with VerticalAttacking.Move OFF in both arms. W294 showed a small consistent pass progression gain but excess circulation and reduced forward support/area access when Move was ON.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W294",
-    "wave": "W294",
-    "publishedAt": "2026-10-29T09:41:50Z",
+    "id": "W295",
+    "wave": "W295",
+    "publishedAt": "2026-10-29T10:16:50Z",
     "macro": "M2",
-    "title": "Testar prioridade de progressão no passe",
-    "status": "EM EXECUÇÃO — piloto e coorte18 pares pendentes",
-    "summary": "Hipótese: o bônus default-off VerticalAttacking.Pass aumenta progressão ao primeiro controle; mantém OffsideAttacking.Pass e VerticalAttacking.Move de W273 iguais nos braços."
+    "title": "Pass vertical sem movimento vertical do portador",
+    "status": "EM EXECUÇÃO — preflight pronto; default permanece OFF.",
+    "summary": "18 pares W214; OffsideAttacking.Receive/Pass ON constante; testa VerticalAttacking.Pass OFF/ON após W294 revelar ganho condicional com circulação excessiva e menor apoio/área."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W290",
-      "wave": "W290",
-      "publishedAt": "2026-10-29T07:55:00Z",
-      "macro": "M2",
-      "title": "Restringir contexto Move fora do terço ofensivo",
-      "status": "FINALIZADO — 12,5% FILTRADO REJEITADO; CIRCULAÇÃO E PROGRESSÃO AINDA REPROVADAS",
-      "summary": "54 jogos; controle0% exato W27718/18, global12,5% exato W28918/18; lifecycle54/54. Episódios na área +0,111/jogo vs controle; terço −13,500; ticks sem possuidor +747,778; passes +306,222. Replay seed1742 auditado13/13."
-    },
-    {
       "id": "W291",
       "wave": "W291",
       "publishedAt": "2026-10-29T09:00:46Z",
@@ -99,8 +90,17 @@
       "publishedAt": "2026-10-29T09:41:50Z",
       "macro": "M2",
       "title": "Testar prioridade de progressão no passe",
-      "status": "EM EXECUÇÃO — piloto e coorte18 pares pendentes",
-      "summary": "Hipótese: o bônus default-off VerticalAttacking.Pass aumenta progressão ao primeiro controle; mantém OffsideAttacking.Pass e VerticalAttacking.Move de W273 iguais nos braços."
+      "status": "FINALIZADO — ganho local de progressão; regressão em apoio à frente/área e aumento de circulação; default OFF.",
+      "summary": "36 jogos; controle W273 exato18/18; lifecycle passe24.182/24.182, chute36/36. Progressão condicional +0,00885 (IC95% [+0,00718;+0,01053]), maior18/18; passes +169,56/jogo, ticks sem posse +446,44, área -4,17, apoio à frente -0,222. Nenhuma promoção."
+    },
+    {
+      "id": "W295",
+      "wave": "W295",
+      "publishedAt": "2026-10-29T10:16:50Z",
+      "macro": "M2",
+      "title": "Pass vertical sem movimento vertical do portador",
+      "status": "EM EXECUÇÃO — preflight pronto; default permanece OFF.",
+      "summary": "18 pares W214; OffsideAttacking.Receive/Pass ON constante; testa VerticalAttacking.Pass OFF/ON após W294 revelar ganho condicional com circulação excessiva e menor apoio/área."
     }
   ],
   "macros": [
@@ -331,7 +331,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": true,
-      "activeNote": "FRENTE ATIVA — W289–W291 rejeitaram doses de Move contextual. W292 mostrou que 89–94% dos ticks sem possuidor ocorrem durante movimento+passe ativo, a2,56 ticks/tentativa. W293 ligou todos os41.692 lançamentos a terminais e mediu queda de progressão por conclusão18/18 nas doses BCCM. W294 testa somente VerticalAttacking.Pass sobre W273; nenhum default promovido. Revisão humana pendente.",
+      "activeNote": "FRENTE ATIVA — W294 encontrou +0,00885 de progressão por passe completo (18/18), mas também +169,56 passes/jogo, +446,44 ticks sem posse, -4,17 episódios na área e -0,222 de apoio à frente. W295 testa o bônus de passe com VerticalAttacking.Move OFF; nenhum default promovido. Revisão humana do replay pendente.",
       "items": [
         {
           "id": "M2-01",
@@ -1078,9 +1078,9 @@
     "improved": "W293 ligou41.692/41.692 tentativas a terminais sem ambiguidades; progressão média condicionada a passes completos:+0,05143 controle,+0,01411 6,25%,−0,01173 12,5%.",
     "worsened": "Doses BCCM6,25%/12,5% reduziram progressão por conclusão −0,03734/−0,06316 (18/18 seeds, IC pareado); Move contextual rejeitado.",
     "shotsGoals": "W2916,25%: gols108 vs119 controle (−0,611/jogo, IC95% [−2,080;+0,858]); chutes231 vs264. Lifecycle54/54.",
-    "lastIntegrated": "W291 é a última comparação de dose funcional integrada; W292 diagnóstico observacional em54 jogos. Nenhum candidato ganhou aceite global.",
-    "mainBlocker": "A progressão em passes completos caiu conforme BCCM contextual elevou volume. W294 testa bônus vertical de passe existente, isolado, default-off.",
-    "replay": "W273 e W291 replays de 90min disponíveis com hashes/manifestos; revisão humana pendente. W294 produzirá replay seed1732 apenas após piloto exato."
+    "lastIntegrated": "W294: 36 partidas; controle exato18/18; progressão por passe completo +0,00885/seed (IC95% [+0,00718;+0,01053]), superior18/18. Tentativas de passe +169,56 e ticks sem posse +446,44 por jogo; episódios na área -4,17/jogo e apoio à frente -0,222/observação. Não promover.",
+    "mainBlocker": "W294 encontrou progresso condicional maior, mas o bônus VerticalAttacking.Pass também elevou a frequência de passes/no-possession e reduziu apoio à frente e entradas na área. W295 testa esse flag com VerticalAttacking.Move OFF para medir interação e buscar progressão sem repetir esses custos.",
+    "replay": "W294 seed1732 HTML autocontido SHA-256 ced09a364732da99bd3b89f446f675ee2af5e6d8d27eeb46196e3660e91bd9ad; viewer auditado13/13; replay pareado com a coorte. Revisão humana pendente. W295 produzirá replay após piloto/coorte."
   },
   "diary": [
     {
@@ -1120,15 +1120,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W290",
-      "wave": "W290",
-      "publishedAt": "2026-10-29T07:55:00Z",
-      "macro": "M2",
-      "title": "Restringir contexto Move fora do terço ofensivo",
-      "status": "FINALIZADO — 12,5% FILTRADO REJEITADO; CIRCULAÇÃO E PROGRESSÃO AINDA REPROVADAS",
-      "summary": "54 jogos; controle0% exato W27718/18, global12,5% exato W28918/18; lifecycle54/54. Episódios na área +0,111/jogo vs controle; terço −13,500; ticks sem possuidor +747,778; passes +306,222. Replay seed1742 auditado13/13."
-    },
-    {
       "id": "W291",
       "wave": "W291",
       "publishedAt": "2026-10-29T09:00:46Z",
@@ -1161,8 +1152,17 @@
       "publishedAt": "2026-10-29T09:41:50Z",
       "macro": "M2",
       "title": "Testar prioridade de progressão no passe",
-      "status": "EM EXECUÇÃO — piloto e coorte18 pares pendentes",
-      "summary": "Hipótese: o bônus default-off VerticalAttacking.Pass aumenta progressão ao primeiro controle; mantém OffsideAttacking.Pass e VerticalAttacking.Move de W273 iguais nos braços."
+      "status": "FINALIZADO — ganho local de progressão; regressão em apoio à frente/área e aumento de circulação; default OFF.",
+      "summary": "36 jogos; controle W273 exato18/18; lifecycle passe24.182/24.182, chute36/36. Progressão condicional +0,00885 (IC95% [+0,00718;+0,01053]), maior18/18; passes +169,56/jogo, ticks sem posse +446,44, área -4,17, apoio à frente -0,222. Nenhuma promoção."
+    },
+    {
+      "id": "W295",
+      "wave": "W295",
+      "publishedAt": "2026-10-29T10:16:50Z",
+      "macro": "M2",
+      "title": "Pass vertical sem movimento vertical do portador",
+      "status": "EM EXECUÇÃO — preflight pronto; default permanece OFF.",
+      "summary": "18 pares W214; OffsideAttacking.Receive/Pass ON constante; testa VerticalAttacking.Pass OFF/ON após W294 revelar ganho condicional com circulação excessiva e menor apoio/área."
     },
     {
       "wave": "W66",
@@ -3628,7 +3628,11 @@
     },
     {
       "id": "CP-PORTAL-32",
-      "title": "W292/W293 finalizados; W294 ativo na M2"
+      "title": "W292/W293 finalizados; W294 concluído"
+    },
+    {
+      "id": "CP-PORTAL-33",
+      "title": "W294 finalizado; W295 ativo na M2"
     }
   ]
 }
