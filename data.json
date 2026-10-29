@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-204",
-  "updatedAt": "2026-10-29T01:04:36Z",
+  "version": "2026.10.28-portal-205",
+  "updatedAt": "2026-10-29T01:14:55Z",
   "cycle": "W276",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W276: piloto seed1732 reproduziu W274 baseline exatamente por fingerprints, input e assemblies. Coorte de 18 pares começou com Move+Pass OFF; variar somente DynamicTeamShapeMode. Defaults OFF.",
+  "currentFocus": "Frente ativa M2 — W276 9/18 pares. SupportBlend com Move+Pass OFF melhora apoio próximo na parcial, mas reduz terço/área; gols e chutes ainda inconclusivos. Coorte continua; defaults OFF.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -17,8 +17,8 @@
     "publishedAt": "2026-10-29T01:01:24Z",
     "macro": "M2",
     "title": "Interação entre forma dinâmica e pacote progressivo",
-    "status": "EM EXECUÇÃO — piloto de identidade PASS; coorte 18 pares em andamento, defaults OFF.",
-    "summary": "W276 completa o fatorial faltante: SupportBlendConservative vs Off com Receive ON e Move+Pass OFF. Piloto seed1732 coincidiu com W274 baseline em input, assemblies e fingerprints completos; coorte de 18 pares começou."
+    "status": "EM EXECUÇÃO — 9/18 pares; controle exato; parcial ainda inconclusiva em gols/chutes.",
+    "summary": "Parcial 9/18: com Move+Pass OFF, SupportBlend eleva apoio próximo +0,197 (9/9), enquanto terço −11 e área −2,333 episódios/jogo. Gols e chutes inconclusivos; controle Off coincide com W274 baseline em 9/9. Coorte continua."
   },
   "recentCycles": [
     {
@@ -99,8 +99,8 @@
       "publishedAt": "2026-10-29T01:01:24Z",
       "macro": "M2",
       "title": "Interação entre forma dinâmica e pacote progressivo",
-      "status": "EM EXECUÇÃO — piloto de identidade PASS; coorte 18 pares em andamento, defaults OFF.",
-      "summary": "W276 completa o fatorial faltante: SupportBlendConservative vs Off com Receive ON e Move+Pass OFF. Piloto seed1732 coincidiu com W274 baseline em input, assemblies e fingerprints completos; coorte de 18 pares começou."
+      "status": "EM EXECUÇÃO — 9/18 pares; controle exato; parcial ainda inconclusiva em gols/chutes.",
+      "summary": "Parcial 9/18: com Move+Pass OFF, SupportBlend eleva apoio próximo +0,197 (9/9), enquanto terço −11 e área −2,333 episódios/jogo. Gols e chutes inconclusivos; controle Off coincide com W274 baseline em 9/9. Coorte continua."
     }
   ],
   "macros": [
@@ -1152,8 +1152,8 @@
       "publishedAt": "2026-10-29T01:01:24Z",
       "macro": "M2",
       "title": "Interação entre forma dinâmica e pacote progressivo",
-      "status": "EM EXECUÇÃO — piloto de identidade PASS; coorte 18 pares em andamento, defaults OFF.",
-      "summary": "W276 completa o fatorial faltante: SupportBlendConservative vs Off com Receive ON e Move+Pass OFF. Piloto seed1732 coincidiu com W274 baseline em input, assemblies e fingerprints completos; coorte de 18 pares começou."
+      "status": "EM EXECUÇÃO — 9/18 pares; controle exato; parcial ainda inconclusiva em gols/chutes.",
+      "summary": "Parcial 9/18: com Move+Pass OFF, SupportBlend eleva apoio próximo +0,197 (9/9), enquanto terço −11 e área −2,333 episódios/jogo. Gols e chutes inconclusivos; controle Off coincide com W274 baseline em 9/9. Coorte continua."
     },
     {
       "wave": "W66",
@@ -3404,6 +3404,10 @@
     {
       "id": "CP-W276-PREFLIGHT",
       "title": "W276 preflight — célula fatorial da forma sem Move+Pass"
+    },
+    {
+      "id": "CP-W276-INTERIM",
+      "title": "W276 parcial — apoio próximo sobe; território recua"
     }
   ]
 }
