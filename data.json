@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-207",
-  "updatedAt": "2026-10-29T02:00:00Z",
+  "version": "2026.10.28-portal-208",
+  "updatedAt": "2026-10-29T01:36:04Z",
   "cycle": "W277",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M2 — W277 coorte completa em execução, 18 pares Move ON vs OFF, Pass OFF e shape Off. Piloto seed1732 reproduziu W274 baseline em estado final, eventos, RNG, score e 5400 ticks. SupportBlendConservative não foi aceito; defaults OFF.",
