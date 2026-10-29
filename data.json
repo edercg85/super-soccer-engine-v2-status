@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-236",
-  "updatedAt": "2026-10-29T07:45:02Z",
-  "cycle": "W290",
+  "version": "2026.10.28-portal-237",
+  "updatedAt": "2026-10-29T08:25:07Z",
+  "cycle": "W291",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W290 M2-04: restringir o contexto Move de 12,5% a portadores fora do terço ofensivo para preservar progressão sem reduzir entradas na área. Controles W277/W289 reproduzidos exatamente no piloto; coorte 18×3 em execução.",
+  "currentFocus": "Frente ativa M2 — W291 M2-04: medir peso contextual Move de 6,25% somente fora do terço ofensivo, entre os controles exatos 0% (W277) e 12,5% filtrado (W290), para reduzir circulação e preservar progressão/área. Coorte 18×3 em execução.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W290",
-    "wave": "W290",
-    "publishedAt": "2026-10-29T07:45:02Z",
+    "id": "W291",
+    "wave": "W291",
+    "publishedAt": "2026-10-29T08:25:07Z",
     "macro": "M2",
-    "title": "Restringir contexto Move fora do terço ofensivo",
-    "status": "EM EXECUÇÃO — coorte de 18 partidas pareadas × 3 braços",
-    "summary": "W289 global 12,5% foi rejeitada por queda de entradas na área e circulação excessiva. W290 compara controle0%, controle12,5% global e 12,5% somente fora do terço ofensivo. Piloto1742 reproduziu exatamente os controles W277/W289; coorte observada em andamento."
+    "title": "Medir dose Move 6,25% fora do terço ofensivo",
+    "status": "EM EXECUÇÃO — COORTE18×3 EM ANDAMENTO",
+    "summary": "W290 rejeitou12,5% filtrado: episódios de área no nível do controle, mas gols/progressão no terço não melhoram e circulação continua alta. W291 mede6,25% entre0% W277 e12,5% filtrado W290; piloto1742 reproduziu ambos os controles exatamente."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W286",
-      "wave": "W286",
-      "publishedAt": "2026-10-29T05:22:25Z",
-      "macro": "M2",
-      "title": "Atenuar o score contextual Move em 25%",
-      "status": "FINALIZADO — BCCM25 REJEITADO: VOLUME DE CHUTES SOBE, ÁREA/GOLS NÃO",
-      "summary": "18 pares; controle18/18 e lifecycle36/36. Gols119→123, inconclusivo; chutes264→613 (+19,389/jogo,18/18), fora da área +29/jogo; terço1561→1057 e área416→102; replay1738 auditado13/13."
-    },
-    {
       "id": "W287",
       "wave": "W287",
       "publishedAt": "2026-10-29T06:17:00Z",
@@ -96,11 +87,20 @@
     {
       "id": "W290",
       "wave": "W290",
-      "publishedAt": "2026-10-29T07:45:02Z",
+      "publishedAt": "2026-10-29T07:55:00Z",
       "macro": "M2",
       "title": "Restringir contexto Move fora do terço ofensivo",
-      "status": "EM EXECUÇÃO — coorte de 18 partidas pareadas × 3 braços",
-      "summary": "W289 global 12,5% foi rejeitada por queda de entradas na área e circulação excessiva. W290 compara controle0%, controle12,5% global e 12,5% somente fora do terço ofensivo. Piloto1742 reproduziu exatamente os controles W277/W289; coorte observada em andamento."
+      "status": "FINALIZADO — 12,5% FILTRADO REJEITADO; CIRCULAÇÃO E PROGRESSÃO AINDA REPROVADAS",
+      "summary": "54 jogos; controle0% exato W27718/18, global12,5% exato W28918/18; lifecycle54/54. Episódios na área +0,111/jogo vs controle; terço −13,500; ticks sem possuidor +747,778; passes +306,222. Replay seed1742 auditado13/13."
+    },
+    {
+      "id": "W291",
+      "wave": "W291",
+      "publishedAt": "2026-10-29T08:25:07Z",
+      "macro": "M2",
+      "title": "Medir dose Move 6,25% fora do terço ofensivo",
+      "status": "EM EXECUÇÃO — COORTE18×3 EM ANDAMENTO",
+      "summary": "W290 rejeitou12,5% filtrado: episódios de área no nível do controle, mas gols/progressão no terço não melhoram e circulação continua alta. W291 mede6,25% entre0% W277 e12,5% filtrado W290; piloto1742 reproduziu ambos os controles exatamente."
     }
   ],
   "macros": [
@@ -1065,13 +1065,13 @@
   "footballQuality": {
     "satisfaction": "Nenhuma configuração tem aceite funcional de qualidade até o momento.",
     "baseline": "W274 baseline Move+Pass OFF: 18 jogos COR×PAL, seeds 1732–1749, assemblies W214.",
-    "candidate": "W278: OffsideAttacking.Pass OFF vs ON (maximum 85), com VerticalAttacking.Move ON fixo, 18 pares COR×PAL, assemblies W214.",
-    "improved": "OffsideOffenceEvent 797→23 (−43/jogo; IC95% [−45,339;−40,661], 18/18); terço 1.561→1.713 (+8,444; IC [+2,836;+14,053]).",
-    "worsened": "ShotEvent 264→328 (+3,556/jogo; IC [+0,890;+6,221], 13/18); apoio próximo −0,062 [−0,094;−0,029] e à frente −0,085 [−0,119;−0,050]. Gols 119→129 (+0,556; IC [−1,047;+2,158], inconclusivo); média candidata 7,17/jogo.",
-    "shotsGoals": "ShotEvent 15→1 (−0,778/jogo; IC95% [−1,332;−0,224]); gols 8→0 (−0,444/jogo; IC [−0,795;−0,094]). Lifecycle 15/15 e 1/1 reconciliados.",
-    "lastIntegrated": "W278 confirma redução causal de offsides com maximum 85 e aumento de chutes; suporte cai. Max85 rejeitado, nenhum default alterado.",
-    "mainBlocker": "Excesso de finalizações e baixa rede de apoio mesmo após remover grande parte dos offsides. W279 testa dose moderada 42,5 para ver se mantém disciplina sem aumentar volume de chances.",
-    "replay": "Replays W274 seed1732, W275 seed1744, W276 seed1748, W277 seed1746 e W278 seed1741 ligados às coortes e viewers auditados; julgamento humano pendente."
+    "candidate": "W291: dose contextual Move 6,25% somente fora do terço ofensivo, comparada a 0% e 12,5% filtrado em 18 pares completos; execução ativa, sem alteração de default.",
+    "improved": "W290: episódios na área ficam no nível do controle (+0,111/jogo, IC95% inclui zero); contra W289 global, filtro espacial recupera +5,278 episódios/jogo na área.",
+    "worsened": "W290: gols −0,778/jogo vs controle (inconclusivo); episódios no terço −13,500 [−19,103;−7,897]; ticks sem possuidor +747,778 [718,067;777,488]; passes tentados +306,222 [295,466;316,978].",
+    "shotsGoals": "W290: controle 119 gols/264 chutes; filtro12,5% fora do terço 105 gols/265 chutes. Gols −0,778/jogo, IC95% [−2,514;+0,958]; lifecycle54/54.",
+    "lastIntegrated": "W290 confirma que a restrição espacial recupera frequência de episódios na área frente ao contexto global, mas não restaura progressão no terço e mantém circulação muito acima do controle. Nenhuma dose aceita.",
+    "mainBlocker": "Circulação excessiva sem possuidor e progressão insuficiente até o terço ofensivo após o contexto Move; W291 mede metade da dose filtrada.",
+    "replay": "Replay W290 seed1742 controle vs filtro12,5%: hashes coincidem com a coorte, viewer auditado13/13. Revisão humana pendente; W291 produzirá novo replay após fechamento."
   },
   "diary": [
     {
@@ -1111,15 +1111,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W286",
-      "wave": "W286",
-      "publishedAt": "2026-10-29T05:22:25Z",
-      "macro": "M2",
-      "title": "Atenuar o score contextual Move em 25%",
-      "status": "FINALIZADO — BCCM25 REJEITADO: VOLUME DE CHUTES SOBE, ÁREA/GOLS NÃO",
-      "summary": "18 pares; controle18/18 e lifecycle36/36. Gols119→123, inconclusivo; chutes264→613 (+19,389/jogo,18/18), fora da área +29/jogo; terço1561→1057 e área416→102; replay1738 auditado13/13."
-    },
-    {
       "id": "W287",
       "wave": "W287",
       "publishedAt": "2026-10-29T06:17:00Z",
@@ -1149,11 +1140,20 @@
     {
       "id": "W290",
       "wave": "W290",
-      "publishedAt": "2026-10-29T07:45:02Z",
+      "publishedAt": "2026-10-29T07:55:00Z",
       "macro": "M2",
       "title": "Restringir contexto Move fora do terço ofensivo",
-      "status": "EM EXECUÇÃO — coorte de 18 partidas pareadas × 3 braços",
-      "summary": "W289 global 12,5% foi rejeitada por queda de entradas na área e circulação excessiva. W290 compara controle0%, controle12,5% global e 12,5% somente fora do terço ofensivo. Piloto1742 reproduziu exatamente os controles W277/W289; coorte observada em andamento."
+      "status": "FINALIZADO — 12,5% FILTRADO REJEITADO; CIRCULAÇÃO E PROGRESSÃO AINDA REPROVADAS",
+      "summary": "54 jogos; controle0% exato W27718/18, global12,5% exato W28918/18; lifecycle54/54. Episódios na área +0,111/jogo vs controle; terço −13,500; ticks sem possuidor +747,778; passes +306,222. Replay seed1742 auditado13/13."
+    },
+    {
+      "id": "W291",
+      "wave": "W291",
+      "publishedAt": "2026-10-29T08:25:07Z",
+      "macro": "M2",
+      "title": "Medir dose Move 6,25% fora do terço ofensivo",
+      "status": "EM EXECUÇÃO — COORTE18×3 EM ANDAMENTO",
+      "summary": "W290 rejeitou12,5% filtrado: episódios de área no nível do controle, mas gols/progressão no terço não melhoram e circulação continua alta. W291 mede6,25% entre0% W277 e12,5% filtrado W290; piloto1742 reproduziu ambos os controles exatamente."
     },
     {
       "wave": "W66",
@@ -3596,6 +3596,14 @@
     {
       "id": "CP-W290-PREFLIGHT",
       "title": "W290 — contexto Move restrito fora do terço ofensivo"
+    },
+    {
+      "id": "CP-W290-FINAL",
+      "title": "W290 — filtro12,5% rejeitado; circulação/progressão permanecem gargalo"
+    },
+    {
+      "id": "CP-W291-PREFLIGHT",
+      "title": "W291 — dose contextual Move6,25% fora do terço"
     }
   ]
 }
