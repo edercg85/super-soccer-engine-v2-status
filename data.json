@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-200",
-  "updatedAt": "2026-10-29T00:36:36Z",
+  "version": "2026.10.28-portal-201",
+  "updatedAt": "2026-10-29T00:40:00Z",
   "cycle": "W275",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M2 — progressão e criação. W275 compara forma dinâmica SupportBlendConservative contra Off, mantendo Move+Pass ON, no mesmo input COR×PAL e seeds 1732–1749. Controle precisa reproduzir W274 candidato em fingerprints completos por seed. Revisão humana dos replays completos segue pendente.",
