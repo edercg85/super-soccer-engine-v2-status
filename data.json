@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-242",
-  "updatedAt": "2026-10-29T10:16:50Z",
-  "cycle": "W295",
+  "version": "2026.10.28-portal-243",
+  "updatedAt": "2026-10-29T10:43:59Z",
+  "cycle": "W296",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "M2 active — W295 isolates VerticalAttacking.Pass OFF/ON with VerticalAttacking.Move OFF in both arms. W294 showed a small consistent pass progression gain but excess circulation and reduced forward support/area access when Move was ON.",
+  "currentFocus": "M2 active — W296 tests a scratch-only 2% score discount outside the penalty area on the best tested quadrant (Vertical Move ON, Vertical Pass OFF, Offside Pass ON, BCCM OFF). The 1.00 control must reproduce W294/W273 exactly before the cohort.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -12,13 +12,13 @@
     "unknown": 5
   },
   "latestAction": {
-    "id": "W295",
-    "wave": "W295",
-    "publishedAt": "2026-10-29T10:16:50Z",
+    "id": "W296",
+    "wave": "W296",
+    "publishedAt": "2026-10-29T10:43:59Z",
     "macro": "M2",
-    "title": "Pass vertical sem movimento vertical do portador",
+    "title": "Calibrar chutes remotos sem sacrificar área",
     "status": "EM EXECUÇÃO — preflight pronto; default permanece OFF.",
-    "summary": "18 pares W214; OffsideAttacking.Receive/Pass ON constante; testa VerticalAttacking.Pass OFF/ON após W294 revelar ganho condicional com circulação excessiva e menor apoio/área."
+    "summary": "2x2 W294/W295 favorece Move ON/Vertical Pass OFF; ainda há 7,17 gols e17,94 chutes/game. W296 testa multiplicador remoto0,98 num build scratch com controle W294 exato."
   },
   "recentCycles": [
     {
@@ -58,15 +58,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W291",
-      "wave": "W291",
-      "publishedAt": "2026-10-29T09:00:46Z",
-      "macro": "M2",
-      "title": "Medir dose contextual Move6,25% fora do terço",
-      "status": "FINALIZADO — 6,25% FILTRADO REJEITADO; CIRCULAÇÃO E PROGRESSÃO AINDA REPROVADAS",
-      "summary": "54 jogos; controles W277/W290 exatos18/18; lifecycle54/54. Dose6,25%: gols−0,611/jogo (inconclusivo), episódios terço−6,5, ticks sem possuidor+358,444, passes+149,5; replay1742 auditado13/13."
-    },
-    {
       "id": "W292",
       "wave": "W292",
       "publishedAt": "2026-10-29T09:32:22Z",
@@ -99,8 +90,17 @@
       "publishedAt": "2026-10-29T10:16:50Z",
       "macro": "M2",
       "title": "Pass vertical sem movimento vertical do portador",
+      "status": "FINALIZADO — bônus Pass com Move OFF piora progressão e apoio à frente; matriz 2x2 favorece Move ON/Pass OFF; nenhum default promovido.",
+      "summary": "36 jogos; lifecycle passe38.920/38.920 e chutes36/36. Pass ON com Move OFF: progressão -0,00411/seed (IC95% [-0,00586;-0,00235]), pior15/18; passes +107,22/jogo; no-possession +289,83; apoio à frente -0,835/obs."
+    },
+    {
+      "id": "W296",
+      "wave": "W296",
+      "publishedAt": "2026-10-29T10:43:59Z",
+      "macro": "M2",
+      "title": "Calibrar chutes remotos sem sacrificar área",
       "status": "EM EXECUÇÃO — preflight pronto; default permanece OFF.",
-      "summary": "18 pares W214; OffsideAttacking.Receive/Pass ON constante; testa VerticalAttacking.Pass OFF/ON após W294 revelar ganho condicional com circulação excessiva e menor apoio/área."
+      "summary": "2x2 W294/W295 favorece Move ON/Vertical Pass OFF; ainda há 7,17 gols e17,94 chutes/game. W296 testa multiplicador remoto0,98 num build scratch com controle W294 exato."
     }
   ],
   "macros": [
@@ -331,7 +331,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": true,
-      "activeNote": "FRENTE ATIVA — W294 encontrou +0,00885 de progressão por passe completo (18/18), mas também +169,56 passes/jogo, +446,44 ticks sem posse, -4,17 episódios na área e -0,222 de apoio à frente. W295 testa o bônus de passe com VerticalAttacking.Move OFF; nenhum default promovido. Revisão humana do replay pendente.",
+      "activeNote": "FRENTE ATIVA — 2x2 W294/W295 favorece Move ON / Vertical Pass OFF: Move ON aumenta acesso e chutes em18/18. Ainda há 7,17 gols e17,94 chutes/jogo. W296 testa desconto remote-shot2% com controle W294 exato; build scratch, nenhum default promovido.",
       "items": [
         {
           "id": "M2-01",
@@ -1078,9 +1078,9 @@
     "improved": "W293 ligou41.692/41.692 tentativas a terminais sem ambiguidades; progressão média condicionada a passes completos:+0,05143 controle,+0,01411 6,25%,−0,01173 12,5%.",
     "worsened": "Doses BCCM6,25%/12,5% reduziram progressão por conclusão −0,03734/−0,06316 (18/18 seeds, IC pareado); Move contextual rejeitado.",
     "shotsGoals": "W2916,25%: gols108 vs119 controle (−0,611/jogo, IC95% [−2,080;+0,858]); chutes231 vs264. Lifecycle54/54.",
-    "lastIntegrated": "W294: 36 partidas; controle exato18/18; progressão por passe completo +0,00885/seed (IC95% [+0,00718;+0,01053]), superior18/18. Tentativas de passe +169,56 e ticks sem posse +446,44 por jogo; episódios na área -4,17/jogo e apoio à frente -0,222/observação. Não promover.",
-    "mainBlocker": "W294 encontrou progresso condicional maior, mas o bônus VerticalAttacking.Pass também elevou a frequência de passes/no-possession e reduziu apoio à frente e entradas na área. W295 testa esse flag com VerticalAttacking.Move OFF para medir interação e buscar progressão sem repetir esses custos.",
-    "replay": "W294 seed1732 HTML autocontido; viewer auditado13/13; replay pareado com a coorte. Revisão humana pendente. W295 produzirá replay após piloto/coorte."
+    "lastIntegrated": "W294/W295 form 2x2 Move×VerticalPass across18 seeds. Best tested cell Move ON / Vertical Pass OFF: 7.17 goals,17.94 chutes,98.06 third episodes,26.11 area episodes/game; Move ON effect vs OFF: goals +6.56/game (18/18), shots +17.28, area +24.72. Vertical Pass effect: progress +0.00885 with Move ON, -0.00411 with Move OFF; no promotion.",
+    "mainBlocker": "Move ON materially increases territorial access and shooting versus Move OFF, but best tested cell still has high score/shot volume. W296 evaluates only remote-shot score multiplier 0.98 on that cell; control must exactly reproduce W294/W273 18/18. W288 tested a different BCCM25 context and cannot answer this.",
+    "replay": "W294 e W295: viewers HTML auditados 13/13, revisão humana pendente. W296 criará replay de partida completa se o piloto passar no gate."
   },
   "diary": [
     {
@@ -1120,15 +1120,6 @@
       "summary": "Investigação continuou em ciclos incrementais; efeitos restritos aos traces e snapshots identificados."
     },
     {
-      "id": "W291",
-      "wave": "W291",
-      "publishedAt": "2026-10-29T09:00:46Z",
-      "macro": "M2",
-      "title": "Medir dose contextual Move6,25% fora do terço",
-      "status": "FINALIZADO — 6,25% FILTRADO REJEITADO; CIRCULAÇÃO E PROGRESSÃO AINDA REPROVADAS",
-      "summary": "54 jogos; controles W277/W290 exatos18/18; lifecycle54/54. Dose6,25%: gols−0,611/jogo (inconclusivo), episódios terço−6,5, ticks sem possuidor+358,444, passes+149,5; replay1742 auditado13/13."
-    },
-    {
       "id": "W292",
       "wave": "W292",
       "publishedAt": "2026-10-29T09:32:22Z",
@@ -1161,8 +1152,17 @@
       "publishedAt": "2026-10-29T10:16:50Z",
       "macro": "M2",
       "title": "Pass vertical sem movimento vertical do portador",
+      "status": "FINALIZADO — bônus Pass com Move OFF piora progressão e apoio à frente; matriz 2x2 favorece Move ON/Pass OFF; nenhum default promovido.",
+      "summary": "36 jogos; lifecycle passe38.920/38.920 e chutes36/36. Pass ON com Move OFF: progressão -0,00411/seed (IC95% [-0,00586;-0,00235]), pior15/18; passes +107,22/jogo; no-possession +289,83; apoio à frente -0,835/obs."
+    },
+    {
+      "id": "W296",
+      "wave": "W296",
+      "publishedAt": "2026-10-29T10:43:59Z",
+      "macro": "M2",
+      "title": "Calibrar chutes remotos sem sacrificar área",
       "status": "EM EXECUÇÃO — preflight pronto; default permanece OFF.",
-      "summary": "18 pares W214; OffsideAttacking.Receive/Pass ON constante; testa VerticalAttacking.Pass OFF/ON após W294 revelar ganho condicional com circulação excessiva e menor apoio/área."
+      "summary": "2x2 W294/W295 favorece Move ON/Vertical Pass OFF; ainda há 7,17 gols e17,94 chutes/game. W296 testa multiplicador remoto0,98 num build scratch com controle W294 exato."
     },
     {
       "wave": "W66",
@@ -3632,7 +3632,11 @@
     },
     {
       "id": "CP-PORTAL-33",
-      "title": "W294 finalizado; W295 ativo na M2"
+      "title": "W294/W295 finalizados; matriz 2x2 na M2"
+    },
+    {
+      "id": "CP-PORTAL-34",
+      "title": "W294/W295 2x2 finalizada; W296 ativo na M2"
     }
   ]
 }
