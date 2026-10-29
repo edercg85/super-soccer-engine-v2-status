@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replays completos W299 e W302 · Super Soccer V2</title>
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+.replay-intro{max-width:850px}.replay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:1rem;margin:1.25rem 0}.replay-card{display:flex;flex-direction:column;gap:.75rem;min-height:250px}.replay-card h2{margin:.1rem 0}.replay-card p{margin:.1rem 0}.replay-card .button{align-self:flex-start;margin-top:auto}.replay-notice{margin:1.5rem 0;padding:1rem 1.2rem;border-left:5px solid #f2c05b;background:#26313a;border-radius:10px}.replay-notice h2{margin:.1rem 0 .4rem}.replay-facts{display:flex;flex-wrap:wrap;gap:.5rem}.replay-facts span{border:1px solid #354756;border-radius:99px;padding:.25rem .7rem;color:#d1dde5;font-size:.9rem}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav aria-label="Navegação principal"><a href="../index.html">Dashboard</a><a href="../history.html">Histórico</a><a href="index.html" aria-current="page">Replays W299/W302</a><span class="muted">Super Soccer V2</span></nav></div></header>
+<main class="wrap">
+<section class="hero replay-intro"><p class="eyebrow">Avaliação funcional · partidas completas</p><h1>Replays W299 e W302</h1><p>Dois comparativos da mesma partida de 90 minutos simulados, Palmeiras × Corinthians, seed 1732. Cada visualizador mostra o controle e o tratamento daquele experimento, percorrendo estados reais registrados pela Engine, sem interpolar trajetórias.</p><div class="replay-facts"><span>90 minutos simulados</span><span>Seed 1732</span><span>Velocidades de 0,25× a 8×</span><span>Eventos clicáveis</span></div></section>
+<section class="replay-grid" aria-label="Replays disponíveis">
+<article class="card replay-card"><p class="eyebrow">W299 · probabilidade técnica do chute</p><h2>Baseline × teto técnico 45%</h2><p>Compara a configuração de controle com o tratamento experimental de W299. O replay inclui placar, cronologia, eventos destacados e velocidades reduzidas para revisão visual.</p><a class="button" href="w299-fullmatch.html" target="_blank" rel="noopener">Abrir replay W299 ↗</a></article>
+<article class="card replay-card"><p class="eyebrow">W302 · seleção de chute</p><h2>Baseline × penalidade de Shoot</h2><p>Compara o Shoot original com o tratamento de W302, que penaliza tentativas entre 10 e 20 metros. O visualizador mantém os mesmos controles e mostra os estados completos de cada braço.</p><a class="button" href="w302-fullmatch.html" target="_blank" rel="noopener">Abrir replay W302 ↗</a></article>
+</section>
+<aside class="replay-notice"><h2>Resultado da avaliação humana</h2><p>Ambos os replays foram rejeitados visualmente: não mostram tática perceptível e os jogadores parecem convergir para a bola. O motor original foi considerado melhor. Esses experimentos não foram promovidos; a investigação seguinte (W305/M3) busca diagnosticar organização coletiva antes de qualquer nova alteração funcional.</p></aside>
+<section class="panel"><h2>Como revisar</h2><p>Abra cada replay e use <strong>Reproduzir</strong>, <strong>Pausar</strong>, a linha do tempo e os filtros de eventos. As opções 0,25×, 0,5× e 0,75× facilitam observar os deslocamentos. Os dois braços de cada experimento compartilham o mesmo seed e baseline; W299 e W302 são experimentos diferentes, não uma comparação direta entre tratamentos.</p></section>
+</main>
+<footer class="wrap">Os replays documentam resultados técnicos e apoiam avaliação humana; não representam aceite de qualidade do MVP.</footer>
+</body></html>
