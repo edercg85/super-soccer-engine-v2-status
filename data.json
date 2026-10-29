@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-233",
-  "updatedAt": "2026-10-29T06:56:47Z",
+  "version": "2026.10.28-portal-234",
+  "updatedAt": "2026-10-29T07:02:36Z",
   "cycle": "W289",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M2 — W289 M2-04: testar dose contextual Move 0%, 12,5%, 25% após descontos de chute de 1%/2% falharem em demonstrar melhora funcional. Controle 0% reproduz W277, 25% reproduz W286; 18 seeds em partidas completas. Nenhuma base/default promovida.",
@@ -3588,6 +3588,10 @@
     {
       "id": "CP-PORTAL-28",
       "title": "W288 final / W289 M2-04 ativo"
+    },
+    {
+      "id": "CP-PORTAL-29",
+      "title": "Snapshot central W289 publicado"
     }
   ]
 }
