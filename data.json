@@ -1,9 +1,9 @@
 {
-  "version": "2026.10.28-portal-214",
-  "updatedAt": "2026-10-29T02:13:54Z",
+  "version": "2026.10.28-portal-215",
+  "updatedAt": "2026-10-29T02:18:15Z",
   "cycle": "W278",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
-  "currentFocus": "Frente ativa M2 — W278 em 9/18 pares. OffsideAttacking.Pass ON reduz offsides no corte 398→15, mas aumenta chutes 125→162 e gols 54→67. Controle W277 exato 9/9; resultado parcial, sem aceitação.",
+  "currentFocus": "Frente ativa M2 — W278 coorte em execução (12/18 pares concluídos); controle OffsidePass OFF é comparado a W277 Move ON. O corte publicado 9/18 mostra queda de offsides e subida de chutes/gols. ZIP W278 parcial atualizado no diretório central; defaults OFF.",
   "counts": {
     "validated": 26,
     "partial": 18,
@@ -14,11 +14,11 @@
   "latestAction": {
     "id": "W278",
     "wave": "W278",
-    "publishedAt": "2026-10-29T02:13:54Z",
+    "publishedAt": "2026-10-29T02:18:15Z",
     "macro": "M2",
     "title": "Reduzir impedimentos sem perder progressão",
-    "status": "PARCIAL 9/18 — offsides caem; volume ofensivo sobe",
-    "summary": "Controle Pass OFF exato contra W277 em 9/9. No corte parcial Pass ON: offsides 398→15, chutes 125→162 e gols 54→67; aguardando 18/18, lifecycle e IC pareado."
+    "status": "COORTE EM EXECUÇÃO — 12/18; parcial publicada 9/18",
+    "summary": "Corte 9/18: Pass penalty ON reduz offsides 398→15, mas chutes 125→162 e gols 54→67; controles W277 exatos 9/9. ZIP W278 parcial central publicado; resultados finais pendentes."
   },
   "recentCycles": [
     {
@@ -96,11 +96,11 @@
     {
       "id": "W278",
       "wave": "W278",
-      "publishedAt": "2026-10-29T02:13:54Z",
+      "publishedAt": "2026-10-29T02:18:15Z",
       "macro": "M2",
       "title": "Reduzir impedimentos sem perder progressão",
-      "status": "PARCIAL 9/18 — offsides caem; volume ofensivo sobe",
-      "summary": "Controle Pass OFF exato contra W277 em 9/9. No corte parcial Pass ON: offsides 398→15, chutes 125→162 e gols 54→67; aguardando 18/18, lifecycle e IC pareado."
+      "status": "COORTE EM EXECUÇÃO — 12/18; parcial publicada 9/18",
+      "summary": "Corte 9/18: Pass penalty ON reduz offsides 398→15, mas chutes 125→162 e gols 54→67; controles W277 exatos 9/9. ZIP W278 parcial central publicado; resultados finais pendentes."
     }
   ],
   "macros": [
@@ -1149,11 +1149,11 @@
     {
       "id": "W278",
       "wave": "W278",
-      "publishedAt": "2026-10-29T02:13:54Z",
+      "publishedAt": "2026-10-29T02:18:15Z",
       "macro": "M2",
       "title": "Reduzir impedimentos sem perder progressão",
-      "status": "PARCIAL 9/18 — offsides caem; volume ofensivo sobe",
-      "summary": "Controle Pass OFF exato contra W277 em 9/9. No corte parcial Pass ON: offsides 398→15, chutes 125→162 e gols 54→67; aguardando 18/18, lifecycle e IC pareado."
+      "status": "COORTE EM EXECUÇÃO — 12/18; parcial publicada 9/18",
+      "summary": "Corte 9/18: Pass penalty ON reduz offsides 398→15, mas chutes 125→162 e gols 54→67; controles W277 exatos 9/9. ZIP W278 parcial central publicado; resultados finais pendentes."
     },
     {
       "wave": "W66",
