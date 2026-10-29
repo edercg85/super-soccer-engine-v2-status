@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-225",
-  "updatedAt": "2026-10-29T04:45:50Z",
+  "version": "2026.10.28-portal-226",
+  "updatedAt": "2026-10-29T04:50:06Z",
   "cycle": "W284",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M4-01 — W284 coorte pareada: BallCarrierContextualMoveV2 OFF vs ON, com Move ON / Pass OFF / Receive ON / shape Off. Piloto seed1732 reproduz W277 no controle e observer é neutro. Resultado de um seed é apenas diagnóstico; não inferir efeito antes dos 18 pares, lifecycle e replay.",
@@ -3528,6 +3528,10 @@
     {
       "id": "CP-W284-PILOT",
       "title": "W284 piloto — controle exato e observer neutro"
+    },
+    {
+      "id": "CP-PORTAL-23",
+      "title": "ZIP W283 final / W284 ativo publicado"
     }
   ]
 }
