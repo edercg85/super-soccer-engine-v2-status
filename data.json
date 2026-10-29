@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-238",
-  "updatedAt": "2026-10-29T09:00:46Z",
+  "version": "2026.10.28-portal-239",
+  "updatedAt": "2026-10-29T09:06:45Z",
   "cycle": "W292",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M2 — W292: medir em partidas completas se ticks sem possuidor coincidem com ActivePass, BallMovementState, ActiveShoot ou RestartState, nos braços0%,6,25% filtrado e12,5% filtrado. Piloto seed1742 reproduziu W291 exatamente nos três braços; coorte18×3 em execução.",
@@ -112,6 +112,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": false,
+      "activeNote": null,
       "items": [
         {
           "id": "M0-01",
@@ -227,6 +228,7 @@
       "status": "Concluído no escopo",
       "statusClass": "ok",
       "active": false,
+      "activeNote": null,
       "items": [
         {
           "id": "M1-01",
@@ -329,6 +331,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": true,
+      "activeNote": "FRENTE ATIVA — W289–W291 rejeitaram as variantes de Move contextual por regressão territorial/circulação; nenhuma foi promovida. W292 mede em 54 partidas completas os estados da bola e eventos coincidentes durante ticks sem possuidor, com controle exato e doses de 6,25%/12,5%. Coorte em execução; piloto reproduziu W291. Defaults OFF; revisão humana dos replays pendente.",
       "items": [
         {
           "id": "M2-01",
@@ -418,6 +421,7 @@
       "status": "Planejado",
       "statusClass": "planned",
       "active": false,
+      "activeNote": null,
       "items": [
         {
           "id": "M3-01",
@@ -507,6 +511,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": false,
+      "activeNote": null,
       "items": [
         {
           "id": "M4-01",
@@ -609,6 +614,7 @@
       "status": "Planejado",
       "statusClass": "planned",
       "active": false,
+      "activeNote": null,
       "items": [
         {
           "id": "M5-01",
@@ -724,6 +730,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": false,
+      "activeNote": null,
       "items": [
         {
           "id": "M6-01",
@@ -839,6 +846,7 @@
       "status": "Parcial / em análise",
       "statusClass": "partial",
       "active": false,
+      "activeNote": null,
       "items": [
         {
           "id": "M7-01",
@@ -954,6 +962,7 @@
       "status": "Concluído no escopo",
       "statusClass": "ok",
       "active": false,
+      "activeNote": null,
       "items": [
         {
           "id": "M8-01",
