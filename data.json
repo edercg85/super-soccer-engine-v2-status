@@ -1,6 +1,6 @@
 {
-  "version": "2026.10.28-portal-222",
-  "updatedAt": "2026-10-29T04:35:00Z",
+  "version": "2026.10.28-portal-223",
+  "updatedAt": "2026-10-29T04:22:30Z",
   "cycle": "W283",
   "mvp": "NÃO ACEITO — qualidade funcional global ainda não demonstrada",
   "currentFocus": "Frente ativa M2 — W283 coorte: OffsideAttacking.Receive ON vs OFF; Move ON, Pass OFF, shape Off fixos. W282 confirmou SupportBlend melhora apoio mas colapsa finalização; série de penalty doses rejeitada. Revisão humana dos replays pendente.",
@@ -3520,6 +3520,10 @@
     {
       "id": "CP-W283-PILOT",
       "title": "W283 piloto — controle e observer neutros"
+    },
+    {
+      "id": "CP-PORTAL-21",
+      "title": "ZIP W282 final / W283 ativo publicado"
     }
   ]
 }
